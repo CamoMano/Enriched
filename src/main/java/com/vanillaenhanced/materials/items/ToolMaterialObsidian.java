@@ -4,7 +4,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class MaterialObsidian implements ToolMaterial {
+public class ToolMaterialObsidian implements ToolMaterial {
     @Override
     public int getDurability() {
         return 1820;
