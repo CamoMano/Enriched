@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "vanillaenhanced",
+  "version": "${version}",
+  "name": "VanillaEnhanced",
+  "description": "Enhancements and vanilla-esque additions.",
+  "authors": [
+    "CamoMano"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/vanillaenhanced/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.vanillaenhanced.VanillaEnhanced"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "vanillaenhanced.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  }
+}
