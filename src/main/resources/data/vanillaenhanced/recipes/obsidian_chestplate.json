@@ -1,20 +1,17 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "#",
-        "#",
-        "/"
+        "# #",
+        "###",
+        "###"
     ],
     "key": {
         "#": {
             "item": "minecraft:obsidian"
-        },
-        "/": {
-            "item": "minecraft:stick"
         }
     },
     "result": {
-	"item": "vanillaenhanced:obsidian_sword",
+	"item": "vanillaenhanced:obsidian_chestplate",
     "count": 1
 	}
 }
