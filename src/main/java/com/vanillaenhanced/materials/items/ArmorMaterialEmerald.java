@@ -25,7 +25,7 @@ public class ArmorMaterialEmerald implements ArmorMaterial {
 
     @Override
     public int getEnchantability() {
-        return 30;
+        return 25;
     }
 
     @Override
@@ -45,6 +45,6 @@ public class ArmorMaterialEmerald implements ArmorMaterial {
 
     @Override
     public float getToughness() {
-        return 1.5f;
+        return 0;
     }
 }

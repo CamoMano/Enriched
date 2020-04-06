@@ -27,7 +27,7 @@ public class ToolMaterialEmerald implements ToolMaterial {
 
     @Override
     public int getEnchantability() {
-        return 30;
+        return 25;
     }
 
     @Override
