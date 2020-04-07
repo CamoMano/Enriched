@@ -17,7 +17,10 @@
       "com.vanillaenhanced.VanillaEnhanced"
     ],
     "client": [],
-    "server": []
+    "server": [],
+	"modmenu": [
+      "com.vanillaenhanced.config.ModMenu"
+    ]
   },
   "mixins": [
     "vanillaenhanced.mixins.json"

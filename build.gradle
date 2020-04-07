@@ -10,6 +10,11 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+
+repositories {
+    jcenter()
+}
+
 minecraft {
 }
 
@@ -20,6 +25,19 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	
+	//Cloth Config
+	modApi "me.shedaniel.cloth:config-2:2.13.2"
+	include "me.shedaniel.cloth:config-2:2.13.2"
+	
+	//Auto Config
+	modCompile "me.sargunvohra.mcmods:autoconfig1u:1.2.6"
+	include "me.sargunvohra.mcmods:autoconfig1u:1.2.6"
+	implementation 'com.google.code.gson:gson:2.8.6'
+	
+	//Mod Menu
+	modImplementation "io.github.prospector:modmenu:1.10.2+build.32"
+	
 }
 
 processResources {
