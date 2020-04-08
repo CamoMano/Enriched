@@ -66,7 +66,7 @@ public class VanillaEnhanced implements ModInitializer {
         } else{
             LOGGER.info("[" + MOD_NAME + "] " + "Emerald Gear Disabled");
     }
-    LOGGER.info(config.enableobsidiangear);
+
     }
 
     public static void log(Level level, String message){
