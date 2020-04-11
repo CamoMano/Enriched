@@ -1,6 +1,4 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "vanillaenhanced:item/steel_block"
-  }
-}
+    {
+      "parent": "vanillaenhanced:block/steel_block"
+    }
+

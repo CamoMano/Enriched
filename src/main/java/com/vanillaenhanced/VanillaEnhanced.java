@@ -1,5 +1,6 @@
 package com.vanillaenhanced;
 
+import com.vanillaenhanced.blocks.SteelBlock;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.materials.items.ArmorMaterialEmerald;
 import com.vanillaenhanced.materials.items.ArmorMaterialObsidian;
@@ -29,7 +30,7 @@ public class VanillaEnhanced implements ModInitializer {
     public static final ArmorMaterial EMERALD_ARMOR = new ArmorMaterialEmerald();
     public static final ArmorMaterial STEEL_ARMOR = new ArmorMaterialSteel();
     public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
-    public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).build());
+    public static final Block STEEL_BLOCK = new SteelBlock();
 
     @Override
     public void onInitialize() {
