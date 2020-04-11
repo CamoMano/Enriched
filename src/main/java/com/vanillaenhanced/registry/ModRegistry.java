@@ -4,6 +4,7 @@ package com.vanillaenhanced.registry;
 import com.vanillaenhanced.materials.items.ToolMaterialEmerald;
 import com.vanillaenhanced.materials.items.ToolMaterialObsidian;
 import com.vanillaenhanced.items.*;
+import com.vanillaenhanced.materials.items.ToolMaterialSteel;
 import net.minecraft.entity.EquipmentSlot;
 
 import net.minecraft.item.BlockItem;
@@ -52,9 +53,13 @@ public class ModRegistry {
         //Steel Ingot
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_ingot"), STEEL_INGOT);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_block"), new BlockItem(STEEL_BLOCK, new Item.Settings().group(ItemGroup.MISC)));
-
-
-        //Emerald Armor
+        //Emerald Tools
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_pickaxe"), new PickaxeBase(new ToolMaterialSteel()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_axe"), new AxeBase(new ToolMaterialSteel()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_shovel"), new ShovelBase(new ToolMaterialSteel()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_sword"), new SwordBase(new ToolMaterialSteel()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_hoe"), new HoeBase(new ToolMaterialSteel()));
+        //Steel Armor
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_helmet"), new ArmorBase(STEEL_ARMOR, EquipmentSlot.HEAD));
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_chestplate"), new ArmorBase(STEEL_ARMOR, EquipmentSlot.CHEST));
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_leggings"), new ArmorBase(STEEL_ARMOR, EquipmentSlot.LEGS));

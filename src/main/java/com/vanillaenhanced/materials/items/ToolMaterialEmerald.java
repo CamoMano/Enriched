@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 public class ToolMaterialEmerald implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 750;
+        return 600;
     }
 
     @Override

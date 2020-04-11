@@ -1,5 +1,6 @@
 package com.vanillaenhanced.materials.items;
 
+import com.vanillaenhanced.VanillaEnhanced;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;
@@ -16,7 +17,7 @@ public class ArmorMaterialSteel implements ArmorMaterial {
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()]*20;
+        return BASE_DURABILITY[slot.getEntitySlotId()]*25;
     }
 
     @Override
@@ -36,7 +37,7 @@ public class ArmorMaterialSteel implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.IRON_INGOT);
+        return Ingredient.ofItems(VanillaEnhanced.STEEL_INGOT);
     }
 
     @Override
