@@ -9,6 +9,7 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
     public class ModConfig implements ConfigData {
         public boolean enableobsidiangear = true;
         public boolean enableemeraldgear = true;
+        public boolean enablesteelgear = true;
 
 
 
