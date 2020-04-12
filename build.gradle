@@ -37,7 +37,8 @@ dependencies {
 	
 	//Mod Menu
 	modImplementation "io.github.prospector:modmenu:1.10.2+build.32"
-	
+    implementation 'org.jetbrains:annotations:15.0'
+
 }
 
 processResources {

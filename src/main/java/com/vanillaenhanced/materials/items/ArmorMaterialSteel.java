@@ -1,5 +1,6 @@
 package com.vanillaenhanced.materials.items;
 
+import com.vanillaenhanced.VanillaEnhanced;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;
@@ -7,15 +8,16 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public class ArmorMaterialEmerald implements ArmorMaterial {
+public class ArmorMaterialSteel implements ArmorMaterial {
+
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNTS = new int[]{2, 5, 5, 2};
+    private static final int[] PROTECTION_AMOUNTS = new int[]{3, 5, 7, 3};
 
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()]*20;
+        return BASE_DURABILITY[slot.getEntitySlotId()]*25;
     }
 
     @Override
@@ -25,26 +27,26 @@ public class ArmorMaterialEmerald implements ArmorMaterial {
 
     @Override
     public int getEnchantability() {
-        return 25;
+        return 9;
     }
 
     @Override
     public SoundEvent getEquipSound() {
-        return SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND;
+        return SoundEvents.ITEM_ARMOR_EQUIP_IRON;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.EMERALD);
+        return Ingredient.ofItems(VanillaEnhanced.STEEL_INGOT);
     }
 
     @Override
     public String getName() {
-        return "emerald";
+        return "steel";
     }
 
     @Override
     public float getToughness() {
-        return 0;
+        return 1.0f;
     }
 }
