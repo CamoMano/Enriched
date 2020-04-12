@@ -2,16 +2,12 @@ package com.vanillaenhanced;
 
 import com.vanillaenhanced.blocks.SteelBlock;
 import com.vanillaenhanced.config.ModConfig;
-import com.vanillaenhanced.materials.items.ArmorMaterialEmerald;
-import com.vanillaenhanced.materials.items.ArmorMaterialObsidian;
-import com.vanillaenhanced.materials.items.ArmorMaterialSteel;
+import com.vanillaenhanced.materials.items.*;
 import com.vanillaenhanced.registry.ModRegistry;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Material;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -40,19 +36,19 @@ public class VanillaEnhanced implements ModInitializer {
         AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
-        if (config.enableobsidiangear == true) {
+        if (config.enableObsidianGear == true) {
             ModRegistry.obsidian();
         }else {
             LOGGER.info("[" + MOD_NAME + "] " + "Obsidian Gear Disabled");
         }
 
-        if (config.enableemeraldgear == true) {
+        if (config.enableEmeraldGear == true) {
             ModRegistry.emerald();
         } else{
             LOGGER.info("[" + MOD_NAME + "] " + "Emerald Gear Disabled");
     }
 
-        if (config.enablesteelgear == true) {
+        if (config.enableSteelGear == true) {
             ModRegistry.steel();
         } else{
             LOGGER.info("[" + MOD_NAME + "] " + "Steel Gear Disabled");

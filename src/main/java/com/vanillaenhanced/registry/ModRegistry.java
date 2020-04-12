@@ -1,12 +1,10 @@
 package com.vanillaenhanced.registry;
 
 
-import com.vanillaenhanced.materials.items.ToolMaterialEmerald;
-import com.vanillaenhanced.materials.items.ToolMaterialObsidian;
-import com.vanillaenhanced.items.*;
-import com.vanillaenhanced.materials.items.ToolMaterialSteel;
-import net.minecraft.entity.EquipmentSlot;
 
+import com.vanillaenhanced.items.*;
+import com.vanillaenhanced.materials.items.*;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

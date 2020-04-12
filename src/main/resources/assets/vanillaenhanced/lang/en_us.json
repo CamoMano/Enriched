@@ -1,7 +1,7 @@
 {
-"text.autoconfig.vanillaenhanced.option.enableobsidiangear": "Enable Obsidian Gear",
-"text.autoconfig.vanillaenhanced.option.enableemeraldgear": "Enable Emerald Gear",
-"text.autoconfig.vanillaenhanced.option.enablesteelgear": "Enable Steel Gear",
+"text.autoconfig.vanillaenhanced.option.enableObsidianGear": "Enable Obsidian Gear",
+"text.autoconfig.vanillaenhanced.option.enableEmeraldGear": "Enable Emerald Gear",
+"text.autoconfig.vanillaenhanced.option.enableSteelGear": "Enable Steel Gear",
 "text.autoconfig.vanillaenhanced.title": "Vanilla Enhanced Config",
 "item.vanillaenhanced.obsidian_pickaxe": "Obsidian Pickaxe",
 "item.vanillaenhanced.obsidian_sword": "Obsidian Sword",
