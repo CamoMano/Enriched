@@ -12,7 +12,7 @@ public class ToolMaterialObsidian implements ToolMaterial {
 
     @Override
     public float getAttackDamage() {
-        return 6.0F;
+        return 5.0F;
     }
 
     @Override
@@ -31,7 +31,7 @@ public class ToolMaterialObsidian implements ToolMaterial {
     }
 
     @Override
-    public float getMiningSpeed() {
+    public float getMiningSpeedMultiplier() {
         return 7.0F;
     }
 }

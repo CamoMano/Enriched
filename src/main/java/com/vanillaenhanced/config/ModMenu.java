@@ -13,13 +13,13 @@ import net.minecraft.client.gui.screen.Screen;
 @Environment(EnvType.CLIENT)
 public class ModMenu implements ModMenuApi {
 
-    @Override
+    //@Override
     public String getModId() {
         return "vanillaenhanced";
     }
 
 
-    @Override
+    //@Override
     public Optional<Supplier<Screen>> getConfigScreen(Screen screen) {
         return Optional.of(AutoConfig.getConfigScreen(ModConfig.class, screen));
     }
