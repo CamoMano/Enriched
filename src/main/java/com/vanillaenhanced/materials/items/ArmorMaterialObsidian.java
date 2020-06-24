@@ -11,7 +11,7 @@ public class ArmorMaterialObsidian implements ArmorMaterial {
 
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNTS = new int[]{4, 7, 8, 4};
+    private static final int[] PROTECTION_AMOUNTS = new int[]{3, 7, 8, 3};
 
 
     @Override
@@ -51,6 +51,6 @@ public class ArmorMaterialObsidian implements ArmorMaterial {
 
     @Override
     public float getKnockbackResistance(){
-        return 0;
+        return 1.0f;
     }
 }
