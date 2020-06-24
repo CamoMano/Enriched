@@ -46,7 +46,7 @@ public class ArmorMaterialObsidian implements ArmorMaterial {
 
     @Override
     public float getToughness() {
-        return 2.5f;
+        return 2.0f;
     }
 
     @Override
