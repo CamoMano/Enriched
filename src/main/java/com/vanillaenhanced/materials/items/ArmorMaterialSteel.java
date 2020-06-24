@@ -49,4 +49,9 @@ public class ArmorMaterialSteel implements ArmorMaterial {
     public float getToughness() {
         return 1.0f;
     }
+
+    @Override
+    public float getKnockbackResistance(){
+        return 0;
+    }
 }

@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.2.6-SNAPSHOT'
+	id 'fabric-loom' version '0.4-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -27,16 +27,16 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	
 	//Cloth Config
-	modApi "me.shedaniel.cloth:config-2:2.13.2"
-	include "me.shedaniel.cloth:config-2:2.13.2"
+	modApi "me.shedaniel.cloth:config-2:4.5.6"
+	include "me.shedaniel.cloth:config-2:4.5.6"
 	
 	//Auto Config
-	modCompile "me.sargunvohra.mcmods:autoconfig1u:1.2.6"
-	include "me.sargunvohra.mcmods:autoconfig1u:1.2.6"
+	modCompile "me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable"
+	include "me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable"
 	implementation 'com.google.code.gson:gson:2.8.6'
 	
 	//Mod Menu
-	modImplementation "io.github.prospector:modmenu:1.10.2+build.32"
+	modImplementation "io.github.prospector:modmenu:1.12.2+build.16"
     implementation 'org.jetbrains:annotations:15.0'
 
 }
