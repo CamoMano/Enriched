@@ -8,6 +8,6 @@ import static net.minecraft.sound.BlockSoundGroup.METAL;
 
 public class ObsidianAlloyBlock extends Block {
     public ObsidianAlloyBlock() {
-        super(FabricBlockSettings.copy(Blocks.OBSIDIAN).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(METAL).strength(6.0f,7.0f).build());
+        super(FabricBlockSettings.copy(Blocks.OBSIDIAN).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(METAL).strength(40.0f,1000.0f).build());
     }
 }
