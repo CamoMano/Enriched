@@ -1,5 +1,6 @@
 package com.vanillaenhanced;
 
+import com.vanillaenhanced.blocks.ObsidianAlloyBlock;
 import com.vanillaenhanced.blocks.SteelBlock;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.materials.items.*;
@@ -27,6 +28,8 @@ public class VanillaEnhanced implements ModInitializer {
     public static final ArmorMaterial STEEL_ARMOR = new ArmorMaterialSteel();
     public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Block STEEL_BLOCK = new SteelBlock();
+    public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+    public static final Block OBSIDIAN_ALLOY_BLOCK = new ObsidianAlloyBlock();
 
     @Override
     public void onInitialize() {

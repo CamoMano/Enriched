@@ -18,6 +18,11 @@ public class ModRegistry {
 
 
     public static void obsidian() {
+            //Obsidian Ingot
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "obsidian_alloy_ingot"), OBSIDIAN_ALLOY_INGOT);
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"obsidian_alloy_block"), OBSIDIAN_ALLOY_BLOCK);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "obsidian_alloy_block"), new BlockItem(OBSIDIAN_ALLOY_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+
             //Obsidian Tools
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "obsidian_shovel"), new ShovelBase(new ToolMaterialObsidian()));
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "obsidian_pickaxe"), new PickaxeBase(new ToolMaterialObsidian()));
