@@ -1,16 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "g g",
-        "gGg",
-        "g g"
+        "  g",
+        "gWg",
+        "ggg"
     ],
     "key": {
         "g": {
             "item": "minecraft:gold_ingot"
         },
-        "G": {
-            "item": "minecraft:gold_block"
+        "W": {
+            "item": "minecraft:white_wool"
         }
     },
     "result": {

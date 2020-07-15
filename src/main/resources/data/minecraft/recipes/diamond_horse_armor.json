@@ -1,16 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "# #",
-        "#D#",
-        "# #"
+        "  #",
+        "#W#",
+        "###"
     ],
     "key": {
         "#": {
             "item": "minecraft:diamond"
         },
-        "D": {
-            "item": "minecraft:diamond_block"
+        "W": {
+            "item": "minecraft:white_wool"
         }
     },
     "result": {

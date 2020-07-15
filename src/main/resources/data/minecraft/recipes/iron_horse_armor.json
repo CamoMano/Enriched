@@ -1,16 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "i i",
-        "iIi",
-        "i i"
+        "  i",
+        "iWi",
+        "iii"
     ],
     "key": {
         "i": {
             "item": "minecraft:iron_ingot"
         },
-        "I": {
-            "item": "minecraft:iron_block"
+        "W": {
+            "item": "minecraft:white_wool"
         }
     },
     "result": {
