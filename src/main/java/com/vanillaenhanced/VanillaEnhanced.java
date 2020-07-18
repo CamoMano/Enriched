@@ -7,6 +7,7 @@ import com.vanillaenhanced.materials.items.*;
 import com.vanillaenhanced.registry.ModRegistry;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
+import me.sargunvohra.mcmods.autoconfig1u.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.Block;
 import net.minecraft.item.ArmorMaterial;
@@ -31,6 +32,7 @@ public class VanillaEnhanced implements ModInitializer {
     public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Block OBSIDIAN_ALLOY_BLOCK = new ObsidianAlloyBlock();
 
+
     @Override
     public void onInitialize() {
         log(Level.INFO, "Hello there.");
@@ -39,6 +41,12 @@ public class VanillaEnhanced implements ModInitializer {
         AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
+        //Register
+        ModRegistry.obsidian();
+        ModRegistry.emerald();
+        ModRegistry.steel();
+
+/* // Disabling config options for now
         if (config.enableObsidianGear == true) {
             ModRegistry.obsidian();
         }else {
@@ -56,9 +64,8 @@ public class VanillaEnhanced implements ModInitializer {
         } else{
             LOGGER.info("[" + MOD_NAME + "] " + "Steel Gear Disabled");
         }
-
+*/
     }
-
     public static void log(Level level, String message){
         LOGGER.log(level, "["+MOD_NAME+"] " + message);
     }
