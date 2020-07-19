@@ -1,9 +1,8 @@
 package com.vanillaenhanced.materials.items;
 
-import com.vanillaenhanced.VanillaEnhanced;
+import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -37,7 +36,7 @@ public class ArmorMaterialSteel implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(VanillaEnhanced.STEEL_INGOT);
+        return Ingredient.ofItems(ModInit.STEEL_INGOT);
     }
 
     @Override

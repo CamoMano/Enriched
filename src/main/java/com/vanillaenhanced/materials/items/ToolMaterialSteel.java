@@ -2,6 +2,7 @@ package com.vanillaenhanced.materials.items;
 
 import com.vanillaenhanced.VanillaEnhanced;
 
+import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -28,7 +29,7 @@ public class ToolMaterialSteel implements ToolMaterial {
 
         @Override
         public Ingredient getRepairIngredient() {
-            return Ingredient.ofItems(VanillaEnhanced.STEEL_INGOT);
+            return Ingredient.ofItems(ModInit.STEEL_INGOT);
         }
 
         @Override
