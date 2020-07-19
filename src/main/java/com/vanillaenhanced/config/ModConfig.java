@@ -7,7 +7,10 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 
 @Config(name = "vanillaenhanced")
     public class ModConfig implements ConfigData {
-        public boolean enablePlaceholder = true;
+        public boolean enableObsidianGear = true;
+        public boolean enableEmeraldGear = true;
+        public boolean enableSteelGear = true;
+        public boolean enableFood = true;
 
 
 
