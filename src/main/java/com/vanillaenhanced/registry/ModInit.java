@@ -45,7 +45,7 @@ public class ModInit{
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item BEEF_STEW = new BowlFood (new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(10).saturationModifier(24.0F).build()));
-        public static final Item BERRY_JUICE = new BottleFood (new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(2.0F).build()));
+        public static final Item BERRY_JUICE = new BottleFood (new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
 
         //Register
     public static void Register() {
@@ -112,6 +112,9 @@ public class ModInit{
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_ore"), new BlockItem(RUBY_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"ruby_block"), RUBY_BLOCK);
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_block"), new BlockItem(RUBY_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+
+
+
         }
 
 

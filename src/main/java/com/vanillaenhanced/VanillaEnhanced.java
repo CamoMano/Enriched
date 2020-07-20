@@ -2,9 +2,12 @@ package com.vanillaenhanced;
 
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
+import com.vanillaenhanced.world.VEGenerator;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,6 +31,10 @@ public class VanillaEnhanced implements ModInitializer {
 
         //Setup
         ModInit.Register();
+        for (Biome biome : Registry.BIOME)
+        {
+            VEGenerator.handleBiome(biome);
+        }
 
     }
     public static void log(Level level, String message){

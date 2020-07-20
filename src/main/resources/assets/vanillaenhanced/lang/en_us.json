@@ -2,7 +2,6 @@
 "text.autoconfig.vanillaenhanced.option.enableObsidianGear": "Enable Obsidian Gear",
 "text.autoconfig.vanillaenhanced.option.enableEmeraldGear": "Enable Emerald Gear",
 "text.autoconfig.vanillaenhanced.option.enableSteelGear": "Enable Steel Gear",
-"text.autoconfig.vanillaenhanced.option.enablePlaceholder": "Placeholder",
 "text.autoconfig.vanillaenhanced.title": "Vanilla Enhanced Config (WIP)",
 "item.vanillaenhanced.obsidian_pickaxe": "Obsidian Pickaxe",
 "item.vanillaenhanced.obsidian_sword": "Obsidian Sword",
@@ -34,6 +33,12 @@
 "item.vanillaenhanced.emerald_helmet": "Emerald Helmet",
 "item.vanillaenhanced.emerald_chestplate": "Emerald Chestplate",
 "item.vanillaenhanced.emerald_leggings": "Emerald Leggings",
-"item.vanillaenhanced.emerald_boots": "Emerald Boots"
+"item.vanillaenhanced.emerald_boots": "Emerald Boots",
+"block.vanillaenhanced.ruby_block": "Ruby Block",
+"block.vanillaenhanced.ruby_ore": "Ruby Ore",
+"item.vanillaenhanced.ruby": "Ruby",
+"item.vanillaenhanced.berry_juice": "Berry Juice",
+"item.vanillaenhanced.beef_stew": "Beef Stew"
+
 
 }
