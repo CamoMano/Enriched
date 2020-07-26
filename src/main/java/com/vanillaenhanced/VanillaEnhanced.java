@@ -2,7 +2,7 @@ package com.vanillaenhanced;
 
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
-import com.vanillaenhanced.world.VEGenerator;
+import com.vanillaenhanced.world.Generation;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -33,7 +33,7 @@ public class VanillaEnhanced implements ModInitializer {
         ModInit.Register();
         for (Biome biome : Registry.BIOME)
         {
-            VEGenerator.handleBiome(biome);
+            Generation.handleBiome(biome);
         }
 
     }

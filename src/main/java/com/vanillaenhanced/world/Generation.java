@@ -9,7 +9,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 
 
-public class VEGenerator{
+public class Generation{
 
     public static void handleBiome(Biome biome) {
         if(biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
@@ -19,13 +19,13 @@ public class VEGenerator{
                             new OreFeatureConfig(
                                     OreFeatureConfig.Target.NATURAL_STONE,
                                     ModInit.RUBY_ORE.getDefaultState(),
-                                    5 //Ore vein size
+                                    6 //Ore vein size
                             )).createDecoratedFeature(
                             Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
                                     6, //Number of veins per chunk
                                     0, //Bottom Offset
                                     0, //Min y level
-                                    30 //Max y level
+                                    32 //Max y level
                             ))));
         }
     }

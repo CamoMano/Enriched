@@ -5,8 +5,6 @@ import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
@@ -27,12 +25,14 @@ public class ModInit{
         static boolean enableObsidianGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableObsidianGear;
         static boolean enableEmeraldGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableEmeraldGear;
         static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
+        static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
         static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
         public static final ArmorMaterial EMERALD_ARMOR = new ArmorMaterialEmerald();
         public static final ArmorMaterial STEEL_ARMOR = new ArmorMaterialSteel();
+        public static final ArmorMaterial RUBY_ARMOR = new ArmorMaterialRuby();
 
         //Blocks
         public static final Block RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
@@ -112,6 +112,12 @@ public class ModInit{
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_ore"), new BlockItem(RUBY_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"ruby_block"), RUBY_BLOCK);
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_block"), new BlockItem(RUBY_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+
+            //Ruby Armor
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_helmet"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.HEAD));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_chestplate"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.CHEST));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_leggings"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.LEGS));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_boots"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.FEET));
 
 
 

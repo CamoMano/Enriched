@@ -3,21 +3,19 @@ package com.vanillaenhanced.materials.items;
 import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public class ArmorMaterialObsidian implements ArmorMaterial {
-
+public class ArmorMaterialRuby implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-    private static final int[] PROTECTION_AMOUNTS = new int[]{3, 7, 8, 3};
+    private static final int[] PROTECTION_AMOUNTS = new int[]{2, 5, 4, 2};
 
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()]*35;
+        return BASE_DURABILITY[slot.getEntitySlotId()]*15;
     }
 
     @Override
@@ -27,31 +25,31 @@ public class ArmorMaterialObsidian implements ArmorMaterial {
 
     @Override
     public int getEnchantability() {
-        return 9;
+        return 20;
     }
 
     @Override
     public SoundEvent getEquipSound() {
-        return SoundEvents.ITEM_ARMOR_EQUIP_GOLD;
+        return SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModInit.OBSIDIAN_ALLOY_INGOT);
+        return Ingredient.ofItems(ModInit.RUBY);
     }
 
     @Override
     public String getName() {
-        return "obsidian";
+        return "ruby";
     }
 
     @Override
     public float getToughness() {
-        return 2.0f;
+        return 0;
     }
 
     @Override
     public float getKnockbackResistance(){
-        return 1.0f;
+        return 0;
     }
 }
