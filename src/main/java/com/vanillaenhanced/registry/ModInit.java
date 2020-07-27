@@ -106,19 +106,25 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_boots"), new ArmorBase(STEEL_ARMOR, EquipmentSlot.FEET));
             }
 
-            //Ruby Item/Block
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby"), RUBY);
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"ruby_ore"), RUBY_ORE);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_ore"), new BlockItem(RUBY_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID,"ruby_block"), RUBY_BLOCK);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_block"), new BlockItem(RUBY_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-
-            //Ruby Armor
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_helmet"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.HEAD));
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_chestplate"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.CHEST));
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_leggings"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.LEGS));
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_boots"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.FEET));
-
+            if (enableRubyGear) {
+                    //Ruby Item/Block
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby"), RUBY);
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ruby_ore"), RUBY_ORE);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_ore"), new BlockItem(RUBY_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ruby_block"), RUBY_BLOCK);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_block"), new BlockItem(RUBY_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    //Steel Tools
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_shovel"), new ShovelBase(new ToolMaterialRuby()));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_pickaxe"), new PickaxeBase(new ToolMaterialRuby()));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_axe"), new AxeBase(new ToolMaterialRuby()));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_sword"), new SwordBase(new ToolMaterialRuby()));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_hoe"), new HoeBase(new ToolMaterialRuby()));
+                    //Ruby Armor
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_helmet"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.HEAD));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_chestplate"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.CHEST));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_leggings"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.LEGS));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_boots"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.FEET));
+            }
 
 
         }
