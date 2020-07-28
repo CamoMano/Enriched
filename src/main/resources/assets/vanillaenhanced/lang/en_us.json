@@ -2,6 +2,8 @@
 "text.autoconfig.vanillaenhanced.option.enableObsidianGear": "Enable Obsidian Gear",
 "text.autoconfig.vanillaenhanced.option.enableEmeraldGear": "Enable Emerald Gear",
 "text.autoconfig.vanillaenhanced.option.enableSteelGear": "Enable Steel Gear",
+"text.autoconfig.vanillaenhanced.option.enableRubyGear": "Enable Ruby Gear",
+"text.autoconfig.vanillaenhanced.option.enableFood": "Enable Food",
 "text.autoconfig.vanillaenhanced.title": "Vanilla Enhanced Config (WIP)",
 "item.vanillaenhanced.obsidian_pickaxe": "Obsidian Pickaxe",
 "item.vanillaenhanced.obsidian_sword": "Obsidian Sword",

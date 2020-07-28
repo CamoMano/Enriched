@@ -16,7 +16,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static com.vanillaenhanced.VanillaEnhanced.*;
+import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static net.minecraft.sound.BlockSoundGroup.METAL;
 
 
@@ -27,6 +27,7 @@ public class ModInit{
         static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
         static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
         static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
+        static boolean enableStones = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableStones;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -39,6 +40,8 @@ public class ModInit{
         public static final Block RUBY_BLOCK = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
         public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(6.0f,7.0f));
         public static final Block OBSIDIAN_ALLOY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(METAL).strength(40.0f,1000.0f));
+        public static final Block DARK_GRANITE = new OreBlock(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block POLISHED_DARK_GRANITE = new OreBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -113,7 +116,7 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_ore"), new BlockItem(RUBY_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ruby_block"), RUBY_BLOCK);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_block"), new BlockItem(RUBY_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-                    //Steel Tools
+                    //Ruby Tools
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_shovel"), new ShovelBase(new ToolMaterialRuby()));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_pickaxe"), new PickaxeBase(new ToolMaterialRuby()));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_axe"), new AxeBase(new ToolMaterialRuby()));
@@ -124,6 +127,13 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_chestplate"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.CHEST));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_leggings"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.LEGS));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_boots"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.FEET));
+            }
+            if (enableStones){
+                    //Dark Granite
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite"), DARK_GRANITE);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_granite"), new BlockItem(DARK_GRANITE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_dark_granite"), POLISHED_DARK_GRANITE);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_dark_granite"), new BlockItem(POLISHED_DARK_GRANITE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             }
 
 
