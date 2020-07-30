@@ -17,6 +17,8 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
         public boolean enableSteelGear = true;
     @Comment("Should Ruby Tools, Armor, and Items be enabled?")
         public boolean enableRubyGear = true;
+    @Comment("Should Sapphire Tools, Armor, and Items be enabled?")
+    public boolean enableSapphireGear = true;
     @Comment("Should Food items be enabled?")
         public boolean enableFood = true;
     @Comment("Should Dark Granite be enabled?")

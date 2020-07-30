@@ -6,11 +6,14 @@ import com.vanillaenhanced.world.Generation;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import static com.vanillaenhanced.world.Generation.handleBiome;
 
 
 public class VanillaEnhanced implements ModInitializer {
@@ -35,8 +38,10 @@ public class VanillaEnhanced implements ModInitializer {
         {
             Generation.handleBiome(biome);
         }
-
+        RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
     }
+
+
     public static void log(Level level, String message){
         LOGGER.log(level, "["+MOD_NAME+"] " + message);
     }

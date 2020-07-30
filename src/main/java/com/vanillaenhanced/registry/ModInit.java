@@ -26,6 +26,7 @@ public class ModInit{
         static boolean enableEmeraldGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableEmeraldGear;
         static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
         static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
+        static boolean enableSapphireGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSapphireGear;
         static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
@@ -35,10 +36,13 @@ public class ModInit{
         public static final ArmorMaterial EMERALD_ARMOR = new ArmorMaterialEmerald();
         public static final ArmorMaterial STEEL_ARMOR = new ArmorMaterialSteel();
         public static final ArmorMaterial RUBY_ARMOR = new ArmorMaterialRuby();
+        public static final ArmorMaterial SAPPHIRE_ARMOR = new ArmorMaterialSapphire();
 
         //Blocks
         public static final Block RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
-        public static final Block RUBY_BLOCK = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
+        public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
+        public static final Block SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
+        public static final Block SAPPHIRE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
         public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(6.0f,7.0f));
         public static final Block OBSIDIAN_ALLOY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(METAL).strength(40.0f,1000.0f));
         public static final Block DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
@@ -59,6 +63,7 @@ public class ModInit{
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+        public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item BEEF_STEW = new BowlFood (new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(10).saturationModifier(24.0F).build()));
         public static final Item BERRY_JUICE = new BottleFood (new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
@@ -140,6 +145,25 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_chestplate"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.CHEST));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_leggings"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.LEGS));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_boots"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.FEET));
+            }
+            if (enableSapphireGear) {
+                    //Sapphire Item/Block
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire"), SAPPHIRE);
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sapphire_ore"), SAPPHIRE_ORE);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_ore"), new BlockItem(SAPPHIRE_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sapphire_block"), SAPPHIRE_BLOCK);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_block"), new BlockItem(SAPPHIRE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    //Sapphire Tools
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_shovel"), new ShovelBase(new ToolMaterialSapphire()));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_pickaxe"), new PickaxeBase(new ToolMaterialSapphire()));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_axe"), new AxeBase(new ToolMaterialSapphire()));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_sword"), new SwordBase(new ToolMaterialSapphire()));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_hoe"), new HoeBase(new ToolMaterialSapphire()));
+                    //Sapphire Armor
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_helmet"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.HEAD));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_chestplate"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.CHEST));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_leggings"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.LEGS));
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_boots"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.FEET));
             }
             if (enableDarkGranite){
                     //Dark Granite

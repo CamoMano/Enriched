@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "vanillaenhanced:dark_granite_stairs",
-    "vanillaenhanced:polished_dark_granite_stairs"
+    "vanillaenhanced:polished_dark_granite_stairs",
+	"vanillaenhanced:marble_stairs",
+    "vanillaenhanced:polished_marble_stairs"
   ]
 }
