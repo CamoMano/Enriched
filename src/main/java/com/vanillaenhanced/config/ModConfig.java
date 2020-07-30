@@ -18,7 +18,7 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
         public boolean enableRubyGear = true;
     @Comment("Should Food items be enabled?")
         public boolean enableFood = true;
-    @Comment("Should Dark Granite and Marble be enabled?")
+    @Comment("Should the stone variants be enabled?")
     public boolean enableStones = true;
 
 

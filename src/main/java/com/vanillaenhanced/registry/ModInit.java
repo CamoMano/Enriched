@@ -1,15 +1,15 @@
 package com.vanillaenhanced.registry;
 
 
+import com.vanillaenhanced.blocks.StairsBase;
+import com.vanillaenhanced.blocks.WallBase;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.OreBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
@@ -40,8 +40,12 @@ public class ModInit{
         public static final Block RUBY_BLOCK = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
         public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(6.0f,7.0f));
         public static final Block OBSIDIAN_ALLOY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(METAL).strength(40.0f,1000.0f));
-        public static final Block DARK_GRANITE = new OreBlock(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
-        public static final Block POLISHED_DARK_GRANITE = new OreBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block DARK_GRANITE_STAIRS = new StairsBase(DARK_GRANITE.getDefaultState(),"dark_granite_stairs",DARK_GRANITE);
+        public static final Block DARK_GRANITE_WALL = new WallBase("dark_granite_wall",DARK_GRANITE);
+        public static final Block POLISHED_DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -132,6 +136,12 @@ public class ModInit{
                     //Dark Granite
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite"), DARK_GRANITE);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_granite"), new BlockItem(DARK_GRANITE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite_slab"), DARK_GRANITE_SLAB);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_granite_slab"), new BlockItem(DARK_GRANITE_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite_stairs"), DARK_GRANITE_STAIRS);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_granite_stairs"), new BlockItem(DARK_GRANITE_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite_wall"), DARK_GRANITE_WALL);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_granite_wall"), new BlockItem(DARK_GRANITE_WALL, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_dark_granite"), POLISHED_DARK_GRANITE);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_dark_granite"), new BlockItem(POLISHED_DARK_GRANITE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             }
