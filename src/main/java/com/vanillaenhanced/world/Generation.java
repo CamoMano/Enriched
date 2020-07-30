@@ -23,7 +23,7 @@ public class Generation{
                                     6 //Ore vein size
                             )).createDecoratedFeature(
                             Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
-                                    7, //Number of veins per chunk
+                                    5, //Number of veins per chunk
                                     0, //Bottom Offset
                                     0, //Min y level
                                     36 //Max y level
@@ -37,10 +37,10 @@ public class Generation{
                                     30 //Ore vein size
                             )).createDecoratedFeature(
                             Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
-                                    8, //Number of veins per chunk
+                                    7, //Number of veins per chunk
                                     0, //Bottom Offset
                                     0, //Min y level
-                                    80 //Max y level
+                                    75 //Max y level
                             ))));
             biome.addFeature(
                     GenerationStep.Feature.UNDERGROUND_ORES,
@@ -51,7 +51,7 @@ public class Generation{
                                     4 //Ore vein size
                             )).createDecoratedFeature(
                             Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
-                                    6, //Number of veins per chunk
+                                    3, //Number of veins per chunk
                                     0, //Bottom Offset
                                     0, //Min y level
                                     32 //Max y level
