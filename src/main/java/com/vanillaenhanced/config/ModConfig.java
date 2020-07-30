@@ -3,6 +3,7 @@ package com.vanillaenhanced.config;
 
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
+import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 
 
@@ -18,8 +19,10 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
         public boolean enableRubyGear = true;
     @Comment("Should Food items be enabled?")
         public boolean enableFood = true;
-    @Comment("Should the stone variants be enabled?")
-    public boolean enableStones = true;
+    @Comment("Should Dark Granite be enabled?")
+    public boolean enableDarkGranite = true;
+    @Comment("Should Marble be enabled?")
+    public boolean enableMarble = true;
 
 
 

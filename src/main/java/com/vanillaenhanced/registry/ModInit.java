@@ -27,7 +27,8 @@ public class ModInit{
         static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
         static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
         static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
-        static boolean enableStones = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableStones;
+        static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
+        static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -47,6 +48,13 @@ public class ModInit{
         public static final Block POLISHED_DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
         public static final Block POLISHED_DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
         public static final Block POLISHED_DARK_GRANITE_STAIRS = new StairsBase(POLISHED_DARK_GRANITE.getDefaultState(),"polished_dark_granite_stairs",DARK_GRANITE);
+        public static final Block MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block MARBLE_STAIRS = new StairsBase(MARBLE.getDefaultState(),"marble_stairs",MARBLE);
+        public static final Block MARBLE_WALL = new WallBase("marble_wall",MARBLE);
+        public static final Block POLISHED_MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block POLISHED_MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block POLISHED_MARBLE_STAIRS = new StairsBase(POLISHED_MARBLE.getDefaultState(),"polished_marble_stairs",MARBLE);
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -133,7 +141,7 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_leggings"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.LEGS));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_boots"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.FEET));
             }
-            if (enableStones){
+            if (enableDarkGranite){
                     //Dark Granite
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite"), DARK_GRANITE);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_granite"), new BlockItem(DARK_GRANITE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
@@ -149,6 +157,23 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_dark_granite_slab"), new BlockItem(POLISHED_DARK_GRANITE_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_dark_granite_stairs"), POLISHED_DARK_GRANITE_STAIRS);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_dark_granite_stairs"), new BlockItem(POLISHED_DARK_GRANITE_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            }
+            if (enableMarble){
+                    //Marble
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marble"), MARBLE);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marble"), new BlockItem(MARBLE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marble_slab"), MARBLE_SLAB);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marble_slab"), new BlockItem(MARBLE_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marble_stairs"), MARBLE_STAIRS);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marble_stairs"), new BlockItem(MARBLE_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marble_wall"), MARBLE_WALL);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marble_wall"), new BlockItem(MARBLE_WALL, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_marble"), POLISHED_MARBLE);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_marble"), new BlockItem(POLISHED_MARBLE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_marble_slab"), POLISHED_MARBLE_SLAB);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_marble_slab"), new BlockItem(POLISHED_MARBLE_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                    Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_marble_stairs"), POLISHED_MARBLE_STAIRS);
+                    Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_marble_stairs"), new BlockItem(POLISHED_MARBLE_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             }
 
 
