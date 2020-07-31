@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "vanillaenhanced:dark_granite"
+      "item": "vanillaenhanced:polished_marble"
     }
   },
   "result": {
-    "item": "vanillaenhanced:dark_granite_stairs",
+    "item": "vanillaenhanced:polished_marble_stairs",
     "count": 4
   }
 }

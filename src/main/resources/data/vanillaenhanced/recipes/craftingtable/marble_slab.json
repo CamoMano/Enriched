@@ -5,11 +5,11 @@
   ],
   "key": {
     "#": {
-      "item": "vanillaenhanced:dark_granite"
+      "item": "vanillaenhanced:marble"
     }
   },
   "result": {
-    "item": "vanillaenhanced:dark_granite_slab",
+    "item": "vanillaenhanced:marble_slab",
     "count": 6
   }
 }

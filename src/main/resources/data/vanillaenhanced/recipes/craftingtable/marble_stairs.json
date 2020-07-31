@@ -1,16 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
+    "#  ",
+    "## ",
     "###"
   ],
   "key": {
     "#": {
-      "item": "vanillaenhanced:dark_granite"
+      "item": "vanillaenhanced:marble"
     }
   },
   "result": {
-    "item": "vanillaenhanced:dark_granite_wall",
-    "count": 6
+    "item": "vanillaenhanced:marble_stairs",
+    "count": 4
   }
 }
