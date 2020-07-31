@@ -8,14 +8,14 @@ import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 
-import static com.vanillaenhanced.registry.ModInit.enableRubyGear;
-import static com.vanillaenhanced.registry.ModInit.enableSapphireGear;
+import static com.vanillaenhanced.registry.ModInit.*;
 
 
 public class Generation {
 
     public static void handleBiome(Biome biome) {
         if (biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
+            if (enableDarkGranite){
             biome.addFeature(
                     GenerationStep.Feature.UNDERGROUND_ORES,
                     Feature.ORE.configure(
@@ -29,7 +29,22 @@ public class Generation {
                                     0, //Bottom Offset
                                     0, //Min y level
                                     75 //Max y level
-                            ))));
+                            ))));}
+            if (enableMarble){
+                biome.addFeature(
+                        GenerationStep.Feature.UNDERGROUND_ORES,
+                        Feature.ORE.configure(
+                                new OreFeatureConfig(
+                                        OreFeatureConfig.Target.NATURAL_STONE,
+                                        ModInit.MARBLE.getDefaultState(),
+                                        30 //Ore vein size
+                                )).createDecoratedFeature(
+                                Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
+                                        7, //Number of veins per chunk
+                                        0, //Bottom Offset
+                                        0, //Min y level
+                                        80 //Max y level
+                                ))));}
             if (enableRubyGear) {
                 biome.addFeature(
                         GenerationStep.Feature.UNDERGROUND_ORES,
@@ -37,7 +52,7 @@ public class Generation {
                                 new OreFeatureConfig(
                                         OreFeatureConfig.Target.NATURAL_STONE,
                                         ModInit.RUBY_ORE.getDefaultState(),
-                                        4 //Ore vein size
+                                        3 //Ore vein size
                                 )).createDecoratedFeature(
                                 Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
                                         5, //Number of veins per chunk
@@ -69,7 +84,7 @@ public class Generation {
                                 new OreFeatureConfig(
                                         OreFeatureConfig.Target.NATURAL_STONE,
                                         ModInit.SAPPHIRE_ORE.getDefaultState(),
-                                        4 //Ore vein size
+                                        3 //Ore vein size
                                 )).createDecoratedFeature(
                                 Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
                                         5, //Number of veins per chunk
