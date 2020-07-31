@@ -32,6 +32,6 @@ public class ToolMaterialSapphire implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModInit.RUBY);
+        return Ingredient.ofItems(ModInit.SAPPHIRE);
     }
 }

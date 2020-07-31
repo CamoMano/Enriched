@@ -35,12 +35,12 @@ public class ArmorMaterialSapphire implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModInit.RUBY);
+        return Ingredient.ofItems(ModInit.SAPPHIRE);
     }
 
     @Override
     public String getName() {
-        return "ruby";
+        return "sapphire";
     }
 
     @Override
