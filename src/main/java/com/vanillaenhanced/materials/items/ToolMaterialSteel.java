@@ -9,7 +9,7 @@ import net.minecraft.recipe.Ingredient;
 public class ToolMaterialSteel implements ToolMaterial {
         @Override
         public int getDurability() {
-            return 750;
+            return 850;
         }
 
         @Override

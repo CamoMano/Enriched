@@ -39,6 +39,7 @@ public class VanillaEnhanced implements ModInitializer {
             Generation.handleBiome(biome);
         }
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
+
     }
 
 

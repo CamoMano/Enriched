@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 public class ToolMaterialSapphire implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 600;
+        return 650;
     }
 
     @Override

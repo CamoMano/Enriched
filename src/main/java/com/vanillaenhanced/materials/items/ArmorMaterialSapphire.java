@@ -15,7 +15,7 @@ public class ArmorMaterialSapphire implements ArmorMaterial {
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()]*15;
+        return BASE_DURABILITY[slot.getEntitySlotId()]*18;
     }
 
     @Override
