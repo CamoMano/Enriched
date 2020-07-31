@@ -4,7 +4,7 @@ import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.Generation;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import me.sargunvohra.mcmods.autoconfig1u.serializer.JanksonConfigSerializer;
+import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.util.registry.Registry;
@@ -29,7 +29,7 @@ public class VanillaEnhanced implements ModInitializer {
         log(Level.INFO, "Hello there.");
 
         //Config
-        AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
+        AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
         //Setup

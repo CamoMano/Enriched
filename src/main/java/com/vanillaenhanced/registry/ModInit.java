@@ -22,14 +22,14 @@ import static net.minecraft.sound.BlockSoundGroup.METAL;
 
 public class ModInit{
 
-        static boolean enableObsidianGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableObsidianGear;
-        static boolean enableEmeraldGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableEmeraldGear;
-        static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
-        static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
-        static boolean enableSapphireGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSapphireGear;
-        static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
-        static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
-        static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
+        public static boolean enableObsidianGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableObsidianGear;
+        public static boolean enableEmeraldGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableEmeraldGear;
+        public static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
+        public static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
+        public static boolean enableSapphireGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSapphireGear;
+        public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
+        public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
+        public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
