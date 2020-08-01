@@ -25,7 +25,7 @@ public class DiverseForest extends Biome {
                         .fogColor(12638463)
                         .moodSound(BiomeMoodSound.CAVE)
                         .build()).parent((String)null)
-                .noises(ImmutableList.of(new Biome.MixedNoisePoint(0.0F, 0.0F, 0.0F, 0.0F, 1.0F))));
+                .noises(ImmutableList.of(new Biome.MixedNoisePoint(0.7F, 0.0F, 0.0F, 0.0F, 1.0F))));
         this.addStructureFeature(DefaultBiomeFeatures.STRONGHOLD);
         this.addStructureFeature(DefaultBiomeFeatures.PILLAGER_OUTPOST);
         DefaultBiomeFeatures.addDefaultUndergroundStructures(this);

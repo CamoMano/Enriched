@@ -1,14 +1,30 @@
 package com.vanillaenhanced.world;
 
 import com.vanillaenhanced.registry.ModInit;
+import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
+import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
+import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static com.vanillaenhanced.registry.ModInit.*;
+import static net.minecraft.block.Blocks.OAK_LOG;
 
 
 public class Generation {
@@ -113,4 +129,48 @@ public class Generation {
         }
     }
 
+
+    private static final List<Biome> checkedBiomes = new ArrayList<>();
+
+    public static void initBiomeFeatures() {
+        setupTrees();
+
+        for (Biome biome : Registry.BIOME) {
+            addToBiome(biome);
+        }
+
+        //Handles modded biomes
+        RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> addToBiome(biome));
+    }
+
+    private static void setupTrees() {
+        RUBBER_TREE_FEATURE = Registry.register(Registry.FEATURE, new Identifier(MOD_ID, "rubber_tree"), new RedwoodTreeFeature(TreeFeatureConfig.CODEC));
+        RUBBER_TREE_DECORATOR = Registry.register(Registry.DECORATOR, new Identifier(MOD_ID,"rubber_tree"), new RedwoodTreeDecorator(ChanceDecoratorConfig.field_24980));
+
+        WeightedBlockStateProvider logProvider = new WeightedBlockStateProvider();
+        logProvider.addState(OAK_LOG.getDefaultState(), 10);
+
+        RUBBER_TREE_CONFIG = new TreeFeatureConfig.Builder(
+                logProvider,
+                new SimpleBlockStateProvider(REDWOOD_LEAVES.getDefaultState()),
+                new RedwoodTreeFeature.FoliagePlacer(2, 2, 0, 0, 4),
+                new StraightTrunkPlacer(4,8,8),
+                new TwoLayersFeatureSize(1, 0, 1)
+        ).build();
+    }
+
+    private static void addToBiome(Biome biome) {
+        if (checkedBiomes.contains(biome)) {
+            //Just to be sure we dont add the stuff twice to the same biome
+            return;
+        }
+        checkedBiomes.add(biome);
+
+
+        if (biome.getCategory() == Biome.Category.FOREST || biome.getCategory() == Biome.Category.TAIGA || biome.getCategory() == Biome.Category.SWAMP) {
+            biome.addFeature(GenerationStep.Feature.VEGETAL_DECORATION,
+                    RUBBER_TREE_FEATURE.configure(RUBBER_TREE_CONFIG)
+            );
+        }
+    }
 }
