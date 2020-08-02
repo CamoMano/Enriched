@@ -3,9 +3,7 @@ package com.vanillaenhanced.registry;
 
 import com.vanillaenhanced.biome.DiverseForest;
 import com.vanillaenhanced.biome.RedwoodForest;
-import com.vanillaenhanced.blocks.BlockRedwoodSapling;
-import com.vanillaenhanced.blocks.StairsBase;
-import com.vanillaenhanced.blocks.WallBase;
+import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
@@ -22,6 +20,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.SignType;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
@@ -29,6 +28,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
+import static net.minecraft.block.Blocks.SPRUCE_LOG;
 import static net.minecraft.sound.BlockSoundGroup.METAL;
 
 
@@ -73,8 +73,21 @@ public class ModInit{
         public static final Block POLISHED_MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
         public static final Block POLISHED_MARBLE_STAIRS = new StairsBase(POLISHED_MARBLE.getDefaultState(),"polished_marble_stairs",MARBLE);
         public static final Block REDWOOD_LEAVES = new LeavesBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_LEAVES).ticksRandomly().sounds(BlockSoundGroup.GRASS).strength(1.5f,6.0f));
-        public static final Block REDWOOD_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_LOG).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
+        public static final Block STRIPPED_REDWOOD_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_SPRUCE_LOG).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
+        public static final Block REDWOOD_LOG = new StripableBlock(SPRUCE_LOG, STRIPPED_REDWOOD_LOG);
+        public static final Block REDWOOD_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
+        public static final Block REDWOOD_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
+        public static final Block REDWOOD_STAIRS = new StairsBase(REDWOOD_PLANKS.getDefaultState(),"redwood_stairs",REDWOOD_PLANKS);
+        public static final Block REDWOOD_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
+        public static final Block REDWOOD_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
         public static final Block REDWOOD_SAPLING = new BlockRedwoodSapling();
+        public static final Block REDWOOD_BUTTON = new RedwoodButtonBlock("redwood_button",REDWOOD_PLANKS);
+        public static final Block REDWOOD_DOOR = new RedwoodDoorBlock("redwood_door", REDWOOD_PLANKS);
+        public static final Block REDWOOD_PRESSURE_PLATE = new RedwoodPressurePlateBlock("redwood_pressure_plate",REDWOOD_PLANKS);
+        public static final Block REDWOOD_TRAPDOOR = new RedwoodTrapdoorBlock("redwood_trapdoor",REDWOOD_PLANKS);
+        public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
+        public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
+
 
 
         //Biomes
@@ -101,8 +114,32 @@ public class ModInit{
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_leaves"), new BlockItem(REDWOOD_LEAVES, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_log"), REDWOOD_LOG);
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_log"), new BlockItem(REDWOOD_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_planks"), REDWOOD_PLANKS);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_planks"), new BlockItem(REDWOOD_PLANKS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_stairs"), REDWOOD_STAIRS);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_stairs"), new BlockItem(REDWOOD_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_fence"), REDWOOD_FENCE);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_fence"), new BlockItem(REDWOOD_FENCE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_fence_gate"), REDWOOD_FENCE_GATE);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_fence_gate"), new BlockItem(REDWOOD_FENCE_GATE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "stripped_redwood_log"), STRIPPED_REDWOOD_LOG);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_redwood_log"), new BlockItem(STRIPPED_REDWOOD_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sapling"), REDWOOD_SAPLING);
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sapling"), new BlockItem(REDWOOD_SAPLING, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_button"), REDWOOD_BUTTON);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_button"), new BlockItem(REDWOOD_BUTTON, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_slab"), REDWOOD_SLAB);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_slab"), new BlockItem(REDWOOD_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_door"), REDWOOD_DOOR);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_door"), new BlockItem(REDWOOD_DOOR, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_trapdoor"), REDWOOD_TRAPDOOR);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_trapdoor"), new BlockItem(REDWOOD_TRAPDOOR, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_pressure_plate"), REDWOOD_PRESSURE_PLATE);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_pressure_plate"), new BlockItem(REDWOOD_PRESSURE_PLATE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sign"), REDWOOD_SIGN);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sign"), new BlockItem(REDWOOD_SIGN, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), REDWOOD_WALL_SIGN);
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE));
             FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
             flammableRegistry.add(REDWOOD_LOG, 5, 5);
             flammableRegistry.add(REDWOOD_LEAVES, 30, 60);

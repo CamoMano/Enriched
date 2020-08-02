@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "vanillaenhanced:block/stripped_redwood_log_top",
+    "side": "vanillaenhanced:block/stripped_redwood_log"
+  }
+}
