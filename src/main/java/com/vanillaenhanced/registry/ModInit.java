@@ -42,7 +42,7 @@ public class ModInit{
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
-        public static boolean enableBiomes = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
+        public static boolean enableBiomes = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableBiomes;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
