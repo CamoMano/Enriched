@@ -1,6 +1,5 @@
 package com.vanillaenhanced.world;
 
-import com.vanillaenhanced.biome.RedwoodForest;
 import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
@@ -19,14 +18,12 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
-import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static com.vanillaenhanced.registry.ModInit.*;
-import static net.minecraft.block.Blocks.OAK_LOG;
 
 
 public class Generation {

@@ -1,7 +1,6 @@
 package com.vanillaenhanced.world.feature.tree;
 
 import com.vanillaenhanced.registry.ModInit;
-import com.vanillaenhanced.world.Generation;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;

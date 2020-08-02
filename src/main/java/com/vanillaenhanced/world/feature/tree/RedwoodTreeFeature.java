@@ -1,7 +1,6 @@
 package com.vanillaenhanced.world.feature.tree;
 
 import com.mojang.serialization.Codec;
-import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
