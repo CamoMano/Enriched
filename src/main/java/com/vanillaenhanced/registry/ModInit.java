@@ -42,6 +42,7 @@ public class ModInit{
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
+        public static boolean enableBiomes = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -106,14 +107,13 @@ public class ModInit{
             flammableRegistry.add(REDWOOD_LOG, 5, 5);
             flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
-
-            OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE,  2D);
-            OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE,  2D);
-            OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
-            OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
-            Generation.initBiomeFeatures();
-
-            //Obsidian Tools
+        if (enableBiomes) {
+                OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 2D);
+                OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 2D);
+                OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
+                OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
+                Generation.initBiomeFeatures();
+        }
 
             if (enableFood) {
                     //Food

@@ -24,6 +24,8 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
     public boolean enableDarkGranite = true;
     @Comment("Should Marble be enabled?")
     public boolean enableMarble = true;
+    @Comment("Should the added Biomes be enabled?")
+    public boolean enableBiomes = true;
 
 
 
