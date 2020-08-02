@@ -3,11 +3,11 @@ package com.vanillaenhanced.blocks;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.TrapdoorBlock;
+import net.minecraft.block.DoorBlock;
 
-public class RedwoodTrapdoorBlock extends TrapdoorBlock {
+public class WoodDoorBase extends DoorBlock {
 
-	public RedwoodTrapdoorBlock(String name, AbstractBlock copy) {
+	public WoodDoorBase(String name, AbstractBlock copy) {
 		super(FabricBlockSettings.copy(copy));
 	}
 }

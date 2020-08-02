@@ -7,9 +7,9 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.PressurePlateBlock;
 
 
-public class RedwoodPressurePlateBlock extends PressurePlateBlock {
+public class WoodPressurePlateBase extends PressurePlateBlock {
 
-	public RedwoodPressurePlateBlock(String name, AbstractBlock copy) {
+	public WoodPressurePlateBase(String name, AbstractBlock copy) {
 		super(PressurePlateBlock.ActivationRule.EVERYTHING,FabricBlockSettings.copy(copy));
 	}
 

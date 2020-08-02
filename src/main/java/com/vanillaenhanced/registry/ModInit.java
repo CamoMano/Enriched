@@ -81,12 +81,12 @@ public class ModInit{
         public static final Block REDWOOD_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
         public static final Block REDWOOD_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
         public static final Block REDWOOD_SAPLING = new BlockRedwoodSapling();
-        public static final Block REDWOOD_BUTTON = new RedwoodButtonBlock("redwood_button",REDWOOD_PLANKS);
-        public static final Block REDWOOD_DOOR = new RedwoodDoorBlock("redwood_door", REDWOOD_PLANKS);
-        public static final Block REDWOOD_PRESSURE_PLATE = new RedwoodPressurePlateBlock("redwood_pressure_plate",REDWOOD_PLANKS);
-        public static final Block REDWOOD_TRAPDOOR = new RedwoodTrapdoorBlock("redwood_trapdoor",REDWOOD_PLANKS);
-        public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
-        public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
+        public static final Block REDWOOD_BUTTON = new WoodButtonBase("redwood_button",REDWOOD_PLANKS);
+        public static final Block REDWOOD_DOOR = new WoodDoorBase("redwood_door", REDWOOD_PLANKS);
+        public static final Block REDWOOD_PRESSURE_PLATE = new WoodPressurePlateBase("redwood_pressure_plate",REDWOOD_PLANKS);
+        public static final Block REDWOOD_TRAPDOOR = new WoodTrapdoorBase("redwood_trapdoor",REDWOOD_PLANKS);
+        //public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
+        //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
 
 
 
@@ -136,10 +136,10 @@ public class ModInit{
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_trapdoor"), new BlockItem(REDWOOD_TRAPDOOR, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_pressure_plate"), REDWOOD_PRESSURE_PLATE);
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_pressure_plate"), new BlockItem(REDWOOD_PRESSURE_PLATE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sign"), REDWOOD_SIGN);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sign"), new BlockItem(REDWOOD_SIGN, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sign"), REDWOOD_SIGN);
+            //Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sign"), new BlockItem(REDWOOD_SIGN, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
             //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), REDWOOD_WALL_SIGN);
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE));
+            //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE));
             FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
             flammableRegistry.add(REDWOOD_LOG, 5, 5);
             flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
