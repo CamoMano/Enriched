@@ -3,6 +3,7 @@ package com.vanillaenhanced.registry;
 
 import com.vanillaenhanced.biome.DiverseForest;
 import com.vanillaenhanced.biome.RedwoodForest;
+import com.vanillaenhanced.blocks.BlockRedwoodSapling;
 import com.vanillaenhanced.blocks.StairsBase;
 import com.vanillaenhanced.blocks.WallBase;
 import com.vanillaenhanced.config.ModConfig;
@@ -72,7 +73,7 @@ public class ModInit{
         public static final Block POLISHED_MARBLE_STAIRS = new StairsBase(POLISHED_MARBLE.getDefaultState(),"polished_marble_stairs",MARBLE);
         public static final Block REDWOOD_LEAVES = new LeavesBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_LEAVES).ticksRandomly().sounds(BlockSoundGroup.GRASS).strength(1.5f,6.0f));
         public static final Block REDWOOD_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_LOG).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
-        public static final Block REDWOOD_SAPLING = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_SAPLING).sounds(BlockSoundGroup.GRASS).strength(1.5f,6.0f));
+        public static final Block REDWOOD_SAPLING = new BlockRedwoodSapling();
 
 
         //Biomes
