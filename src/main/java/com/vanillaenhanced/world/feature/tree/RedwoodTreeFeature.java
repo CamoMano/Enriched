@@ -1,6 +1,7 @@
 package com.vanillaenhanced.world.feature.tree;
 
 import com.mojang.serialization.Codec;
+import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
@@ -46,8 +47,8 @@ public class RedwoodTreeFeature extends TreeFeature {
 
 			if (topPos == null) return;
 
-			/*for (int i = 0; i < TechRebornConfig.rubberTreeSpireHeight; i++) {
-				world.setBlockState(pos.up(i), OAK_LEAVES.getDefaultState(), 19);
+			/*for (int i = 0; i < 4; i++) {
+				world.setBlockState(pos.up(i), ModInit.REDWOOD_LEAVES.getDefaultState(), 19);
 			}*/
 		}
 	}

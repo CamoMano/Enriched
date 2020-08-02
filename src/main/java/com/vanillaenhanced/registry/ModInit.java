@@ -2,6 +2,7 @@ package com.vanillaenhanced.registry;
 
 
 import com.vanillaenhanced.biome.DiverseForest;
+import com.vanillaenhanced.biome.RedwoodForest;
 import com.vanillaenhanced.blocks.StairsBase;
 import com.vanillaenhanced.blocks.WallBase;
 import com.vanillaenhanced.config.ModConfig;
@@ -13,6 +14,7 @@ import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.biomes.v1.OverworldBiomes;
 import net.fabricmc.fabric.api.biomes.v1.OverworldClimate;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.EquipmentSlot;
@@ -68,11 +70,14 @@ public class ModInit{
         public static final Block POLISHED_MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
         public static final Block POLISHED_MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f,6.0f));
         public static final Block POLISHED_MARBLE_STAIRS = new StairsBase(POLISHED_MARBLE.getDefaultState(),"polished_marble_stairs",MARBLE);
-        public static final Block REDWOOD_LEAVES = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.VINE).strength(1.5f,6.0f));
+        public static final Block REDWOOD_LEAVES = new LeavesBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_LEAVES).ticksRandomly().sounds(BlockSoundGroup.GRASS).strength(1.5f,6.0f));
+        public static final Block REDWOOD_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_LOG).sounds(BlockSoundGroup.WOOD).strength(6.0f,7.0f));
+        public static final Block REDWOOD_SAPLING = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_SAPLING).sounds(BlockSoundGroup.GRASS).strength(1.5f,6.0f));
 
 
         //Biomes
         public static final Biome DIVERSE_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "diverse_forest"), new DiverseForest());
+        public static final Biome REDWOOD_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "redwood_forest"), new RedwoodForest());
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -83,18 +88,28 @@ public class ModInit{
         public static final Item BERRY_JUICE = new BottleFood (new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
 
         //Features
-        public static Feature<TreeFeatureConfig> RUBBER_TREE_FEATURE;
-        public static RedwoodTreeDecorator RUBBER_TREE_DECORATOR;
-        public static TreeFeatureConfig RUBBER_TREE_CONFIG;
+        public static Feature<TreeFeatureConfig> REDWOOD_TREE_FEATURE;
+        public static RedwoodTreeDecorator REDWOOD_TREE_DECORATOR;
+        public static TreeFeatureConfig REDWOOD_TREE_CONFIG;
 
         //Register
     public static void Register() {
 
-            OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE,  2D);
-            OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
-            OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
             Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_leaves"), REDWOOD_LEAVES);
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_leaves"), new BlockItem(REDWOOD_LEAVES, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_log"), REDWOOD_LOG);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_log"), new BlockItem(REDWOOD_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sapling"), REDWOOD_SAPLING);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sapling"), new BlockItem(REDWOOD_SAPLING, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
+            flammableRegistry.add(REDWOOD_LOG, 5, 5);
+            flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
+
+
+            OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE,  2D);
+            OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE,  2D);
+            OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
+            OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
             Generation.initBiomeFeatures();
 
             //Obsidian Tools

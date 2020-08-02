@@ -1,5 +1,6 @@
 package com.vanillaenhanced.world;
 
+import com.vanillaenhanced.biome.RedwoodForest;
 import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
@@ -17,6 +18,7 @@ import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.ArrayList;
@@ -144,17 +146,17 @@ public class Generation {
     }
 
     private static void setupTrees() {
-        RUBBER_TREE_FEATURE = Registry.register(Registry.FEATURE, new Identifier(MOD_ID, "rubber_tree"), new RedwoodTreeFeature(TreeFeatureConfig.CODEC));
-        RUBBER_TREE_DECORATOR = Registry.register(Registry.DECORATOR, new Identifier(MOD_ID,"rubber_tree"), new RedwoodTreeDecorator(ChanceDecoratorConfig.field_24980));
+        REDWOOD_TREE_FEATURE = Registry.register(Registry.FEATURE, new Identifier(MOD_ID, "redwood_tree"), new RedwoodTreeFeature(TreeFeatureConfig.CODEC));
+        REDWOOD_TREE_DECORATOR = Registry.register(Registry.DECORATOR, new Identifier(MOD_ID,"redwood_tree"), new RedwoodTreeDecorator(ChanceDecoratorConfig.field_24980));
 
         WeightedBlockStateProvider logProvider = new WeightedBlockStateProvider();
-        logProvider.addState(OAK_LOG.getDefaultState(), 10);
+        logProvider.addState(REDWOOD_LOG.getDefaultState(), 10);
 
-        RUBBER_TREE_CONFIG = new TreeFeatureConfig.Builder(
+        REDWOOD_TREE_CONFIG = new TreeFeatureConfig.Builder(
                 logProvider,
                 new SimpleBlockStateProvider(REDWOOD_LEAVES.getDefaultState()),
-                new RedwoodTreeFeature.FoliagePlacer(2, 2, 0, 0, 4),
-                new StraightTrunkPlacer(4,8,8),
+                new RedwoodTreeFeature.FoliagePlacer(3, 1, 0, 0, 3),
+                new MegaJungleTrunkPlacer(16,16,16),
                 new TwoLayersFeatureSize(1, 0, 1)
         ).build();
     }
@@ -167,9 +169,9 @@ public class Generation {
         checkedBiomes.add(biome);
 
 
-        if (biome.getCategory() == Biome.Category.FOREST || biome.getCategory() == Biome.Category.TAIGA || biome.getCategory() == Biome.Category.SWAMP) {
+        if (biome.equals(REDWOOD_FOREST)) {
             biome.addFeature(GenerationStep.Feature.VEGETAL_DECORATION,
-                    RUBBER_TREE_FEATURE.configure(RUBBER_TREE_CONFIG)
+                    REDWOOD_TREE_FEATURE.configure(REDWOOD_TREE_CONFIG)
             );
         }
     }

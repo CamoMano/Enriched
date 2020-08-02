@@ -13,7 +13,7 @@ public class RedwoodSaplingGenerator extends SaplingGenerator {
 	@Nullable
 	@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
-		return ModInit.RUBBER_TREE_FEATURE.configure(ModInit.RUBBER_TREE_CONFIG);
+		return ModInit.REDWOOD_TREE_FEATURE.configure(ModInit.REDWOOD_TREE_CONFIG);
 	}
 
 }
