@@ -101,7 +101,7 @@ public class ModInit{
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
-        public static final Item BEEF_STEW = new BowlFood (new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(10).saturationModifier(24.0F).build()));
+        public static final Item BEEF_STEW = new BowlFood (new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
         public static final Item BERRY_JUICE = new BottleFood (new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
 
         //Features
