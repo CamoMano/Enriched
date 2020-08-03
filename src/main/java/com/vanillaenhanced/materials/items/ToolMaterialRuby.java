@@ -1,7 +1,6 @@
 package com.vanillaenhanced.materials.items;
 
 import com.vanillaenhanced.registry.ModInit;
-import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
