@@ -41,6 +41,7 @@ public class RedwoodForest extends Biome {
         DefaultBiomeFeatures.addJungleGrass(this);
         DefaultBiomeFeatures.addForestFlowers(this);
         DefaultBiomeFeatures.addMineables(this);
+        DefaultBiomeFeatures.addSweetBerryBushes(this);
         DefaultBiomeFeatures.addDefaultOres(this);
         DefaultBiomeFeatures.addDefaultDisks(this);
         DefaultBiomeFeatures.addDefaultVegetation(this);
@@ -48,6 +49,7 @@ public class RedwoodForest extends Biome {
         DefaultBiomeFeatures.addDefaultMushrooms(this);
         this.addSpawn(SpawnGroup.CREATURE, new SpawnEntry(EntityType.RABBIT, 12, 4, 4));
         this.addSpawn(SpawnGroup.CREATURE, new SpawnEntry(EntityType.FOX, 10, 1, 2));
+        this.addSpawn(SpawnGroup.CREATURE, new Biome.SpawnEntry(EntityType.WOLF, 8, 4, 4));
         this.addSpawn(SpawnGroup.CREATURE, new SpawnEntry(EntityType.COW, 8, 4, 4));
         this.addSpawn(SpawnGroup.CREATURE, new Biome.SpawnEntry(EntityType.SHEEP, 12, 4, 4));
         this.addSpawn(SpawnGroup.AMBIENT, new Biome.SpawnEntry(EntityType.BAT, 10, 8, 8));
