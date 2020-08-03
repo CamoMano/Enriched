@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "vanillaenhanced:redwood_sign"
+          "name": "#vanillaenhanced:redwood_sign"
         }
       ],
       "conditions": [
