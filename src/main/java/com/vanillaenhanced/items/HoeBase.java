@@ -8,7 +8,7 @@ import net.minecraft.item.ToolMaterial;
 
 public class HoeBase extends HoeItem {
 	public HoeBase(ToolMaterial toolMaterial_1) {
-        super(toolMaterial_1,0,0.0f, new Settings().group(ItemGroup.TOOLS));
+        super(toolMaterial_1,-2,0.0f, new Settings().group(ItemGroup.TOOLS));
     }
 
 }
