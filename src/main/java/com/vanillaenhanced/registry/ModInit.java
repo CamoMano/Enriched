@@ -110,45 +110,52 @@ public class ModInit{
         //Register
     public static void Register() {
 
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_leaves"), REDWOOD_LEAVES);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_leaves"), new BlockItem(REDWOOD_LEAVES, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_log"), REDWOOD_LOG);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_log"), new BlockItem(REDWOOD_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_planks"), REDWOOD_PLANKS);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_planks"), new BlockItem(REDWOOD_PLANKS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_stairs"), REDWOOD_STAIRS);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_stairs"), new BlockItem(REDWOOD_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_fence"), REDWOOD_FENCE);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_fence"), new BlockItem(REDWOOD_FENCE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_fence_gate"), REDWOOD_FENCE_GATE);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_fence_gate"), new BlockItem(REDWOOD_FENCE_GATE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "stripped_redwood_log"), STRIPPED_REDWOOD_LOG);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_redwood_log"), new BlockItem(STRIPPED_REDWOOD_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sapling"), REDWOOD_SAPLING);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sapling"), new BlockItem(REDWOOD_SAPLING, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_button"), REDWOOD_BUTTON);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_button"), new BlockItem(REDWOOD_BUTTON, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_slab"), REDWOOD_SLAB);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_slab"), new BlockItem(REDWOOD_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_door"), REDWOOD_DOOR);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_door"), new BlockItem(REDWOOD_DOOR, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_trapdoor"), REDWOOD_TRAPDOOR);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_trapdoor"), new BlockItem(REDWOOD_TRAPDOOR, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_pressure_plate"), REDWOOD_PRESSURE_PLATE);
-            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_pressure_plate"), new BlockItem(REDWOOD_PRESSURE_PLATE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sign"), REDWOOD_SIGN);
-            //Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sign"), new BlockItem(REDWOOD_SIGN, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), REDWOOD_WALL_SIGN);
-            //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE));
-            FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
-            flammableRegistry.add(REDWOOD_LOG, 5, 5);
-            flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
         if (enableBiomes) {
+                //Biomes
                 OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 2D);
                 OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 2D);
                 OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
                 OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
+
+                //Biome Blocks
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_leaves"), REDWOOD_LEAVES);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_leaves"), new BlockItem(REDWOOD_LEAVES, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_log"), REDWOOD_LOG);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_log"), new BlockItem(REDWOOD_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_planks"), REDWOOD_PLANKS);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_planks"), new BlockItem(REDWOOD_PLANKS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_stairs"), REDWOOD_STAIRS);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_stairs"), new BlockItem(REDWOOD_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_fence"), REDWOOD_FENCE);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_fence"), new BlockItem(REDWOOD_FENCE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_fence_gate"), REDWOOD_FENCE_GATE);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_fence_gate"), new BlockItem(REDWOOD_FENCE_GATE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "stripped_redwood_log"), STRIPPED_REDWOOD_LOG);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "stripped_redwood_log"), new BlockItem(STRIPPED_REDWOOD_LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sapling"), REDWOOD_SAPLING);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sapling"), new BlockItem(REDWOOD_SAPLING, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_button"), REDWOOD_BUTTON);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_button"), new BlockItem(REDWOOD_BUTTON, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_slab"), REDWOOD_SLAB);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_slab"), new BlockItem(REDWOOD_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_door"), REDWOOD_DOOR);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_door"), new BlockItem(REDWOOD_DOOR, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_trapdoor"), REDWOOD_TRAPDOOR);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_trapdoor"), new BlockItem(REDWOOD_TRAPDOOR, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_pressure_plate"), REDWOOD_PRESSURE_PLATE);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_pressure_plate"), new BlockItem(REDWOOD_PRESSURE_PLATE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sign"), REDWOOD_SIGN);
+                //Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sign"), new BlockItem(REDWOOD_SIGN, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), REDWOOD_WALL_SIGN);
+                //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE));
+                FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
+                flammableRegistry.add(REDWOOD_LOG, 5, 5);
+                flammableRegistry.add(STRIPPED_REDWOOD_LOG, 5, 5);
+                flammableRegistry.add(REDWOOD_PLANKS, 5, 20);
+                flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
+
+
                 Generation.initBiomeFeatures();
         }
 
