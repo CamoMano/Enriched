@@ -19,7 +19,9 @@
     "main": [
       "com.vanillaenhanced.VanillaEnhanced"
     ],
-    "client": [],
+    "client": [
+	"com.vanillaenhanced.VanillaEnhancedClient"
+	],
     "server": [],
 	"modmenu": [
       "com.vanillaenhanced.config.ModMenu"
