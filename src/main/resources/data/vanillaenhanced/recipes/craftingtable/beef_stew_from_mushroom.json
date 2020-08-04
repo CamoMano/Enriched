@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:carrot"
+        },
+        {
+            "item": "minecraft:baked_potato"
+        },
+        {
+            "item": "minecraft:cooked_beef"
+        },
+        {
+            "item": "minecraft:mushroom_stew"
+        }
+    ],
+    "result": {
+        "item": "vanillaenhanced:beef_stew",
+        "count": 1
+    }
+}

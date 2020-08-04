@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:marble"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:marble_wall",
+    "count": 6
+  }
+}

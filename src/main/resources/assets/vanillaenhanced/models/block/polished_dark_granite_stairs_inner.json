@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "vanillaenhanced:block/polished_dark_granite",
+    "top": "vanillaenhanced:block/polished_dark_granite",
+    "side": "vanillaenhanced:block/polished_dark_granite"
+  }
+}

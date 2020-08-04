@@ -1,6 +1,6 @@
 package com.vanillaenhanced.materials.items;
 
-import net.minecraft.item.Items;
+import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -27,7 +27,7 @@ public class ToolMaterialObsidian implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.OBSIDIAN);
+        return Ingredient.ofItems(ModInit.OBSIDIAN_ALLOY_INGOT);
     }
 
     @Override

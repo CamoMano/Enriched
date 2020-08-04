@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "vanillaenhanced:obsidian_alloy_ingot"
+        }
+    },
+    "result": {
+        "item": "vanillaenhanced:obsidian_alloy_block",
+        "count": 1
+    }
+}

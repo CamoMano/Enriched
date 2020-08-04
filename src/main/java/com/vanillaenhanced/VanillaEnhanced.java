@@ -1,19 +1,19 @@
 package com.vanillaenhanced;
 
-import com.vanillaenhanced.blocks.SteelBlock;
 import com.vanillaenhanced.config.ModConfig;
-import com.vanillaenhanced.materials.items.*;
-import com.vanillaenhanced.registry.ModRegistry;
+import com.vanillaenhanced.registry.ModInit;
+import com.vanillaenhanced.world.Generation;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.block.Block;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import static com.vanillaenhanced.world.Generation.handleBiome;
 
 
 public class VanillaEnhanced implements ModInitializer {
@@ -22,11 +22,7 @@ public class VanillaEnhanced implements ModInitializer {
 
     public static final String MOD_ID = "vanillaenhanced";
     public static final String MOD_NAME = "VanillaEnhanced";
-    public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
-    public static final ArmorMaterial EMERALD_ARMOR = new ArmorMaterialEmerald();
-    public static final ArmorMaterial STEEL_ARMOR = new ArmorMaterialSteel();
-    public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
-    public static final Block STEEL_BLOCK = new SteelBlock();
+
 
     @Override
     public void onInitialize() {
@@ -36,25 +32,16 @@ public class VanillaEnhanced implements ModInitializer {
         AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
-        if (config.enableObsidianGear == true) {
-            ModRegistry.obsidian();
-        }else {
-            LOGGER.info("[" + MOD_NAME + "] " + "Obsidian Gear Disabled");
+        //Setup
+        ModInit.Register();
+        for (Biome biome : Registry.BIOME)
+        {
+            Generation.handleBiome(biome);
         }
+        RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
 
-        if (config.enableEmeraldGear == true) {
-            ModRegistry.emerald();
-        } else{
-            LOGGER.info("[" + MOD_NAME + "] " + "Emerald Gear Disabled");
     }
 
-        if (config.enableSteelGear == true) {
-            ModRegistry.steel();
-        } else{
-            LOGGER.info("[" + MOD_NAME + "] " + "Steel Gear Disabled");
-        }
-
-    }
 
     public static void log(Level level, String message){
         LOGGER.log(level, "["+MOD_NAME+"] " + message);

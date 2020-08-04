@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "vanillaenhanced:redwood_planks"
+    }
+  ],
+  "result": {
+    "item": "vanillaenhanced:redwood_button"
+  }
+}
