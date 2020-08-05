@@ -132,14 +132,16 @@ public class Generation {
     private static final List<Biome> checkedBiomes = new ArrayList<>();
 
     public static void initBiomeFeatures() {
-        setupTrees();
 
-        for (Biome biome : Registry.BIOME) {
-            addToBiome(biome);
-        }
+            setupTrees();
 
-        //Handles modded biomes
-        RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> addToBiome(biome));
+            for (Biome biome : Registry.BIOME) {
+                addToBiome(biome);
+            }
+
+            //Handles modded biomes
+            RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> addToBiome(biome));
+
     }
 
     private static void setupTrees() {

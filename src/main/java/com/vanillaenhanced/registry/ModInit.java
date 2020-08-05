@@ -1,6 +1,7 @@
 package com.vanillaenhanced.registry;
 
 
+import com.vanillaenhanced.biome.DesertMountains;
 import com.vanillaenhanced.biome.DiverseForest;
 import com.vanillaenhanced.biome.RedwoodForest;
 import com.vanillaenhanced.blocks.*;
@@ -95,6 +96,7 @@ public class ModInit{
         //Biomes
         public static final Biome DIVERSE_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "diverse_forest"), new DiverseForest());
         public static final Biome REDWOOD_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "redwood_forest"), new RedwoodForest());
+        public static final Biome DESERT_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "desert_mountains"), new DesertMountains());
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -112,13 +114,6 @@ public class ModInit{
         //Register
     public static void Register() {
 
-
-        if (enableBiomes) {
-                //Biomes
-                OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 2D);
-                OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 2D);
-                OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
-                OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
 
                 //Biome Blocks
                 Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_leaves"), REDWOOD_LEAVES);
@@ -164,7 +159,14 @@ public class ModInit{
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
 
-                Generation.initBiomeFeatures();
+            if (enableBiomes) {
+                    //Biomes
+                    OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 2);
+                    OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 1);
+                    OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 1);
+                    OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
+                    OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
+                    Generation.initBiomeFeatures();
         }
 
             if (enableFood) {
@@ -261,7 +263,7 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_leggings"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.LEGS));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_boots"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.FEET));
             }
-            if (enableDarkGranite){
+            //if (enableDarkGranite){
                     //Dark Granite
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite"), DARK_GRANITE);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_granite"), new BlockItem(DARK_GRANITE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
@@ -277,8 +279,8 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_dark_granite_slab"), new BlockItem(POLISHED_DARK_GRANITE_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_dark_granite_stairs"), POLISHED_DARK_GRANITE_STAIRS);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_dark_granite_stairs"), new BlockItem(POLISHED_DARK_GRANITE_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            }
-            if (enableMarble){
+            //}
+            //if (enableMarble){
                     //Marble
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marble"), MARBLE);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marble"), new BlockItem(MARBLE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
@@ -294,7 +296,7 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_marble_slab"), new BlockItem(POLISHED_MARBLE_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_marble_stairs"), POLISHED_MARBLE_STAIRS);
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_marble_stairs"), new BlockItem(POLISHED_MARBLE_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-            }
+           // }
 
 
         }
