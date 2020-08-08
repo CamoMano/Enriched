@@ -1,6 +1,5 @@
 package com.vanillaenhanced.biome;
 
-import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.sound.BiomeMoodSound;
@@ -24,8 +23,7 @@ public class RedwoodForest extends Biome {
                         .waterFogColor(329011)
                         .fogColor(12638463)
                         .moodSound(BiomeMoodSound.CAVE)
-                        .build()).parent((String)null)
-                .noises(ImmutableList.of(new MixedNoisePoint(0.5F, 0.5F, 0.0F, 0.0F, 1.0F))));
+                        .build()).parent((String)null));
         this.addStructureFeature(DefaultBiomeFeatures.STRONGHOLD);
         this.addStructureFeature(DefaultBiomeFeatures.PILLAGER_OUTPOST);
         DefaultBiomeFeatures.addDefaultUndergroundStructures(this);

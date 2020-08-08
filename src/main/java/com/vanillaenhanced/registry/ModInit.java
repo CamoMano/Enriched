@@ -3,6 +3,7 @@ package com.vanillaenhanced.registry;
 
 import com.vanillaenhanced.biome.DesertMountains;
 import com.vanillaenhanced.biome.DiverseForest;
+import com.vanillaenhanced.biome.ExtremeMountains;
 import com.vanillaenhanced.biome.RedwoodForest;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
@@ -97,6 +98,7 @@ public class ModInit{
         public static final Biome DIVERSE_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "diverse_forest"), new DiverseForest());
         public static final Biome REDWOOD_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "redwood_forest"), new RedwoodForest());
         public static final Biome DESERT_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "desert_mountains"), new DesertMountains());
+        public static final Biome EXTREME_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_mountains"), new ExtremeMountains());
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -158,12 +160,12 @@ public class ModInit{
                 flammableRegistry.add(REDWOOD_PLANKS, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
-
             if (enableBiomes) {
                     //Biomes
                     OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 2);
                     OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 1);
                     OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 1);
+                    OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 1);
                     OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
                     OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
                     Generation.initBiomeFeatures();

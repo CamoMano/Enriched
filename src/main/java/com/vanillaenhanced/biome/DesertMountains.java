@@ -1,6 +1,5 @@
 package com.vanillaenhanced.biome;
 
-import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.sound.BiomeMoodSound;
@@ -9,7 +8,6 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 
-import javax.swing.table.DefaultTableModel;
 
 
 public class DesertMountains extends Biome {
@@ -18,7 +16,7 @@ public class DesertMountains extends Biome {
             super((new Settings()).configureSurfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.SAND_CONFIG)
                     .precipitation(Precipitation.NONE)
                     .category(Category.DESERT)
-                    .depth(0.5F).scale(0.75F)
+                    .depth(1.0F).scale(0.75F)
                     .temperature(2.0F)
                     .downfall(0.0F)
                     .effects((new BiomeEffects.Builder())
@@ -26,8 +24,7 @@ public class DesertMountains extends Biome {
                             .waterFogColor(329011)
                             .fogColor(12638463)
                             .moodSound(BiomeMoodSound.CAVE)
-                            .build()).parent((String) null)
-                    .noises(ImmutableList.of(new MixedNoisePoint(0.5F, -0.5F, 0.0F, 0.0F, 1.0F))));
+                            .build()).parent((String)null));
             this.addStructureFeature(DefaultBiomeFeatures.STRONGHOLD);
             this.addStructureFeature(DefaultBiomeFeatures.DESERT_VILLAGE);
             this.addStructureFeature(DefaultBiomeFeatures.PILLAGER_OUTPOST);
