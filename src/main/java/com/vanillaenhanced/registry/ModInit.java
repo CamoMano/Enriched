@@ -157,16 +157,20 @@ public class ModInit{
                 flammableRegistry.add(REDWOOD_WOOD, 5, 5);
                 flammableRegistry.add(STRIPPED_REDWOOD_WOOD, 5, 5);
                 flammableRegistry.add(REDWOOD_PLANKS, 5, 20);
+                flammableRegistry.add(REDWOOD_STAIRS, 5, 20);
+                flammableRegistry.add(REDWOOD_SLAB, 5, 20);
+                flammableRegistry.add(REDWOOD_FENCE_GATE, 5, 20);
+                flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
             if (enableBiomes) {
                     //Biomes
-                    OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 1.0);
+                    OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 0.75);
                     OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 0.4);
                     OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 0.5);
                     OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 0.25);
-                    OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.20);
-                    OverworldBiomes.addContinentalBiome(ModInit.EXTREME_JUNGLE, OverworldClimate.TEMPERATE, 0.20);
+                    OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.10);
+                    OverworldBiomes.addContinentalBiome(ModInit.EXTREME_JUNGLE, OverworldClimate.TEMPERATE, 0.15);
                     OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
                     OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 0.5);
                     Generation.initBiomeFeatures();

@@ -26,7 +26,6 @@ public class ExtremeMountains extends Biome {
             DefaultBiomeFeatures.addDefaultUndergroundStructures(this);
             this.addStructureFeature(DefaultBiomeFeatures.MOUNTAIN_RUINED_PORTAL);
             DefaultBiomeFeatures.addLandCarvers(this);
-            //DefaultBiomeFeatures.addDefaultLakes(this);
             DefaultBiomeFeatures.addDungeons(this);
             DefaultBiomeFeatures.addMineables(this);
             DefaultBiomeFeatures.addDefaultOres(this);
@@ -36,7 +35,6 @@ public class ExtremeMountains extends Biome {
             DefaultBiomeFeatures.addDefaultGrass(this);
             DefaultBiomeFeatures.addDefaultMushrooms(this);
             DefaultBiomeFeatures.addDefaultVegetation(this);
-            //DefaultBiomeFeatures.addSprings(this);
             DefaultBiomeFeatures.addEmeraldOre(this);
             DefaultBiomeFeatures.addInfestedStone(this);
             DefaultBiomeFeatures.addFrozenTopLayer(this);
