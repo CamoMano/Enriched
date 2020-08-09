@@ -1,10 +1,7 @@
 package com.vanillaenhanced.registry;
 
 
-import com.vanillaenhanced.biome.DesertMountains;
-import com.vanillaenhanced.biome.DiverseForest;
-import com.vanillaenhanced.biome.ExtremeMountains;
-import com.vanillaenhanced.biome.RedwoodForest;
+import com.vanillaenhanced.biome.*;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.items.*;
@@ -99,6 +96,8 @@ public class ModInit{
         public static final Biome REDWOOD_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "redwood_forest"), new RedwoodForest());
         public static final Biome DESERT_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "desert_mountains"), new DesertMountains());
         public static final Biome EXTREME_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_mountains"), new ExtremeMountains());
+        public static final Biome FROZEN_DESERT = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "frozen_desert"), new FrozenDesert());
+        public static final Biome EXTREME_JUNGLE = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_jungle"), new ExtremeJungle());
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -162,12 +161,14 @@ public class ModInit{
 
             if (enableBiomes) {
                     //Biomes
-                    OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 2);
-                    OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 1);
-                    OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 1);
-                    OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 1);
+                    OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 1.0);
+                    OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 0.4);
+                    OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 0.5);
+                    OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 0.25);
+                    OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.20);
+                    OverworldBiomes.addContinentalBiome(ModInit.EXTREME_JUNGLE, OverworldClimate.TEMPERATE, 0.20);
                     OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
-                    OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
+                    OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 0.5);
                     Generation.initBiomeFeatures();
         }
 
