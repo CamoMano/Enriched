@@ -33,6 +33,7 @@ import static net.minecraft.sound.BlockSoundGroup.METAL;
 
 public class ModInit{
 
+        //Config
         public static boolean enableObsidianGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableObsidianGear;
         public static boolean enableEmeraldGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableEmeraldGear;
         public static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
@@ -41,7 +42,12 @@ public class ModInit{
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
-        public static boolean enableBiomes = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableBiomes;
+        public static boolean enableRedwoodForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRedwoodForest;
+        public static boolean enableDiverseForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDiverseForest;
+        public static boolean enableDesertMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDesertMountain;
+        public static boolean enableExtremeMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeMountain;
+        public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
+        public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -163,18 +169,31 @@ public class ModInit{
                 flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
-            if (enableBiomes) {
-                    //Biomes
-                    OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 0.75);
-                    OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 0.4);
-                    OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 0.5);
-                    OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 0.25);
-                    OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.10);
-                    OverworldBiomes.addContinentalBiome(ModInit.EXTREME_JUNGLE, OverworldClimate.TEMPERATE, 0.15);
-                    OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
-                    OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 0.5);
-                    Generation.initBiomeFeatures();
+
+                //Biomes
+        if (enableDiverseForest){
+            OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 0.75);
+            OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
+            OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 0.33);
         }
+        if (enableRedwoodForest){
+            OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 0.4);
+        }
+        if (enableDesertMountain){
+            OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 0.5);
+        }
+        if (enableExtremeMountain){
+            OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 0.25);
+        }
+        if (enableExtremeJungle){
+            OverworldBiomes.addContinentalBiome(ModInit.EXTREME_JUNGLE, OverworldClimate.TEMPERATE, 0.15);
+        }
+        if (enableFrozenDesert){
+            OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.10);
+        }
+
+        Generation.initBiomeFeatures();
+
 
             if (enableFood) {
                     //Food

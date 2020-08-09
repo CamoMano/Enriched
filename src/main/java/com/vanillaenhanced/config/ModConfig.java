@@ -3,29 +3,62 @@ package com.vanillaenhanced.config;
 
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
+import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 
 
 @Config(name = "vanillaenhanced")
     public class ModConfig implements ConfigData {
+
+    //Items & Ores
+    @ConfigEntry.Category("Items")
     @Comment("Should Obsidian Alloy Tools, Armor, and Items be enabled?")
     public boolean enableObsidianGear = true;
+    @ConfigEntry.Category("Items")
     @Comment("Should Emerald Tools and Armor be enabled?")
     public boolean enableEmeraldGear = true;
+    @ConfigEntry.Category("Items")
     @Comment("Should Steel Tools, Armor, and Items be enabled?")
     public boolean enableSteelGear = true;
+    @ConfigEntry.Category("Items")
     @Comment("Should Ruby Tools, Armor, and Items be enabled?")
     public boolean enableRubyGear = true;
+    @ConfigEntry.Category("Items")
     @Comment("Should Sapphire Tools, Armor, and Items be enabled?")
     public boolean enableSapphireGear = true;
+    @ConfigEntry.Category("Items")
     @Comment("Should Food items be enabled?")
     public boolean enableFood = true;
-    @Comment("Should Dark Granite be enabled?")
+
+    //Blocks
+    @ConfigEntry.Category("Blocks")
+    @Comment("Should Dark Granite be generated?")
     public boolean enableDarkGranite = true;
-    @Comment("Should Marble be enabled?")
+    @ConfigEntry.Category("Blocks")
+    @Comment("Should Marble be generated?")
     public boolean enableMarble = true;
-    @Comment("Should the added Biomes be enabled?")
-    public boolean enableBiomes = true;
+
+
+    //Biomes
+    @ConfigEntry.Category("Biomes")
+    @Comment("Should Redwood Forest biomes be enabled?")
+    public boolean enableRedwoodForest = true;
+    @ConfigEntry.Category("Biomes")
+    @Comment("Should Diverse Forest biomes be enabled?")
+    public boolean enableDiverseForest = true;
+    @ConfigEntry.Category("Biomes")
+    @Comment("Should Desert Mountain biomes be enabled?")
+    public boolean enableDesertMountain = true;
+    @ConfigEntry.Category("Biomes")
+    @Comment("Should Extreme Mountain biomes be enabled?")
+    public boolean enableExtremeMountain = true;
+    @ConfigEntry.Category("Biomes")
+    @Comment("Should Extreme Jungle biomes be enabled?")
+    public boolean enableExtremeJungle = true;
+    @ConfigEntry.Category("Biomes")
+    @Comment("Should Frozen Desert biomes be enabled?")
+    public boolean enableFrozenDesert = true;
+
 
 
 
