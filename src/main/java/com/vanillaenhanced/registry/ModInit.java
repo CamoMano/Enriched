@@ -295,7 +295,7 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_boots"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.FEET));
             }
 
-        if (enableAmethystGear) {
+            if (enableAmethystGear) {
             //Amethyst Item/Block
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst"), AMETHYST);
             Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "amethyst_ore"), AMETHYST_ORE);
@@ -313,7 +313,7 @@ public class ModInit{
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_chestplate"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.CHEST));
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_leggings"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.LEGS));
             Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_boots"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.FEET));
-        }
+            }
             //if (enableDarkGranite){
                     //Dark Granite
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite"), DARK_GRANITE);
