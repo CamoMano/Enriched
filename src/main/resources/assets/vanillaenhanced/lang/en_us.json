@@ -4,6 +4,7 @@
 "text.autoconfig.vanillaenhanced.option.enableSteelGear": "Enable Steel Gear",
 "text.autoconfig.vanillaenhanced.option.enableRubyGear": "Enable Ruby Gear",
 "text.autoconfig.vanillaenhanced.option.enableSapphireGear": "Enable Sapphire Gear",
+"text.autoconfig.vanillaenhanced.option.enableAmethystGear": "Enable Amethyst Gear",
 "text.autoconfig.vanillaenhanced.option.enableDarkGranite": "Enable Dark Granite",
 "text.autoconfig.vanillaenhanced.option.enableMarble": "Enable Marble",
 "text.autoconfig.vanillaenhanced.option.enableFood": "Enable Food",
@@ -105,6 +106,18 @@
 "block.vanillaenhanced.redwood_leaves": "Redwood Leaves",
 "biome.vanillaenhanced.redwood_forest": "Redwood Forest",
 "biome.vanillaenhanced.desert_mountains": "Desert Mountains",
-"biome.vanillaenhanced.diverse_forest": "Diverse Forest"
+"biome.vanillaenhanced.diverse_forest": "Diverse Forest",
+"block.vanillaenhanced.amethyst_block": "Amethyst Block",
+"block.vanillaenhanced.amethyst_ore": "Amethyst Ore",
+"item.vanillaenhanced.amethyst": "Amethyst",
+"item.vanillaenhanced.amethyst_pickaxe": "Amethyst Pickaxe",
+"item.vanillaenhanced.amethyst_sword": "Amethyst Sword",
+"item.vanillaenhanced.amethyst_axe": "Amethyst Axe",
+"item.vanillaenhanced.amethyst_shovel": "Amethyst Shovel",
+"item.vanillaenhanced.amethyst_hoe": "Amethyst Hoe",
+"item.vanillaenhanced.amethyst_helmet": "Amethyst Helmet",
+"item.vanillaenhanced.amethyst_chestplate": "Amethyst Chestplate",
+"item.vanillaenhanced.amethyst_leggings": "Amethyst Leggings",
+"item.vanillaenhanced.amethyst_boots": "Amethyst Boots"
 
 }
