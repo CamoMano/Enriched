@@ -123,6 +123,38 @@ public class Generation {
                                             32 //Max y level
                                     ))));
                 }
+                if (enableAmethystGear) {
+                    biome.addFeature(
+                            GenerationStep.Feature.UNDERGROUND_ORES,
+                            Feature.ORE.configure(
+                                    new OreFeatureConfig(
+                                            OreFeatureConfig.Target.NATURAL_STONE,
+                                            ModInit.AMETHYST_ORE.getDefaultState(),
+                                            3 //Ore vein size
+                                    )).createDecoratedFeature(
+                                    Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
+                                            5, //Number of veins per chunk
+                                            0, //Bottom Offset
+                                            0, //Min y level
+                                            32 //Max y level
+                                    ))));
+                    if (biome.getCategory() == Biome.Category.JUNGLE) {
+                        biome.addFeature(
+                                GenerationStep.Feature.UNDERGROUND_ORES,
+                                Feature.ORE.configure(
+                                        new OreFeatureConfig(
+                                                OreFeatureConfig.Target.NATURAL_STONE,
+                                                ModInit.AMETHYST_ORE.getDefaultState(),
+                                                6 //Ore vein size
+                                        )).createDecoratedFeature(
+                                        Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
+                                                8, //Number of veins per chunk
+                                                0, //Bottom Offset
+                                                0, //Min y level
+                                                32 //Max y level
+                                        ))));
+                    }
+                }
 
             }
         }

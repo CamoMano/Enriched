@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "/"
+    ],
+    "key": {
+        "#": {
+            "item": "vanillaenhanced:amethyst"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+	"item": "vanillaenhanced:amethyst_sword",
+    "count": 1
+	}
+}

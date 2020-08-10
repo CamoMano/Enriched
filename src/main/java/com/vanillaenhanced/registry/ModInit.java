@@ -38,6 +38,7 @@ public class ModInit{
         public static boolean enableEmeraldGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableEmeraldGear;
         public static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
         public static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
+        public static boolean enableAmethystGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableAmethystGear;
         public static boolean enableSapphireGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSapphireGear;
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
@@ -55,10 +56,13 @@ public class ModInit{
         public static final ArmorMaterial STEEL_ARMOR = new ArmorMaterialSteel();
         public static final ArmorMaterial RUBY_ARMOR = new ArmorMaterialRuby();
         public static final ArmorMaterial SAPPHIRE_ARMOR = new ArmorMaterialSapphire();
+        public static final ArmorMaterial AMETHYST_ARMOR = new ArmorMaterialAmethyst();
 
         //Blocks
         public static final Block RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
         public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
+        public static final Block AMETHYST_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
+        public static final Block AMETHYST_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
         public static final Block SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
         public static final Block SAPPHIRE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
         public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(6.0f,7.0f));
@@ -109,6 +113,7 @@ public class ModInit{
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+        public static final Item AMETHYST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item BEEF_STEW = new BowlFood (new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
         public static final Item BERRY_JUICE = new BottleFood (new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
@@ -289,6 +294,26 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_leggings"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.LEGS));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_boots"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.FEET));
             }
+
+        if (enableAmethystGear) {
+            //Amethyst Item/Block
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst"), AMETHYST);
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "amethyst_ore"), AMETHYST_ORE);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_ore"), new BlockItem(AMETHYST_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "amethyst_block"), AMETHYST_BLOCK);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_block"), new BlockItem(AMETHYST_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            //Amethyst Tools
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_shovel"), new ShovelBase(new ToolMaterialAmethyst()));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_pickaxe"), new PickaxeBase(new ToolMaterialAmethyst()));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_axe"), new AxeBase(new ToolMaterialAmethyst()));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_sword"), new SwordBase(new ToolMaterialAmethyst()));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_hoe"), new HoeBase(new ToolMaterialAmethyst()));
+            //Amethyst Armor
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_helmet"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.HEAD));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_chestplate"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.CHEST));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_leggings"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.LEGS));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_boots"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.FEET));
+        }
             //if (enableDarkGranite){
                     //Dark Granite
                     Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite"), DARK_GRANITE);

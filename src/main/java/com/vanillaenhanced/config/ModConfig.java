@@ -30,6 +30,9 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
     @Comment("Should Sapphire Tools, Armor, and Items be enabled?")
     public boolean enableSapphireGear = true;
     @ConfigEntry.Category("Items")
+    @Comment("Should Amethyst Tools, Armor, and Items be enabled?")
+    public boolean enableAmethystGear = true;
+    @ConfigEntry.Category("Items")
     @Comment("Should Food items be enabled?")
     public boolean enableFood = true;
 
