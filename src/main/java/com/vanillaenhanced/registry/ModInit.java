@@ -1,9 +1,7 @@
 package com.vanillaenhanced.registry;
 
 
-import com.vanillaenhanced.biome.DesertMountains;
-import com.vanillaenhanced.biome.DiverseForest;
-import com.vanillaenhanced.biome.RedwoodForest;
+import com.vanillaenhanced.biome.*;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.items.*;
@@ -35,15 +33,22 @@ import static net.minecraft.sound.BlockSoundGroup.METAL;
 
 public class ModInit{
 
+        //Config
         public static boolean enableObsidianGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableObsidianGear;
         public static boolean enableEmeraldGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableEmeraldGear;
         public static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
         public static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
+        public static boolean enableAmethystGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableAmethystGear;
         public static boolean enableSapphireGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSapphireGear;
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
-        public static boolean enableBiomes = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableBiomes;
+        public static boolean enableRedwoodForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRedwoodForest;
+        public static boolean enableDiverseForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDiverseForest;
+        public static boolean enableDesertMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDesertMountain;
+        public static boolean enableExtremeMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeMountain;
+        public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
+        public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -51,10 +56,13 @@ public class ModInit{
         public static final ArmorMaterial STEEL_ARMOR = new ArmorMaterialSteel();
         public static final ArmorMaterial RUBY_ARMOR = new ArmorMaterialRuby();
         public static final ArmorMaterial SAPPHIRE_ARMOR = new ArmorMaterialSapphire();
+        public static final ArmorMaterial AMETHYST_ARMOR = new ArmorMaterialAmethyst();
 
         //Blocks
         public static final Block RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
         public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
+        public static final Block AMETHYST_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
+        public static final Block AMETHYST_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
         public static final Block SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f,3.0f));
         public static final Block SAPPHIRE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f,6.0f));
         public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(6.0f,7.0f));
@@ -97,11 +105,15 @@ public class ModInit{
         public static final Biome DIVERSE_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "diverse_forest"), new DiverseForest());
         public static final Biome REDWOOD_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "redwood_forest"), new RedwoodForest());
         public static final Biome DESERT_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "desert_mountains"), new DesertMountains());
+        public static final Biome EXTREME_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_mountains"), new ExtremeMountains());
+        public static final Biome FROZEN_DESERT = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "frozen_desert"), new FrozenDesert());
+        public static final Biome EXTREME_JUNGLE = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_jungle"), new ExtremeJungle());
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+        public static final Item AMETHYST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item BEEF_STEW = new BowlFood (new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
         public static final Item BERRY_JUICE = new BottleFood (new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
@@ -156,18 +168,37 @@ public class ModInit{
                 flammableRegistry.add(REDWOOD_WOOD, 5, 5);
                 flammableRegistry.add(STRIPPED_REDWOOD_WOOD, 5, 5);
                 flammableRegistry.add(REDWOOD_PLANKS, 5, 20);
+                flammableRegistry.add(REDWOOD_STAIRS, 5, 20);
+                flammableRegistry.add(REDWOOD_SLAB, 5, 20);
+                flammableRegistry.add(REDWOOD_FENCE_GATE, 5, 20);
+                flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
 
-            if (enableBiomes) {
-                    //Biomes
-                    OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 2);
-                    OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 1);
-                    OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 1);
-                    OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
-                    OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 1);
-                    Generation.initBiomeFeatures();
+                //Biomes
+        if (enableDiverseForest){
+            OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 0.75);
+            OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
+            OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 0.33);
         }
+        if (enableRedwoodForest){
+            OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 0.4);
+        }
+        if (enableDesertMountain){
+            OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 0.5);
+        }
+        if (enableExtremeMountain){
+            OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 0.25);
+        }
+        if (enableExtremeJungle){
+            OverworldBiomes.addContinentalBiome(ModInit.EXTREME_JUNGLE, OverworldClimate.TEMPERATE, 0.15);
+        }
+        if (enableFrozenDesert){
+            OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.10);
+        }
+
+        Generation.initBiomeFeatures();
+
 
             if (enableFood) {
                     //Food
@@ -262,6 +293,26 @@ public class ModInit{
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_chestplate"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.CHEST));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_leggings"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.LEGS));
                     Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_boots"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.FEET));
+            }
+
+            if (enableAmethystGear) {
+            //Amethyst Item/Block
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst"), AMETHYST);
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "amethyst_ore"), AMETHYST_ORE);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_ore"), new BlockItem(AMETHYST_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "amethyst_block"), AMETHYST_BLOCK);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_block"), new BlockItem(AMETHYST_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+            //Amethyst Tools
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_shovel"), new ShovelBase(new ToolMaterialAmethyst()));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_pickaxe"), new PickaxeBase(new ToolMaterialAmethyst()));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_axe"), new AxeBase(new ToolMaterialAmethyst()));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_sword"), new SwordBase(new ToolMaterialAmethyst()));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_hoe"), new HoeBase(new ToolMaterialAmethyst()));
+            //Amethyst Armor
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_helmet"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.HEAD));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_chestplate"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.CHEST));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_leggings"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.LEGS));
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_boots"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.FEET));
             }
             //if (enableDarkGranite){
                     //Dark Granite
