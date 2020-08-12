@@ -16,6 +16,7 @@ import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
@@ -123,7 +124,6 @@ public class ModInit{
         //Register
     public static void Register() {
 
-
                 //Biome Blocks
                 Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_leaves"), REDWOOD_LEAVES);
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_leaves"), new BlockItem(REDWOOD_LEAVES, new Item.Settings().group(ItemGroup.DECORATIONS)));
@@ -173,6 +173,8 @@ public class ModInit{
 
 
                 //Biomes
+
+
         /*
         if (enableDiverseForest){
             OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 0.75);
