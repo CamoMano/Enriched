@@ -8,7 +8,8 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 
-
+public class ExtremeJungle{}
+/*
 public class ExtremeJungle extends Biome {
     public ExtremeJungle()
         {
@@ -60,3 +61,5 @@ public class ExtremeJungle extends Biome {
         }
     }
 
+
+ */

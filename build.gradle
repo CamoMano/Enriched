@@ -27,8 +27,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	
 	//Cloth Config
-	modApi "me.shedaniel.cloth:config-2:4.6.0"
-	include "me.shedaniel.cloth:config-2:4.6.0"
+	modApi "me.shedaniel.cloth:config-2:4.7.0-unstable"
+	include "me.shedaniel.cloth:config-2:4.7.0-unstable"
 	
 	//Auto Config
 	modCompile "me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable"
@@ -36,7 +36,7 @@ dependencies {
 	implementation 'com.google.code.gson:gson:2.8.6'
 	
 	//Mod Menu
-	modImplementation "io.github.prospector:modmenu:1.14.5+build.30"
+	modImplementation "io.github.prospector:modmenu:1.14.6+build.31"
     implementation 'org.jetbrains:annotations:16.0.2'
 
 }

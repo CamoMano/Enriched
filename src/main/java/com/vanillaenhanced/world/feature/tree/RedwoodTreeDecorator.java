@@ -13,7 +13,8 @@ import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-
+public class RedwoodTreeDecorator{}
+/*
 public class RedwoodTreeDecorator extends Decorator<ChanceDecoratorConfig> {
 
 	public RedwoodTreeDecorator(Codec<ChanceDecoratorConfig> codec) {
@@ -35,4 +36,4 @@ public class RedwoodTreeDecorator extends Decorator<ChanceDecoratorConfig> {
 		}
 		return Stream.empty();
 	}
-}
+}*/

@@ -9,6 +9,8 @@ import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 
 
+public class ExtremeMountains{}
+/*
 public class ExtremeMountains extends Biome {
     public ExtremeMountains()
         {
@@ -56,3 +58,5 @@ public class ExtremeMountains extends Biome {
         }
     }
 
+
+ */

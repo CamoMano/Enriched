@@ -8,9 +8,10 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 
-
-
+public class DesertMountains{}
+/*
 public class DesertMountains extends Biome {
+
     public DesertMountains()
         {
             super((new Settings()).configureSurfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.SAND_CONFIG)
@@ -55,5 +56,10 @@ public class DesertMountains extends Biome {
             this.addSpawn(SpawnGroup.MONSTER, new SpawnEntry(EntityType.WITCH, 5, 1, 1));
 
         }
+
+
     }
 
+
+
+ */

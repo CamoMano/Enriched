@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.vanillaenhanced.world.Generation.handleBiome;
+//import static com.vanillaenhanced.world.Generation.handleBiome;
 
 
 public class VanillaEnhanced implements ModInitializer {
@@ -34,12 +34,15 @@ public class VanillaEnhanced implements ModInitializer {
 
         //Setup
         ModInit.Register();
+        /*
         for (Biome biome : Registry.BIOME)
         {
             Generation.handleBiome(biome);
         }
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
 
+
+         */
     }
 
 

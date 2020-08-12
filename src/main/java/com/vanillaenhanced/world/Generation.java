@@ -27,7 +27,7 @@ import static com.vanillaenhanced.registry.ModInit.*;
 
 
 public class Generation {
-
+/*
     public static void handleBiome(Biome biome) {
         if (biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
             if (enableDarkGranite){
@@ -206,4 +206,6 @@ public class Generation {
             );
         }
     }
+
+ */
 }

@@ -9,7 +9,8 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 
-
+public class FrozenDesert{}
+/*
 public class FrozenDesert extends Biome {
     public FrozenDesert()
         {
@@ -60,3 +61,6 @@ public class FrozenDesert extends Biome {
         }
     }
 
+
+
+ */

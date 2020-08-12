@@ -9,7 +9,8 @@ import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 
 
-
+public class DiverseForest{}
+/*
 public class DiverseForest extends Biome {
     public DiverseForest()
         {
@@ -59,3 +60,6 @@ public class DiverseForest extends Biome {
         }
     }
 
+
+
+ */

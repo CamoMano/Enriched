@@ -102,6 +102,7 @@ public class ModInit{
 
 
         //Biomes
+    /*
         public static final Biome DIVERSE_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "diverse_forest"), new DiverseForest());
         public static final Biome REDWOOD_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "redwood_forest"), new RedwoodForest());
         public static final Biome DESERT_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "desert_mountains"), new DesertMountains());
@@ -109,6 +110,8 @@ public class ModInit{
         public static final Biome FROZEN_DESERT = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "frozen_desert"), new FrozenDesert());
         public static final Biome EXTREME_JUNGLE = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_jungle"), new ExtremeJungle());
 
+
+     */
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -176,6 +179,7 @@ public class ModInit{
 
 
                 //Biomes
+        /*
         if (enableDiverseForest){
             OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 0.75);
             OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
@@ -196,8 +200,10 @@ public class ModInit{
         if (enableFrozenDesert){
             OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.10);
         }
+        */
 
-        Generation.initBiomeFeatures();
+
+        //Generation.initBiomeFeatures();
 
 
             if (enableFood) {

@@ -12,6 +12,8 @@ import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import java.util.Random;
 import java.util.Set;
 
+public class RedwoodTreeFeature{}
+/*
 public class RedwoodTreeFeature extends TreeFeature {
 
 	public RedwoodTreeFeature(Codec<TreeFeatureConfig> codec) {
@@ -48,9 +50,13 @@ public class RedwoodTreeFeature extends TreeFeature {
 
 			/*for (int i = 0; i < 4; i++) {
 				world.setBlockState(pos.up(i), ModInit.REDWOOD_LEAVES.getDefaultState(), 19);
-			}*/
+			}
 		}
 	}
 
 
 }
+
+
+
+ */

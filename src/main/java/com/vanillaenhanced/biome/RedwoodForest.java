@@ -8,6 +8,9 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 
+
+public class RedwoodForest{}
+/*
 public class RedwoodForest extends Biome {
 
     public RedwoodForest()
@@ -62,3 +65,6 @@ public class RedwoodForest extends Biome {
 
     }
 }
+
+
+ */
