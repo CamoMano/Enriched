@@ -1,13 +1,5 @@
 package com.vanillaenhanced.biome;
 
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.sound.BiomeMoodSound;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeEffects;
-import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
-
 public class ExtremeJungle{}
 /*
 public class ExtremeJungle extends Biome {

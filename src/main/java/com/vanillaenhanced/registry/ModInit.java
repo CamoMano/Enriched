@@ -1,16 +1,12 @@
 package com.vanillaenhanced.registry;
 
 
-import com.vanillaenhanced.biome.*;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
-import com.vanillaenhanced.world.Generation;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import net.fabricmc.fabric.api.biomes.v1.OverworldBiomes;
-import net.fabricmc.fabric.api.biomes.v1.OverworldClimate;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -20,8 +16,6 @@ import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 

@@ -1,17 +1,5 @@
 package com.vanillaenhanced.world.feature.tree;
 
-import com.mojang.serialization.Codec;
-import net.minecraft.block.BlockState;
-import net.minecraft.util.math.BlockBox;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ModifiableTestableWorld;
-import net.minecraft.world.gen.feature.TreeFeature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
-
-import java.util.Random;
-import java.util.Set;
-
 public class RedwoodTreeFeature{}
 /*
 public class RedwoodTreeFeature extends TreeFeature {

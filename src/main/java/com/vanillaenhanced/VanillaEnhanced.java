@@ -2,13 +2,9 @@ package com.vanillaenhanced;
 
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
-import com.vanillaenhanced.world.Generation;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
