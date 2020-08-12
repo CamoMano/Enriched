@@ -1,6 +1,7 @@
 package com.vanillaenhanced.registry;
 
 
+import com.vanillaenhanced.biome.DiverseForest;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.items.*;
