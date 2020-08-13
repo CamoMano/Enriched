@@ -1,4 +1,72 @@
 {
+  "scale": 0.2,
+  "effects": {
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "sky_color": 8037887,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011
+  },
+  "surface_builder": "minecraft:grass",
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_water",
+      "minecraft:lake_lava"
+    ],
+    [],
+    [
+      "minecraft:monster_room"
+    ],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite",
+      "minecraft:ore_diorite",
+      "minecraft:ore_andesite",
+      "minecraft:ore_coal",
+	  "vanillaenhanced:ore_sapphire",
+	  "vanillaenhanced:ore_amethyst",
+	  "vanillaenhanced:ore_ruby",
+      "minecraft:ore_iron",
+      "minecraft:ore_gold",
+      "minecraft:ore_redstone",
+      "minecraft:ore_diamond",
+      "minecraft:ore_lapis",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
+    ],
+    [],
+    [
+      "minecraft:forest_flower_vegetation",
+      "minecraft:trees_birch",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_forest",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin",
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ],
   "starts": [
     "minecraft:mineshaft",
     "minecraft:stronghold",
@@ -58,37 +126,25 @@
     "creature": [
       {
         "type": "minecraft:sheep",
-        "weight": 3,
+        "weight": 12,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:pig",
-        "weight": 5,
+        "weight": 10,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:chicken",
-        "weight": 5,
+        "weight": 10,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:cow",
-        "weight": 5,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:rabbit",
-        "weight": 16,
-        "minCount": 4,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:fox",
-        "weight": 2,
+        "weight": 8,
         "minCount": 4,
         "maxCount": 4
       }
@@ -106,73 +162,10 @@
     "misc": []
   },
   "spawn_costs": {},
-  "surface_builder": "minecraft:grass",
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:canyon"
-    ]
-  },
-  "features": [
-    [],
-    [
-      "minecraft:lake_water",
-      "minecraft:lake_lava"
-    ],
-    [],
-    [
-      "minecraft:monster_room"
-    ],
-    [],
-    [],
-    [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite",
-      "minecraft:ore_diorite",
-      "minecraft:ore_andesite",
-      "minecraft:ore_coal",
-      "minecraft:ore_iron",
-      "minecraft:ore_gold",
-      "minecraft:ore_redstone",
-      "minecraft:ore_diamond",
-      "minecraft:ore_lapis",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
-    ],
-    [
-      "vanillaenhanced:stone_rock"
-    ],
-    [
-      "minecraft:patch_grass_plain",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
-	],
-    [
-      "minecraft:freeze_top_layer"
-    ]
-  ],
-  "scale": 0.25,
-  "temperature": 0.7,
-  "downfall": 0.5,
-  "effects": {
-    "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2.0
-    },
-    "sky_color": 7907327,
-    "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011
-  },
+  "player_spawn_friendly": false,
   "precipitation": "rain",
-  "category": "plains",
-  "depth": 0.4
+  "temperature": 0.6,
+  "downfall": 0.6,
+  "category": "forest",
+  "depth": 0.1
 }

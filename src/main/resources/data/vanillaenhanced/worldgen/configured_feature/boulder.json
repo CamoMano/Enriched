@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:decorated",
+    "config": {
+        "feature": {
+            "type": "vanilla_plus_plus:boulder",
+            "config": {
+                "state_provider": {
+                    "type": "minecraft:weighted_state_provider",
+                    "entries": [
+                        {
+                            "weight": 4,
+                            "data": {
+                                "Name": "minecraft:andesite"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "data": {
+                                "Name": "minecraft:cobblestone"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "decorator": {
+            "type": "minecraft:chance",
+            "config": {
+                "chance": 10
+            }
+        }
+    }
+}
