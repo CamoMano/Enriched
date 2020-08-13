@@ -78,7 +78,7 @@
     "misc": []
   },
   "spawn_costs": {},
-  "surface_builder": "vanillaenhanced:red_desert",
+  "surface_builder": "minecraft:desert",
   "carvers": {
     "air": [
       "minecraft:cave",
@@ -88,8 +88,7 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava",
-      "vanillaenhanced:lake_water_rare"
+      "minecraft:lake_lava"
     ],
     [],
     [
@@ -114,7 +113,10 @@
       "minecraft:ore_lapis",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+	  "vanillaenhanced:ore_amethyst",
+	  "vanillaenhanced:ore_sapphire",
+	  "vanillaenhanced:ore_ruby"
     ],
     [],
     [
@@ -125,7 +127,6 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_desert",
       "minecraft:patch_pumpkin",
-      "vanillaenhanced:red_desert_cactus",
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
@@ -134,7 +135,7 @@
     ]
   ],
   "scale": 0.05,
-  "temperature": 2.0,
+  "temperature": -1.0,
   "downfall": 0.0,
   "effects": {
     "mood_sound": {
@@ -149,6 +150,6 @@
     "water_fog_color": 329011
   },
   "precipitation": "none",
-  "category": "desert",
+  "category": "icy",
   "depth": 0.125
 }
