@@ -1,6 +1,7 @@
 package com.vanillaenhanced.world;
 
-public class Generation {
+public class Generator {
+
 /*
     public static void handleBiome(Biome biome) {
         if (biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {

@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-//import static com.vanillaenhanced.world.Generation.handleBiome;
+//import static com.vanillaenhanced.world.Generator.handleBiome;
 
 
 public class VanillaEnhanced implements ModInitializer {
@@ -33,7 +33,7 @@ public class VanillaEnhanced implements ModInitializer {
         /*
         for (Biome biome : Registry.BIOME)
         {
-            Generation.handleBiome(biome);
+            Generator.handleBiome(biome);
         }
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
 

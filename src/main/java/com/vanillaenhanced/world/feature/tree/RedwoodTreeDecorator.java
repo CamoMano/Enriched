@@ -1,14 +1,32 @@
 package com.vanillaenhanced.world.feature.tree;
 
-public class RedwoodTreeDecorator{}
-/*
+import com.mojang.serialization.Codec;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Heightmap;
+import net.minecraft.world.WorldAccess;
+import net.minecraft.world.gen.chunk.ChunkGenerator;
+import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
+import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.decorator.DecoratorContext;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Random;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+
 public class RedwoodTreeDecorator extends Decorator<ChanceDecoratorConfig> {
 
 	public RedwoodTreeDecorator(Codec<ChanceDecoratorConfig> codec) {
 		super(codec);
 	}
 
-	@Override
+    @Override
+    public Stream<BlockPos> getPositions(DecoratorContext context, Random random, ChanceDecoratorConfig config, BlockPos pos) {
+        return null;
+    }
+
+    //@Override
 	public Stream<BlockPos> getPositions(WorldAccess world, ChunkGenerator generator, @NotNull Random random, ChanceDecoratorConfig config, BlockPos pos) {
 		// Generate tree clusters randomly
 		if (random.nextInt(config.chance) == 0) {
@@ -23,4 +41,4 @@ public class RedwoodTreeDecorator extends Decorator<ChanceDecoratorConfig> {
 		}
 		return Stream.empty();
 	}
-}*/
+}

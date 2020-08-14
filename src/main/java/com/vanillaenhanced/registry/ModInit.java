@@ -1,25 +1,33 @@
 package com.vanillaenhanced.registry;
 
 
+import com.google.common.collect.ImmutableList;
 import com.vanillaenhanced.biome.DiverseForest;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
+import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.fabricmc.fabric.impl.object.builder.FabricBlockInternals;
 import net.minecraft.block.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
+import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.foliage.FoliagePlacerType;
+
+import java.util.Locale;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static net.minecraft.block.Blocks.SPRUCE_LOG;
@@ -96,7 +104,6 @@ public class ModInit{
         //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
 
 
-
         //Biomes
     /*
         public static final Biome DIVERSE_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "diverse_forest"), new DiverseForest());
@@ -121,6 +128,17 @@ public class ModInit{
         public static Feature<TreeFeatureConfig> REDWOOD_TREE_FEATURE;
         public static RedwoodTreeDecorator REDWOOD_TREE_DECORATOR;
         public static TreeFeatureConfig REDWOOD_TREE_CONFIG;
+
+
+
+
+
+
+
+
+
+
+
 
         //Register
     public static void Register() {
@@ -200,7 +218,7 @@ public class ModInit{
         */
 
 
-        //Generation.initBiomeFeatures();
+        //Generator.initBiomeFeatures();
 
 
             if (enableFood) {
