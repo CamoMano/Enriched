@@ -1,9 +1,8 @@
 package com.vanillaenhanced.biome;
 
-public class DesertMountains{}
-/*
-public class DesertMountains extends Biome {
 
+public class DesertMountains{
+/*
     public DesertMountains()
         {
             super((new Settings()).configureSurfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.SAND_CONFIG)
@@ -50,8 +49,8 @@ public class DesertMountains extends Biome {
         }
 
 
+ */
+
     }
 
 
-
- */
