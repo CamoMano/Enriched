@@ -12,12 +12,12 @@ public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
 
 	@Nullable
 	@Override
-	protected ConfiguredFeature<TreeFeatureConfig, ?> createLargeTreeFeature(Random random) {
+	protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
 		return null;
 	}
 
 	@Override
-	protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
+	protected ConfiguredFeature<TreeFeatureConfig, ?> createLargeTreeFeature(Random random) {
 		return ModInit.REDWOOD_TREE_FEATURE.configure(ModInit.REDWOOD_TREE_CONFIG);
 	}
 }
