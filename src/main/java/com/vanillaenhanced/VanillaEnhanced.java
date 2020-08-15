@@ -5,6 +5,10 @@ import com.vanillaenhanced.registry.ModInit;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.minecraft.resource.DataPackSettings;
+import net.minecraft.server.command.DatapackCommand;
+import net.minecraft.world.biome.Biome;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +31,6 @@ public class VanillaEnhanced implements ModInitializer {
         //Config
         AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
-
         //Setup
         ModInit.Register();
         /*
