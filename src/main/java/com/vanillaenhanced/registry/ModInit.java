@@ -49,6 +49,7 @@ public class ModInit{
         public static boolean enableExtremeMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeMountain;
         public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
         public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
+    public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -108,6 +109,7 @@ public class ModInit{
         public static final Biome EXTREME_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_mountains"), new ExtremeMountains());
         public static final Biome FROZEN_DESERT = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "frozen_desert"), new FrozenDesert());
         public static final Biome EXTREME_JUNGLE = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_jungle"), new ExtremeJungle());
+        public static final Biome MONOLITH = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "monolith"), new Monolith());
 
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -195,6 +197,9 @@ public class ModInit{
         }
         if (enableFrozenDesert){
             OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.10);
+        }
+        if (enableMonolith){
+            OverworldBiomes.addContinentalBiome(ModInit.MONOLITH, OverworldClimate.TEMPERATE, 0.02);
         }
 
         Generation.initBiomeFeatures();
