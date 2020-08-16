@@ -9,8 +9,8 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 
 @Config(name = "vanillaenhanced")
 @Config.Gui.CategoryBackground(category = "Biomes" , background = "vanillaenhanced:textures/block/redwood_planks.png")
-@Config.Gui.CategoryBackground(category = "Blocks" , background = "minecraft:textures/block/stone.png")
-@Config.Gui.CategoryBackground(category = "Items" , background = "vanillaenhanced:textures/block/sapphire_ore.png")
+@Config.Gui.CategoryBackground(category = "Blocks" , background = "vanillaenhanced:textures/block/marble.png")
+@Config.Gui.CategoryBackground(category = "Items" , background = "vanillaenhanced:textures/block/amethyst_ore.png")
     public class ModConfig implements ConfigData {
 
     //Items & Ores
