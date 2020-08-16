@@ -66,7 +66,7 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
     public boolean enableFrozenDesert = true;
     @ConfigEntry.Category("Biomes")
     @Comment("Should the Monolith biome be enabled?")
-    public boolean enableMonolith = true;
+    public boolean enableMonolith = false;
 
 
 
