@@ -1,19 +1,16 @@
 package com.vanillaenhanced.biome;
 
-import com.google.common.collect.ImmutableList;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.sound.BiomeMoodSound;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeEffects;
-import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
+import com.google.gson.annotations.JsonAdapter;
+import net.minecraft.world.biome.source.BiomeSource;
+import net.minecraft.world.biome.source.VanillaLayeredBiomeSource;
 
+public class Monolith {}
+
+/*
 public class Monolith extends Biome {
     public Monolith() {
         super((new Biome.Settings()).configureSurfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_CONFIG).
                 precipitation(Biome.Precipitation.RAIN).category(Biome.Category.PLAINS).depth(1.0F).scale(-1.0F).temperature(0.8F).downfall(0.4F).effects((new BiomeEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).moodSound(BiomeMoodSound.CAVE).build()).parent((String)null).noises(ImmutableList.of(new Biome.MixedNoisePoint(0.0F, 0.0F, 0.0F, 0.0F, 0.01F))));
-
         DefaultBiomeFeatures.addDefaultUndergroundStructures(this);
         this.addStructureFeature(DefaultBiomeFeatures.STANDARD_RUINED_PORTAL);
         DefaultBiomeFeatures.addLandCarvers(this);
@@ -45,3 +42,6 @@ public class Monolith extends Biome {
         this.addSpawn(SpawnGroup.MONSTER, new Biome.SpawnEntry(EntityType.WITCH, 5, 1, 1));
     }
 }
+
+
+ */
