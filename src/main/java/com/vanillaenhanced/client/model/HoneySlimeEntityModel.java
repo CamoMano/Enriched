@@ -6,6 +6,7 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 
+/*
 public class HoneySlimeEntityModel extends EntityModel<HoneySlime> {
 
     private final ModelPart base;
@@ -32,3 +33,6 @@ public class HoneySlimeEntityModel extends EntityModel<HoneySlime> {
         base.render(matrices, vertices, light, overlay);
     }
 }
+
+
+ */

@@ -1,10 +1,15 @@
 package com.vanillaenhanced.biome;
 
 import com.google.gson.annotations.JsonAdapter;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.layer.util.CachingLayerSampler;
+import net.minecraft.world.biome.layer.util.LayerFactory;
+import net.minecraft.world.biome.source.BiomeLayerSampler;
 import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.biome.source.VanillaLayeredBiomeSource;
 
-public class Monolith {}
+public class Monolith  {
+}
 
 /*
 public class Monolith extends Biome {
