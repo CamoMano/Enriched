@@ -12,7 +12,6 @@ public class VanillaEnhancedClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModInit.REDWOOD_SAPLING, RenderLayer.getCutout());
 
-
         EntityRendererRegistry.INSTANCE.register(ModInit.HONEY_SLIME, (dispatcher, context) -> {
             return new HoneySlimeEntityRenderer(dispatcher);
         });

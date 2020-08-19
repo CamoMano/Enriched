@@ -141,7 +141,7 @@ public class ModInit {
 
         public static final EntityType<HoneySlime> HONEY_SLIME = FabricEntityTypeBuilder.
                 create(SpawnGroup.MONSTER, HoneySlime::new)
-                .dimensions(EntityDimensions.changing(2.04f, 2.04f))
+                .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackable(32, 4)
                 .build();
 
 /*
