@@ -12,11 +12,7 @@ public class VanillaEnhancedClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModInit.REDWOOD_SAPLING, RenderLayer.getCutout());
 
-        /*
-         * Registers our Cube Entity's renderer, which provides a model and texture for the entity.
-         *
-         * Entity Renderers can also manipulate the model before it renders based on entity context (EndermanEntityRenderer#render).
-         */
+
         EntityRendererRegistry.INSTANCE.register(ModInit.HONEY_SLIME, (dispatcher, context) -> {
             return new HoneySlimeEntityRenderer(dispatcher);
         });

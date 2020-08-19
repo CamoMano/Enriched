@@ -139,11 +139,17 @@ public class ModInit {
         public static TreeFeatureConfig REDWOOD_TREE_CONFIG;
 
 
+        public static final EntityType<HoneySlime> HONEY_SLIME = FabricEntityTypeBuilder.
+                create(SpawnGroup.MONSTER, HoneySlime::new)
+                .dimensions(EntityDimensions.changing(2.04f, 2.04f))
+                .build();
+
+/*
         public static final EntityType<HoneySlime> HONEY_SLIME = Registry.register(Registry.ENTITY_TYPE, new Identifier(MOD_ID, "honey_slime"),
                 FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, HoneySlime::new)
                         .dimensions(EntityDimensions.changing(2.04f, 2.04f))
                         .build());
-
+*/
 
         //Register
         public static void Register() {
@@ -378,6 +384,7 @@ public class ModInit {
                 // }
 
                 FabricDefaultAttributeRegistry.register(HONEY_SLIME, HostileEntity.createHostileAttributes());
+                Registry.register(Registry.ENTITY_TYPE, MOD_ID+"honey_slime", HONEY_SLIME);
                 Registry.register(
                         Registry.ITEM,
                         MOD_ID+"honey_slime_spawn_egg",
