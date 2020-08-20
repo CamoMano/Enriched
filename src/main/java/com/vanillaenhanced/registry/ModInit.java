@@ -144,12 +144,6 @@ public class ModInit {
                 .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackable(32, 4)
                 .build();
 
-/*
-        public static final EntityType<HoneySlime> HONEY_SLIME = Registry.register(Registry.ENTITY_TYPE, new Identifier(MOD_ID, "honey_slime"),
-                FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, HoneySlime::new)
-                        .dimensions(EntityDimensions.changing(2.04f, 2.04f))
-                        .build());
-*/
 
         //Register
         public static void Register() {
