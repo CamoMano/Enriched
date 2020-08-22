@@ -1,10 +1,11 @@
 package com.vanillaenhanced.biome;
 
 
-public class DesertMountains{
+import net.minecraft.world.biome.Biome;
+
+public class DesertMountains {
 /*
-    public DesertMountains()
-        {
+    public DesertMountains() {
             super((new Settings()).configureSurfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.SAND_CONFIG)
                     .precipitation(Precipitation.NONE)
                     .category(Category.DESERT)
