@@ -1,5 +1,6 @@
 package com.vanillaenhanced;
 
+import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.Generator;
@@ -33,6 +34,7 @@ public class VanillaEnhanced implements ModInitializer, EarlyInitializer {
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //Setup
         ModInit.Register();
+        Biomes.init();
         /*
         for (Biome biome : Registry.BIOME)
         {

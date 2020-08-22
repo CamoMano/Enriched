@@ -28,6 +28,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
@@ -111,19 +112,6 @@ public class ModInit {
         //public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
         //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
 
-
-        //Biomes
-    /*
-        public static final Biome DIVERSE_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "diverse_forest"), new DiverseForest());
-        public static final Biome REDWOOD_FOREST = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "redwood_forest"), new RedwoodForest());
-        public static final Biome DESERT_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "desert_mountains"), new DesertMountains());
-        public static final Biome EXTREME_MOUNTAINS = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_mountains"), new ExtremeMountains());
-        public static final Biome FROZEN_DESERT = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "frozen_desert"), new FrozenDesert());
-        public static final Biome EXTREME_JUNGLE = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "extreme_jungle"), new ExtremeJungle());
-        public static final Biome MONOLITH = Registry.register(Registry.BIOME, new Identifier(MOD_ID, "monolith"), new Monolith());
-
-
-     */
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -147,6 +135,7 @@ public class ModInit {
 
         //Register
         public static void Register() {
+
 
                 //Biome Blocks
                 Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_leaves"), REDWOOD_LEAVES);

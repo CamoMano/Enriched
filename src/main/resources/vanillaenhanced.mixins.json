@@ -2,7 +2,9 @@
   "required": true,
   "package": "com.vanillaenhanced.mixin",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [],
+  "mixins": [
+  "BuiltinBiomesAccessor"
+  ],
   "client": [],
   "server": [],
   "injectors": {

@@ -1,17 +1,23 @@
 package com.vanillaenhanced.world;
 
 
+import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
+import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
 import me.shedaniel.cloth.api.dynamic.registry.v1.BiomesRegistry;
 
 import com.vanillaenhanced.registry.ModInit;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.DynamicRegistryManager;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
@@ -55,6 +61,12 @@ public class Generator {
             BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModInit.MARBLE.getDefaultState(), 30)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 80)).spreadHorizontally().repeat(7)));
         }
     }
+
+    private static void setupTrees(){
+        REDWOOD_TREE_FEATURE = Registry.register(Registry.FEATURE, new Identifier(MOD_ID, "redwood_tree"), new RedwoodTreeFeature(TreeFeatureConfig.CODEC));
+        //REDWOOD_TREE_DECORATOR = Registry.register(Registry.DECORATOR, new Identifier(MOD_ID,"redwood_tree"), new RedwoodTreeDecorator(ChanceDecoratorConfig.field_24980));
+    }
+
 
     /*
         if (biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
