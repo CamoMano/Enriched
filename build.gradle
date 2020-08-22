@@ -27,10 +27,13 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     
     //Cloth Config
-    modApi("me.shedaniel.cloth:config-2:4.7.0-unstable"){
+    modApi("me.shedaniel.cloth:config-2:${project.cloth_version}"){
       exclude module: 'fabric-api'
     }
-    include "me.shedaniel.cloth:config-2:4.7.0-unstable"
+    include "me.shedaniel.cloth:config-2:${project.cloth_version}"
+	
+	modImplementation "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_api_version}"
+    include "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_api_version}"
     
     //Auto Config
     modImplementation("me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable") {
