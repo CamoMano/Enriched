@@ -17,6 +17,8 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.carver.CaveCarver;
+import net.minecraft.world.gen.carver.ConfiguredCarvers;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.surfacebuilder.ConfiguredSurfaceBuilders;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
@@ -78,6 +80,8 @@ public final class Biomes {
                         .build())
                 .temperature(0.8F)
                 .build();
+
+        
         REDWOOD_FOREST = new Biome.Builder()
                 .category(Biome.Category.FOREST)
                 .depth(0.125F)
@@ -100,6 +104,8 @@ public final class Biomes {
                         .build())
                 .temperature(0.8F)
                 .build();
+
+
         DESERT_MOUNTAINS = new Biome.Builder()
                 .category(Biome.Category.DESERT)
                 .depth(1.0F)
@@ -116,11 +122,29 @@ public final class Biomes {
                         .build())
                 .generationSettings(new GenerationSettings.Builder()
                 .surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG))
+                        .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CAVE)
+                        .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CANYON)
                         .structureFeature(ConfiguredStructureFeatures.DESERT_PYRAMID)
                         .structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_DESERT)
                         .structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GOLD)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_IRON)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GRANITE)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_ANDESITE)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIORITE)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIORITE)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_REDSTONE)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_LAPIS)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIRT)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GRAVEL)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.DISK_SAND)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.DISK_GRAVEL)
                         .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.PATCH_CACTUS_DESERT)
                         .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.PATCH_DEAD_BUSH)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.BROWN_MUSHROOM_NORMAL)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.RED_MUSHROOM_NORMAL)
                         .build())
                 .precipitation(Biome.Precipitation.NONE)
                 .spawnSettings(new SpawnSettings.Builder()
@@ -136,7 +160,6 @@ public final class Biomes {
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.WITCH, 5, 1, 1))
                         .build())
                 .build();
-
 
 
 
