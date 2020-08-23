@@ -9,7 +9,11 @@ import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.*;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
+
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Random;
 
 public class HoneySlime extends SlimeEntity {
 
@@ -29,17 +33,10 @@ public class HoneySlime extends SlimeEntity {
         return ret;
     }
 
-    @Override
-    public boolean canSpawn(WorldAccess world, SpawnReason spawnReason) {
-        // seed for testing: 6211790508050301845
-        BlockPos down = getBlockPos().down();
-        boolean ret = !world.getDifficulty().equals(Difficulty.PEACEFUL);
-        ret = ret && this.getY() >= 50f && this.getY() <= 70f;
-        ret = ret && world.getBiome(down).getCategory() == Biome.Category.FOREST;
-        // this last condition is basically super.super.canSpawn()
-        ret = ret && (spawnReason == SpawnReason.SPAWNER || world.getBlockState(down).allowsSpawning(world, down, getType()));
-        return ret;
-    }
+
+    //@Override
+    
+
 
     //@Override
     protected ParticleEffect getParticles() {

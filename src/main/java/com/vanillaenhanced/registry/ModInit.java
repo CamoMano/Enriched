@@ -121,10 +121,6 @@ public class ModInit {
         public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
         public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
 
-        //Features
-        public static Feature<TreeFeatureConfig> REDWOOD_TREE_FEATURE;
-        public static RedwoodTreeDecorator REDWOOD_TREE_DECORATOR;
-        public static TreeFeatureConfig REDWOOD_TREE_CONFIG;
 
 
         public static final EntityType<HoneySlime> HONEY_SLIME = FabricEntityTypeBuilder.

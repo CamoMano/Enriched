@@ -52,6 +52,7 @@ public class VanillaEnhanced implements ModInitializer, EarlyInitializer {
         DynamicRegistryCallback.callback(Registry.BIOME_KEY).register((dynamicRegistryManager, registryKey, biome) -> {
             Generator.oreGen(registryKey, biome);
             Generator.blockGen(registryKey, biome);
+            Generator.setupTrees(registryKey, biome);
         });
     }
 

@@ -41,7 +41,6 @@ public class RedwoodTreeFeature extends TreeFeature {
             final int startScan = pos.getY();
             BlockPos topPos = null;
 
-            //Limit the scan to 15 blocks
             while (topPos == null && pos.getY() - startScan < 15) {
                 pos = pos.up();
                 if (world.testBlockState(pos, BlockState::isAir)) {
