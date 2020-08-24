@@ -1,6 +1,7 @@
 package com.vanillaenhanced.world;
 
 
+import com.vanillaenhanced.VanillaEnhanced;
 import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
@@ -21,18 +22,9 @@ import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.foliage.FoliagePlacerType;
-import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
-
-
-import java.util.function.Supplier;
-
-import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static com.vanillaenhanced.registry.ModInit.*;
 
 public class Generator {
-
 
    public static void oreGen(RegistryKey<Biome> registryKey, Biome biome) {
        if (enableRubyGear) {
@@ -72,10 +64,9 @@ public class Generator {
     }
 
     public static void setupTrees(RegistryKey<Biome> registryKey, Biome biome){
-        if (biome.equals(Biomes.REDWOOD_FOREST_KEY)) {
-            BiomesRegistry.registerFeature(biome, GenerationStep.Feature.VEGETAL_DECORATION, () -> Feature.TREE.configure(Features.REDWOOD_TREE_FEATURE.config));
+                //BiomesRegistry.registerFeature(biome, GenerationStep.Feature.VEGETAL_DECORATION, () -> Feature.TREE.configure(Features.REDWOOD_TREE_FEATURE.config));
         }
-    }
+
 
 
     /*

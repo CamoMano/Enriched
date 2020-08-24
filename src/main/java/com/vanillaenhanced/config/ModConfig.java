@@ -11,7 +11,7 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 @Config.Gui.CategoryBackground(category = "Blocks" , background = "vanillaenhanced:textures/block/marble.png")
 @Config.Gui.CategoryBackground(category = "Items" , background = "vanillaenhanced:textures/block/amethyst_ore.png")
     public class ModConfig implements ConfigData {
-    
+
 
     //Items & Ores
     @ConfigEntry.Category("Items")
