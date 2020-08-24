@@ -2,14 +2,11 @@ package com.vanillaenhanced.biome;
 
 import com.vanillaenhanced.mixin.BuiltinBiomesAccessor;
 import com.vanillaenhanced.world.Features;
-import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.DynamicRegistryManager;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
@@ -17,12 +14,11 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.carver.CaveCarver;
 import net.minecraft.world.gen.carver.ConfiguredCarvers;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.surfacebuilder.ConfiguredSurfaceBuilders;
+import net.minecraft.world.gen.feature.ConfiguredFeatures;
+import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
-import sun.jvm.hotspot.gc.shared.Generation;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 

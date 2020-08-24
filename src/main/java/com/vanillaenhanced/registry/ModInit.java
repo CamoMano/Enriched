@@ -1,22 +1,17 @@
 package com.vanillaenhanced.registry;
 
 
-import com.google.common.collect.ImmutableList;
-import com.vanillaenhanced.biome.DiverseForest;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.entity.HoneySlime;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
-import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
-import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.fabricmc.fabric.impl.object.builder.FabricBlockInternals;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -25,17 +20,8 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
-import net.minecraft.world.gen.decorator.Decorator;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.foliage.FoliagePlacerType;
-
-import java.util.Locale;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static net.minecraft.block.Blocks.SPRUCE_LOG;
