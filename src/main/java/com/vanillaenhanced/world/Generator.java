@@ -1,6 +1,7 @@
 package com.vanillaenhanced.world;
 
 
+import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
 import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
 import me.shedaniel.cloth.api.dynamic.registry.v1.BiomesRegistry;
@@ -71,7 +72,7 @@ public class Generator {
     }
 
     public static void setupTrees(RegistryKey<Biome> registryKey, Biome biome){
-        if (biome.getCategory() == Biome.Category.TAIGA) {
+        if (biome.equals(Biomes.REDWOOD_FOREST_KEY)) {
             BiomesRegistry.registerFeature(biome, GenerationStep.Feature.VEGETAL_DECORATION, () -> Feature.TREE.configure(Features.REDWOOD_TREE_FEATURE.config));
         }
     }
