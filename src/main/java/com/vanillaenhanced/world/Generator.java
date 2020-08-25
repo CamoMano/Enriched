@@ -1,27 +1,16 @@
 package com.vanillaenhanced.world;
 
 
-import com.vanillaenhanced.VanillaEnhanced;
-import com.vanillaenhanced.biome.Biomes;
-import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
-import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
-import me.shedaniel.cloth.api.dynamic.registry.v1.BiomesRegistry;
-
 import com.vanillaenhanced.registry.ModInit;
-import net.minecraft.datafixer.fix.BiomeRenameFix;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.DynamicRegistryManager;
-import net.minecraft.util.registry.Registry;
+import me.shedaniel.cloth.api.dynamic.registry.v1.BiomesRegistry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.BiomeLayerSampler;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+
 import static com.vanillaenhanced.registry.ModInit.*;
 
 public class Generator {

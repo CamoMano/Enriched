@@ -7,13 +7,9 @@ import net.minecraft.entity.mob.SlimeEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
-import net.minecraft.world.biome.BiomeKeys;
-
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Random;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
+import net.minecraft.world.World;
 
 public class HoneySlime extends SlimeEntity {
 
