@@ -41,13 +41,6 @@ public class ModInit {
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
-        public static boolean enableRedwoodForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRedwoodForest;
-        public static boolean enableDiverseForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDiverseForest;
-        public static boolean enableDesertMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDesertMountain;
-        public static boolean enableExtremeMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeMountain;
-        public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
-        public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
-        public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
