@@ -44,7 +44,7 @@ public final class Biomes {
     public static final RegistryKey<Biome> FROZEN_DESERT_KEY;
     public static final RegistryKey<Biome> EXTREME_JUNGLE_KEY;
     public static final RegistryKey<Biome> MONOLITH_KEY;
-    public static final RegistryKey<Biome> ABYSS_KEY;
+    public static final RegistryKey<Biome> TEST_KEY;
     public static final Biome DIVERSE_FOREST;
     public static final Biome REDWOOD_FOREST;
     public static final Biome DESERT_MOUNTAINS;
@@ -52,7 +52,7 @@ public final class Biomes {
     public static final Biome FROZEN_DESERT;
     public static final Biome EXTREME_JUNGLE;
     public static final Biome MONOLITH;
-    public static final Biome ABYSS;
+    public static final Biome TEST;
 
     public static void init() {
 
@@ -91,8 +91,8 @@ public final class Biomes {
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(MONOLITH), MONOLITH_KEY);
         }
 
-        Registry.register(BuiltinRegistries.BIOME, ABYSS_KEY.getValue(), ABYSS);
-        BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(ABYSS), ABYSS_KEY);
+        Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
+        BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
 
     }
 
@@ -106,7 +106,7 @@ public final class Biomes {
         EXTREME_MOUNTAINS_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":extreme_mountains"));
         EXTREME_JUNGLE_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":extreme_jungle"));
         MONOLITH_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":monolith"));
-        ABYSS_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":abyss"));
+        TEST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":test"));
 
         DIVERSE_FOREST = new Biome.Builder()
                 .category(Biome.Category.FOREST)
@@ -131,6 +131,7 @@ public final class Biomes {
                         .structureFeature(ConfiguredStructureFeatures.STRONGHOLD)
                         .feature(GenerationStep.Feature.LAKES, ConfiguredFeatures.LAKE_WATER)
                         .feature(GenerationStep.Feature.LAKES, ConfiguredFeatures.LAKE_LAVA)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.MONSTER_ROOM)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GOLD)
@@ -204,6 +205,7 @@ public final class Biomes {
                         .structureFeature(ConfiguredStructureFeatures.STRONGHOLD)
                         .feature(GenerationStep.Feature.LAKES, ConfiguredFeatures.LAKE_WATER)
                         .feature(GenerationStep.Feature.LAKES, ConfiguredFeatures.LAKE_LAVA)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.MONSTER_ROOM)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GOLD)
@@ -283,6 +285,7 @@ public final class Biomes {
                         .structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT)
                         .structureFeature(ConfiguredStructureFeatures.MINESHAFT)
                         .structureFeature(ConfiguredStructureFeatures.STRONGHOLD)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.MONSTER_ROOM)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GOLD)
@@ -341,6 +344,7 @@ public final class Biomes {
                         .structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT)
                         .structureFeature(ConfiguredStructureFeatures.MINESHAFT)
                         .structureFeature(ConfiguredStructureFeatures.STRONGHOLD)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.MONSTER_ROOM)
                         .feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ConfiguredFeatures.FREEZE_TOP_LAYER)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
@@ -396,6 +400,7 @@ public final class Biomes {
                         .structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_MOUNTAIN)
                         .structureFeature(ConfiguredStructureFeatures.MINESHAFT)
                         .structureFeature(ConfiguredStructureFeatures.STRONGHOLD)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.MONSTER_ROOM)
                         .feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ConfiguredFeatures.FREEZE_TOP_LAYER)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
@@ -461,6 +466,7 @@ public final class Biomes {
                         .structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_JUNGLE)
                         .structureFeature(ConfiguredStructureFeatures.MINESHAFT)
                         .structureFeature(ConfiguredStructureFeatures.STRONGHOLD)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.MONSTER_ROOM)
                         .feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ConfiguredFeatures.FREEZE_TOP_LAYER)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
@@ -525,11 +531,12 @@ public final class Biomes {
                         .grassColor(0x516b2e)
                         .build())
                 .generationSettings(new GenerationSettings.Builder()
-                        .surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.GRASS_CONFIG))
+                        .surfaceBuilder(SurfaceBuilder.SWAMP.method_30478(SurfaceBuilder.GRASS_CONFIG))
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CAVE)
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CANYON)
                         .structureFeature(ConfiguredStructureFeatures.MINESHAFT)
                         .structureFeature(ConfiguredStructureFeatures.STRONGHOLD)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.MONSTER_ROOM)
                         .feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ConfiguredFeatures.FREEZE_TOP_LAYER)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
@@ -572,29 +579,36 @@ public final class Biomes {
                 .build();
 
 
-        ABYSS = new Biome.Builder()
-                .category(Biome.Category.ICY)
-                .depth(0.125F)
-                .scale(0.05F)
-                .temperature(-1.5F)
-                .downfall(0.5F)
+        TEST = new Biome.Builder()
+                .category(Biome.Category.SWAMP)
+                .depth(-0.3F)
+                .scale(0.1F)
+                .temperature(0.8F)
+                .downfall(0.9F)
                 .effects(new BiomeEffects.Builder()
-                        .waterColor(0x093858)
-                        .waterFogColor(329011)
+                        .waterColor(0x576E5A)
+                        .waterFogColor(2302743)
                         .fogColor(12638463)
                         .moodSound(BiomeMoodSound.CAVE)
-                        .skyColor(0x84AAFF)
-                        .grassColor(0x516b2e)
+                        .skyColor(7907327)
+                        .grassColor(0x6a7039)
+                        .foliageColor(0x6a7039)
                         .build())
                 .generationSettings(new GenerationSettings.Builder()
-                        .surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.STONE_CONFIG))
+                        .surfaceBuilder(SurfaceBuilder.SWAMP.method_30478(SurfaceBuilder.GRASS_CONFIG))
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CAVE)
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CANYON)
+                        .structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_SWAMP)
+                        .structureFeature(ConfiguredStructureFeatures.SWAMP_HUT)
                         .structureFeature(ConfiguredStructureFeatures.MINESHAFT)
                         .structureFeature(ConfiguredStructureFeatures.STRONGHOLD)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.MONSTER_ROOM)
+                        .feature(GenerationStep.Feature.UNDERGROUND_STRUCTURES, ConfiguredFeatures.FOSSIL)
                         .feature(GenerationStep.Feature.LAKES, ConfiguredFeatures.LAKE_WATER)
                         .feature(GenerationStep.Feature.LAKES, ConfiguredFeatures.LAKE_LAVA)
                         .feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ConfiguredFeatures.FREEZE_TOP_LAYER)
+                        .feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ConfiguredFeatures.SPRING_LAVA)
+                        .feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ConfiguredFeatures.SPRING_WATER)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_COAL)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIAMOND)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GOLD)
@@ -602,17 +616,25 @@ public final class Biomes {
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GRANITE)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_ANDESITE)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIORITE)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIORITE)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_REDSTONE)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_EMERALD)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_LAPIS)
-                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIRT)
                         .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_GRAVEL)
-                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.DISK_SAND)
-                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.DISK_GRAVEL)
-                        .feature(GenerationStep.Feature.SURFACE_STRUCTURES, ConfiguredFeatures.ICEBERG_BLUE)
-                        .feature(GenerationStep.Feature.SURFACE_STRUCTURES, ConfiguredFeatures.ICEBERG_PACKED)
-                        .feature(GenerationStep.Feature.SURFACE_STRUCTURES, ConfiguredFeatures.ICE_PATCH)
-                        .feature(GenerationStep.Feature.RAW_GENERATION, ConfiguredFeatures.BLUE_ICE)
-                        .feature(GenerationStep.Feature.RAW_GENERATION, ConfiguredFeatures.PILE_ICE)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.ORE_DIRT)
+                        .feature(GenerationStep.Feature.UNDERGROUND_ORES, ConfiguredFeatures.DISK_CLAY)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.DARK_OAK)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.SWAMP_TREE)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_WATER)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.FANCY_OAK)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.FLOWER_SWAMP)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.VINES)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.PATCH_WATERLILLY)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.SEAGRASS_SWAMP)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.PATCH_SUGAR_CANE)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.PATCH_PUMPKIN)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.PATCH_GRASS_NORMAL)
+                        .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.FLOWER_PLAIN_DECORATED)
                         .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.BROWN_MUSHROOM_NORMAL)
                         .feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.RED_MUSHROOM_NORMAL)
                         .build())
@@ -621,14 +643,14 @@ public final class Biomes {
                         .creatureSpawnProbability(0.2F)
                         .spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.SHEEP, 12, 4, 4))
                         .spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.PIG, 10, 4, 4))
-                        .spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.CHICKEN, 10, 4, 4))
+                        .spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.COW, 8, 4, 4))
                         .spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.COW, 8, 4, 4))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.SPIDER, 100, 4, 4))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.ZOMBIE, 95, 4, 4))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.ZOMBIE_VILLAGER, 5, 1, 1))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.SKELETON, 100, 4, 4))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.CREEPER, 100, 4, 4))
-                        .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.SLIME, 100, 4, 4))
+                        .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.SLIME, 1, 1, 1))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.ENDERMAN, 10, 1, 4))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.WITCH, 5, 1, 1))
                         .spawn(SpawnGroup.AMBIENT, new SpawnSettings.SpawnEntry(EntityType.BAT, 10, 8, 8))
