@@ -36,13 +36,13 @@ dependencies {
     include "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_api_version}"
     
     //Auto Config
-    modImplementation("me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable") {
+    modImplementation("me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}") {
       exclude module: 'fabric-api'
     }
-    include "me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable"
+    include "me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}"
     
     //Mod Menu
-    modImplementation("io.github.prospector:modmenu:1.14.6+build.31") {
+    modImplementation("io.github.prospector:${project.modmenu_version}") {
       exclude module: 'fabric-api'
     }
 
