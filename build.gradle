@@ -42,7 +42,7 @@ dependencies {
     include "me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}"
     
     //Mod Menu
-    modImplementation("io.github.prospector:${project.modmenu_version}") {
+    modImplementation("io.github.prospector:modmenu:${project.modmenu_version}") {
       exclude module: 'fabric-api'
     }
 
