@@ -4,7 +4,6 @@ package com.vanillaenhanced.config;
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
-import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 
 
 @Config(name = "vanillaenhanced")
@@ -13,59 +12,60 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 @Config.Gui.CategoryBackground(category = "Items" , background = "vanillaenhanced:textures/block/amethyst_ore.png")
     public class ModConfig implements ConfigData {
 
+
     //Items & Ores
     @ConfigEntry.Category("Items")
-    @Comment("Should Obsidian Alloy Tools, Armor, and Items be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableObsidianGear = true;
     @ConfigEntry.Category("Items")
-    @Comment("Should Emerald Tools and Armor be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableEmeraldGear = true;
     @ConfigEntry.Category("Items")
-    @Comment("Should Steel Tools, Armor, and Items be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableSteelGear = true;
     @ConfigEntry.Category("Items")
-    @Comment("Should Ruby Tools, Armor, and Items be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableRubyGear = true;
     @ConfigEntry.Category("Items")
-    @Comment("Should Sapphire Tools, Armor, and Items be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableSapphireGear = true;
     @ConfigEntry.Category("Items")
-    @Comment("Should Amethyst Tools, Armor, and Items be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableAmethystGear = true;
     @ConfigEntry.Category("Items")
-    @Comment("Should Food items be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableFood = true;
 
     //Blocks
     @ConfigEntry.Category("Blocks")
-    @Comment("Should Dark Granite be generated?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableDarkGranite = true;
     @ConfigEntry.Category("Blocks")
-    @Comment("Should Marble be generated?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableMarble = true;
 
 
     //Biomes
     @ConfigEntry.Category("Biomes")
-    @Comment("Should Redwood Forest biomes be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableRedwoodForest = true;
     @ConfigEntry.Category("Biomes")
-    @Comment("Should Diverse Forest biomes be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableDiverseForest = true;
     @ConfigEntry.Category("Biomes")
-    @Comment("Should Desert Mountain biomes be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableDesertMountain = true;
     @ConfigEntry.Category("Biomes")
-    @Comment("Should Extreme Mountain biomes be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableExtremeMountain = true;
     @ConfigEntry.Category("Biomes")
-    @Comment("Should Extreme Jungle biomes be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableExtremeJungle = true;
     @ConfigEntry.Category("Biomes")
-    @Comment("Should Frozen Desert biomes be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableFrozenDesert = true;
     @ConfigEntry.Category("Biomes")
-    @Comment("Should the Monolith biome be enabled?")
+    @ConfigEntry.Gui.Tooltip()
     public boolean enableMonolith = false;
 
 

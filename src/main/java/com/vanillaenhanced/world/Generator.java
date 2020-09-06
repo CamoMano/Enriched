@@ -1,34 +1,64 @@
 package com.vanillaenhanced.world;
 
+
 import com.vanillaenhanced.registry.ModInit;
-import com.vanillaenhanced.world.feature.tree.RedwoodTreeDecorator;
-import com.vanillaenhanced.world.feature.tree.RedwoodTreeFeature;
-import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import me.shedaniel.cloth.api.dynamic.registry.v1.BiomesRegistry;
+import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
-import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
-import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static com.vanillaenhanced.registry.ModInit.*;
 
+public class Generator {
 
-public class Generation {
+   public static void oreGen(RegistryKey<Biome> registryKey, Biome biome) {
+       if (enableRubyGear) {
+           BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModInit.RUBY_ORE.getDefaultState(), 3)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 32)).spreadHorizontally().repeat(5)));
+           if (biome.getCategory() == Biome.Category.DESERT) {
+               BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModInit.RUBY_ORE.getDefaultState(), 6)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 32)).spreadHorizontally().repeat(8)));
 
-    public static void handleBiome(Biome biome) {
+           }
+       }
+
+       if (enableSapphireGear) {
+           BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModInit.SAPPHIRE_ORE.getDefaultState(), 3)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 32)).spreadHorizontally().repeat(5)));
+           if (biome.getCategory() == Biome.Category.ICY) {
+               BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModInit.SAPPHIRE_ORE.getDefaultState(), 6)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 32)).spreadHorizontally().repeat(8)));
+
+           }
+       }
+
+       if (enableAmethystGear) {
+           BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, AMETHYST_ORE.getDefaultState(), 3)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 32)).spreadHorizontally().repeat(5)));
+           if (biome.getCategory() == Biome.Category.JUNGLE) {
+               BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModInit.AMETHYST_ORE.getDefaultState(), 6)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 32)).spreadHorizontally().repeat(8)));
+
+           }
+       }
+
+
+
+   }
+    public static void blockGen(RegistryKey<Biome> registryKey, Biome biome) {
+       if (enableDarkGranite) {
+           BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModInit.DARK_GRANITE.getDefaultState(), 30)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 75)).spreadHorizontally().repeat(7)));
+       }
+       if (enableMarble) {
+            BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModInit.MARBLE.getDefaultState(), 30)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 80)).spreadHorizontally().repeat(7)));
+        }
+    }
+
+    public static void setupTrees(RegistryKey<Biome> registryKey, Biome biome){
+                //BiomesRegistry.registerFeature(biome, GenerationStep.Feature.VEGETAL_DECORATION, () -> Feature.TREE.configure(Features.REDWOOD_TREE_FEATURE.config));
+        }
+
+
+
+    /*
         if (biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
             if (enableDarkGranite){
             biome.addFeature(
@@ -206,4 +236,6 @@ public class Generation {
             );
         }
     }
+
+ */
 }

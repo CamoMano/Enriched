@@ -19,25 +19,34 @@ minecraft {
 }
 
 dependencies {
-	//to change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    //to change the versions see the gradle.properties file
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    
+    //Cloth Config
+    modApi("me.shedaniel.cloth:config-2:${project.cloth_version}"){
+      exclude module: 'fabric-api'
+    }
+    include "me.shedaniel.cloth:config-2:${project.cloth_version}"
 	
-	//Cloth Config
-	modApi "me.shedaniel.cloth:config-2:4.6.0"
-	include "me.shedaniel.cloth:config-2:4.6.0"
-	
-	//Auto Config
-	modCompile "me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable"
-	include "me.sargunvohra.mcmods:autoconfig1u:3.2.0-unstable"
-	implementation 'com.google.code.gson:gson:2.8.6'
-	
-	//Mod Menu
-	modImplementation "io.github.prospector:modmenu:1.14.5+build.30"
-    implementation 'org.jetbrains:annotations:16.0.2'
+	modImplementation "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_api_version}"
+    include "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_api_version}"
+    
+    //Auto Config
+    modImplementation("me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}") {
+      exclude module: 'fabric-api'
+    }
+    include "me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}"
+    
+    //Mod Menu
+    modImplementation("io.github.prospector:modmenu:${project.modmenu_version}") {
+      exclude module: 'fabric-api'
+    }
+
+    compileOnly 'org.jetbrains:annotations:16.0.2'
 
 }
 

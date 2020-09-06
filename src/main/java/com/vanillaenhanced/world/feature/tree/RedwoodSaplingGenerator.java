@@ -1,12 +1,13 @@
 package com.vanillaenhanced.world.feature.tree;
 
-import com.vanillaenhanced.registry.ModInit;
+import com.vanillaenhanced.world.Features;
 import net.minecraft.block.sapling.LargeTreeSaplingGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
+
 
 public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
 
@@ -18,6 +19,6 @@ public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
 
 	@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> createLargeTreeFeature(Random random) {
-		return ModInit.REDWOOD_TREE_FEATURE.configure(ModInit.REDWOOD_TREE_CONFIG);
+		return Features.REDWOOD_TREE_FEATURE;
 	}
 }
