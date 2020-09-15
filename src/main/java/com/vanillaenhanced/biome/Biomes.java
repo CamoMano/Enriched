@@ -2,6 +2,8 @@ package com.vanillaenhanced.biome;
 
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.mixin.BuiltinBiomesAccessor;
+import com.vanillaenhanced.mixin.SetBaseBiomesLayerAccessor;
+import com.vanillaenhanced.mixin.VanillaLayeredBiomeSourceAccessor;
 import com.vanillaenhanced.world.Features;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.minecraft.entity.EntityType;
@@ -21,6 +23,10 @@ import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 
@@ -33,8 +39,6 @@ public final class Biomes {
     public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
     public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
     public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
-
-
 
 
     public static final RegistryKey<Biome> DIVERSE_FOREST_KEY;
@@ -55,46 +59,77 @@ public final class Biomes {
     public static final Biome TEST;
 
     public static void init() {
+        List<RegistryKey<Biome>> biomes = new ArrayList<>(VanillaLayeredBiomeSourceAccessor.getBiomes());
 
-        if (enableDiverseForest){
+
+        if (enableDiverseForest) {
             Registry.register(BuiltinRegistries.BIOME, DIVERSE_FOREST_KEY.getValue(), DIVERSE_FOREST);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(DIVERSE_FOREST), DIVERSE_FOREST_KEY);
+            biomes.add(DIVERSE_FOREST_KEY);
+            SetBaseBiomesLayerAccessor.setTemperateBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(DIVERSE_FOREST)));
         }
 
-        if (enableRedwoodForest){
+        if (enableRedwoodForest) {
             Registry.register(BuiltinRegistries.BIOME, REDWOOD_FOREST_KEY.getValue(), REDWOOD_FOREST);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(REDWOOD_FOREST), REDWOOD_FOREST_KEY);
+            biomes.add(REDWOOD_FOREST_KEY);
+            SetBaseBiomesLayerAccessor.setTemperateBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(REDWOOD_FOREST)));
         }
 
-        if (enableDesertMountain){
+        if (enableDesertMountain) {
             Registry.register(BuiltinRegistries.BIOME, DESERT_MOUNTAINS_KEY.getValue(), DESERT_MOUNTAINS);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS), DESERT_MOUNTAINS_KEY);
+            biomes.add(DESERT_MOUNTAINS_KEY);
+            SetBaseBiomesLayerAccessor.setDryBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS)));
         }
 
-        if (enableExtremeMountain){
+        if (enableExtremeMountain) {
             Registry.register(BuiltinRegistries.BIOME, EXTREME_MOUNTAINS_KEY.getValue(), EXTREME_MOUNTAINS);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS), EXTREME_MOUNTAINS_KEY);
+            biomes.add(EXTREME_MOUNTAINS_KEY);
+            SetBaseBiomesLayerAccessor.setCoolBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS)));
         }
 
-        if (enableFrozenDesert){
+        if (enableFrozenDesert) {
             Registry.register(BuiltinRegistries.BIOME, FROZEN_DESERT_KEY.getValue(), FROZEN_DESERT);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT), FROZEN_DESERT_KEY);
+            biomes.add(FROZEN_DESERT_KEY);
+            SetBaseBiomesLayerAccessor.setSnowyBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT)));
         }
 
-        if (enableExtremeJungle){
+        if (enableExtremeJungle) {
             Registry.register(BuiltinRegistries.BIOME, EXTREME_JUNGLE_KEY.getValue(), EXTREME_JUNGLE);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE), EXTREME_JUNGLE_KEY);
+            biomes.add(EXTREME_JUNGLE_KEY);
+            SetBaseBiomesLayerAccessor.setTemperateBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE)));
         }
 
-        if (enableMonolith){
+        if (enableMonolith) {
             Registry.register(BuiltinRegistries.BIOME, MONOLITH_KEY.getValue(), MONOLITH);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(MONOLITH), MONOLITH_KEY);
+            biomes.add(MONOLITH_KEY);
+            SetBaseBiomesLayerAccessor.setTemperateBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
         }
 
         Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
         BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
 
+        VanillaLayeredBiomeSourceAccessor.setBiomes(biomes);
+
+
+
+
+
+
     }
+
 
 
 
@@ -277,7 +312,7 @@ public final class Biomes {
                         .grassColor(0xd6b27c)
                         .build())
                 .generationSettings(new GenerationSettings.Builder()
-                .surfaceBuilder(SurfaceBuilder.MOUNTAIN.method_30478(SurfaceBuilder.SAND_CONFIG))
+                .surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG))
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CAVE)
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CANYON)
                         .structureFeature(ConfiguredStructureFeatures.DESERT_PYRAMID)

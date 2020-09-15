@@ -1,11 +1,13 @@
 package com.vanillaenhanced.registry;
 
 
+import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.entity.HoneySlime;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
+import com.vanillaenhanced.mixin.BuiltinBiomesAccessor;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -13,15 +15,18 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.*;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static net.minecraft.block.Blocks.SPRUCE_LOG;
@@ -41,6 +46,14 @@ public class ModInit {
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
+
+        public static boolean enableRedwoodForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRedwoodForest;
+        public static boolean enableDiverseForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDiverseForest;
+        public static boolean enableDesertMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDesertMountain;
+        public static boolean enableExtremeMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeMountain;
+        public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
+        public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
+        public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -100,12 +113,13 @@ public class ModInit {
         public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
         public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
 
-
-
-        public static final EntityType<HoneySlime> HONEY_SLIME = FabricEntityTypeBuilder.
-                create(SpawnGroup.MONSTER, HoneySlime::new)
+        public static final EntityType<HoneySlime> HONEY_SLIME = Registry.register(
+                Registry.ENTITY_TYPE,
+                new Identifier(MOD_ID, "honey_slime"),
+                FabricEntityTypeBuilder.<HoneySlime>create(SpawnGroup.MONSTER, HoneySlime::new)
                 .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackable(32, 4)
-                .build();
+                .build()
+        );
 
 
         //Register
@@ -163,12 +177,11 @@ public class ModInit {
                 //Biomes
 
 
-        /*
+
         if (enableDiverseForest){
-            OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 0.75);
-            OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
-            OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 0.33);
+                BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(Biomes.DIVERSE_FOREST), Biomes.DIVERSE_FOREST_KEY);
         }
+        /*
         if (enableRedwoodForest){
             OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 0.4);
         }
@@ -342,7 +355,6 @@ public class ModInit {
                 // }
 
                 FabricDefaultAttributeRegistry.register(HONEY_SLIME, HostileEntity.createHostileAttributes());
-                Registry.register(Registry.ENTITY_TYPE, MOD_ID+"honey_slime", HONEY_SLIME);
                 Registry.register(
                         Registry.ITEM,
                         MOD_ID+"honey_slime_spawn_egg",

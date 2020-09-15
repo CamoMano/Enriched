@@ -3,7 +3,9 @@
   "package": "com.vanillaenhanced.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  "BuiltinBiomesAccessor"
+  "BuiltinBiomesAccessor",
+  "SetBaseBiomesLayerAccessor",
+  "VanillaLayeredBiomeSourceAccessor"
   ],
   "client": [],
   "server": [],
