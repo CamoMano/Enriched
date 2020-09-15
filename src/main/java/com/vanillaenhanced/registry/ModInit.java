@@ -356,9 +356,8 @@ public class ModInit {
 
                 FabricDefaultAttributeRegistry.register(HONEY_SLIME, HostileEntity.createHostileAttributes());
                 Registry.register(
-                        Registry.ITEM,
-                        MOD_ID+"honey_slime_spawn_egg",
-                        new SpawnEggItem(HONEY_SLIME, 0x513EA0, 0x7E6EBF, new Item.Settings().group(ItemGroup.MISC))
+                        Registry.ITEM, new Identifier(MOD_ID, "honey_slime_spawn_egg"),
+                        new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings().group(ItemGroup.MISC))
                 );
 
 

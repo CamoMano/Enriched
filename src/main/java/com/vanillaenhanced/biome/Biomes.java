@@ -113,9 +113,8 @@ public final class Biomes {
         if (enableMonolith) {
             Registry.register(BuiltinRegistries.BIOME, MONOLITH_KEY.getValue(), MONOLITH);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(MONOLITH), MONOLITH_KEY);
-            biomes.add(MONOLITH_KEY);
-            SetBaseBiomesLayerAccessor.setTemperateBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
+            //biomes.add(MONOLITH_KEY);
+            //SetBaseBiomesLayerAccessor.setTemperateBiomes(ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
         }
 
         Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
@@ -295,7 +294,6 @@ public final class Biomes {
                         .build())
                 .temperature(0.8F)
                 .build();
-
 
         DESERT_MOUNTAINS = new Biome.Builder()
                 .category(Biome.Category.DESERT)
