@@ -43,14 +43,6 @@ public class ModInit {
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
         public static boolean enableHoneySlime = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableHoneySlime;
 
-        public static boolean enableRedwoodForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRedwoodForest;
-        public static boolean enableDiverseForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDiverseForest;
-        public static boolean enableDesertMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDesertMountain;
-        public static boolean enableExtremeMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeMountain;
-        public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
-        public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
-        public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
-
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
         public static final ArmorMaterial EMERALD_ARMOR = new ArmorMaterialEmerald();
@@ -113,7 +105,8 @@ public class ModInit {
                 Registry.ENTITY_TYPE,
                 new Identifier(MOD_ID, "honey_slime"),
                 FabricEntityTypeBuilder.<HoneySlime>create(SpawnGroup.MONSTER, HoneySlime::new)
-                .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackable(32, 4)
+                .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
+                //.dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackable(32, 4)
                 .build()
         );
 

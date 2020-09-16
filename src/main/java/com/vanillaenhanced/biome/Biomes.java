@@ -48,7 +48,7 @@ public final class Biomes {
     public static final RegistryKey<Biome> FROZEN_DESERT_KEY;
     public static final RegistryKey<Biome> EXTREME_JUNGLE_KEY;
     public static final RegistryKey<Biome> MONOLITH_KEY;
-    public static final RegistryKey<Biome> TEST_KEY;
+    //public static final RegistryKey<Biome> TEST_KEY;
     public static final Biome DIVERSE_FOREST;
     public static final Biome REDWOOD_FOREST;
     public static final Biome DESERT_MOUNTAINS;
@@ -56,7 +56,7 @@ public final class Biomes {
     public static final Biome FROZEN_DESERT;
     public static final Biome EXTREME_JUNGLE;
     public static final Biome MONOLITH;
-    public static final Biome TEST;
+    //public static final Biome TEST;
 
     public static void init() {
         List<RegistryKey<Biome>> biomes = new ArrayList<>(VanillaLayeredBiomeSourceAccessor.getBiomes());
@@ -117,8 +117,8 @@ public final class Biomes {
             //SetBaseBiomesLayerAccessor.setTemperateBiomes(ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
         }
 
-        Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
-        BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
+        //Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
+        //BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
 
         VanillaLayeredBiomeSourceAccessor.setBiomes(biomes);
 
@@ -140,7 +140,7 @@ public final class Biomes {
         EXTREME_MOUNTAINS_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":extreme_mountains"));
         EXTREME_JUNGLE_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":extreme_jungle"));
         MONOLITH_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":monolith"));
-        TEST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":test"));
+        //TEST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":test"));
 
         DIVERSE_FOREST = new Biome.Builder()
                 .category(Biome.Category.FOREST)
@@ -611,7 +611,7 @@ public final class Biomes {
                         .build())
                 .build();
 
-
+/*
         TEST = new Biome.Builder()
                 .category(Biome.Category.SWAMP)
                 .depth(-0.3F)
@@ -689,6 +689,8 @@ public final class Biomes {
                         .spawn(SpawnGroup.AMBIENT, new SpawnSettings.SpawnEntry(EntityType.BAT, 10, 8, 8))
                         .build())
                 .build();
+
+ */
     }
 
 
