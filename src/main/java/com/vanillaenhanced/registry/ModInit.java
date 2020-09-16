@@ -1,13 +1,11 @@
 package com.vanillaenhanced.registry;
 
 
-import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.blocks.*;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.entity.HoneySlime;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
-import com.vanillaenhanced.mixin.BuiltinBiomesAccessor;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -15,18 +13,15 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
-import net.minecraft.entity.*;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 import static net.minecraft.block.Blocks.SPRUCE_LOG;
@@ -46,6 +41,7 @@ public class ModInit {
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
+        public static boolean enableHoneySlime = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableHoneySlime;
 
         public static boolean enableRedwoodForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRedwoodForest;
         public static boolean enableDiverseForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDiverseForest;
@@ -173,36 +169,6 @@ public class ModInit {
                 flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
-
-                //Biomes
-
-
-
-        if (enableDiverseForest){
-                BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(Biomes.DIVERSE_FOREST), Biomes.DIVERSE_FOREST_KEY);
-        }
-        /*
-        if (enableRedwoodForest){
-            OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 0.4);
-        }
-        if (enableDesertMountain){
-            OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 0.5);
-        }
-        if (enableExtremeMountain){
-            OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 0.25);
-        }
-        if (enableExtremeJungle){
-            OverworldBiomes.addContinentalBiome(ModInit.EXTREME_JUNGLE, OverworldClimate.TEMPERATE, 0.15);
-        }
-        if (enableFrozenDesert){
-            OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.10);
-        }
-        if (enableMonolith){
-            OverworldBiomes.addContinentalBiome(ModInit.MONOLITH, OverworldClimate.TEMPERATE, 0.02);
-        }
-		*/
-
-                //Generator.initBiomeFeatures();
 
 
                 if (enableFood) {
