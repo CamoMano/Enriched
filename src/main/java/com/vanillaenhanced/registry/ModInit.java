@@ -41,6 +41,7 @@ public class ModInit {
         public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
+        public static boolean enableHoneySlime = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableHoneySlime;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -100,12 +101,14 @@ public class ModInit {
         public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
         public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
 
-
-
-        public static final EntityType<HoneySlime> HONEY_SLIME = FabricEntityTypeBuilder.
-                create(SpawnGroup.MONSTER, HoneySlime::new)
-                .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackable(32, 4)
-                .build();
+        public static final EntityType<HoneySlime> HONEY_SLIME = Registry.register(
+                Registry.ENTITY_TYPE,
+                new Identifier(MOD_ID, "honey_slime"),
+                FabricEntityTypeBuilder.<HoneySlime>create(SpawnGroup.MONSTER, HoneySlime::new)
+                .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
+                //.dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackable(32, 4)
+                .build()
+        );
 
 
         //Register
@@ -159,37 +162,6 @@ public class ModInit {
                 flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
-
-                //Biomes
-
-
-        /*
-        if (enableDiverseForest){
-            OverworldBiomes.addContinentalBiome(ModInit.DIVERSE_FOREST, OverworldClimate.TEMPERATE, 0.75);
-            OverworldBiomes.addBiomeVariant(Biomes.PLAINS, ModInit.DIVERSE_FOREST, 0.33);
-            OverworldBiomes.addHillsBiome(ModInit.DIVERSE_FOREST, Biomes.MOUNTAINS, 0.33);
-        }
-        if (enableRedwoodForest){
-            OverworldBiomes.addContinentalBiome(ModInit.REDWOOD_FOREST, OverworldClimate.TEMPERATE, 0.4);
-        }
-        if (enableDesertMountain){
-            OverworldBiomes.addContinentalBiome(ModInit.DESERT_MOUNTAINS, OverworldClimate.DRY, 0.5);
-        }
-        if (enableExtremeMountain){
-            OverworldBiomes.addContinentalBiome(ModInit.EXTREME_MOUNTAINS, OverworldClimate.COOL, 0.25);
-        }
-        if (enableExtremeJungle){
-            OverworldBiomes.addContinentalBiome(ModInit.EXTREME_JUNGLE, OverworldClimate.TEMPERATE, 0.15);
-        }
-        if (enableFrozenDesert){
-            OverworldBiomes.addContinentalBiome(ModInit.FROZEN_DESERT, OverworldClimate.SNOWY, 0.10);
-        }
-        if (enableMonolith){
-            OverworldBiomes.addContinentalBiome(ModInit.MONOLITH, OverworldClimate.TEMPERATE, 0.02);
-        }
-		*/
-
-                //Generator.initBiomeFeatures();
 
 
                 if (enableFood) {
@@ -342,11 +314,9 @@ public class ModInit {
                 // }
 
                 FabricDefaultAttributeRegistry.register(HONEY_SLIME, HostileEntity.createHostileAttributes());
-                Registry.register(Registry.ENTITY_TYPE, MOD_ID+"honey_slime", HONEY_SLIME);
                 Registry.register(
-                        Registry.ITEM,
-                        MOD_ID+"honey_slime_spawn_egg",
-                        new SpawnEggItem(HONEY_SLIME, 0x513EA0, 0x7E6EBF, new Item.Settings().group(ItemGroup.MISC))
+                        Registry.ITEM, new Identifier(MOD_ID, "honey_slime_spawn_egg"),
+                        new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings().group(ItemGroup.MISC))
                 );
 
 

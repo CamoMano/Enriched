@@ -2,6 +2,8 @@ package com.vanillaenhanced.biome;
 
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.mixin.BuiltinBiomesAccessor;
+import com.vanillaenhanced.mixin.SetBaseBiomesLayerAccessor;
+import com.vanillaenhanced.mixin.VanillaLayeredBiomeSourceAccessor;
 import com.vanillaenhanced.world.Features;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.minecraft.entity.EntityType;
@@ -21,6 +23,10 @@ import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 
@@ -35,8 +41,6 @@ public final class Biomes {
     public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
 
 
-
-
     public static final RegistryKey<Biome> DIVERSE_FOREST_KEY;
     public static final RegistryKey<Biome> REDWOOD_FOREST_KEY;
     public static final RegistryKey<Biome> DESERT_MOUNTAINS_KEY;
@@ -44,7 +48,7 @@ public final class Biomes {
     public static final RegistryKey<Biome> FROZEN_DESERT_KEY;
     public static final RegistryKey<Biome> EXTREME_JUNGLE_KEY;
     public static final RegistryKey<Biome> MONOLITH_KEY;
-    public static final RegistryKey<Biome> TEST_KEY;
+    //public static final RegistryKey<Biome> TEST_KEY;
     public static final Biome DIVERSE_FOREST;
     public static final Biome REDWOOD_FOREST;
     public static final Biome DESERT_MOUNTAINS;
@@ -52,49 +56,79 @@ public final class Biomes {
     public static final Biome FROZEN_DESERT;
     public static final Biome EXTREME_JUNGLE;
     public static final Biome MONOLITH;
-    public static final Biome TEST;
+    //public static final Biome TEST;
 
     public static void init() {
+        List<RegistryKey<Biome>> biomes = new ArrayList<>(VanillaLayeredBiomeSourceAccessor.getBiomes());
 
-        if (enableDiverseForest){
+
+        if (enableDiverseForest) {
             Registry.register(BuiltinRegistries.BIOME, DIVERSE_FOREST_KEY.getValue(), DIVERSE_FOREST);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(DIVERSE_FOREST), DIVERSE_FOREST_KEY);
+            biomes.add(DIVERSE_FOREST_KEY);
+            SetBaseBiomesLayerAccessor.setTemperateBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(DIVERSE_FOREST)));
         }
 
-        if (enableRedwoodForest){
+        if (enableRedwoodForest) {
             Registry.register(BuiltinRegistries.BIOME, REDWOOD_FOREST_KEY.getValue(), REDWOOD_FOREST);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(REDWOOD_FOREST), REDWOOD_FOREST_KEY);
+            biomes.add(REDWOOD_FOREST_KEY);
+            SetBaseBiomesLayerAccessor.setTemperateBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(REDWOOD_FOREST)));
         }
 
-        if (enableDesertMountain){
+        if (enableDesertMountain) {
             Registry.register(BuiltinRegistries.BIOME, DESERT_MOUNTAINS_KEY.getValue(), DESERT_MOUNTAINS);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS), DESERT_MOUNTAINS_KEY);
+            biomes.add(DESERT_MOUNTAINS_KEY);
+            SetBaseBiomesLayerAccessor.setDryBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS)));
         }
 
-        if (enableExtremeMountain){
+        if (enableExtremeMountain) {
             Registry.register(BuiltinRegistries.BIOME, EXTREME_MOUNTAINS_KEY.getValue(), EXTREME_MOUNTAINS);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS), EXTREME_MOUNTAINS_KEY);
+            biomes.add(EXTREME_MOUNTAINS_KEY);
+            SetBaseBiomesLayerAccessor.setCoolBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS)));
         }
 
-        if (enableFrozenDesert){
+        if (enableFrozenDesert) {
             Registry.register(BuiltinRegistries.BIOME, FROZEN_DESERT_KEY.getValue(), FROZEN_DESERT);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT), FROZEN_DESERT_KEY);
+            biomes.add(FROZEN_DESERT_KEY);
+            SetBaseBiomesLayerAccessor.setSnowyBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT)));
         }
 
-        if (enableExtremeJungle){
+        if (enableExtremeJungle) {
             Registry.register(BuiltinRegistries.BIOME, EXTREME_JUNGLE_KEY.getValue(), EXTREME_JUNGLE);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE), EXTREME_JUNGLE_KEY);
+            biomes.add(EXTREME_JUNGLE_KEY);
+            SetBaseBiomesLayerAccessor.setTemperateBiomes(
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE)));
         }
 
-        if (enableMonolith){
+        if (enableMonolith) {
             Registry.register(BuiltinRegistries.BIOME, MONOLITH_KEY.getValue(), MONOLITH);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(MONOLITH), MONOLITH_KEY);
+            //biomes.add(MONOLITH_KEY);
+            //SetBaseBiomesLayerAccessor.setTemperateBiomes(ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
         }
 
-        Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
-        BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
+        //Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
+        //BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
+
+        VanillaLayeredBiomeSourceAccessor.setBiomes(biomes);
+
+
+
+
+
 
     }
+
 
 
 
@@ -106,7 +140,7 @@ public final class Biomes {
         EXTREME_MOUNTAINS_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":extreme_mountains"));
         EXTREME_JUNGLE_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":extreme_jungle"));
         MONOLITH_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":monolith"));
-        TEST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":test"));
+        //TEST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID+":test"));
 
         DIVERSE_FOREST = new Biome.Builder()
                 .category(Biome.Category.FOREST)
@@ -261,7 +295,6 @@ public final class Biomes {
                 .temperature(0.8F)
                 .build();
 
-
         DESERT_MOUNTAINS = new Biome.Builder()
                 .category(Biome.Category.DESERT)
                 .depth(1.0F)
@@ -277,7 +310,7 @@ public final class Biomes {
                         .grassColor(0xd6b27c)
                         .build())
                 .generationSettings(new GenerationSettings.Builder()
-                .surfaceBuilder(SurfaceBuilder.MOUNTAIN.method_30478(SurfaceBuilder.SAND_CONFIG))
+                .surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG))
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CAVE)
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CANYON)
                         .structureFeature(ConfiguredStructureFeatures.DESERT_PYRAMID)
@@ -578,7 +611,7 @@ public final class Biomes {
                         .build())
                 .build();
 
-
+/*
         TEST = new Biome.Builder()
                 .category(Biome.Category.SWAMP)
                 .depth(-0.3F)
@@ -656,6 +689,8 @@ public final class Biomes {
                         .spawn(SpawnGroup.AMBIENT, new SpawnSettings.SpawnEntry(EntityType.BAT, 10, 8, 8))
                         .build())
                 .build();
+
+ */
     }
 
 

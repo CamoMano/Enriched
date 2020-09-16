@@ -28,9 +28,6 @@ public class HoneySlime extends SlimeEntity {
         setSize(1 << (this.random.nextInt(10) < 1 ? 1 : 0), true);
         return ret;
     }
-
-
-    //@Override
     
 
 

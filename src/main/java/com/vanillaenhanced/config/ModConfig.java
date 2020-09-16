@@ -35,6 +35,9 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableFood = true;
+    @ConfigEntry.Category("Items")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableHoneySlime = true;
 
     //Blocks
     @ConfigEntry.Category("Blocks")
