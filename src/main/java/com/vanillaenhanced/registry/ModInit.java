@@ -92,6 +92,8 @@ public class ModInit {
         //public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
         //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
 
+
+
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -106,8 +108,8 @@ public class ModInit {
                 Registry.ENTITY_TYPE,
                 new Identifier(MOD_ID, "honey_slime"),
                 FabricEntityTypeBuilder.<HoneySlime>create(SpawnGroup.MONSTER, HoneySlime::new)
-                .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
-                .build()
+                        .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
+                        .build()
         );
 
 
@@ -161,8 +163,6 @@ public class ModInit {
                 flammableRegistry.add(REDWOOD_FENCE_GATE, 5, 20);
                 flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
-
-
 
                 if (enableFood) {
                         //Food
