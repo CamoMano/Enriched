@@ -92,12 +92,15 @@ public class ModInit {
         //public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
         //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
 
+
+
         //Items
         public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item AMETHYST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+        public static final Item HONEY_BALL = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
         public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
         public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
 
@@ -105,9 +108,8 @@ public class ModInit {
                 Registry.ENTITY_TYPE,
                 new Identifier(MOD_ID, "honey_slime"),
                 FabricEntityTypeBuilder.<HoneySlime>create(SpawnGroup.MONSTER, HoneySlime::new)
-                .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
-                //.dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackable(32, 4)
-                .build()
+                        .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
+                        .build()
         );
 
 
@@ -161,8 +163,6 @@ public class ModInit {
                 flammableRegistry.add(REDWOOD_FENCE_GATE, 5, 20);
                 flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
-
-
 
                 if (enableFood) {
                         //Food
@@ -318,6 +318,8 @@ public class ModInit {
                         Registry.ITEM, new Identifier(MOD_ID, "honey_slime_spawn_egg"),
                         new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings().group(ItemGroup.MISC))
                 );
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "honey_ball"), HONEY_BALL);
+
 
 
         }

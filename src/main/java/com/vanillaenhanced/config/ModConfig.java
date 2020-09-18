@@ -10,6 +10,7 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 @Config.Gui.CategoryBackground(category = "Biomes" , background = "vanillaenhanced:textures/block/redwood_planks.png")
 @Config.Gui.CategoryBackground(category = "Blocks" , background = "vanillaenhanced:textures/block/marble.png")
 @Config.Gui.CategoryBackground(category = "Items" , background = "vanillaenhanced:textures/block/amethyst_ore.png")
+@Config.Gui.CategoryBackground(category = "Mobs" , background = "minecraft:textures/block/honey_block_side.png")
     public class ModConfig implements ConfigData {
 
 
@@ -35,9 +36,6 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableFood = true;
-    @ConfigEntry.Category("Items")
-    @ConfigEntry.Gui.Tooltip()
-    public boolean enableHoneySlime = true;
 
     //Blocks
     @ConfigEntry.Category("Blocks")
@@ -67,11 +65,16 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
     @ConfigEntry.Category("Biomes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableFrozenDesert = true;
+    /*
     @ConfigEntry.Category("Biomes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableMonolith = false;
+     */
 
-
+    //Mobs
+    @ConfigEntry.Category("Mobs")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableHoneySlime = true;
 
 
     }

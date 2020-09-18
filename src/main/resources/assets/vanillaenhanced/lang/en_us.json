@@ -19,6 +19,7 @@
 "text.autoconfig.vanillaenhanced.category.Items": "Items & Ores",
 "text.autoconfig.vanillaenhanced.category.Blocks": "Blocks",
 "text.autoconfig.vanillaenhanced.category.Biomes": "Biomes",
+"text.autoconfig.vanillaenhanced.category.Mobs": "Mobs",
 "text.autoconfig.vanillaenhanced.option.enableObsidianGear.@Tooltip": "Should Obsidian Alloy Tools, Armor, and Items be enabled?",
 "text.autoconfig.vanillaenhanced.option.enableEmeraldGear.@Tooltip": "Should Emerald Tools and Armor be enabled?",
 "text.autoconfig.vanillaenhanced.option.enableSteelGear.@Tooltip": "Should Steel Tools, Armor, and Items be enabled?",
@@ -143,6 +144,7 @@
 "item.vanillaenhanced.amethyst_leggings": "Amethyst Leggings",
 "item.vanillaenhanced.amethyst_boots": "Amethyst Boots",
 "item.vanillaenhanced.honey_slime_spawn_egg": "Honey Slime Spawn Egg",
+"item.vanillaenhanced.honey_ball": "Honey Ball",
 "entity.vanillaenhanced.honey_slime": "Honey Slime"
 
 }

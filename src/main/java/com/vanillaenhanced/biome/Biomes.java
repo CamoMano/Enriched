@@ -38,7 +38,7 @@ public final class Biomes {
     public static boolean enableExtremeMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeMountain;
     public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
     public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
-    public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
+    //public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
 
 
     public static final RegistryKey<Biome> DIVERSE_FOREST_KEY;
@@ -109,13 +109,15 @@ public final class Biomes {
             SetBaseBiomesLayerAccessor.setTemperateBiomes(
                     ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE)));
         }
-
+/*
         if (enableMonolith) {
             Registry.register(BuiltinRegistries.BIOME, MONOLITH_KEY.getValue(), MONOLITH);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(MONOLITH), MONOLITH_KEY);
-            //biomes.add(MONOLITH_KEY);
-            //SetBaseBiomesLayerAccessor.setTemperateBiomes(ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
+            biomes.add(MONOLITH_KEY);
+            SetBaseBiomesLayerAccessor.setTemperateBiomes(ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
         }
+
+ */
 
         //Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
         //BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
@@ -215,7 +217,7 @@ public final class Biomes {
                 .temperature(0.8F)
                 .build();
 
-        
+
         REDWOOD_FOREST = new Biome.Builder()
                 .category(Biome.Category.FOREST)
                 .depth(0.125F)
@@ -310,7 +312,7 @@ public final class Biomes {
                         .grassColor(0xd6b27c)
                         .build())
                 .generationSettings(new GenerationSettings.Builder()
-                .surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG))
+                        .surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG))
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CAVE)
                         .carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CANYON)
                         .structureFeature(ConfiguredStructureFeatures.DESERT_PYRAMID)
@@ -339,7 +341,7 @@ public final class Biomes {
                         .build())
                 .precipitation(Biome.Precipitation.NONE)
                 .spawnSettings(new SpawnSettings.Builder()
-                .creatureSpawnProbability(0.2F)
+                        .creatureSpawnProbability(0.2F)
                         .spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 8, 2, 4))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.SPIDER, 100, 4, 4))
                         .spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.HUSK, 95, 4, 4))

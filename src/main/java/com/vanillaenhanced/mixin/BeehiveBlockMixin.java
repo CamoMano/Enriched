@@ -1,10 +1,8 @@
 package com.vanillaenhanced.mixin;
 
 
-import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.entity.HoneySlime;
 import com.vanillaenhanced.registry.ModInit;
-import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
