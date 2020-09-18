@@ -6,8 +6,9 @@
 "text.autoconfig.vanillaenhanced.option.enableSapphireGear": "Включить Сапфировое снаряжение",
 "text.autoconfig.vanillaenhanced.option.enableAmethystGear": "Включить Аметистовое снаряжение",
 "text.autoconfig.vanillaenhanced.option.enableDarkGranite": "Включить Темный гранит",
-"text.autoconfig.vanillaenhanced.option.enableMarble": "Включить мрамор",
+"text.autoconfig.vanillaenhanced.option.enableMarble": "Включить Мрамор",
 "text.autoconfig.vanillaenhanced.option.enableFood": "Включить Еду",
+"text.autoconfig.vanillaenhanced.option.enableHoneySlime": "Включить Медовых слизней",
 "text.autoconfig.vanillaenhanced.option.enableRedwoodForest": "Включить Краснолесье",
 "text.autoconfig.vanillaenhanced.option.enableDiverseForest": "Включить Разнолесье",
 "text.autoconfig.vanillaenhanced.option.enableDesertMountain": "Включить Пустынные горы",
@@ -18,6 +19,7 @@
 "text.autoconfig.vanillaenhanced.category.Items": "Предметы и руды",
 "text.autoconfig.vanillaenhanced.category.Blocks": "Блоки",
 "text.autoconfig.vanillaenhanced.category.Biomes": "Биомы",
+"text.autoconfig.vanillaenhanced.category.Mobs": "Мобы",
 "text.autoconfig.vanillaenhanced.option.enableObsidianGear. @ Tooltip": "Следует ли включить Обсидиановые инструменты, броню и предметы?",
 "text.autoconfig.vanillaenhanced.option.enableEmeraldGear. @ Tooltip": "Следует ли включить Изумрудные инструменты и броню?",
 "text.autoconfig.vanillaenhanced.option.enableSteelGear. @ Tooltip": "Следует ли включить Стальные инструменты, броню и предметы?",
@@ -34,6 +36,7 @@
 "text.autoconfig.vanillaenhanced.option.enableExtremeJungle. @ Tooltip": "Следует ли включить биомы Опасных джунглей?",
 "text.autoconfig.vanillaenhanced.option.enableFrozenDesert. @ Tooltip": "Следует ли включить биомы Морозной пустыни?",
 "text.autoconfig.vanillaenhanced.option.enableMonolith. @ Tooltip": "Следует ли включить биом Монолита?",
+"text.autoconfig.vanillaenhanced.option.enableHoneySlime.@Tooltip": "Следует ли включить Медовых слизней?",
 "text.autoconfig.vanillaenhanced.title": "Vanilla Enhanced Config",
 "item.vanillaenhanced.obsidian_pickaxe": "Обсидиановая кирка",
 "item.vanillaenhanced.obsidian_sword": "Обсидиановый меч",
@@ -139,6 +142,9 @@
 "item.vanillaenhanced.amethyst_helmet": "Аметистовый шлем",
 "item.vanillaenhanced.amethyst_chestplate": "Аметистовый нагрудник",
 "item.vanillaenhanced.amethyst_leggings": "Аметистовые поножи",
-"item.vanillaenhanced.amethyst_boots": "Аметистовые сапоги"
+"item.vanillaenhanced.amethyst_boots": "Аметистовые сапоги",
+"item.vanillaenhanced.honey_slime_spawn_egg": "Яйцо спавна Медового слизня",
+"item.vanillaenhanced.honey_ball": "Медовая слизь",
+"entity.vanillaenhanced.honey_slime": "Медовый слизень"
 
 }
