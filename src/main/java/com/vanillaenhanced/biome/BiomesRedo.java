@@ -4,10 +4,7 @@ import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.mixin.BuiltinBiomesAccessor;
 import com.vanillaenhanced.mixin.SetBaseBiomesLayerAccessor;
 import com.vanillaenhanced.mixin.VanillaLayeredBiomeSourceAccessor;
-import com.vanillaenhanced.world.Features;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -17,12 +14,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.carver.ConfiguredCarvers;
-import net.minecraft.world.gen.feature.ConfiguredFeatures;
-import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -64,7 +56,7 @@ public final class BiomesRedo {
     private static final Biome REDWOOD_FOREST = createRedwoodForest();
     private static final Biome DESERT_MOUNTAINS = createDesertMountains();
     private static final Biome EXTREME_MOUNTAINS = createDiverseForest();
-    private static final Biome FROZEN_DESERT = createDiverseForest();
+    private static final Biome FROZEN_DESERT = createFrozenDesert();
     private static final Biome EXTREME_JUNGLE = createDiverseForest();
 
     public static final RegistryKey<Biome> DIVERSE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "diverse_forest"));
@@ -101,7 +93,7 @@ public final class BiomesRedo {
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS), DESERT_MOUNTAINS_KEY);
             biomes.add(DESERT_MOUNTAINS_KEY);
             SetBaseBiomesLayerAccessor.setDryBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS)));
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getDryBiomes(), BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS)));
         }
 
         if (enableExtremeMountain) {
@@ -109,7 +101,7 @@ public final class BiomesRedo {
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS), EXTREME_MOUNTAINS_KEY);
             biomes.add(EXTREME_MOUNTAINS_KEY);
             SetBaseBiomesLayerAccessor.setCoolBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS)));
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getCoolBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS)));
         }
 
         if (enableFrozenDesert) {
@@ -117,7 +109,7 @@ public final class BiomesRedo {
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT), FROZEN_DESERT_KEY);
             biomes.add(FROZEN_DESERT_KEY);
             SetBaseBiomesLayerAccessor.setSnowyBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT)));
+                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getSnowyBiomes(), BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT)));
         }
 
         if (enableExtremeJungle) {
@@ -243,20 +235,57 @@ public final class BiomesRedo {
 
     private static Biome createDesertMountains() {
         SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
-        DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
-        DefaultBiomeFeatures.addPlainsMobs(spawnSettings);
+        DefaultBiomeFeatures.addDesertMobs(spawnSettings);
         DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.GRASS_CONFIG));
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG));
         DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addDefaultDisks(generationSettings);
         DefaultBiomeFeatures.addDefaultMushrooms(generationSettings);
-        DefaultBiomeFeatures.addDefaultVegetation(generationSettings);
-        DefaultBiomeFeatures.addDefaultLakes(generationSettings);
-        DefaultBiomeFeatures.addDefaultGrass(generationSettings);
-        DefaultBiomeFeatures.addDefaultFlowers(generationSettings);
+        DefaultBiomeFeatures.addDesertVegetation(generationSettings);
+        DefaultBiomeFeatures.addDesertLakes(generationSettings);
+        DefaultBiomeFeatures.addLandCarvers(generationSettings);
+        DefaultBiomeFeatures.addDungeons(generationSettings);
+        DefaultBiomeFeatures.addMineables(generationSettings);
+        DefaultBiomeFeatures.addSprings(generationSettings);
+        DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
+
+        return (new Biome.Builder())
+                .category(Biome.Category.DESERT)
+                .depth(1.0F)
+                .scale(0.75F)
+                .temperature(2.0F)
+                .downfall(0.0F)
+                .precipitation(Biome.Precipitation.NONE)
+                .effects(new BiomeEffects.Builder()
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .skyColor(0x84AAFF)
+                        .grassColor(0xd6b27c)
+                        .build())
+                .spawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build())
+                .build();
+    }
+
+    private static Biome createFrozenDesert() {
+        SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+        DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
+        DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
+        ModBiomeFeatures.addFrozenDesertMobs(spawnSettings);
+
+        GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG));
+        DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
+        DefaultBiomeFeatures.addDefaultOres(generationSettings);
+        DefaultBiomeFeatures.addDefaultDisks(generationSettings);
+        DefaultBiomeFeatures.addDefaultMushrooms(generationSettings);
+        DefaultBiomeFeatures.addDesertVegetation(generationSettings);
+        DefaultBiomeFeatures.addDesertLakes(generationSettings);
         DefaultBiomeFeatures.addLandCarvers(generationSettings);
         DefaultBiomeFeatures.addDungeons(generationSettings);
         DefaultBiomeFeatures.addMineables(generationSettings);
@@ -268,14 +297,14 @@ public final class BiomesRedo {
         DefaultBiomeFeatures.addTaigaTrees(generationSettings);
 
         return (new Biome.Builder())
-                .category(Biome.Category.DESERT)
-                .depth(1.0F)
-                .scale(0.75F)
-                .temperature(2.0F)
-                .downfall(0.0F)
-                .precipitation(Biome.Precipitation.NONE)
+                .category(Biome.Category.ICY)
+                .depth(0.125F)
+                .scale(0.05F)
+                .temperature(-0.8F)
+                .downfall(0.5F)
+                .precipitation(Biome.Precipitation.SNOW)
                 .effects(new BiomeEffects.Builder()
-                        .waterColor(4159204)
+                        .waterColor(0x3938C9)
                         .waterFogColor(329011)
                         .fogColor(12638463)
                         .moodSound(BiomeMoodSound.CAVE)
