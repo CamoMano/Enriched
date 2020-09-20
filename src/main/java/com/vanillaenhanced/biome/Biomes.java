@@ -31,7 +31,7 @@ import java.util.List;
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 
 public final class Biomes {
-
+/*
     public static boolean enableRedwoodForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRedwoodForest;
     public static boolean enableDiverseForest = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDiverseForest;
     public static boolean enableDesertMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDesertMountain;
@@ -109,7 +109,6 @@ public final class Biomes {
             SetBaseBiomesLayerAccessor.setTemperateBiomes(
                     ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE)));
         }
-/*
         if (enableMonolith) {
             Registry.register(BuiltinRegistries.BIOME, MONOLITH_KEY.getValue(), MONOLITH);
             BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(MONOLITH), MONOLITH_KEY);
@@ -117,7 +116,7 @@ public final class Biomes {
             SetBaseBiomesLayerAccessor.setTemperateBiomes(ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
         }
 
- */
+
 
         //Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
         //BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
@@ -692,7 +691,6 @@ public final class Biomes {
                         .build())
                 .build();
 
- */
     }
 
 
@@ -701,5 +699,5 @@ public final class Biomes {
 
 
 
-
+*/
 }
