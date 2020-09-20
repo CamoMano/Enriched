@@ -31,33 +31,13 @@ public final class BiomesRedo {
     public static boolean enableExtremeMountain = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeMountain;
     public static boolean enableExtremeJungle = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableExtremeJungle;
     public static boolean enableFrozenDesert = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFrozenDesert;
-    //public static boolean enableMonolith = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMonolith;
-
-/*
-    public static final RegistryKey<Biome> DIVERSE_FOREST_KEY;
-    public static final RegistryKey<Biome> REDWOOD_FOREST_KEY;
-    public static final RegistryKey<Biome> DESERT_MOUNTAINS_KEY;
-    public static final RegistryKey<Biome> EXTREME_MOUNTAINS_KEY;
-    public static final RegistryKey<Biome> FROZEN_DESERT_KEY;
-    public static final RegistryKey<Biome> EXTREME_JUNGLE_KEY;
-    public static final RegistryKey<Biome> MONOLITH_KEY;
-    public static final RegistryKey<Biome> TEST_KEY;
-    public static final Biome DIVERSE_FOREST;
-    public static final Biome REDWOOD_FOREST;
-    public static final Biome DESERT_MOUNTAINS;
-    public static final Biome EXTREME_MOUNTAINS;
-    public static final Biome FROZEN_DESERT;
-    public static final Biome EXTREME_JUNGLE;
-    public static final Biome MONOLITH;
-    public static final Biome TEST;
- */
 
     private static final Biome DIVERSE_FOREST = createDiverseForest();
     private static final Biome REDWOOD_FOREST = createRedwoodForest();
     private static final Biome DESERT_MOUNTAINS = createDesertMountains();
-    private static final Biome EXTREME_MOUNTAINS = createDiverseForest();
+    private static final Biome EXTREME_MOUNTAINS = createExtremeMountains();
     private static final Biome FROZEN_DESERT = createFrozenDesert();
-    private static final Biome EXTREME_JUNGLE = createDiverseForest();
+    private static final Biome EXTREME_JUNGLE = createExtremeJungle();
 
     public static final RegistryKey<Biome> DIVERSE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "diverse_forest"));
     public static final RegistryKey<Biome> REDWOOD_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "redwood_forest"));
@@ -65,7 +45,6 @@ public final class BiomesRedo {
     public static final RegistryKey<Biome> EXTREME_MOUNTAINS_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "extreme_mountains"));
     public static final RegistryKey<Biome> FROZEN_DESERT_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "frozen_desert"));
     public static final RegistryKey<Biome> EXTREME_JUNGLE_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "extreme_jungle"));
-    public static final RegistryKey<Biome> MONOLITH_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "monolith"));
 
 
     public static void init() {
@@ -119,18 +98,6 @@ public final class BiomesRedo {
             SetBaseBiomesLayerAccessor.setTemperateBiomes(
                     ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE)));
         }
-/*
-        if (enableMonolith) {
-            Registry.register(BuiltinRegistries.BIOME, MONOLITH_KEY.getValue(), MONOLITH);
-            BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(MONOLITH), MONOLITH_KEY);
-            biomes.add(MONOLITH_KEY);
-            SetBaseBiomesLayerAccessor.setTemperateBiomes(ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(MONOLITH)));
-        }
-
- */
-
-        //Registry.register(BuiltinRegistries.BIOME, TEST_KEY.getValue(), TEST);
-        //BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(TEST), TEST_KEY);
 
         VanillaLayeredBiomeSourceAccessor.setBiomes(biomes);
 
@@ -316,7 +283,91 @@ public final class BiomesRedo {
                 .build();
     }
 
+    private static Biome createExtremeMountains() {
+        SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+        DefaultBiomeFeatures.addDesertMobs(spawnSettings);
+        DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
 
+        GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
+        generationSettings.surfaceBuilder(SurfaceBuilder.MOUNTAIN.method_30478(SurfaceBuilder.GRASS_CONFIG));
+        DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
+        DefaultBiomeFeatures.addDefaultOres(generationSettings);
+        DefaultBiomeFeatures.addDefaultDisks(generationSettings);
+        DefaultBiomeFeatures.addDefaultMushrooms(generationSettings);
+        DefaultBiomeFeatures.addDefaultVegetation(generationSettings);
+        DefaultBiomeFeatures.addLandCarvers(generationSettings);
+        DefaultBiomeFeatures.addDungeons(generationSettings);
+        DefaultBiomeFeatures.addMineables(generationSettings);
+        DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
+        DefaultBiomeFeatures.addMountainTrees(generationSettings);
+        DefaultBiomeFeatures.addTaigaGrass(generationSettings);
+
+
+        return (new Biome.Builder())
+                .category(Biome.Category.EXTREME_HILLS)
+                .depth(2.0F)
+                .scale(1.0F)
+                .temperature(0.2F)
+                .downfall(0.3F)
+                .precipitation(Biome.Precipitation.RAIN)
+                .effects(new BiomeEffects.Builder()
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .skyColor(0x84AAFF)
+                        .grassColor(0x8ab689)
+                        .build())
+                .spawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build())
+                .build();
+    }
+
+    private static Biome createExtremeJungle() {
+        SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+        DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
+        DefaultBiomeFeatures.addJungleMobs(spawnSettings);
+        DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
+        ModBiomeFeatures.addJungleMobsExtra(spawnSettings);
+
+        GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.GRASS_CONFIG));
+        DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
+        DefaultBiomeFeatures.addDefaultOres(generationSettings);
+        DefaultBiomeFeatures.addDefaultDisks(generationSettings);
+        DefaultBiomeFeatures.addDefaultMushrooms(generationSettings);
+        DefaultBiomeFeatures.addJungleVegetation(generationSettings);
+        DefaultBiomeFeatures.addDefaultLakes(generationSettings);
+        DefaultBiomeFeatures.addDefaultGrass(generationSettings);
+        DefaultBiomeFeatures.addDefaultFlowers(generationSettings);
+        DefaultBiomeFeatures.addLandCarvers(generationSettings);
+        DefaultBiomeFeatures.addDungeons(generationSettings);
+        DefaultBiomeFeatures.addMineables(generationSettings);
+        DefaultBiomeFeatures.addSprings(generationSettings);
+        DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
+        DefaultBiomeFeatures.addJungleTrees(generationSettings);
+        DefaultBiomeFeatures.addJungleEdgeTrees(generationSettings);
+
+
+        return (new Biome.Builder())
+                .category(Biome.Category.JUNGLE)
+                .depth(1.0F)
+                .scale(0.4F)
+                .temperature(0.95F)
+                .downfall(0.9F)
+                .precipitation(Biome.Precipitation.RAIN)
+                .effects(new BiomeEffects.Builder()
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .skyColor(0x84AAFF)
+                        .grassColor(0x59c93c)
+                        .build())
+                .spawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build())
+                .build();
+    }
 
 
 
