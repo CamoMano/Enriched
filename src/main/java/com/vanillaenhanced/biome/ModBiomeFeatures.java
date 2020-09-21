@@ -6,6 +6,7 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 import net.minecraft.world.gen.feature.Feature;
 
 public class ModBiomeFeatures {
@@ -33,5 +34,21 @@ public class ModBiomeFeatures {
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.OCELOT, 2, 1, 3));
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.PARROT, 40, 1, 2));
     }
+    public static void addDefaultPortal(GenerationSettings.Builder builder){
+        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL);
+    }
+    public static void addJunglePortal(GenerationSettings.Builder builder){
+        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_JUNGLE);
+    }
+    public static void addDesertPortal(GenerationSettings.Builder builder){
+        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_DESERT);
+    }
+    public static void addMountainPortal(GenerationSettings.Builder builder){
+        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_MOUNTAIN);
+    }
+    public static void addDesertVillage(GenerationSettings.Builder builder){
+        builder.structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT);
+    }
+
 
 }
