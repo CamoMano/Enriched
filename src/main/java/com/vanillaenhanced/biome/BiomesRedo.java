@@ -203,6 +203,7 @@ public final class BiomesRedo {
         DefaultBiomeFeatures.addSweetBerryBushes(generationSettings);
         ModBiomeFeatures.addRedwoodTrees(generationSettings);
         ModBiomeFeatures.addDefaultPortal(generationSettings);
+        ModBiomeFeatures.addMegaSpruce(generationSettings);
 
         return (new Biome.Builder())
                 .category(Biome.Category.FOREST)

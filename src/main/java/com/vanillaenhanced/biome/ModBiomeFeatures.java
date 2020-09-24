@@ -6,6 +6,7 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 import net.minecraft.world.gen.feature.Feature;
 
@@ -49,6 +50,8 @@ public class ModBiomeFeatures {
     public static void addDesertVillage(GenerationSettings.Builder builder){
         builder.structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT);
     }
+    public static void addMegaSpruce(GenerationSettings.Builder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_GIANT_SPRUCE);
 
-
+    }
 }
