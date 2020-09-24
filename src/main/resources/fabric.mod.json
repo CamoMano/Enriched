@@ -19,9 +19,6 @@
     "main": [
       "com.vanillaenhanced.VanillaEnhanced"
    ],
-    "cloth-early-init": [
-      "com.vanillaenhanced.VanillaEnhanced"
-    ],
     "client": [
 	"com.vanillaenhanced.VanillaEnhancedClient"
 	],
