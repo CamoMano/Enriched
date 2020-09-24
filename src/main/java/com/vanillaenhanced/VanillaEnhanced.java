@@ -1,6 +1,6 @@
 package com.vanillaenhanced;
 
-import com.vanillaenhanced.biome.BiomesRedo;
+import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.Generator;
@@ -31,7 +31,7 @@ public class VanillaEnhanced implements ModInitializer{
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //Setup
         ModInit.Register();
-        BiomesRedo.init();
+        Biomes.init();
 
         DynamicRegistryCallback.callback(Registry.BIOME_KEY).register((dynamicRegistryManager, registryKey, biome) -> {
             Generator.oreGen(registryKey, biome);
