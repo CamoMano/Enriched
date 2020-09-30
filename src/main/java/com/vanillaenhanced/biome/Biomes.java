@@ -136,7 +136,7 @@ public final class Biomes {
         DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.GRASS_CONFIG));
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.withConfig(SurfaceBuilder.GRASS_CONFIG));
         DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addDefaultDisks(generationSettings);
@@ -183,7 +183,7 @@ public final class Biomes {
         ModBiomeFeatures.addTaigaMobs(spawnSettings);
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.GRASS_CONFIG));
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.withConfig(SurfaceBuilder.GRASS_CONFIG));
         DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addDefaultDisks(generationSettings);
@@ -231,7 +231,7 @@ public final class Biomes {
         DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG));
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.withConfig(SurfaceBuilder.SAND_CONFIG));
         DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addDefaultDisks(generationSettings);
@@ -272,7 +272,7 @@ public final class Biomes {
         ModBiomeFeatures.addFrozenDesertMobs(spawnSettings);
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.SAND_CONFIG));
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.withConfig(SurfaceBuilder.SAND_CONFIG));
         DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addDefaultDisks(generationSettings);
@@ -313,7 +313,7 @@ public final class Biomes {
         ModBiomeFeatures.addMountainMobs(spawnSettings);
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-        generationSettings.surfaceBuilder(SurfaceBuilder.MOUNTAIN.method_30478(SurfaceBuilder.GRASS_CONFIG));
+        generationSettings.surfaceBuilder(SurfaceBuilder.MOUNTAIN.withConfig(SurfaceBuilder.GRASS_CONFIG));
         DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addDefaultDisks(generationSettings);
@@ -356,7 +356,7 @@ public final class Biomes {
         ModBiomeFeatures.addJungleMobsExtra(spawnSettings);
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.method_30478(SurfaceBuilder.GRASS_CONFIG));
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.withConfig(SurfaceBuilder.GRASS_CONFIG));
         DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
         DefaultBiomeFeatures.addDefaultOres(generationSettings);
         DefaultBiomeFeatures.addDefaultDisks(generationSettings);
