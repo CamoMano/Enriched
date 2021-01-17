@@ -3,7 +3,9 @@ package com.vanillaenhanced;
 import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
+import com.vanillaenhanced.world.Features;
 import com.vanillaenhanced.world.Generator;
+import com.vanillaenhanced.world.Generator2;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import me.shedaniel.cloth.api.dynamic.registry.v1.DynamicRegistryCallback;
@@ -32,12 +34,16 @@ public class VanillaEnhanced implements ModInitializer{
         //Setup
         ModInit.Register();
         Biomes.init();
-
+        Generator2.register();
+        //Features.registerConfiguredFeatures();
+/*
         DynamicRegistryCallback.callback(Registry.BIOME_KEY).register((dynamicRegistryManager, registryKey, biome) -> {
             Generator.oreGen(registryKey, biome);
             Generator.blockGen(registryKey, biome);
         });
 
+
+ */
     }
 
 
