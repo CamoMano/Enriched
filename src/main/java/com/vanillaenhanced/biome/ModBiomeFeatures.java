@@ -8,7 +8,6 @@ import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
-import net.minecraft.world.gen.feature.Feature;
 
 public class ModBiomeFeatures {
     public static void addWolves(net.minecraft.world.biome.SpawnSettings.Builder builder) {
@@ -28,7 +27,7 @@ public class ModBiomeFeatures {
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.LLAMA, 5, 4, 6));
     }
     public static void addRedwoodTrees(GenerationSettings.Builder builder) {
-        builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, Feature.TREE.configure(Features.REDWOOD_TREE_FEATURE.config));
+        builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, Features.REDWOOD_TREES);
 
     }
     public static void addJungleMobsExtra(net.minecraft.world.biome.SpawnSettings.Builder builder) {
