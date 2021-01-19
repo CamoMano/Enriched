@@ -94,8 +94,8 @@ public class Generator {
                     32))) // max y level
             .spreadHorizontally()
             .repeat(5); // number of veins per chunk
-    
-    
+
+
     //Stone Types
     private static ConfiguredFeature<?, ?> GEN_MARBLE = Feature.ORE
             .configure(new OreFeatureConfig(
@@ -122,49 +122,59 @@ public class Generator {
             .repeat(7); // number of veins per chunk
 
     public static void register() {
-        //Common
+        // * Sapphire Common
         RegistryKey<ConfiguredFeature<?, ?>> oreSapphireCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_sapphire_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreSapphireCommon.getValue(), ORE_SAPPHIRE_COMMON);
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireCommon);
-
-        RegistryKey<ConfiguredFeature<?, ?>> oreRubyCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
-                new Identifier(VanillaEnhanced.MOD_ID, "ore_ruby_common"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreRubyCommon.getValue(), ORE_RUBY_COMMON);
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyCommon);
-
-        RegistryKey<ConfiguredFeature<?, ?>> oreAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
-                new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_common"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystCommon.getValue(), ORE_AMETHYST_COMMON);
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystCommon);
-
         //Rare
         RegistryKey<ConfiguredFeature<?, ?>> oreSapphireRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_sapphire_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreSapphireRare.getValue(), ORE_SAPPHIRE_RARE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireRare);
+        if(ModInit.enableSapphireGear) {
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireCommon);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireRare);
+        }
 
+        //Ruby Common
+        RegistryKey<ConfiguredFeature<?, ?>> oreRubyCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier(VanillaEnhanced.MOD_ID, "ore_ruby_common"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreRubyCommon.getValue(), ORE_RUBY_COMMON);
+        //Rare
         RegistryKey<ConfiguredFeature<?, ?>> oreRubyRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_ruby_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreRubyRare.getValue(), ORE_RUBY_RARE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyRare);
+        if(ModInit.enableRubyGear) {
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyRare);
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyCommon);
+        }
 
+        //Amethyst Common
+        RegistryKey<ConfiguredFeature<?, ?>> oreAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_common"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystCommon.getValue(), ORE_AMETHYST_COMMON);
+        //Rare
         RegistryKey<ConfiguredFeature<?, ?>> oreAmethystRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystRare.getValue(), ORE_AMETHYST_RARE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystRare);
+        if (ModInit.enableAmethystGear) {
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystRare);
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystCommon);
+        }
+
 
 
         //Stone Types
+        //Marble
         RegistryKey<ConfiguredFeature<?, ?>> genMarble = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier(VanillaEnhanced.MOD_ID, "gen_marble"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, genMarble.getValue(), GEN_MARBLE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, genMarble);
-
+        if (ModInit.enableMarble) {
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, genMarble);
+        }
+        //Dark Granite
         RegistryKey<ConfiguredFeature<?, ?>> genDarkGranite = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier(VanillaEnhanced.MOD_ID, "gen_dark_granite"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, genDarkGranite.getValue(), GEN_DARK_GRANITE);
-        
         if (ModInit.enableDarkGranite) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, genDarkGranite);
         }
