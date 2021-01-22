@@ -1,6 +1,8 @@
 package com.vanillaenhanced.world;
 
+import com.google.common.collect.ImmutableList;
 import com.vanillaenhanced.registry.ModInit;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.UniformIntDistribution;
@@ -10,6 +12,8 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.JungleFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.tree.AlterGroundTreeDecorator;
+import net.minecraft.world.gen.trunk.GiantTrunkPlacer;
 import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
@@ -25,7 +29,12 @@ public class Features {
             new SimpleBlockStateProvider(ModInit.REDWOOD_LEAVES.getDefaultState()),
             new JungleFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 2),
             new MegaJungleTrunkPlacer(16, 16, 16),
-            new TwoLayersFeatureSize(1, 1, 2)).build();
+            new TwoLayersFeatureSize(4, 1, 2))
+            .decorators(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(Blocks.PODZOL.getDefaultState())))).build();
+
+
+
+
 
 
     public static final ConfiguredFeature<TreeFeatureConfig, ?> REDWOOD_TREE = register("redwood_tree", Feature.TREE.configure(Features.REDWOOD_TREE_CONFIG));

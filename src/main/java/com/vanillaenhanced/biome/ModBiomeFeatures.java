@@ -1,6 +1,7 @@
 package com.vanillaenhanced.biome;
 
 import com.vanillaenhanced.world.Features;
+import com.vanillaenhanced.world.Generator;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.GenerationSettings;
@@ -53,4 +54,5 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_GIANT_SPRUCE);
 
     }
+
 }
