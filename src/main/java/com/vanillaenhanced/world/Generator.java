@@ -135,7 +135,7 @@ public class Generator {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireRare);
         }
 
-        //Ruby Common
+        // * Ruby Common
         RegistryKey<ConfiguredFeature<?, ?>> oreRubyCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_ruby_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreRubyCommon.getValue(), ORE_RUBY_COMMON);
@@ -148,7 +148,7 @@ public class Generator {
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyCommon);
         }
 
-        //Amethyst Common
+        // * Amethyst Common
         RegistryKey<ConfiguredFeature<?, ?>> oreAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystCommon.getValue(), ORE_AMETHYST_COMMON);

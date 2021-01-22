@@ -32,13 +32,10 @@ import static net.minecraft.sound.BlockSoundGroup.METAL;
 public class ModInit {
 
         //Config
-        public static boolean enableObsidianGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableObsidianGear;
-        public static boolean enableEmeraldGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableEmeraldGear;
-        public static boolean enableSteelGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSteelGear;
+
         public static boolean enableRubyGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableRubyGear;
         public static boolean enableAmethystGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableAmethystGear;
         public static boolean enableSapphireGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableSapphireGear;
-        public static boolean enableFood = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableFood;
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
         public static boolean enableHoneySlime = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableHoneySlime;
@@ -163,13 +160,12 @@ public class ModInit {
                 flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
 
-                if (enableFood) {
+
                         //Food
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "beef_stew"), BEEF_STEW);
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "berry_juice"), BERRY_JUICE);
-                }
 
-                if (enableObsidianGear) {
+
                         //Obsidian Ingot/Block
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "obsidian_alloy_ingot"), OBSIDIAN_ALLOY_INGOT);
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "obsidian_alloy_block"), OBSIDIAN_ALLOY_BLOCK);
@@ -185,9 +181,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "obsidian_chestplate"), new ArmorBase(OBSIDIAN_ARMOR, EquipmentSlot.CHEST));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "obsidian_leggings"), new ArmorBase(OBSIDIAN_ARMOR, EquipmentSlot.LEGS));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "obsidian_boots"), new ArmorBase(OBSIDIAN_ARMOR, EquipmentSlot.FEET));
-                }
 
-                if (enableEmeraldGear) {
+
                         //Emerald Tools
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "emerald_shovel"), new ShovelBase(new ToolMaterialEmerald()));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "emerald_pickaxe"), new PickaxeBase(new ToolMaterialEmerald()));
@@ -199,9 +194,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "emerald_chestplate"), new ArmorBase(EMERALD_ARMOR, EquipmentSlot.CHEST));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "emerald_leggings"), new ArmorBase(EMERALD_ARMOR, EquipmentSlot.LEGS));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "emerald_boots"), new ArmorBase(EMERALD_ARMOR, EquipmentSlot.FEET));
-                }
 
-                if (enableSteelGear) {
+
                         //Steel Ingot/Block
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_ingot"), STEEL_INGOT);
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "steel_block"), STEEL_BLOCK);
@@ -217,9 +211,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_chestplate"), new ArmorBase(STEEL_ARMOR, EquipmentSlot.CHEST));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_leggings"), new ArmorBase(STEEL_ARMOR, EquipmentSlot.LEGS));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "steel_boots"), new ArmorBase(STEEL_ARMOR, EquipmentSlot.FEET));
-                }
 
-                if (enableRubyGear) {
+
                         //Ruby Item/Block
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby"), RUBY);
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ruby_ore"), RUBY_ORE);
@@ -237,8 +230,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_chestplate"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.CHEST));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_leggings"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.LEGS));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_boots"), new ArmorBase(RUBY_ARMOR, EquipmentSlot.FEET));
-                }
-                if (enableSapphireGear) {
+
+
                         //Sapphire Item/Block
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire"), SAPPHIRE);
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sapphire_ore"), SAPPHIRE_ORE);
@@ -256,9 +249,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_chestplate"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.CHEST));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_leggings"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.LEGS));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_boots"), new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.FEET));
-                }
 
-                if (enableAmethystGear) {
+
                         //Amethyst Item/Block
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst"), AMETHYST);
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "amethyst_ore"), AMETHYST_ORE);
@@ -276,8 +268,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_chestplate"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.CHEST));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_leggings"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.LEGS));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_boots"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.FEET));
-                }
-                //if (enableDarkGranite){
+
+
                 //Dark Granite
                 Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "dark_granite"), DARK_GRANITE);
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dark_granite"), new BlockItem(DARK_GRANITE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
@@ -293,8 +285,8 @@ public class ModInit {
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_dark_granite_slab"), new BlockItem(POLISHED_DARK_GRANITE_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                 Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_dark_granite_stairs"), POLISHED_DARK_GRANITE_STAIRS);
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_dark_granite_stairs"), new BlockItem(POLISHED_DARK_GRANITE_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-                //}
-                //if (enableMarble){
+
+
                 //Marble
                 Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marble"), MARBLE);
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marble"), new BlockItem(MARBLE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
@@ -310,8 +302,9 @@ public class ModInit {
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_marble_slab"), new BlockItem(POLISHED_MARBLE_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                 Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "polished_marble_stairs"), POLISHED_MARBLE_STAIRS);
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "polished_marble_stairs"), new BlockItem(POLISHED_MARBLE_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
-                // }
 
+
+                //Honey Slime
                 FabricDefaultAttributeRegistry.register(HONEY_SLIME, HostileEntity.createHostileAttributes());
                 Registry.register(
                         Registry.ITEM, new Identifier(MOD_ID, "honey_slime_spawn_egg"),
