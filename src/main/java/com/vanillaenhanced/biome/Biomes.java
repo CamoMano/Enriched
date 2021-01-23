@@ -1,7 +1,6 @@
 package com.vanillaenhanced.biome;
 
 import com.vanillaenhanced.config.ModConfig;
-import com.vanillaenhanced.mixin.VanillaLayeredBiomeSourceAccessor;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.biome.v1.OverworldBiomes;
 import net.fabricmc.fabric.api.biome.v1.OverworldClimate;
@@ -17,8 +16,7 @@ import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 
@@ -46,83 +44,38 @@ public final class Biomes {
     public static final RegistryKey<Biome> EXTREME_JUNGLE_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "extreme_jungle"));
 
 
-    public static void init() {
-        List<RegistryKey<Biome>> biomes = new ArrayList<>(VanillaLayeredBiomeSourceAccessor.getBiomes());
+    public static void register() {
 
 
         if (enableDiverseForest) {
             Registry.register(BuiltinRegistries.BIOME, DIVERSE_FOREST_KEY.getValue(), DIVERSE_FOREST);
-            /*
-            BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(DIVERSE_FOREST), DIVERSE_FOREST_KEY);
-            biomes.add(DIVERSE_FOREST_KEY);
-            SetBaseBiomesLayerAccessor.setTemperateBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(DIVERSE_FOREST)));
-
-             */
             OverworldBiomes.addContinentalBiome(DIVERSE_FOREST_KEY, OverworldClimate.TEMPERATE, 0.75);
         }
 
         if (enableRedwoodForest) {
             Registry.register(BuiltinRegistries.BIOME, REDWOOD_FOREST_KEY.getValue(), REDWOOD_FOREST);
-            /*
-            BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(REDWOOD_FOREST), REDWOOD_FOREST_KEY);
-            biomes.add(REDWOOD_FOREST_KEY);
-            SetBaseBiomesLayerAccessor.setTemperateBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(REDWOOD_FOREST)));
-
-             */
             OverworldBiomes.addContinentalBiome(REDWOOD_FOREST_KEY, OverworldClimate.TEMPERATE, 0.4);
         }
 
         if (enableDesertMountain) {
             Registry.register(BuiltinRegistries.BIOME, DESERT_MOUNTAINS_KEY.getValue(), DESERT_MOUNTAINS);
-            /*
-            BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS), DESERT_MOUNTAINS_KEY);
-            biomes.add(DESERT_MOUNTAINS_KEY);
-            SetBaseBiomesLayerAccessor.setDryBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getDryBiomes(), BuiltinRegistries.BIOME.getRawId(DESERT_MOUNTAINS)));
-
-             */
             OverworldBiomes.addContinentalBiome(DESERT_MOUNTAINS_KEY, OverworldClimate.DRY, 0.5);
         }
 
         if (enableExtremeMountain) {
             Registry.register(BuiltinRegistries.BIOME, EXTREME_MOUNTAINS_KEY.getValue(), EXTREME_MOUNTAINS);
-            /*
-            BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS), EXTREME_MOUNTAINS_KEY);
-            biomes.add(EXTREME_MOUNTAINS_KEY);
-            SetBaseBiomesLayerAccessor.setCoolBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getCoolBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_MOUNTAINS)));
-
-             */
             OverworldBiomes.addContinentalBiome(EXTREME_MOUNTAINS_KEY, OverworldClimate.COOL, 0.25);
         }
 
         if (enableFrozenDesert) {
             Registry.register(BuiltinRegistries.BIOME, FROZEN_DESERT_KEY.getValue(), FROZEN_DESERT);
-            /*
-            BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT), FROZEN_DESERT_KEY);
-            biomes.add(FROZEN_DESERT_KEY);
-            SetBaseBiomesLayerAccessor.setSnowyBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getSnowyBiomes(), BuiltinRegistries.BIOME.getRawId(FROZEN_DESERT)));
-
-             */
             OverworldBiomes.addContinentalBiome(FROZEN_DESERT_KEY, OverworldClimate.SNOWY, 0.10);
         }
 
         if (enableExtremeJungle) {
             Registry.register(BuiltinRegistries.BIOME, EXTREME_JUNGLE_KEY.getValue(), EXTREME_JUNGLE);
-            /*
-            BuiltinBiomesAccessor.getIdMap().put(BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE), EXTREME_JUNGLE_KEY);
-            biomes.add(EXTREME_JUNGLE_KEY);
-            SetBaseBiomesLayerAccessor.setTemperateBiomes(
-                    ArrayUtils.add(SetBaseBiomesLayerAccessor.getTemperateBiomes(), BuiltinRegistries.BIOME.getRawId(EXTREME_JUNGLE)));
-                    
-             */
             OverworldBiomes.addContinentalBiome(EXTREME_JUNGLE_KEY, OverworldClimate.TEMPERATE, 0.15);
         }
-
-        VanillaLayeredBiomeSourceAccessor.setBiomes(biomes);
 
 
 

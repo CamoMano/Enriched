@@ -29,7 +29,7 @@ public class VanillaEnhanced implements ModInitializer{
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //Setup
         ModInit.Register();
-        Biomes.init();
+        Biomes.register();
         Generator.register();
 
 
