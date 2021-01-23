@@ -22,3 +22,5 @@ run/
 Version.lnk
 /remappedSrc/
 crowdin-translate-1.2.jar
+crowdin.jar
+translate.bat
