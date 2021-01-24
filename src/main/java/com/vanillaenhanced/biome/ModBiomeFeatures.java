@@ -54,5 +54,8 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_GIANT_SPRUCE);
 
     }
+    public static void addSalmon(net.minecraft.world.biome.SpawnSettings.Builder builder){
+        builder.spawn(SpawnGroup.WATER_AMBIENT, new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
+    }
 
 }

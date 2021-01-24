@@ -134,6 +134,7 @@ public final class Biomes {
         DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
         DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
         ModBiomeFeatures.addTaigaMobs(spawnSettings);
+        ModBiomeFeatures.addSalmon(spawnSettings);
 
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
         generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.withConfig(SurfaceBuilder.GRASS_CONFIG));
