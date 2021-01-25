@@ -1,7 +1,6 @@
 package com.vanillaenhanced.biome;
 
 import com.vanillaenhanced.world.Features;
-import com.vanillaenhanced.world.Generator;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.GenerationSettings;
