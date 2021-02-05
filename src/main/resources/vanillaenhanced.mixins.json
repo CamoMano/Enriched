@@ -3,10 +3,7 @@
   "package": "com.vanillaenhanced.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  "BuiltinBiomesAccessor",
-  "SetBaseBiomesLayerAccessor",
-  "VanillaLayeredBiomeSourceAccessor",
-  "BeehiveBlockMixin"
+  "BeehiveBlockMixin",
   ],
   "client": [],
   "server": [],

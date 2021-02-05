@@ -19,6 +19,6 @@ public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
 
 	@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> createLargeTreeFeature(Random random) {
-		return Features.REDWOOD_TREE_FEATURE;
+		return Features.REDWOOD_TREE;
 	}
 }

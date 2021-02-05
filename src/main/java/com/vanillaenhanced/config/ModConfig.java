@@ -17,15 +17,6 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
     //Items & Ores
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
-    public boolean enableObsidianGear = true;
-    @ConfigEntry.Category("Items")
-    @ConfigEntry.Gui.Tooltip()
-    public boolean enableEmeraldGear = true;
-    @ConfigEntry.Category("Items")
-    @ConfigEntry.Gui.Tooltip()
-    public boolean enableSteelGear = true;
-    @ConfigEntry.Category("Items")
-    @ConfigEntry.Gui.Tooltip()
     public boolean enableRubyGear = true;
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
@@ -33,9 +24,6 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableAmethystGear = true;
-    @ConfigEntry.Category("Items")
-    @ConfigEntry.Gui.Tooltip()
-    public boolean enableFood = true;
 
     //Blocks
     @ConfigEntry.Category("Blocks")

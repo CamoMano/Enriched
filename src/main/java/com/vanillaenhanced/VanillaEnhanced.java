@@ -6,9 +6,7 @@ import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.Generator;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
-import me.shedaniel.cloth.api.dynamic.registry.v1.DynamicRegistryCallback;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,12 +29,9 @@ public class VanillaEnhanced implements ModInitializer{
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //Setup
         ModInit.Register();
-        Biomes.init();
+        Biomes.register();
+        Generator.register();
 
-        DynamicRegistryCallback.callback(Registry.BIOME_KEY).register((dynamicRegistryManager, registryKey, biome) -> {
-            Generator.oreGen(registryKey, biome);
-            Generator.blockGen(registryKey, biome);
-        });
 
     }
 
