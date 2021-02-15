@@ -86,11 +86,11 @@ public class ModInit {
         public static final Block REDWOOD_DOOR = new WoodDoorBase("redwood_door", REDWOOD_PLANKS);
         public static final Block REDWOOD_PRESSURE_PLATE = new WoodPressurePlateBase("redwood_pressure_plate", REDWOOD_PLANKS);
         public static final Block REDWOOD_TRAPDOOR = new WoodTrapdoorBase("redwood_trapdoor", REDWOOD_PLANKS);
-        public static final Block BAMBOO_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.BAMBOO).strength(2.0f, 3.0f));
-        public static final Block BAMBOO_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.BAMBOO).strength(2.0f, 3.0f));
+        public static final Block BAMBOO_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
+        public static final Block BAMBOO_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
         public static final Block BAMBOO_STAIRS = new StairsBase(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", BAMBOO_PLANKS);
-        public static final Block BAMBOO_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(2.0f, 3.0f));
-        public static final Block BAMBOO_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(2.0f, 3.0f));
+        public static final Block BAMBOO_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
+        public static final Block BAMBOO_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
         //public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
         //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
 
@@ -164,6 +164,11 @@ public class ModInit {
                 flammableRegistry.add(REDWOOD_FENCE_GATE, 5, 20);
                 flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
+                flammableRegistry.add(BAMBOO_PLANKS, 5, 20);
+                flammableRegistry.add(BAMBOO_STAIRS, 5, 20);
+                flammableRegistry.add(BAMBOO_SLAB, 5, 20);
+                flammableRegistry.add(BAMBOO_FENCE_GATE, 5, 20);
+                flammableRegistry.add(BAMBOO_FENCE, 5, 20);
                 
                 
                 
