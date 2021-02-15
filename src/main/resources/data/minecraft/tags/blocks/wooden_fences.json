@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "vanillaenhanced:redwood_fence"
+    "vanillaenhanced:redwood_fence",
+	"vanillaenhanced:bamboo_fence"
   ]
 }
