@@ -91,7 +91,7 @@ public class ModInit {
         public static final Block BAMBOO_STAIRS = new StairsBase(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", BAMBOO_PLANKS);
         public static final Block BAMBOO_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
         public static final Block BAMBOO_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
-        public static final Block MUD = new Block(FabricBlockSettings.copyOf(Blocks.SOUL_SAND).requiresTool().breakByTool(FabricToolTags.SHOVELS).sounds(BlockSoundGroup.HONEY).strength(0.4f, 0.4f));
+        public static final MudBlock MUD = new MudBlock(FabricBlockSettings.copyOf(Blocks.SOUL_SAND).jumpVelocityMultiplier(0.5f).requiresTool().breakByTool(FabricToolTags.SHOVELS).sounds(BlockSoundGroup.HONEY).strength(0.4f, 0.4f));
 
         //public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
         //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
