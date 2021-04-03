@@ -1,6 +1,5 @@
 package com.vanillaenhanced.world;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.vanillaenhanced.VanillaEnhanced;
 import com.vanillaenhanced.registry.ModInit;
@@ -126,10 +125,10 @@ public class Generator {
     public static ConfiguredFeature<?, ?> GEN_MUD = Feature.DISK
             .configure(new DiskFeatureConfig(
                     ModInit.MUD.getDefaultState(),
-                    UniformIntDistribution.of(3, 4),3,
-                    Lists.newArrayList(Blocks.CLAY.getDefaultState(),
+                    UniformIntDistribution.of(3, 4),4,
+                    Lists.newArrayList(Blocks.DIRT.getDefaultState(),
                             Blocks.GRASS_BLOCK.getDefaultState()))).
-                    decorate(ConfiguredFeatures.Decorators.SQUARE_TOP_SOLID_HEIGHTMAP);
+                    decorate(ConfiguredFeatures.Decorators.TOP_SOLID_HEIGHTMAP);
 
     public static void register() {
         // * Sapphire Common
