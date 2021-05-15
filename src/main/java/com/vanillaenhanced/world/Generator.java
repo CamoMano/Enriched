@@ -1,20 +1,21 @@
 package com.vanillaenhanced.world;
 
+import com.google.common.collect.Lists;
 import com.vanillaenhanced.VanillaEnhanced;
 import com.vanillaenhanced.registry.ModInit;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.UniformIntDistribution;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.*;
 
 public class Generator {
 
@@ -121,6 +122,14 @@ public class Generator {
             .spreadHorizontally()
             .repeat(7); // number of veins per chunk
 
+    public static ConfiguredFeature<?, ?> GEN_MUD = Feature.DISK
+            .configure(new DiskFeatureConfig(
+                    ModInit.MUD.getDefaultState(),
+                    UniformIntDistribution.of(3, 4),4,
+                    Lists.newArrayList(Blocks.DIRT.getDefaultState(),
+                            Blocks.GRASS_BLOCK.getDefaultState()))).
+                    decorate(ConfiguredFeatures.Decorators.TOP_SOLID_HEIGHTMAP);
+
     public static void register() {
         // * Sapphire Common
         RegistryKey<ConfiguredFeature<?, ?>> oreSapphireCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
@@ -179,6 +188,12 @@ public class Generator {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, genDarkGranite);
 
         }
+
+        //Mud
+        RegistryKey<ConfiguredFeature<?, ?>> genMud = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+                new Identifier(VanillaEnhanced.MOD_ID, "gen_mud"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, genMud.getValue(), GEN_MUD);
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.SWAMP), GenerationStep.Feature.RAW_GENERATION, genMud);
 
     }
 }

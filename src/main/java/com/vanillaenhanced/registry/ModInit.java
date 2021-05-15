@@ -6,6 +6,7 @@ import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.entity.HoneySlime;
 import com.vanillaenhanced.items.*;
 import com.vanillaenhanced.materials.items.*;
+import com.vanillaenhanced.sounds.ModSounds;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -76,8 +77,8 @@ public class ModInit {
         public static final Block STRIPPED_REDWOOD_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_SPRUCE_WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0f, 2.0f));
         public static final Block REDWOOD_LOG = new StripableBlock(SPRUCE_LOG, STRIPPED_REDWOOD_LOG);
         public static final Block REDWOOD_WOOD = new StripableBlock(SPRUCE_WOOD, STRIPPED_REDWOOD_WOOD);
-        public static final Block REDWOOD_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.WOOD).strength(3.0f, 2.0f));
-        public static final Block REDWOOD_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
+        public static final Block REDWOOD_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
+        public static final Block REDWOOD_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
         public static final Block REDWOOD_STAIRS = new StairsBase(REDWOOD_PLANKS.getDefaultState(), "redwood_stairs", REDWOOD_PLANKS);
         public static final Block REDWOOD_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
         public static final Block REDWOOD_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
@@ -86,6 +87,14 @@ public class ModInit {
         public static final Block REDWOOD_DOOR = new WoodDoorBase("redwood_door", REDWOOD_PLANKS);
         public static final Block REDWOOD_PRESSURE_PLATE = new WoodPressurePlateBase("redwood_pressure_plate", REDWOOD_PLANKS);
         public static final Block REDWOOD_TRAPDOOR = new WoodTrapdoorBase("redwood_trapdoor", REDWOOD_PLANKS);
+        public static final Block BAMBOO_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
+        public static final Block BAMBOO_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
+        public static final Block BAMBOO_STAIRS = new StairsBase(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", BAMBOO_PLANKS);
+        public static final Block BAMBOO_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
+        public static final Block BAMBOO_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
+        public static final Block BAMBOO_DOOR = new WoodDoorBase("bamboo_door", BAMBOO_PLANKS);
+        public static final Block BAMBOO_TRAPDOOR = new WoodTrapdoorBase("bamboo_trapdoor", BAMBOO_PLANKS);
+        public static final MudBlock MUD = new MudBlock(FabricBlockSettings.copyOf(Blocks.SOUL_SAND).jumpVelocityMultiplier(0.5f).requiresTool().breakByTool(FabricToolTags.SHOVELS).sounds(ModSounds.MUD).strength(0.4f, 0.4f));
         //public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
         //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
 
@@ -107,6 +116,9 @@ public class ModInit {
                         .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
                         .build()
         );
+
+        //Sound Groups
+
 
 
         //Register
@@ -159,9 +171,32 @@ public class ModInit {
                 flammableRegistry.add(REDWOOD_FENCE_GATE, 5, 20);
                 flammableRegistry.add(REDWOOD_FENCE, 5, 20);
                 flammableRegistry.add(REDWOOD_LEAVES, 30, 60);
+                flammableRegistry.add(BAMBOO_PLANKS, 5, 20);
+                flammableRegistry.add(BAMBOO_STAIRS, 5, 20);
+                flammableRegistry.add(BAMBOO_SLAB, 5, 20);
+                flammableRegistry.add(BAMBOO_FENCE_GATE, 5, 20);
+                flammableRegistry.add(BAMBOO_FENCE, 5, 20);
+                
+                
+                
+                //Bamboo
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "bamboo_planks"), BAMBOO_PLANKS);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bamboo_planks"), new BlockItem(BAMBOO_PLANKS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "bamboo_slab"), BAMBOO_SLAB);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bamboo_slab"), new BlockItem(BAMBOO_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "bamboo_stairs"), BAMBOO_STAIRS);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bamboo_stairs"), new BlockItem(BAMBOO_STAIRS, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "bamboo_fence"), BAMBOO_FENCE);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bamboo_fence"), new BlockItem(BAMBOO_FENCE, new Item.Settings().group(ItemGroup.DECORATIONS)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "bamboo_fence_gate"), BAMBOO_FENCE_GATE);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bamboo_fence_gate"), new BlockItem(BAMBOO_FENCE_GATE, new Item.Settings().group(ItemGroup.REDSTONE)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "bamboo_door"), BAMBOO_DOOR);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bamboo_door"), new BlockItem(BAMBOO_DOOR, new Item.Settings().group(ItemGroup.REDSTONE)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "bamboo_trapdoor"), BAMBOO_TRAPDOOR);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bamboo_trapdoor"), new BlockItem(BAMBOO_TRAPDOOR, new Item.Settings().group(ItemGroup.REDSTONE)));
 
 
-                        //Food
+                //Food
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "beef_stew"), BEEF_STEW);
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "berry_juice"), BERRY_JUICE);
 
@@ -311,6 +346,9 @@ public class ModInit {
                         new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings().group(ItemGroup.MISC))
                 );
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "honey_ball"), HONEY_BALL);
+
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "mud"), MUD);
+                Registry.register(Registry.ITEM, new Identifier(MOD_ID, "mud"), new BlockItem(MUD, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
 
         }

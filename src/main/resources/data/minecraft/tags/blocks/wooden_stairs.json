@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "vanillaenhanced:redwood_stairs"
+	"vanillaenhanced:bamboo_stairs",
+	"vanillaenhanced:redwood_stairs"
   ]
 }

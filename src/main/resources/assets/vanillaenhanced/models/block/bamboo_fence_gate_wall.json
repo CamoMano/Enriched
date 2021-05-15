@@ -1,0 +1,6 @@
+{
+  "parent": "block/template_fence_gate_wall",
+  "textures": {
+    "texture": "vanillaenhanced:block/bamboo_planks"
+  }
+}

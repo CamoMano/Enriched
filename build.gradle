@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.5-SNAPSHOT'
+	id 'fabric-loom' version '0.6-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -13,6 +13,7 @@ group = project.maven_group
 
 repositories {
     jcenter()
+	maven { url "https://maven.shedaniel.me/" }
 }
 
 minecraft {
@@ -27,10 +28,10 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     
     //Cloth Config
-    modApi("me.shedaniel.cloth:config-2:${project.cloth_version}"){
-      exclude module: 'fabric-api'
+	    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
     }
-    include "me.shedaniel.cloth:config-2:${project.cloth_version}"
+	include "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
 	
     //Auto Config
     modImplementation("me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}") {

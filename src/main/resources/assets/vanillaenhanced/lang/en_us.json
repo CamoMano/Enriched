@@ -145,6 +145,14 @@
 "item.vanillaenhanced.amethyst_boots": "Amethyst Boots",
 "item.vanillaenhanced.honey_slime_spawn_egg": "Honey Slime Spawn Egg",
 "item.vanillaenhanced.honey_ball": "Honey Ball",
-"entity.vanillaenhanced.honey_slime": "Honey Slime"
+"entity.vanillaenhanced.honey_slime": "Honey Slime",
+"block.vanillaenhanced.bamboo_planks": "Bamboo Planks",
+"block.vanillaenhanced.bamboo_slab": "Bamboo Slab",
+"block.vanillaenhanced.bamboo_stairs": "Bamboo Stairs",
+"block.vanillaenhanced.bamboo_fence": "Bamboo Fence",
+"block.vanillaenhanced.bamboo_fence_gate": "Bamboo Fence Gate",
+"block.vanillaenhanced.bamboo_door": "Bamboo Door",
+"block.vanillaenhanced.bamboo_trapdoor": "Bamboo Trapdoor",
+"block.vanillaenhanced.mud": "Mud"
 
 }
