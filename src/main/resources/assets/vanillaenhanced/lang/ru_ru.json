@@ -145,5 +145,13 @@
     "item.vanillaenhanced.amethyst_boots": "Аметистовые сапоги",
     "item.vanillaenhanced.honey_slime_spawn_egg": "Яйцо спавна Медового слизня",
     "item.vanillaenhanced.honey_ball": "Медовая слизь",
-    "entity.vanillaenhanced.honey_slime": "Медовый слизень"
+    "entity.vanillaenhanced.honey_slime": "Медовый слизень",
+    "block.vanillaenhanced.bamboo_planks": "Доски бамбука",
+    "block.vanillaenhanced.bamboo_slab": "Плита Бамбука",
+    "block.vanillaenhanced.bamboo_stairs": "Бамбуковые ступеньки",
+    "block.vanillaenhanced.bamboo_fence": "Бамбуковый забор",
+    "block.vanillaenhanced.bamboo_fence_gate": "Бамбук Ворота забора",
+    "block.vanillaenhanced.bamboo_door": "Бамбуковая дверь",
+    "block.vanillaenhanced.bamboo_trapdoor": "Бамбуковый люк",
+    "block.vanillaenhanced.mud": "Грязь"
 }
