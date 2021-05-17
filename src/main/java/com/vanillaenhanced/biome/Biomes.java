@@ -197,8 +197,7 @@ public final class Biomes {
         DefaultBiomeFeatures.addMineables(generationSettings);
         DefaultBiomeFeatures.addSprings(generationSettings);
         DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
-        ModBiomeFeatures.addDesertPortal(generationSettings);
-        ModBiomeFeatures.addDesertVillage(generationSettings);
+        ModBiomeFeatures.addDesertFeatures(generationSettings);
 
         return (new Biome.Builder())
                 .category(Biome.Category.DESERT)
@@ -237,8 +236,7 @@ public final class Biomes {
         DefaultBiomeFeatures.addMineables(generationSettings);
         DefaultBiomeFeatures.addSprings(generationSettings);
         DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
-        ModBiomeFeatures.addDesertPortal(generationSettings);
-        ModBiomeFeatures.addDesertVillage(generationSettings);
+        ModBiomeFeatures.addDesertFeatures(generationSettings);
 
         return (new Biome.Builder())
                 .category(Biome.Category.ICY)

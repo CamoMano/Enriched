@@ -40,14 +40,13 @@ public class ModBiomeFeatures {
     public static void addJunglePortal(GenerationSettings.Builder builder){
         builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_JUNGLE);
     }
-    public static void addDesertPortal(GenerationSettings.Builder builder){
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_DESERT);
-    }
     public static void addMountainPortal(GenerationSettings.Builder builder){
         builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_MOUNTAIN);
     }
-    public static void addDesertVillage(GenerationSettings.Builder builder){
+    public static void addDesertFeatures(GenerationSettings.Builder builder){
         builder.structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT);
+        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_DESERT);
+        builder.structureFeature(ConfiguredStructureFeatures.DESERT_PYRAMID);
     }
     public static void addMegaSpruce(GenerationSettings.Builder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_GIANT_SPRUCE);
