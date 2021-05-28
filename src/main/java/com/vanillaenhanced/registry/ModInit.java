@@ -83,6 +83,7 @@ public class ModInit {
         public static final Block REDWOOD_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
         public static final Block REDWOOD_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
         public static final Block REDWOOD_SAPLING = new BlockRedwoodSapling();
+        public static final Block POTTED_REDWOOD_SAPLING = new FlowerPotBlock(ModInit.REDWOOD_SAPLING, FabricBlockSettings.copyOf(Blocks.POTTED_SPRUCE_SAPLING));
         public static final Block REDWOOD_BUTTON = new WoodButtonBase("redwood_button", REDWOOD_PLANKS);
         public static final Block REDWOOD_DOOR = new WoodDoorBase("redwood_door", REDWOOD_PLANKS);
         public static final Block REDWOOD_PRESSURE_PLATE = new WoodPressurePlateBase("redwood_pressure_plate", REDWOOD_PLANKS);
@@ -156,6 +157,7 @@ public class ModInit {
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_trapdoor"), new BlockItem(REDWOOD_TRAPDOOR, new Item.Settings().group(ItemGroup.REDSTONE)));
                 Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_pressure_plate"), REDWOOD_PRESSURE_PLATE);
                 Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_pressure_plate"), new BlockItem(REDWOOD_PRESSURE_PLATE, new Item.Settings().group(ItemGroup.REDSTONE)));
+                Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_redwood_sapling"), POTTED_REDWOOD_SAPLING);
                 //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_sign"), REDWOOD_SIGN);
                 //Registry.register(Registry.ITEM, new Identifier(MOD_ID, "redwood_sign"), new BlockItem(REDWOOD_SIGN, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                 //Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "redwood_wall_sign"), REDWOOD_WALL_SIGN);
