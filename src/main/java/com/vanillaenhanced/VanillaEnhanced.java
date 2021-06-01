@@ -22,7 +22,7 @@ public class VanillaEnhanced implements ModInitializer{
 
     @Override
     public void onInitialize() {
-        log(Level.INFO, "Hello there.");
+        log(Level.INFO, "Hello there!");
 
         //Config
         AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
