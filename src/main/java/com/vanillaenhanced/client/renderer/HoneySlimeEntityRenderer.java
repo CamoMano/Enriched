@@ -13,7 +13,6 @@ import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 
 @Environment(EnvType.CLIENT)
 public class HoneySlimeEntityRenderer extends SlimeEntityRenderer {
-
     public HoneySlimeEntityRenderer(EntityRendererFactory.Context context) {
         super(context);
     }

@@ -9,12 +9,14 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.SlimeEntityRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.SlimeEntity;
 
 public class VanillaEnhancedClient implements ClientModInitializer {
-    private Object EntityRendererFactory;
 
     @Override
     public void onInitializeClient() {
@@ -26,6 +28,8 @@ public class VanillaEnhancedClient implements ClientModInitializer {
 
 
  */
+
+        EntityRendererRegistry.INSTANCE.register(ModInit.HONEY_SLIME, HoneySlimeEntityRenderer::new);
 
 
 
