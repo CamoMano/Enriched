@@ -3,6 +3,7 @@ package com.vanillaenhanced;
 import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
+import com.vanillaenhanced.world.Features;
 import com.vanillaenhanced.world.Generator;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
@@ -29,6 +30,7 @@ public class VanillaEnhanced implements ModInitializer{
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //Setup
         ModInit.Register();
+        Features.register();
         Biomes.register();
         Generator.register();
 

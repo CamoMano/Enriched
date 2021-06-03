@@ -7,14 +7,13 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.UniformIntDistribution;
-import net.minecraft.world.gen.decorator.Decorator;
-import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
+import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
 
 public class Generator {
@@ -25,10 +24,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.SAPPHIRE_ORE.getDefaultState(),
                     7)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0, // bottom offset
-                    0, // min y level
-                    32))) // max y level
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
             .spreadHorizontally()
             .repeat(8); // number of veins per chunk
 
@@ -38,10 +34,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.RUBY_ORE.getDefaultState(),
                     7)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0, // bottom offset
-                    0, // min y level
-                    32))) // max y level
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
             .spreadHorizontally()
             .repeat(8); // number of veins per chunk
 
@@ -50,10 +43,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.AMETHYST_ORE.getDefaultState(),
                     7)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0, // bottom offset
-                    0, // min y level
-                    32))) // max y level
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
             .spreadHorizontally()
             .repeat(8); // number of veins per chunk
 
@@ -64,10 +54,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.SAPPHIRE_ORE.getDefaultState(),
                     4)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0, // bottom offset
-                    0, // min y level
-                    32))) // max y level
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
             .spreadHorizontally()
             .repeat(6); // number of veins per chunk
 
@@ -77,10 +64,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.RUBY_ORE.getDefaultState(),
                     3)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0, // bottom offset
-                    0, // min y level
-                    32))) // max y level
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
             .spreadHorizontally()
             .repeat(6); // number of veins per chunk
 
@@ -89,10 +73,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.AMETHYST_ORE.getDefaultState(),
                     3)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0, // bottom offset
-                    0, // min y level
-                    32))) // max y level
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
             .spreadHorizontally()
             .repeat(6); // number of veins per chunk
 
@@ -103,10 +84,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.MARBLE.getDefaultState(),
                     30)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0, // bottom offset
-                    0, // min y level
-                    80))) // max y level
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(80))
             .spreadHorizontally()
             .repeat(7); // number of veins per chunk
 
@@ -115,28 +93,25 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.DARK_GRANITE.getDefaultState(),
                     30)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                    0, // bottom offset
-                    0, // min y level
-                    75))) // max y level
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(75))
             .spreadHorizontally()
             .repeat(7); // number of veins per chunk
 
     public static ConfiguredFeature<?, ?> GEN_MUD = Feature.DISK
             .configure(new DiskFeatureConfig(
                     ModInit.MUD.getDefaultState(),
-                    UniformIntDistribution.of(3, 4),4,
+                    UniformIntProvider.create(3, 4),4,
                     Lists.newArrayList(Blocks.DIRT.getDefaultState(),
                             Blocks.GRASS_BLOCK.getDefaultState()))).
                     decorate(ConfiguredFeatures.Decorators.TOP_SOLID_HEIGHTMAP);
 
     public static void register() {
         // * Sapphire Common
-        RegistryKey<ConfiguredFeature<?, ?>> oreSapphireCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> oreSapphireCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_sapphire_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreSapphireCommon.getValue(), ORE_SAPPHIRE_COMMON);
         //Rare
-        RegistryKey<ConfiguredFeature<?, ?>> oreSapphireRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> oreSapphireRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_sapphire_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreSapphireRare.getValue(), ORE_SAPPHIRE_RARE);
         if(ModInit.enableSapphireGear) {
@@ -145,11 +120,11 @@ public class Generator {
         }
 
         // * Ruby Common
-        RegistryKey<ConfiguredFeature<?, ?>> oreRubyCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> oreRubyCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_ruby_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreRubyCommon.getValue(), ORE_RUBY_COMMON);
         //Rare
-        RegistryKey<ConfiguredFeature<?, ?>> oreRubyRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> oreRubyRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_ruby_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreRubyRare.getValue(), ORE_RUBY_RARE);
         if(ModInit.enableRubyGear) {
@@ -158,11 +133,11 @@ public class Generator {
         }
 
         // * Amethyst Common
-        RegistryKey<ConfiguredFeature<?, ?>> oreAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> oreAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystCommon.getValue(), ORE_AMETHYST_COMMON);
         //Rare
-        RegistryKey<ConfiguredFeature<?, ?>> oreAmethystRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> oreAmethystRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystRare.getValue(), ORE_AMETHYST_RARE);
         if (ModInit.enableAmethystGear) {
@@ -174,14 +149,14 @@ public class Generator {
 
         //Stone Types
         //Marble
-        RegistryKey<ConfiguredFeature<?, ?>> genMarble = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> genMarble = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "gen_marble"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, genMarble.getValue(), GEN_MARBLE);
         if (ModInit.enableMarble) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, genMarble);
         }
         //Dark Granite
-        RegistryKey<ConfiguredFeature<?, ?>> genDarkGranite = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> genDarkGranite = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "gen_dark_granite"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, genDarkGranite.getValue(), GEN_DARK_GRANITE);
         if (ModInit.enableDarkGranite) {
@@ -190,11 +165,13 @@ public class Generator {
         }
 
         //Mud
-        RegistryKey<ConfiguredFeature<?, ?>> genMud = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+
+        RegistryKey<ConfiguredFeature<?, ?>> genMud = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "gen_mud"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, genMud.getValue(), GEN_MUD);
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.SWAMP), GenerationStep.Feature.RAW_GENERATION, genMud);
+          BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.SWAMP), GenerationStep.Feature.RAW_GENERATION, genMud);
 
     }
+
 }
 
