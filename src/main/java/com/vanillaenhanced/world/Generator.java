@@ -99,16 +99,13 @@ public class Generator {
             .spreadHorizontally()
             .repeat(7); // number of veins per chunk
 
-  /*  public static ConfiguredFeature<?, ?> GEN_MUD = Feature.DISK
+    public static ConfiguredFeature<?, ?> GEN_MUD = Feature.DISK
             .configure(new DiskFeatureConfig(
                     ModInit.MUD.getDefaultState(),
-                    UniformIntProvider.of(3, 4),4,
+                    UniformIntProvider.create(3, 4),4,
                     Lists.newArrayList(Blocks.DIRT.getDefaultState(),
-                            Blocks.GRASS_BLOCK.getDefaultState()))).
-                    decorate(ConfiguredFeatures.ORE_DIRT);
+                            Blocks.GRASS_BLOCK.getDefaultState())));
 
-
-   */
     public static void register() {
         // * Sapphire Common
         RegistryKey<ConfiguredFeature<?, ?>> oreSapphireCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
@@ -169,13 +166,12 @@ public class Generator {
         }
 
         //Mud
-        /*
+
         RegistryKey<ConfiguredFeature<?, ?>> genMud = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "gen_mud"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, genMud.getValue(), GEN_MUD);
           BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.SWAMP), GenerationStep.Feature.RAW_GENERATION, genMud);
 
-         */
     }
 
 }

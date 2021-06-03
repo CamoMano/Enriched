@@ -15,11 +15,19 @@ import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 
 import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
 import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
+import org.apache.logging.log4j.Level;
 
-import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
+import static com.vanillaenhanced.VanillaEnhanced.*;
 
 public class Features {
 
+    public static void log(Level level, String message){
+        LOGGER.log(level, "["+MOD_NAME+"] " + message);
+    }
+
+    public static void register(){
+        log(Level.INFO, "Loaded features.");
+    }
 
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(String string, ConfiguredFeature<FC, ?> feature) {
         return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, MOD_ID + string, feature);
