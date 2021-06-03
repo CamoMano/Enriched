@@ -14,8 +14,6 @@ import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.decorator.Decorator;
-import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.*;
 
 public class Generator {
@@ -104,7 +102,8 @@ public class Generator {
                     ModInit.MUD.getDefaultState(),
                     UniformIntProvider.create(3, 4),4,
                     Lists.newArrayList(Blocks.DIRT.getDefaultState(),
-                            Blocks.GRASS_BLOCK.getDefaultState())));
+                            Blocks.GRASS_BLOCK.getDefaultState()))).
+                    decorate(ConfiguredFeatures.Decorators.TOP_SOLID_HEIGHTMAP);
 
     public static void register() {
         // * Sapphire Common

@@ -3,6 +3,7 @@
   "id": "vanillaenhanced",
   "version": "${version}",
   "name": "VanillaEnhanced",
+  "accessWidener" : "vanillaenhanced.accesswidener",
   "description": "Enhancements and vanilla-esque additions.",
   "authors": [
     "CamoMano"

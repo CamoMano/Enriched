@@ -12,7 +12,6 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.JungleFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
-
 import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
 import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
 import org.apache.logging.log4j.Level;
@@ -38,12 +37,9 @@ public class Features {
             new MegaJungleTrunkPlacer(16,16,16),
             new SimpleBlockStateProvider(ModInit.REDWOOD_LEAVES.getDefaultState()),
             new SimpleBlockStateProvider(ModInit.REDWOOD_SAPLING.getDefaultState()),
-            new JungleFoliagePlacer(UniformIntProvider.create(2,0), UniformIntProvider.create(0,0), 2),
+            new JungleFoliagePlacer(UniformIntProvider.create(0,2), UniformIntProvider.create(0,0), 2),
             new TwoLayersFeatureSize(4, 1, 2)).decorators(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(Blocks.PODZOL.getDefaultState())))).build();
 
-
-
-
     public static final ConfiguredFeature<TreeFeatureConfig, ?> REDWOOD_TREE = register("redwood_tree", Feature.TREE.configure(Features.REDWOOD_TREE_CONFIG));
-    public static final ConfiguredFeature<?, ?> REDWOOD_TREES = register("redwood_trees", REDWOOD_TREE.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(7, 0.1F, 1))));
+    public static final ConfiguredFeature<?, ?> REDWOOD_TREES = register("redwood_trees", REDWOOD_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(7, 0.1F, 1))));
 }

@@ -18,6 +18,7 @@ repositories {
 }
 
 minecraft {
+accessWidener =  file("src/main/resources/vanillaenhanced.accesswidener")
 }
 
 dependencies {
