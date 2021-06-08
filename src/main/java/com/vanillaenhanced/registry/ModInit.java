@@ -96,6 +96,9 @@ public class ModInit {
         public static final Block BAMBOO_DOOR = new WoodDoorBase("bamboo_door", BAMBOO_PLANKS);
         public static final Block BAMBOO_TRAPDOOR = new WoodTrapdoorBase("bamboo_trapdoor", BAMBOO_PLANKS);
         public static final MudBlock MUD = new MudBlock(FabricBlockSettings.copyOf(Blocks.SOUL_SAND).jumpVelocityMultiplier(0.5f).requiresTool().breakByTool(FabricToolTags.SHOVELS).sounds(ModSounds.MUD).strength(0.4f, 0.4f));
+        public static final Block DEEPSLATE_RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
+        public static final Block DEEPSLATE_SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
+        public static final Block DEEPSLATE_AMETHYST_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
         //public static final SignBlock REDWOOD_SIGN = new SignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), SignType.SPRUCE);
         //public static final WallSignBlock REDWOOD_WALL_SIGN = new WallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), SignType.SPRUCE);
 
@@ -254,6 +257,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby"), RUBY);
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ruby_ore"), RUBY_ORE);
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_ore"), new BlockItem(RUBY_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "deepslate_ruby_ore"), DEEPSLATE_RUBY_ORE);
+                        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "deepslate_ruby_ore"), new BlockItem(DEEPSLATE_RUBY_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ruby_block"), RUBY_BLOCK);
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_block"), new BlockItem(RUBY_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                         //Ruby Tools
@@ -273,6 +278,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire"), SAPPHIRE);
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sapphire_ore"), SAPPHIRE_ORE);
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_ore"), new BlockItem(SAPPHIRE_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "deepslate_sapphire_ore"), DEEPSLATE_SAPPHIRE_ORE);
+                        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "deepslate_sapphire_ore"), new BlockItem(DEEPSLATE_SAPPHIRE_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sapphire_block"), SAPPHIRE_BLOCK);
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sapphire_block"), new BlockItem(SAPPHIRE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                         //Sapphire Tools
@@ -292,6 +299,8 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst"), AMETHYST);
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "amethyst_ore"), AMETHYST_ORE);
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_ore"), new BlockItem(AMETHYST_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+                        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "deepslate_amethyst_ore"), DEEPSLATE_AMETHYST_ORE);
+                        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "deepslate_amethyst_ore"), new BlockItem(DEEPSLATE_AMETHYST_ORE, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "amethyst_block"), AMETHYST_BLOCK);
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_block"), new BlockItem(AMETHYST_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
                         //Amethyst Tools

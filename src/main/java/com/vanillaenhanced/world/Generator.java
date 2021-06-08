@@ -24,7 +24,16 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.SAPPHIRE_ORE.getDefaultState(),
                     7)) // vein size
-            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
+            .uniformRange(YOffset.fixed(0), YOffset.fixed(32))
+            .spreadHorizontally()
+            .repeat(8); // number of veins per chunk
+
+    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_SAPPHIRE_COMMON = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModInit.DEEPSLATE_SAPPHIRE_ORE.getDefaultState(),
+                    7)) // vein size
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
             .repeat(8); // number of veins per chunk
 
@@ -34,16 +43,35 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.RUBY_ORE.getDefaultState(),
                     7)) // vein size
-            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
+            .uniformRange(YOffset.fixed(0), YOffset.fixed(32))
             .spreadHorizontally()
             .repeat(8); // number of veins per chunk
+
+    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_RUBY_COMMON = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModInit.DEEPSLATE_RUBY_ORE.getDefaultState(),
+                    7)) // vein size
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
+            .spreadHorizontally()
+            .repeat(8); // number of veins per chunk
+
 
     public static ConfiguredFeature<?, ?> ORE_AMETHYST_COMMON = Feature.ORE
             .configure(new OreFeatureConfig(
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.AMETHYST_ORE.getDefaultState(),
                     7)) // vein size
-            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
+            .uniformRange(YOffset.fixed(0), YOffset.fixed(32))
+            .spreadHorizontally()
+            .repeat(8); // number of veins per chunk
+
+    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_AMETHYST_COMMON = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModInit.DEEPSLATE_AMETHYST_ORE.getDefaultState(),
+                    7)) // vein size
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
             .repeat(8); // number of veins per chunk
 
@@ -54,7 +82,16 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.SAPPHIRE_ORE.getDefaultState(),
                     4)) // vein size
-            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
+            .uniformRange(YOffset.fixed(0), YOffset.fixed(32))
+            .spreadHorizontally()
+            .repeat(6); // number of veins per chunk
+
+    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_SAPPHIRE_RARE = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModInit.DEEPSLATE_SAPPHIRE_ORE.getDefaultState(),
+                    4)) // vein size
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
             .repeat(6); // number of veins per chunk
 
@@ -64,7 +101,16 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.RUBY_ORE.getDefaultState(),
                     3)) // vein size
-            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
+            .uniformRange(YOffset.fixed(0), YOffset.fixed(32))
+            .spreadHorizontally()
+            .repeat(6); // number of veins per chunk
+
+    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_RUBY_RARE = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModInit.DEEPSLATE_RUBY_ORE.getDefaultState(),
+                    3)) // vein size
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
             .repeat(6); // number of veins per chunk
 
@@ -73,7 +119,16 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.AMETHYST_ORE.getDefaultState(),
                     3)) // vein size
-            .uniformRange(YOffset.getBottom(), YOffset.fixed(32))
+            .uniformRange(YOffset.fixed(0), YOffset.fixed(32))
+            .spreadHorizontally()
+            .repeat(6); // number of veins per chunk
+
+    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_AMETHYST_RARE = Feature.ORE
+            .configure(new OreFeatureConfig(
+                    OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+                    ModInit.DEEPSLATE_AMETHYST_ORE.getDefaultState(),
+                    3)) // vein size
+            .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
             .repeat(6); // number of veins per chunk
 
@@ -84,7 +139,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.MARBLE.getDefaultState(),
                     30)) // vein size
-            .uniformRange(YOffset.getBottom(), YOffset.fixed(80))
+            .uniformRange(YOffset.fixed(0), YOffset.fixed(80))
             .spreadHorizontally()
             .repeat(7); // number of veins per chunk
 
@@ -93,7 +148,7 @@ public class Generator {
                     OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     ModInit.DARK_GRANITE.getDefaultState(),
                     30)) // vein size
-            .uniformRange(YOffset.getBottom(), YOffset.fixed(75))
+            .uniformRange(YOffset.fixed(0), YOffset.fixed(75))
             .spreadHorizontally()
             .repeat(7); // number of veins per chunk
 
@@ -110,39 +165,70 @@ public class Generator {
         RegistryKey<ConfiguredFeature<?, ?>> oreSapphireCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_sapphire_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreSapphireCommon.getValue(), ORE_SAPPHIRE_COMMON);
+
+        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateSapphireCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_sapphire_common"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateSapphireCommon.getValue(), ORE_DEEPSLATE_SAPPHIRE_COMMON);
         //Rare
         RegistryKey<ConfiguredFeature<?, ?>> oreSapphireRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_sapphire_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreSapphireRare.getValue(), ORE_SAPPHIRE_RARE);
+        //Deepslate Rare
+        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateSapphireRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_sapphire_rare"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateSapphireRare.getValue(), ORE_DEEPSLATE_SAPPHIRE_RARE);
         if(ModInit.enableSapphireGear) {
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireCommon);
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateSapphireCommon);
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireRare);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateSapphireRare);
+
         }
 
         // * Ruby Common
         RegistryKey<ConfiguredFeature<?, ?>> oreRubyCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_ruby_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreRubyCommon.getValue(), ORE_RUBY_COMMON);
+        // Deepslate Common
+        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateRubyCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_ruby_common"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateRubyCommon.getValue(), ORE_DEEPSLATE_RUBY_COMMON);
         //Rare
         RegistryKey<ConfiguredFeature<?, ?>> oreRubyRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_ruby_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreRubyRare.getValue(), ORE_RUBY_RARE);
+        //Deepslate Rare
+        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateRubyRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_ruby_rare"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateRubyRare.getValue(), ORE_DEEPSLATE_RUBY_RARE);
         if(ModInit.enableRubyGear) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyRare);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateRubyRare);
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyCommon);
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateRubyCommon);
         }
 
         // * Amethyst Common
         RegistryKey<ConfiguredFeature<?, ?>> oreAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_common"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystCommon.getValue(), ORE_AMETHYST_COMMON);
+        //Deepslate Common
+        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_amethyst_common"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateAmethystCommon.getValue(), ORE_DEEPSLATE_AMETHYST_COMMON);
         //Rare
         RegistryKey<ConfiguredFeature<?, ?>> oreAmethystRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystRare.getValue(), ORE_AMETHYST_RARE);
+        //Deepslate Rare
+        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateAmethystRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_amethyst_rare"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateAmethystRare.getValue(), ORE_DEEPSLATE_AMETHYST_RARE);
         if (ModInit.enableAmethystGear) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystRare);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateAmethystRare);
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystCommon);
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateAmethystCommon);
         }
 
 
