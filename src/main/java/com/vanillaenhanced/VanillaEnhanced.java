@@ -1,7 +1,6 @@
 package com.vanillaenhanced;
 
 import com.vanillaenhanced.biome.Biomes;
-import com.vanillaenhanced.commands.Commands;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.Features;
