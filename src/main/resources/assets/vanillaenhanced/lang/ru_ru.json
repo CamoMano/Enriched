@@ -153,5 +153,8 @@
     "block.vanillaenhanced.bamboo_fence_gate": "Бамбук Ворота забора",
     "block.vanillaenhanced.bamboo_door": "Бамбуковая дверь",
     "block.vanillaenhanced.bamboo_trapdoor": "Бамбуковый люк",
-    "block.vanillaenhanced.mud": "Грязь"
+    "block.vanillaenhanced.mud": "Грязь",
+    "block.vanillaenhanced.deepslate_ruby_ore": "Глубокая сланцевая рубиновая руда",
+    "block.vanillaenhanced.deepslate_sapphire_ore": "Сапфировая руда из глубокого сланца",
+    "block.vanillaenhanced.deepslate_amethyst_ore": "Глубокая сланцевая аметистовая руда"
 }
