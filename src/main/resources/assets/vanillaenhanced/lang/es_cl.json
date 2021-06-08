@@ -153,5 +153,8 @@
     "block.vanillaenhanced.bamboo_fence_gate": "Bamboo Fence Gate",
     "block.vanillaenhanced.bamboo_door": "Bamboo Door",
     "block.vanillaenhanced.bamboo_trapdoor": "Bamboo Trapdoor",
-    "block.vanillaenhanced.mud": "Mud"
+    "block.vanillaenhanced.mud": "Mud",
+    "block.vanillaenhanced.deepslate_ruby_ore": "Deepslate Ruby Ore",
+    "block.vanillaenhanced.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+    "block.vanillaenhanced.deepslate_amethyst_ore": "Deepslate Amethyst Ore"
 }
