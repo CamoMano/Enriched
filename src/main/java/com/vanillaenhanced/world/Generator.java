@@ -35,7 +35,7 @@ public class Generator {
                     7)) // vein size
             .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
-            .repeat(8); // number of veins per chunk
+            .repeat(9); // number of veins per chunk
 
 
     public static ConfiguredFeature<?, ?> ORE_RUBY_COMMON = Feature.ORE
@@ -54,7 +54,7 @@ public class Generator {
                     7)) // vein size
             .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
-            .repeat(8); // number of veins per chunk
+            .repeat(9); // number of veins per chunk
 
 
     public static ConfiguredFeature<?, ?> ORE_AMETHYST_COMMON = Feature.ORE
@@ -73,7 +73,7 @@ public class Generator {
                     7)) // vein size
             .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
-            .repeat(8); // number of veins per chunk
+            .repeat(9); // number of veins per chunk
 
 
     //Rare Ores
@@ -93,7 +93,7 @@ public class Generator {
                     4)) // vein size
             .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
-            .repeat(6); // number of veins per chunk
+            .repeat(7); // number of veins per chunk
 
 
     public static ConfiguredFeature<?, ?> ORE_RUBY_RARE = Feature.ORE
@@ -112,7 +112,7 @@ public class Generator {
                     3)) // vein size
             .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
-            .repeat(6); // number of veins per chunk
+            .repeat(7); // number of veins per chunk
 
     public static ConfiguredFeature<?, ?> ORE_AMETHYST_RARE = Feature.ORE
             .configure(new OreFeatureConfig(
@@ -130,7 +130,7 @@ public class Generator {
                     3)) // vein size
             .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
             .spreadHorizontally()
-            .repeat(6); // number of veins per chunk
+            .repeat(7); // number of veins per chunk
 
 
     //Stone Types
