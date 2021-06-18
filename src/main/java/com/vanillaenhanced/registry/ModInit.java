@@ -40,6 +40,7 @@ public class ModInit {
         public static boolean enableDarkGranite = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableDarkGranite;
         public static boolean enableMarble = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableMarble;
         public static boolean enableHoneySlime = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableHoneySlime;
+        public static boolean enableCopperGear = AutoConfig.getConfigHolder(ModConfig.class).getConfig().enableCopperGear;
 
         //Armor
         public static final ArmorMaterial OBSIDIAN_ARMOR = new ArmorMaterialObsidian();
@@ -314,6 +315,15 @@ public class ModInit {
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_chestplate"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.CHEST));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_leggings"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.LEGS));
                         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "amethyst_boots"), new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.FEET));
+                        
+                        
+                        
+                        //Copper Tools
+                        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "copper_shovel"), new ShovelBase(new ToolMaterialCopper()));
+                        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "copper_pickaxe"), new PickaxeBase(new ToolMaterialCopper()));
+                        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "copper_axe"), new AxeBase(new ToolMaterialCopper()));
+                        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "copper_sword"), new SwordBase(new ToolMaterialCopper()));
+                        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "copper_hoe"), new HoeBase(new ToolMaterialCopper()));
 
 
                 //Dark Granite

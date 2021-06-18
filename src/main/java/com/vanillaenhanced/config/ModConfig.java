@@ -24,6 +24,9 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableAmethystGear = true;
+    @ConfigEntry.Category("Items")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableCopperGear = true;
 
     //Blocks
     @ConfigEntry.Category("Blocks")
