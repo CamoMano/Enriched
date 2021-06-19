@@ -1,6 +1,5 @@
 package com.vanillaenhanced.materials.items;
 
-
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -35,6 +34,4 @@ public class ToolMaterialCopper implements ToolMaterial {
     public float getMiningSpeedMultiplier() {
         return 4.0F;
     }
-
-
 }

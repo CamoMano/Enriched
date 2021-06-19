@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#",
-        "#",
-        "/"
-    ],
-    "key": {
-        "#": {
-            "item": "vanillaenhanced:ruby"
-        },
-        "/": {
-            "item": "minecraft:stick"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:ruby"
     },
-    "result": {
-	"item": "vanillaenhanced:ruby_sword",
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:ruby_sword",
     "count": 1
-	}
+  }
 }

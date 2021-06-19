@@ -1,6 +1,8 @@
-    {
-      "variants": {
-        "": { "model": "vanillaenhanced:block/ruby_ore" }
-      }
+{
+  "variants": {
+    "": {
+      "model": "vanillaenhanced:block/ruby_ore"
     }
+  }
+}
 

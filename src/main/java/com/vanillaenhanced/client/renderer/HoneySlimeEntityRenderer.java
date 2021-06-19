@@ -1,6 +1,5 @@
 package com.vanillaenhanced.client.renderer;
 
-
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;

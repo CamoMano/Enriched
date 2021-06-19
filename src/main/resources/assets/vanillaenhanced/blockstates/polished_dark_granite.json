@@ -1,6 +1,8 @@
-    {
-      "variants": {
-        "": { "model": "vanillaenhanced:block/polished_dark_granite" }
-      }
+{
+  "variants": {
+    "": {
+      "model": "vanillaenhanced:block/polished_dark_granite"
     }
+  }
+}
 

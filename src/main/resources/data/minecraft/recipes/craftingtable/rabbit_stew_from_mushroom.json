@@ -1,21 +1,21 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "minecraft:carrot"
-        },
-        {
-            "item": "minecraft:baked_potato"
-        },
-        {
-            "item": "minecraft:cooked_rabbit"
-        },
-        {
-            "item": "minecraft:mushroom_stew"
-        }
-    ],
-    "result": {
-        "item": "minecraft:rabbit_stew",
-        "count": 1
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "minecraft:cooked_rabbit"
+    },
+    {
+      "item": "minecraft:mushroom_stew"
     }
+  ],
+  "result": {
+    "item": "minecraft:rabbit_stew",
+    "count": 1
+  }
 }

@@ -1,16 +1,16 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "# #",
-        "# #"
-    ],
-    "key": {
-        "#": {
-            "item": "vanillaenhanced:ruby"
-        }
-    },
-    "result": {
-	"item": "vanillaenhanced:ruby_boots",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:ruby"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:ruby_boots",
     "count": 1
-	}
+  }
 }

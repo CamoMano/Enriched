@@ -1,16 +1,16 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "##",
-        "##"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:bamboo"
-        }
-    },
-    "result": {
-        "item": "vanillaenhanced:bamboo_planks",
-        "count": 2
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bamboo"
     }
+  },
+  "result": {
+    "item": "vanillaenhanced:bamboo_planks",
+    "count": 2
+  }
 }

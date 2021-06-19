@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "# #",
-        "###",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "vanillaenhanced:ruby"
-        }
-    },
-    "result": {
-	"item": "vanillaenhanced:ruby_chestplate",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:ruby"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:ruby_chestplate",
     "count": 1
-	}
+  }
 }

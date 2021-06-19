@@ -1,6 +1,8 @@
-    {
-      "variants": {
-        "": { "model": "vanillaenhanced:block/obsidian_alloy_block" }
-      }
+{
+  "variants": {
+    "": {
+      "model": "vanillaenhanced:block/obsidian_alloy_block"
     }
+  }
+}
 
