@@ -3,15 +3,16 @@
   "id": "vanillaenhanced",
   "version": "${version}",
   "name": "VanillaEnhanced",
-  "accessWidener" : "vanillaenhanced.accesswidener",
+  "accessWidener": "vanillaenhanced.accesswidener",
   "description": "Enhancements and vanilla-esque additions.",
   "authors": [
-    "CamoMano"
+    "CamoMano",
+	"Hwiggy"
   ],
   "contributors": [],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/vanilla-enhanced",
-    "issues": "https://github.com/CamoMano/Vanilla-Enhanced/issues"  
+    "issues": "https://github.com/CamoMano/Vanilla-Enhanced/issues"
   },
   "license": "MIT",
   "icon": "assets/vanillaenhanced/icon.png",
@@ -19,12 +20,12 @@
   "entrypoints": {
     "main": [
       "com.vanillaenhanced.VanillaEnhanced"
-   ],
+    ],
     "client": [
-	"com.vanillaenhanced.VanillaEnhancedClient"
-	],
+      "com.vanillaenhanced.VanillaEnhancedClient"
+    ],
     "server": [],
-	"modmenu": [
+    "modmenu": [
       "com.vanillaenhanced.config.ModMenu"
     ]
   },
@@ -33,11 +34,11 @@
   ],
   "depends": {
     "fabricloader": ">=0.11.3",
-	"minecraft": "1.17.x",
+    "minecraft": "1.17.x",
     "fabric": "*",
-	"java": ">=16"
+    "java": ">=16"
   },
-    "suggests": {
+  "suggests": {
     "modmenu": "*"
   }
 }

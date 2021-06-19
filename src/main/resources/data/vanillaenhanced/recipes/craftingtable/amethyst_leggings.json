@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "# #",
-        "# #"
-    ],
-    "key": {
-        "#": {
-            "item": "vanillaenhanced:amethyst"
-        }
-    },
-    "result": {
-	"item": "vanillaenhanced:amethyst_leggings",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:amethyst"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:amethyst_leggings",
     "count": 1
-	}
+  }
 }

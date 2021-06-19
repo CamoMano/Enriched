@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#",
-        "/",
-        "/"
-    ],
-    "key": {
-        "#": {
-            "item": "vanillaenhanced:amethyst"
-        },
-        "/": {
-            "item": "minecraft:stick"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "/",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:amethyst"
     },
-    "result": {
-	"item": "vanillaenhanced:amethyst_shovel",
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:amethyst_shovel",
     "count": 1
-	}
+  }
 }

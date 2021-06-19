@@ -1,6 +1,8 @@
-    {
-      "variants": {
-        "": { "model": "vanillaenhanced:block/sapphire_ore" }
-      }
+{
+  "variants": {
+    "": {
+      "model": "vanillaenhanced:block/sapphire_ore"
     }
+  }
+}
 

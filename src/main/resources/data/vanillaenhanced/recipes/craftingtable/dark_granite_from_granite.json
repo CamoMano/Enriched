@@ -1,18 +1,18 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#C"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:granite"
-        },
-        "C": {
-            "item": "minecraft:coal"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:granite"
     },
-    "result": {
-        "item": "minecraft:polished_granite",
-        "count": 1
+    "C": {
+      "item": "minecraft:coal"
     }
+  },
+  "result": {
+    "item": "minecraft:polished_granite",
+    "count": 1
+  }
 }

@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#",
-        "/",
-        "/"
-    ],
-    "key": {
-        "#": {
-            "item": "vanillaenhanced:sapphire"
-        },
-        "/": {
-            "item": "minecraft:stick"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "/",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:sapphire"
     },
-    "result": {
-	"item": "vanillaenhanced:sapphire_shovel",
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:sapphire_shovel",
     "count": 1
-	}
+  }
 }

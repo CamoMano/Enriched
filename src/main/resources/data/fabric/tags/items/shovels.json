@@ -3,9 +3,10 @@
   "values": [
     "vanillaenhanced:obsidian_shovel",
     "vanillaenhanced:emerald_shovel",
-	"vanillaenhanced:sapphire_shovel",
-	"vanillaenhanced:amethyst_shovel",
-	"vanillaenhanced:ruby_shovel",
-	"vanillaenhanced:steel_shovel"
+    "vanillaenhanced:sapphire_shovel",
+    "vanillaenhanced:amethyst_shovel",
+    "vanillaenhanced:ruby_shovel",
+	"vanillaenhanced:copper_shovel",
+    "vanillaenhanced:steel_shovel"
   ]
 }

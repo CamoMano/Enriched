@@ -7,7 +7,6 @@ import net.minecraft.item.ItemGroup;
 
 public class ArmorBase extends ArmorItem {
     public ArmorBase(ArmorMaterial material, EquipmentSlot slot) {
-        super(material, slot, new Settings().group(ItemGroup.COMBAT) );
+        super(material, slot, new Settings().group(ItemGroup.COMBAT));
     }
-
 }
