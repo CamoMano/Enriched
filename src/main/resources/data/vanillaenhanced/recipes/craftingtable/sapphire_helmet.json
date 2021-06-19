@@ -1,16 +1,16 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "# #"
-    ],
-    "key": {
-        "#": {
-            "item": "vanillaenhanced:sapphire"
-        }
-    },
-    "result": {
-	"item": "vanillaenhanced:sapphire_helmet",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:sapphire"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:sapphire_helmet",
     "count": 1
-	}
+  }
 }

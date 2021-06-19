@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#",
-        "#",
-        "/"
-    ],
-    "key": {
-        "#": {
-            "item": "vanillaenhanced:steel_ingot"
-        },
-        "/": {
-            "item": "minecraft:stick"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "item": "vanillaenhanced:steel_ingot"
     },
-    "result": {
-	"item": "vanillaenhanced:steel_sword",
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "vanillaenhanced:steel_sword",
     "count": 1
-	}
+  }
 }

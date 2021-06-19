@@ -27,5 +27,4 @@ public class MudBlock extends Block {
     public VoxelShape getVisualShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return VoxelShapes.fullCube();
     }
-
 }

@@ -1,6 +1,6 @@
 package com.vanillaenhanced.mixin;
 
-
+import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.entity.HoneySlime;
 import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.block.BeehiveBlock;
@@ -16,12 +16,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static com.vanillaenhanced.registry.ModInit.HONEY_SLIME;
 
-
 @Mixin(BeehiveBlock.class)
 public class BeehiveBlockMixin {
     @Inject(method = "takeHoney(Lnet/minecraft/world/World;Lnet/minecraft/block/BlockState;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "TAIL"))
     public void takeHoney(World world, BlockState state, BlockPos pos, CallbackInfo ci) {
-        if(ModInit.enableHoneySlime) {
+        if (ModConfig.enableHoneySlime) {
             if (ThreadLocalRandom.current().nextInt(3) == 2) {
                 //System.out.println("Yes");
                 HoneySlime honeySlime = HONEY_SLIME.create(world);
@@ -33,6 +32,5 @@ public class BeehiveBlockMixin {
         }
         //System.out.println("No");
     }
-
 }
 

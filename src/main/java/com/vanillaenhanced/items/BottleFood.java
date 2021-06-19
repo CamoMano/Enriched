@@ -15,8 +15,9 @@ public class BottleFood extends Item {
     public BottleFood(Settings settings) {
         super(settings);
     }
-        public UseAction getUseAction(ItemStack stack) {
-            return UseAction.DRINK;
+
+    public UseAction getUseAction(ItemStack stack) {
+        return UseAction.DRINK;
     }
 
     //@Override
@@ -25,13 +26,12 @@ public class BottleFood extends Item {
             PlayerEntity player = (PlayerEntity) user;
             player.getHungerManager().eat(stack.getItem(), stack);
             player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-
             if (player instanceof ServerPlayerEntity) {
                 Criteria.CONSUME_ITEM.trigger((ServerPlayerEntity) player, stack);
             }
             stack.decrement(1);
             player.giveItemStack(new ItemStack(Items.GLASS_BOTTLE));
-    }
+        }
         return stack;
-}
+    }
 }

@@ -14,16 +14,13 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class StripableBlock extends PillarBlock
-{
+public class StripableBlock extends PillarBlock {
     Block result;
 
     public StripableBlock(Block source, Block result) {
         super(Settings.copy(source));
         this.result = result;
     }
-
-
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
@@ -38,4 +35,5 @@ public class StripableBlock extends PillarBlock
             return ActionResult.SUCCESS;
         }
         return ActionResult.FAIL;
-    }}
+    }
+}

@@ -1,12 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "vanillaenhanced:obsidian_alloy_block"
-        }
-    ],
-    "result": {
-        "item": "vanillaenhanced:obsidian_alloy_ingot",
-        "count": 9
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "vanillaenhanced:obsidian_alloy_block"
     }
+  ],
+  "result": {
+    "item": "vanillaenhanced:obsidian_alloy_ingot",
+    "count": 9
+  }
 }

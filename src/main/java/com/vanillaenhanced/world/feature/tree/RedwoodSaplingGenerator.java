@@ -8,19 +8,15 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
-
 public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
+    @Nullable
+    @Override
+    protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
+        return null;
+    }
 
-	@Nullable
-	@Override
-	protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
-		return null;
-	}
-
-
-
-	@Override
-	protected ConfiguredFeature<TreeFeatureConfig, ?> createLargeTreeFeature(Random random) {
-		return Features.REDWOOD_TREE;
-	}
+    @Override
+    protected ConfiguredFeature<TreeFeatureConfig, ?> createLargeTreeFeature(Random random) {
+        return Features.REDWOOD_TREE;
+    }
 }
