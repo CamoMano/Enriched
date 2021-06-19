@@ -27,11 +27,13 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableAmethystGear = true;
-
+/*
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableCopperGear = true;
 
+
+ */
     //Blocks
     @ConfigEntry.Category("Blocks")
     @ConfigEntry.Gui.Tooltip()
@@ -62,11 +64,6 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     public boolean enableExtremeJungle = true;
 
-    /*
-    @ConfigEntry.Category("Biomes")
-    @ConfigEntry.Gui.Tooltip()
-    public boolean enableMonolith = false;
-     */
     @ConfigEntry.Category("Biomes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableFrozenDesert = true;
