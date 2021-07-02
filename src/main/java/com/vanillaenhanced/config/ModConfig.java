@@ -27,13 +27,20 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableAmethystGear = true;
-/*
+
     @ConfigEntry.Category("Items")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableCopperGear = true;
 
+    @ConfigEntry.Category("Items")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableObsidianGear = true;
 
- */
+    @ConfigEntry.Category("Items")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableEmeraldGear = true;
+
+
     //Blocks
     @ConfigEntry.Category("Blocks")
     @ConfigEntry.Gui.Tooltip()

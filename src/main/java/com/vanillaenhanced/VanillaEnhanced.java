@@ -2,6 +2,7 @@ package com.vanillaenhanced;
 
 import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.config.ModConfig;
+import com.vanillaenhanced.recipes.DynamicRecipes;
 import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.Features;
 import com.vanillaenhanced.world.Generator;
@@ -34,6 +35,7 @@ public class VanillaEnhanced implements ModInitializer {
         Features.register();
         Biomes.register(config);
         Generator.register(config);
+        DynamicRecipes.register(config);
         //Commands.register();
     }
 }
