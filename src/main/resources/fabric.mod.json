@@ -6,10 +6,11 @@
   "accessWidener": "vanillaenhanced.accesswidener",
   "description": "Enhancements and vanilla-esque additions.",
   "authors": [
-    "CamoMano",
+    "CamoMano"
+  ],
+  "contributors": [
 	"Hwiggy"
   ],
-  "contributors": [],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/vanilla-enhanced",
     "issues": "https://github.com/CamoMano/Vanilla-Enhanced/issues"

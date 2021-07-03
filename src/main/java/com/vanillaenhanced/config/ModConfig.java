@@ -40,6 +40,10 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     public boolean enableEmeraldGear = true;
 
+    @ConfigEntry.Category("Items")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableSteelGear = true;
+
     //Blocks
     @ConfigEntry.Category("Blocks")
     @ConfigEntry.Gui.Tooltip()
