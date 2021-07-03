@@ -33,6 +33,10 @@ public class RecipeManagerMixin {
             map.put(new Identifier("vanillaenhanced", "emerald_axe"), DynamicRecipes.EMERALD_AXE_RECIPE);
             map.put(new Identifier("vanillaenhanced", "emerald_shovel"), DynamicRecipes.EMERALD_SHOVEL_RECIPE);
             map.put(new Identifier("vanillaenhanced", "emerald_hoe"), DynamicRecipes.EMERALD_HOE_RECIPE);
+            map.put(new Identifier("vanillaenhanced", "emerald_helmet"), DynamicRecipes.EMERALD_HELMET_RECIPE);
+            map.put(new Identifier("vanillaenhanced", "emerald_chestplate"), DynamicRecipes.EMERALD_CHESTPLATE_RECIPE);
+            map.put(new Identifier("vanillaenhanced", "emerald_leggings"), DynamicRecipes.EMERALD_LEGGINGS_RECIPE);
+            map.put(new Identifier("vanillaenhanced", "emerald_boots"), DynamicRecipes.EMERALD_BOOTS_RECIPE);
         }
         if (ModConfig.enableObsidianGear) {
             map.put(new Identifier("vanillaenhanced", "obsidian_pickaxe"), DynamicRecipes.OBSIDIAN_PICKAXE_RECIPE);
@@ -41,6 +45,12 @@ public class RecipeManagerMixin {
             map.put(new Identifier("vanillaenhanced", "obsidian_shovel"), DynamicRecipes.OBSIDIAN_SHOVEL_RECIPE);
             map.put(new Identifier("vanillaenhanced", "obsidian_hoe"), DynamicRecipes.OBSIDIAN_HOE_RECIPE);
             map.put(new Identifier("vanillaenhanced", "obsidian_alloy_ingot"), DynamicRecipes.OBSIDIAN_ALLOY_RECIPE);
+            map.put(new Identifier("vanillaenhanced", "obsidian_helmet"), DynamicRecipes.OBSIDIAN_HELMET_RECIPE);
+            map.put(new Identifier("vanillaenhanced", "obsidian_chestplate"), DynamicRecipes.OBSIDIAN_CHESTPLATE_RECIPE);
+            map.put(new Identifier("vanillaenhanced", "obsidian_leggings"), DynamicRecipes.OBSIDIAN_LEGGINGS_RECIPE);
+            map.put(new Identifier("vanillaenhanced", "obsidian_boots"), DynamicRecipes.OBSIDIAN_BOOTS_RECIPE);
         }
+
+        map.put(new Identifier("vanillaenhanced", "steel_ingot"), DynamicRecipes.STEEL_INGOT_RECIPE);
     }
 }

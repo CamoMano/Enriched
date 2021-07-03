@@ -37,6 +37,8 @@ public class DynamicRecipes {
     public static JsonObject OBSIDIAN_LEGGINGS_RECIPE = null;
     public static JsonObject OBSIDIAN_BOOTS_RECIPE = null;
 
+    public static JsonObject STEEL_INGOT_RECIPE = null;
+
 
     public static JsonObject createShapedRecipeJson(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output, int count) {
         JsonObject json = new JsonObject();
@@ -63,6 +65,34 @@ public class DynamicRecipes {
         JsonObject result = new JsonObject();
         result.addProperty("item", output.toString());
         result.addProperty("count", count);
+        json.add("result", result);
+
+        return json;
+    }
+
+    public static JsonObject createBlastingRecipeJson(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, Identifier output, float experience, int cookingtime) {
+        JsonObject json = new JsonObject();
+        json.addProperty("type", "minecraft:blasting");
+
+
+        JsonArray jsonArray = new JsonArray();
+        json.add("ingredient", jsonArray);
+
+
+        JsonObject individualKey;
+        JsonObject keyList = new JsonObject();
+
+        for (int i = 0; i < keys.size(); ++i) {
+            individualKey = new JsonObject();
+            individualKey.addProperty(type.get(i), items.get(i).toString());
+            keyList.add(keys.get(i) + "", individualKey);
+        }
+
+        json.add("key", keyList);
+        JsonObject result = new JsonObject();
+        result.addProperty("item", output.toString());
+        result.addProperty("experience", experience);
+        result.addProperty("cookingtime", cookingtime);
         json.add("result", result);
 
         return json;
@@ -97,6 +127,8 @@ public class DynamicRecipes {
         OBSIDIAN_CHESTPLATE_RECIPE = chestplate("obsidian_chestplate", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_chestplate", 1);
         OBSIDIAN_LEGGINGS_RECIPE = leggings("obsidian_leggings", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_leggings", 1);
         OBSIDIAN_BOOTS_RECIPE = boots("obsidian_boots", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_boots", 1);
+        //Steel Gear
+        STEEL_INGOT_RECIPE = steel("steel_ingot", "minecraft:iron_ingot", "vanillaenhanced:steel_ingot", 0.7F, 400);
 
     }
 
@@ -255,8 +287,18 @@ public class DynamicRecipes {
                 Lists.newArrayList(
                         "# #",
                         "# #",
-                        "  "
+                        "   "
                 ),
                 new Identifier(result), count);
+    }
+
+    public static JsonObject steel(String name, String item, String result, float experience, int cookingtime) {
+        return createBlastingRecipeJson(
+                Lists.newArrayList(
+                        '#'
+                ),
+                Lists.newArrayList(new Identifier(item)),
+                Lists.newArrayList("item"),
+                new Identifier(result), experience, cookingtime);
     }
 }
