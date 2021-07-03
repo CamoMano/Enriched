@@ -57,6 +57,43 @@ public class DynamicRecipes {
             enabledFeatures.add(boots("steel_boots", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_boots"));
             enabledFeatures.add(blasting("steel_ingot", "minecraft:iron_ingot", "vanillaenhanced:steel_ingot", 0.7, 400));
         }
+
+        if (config.enableRubyGear) {
+            enabledFeatures.add(pickaxe("ruby_pickaxe", "vanillaenhanced:ruby", "vanillaenhanced:ruby_pickaxe"));
+            enabledFeatures.add(sword("ruby_sword", "vanillaenhanced:ruby", "vanillaenhanced:ruby_sword"));
+            enabledFeatures.add(axe("ruby_axe", "vanillaenhanced:ruby", "vanillaenhanced:ruby_axe"));
+            enabledFeatures.add(shovel("ruby_shovel", "vanillaenhanced:ruby", "vanillaenhanced:ruby_shovel"));
+            enabledFeatures.add(hoe("ruby_hoe", "vanillaenhanced:ruby", "vanillaenhanced:ruby_hoe"));
+            enabledFeatures.add(helmet("ruby_helmet", "vanillaenhanced:ruby", "vanillaenhanced:ruby_helmet"));
+            enabledFeatures.add(chestplate("ruby_chestplate", "vanillaenhanced:ruby", "vanillaenhanced:ruby_chestplate"));
+            enabledFeatures.add(leggings("ruby_leggings", "vanillaenhanced:ruby", "vanillaenhanced:ruby_leggings"));
+            enabledFeatures.add(boots("ruby_boots", "vanillaenhanced:ruby", "vanillaenhanced:ruby_boots"));
+        }
+
+        if (config.enableSapphireGear) {
+            enabledFeatures.add(pickaxe("sapphire_pickaxe", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_pickaxe"));
+            enabledFeatures.add(sword("sapphire_sword", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_sword"));
+            enabledFeatures.add(axe("sapphire_axe", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_axe"));
+            enabledFeatures.add(shovel("sapphire_shovel", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_shovel"));
+            enabledFeatures.add(hoe("sapphire_hoe", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_hoe"));
+            enabledFeatures.add(helmet("sapphire_helmet", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_helmet"));
+            enabledFeatures.add(chestplate("sapphire_chestplate", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_chestplate"));
+            enabledFeatures.add(leggings("sapphire_leggings", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_leggings"));
+            enabledFeatures.add(boots("sapphire_boots", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_boots"));
+        }
+
+        if (config.enableAmethystGear) {
+            enabledFeatures.add(pickaxe("amethyst_pickaxe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_pickaxe"));
+            enabledFeatures.add(sword("amethyst_sword", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_sword"));
+            enabledFeatures.add(axe("amethyst_axe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_axe"));
+            enabledFeatures.add(shovel("amethyst_shovel", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_shovel"));
+            enabledFeatures.add(hoe("amethyst_hoe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_hoe"));
+            enabledFeatures.add(helmet("amethyst_helmet", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_helmet"));
+            enabledFeatures.add(chestplate("amethyst_chestplate", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_chestplate"));
+            enabledFeatures.add(leggings("amethyst_leggings", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_leggings"));
+            enabledFeatures.add(boots("amethyst_boots", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_boots"));
+        }
+        
         enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
     }
 

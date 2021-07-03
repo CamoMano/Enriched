@@ -6,8 +6,8 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 
 @Config(name = "vanillaenhanced")
 @Config.Gui.CategoryBackground(category = "Biomes", background = "vanillaenhanced:textures/block/redwood_planks.png")
-@Config.Gui.CategoryBackground(category = "Blocks", background = "vanillaenhanced:textures/block/marble.png")
-@Config.Gui.CategoryBackground(category = "Items", background = "vanillaenhanced:textures/block/amethyst_ore.png")
+@Config.Gui.CategoryBackground(category = "Generation", background = "vanillaenhanced:textures/block/marble.png")
+@Config.Gui.CategoryBackground(category = "Tools", background = "minecraft:textures/block/copper_block.png")
 @Config.Gui.CategoryBackground(category = "Mobs", background = "minecraft:textures/block/honey_block_side.png")
 public class ModConfig implements ConfigData {
     //Mobs
@@ -15,43 +15,55 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     public static boolean enableHoneySlime = true;
 
-    //Items & Ores
-    @ConfigEntry.Category("Items")
+    //Tools & Armor
+    @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableRubyGear = true;
 
-    @ConfigEntry.Category("Items")
+    @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableSapphireGear = true;
 
-    @ConfigEntry.Category("Items")
+    @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableAmethystGear = true;
 
-    @ConfigEntry.Category("Items")
+    @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableCopperGear = true;
 
-    @ConfigEntry.Category("Items")
+    @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableObsidianGear = true;
 
-    @ConfigEntry.Category("Items")
+    @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableEmeraldGear = true;
 
-    @ConfigEntry.Category("Items")
+    @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableSteelGear = true;
 
-    //Blocks
-    @ConfigEntry.Category("Blocks")
+    //Generation
+    @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableDarkGranite = true;
 
-    @ConfigEntry.Category("Blocks")
+    @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableMarble = true;
+
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableRubyOre = true;
+
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableSapphireOre = true;
+
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableAmethystOre = true;
 
     //Biomes
     @ConfigEntry.Category("Biomes")

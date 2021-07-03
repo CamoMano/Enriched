@@ -157,7 +157,7 @@ public class Generator {
         RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateSapphireRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
             new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_sapphire_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateSapphireRare.getValue(), ORE_DEEPSLATE_SAPPHIRE_RARE);
-        if (config.enableSapphireGear) {
+        if (config.enableSapphireOre) {
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireCommon);
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateSapphireCommon);
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireRare);
@@ -179,7 +179,7 @@ public class Generator {
         RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateRubyRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
             new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_ruby_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateRubyRare.getValue(), ORE_DEEPSLATE_RUBY_RARE);
-        if (config.enableRubyGear) {
+        if (config.enableRubyOre) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyRare);
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateRubyRare);
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyCommon);
@@ -201,7 +201,7 @@ public class Generator {
         RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateAmethystRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
             new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_amethyst_rare"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateAmethystRare.getValue(), ORE_DEEPSLATE_AMETHYST_RARE);
-        if (config.enableAmethystGear) {
+        if (config.enableAmethystOre) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystRare);
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateAmethystRare);
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystCommon);
