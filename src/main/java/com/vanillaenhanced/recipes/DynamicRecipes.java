@@ -1,304 +1,168 @@
 package com.vanillaenhanced.recipes;
 
-import com.google.common.collect.Lists;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.vanillaenhanced.VanillaEnhanced;
+import com.vanillaenhanced.builder.ShapedRecipeBuilder;
 import com.vanillaenhanced.config.ModConfig;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Pair;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class DynamicRecipes {
-
-    public static JsonObject COPPER_PICKAXE_RECIPE = null;
-    public static JsonObject COPPER_SWORD_RECIPE = null;
-    public static JsonObject COPPER_AXE_RECIPE = null;
-    public static JsonObject COPPER_SHOVEL_RECIPE = null;
-    public static JsonObject COPPER_HOE_RECIPE = null;
-
-    public static JsonObject EMERALD_PICKAXE_RECIPE = null;
-    public static JsonObject EMERALD_SWORD_RECIPE = null;
-    public static JsonObject EMERALD_AXE_RECIPE = null;
-    public static JsonObject EMERALD_SHOVEL_RECIPE = null;
-    public static JsonObject EMERALD_HOE_RECIPE = null;
-    public static JsonObject EMERALD_HELMET_RECIPE = null;
-    public static JsonObject EMERALD_CHESTPLATE_RECIPE = null;
-    public static JsonObject EMERALD_LEGGINGS_RECIPE = null;
-    public static JsonObject EMERALD_BOOTS_RECIPE = null;
-
-    public static JsonObject OBSIDIAN_PICKAXE_RECIPE = null;
-    public static JsonObject OBSIDIAN_SWORD_RECIPE = null;
-    public static JsonObject OBSIDIAN_AXE_RECIPE = null;
-    public static JsonObject OBSIDIAN_SHOVEL_RECIPE = null;
-    public static JsonObject OBSIDIAN_HOE_RECIPE = null;
-    public static JsonObject OBSIDIAN_ALLOY_RECIPE = null;
-    public static JsonObject OBSIDIAN_HELMET_RECIPE = null;
-    public static JsonObject OBSIDIAN_CHESTPLATE_RECIPE = null;
-    public static JsonObject OBSIDIAN_LEGGINGS_RECIPE = null;
-    public static JsonObject OBSIDIAN_BOOTS_RECIPE = null;
-
-    public static JsonObject STEEL_INGOT_RECIPE = null;
-
-
-    public static JsonObject createShapedRecipeJson(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output, int count) {
-        JsonObject json = new JsonObject();
-        json.addProperty("type", "minecraft:crafting_shaped");
-
-
-        JsonArray jsonArray = new JsonArray();
-        jsonArray.add(pattern.get(0));
-        jsonArray.add(pattern.get(1));
-        jsonArray.add(pattern.get(2));
-        json.add("pattern", jsonArray);
-
-
-        JsonObject individualKey;
-        JsonObject keyList = new JsonObject();
-
-        for (int i = 0; i < keys.size(); ++i) {
-            individualKey = new JsonObject();
-            individualKey.addProperty(type.get(i), items.get(i).toString());
-            keyList.add(keys.get(i) + "", individualKey);
-        }
-
-        json.add("key", keyList);
-        JsonObject result = new JsonObject();
-        result.addProperty("item", output.toString());
-        result.addProperty("count", count);
-        json.add("result", result);
-
-        return json;
-    }
-
-    public static JsonObject createBlastingRecipeJson(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, Identifier output, float experience, int cookingtime) {
-        JsonObject json = new JsonObject();
-        json.addProperty("type", "minecraft:blasting");
-
-
-        JsonArray jsonArray = new JsonArray();
-        json.add("ingredient", jsonArray);
-
-
-        JsonObject individualKey;
-        JsonObject keyList = new JsonObject();
-
-        for (int i = 0; i < keys.size(); ++i) {
-            individualKey = new JsonObject();
-            individualKey.addProperty(type.get(i), items.get(i).toString());
-            keyList.add(keys.get(i) + "", individualKey);
-        }
-
-        json.add("key", keyList);
-        JsonObject result = new JsonObject();
-        result.addProperty("item", output.toString());
-        result.addProperty("experience", experience);
-        result.addProperty("cookingtime", cookingtime);
-        json.add("result", result);
-
-        return json;
-    }
-
+    public static final Map<Identifier, JsonObject> REGISTRY = new HashMap<>();
 
     public static void register(ModConfig config) {
-        //Copper Gear
-        COPPER_PICKAXE_RECIPE = pickaxe("copper_pickaxe", "minecraft:copper_ingot", "vanillaenhanced:copper_pickaxe", 1);
-        COPPER_SWORD_RECIPE = sword("copper_sword", "minecraft:copper_ingot", "vanillaenhanced:copper_sword", 1);
-        COPPER_AXE_RECIPE = axe("copper_axe", "minecraft:copper_ingot", "vanillaenhanced:copper_axe", 1);
-        COPPER_SHOVEL_RECIPE = shovel("copper_shovel", "minecraft:copper_ingot", "vanillaenhanced:copper_shovel", 1);
-        COPPER_HOE_RECIPE = hoe("copper_hoe", "minecraft:copper_ingot", "vanillaenhanced:copper_hoe", 1);
-        //Emerald Gear
-        EMERALD_PICKAXE_RECIPE = pickaxe("emerald_pickaxe", "minecraft:emerald", "vanillaenhanced:emerald_pickaxe", 1);
-        EMERALD_SWORD_RECIPE = sword("emerald_sword", "minecraft:emerald", "vanillaenhanced:emerald_sword", 1);
-        EMERALD_AXE_RECIPE = axe("emerald_axe", "minecraft:emerald", "vanillaenhanced:emerald_axe", 1);
-        EMERALD_SHOVEL_RECIPE = shovel("emerald_shovel", "minecraft:emerald", "vanillaenhanced:emerald_shovel", 1);
-        EMERALD_HOE_RECIPE = hoe("emerald_hoe", "minecraft:emerald", "vanillaenhanced:emerald_hoe", 1);
-        EMERALD_HELMET_RECIPE = helmet("emerald_helmet", "minecraft:emerald", "vanillaenhanced:emerald_helmet", 1);
-        EMERALD_CHESTPLATE_RECIPE = chestplate("emerald_chestplate", "minecraft:emerald", "vanillaenhanced:emerald_chestplate", 1);
-        EMERALD_LEGGINGS_RECIPE = leggings("emerald_leggings", "minecraft:emerald", "vanillaenhanced:emerald_leggings", 1);
-        EMERALD_BOOTS_RECIPE = boots("emerald_boots", "minecraft:emerald", "vanillaenhanced:emerald_boots", 1);
-        //Obsidian Gear
-        OBSIDIAN_PICKAXE_RECIPE = pickaxe("obsidian_pickaxe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_pickaxe", 1);
-        OBSIDIAN_SWORD_RECIPE = sword("obsidian_sword", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_sword", 1);
-        OBSIDIAN_AXE_RECIPE = axe("obsidian_axe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_axe", 1);
-        OBSIDIAN_SHOVEL_RECIPE = shovel("obsidian_shovel", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_shovel", 1);
-        OBSIDIAN_HOE_RECIPE = hoe("obsidian_hoe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_hoe", 1);
-        OBSIDIAN_ALLOY_RECIPE = alloy("obsidian_alloy_ingot", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_alloy_ingot", 9);
-        OBSIDIAN_HELMET_RECIPE = helmet("obsidian_helmet", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_helmet", 1);
-        OBSIDIAN_CHESTPLATE_RECIPE = chestplate("obsidian_chestplate", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_chestplate", 1);
-        OBSIDIAN_LEGGINGS_RECIPE = leggings("obsidian_leggings", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_leggings", 1);
-        OBSIDIAN_BOOTS_RECIPE = boots("obsidian_boots", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_boots", 1);
-        //Steel Gear
-        STEEL_INGOT_RECIPE = steel("steel_ingot", "minecraft:iron_ingot", "vanillaenhanced:steel_ingot", 0.7F, 400);
-
+        final List<Pair<Identifier, JsonObject>> enabledFeatures = new ArrayList<>();
+        if (config.enableCopperGear) {
+            enabledFeatures.add(pickaxe("copper_pickaxe", "minecraft:copper_ingot", "vanillaenhanced:copper_pickaxe"));
+            enabledFeatures.add(sword("copper_sword", "minecraft:copper_ingot", "vanillaenhanced:copper_sword"));
+            enabledFeatures.add(axe("copper_axe", "minecraft:copper_ingot", "vanillaenhanced:copper_axe"));
+            enabledFeatures.add(shovel("copper_shovel", "minecraft:copper_ingot", "vanillaenhanced:copper_shovel"));
+            enabledFeatures.add(hoe("copper_hoe", "minecraft:copper_ingot", "vanillaenhanced:copper_hoe"));
+        }
+        if (config.enableEmeraldGear) {
+            enabledFeatures.add(pickaxe("emerald_pickaxe", "minecraft:emerald", "vanillaenhanced:emerald_pickaxe"));
+            enabledFeatures.add(sword("emerald_sword", "minecraft:emerald", "vanillaenhanced:emerald_sword"));
+            enabledFeatures.add(axe("emerald_axe", "minecraft:emerald", "vanillaenhanced:emerald_axe"));
+            enabledFeatures.add(shovel("emerald_shovel", "minecraft:emerald", "vanillaenhanced:emerald_shovel"));
+            enabledFeatures.add(hoe("emerald_hoe", "minecraft:emerald", "vanillaenhanced:emerald_hoe"));
+            enabledFeatures.add(helmet("emerald_helmet", "minecraft:emerald", "vanillaenhanced:emerald_helmet"));
+            enabledFeatures.add(chestplate("emerald_chestplate", "minecraft:emerald", "vanillaenhanced:emerald_chestplate"));
+            enabledFeatures.add(leggings("emerald_leggings", "minecraft:emerald", "vanillaenhanced:emerald_leggings"));
+            enabledFeatures.add(boots("emerald_boots", "minecraft:emerald", "vanillaenhanced:emerald_boots"));
+        }
+        if (config.enableObsidianGear) {
+            enabledFeatures.add(alloy());
+            enabledFeatures.add(pickaxe("obsidian_pickaxe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_pickaxe"));
+            enabledFeatures.add(sword("obsidian_sword", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_sword"));
+            enabledFeatures.add(axe("obsidian_axe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_axe"));
+            enabledFeatures.add(shovel("obsidian_shovel", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_shovel"));
+            enabledFeatures.add(hoe("obsidian_hoe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_hoe"));
+            enabledFeatures.add(helmet("obsidian_helmet", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_helmet"));
+            enabledFeatures.add(chestplate("obsidian_chestplate", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_chestplate"));
+            enabledFeatures.add(leggings("obsidian_leggings", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_leggings"));
+            enabledFeatures.add(boots("obsidian_boots", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_boots"));
+        }
+        enabledFeatures.add(blasting("steel_ingot", "minecraft:iron_ingot", "vanillaenhanced:steel_ingot", 0.7, 400));
+        enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
     }
 
-
-    public static JsonObject pickaxe(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#',
-                        '|'
-                ),
-                Lists.newArrayList(new Identifier(item), new Identifier("stick")),
-                Lists.newArrayList("item", "item"),
-                Lists.newArrayList(
-                        "###",
-                        " | ",
-                        " | "
-                ), //Pattern
-                new Identifier(result),
-                count);
+    private static Pair<Identifier, JsonObject> pickaxe(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            "###",
+            " | ",
+            " | "
+        ).item('#', item).item('|', "stick").result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-    public static JsonObject sword(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#',
-                        '|'
-                ),
-                Lists.newArrayList(new Identifier(item), new Identifier("stick")),
-                Lists.newArrayList("item", "item"),
-                Lists.newArrayList(
-                        " # ",
-                        " # ",
-                        " | "
-                ), //Pattern
-                new Identifier(result),
-                count);
+    private static Pair<Identifier, JsonObject> sword(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            " # ",
+            " # ",
+            " | "
+        ).item('#', item).item('|', "stick").result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-
-    public static JsonObject axe(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#',
-                        '|'
-                ),
-                Lists.newArrayList(new Identifier(item), new Identifier("stick")),
-                Lists.newArrayList("item", "item"),
-                Lists.newArrayList(
-                        "## ",
-                        "#| ",
-                        " | "
-                ), //Pattern
-                new Identifier(result), count);
+    private static Pair<Identifier, JsonObject> axe(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            "## ",
+            "#| ",
+            " | "
+        ).item('#', item).item('|', "stick").result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-    public static JsonObject shovel(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#',
-                        '|'
-                ),
-                Lists.newArrayList(new Identifier(item), new Identifier("stick")),
-                Lists.newArrayList("item", "item"),
-                Lists.newArrayList(
-                        " # ",
-                        " | ",
-                        " | "
-                ),
-                new Identifier(result), count);
+    private static Pair<Identifier, JsonObject> shovel(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            " # ",
+            " | ",
+            " | "
+        ).item('#', item).item('|', "stick").result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-    public static JsonObject hoe(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#',
-                        '|'
-                ),
-                Lists.newArrayList(new Identifier(item), new Identifier("stick")),
-                Lists.newArrayList("item", "item"),
-                Lists.newArrayList(
-                        "## ",
-                        " | ",
-                        " | "
-                ),
-                new Identifier(result), count);
+    private static Pair<Identifier, JsonObject> hoe(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            "## ",
+            " | ",
+            " | "
+        ).item('#', item).item('|', "stick").result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-    public static JsonObject alloy(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        'O',
-                        'I'
-                ),
-                Lists.newArrayList(new Identifier("obsidian"), new Identifier("iron_ingot")),
-                Lists.newArrayList("item", "item"),
-                Lists.newArrayList(
-                        "III",
-                        "OOO",
-                        "III"
-                ),
-                new Identifier(result), count);
+    private static Pair<Identifier, JsonObject> alloy() {
+        return ShapedRecipeBuilder.ofPattern(
+            "III",
+            "OOO",
+            "III"
+        ).item('I', "iron_ingot").item('O', "obsidian").result(
+            "vanillaenhanced:obsidian_alloy_ingot", 9
+        ).build(VanillaEnhanced.identifier("obsidian_alloy_ingot"));
     }
 
-    public static JsonObject helmet(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#'
-                ),
-                Lists.newArrayList(new Identifier(item)),
-                Lists.newArrayList("item"),
-                Lists.newArrayList(
-                        "###",
-                        "# #",
-                        "   "
-                ),
-                new Identifier(result), count);
+    private static Pair<Identifier, JsonObject> helmet(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            "###",
+            "# #",
+            "   "
+        ).item('#', item).result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-    public static JsonObject chestplate(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#'
-                ),
-                Lists.newArrayList(new Identifier(item)),
-                Lists.newArrayList("item"),
-                Lists.newArrayList(
-                        "# #",
-                        "###",
-                        "###"
-                ),
-                new Identifier(result), count);
+    private static Pair<Identifier, JsonObject> chestplate(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            "# #",
+            "###",
+            "###"
+        ).item('#', item).result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-    public static JsonObject leggings(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#'
-                ),
-                Lists.newArrayList(new Identifier(item)),
-                Lists.newArrayList("item"),
-                Lists.newArrayList(
-                        "###",
-                        "# #",
-                        "# #"
-                ),
-                new Identifier(result), count);
+    private static Pair<Identifier, JsonObject> leggings(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            "###",
+            "# #",
+            "# #"
+        ).item('#', item).result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-    public static JsonObject boots(String name, String item, String result, int count) {
-        return createShapedRecipeJson(
-                Lists.newArrayList(
-                        '#'
-                ),
-                Lists.newArrayList(new Identifier(item)),
-                Lists.newArrayList("item"),
-                Lists.newArrayList(
-                        "# #",
-                        "# #",
-                        "   "
-                ),
-                new Identifier(result), count);
+    private static Pair<Identifier, JsonObject> boots(String name, String item, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+            "# #",
+            "# #",
+            "   "
+        ).item('#', item).result(result).build(
+            VanillaEnhanced.identifier(name)
+        );
     }
 
-    public static JsonObject steel(String name, String item, String result, float experience, int cookingtime) {
-        return createBlastingRecipeJson(
-                Lists.newArrayList(
-                        '#'
-                ),
-                Lists.newArrayList(new Identifier(item)),
-                Lists.newArrayList("item"),
-                new Identifier(result), experience, cookingtime);
+    private static Pair<Identifier, JsonObject> blasting(
+        String name, String input, String output, double experience, int cookingTime
+    ) {
+        final Identifier identifier = VanillaEnhanced.identifier(name);
+        final JsonObject json = new JsonObject();
+        json.addProperty("type", "minecraft:blasting");
+        
+        final JsonObject ingredient = new JsonObject();
+        ingredient.addProperty("item", input);
+        json.add("ingredient", ingredient);
+
+        json.addProperty("result", output);
+        json.addProperty("experience", experience);
+        json.addProperty("cookingtime", cookingTime);
+
+        return new Pair<>(identifier, json);
     }
 }
