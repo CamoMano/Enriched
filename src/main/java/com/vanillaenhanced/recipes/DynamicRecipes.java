@@ -33,7 +33,7 @@ public class DynamicRecipes {
             enabledFeatures.add(boots("emerald_boots", "minecraft:emerald", "vanillaenhanced:emerald_boots"));
         }
         if (config.enableObsidianGear) {
-            enabledFeatures.add(alloy("obsidian_alloy_ingot", "vanillaenhanced:obsidian_alloy_ingot"));
+            enabledFeatures.add(alloy());
             enabledFeatures.add(pickaxe("obsidian_pickaxe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_pickaxe"));
             enabledFeatures.add(sword("obsidian_sword", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_sword"));
             enabledFeatures.add(axe("obsidian_axe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_axe"));
@@ -44,11 +44,11 @@ public class DynamicRecipes {
             enabledFeatures.add(leggings("obsidian_leggings", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_leggings"));
             enabledFeatures.add(boots("obsidian_boots", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_boots"));
         }
+        enabledFeatures.add(blasting("steel_ingot", "minecraft:iron_ingot", "vanillaenhanced:steel_ingot", 0.7, 400));
         enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
     }
 
-
-    public static Pair<Identifier, JsonObject> pickaxe(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> pickaxe(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             "###",
             " | ",
@@ -58,7 +58,7 @@ public class DynamicRecipes {
         );
     }
 
-    public static Pair<Identifier, JsonObject> sword(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> sword(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             " # ",
             " # ",
@@ -68,8 +68,7 @@ public class DynamicRecipes {
         );
     }
 
-
-    public static Pair<Identifier, JsonObject> axe(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> axe(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             "## ",
             "#| ",
@@ -79,7 +78,7 @@ public class DynamicRecipes {
         );
     }
 
-    public static Pair<Identifier, JsonObject> shovel(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> shovel(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             " # ",
             " | ",
@@ -89,7 +88,7 @@ public class DynamicRecipes {
         );
     }
 
-    public static Pair<Identifier, JsonObject> hoe(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> hoe(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             "## ",
             " | ",
@@ -99,17 +98,17 @@ public class DynamicRecipes {
         );
     }
 
-    public static Pair<Identifier, JsonObject> alloy(String name, String result) {
+    private static Pair<Identifier, JsonObject> alloy() {
         return ShapedRecipeBuilder.ofPattern(
             "III",
             "OOO",
             "III"
-        ).item('I', "iron_ingot").item('O', "obsidian").result(result, 9).build(
-            VanillaEnhanced.identifier(name)
-        );
+        ).item('I', "iron_ingot").item('O', "obsidian").result(
+            "vanillaenhanced:obsidian_alloy_ingot", 9
+        ).build(VanillaEnhanced.identifier("obsidian_alloy_ingot"));
     }
 
-    public static Pair<Identifier, JsonObject> helmet(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> helmet(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             "###",
             "# #",
@@ -119,7 +118,7 @@ public class DynamicRecipes {
         );
     }
 
-    public static Pair<Identifier, JsonObject> chestplate(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> chestplate(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             "# #",
             "###",
@@ -129,7 +128,7 @@ public class DynamicRecipes {
         );
     }
 
-    public static Pair<Identifier, JsonObject> leggings(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> leggings(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             "###",
             "# #",
@@ -139,7 +138,7 @@ public class DynamicRecipes {
         );
     }
 
-    public static Pair<Identifier, JsonObject> boots(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> boots(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
             "# #",
             "# #",
@@ -147,5 +146,23 @@ public class DynamicRecipes {
         ).item('#', item).result(result).build(
             VanillaEnhanced.identifier(name)
         );
+    }
+
+    private static Pair<Identifier, JsonObject> blasting(
+        String name, String input, String output, double experience, int cookingTime
+    ) {
+        final Identifier identifier = VanillaEnhanced.identifier(name);
+        final JsonObject json = new JsonObject();
+        json.addProperty("type", "minecraft:blasting");
+        
+        final JsonObject ingredient = new JsonObject();
+        ingredient.addProperty("item", input);
+        json.add("ingredient", ingredient);
+
+        json.addProperty("result", output);
+        json.addProperty("experience", experience);
+        json.addProperty("cookingtime", cookingTime);
+
+        return new Pair<>(identifier, json);
     }
 }
