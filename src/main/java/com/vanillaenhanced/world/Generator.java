@@ -17,6 +17,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
 
+@SuppressWarnings("deprecation") //Experimental v1 Biome API
 public class Generator {
     //Common Ores
     public static ConfiguredFeature<?, ?> ORE_SAPPHIRE_COMMON = Feature.ORE

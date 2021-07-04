@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 
 public final class Biomes {
-    @SuppressWarnings("deprecation") //Experimental v1 API
+    @SuppressWarnings("deprecation") //Experimental v1 Biome API
     public static void register(ModConfig config) {
         if (config.enableDiverseForest)
             registerBiome(Biomes::createDiverseForest, "diverse_forest", OverworldClimate.TEMPERATE, 0.75);
