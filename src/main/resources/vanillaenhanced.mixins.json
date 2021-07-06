@@ -3,7 +3,8 @@
   "package": "com.vanillaenhanced.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "BeehiveBlockMixin"
+    "BeehiveBlockMixin",
+	"RecipeManagerMixin"
   ],
   "client": [],
   "server": [],
