@@ -11,12 +11,13 @@ import java.util.Random;
 public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
     @Nullable
     @Override
-    protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
+    protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random random, boolean bl) {
         return null;
     }
 
     @Override
-    protected ConfiguredFeature<TreeFeatureConfig, ?> createLargeTreeFeature(Random random) {
+    protected ConfiguredFeature<TreeFeatureConfig, ?> getLargeTreeFeature(Random random) {
         return Features.REDWOOD_TREE;
     }
+
 }
