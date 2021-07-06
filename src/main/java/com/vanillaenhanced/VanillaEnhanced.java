@@ -2,6 +2,7 @@ package com.vanillaenhanced;
 
 import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.config.ModConfig;
+import com.vanillaenhanced.recipes.DynamicRecipes;
 import com.vanillaenhanced.registry.ModInit;
 import com.vanillaenhanced.world.Features;
 import com.vanillaenhanced.world.Generator;
@@ -9,6 +10,7 @@ import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,6 +36,9 @@ public class VanillaEnhanced implements ModInitializer {
         Features.register();
         Biomes.register(config);
         Generator.register(config);
+        DynamicRecipes.register(config);
         //Commands.register();
     }
+
+    public static Identifier identifier(String name) { return new Identifier(MOD_ID, name); }
 }
