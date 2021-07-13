@@ -13,9 +13,15 @@ group = project.maven_group
 
 repositories {
     jcenter()
-	maven { url "https://maven.shedaniel.me/" }
-	maven { url "https://maven.terraformersmc.com/" }
-	maven { url "https://raw.githubusercontent.com/TerraformersMC/Archive/main/releases/" }
+	maven { 
+	name = "Cloth Config"
+	url = "https://maven.shedaniel.me/" }
+	maven { 
+	name = "TerraformersMC"
+	url = "https://maven.terraformersmc.com/" }
+	maven {
+	name = 'TerraformersMC Archive'
+	url = "https://raw.githubusercontent.com/TerraformersMC/Archive/main/releases/" }
 }
 
 minecraft {
