@@ -16,9 +16,9 @@ repositories {
 	maven { 
 	name = "Cloth Config"
 	url = "https://maven.shedaniel.me/" }
-	maven { 
-	name = "TerraformersMC"
-	url = "https://maven.terraformersmc.com/" }
+	//maven { 
+	//name = "TerraformersMC"
+	//url = "https://maven.terraformersmc.com/" }
 	maven {
 	name = 'TerraformersMC Archive'
 	url = "https://raw.githubusercontent.com/TerraformersMC/Archive/main/releases/" }
