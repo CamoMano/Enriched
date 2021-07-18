@@ -55,7 +55,8 @@ public class DynamicRecipes {
             enabledFeatures.add(chestplate("steel_chestplate", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_chestplate"));
             enabledFeatures.add(leggings("steel_leggings", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_leggings"));
             enabledFeatures.add(boots("steel_boots", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_boots"));
-            enabledFeatures.add(blasting("steel_ingot", "minecraft:iron_ingot", "vanillaenhanced:steel_ingot", 0.7, 400));
+            enabledFeatures.add(blend("steel_blend", "minecraft:iron_ingot", "minecraft:coal", "vanillaenhanced:steel_blend"));
+            enabledFeatures.add(blasting("steel_ingot", "vanillaenhanced:steel_blend", "vanillaenhanced:steel_ingot", 0.7, 200));
         }
 
         if (config.enableRubyGear) {
@@ -193,6 +194,16 @@ public class DynamicRecipes {
                 "# #",
                 "   "
         ).item('#', item).result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+
+    private static Pair<Identifier, JsonObject> blend(String name, String item_1, String item_2, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "   ",
+                "21 ",
+                "   "
+        ).item('1', item_1).item('2', item_2).result(result).build(
                 VanillaEnhanced.identifier(name)
         );
     }

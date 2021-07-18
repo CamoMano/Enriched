@@ -90,6 +90,7 @@ public class ModInit {
     public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item AMETHYST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+    public static final Item STEEL_BLEND = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item HONEY_BALL = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
     public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
@@ -197,6 +198,7 @@ public class ModInit {
         item("emerald_boots", new ArmorBase(EMERALD_ARMOR, EquipmentSlot.FEET));
         //Steel Ingot/Block
         item("steel_ingot", STEEL_INGOT);
+        item("steel_blend", STEEL_BLEND);
         block("steel_block", STEEL_BLOCK);
         blockItem("steel_block", STEEL_BLOCK, ItemGroup.BUILDING_BLOCKS);
         //Steel Tools
