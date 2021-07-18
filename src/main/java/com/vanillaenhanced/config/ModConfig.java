@@ -89,5 +89,9 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Biomes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableFrozenDesert = true;
+
+    @ConfigEntry.Category("Biomes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableShatteredJungle = true;
 }
 

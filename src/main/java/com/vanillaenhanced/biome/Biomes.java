@@ -34,8 +34,8 @@ public final class Biomes {
             registerBiome(Biomes::createFrozenDesert, "frozen_desert", OverworldClimate.SNOWY, 0.10);
         if (config.enableExtremeJungle)
             registerBiome(Biomes::createExtremeJungle, "extreme_jungle", OverworldClimate.TEMPERATE, 0.15);
-
-        registerBiome(Biomes::createShatteredJungle, "shattered_jungle", OverworldClimate.TEMPERATE, 0.15);
+        if (config.enableShatteredJungle)
+            registerBiome(Biomes::createShatteredJungle, "shattered_jungle", OverworldClimate.TEMPERATE, 0.10);
     }
 
     @SuppressWarnings("deprecation") //Experimental v1 API
@@ -264,7 +264,7 @@ public final class Biomes {
         DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
         ModBiomeFeatures.addJungleMobsExtra(spawnSettings);
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-        generationSettings.surfaceBuilder(SurfaceBuilder.SHATTERED_SAVANNA.withConfig(SurfaceBuilder.GRASS_CONFIG));
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.withConfig(SurfaceBuilder.GRASS_CONFIG));
         biomeStageOne(generationSettings);
         DefaultBiomeFeatures.addJungleVegetation(generationSettings);
         forestStageTwo(generationSettings);
@@ -274,8 +274,8 @@ public final class Biomes {
         ModBiomeFeatures.addJunglePortal(generationSettings);
         return (new Biome.Builder())
                 .category(Biome.Category.JUNGLE)
-                .depth(1.0F)
-                .scale(0.4F)
+                .depth(0.362F)
+                .scale(1.225F)
                 .temperature(0.95F)
                 .downfall(0.9F)
                 .precipitation(Biome.Precipitation.RAIN)
