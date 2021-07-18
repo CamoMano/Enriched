@@ -33,7 +33,7 @@ public class DynamicRecipes {
             enabledFeatures.add(boots("emerald_boots", "minecraft:emerald", "vanillaenhanced:emerald_boots"));
         }
         if (config.enableObsidianGear) {
-            enabledFeatures.add(alloy());
+            enabledFeatures.add(blend("obsidian_alloy_blend", "minecraft:iron_ingot", "minecraft:obsidian", "vanillaenhanced:obsidian_alloy_blend"));
             enabledFeatures.add(pickaxe("obsidian_pickaxe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_pickaxe"));
             enabledFeatures.add(sword("obsidian_sword", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_sword"));
             enabledFeatures.add(axe("obsidian_axe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_axe"));
@@ -43,6 +43,8 @@ public class DynamicRecipes {
             enabledFeatures.add(chestplate("obsidian_chestplate", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_chestplate"));
             enabledFeatures.add(leggings("obsidian_leggings", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_leggings"));
             enabledFeatures.add(boots("obsidian_boots", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_boots"));
+            enabledFeatures.add(blasting("obsidian_alloy_ingot_blasting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 100));
+            enabledFeatures.add(smelting("obsidian_alloy_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
         }
 
         if (config.enableSteelGear) {
@@ -56,7 +58,8 @@ public class DynamicRecipes {
             enabledFeatures.add(leggings("steel_leggings", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_leggings"));
             enabledFeatures.add(boots("steel_boots", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_boots"));
             enabledFeatures.add(blend("steel_blend", "minecraft:iron_ingot", "minecraft:coal", "vanillaenhanced:steel_blend"));
-            enabledFeatures.add(blasting("steel_ingot", "vanillaenhanced:steel_blend", "vanillaenhanced:steel_ingot", 0.7, 200));
+            enabledFeatures.add(blasting("steel_ingot_blasting", "vanillaenhanced:steel_blend", "vanillaenhanced:steel_ingot", 0.7, 100));
+            enabledFeatures.add(smelting("steel_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
         }
 
         if (config.enableRubyGear) {
@@ -214,6 +217,24 @@ public class DynamicRecipes {
         final Identifier identifier = VanillaEnhanced.identifier(name);
         final JsonObject json = new JsonObject();
         json.addProperty("type", "minecraft:blasting");
+
+        final JsonObject ingredient = new JsonObject();
+        ingredient.addProperty("item", input);
+        json.add("ingredient", ingredient);
+
+        json.addProperty("result", output);
+        json.addProperty("experience", experience);
+        json.addProperty("cookingtime", cookingTime);
+
+        return new Pair<>(identifier, json);
+    }
+
+    private static Pair<Identifier, JsonObject> smelting(
+            String name, String input, String output, double experience, int cookingTime
+    ) {
+        final Identifier identifier = VanillaEnhanced.identifier(name);
+        final JsonObject json = new JsonObject();
+        json.addProperty("type", "minecraft:smelting");
 
         final JsonObject ingredient = new JsonObject();
         ingredient.addProperty("item", input);

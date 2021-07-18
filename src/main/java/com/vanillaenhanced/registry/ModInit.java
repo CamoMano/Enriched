@@ -91,6 +91,7 @@ public class ModInit {
     public static final Item AMETHYST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item STEEL_BLEND = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+    public static final Item OBSIDIAN_ALLOY_BLEND = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item HONEY_BALL = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
     public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
@@ -172,6 +173,7 @@ public class ModInit {
         item("berry_juice", BERRY_JUICE);
         //Obsidian Ingot/Block
         item("obsidian_alloy_ingot", OBSIDIAN_ALLOY_INGOT);
+        item("obsidian_alloy_blend", OBSIDIAN_ALLOY_BLEND);
         block("obsidian_alloy_block", OBSIDIAN_ALLOY_BLOCK);
         blockItem("obsidian_alloy_block", OBSIDIAN_ALLOY_BLOCK, ItemGroup.BUILDING_BLOCKS);
         //Obsidian Tools
