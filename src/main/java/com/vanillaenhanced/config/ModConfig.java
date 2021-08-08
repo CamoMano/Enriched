@@ -26,7 +26,7 @@ public class ModConfig implements ConfigData {
 
     @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
-    public boolean enableAmethystGear = true;
+    public boolean enableTanzaniteGear = true;
 
     @ConfigEntry.Category("Tools")
     @ConfigEntry.Gui.Tooltip()
@@ -63,7 +63,7 @@ public class ModConfig implements ConfigData {
 
     @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
-    public boolean enableAmethystOre = true;
+    public boolean enableTanzaniteOre = true;
 
     //Biomes
     @ConfigEntry.Category("Biomes")

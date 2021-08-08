@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "vanillaenhanced:amethyst_axe"
+        }
+    ],
+    "result": {
+        "item": "vanillaenhanced:tanzanite_axe",
+        "count": 1
+    }
+}

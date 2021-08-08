@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "vanillaenhanced:amethyst_hoe"
+        }
+    ],
+    "result": {
+        "item": "vanillaenhanced:tanzanite_hoe",
+        "count": 1
+    }
+}

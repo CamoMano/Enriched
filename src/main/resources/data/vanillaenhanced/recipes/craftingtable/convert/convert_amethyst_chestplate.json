@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "vanillaenhanced:amethyst_chestplate"
+        }
+    ],
+    "result": {
+        "item": "vanillaenhanced:tanzanite_chestplate",
+        "count": 1
+    }
+}

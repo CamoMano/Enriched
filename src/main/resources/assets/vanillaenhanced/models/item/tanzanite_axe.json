@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "vanillaenhanced:item/amethyst_sword"
+    "layer0": "vanillaenhanced:item/tanzanite_axe"
   }
 }

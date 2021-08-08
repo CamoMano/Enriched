@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "vanillaenhanced:amethyst_leggings"
+        }
+    ],
+    "result": {
+        "item": "vanillaenhanced:tanzanite_leggings",
+        "count": 1
+    }
+}
