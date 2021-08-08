@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "vanillaenhanced:amethyst_helmet"
+        }
+    ],
+    "result": {
+        "item": "vanillaenhanced:tanzanite_helmet",
+        "count": 1
+    }
+}

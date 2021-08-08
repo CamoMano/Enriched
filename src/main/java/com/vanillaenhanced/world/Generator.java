@@ -52,18 +52,18 @@ public class Generator {
         .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
         .spreadHorizontally()
         .repeat(9); // number of veins per chunk
-    public static ConfiguredFeature<?, ?> ORE_AMETHYST_COMMON = Feature.ORE
+    public static ConfiguredFeature<?, ?> ORE_TANZANITE_COMMON = Feature.ORE
         .configure(new OreFeatureConfig(
             OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
-            ModInit.AMETHYST_ORE.getDefaultState(),
+            ModInit.TANZANITE_ORE.getDefaultState(),
             7)) // vein size
         .uniformRange(YOffset.fixed(0), YOffset.fixed(32))
         .spreadHorizontally()
         .repeat(8); // number of veins per chunk
-    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_AMETHYST_COMMON = Feature.ORE
+    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_TANZANITE_COMMON = Feature.ORE
         .configure(new OreFeatureConfig(
             OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
-            ModInit.DEEPSLATE_AMETHYST_ORE.getDefaultState(),
+            ModInit.DEEPSLATE_TANZANITE_ORE.getDefaultState(),
             7)) // vein size
         .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
         .spreadHorizontally()
@@ -101,18 +101,18 @@ public class Generator {
         .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
         .spreadHorizontally()
         .repeat(7); // number of veins per chunk
-    public static ConfiguredFeature<?, ?> ORE_AMETHYST_RARE = Feature.ORE
+    public static ConfiguredFeature<?, ?> ORE_TANZANITE_RARE = Feature.ORE
         .configure(new OreFeatureConfig(
             OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
-            ModInit.AMETHYST_ORE.getDefaultState(),
+            ModInit.TANZANITE_ORE.getDefaultState(),
             3)) // vein size
         .uniformRange(YOffset.fixed(0), YOffset.fixed(32))
         .spreadHorizontally()
         .repeat(6); // number of veins per chunk
-    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_AMETHYST_RARE = Feature.ORE
+    public static ConfiguredFeature<?, ?> ORE_DEEPSLATE_TANZANITE_RARE = Feature.ORE
         .configure(new OreFeatureConfig(
             OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
-            ModInit.DEEPSLATE_AMETHYST_ORE.getDefaultState(),
+            ModInit.DEEPSLATE_TANZANITE_ORE.getDefaultState(),
             3)) // vein size
         .uniformRange(YOffset.getBottom(), YOffset.fixed(0))
         .spreadHorizontally()
@@ -186,27 +186,27 @@ public class Generator {
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyCommon);
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateRubyCommon);
         }
-        // * Amethyst Common
-        RegistryKey<ConfiguredFeature<?, ?>> oreAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
-            new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_common"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystCommon.getValue(), ORE_AMETHYST_COMMON);
+        // * Tanzanite Common
+        RegistryKey<ConfiguredFeature<?, ?>> oreTanzaniteCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+            new Identifier(VanillaEnhanced.MOD_ID, "ore_tanzanite_common"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreTanzaniteCommon.getValue(), ORE_TANZANITE_COMMON);
         //Deepslate Common
-        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateAmethystCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
-            new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_amethyst_common"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateAmethystCommon.getValue(), ORE_DEEPSLATE_AMETHYST_COMMON);
+        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateTanzaniteCommon = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+            new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_tanzanite_common"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateTanzaniteCommon.getValue(), ORE_DEEPSLATE_TANZANITE_COMMON);
         //Rare
-        RegistryKey<ConfiguredFeature<?, ?>> oreAmethystRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
-            new Identifier(VanillaEnhanced.MOD_ID, "ore_amethyst_rare"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAmethystRare.getValue(), ORE_AMETHYST_RARE);
+        RegistryKey<ConfiguredFeature<?, ?>> oreTanzaniteRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+            new Identifier(VanillaEnhanced.MOD_ID, "ore_tanzanite_rare"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreTanzaniteRare.getValue(), ORE_TANZANITE_RARE);
         //Deepslate Rare
-        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateAmethystRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
-            new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_amethyst_rare"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateAmethystRare.getValue(), ORE_DEEPSLATE_AMETHYST_RARE);
-        if (config.enableAmethystOre) {
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystRare);
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateAmethystRare);
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreAmethystCommon);
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateAmethystCommon);
+        RegistryKey<ConfiguredFeature<?, ?>> oreDeepslateTanzaniteRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+            new Identifier(VanillaEnhanced.MOD_ID, "ore_deepslate_tanzanite_rare"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreDeepslateTanzaniteRare.getValue(), ORE_DEEPSLATE_TANZANITE_RARE);
+        if (config.enableTanzaniteOre) {
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreTanzaniteRare);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateTanzaniteRare);
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreTanzaniteCommon);
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES, oreDeepslateTanzaniteCommon);
         }
         //Stone Types
         //Marble

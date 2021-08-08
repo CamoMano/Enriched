@@ -33,12 +33,14 @@ public class ModInit {
     public static final ArmorMaterial STEEL_ARMOR = new ArmorMaterialSteel();
     public static final ArmorMaterial RUBY_ARMOR = new ArmorMaterialRuby();
     public static final ArmorMaterial SAPPHIRE_ARMOR = new ArmorMaterialSapphire();
-    public static final ArmorMaterial AMETHYST_ARMOR = new ArmorMaterialAmethyst();
+    public static final ArmorMaterial TANZANITE_ARMOR = new ArmorMaterialTanzanite();
     //Blocks
     public static final Block RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
     public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block AMETHYST_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block AMETHYST_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
+    public static final Block TANZANITE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
+    public static final Block TANZANITE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
     public static final Block SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
     public static final Block SAPPHIRE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(6.0f, 7.0f));
@@ -84,17 +86,21 @@ public class ModInit {
     public static final Block DEEPSLATE_RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
     public static final Block DEEPSLATE_SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
     public static final Block DEEPSLATE_AMETHYST_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
+    public static final Block DEEPSLATE_TANZANITE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
+
     //Items
     public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
-    public static final Item AMETHYST = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+    public static final Item AMETHYST = new Item(new Item.Settings());
+    public static final Item TANZANITE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item STEEL_BLEND = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item OBSIDIAN_ALLOY_BLEND = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item HONEY_BALL = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
     public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
+    public static final Item DEPRECATED_ITEM = new Item(new Item.Settings());
     public static final EntityType<HoneySlime> HONEY_SLIME = Registry.register(
         Registry.ENTITY_TYPE,
         new Identifier(MOD_ID, "honey_slime"),
@@ -252,25 +258,25 @@ public class ModInit {
         item("sapphire_chestplate", new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.CHEST));
         item("sapphire_leggings", new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.LEGS));
         item("sapphire_boots", new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.FEET));
-        //Amethyst Item/Block
-        item("amethyst", AMETHYST);
-        block("amethyst_ore", AMETHYST_ORE);
-        blockItem("amethyst_ore", AMETHYST_ORE, ItemGroup.BUILDING_BLOCKS);
-        block("deepslate_amethyst_ore", DEEPSLATE_AMETHYST_ORE);
-        blockItem("deepslate_amethyst_ore", DEEPSLATE_AMETHYST_ORE, ItemGroup.BUILDING_BLOCKS);
-        block("amethyst_block", AMETHYST_BLOCK);
-        blockItem("amethyst_block", AMETHYST_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        //Amethyst Tools
-        item("amethyst_shovel", new ShovelBase(new ToolMaterialAmethyst()));
-        item("amethyst_pickaxe", new PickaxeBase(new ToolMaterialAmethyst()));
-        item("amethyst_axe", new AxeBase(new ToolMaterialAmethyst()));
-        item("amethyst_sword", new SwordBase(new ToolMaterialAmethyst()));
-        item("amethyst_hoe", new HoeBase(new ToolMaterialAmethyst()));
-        //Amethyst Armor
-        item("amethyst_helmet", new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.HEAD));
-        item("amethyst_chestplate", new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.CHEST));
-        item("amethyst_leggings", new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.LEGS));
-        item("amethyst_boots", new ArmorBase(AMETHYST_ARMOR, EquipmentSlot.FEET));
+        //Tanzanite Item/Block
+        item("tanzanite", TANZANITE);
+        block("tanzanite_ore", TANZANITE_ORE);
+        blockItem("tanzanite_ore", TANZANITE_ORE, ItemGroup.BUILDING_BLOCKS);
+        block("deepslate_tanzanite_ore", DEEPSLATE_TANZANITE_ORE);
+        blockItem("deepslate_tanzanite_ore", DEEPSLATE_TANZANITE_ORE, ItemGroup.BUILDING_BLOCKS);
+        block("tanzanite_block", TANZANITE_BLOCK);
+        blockItem("tanzanite_block", TANZANITE_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        //Tanzanite Tools
+        item("tanzanite_shovel", new ShovelBase(new ToolMaterialTanzanite()));
+        item("tanzanite_pickaxe", new PickaxeBase(new ToolMaterialTanzanite()));
+        item("tanzanite_axe", new AxeBase(new ToolMaterialTanzanite()));
+        item("tanzanite_sword", new SwordBase(new ToolMaterialTanzanite()));
+        item("tanzanite_hoe", new HoeBase(new ToolMaterialTanzanite()));
+        //Tanzanite Armor
+        item("tanzanite_helmet", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.HEAD));
+        item("tanzanite_chestplate", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.CHEST));
+        item("tanzanite_leggings", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.LEGS));
+        item("tanzanite_boots", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.FEET));
         //Copper Tools
         item("copper_shovel", new ShovelBase(new ToolMaterialCopper()));
         item("copper_pickaxe", new PickaxeBase(new ToolMaterialCopper()));
@@ -316,6 +322,30 @@ public class ModInit {
         item("honey_ball", HONEY_BALL);
         block("mud", MUD);
         blockItem("mud", MUD, ItemGroup.BUILDING_BLOCKS);
+
+
+
+
+        // ! Deprecated
+        //Amethyst Item/Block
+        item("amethyst", AMETHYST);
+        block("amethyst_ore", AMETHYST_ORE);
+        blockItem("amethyst_ore", AMETHYST_ORE, ItemGroup.SEARCH);
+        block("deepslate_amethyst_ore", DEEPSLATE_AMETHYST_ORE);
+        blockItem("deepslate_amethyst_ore", DEEPSLATE_AMETHYST_ORE, ItemGroup.SEARCH);
+        block("amethyst_block", AMETHYST_BLOCK);
+        blockItem("amethyst_block", AMETHYST_BLOCK, ItemGroup.SEARCH);
+        //Amethyst Tools
+        item("amethyst_shovel", new ShovelBase(new ToolMaterialTanzanite()));
+        item("amethyst_pickaxe", new PickaxeBase(new ToolMaterialTanzanite()));
+        item("amethyst_axe", new AxeBase(new ToolMaterialTanzanite()));
+        item("amethyst_sword", new SwordBase(new ToolMaterialTanzanite()));
+        item("amethyst_hoe", new HoeBase(new ToolMaterialTanzanite()));
+        //Amethyst Armor
+        item("amethyst_helmet", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.HEAD));
+        item("amethyst_chestplate", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.CHEST));
+        item("amethyst_leggings", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.LEGS));
+        item("amethyst_boots", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.FEET));
     }
 
     public static <T> void register(

@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "vanillaenhanced:amethyst_sword"
+        }
+    ],
+    "result": {
+        "item": "vanillaenhanced:tanzanite_sword",
+        "count": 1
+    }
+}

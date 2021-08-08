@@ -86,16 +86,16 @@ public class DynamicRecipes {
             enabledFeatures.add(boots("sapphire_boots", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_boots"));
         }
 
-        if (config.enableAmethystGear) {
-            enabledFeatures.add(pickaxe("amethyst_pickaxe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_pickaxe"));
-            enabledFeatures.add(sword("amethyst_sword", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_sword"));
-            enabledFeatures.add(axe("amethyst_axe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_axe"));
-            enabledFeatures.add(shovel("amethyst_shovel", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_shovel"));
-            enabledFeatures.add(hoe("amethyst_hoe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_hoe"));
-            enabledFeatures.add(helmet("amethyst_helmet", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_helmet"));
-            enabledFeatures.add(chestplate("amethyst_chestplate", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_chestplate"));
-            enabledFeatures.add(leggings("amethyst_leggings", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_leggings"));
-            enabledFeatures.add(boots("amethyst_boots", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_boots"));
+        if (config.enableTanzaniteGear) {
+            enabledFeatures.add(pickaxe("tanzanite_pickaxe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_pickaxe"));
+            enabledFeatures.add(sword("tanzanite_sword", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_sword"));
+            enabledFeatures.add(axe("tanzanite_axe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_axe"));
+            enabledFeatures.add(shovel("tanzanite_shovel", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_shovel"));
+            enabledFeatures.add(hoe("tanzanite_hoe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_hoe"));
+            enabledFeatures.add(helmet("tanzanite_helmet", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_helmet"));
+            enabledFeatures.add(chestplate("tanzanite_chestplate", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_chestplate"));
+            enabledFeatures.add(leggings("tanzanite_leggings", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_leggings"));
+            enabledFeatures.add(boots("tanzanite_boots", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_boots"));
         }
         
         enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
