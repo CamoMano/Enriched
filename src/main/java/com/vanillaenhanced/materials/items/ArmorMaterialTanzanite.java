@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public class ArmorMaterialAmethyst implements ArmorMaterial {
+public class ArmorMaterialTanzanite implements ArmorMaterial {
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
     private static final int[] PROTECTION_AMOUNTS = new int[]{2, 5, 5, 2};
 
@@ -33,12 +33,12 @@ public class ArmorMaterialAmethyst implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModInit.AMETHYST);
+        return Ingredient.ofItems(ModInit.TANZANITE);
     }
 
     @Override
     public String getName() {
-        return "amethyst";
+        return "tanzanite";
     }
 
     @Override

@@ -33,7 +33,7 @@ public class DynamicRecipes {
             enabledFeatures.add(boots("emerald_boots", "minecraft:emerald", "vanillaenhanced:emerald_boots"));
         }
         if (config.enableObsidianGear) {
-            enabledFeatures.add(alloy());
+            enabledFeatures.add(blend("obsidian_alloy_blend", "minecraft:iron_ingot", "minecraft:obsidian", "vanillaenhanced:obsidian_alloy_blend"));
             enabledFeatures.add(pickaxe("obsidian_pickaxe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_pickaxe"));
             enabledFeatures.add(sword("obsidian_sword", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_sword"));
             enabledFeatures.add(axe("obsidian_axe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_axe"));
@@ -43,6 +43,8 @@ public class DynamicRecipes {
             enabledFeatures.add(chestplate("obsidian_chestplate", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_chestplate"));
             enabledFeatures.add(leggings("obsidian_leggings", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_leggings"));
             enabledFeatures.add(boots("obsidian_boots", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_boots"));
+            enabledFeatures.add(blasting("obsidian_alloy_ingot_blasting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 100));
+            enabledFeatures.add(smelting("obsidian_alloy_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
         }
 
         if (config.enableSteelGear) {
@@ -55,7 +57,9 @@ public class DynamicRecipes {
             enabledFeatures.add(chestplate("steel_chestplate", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_chestplate"));
             enabledFeatures.add(leggings("steel_leggings", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_leggings"));
             enabledFeatures.add(boots("steel_boots", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_boots"));
-            enabledFeatures.add(blasting("steel_ingot", "minecraft:iron_ingot", "vanillaenhanced:steel_ingot", 0.7, 400));
+            enabledFeatures.add(blend("steel_blend", "minecraft:iron_ingot", "minecraft:coal", "vanillaenhanced:steel_blend"));
+            enabledFeatures.add(blasting("steel_ingot_blasting", "vanillaenhanced:steel_blend", "vanillaenhanced:steel_ingot", 0.7, 100));
+            enabledFeatures.add(smelting("steel_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
         }
 
         if (config.enableRubyGear) {
@@ -82,16 +86,16 @@ public class DynamicRecipes {
             enabledFeatures.add(boots("sapphire_boots", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_boots"));
         }
 
-        if (config.enableAmethystGear) {
-            enabledFeatures.add(pickaxe("amethyst_pickaxe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_pickaxe"));
-            enabledFeatures.add(sword("amethyst_sword", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_sword"));
-            enabledFeatures.add(axe("amethyst_axe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_axe"));
-            enabledFeatures.add(shovel("amethyst_shovel", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_shovel"));
-            enabledFeatures.add(hoe("amethyst_hoe", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_hoe"));
-            enabledFeatures.add(helmet("amethyst_helmet", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_helmet"));
-            enabledFeatures.add(chestplate("amethyst_chestplate", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_chestplate"));
-            enabledFeatures.add(leggings("amethyst_leggings", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_leggings"));
-            enabledFeatures.add(boots("amethyst_boots", "vanillaenhanced:amethyst", "vanillaenhanced:amethyst_boots"));
+        if (config.enableTanzaniteGear) {
+            enabledFeatures.add(pickaxe("tanzanite_pickaxe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_pickaxe"));
+            enabledFeatures.add(sword("tanzanite_sword", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_sword"));
+            enabledFeatures.add(axe("tanzanite_axe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_axe"));
+            enabledFeatures.add(shovel("tanzanite_shovel", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_shovel"));
+            enabledFeatures.add(hoe("tanzanite_hoe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_hoe"));
+            enabledFeatures.add(helmet("tanzanite_helmet", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_helmet"));
+            enabledFeatures.add(chestplate("tanzanite_chestplate", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_chestplate"));
+            enabledFeatures.add(leggings("tanzanite_leggings", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_leggings"));
+            enabledFeatures.add(boots("tanzanite_boots", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_boots"));
         }
         
         enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
@@ -197,12 +201,40 @@ public class DynamicRecipes {
         );
     }
 
+    private static Pair<Identifier, JsonObject> blend(String name, String item_1, String item_2, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "   ",
+                "21 ",
+                "   "
+        ).item('1', item_1).item('2', item_2).result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+
     private static Pair<Identifier, JsonObject> blasting(
             String name, String input, String output, double experience, int cookingTime
     ) {
         final Identifier identifier = VanillaEnhanced.identifier(name);
         final JsonObject json = new JsonObject();
         json.addProperty("type", "minecraft:blasting");
+
+        final JsonObject ingredient = new JsonObject();
+        ingredient.addProperty("item", input);
+        json.add("ingredient", ingredient);
+
+        json.addProperty("result", output);
+        json.addProperty("experience", experience);
+        json.addProperty("cookingtime", cookingTime);
+
+        return new Pair<>(identifier, json);
+    }
+
+    private static Pair<Identifier, JsonObject> smelting(
+            String name, String input, String output, double experience, int cookingTime
+    ) {
+        final Identifier identifier = VanillaEnhanced.identifier(name);
+        final JsonObject json = new JsonObject();
+        json.addProperty("type", "minecraft:smelting");
 
         final JsonObject ingredient = new JsonObject();
         ingredient.addProperty("item", input);

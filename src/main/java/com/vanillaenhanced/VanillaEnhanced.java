@@ -1,6 +1,7 @@
 package com.vanillaenhanced;
 
 import com.vanillaenhanced.biome.Biomes;
+import com.vanillaenhanced.commands.Commands;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.recipes.DynamicRecipes;
 import com.vanillaenhanced.registry.ModInit;
@@ -37,7 +38,7 @@ public class VanillaEnhanced implements ModInitializer {
         Biomes.register(config);
         Generator.register(config);
         DynamicRecipes.register(config);
-        //Commands.register();
+        Commands.register();
     }
 
     public static Identifier identifier(String name) { return new Identifier(MOD_ID, name); }

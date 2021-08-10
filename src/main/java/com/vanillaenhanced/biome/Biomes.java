@@ -34,6 +34,8 @@ public final class Biomes {
             registerBiome(Biomes::createFrozenDesert, "frozen_desert", OverworldClimate.SNOWY, 0.10);
         if (config.enableExtremeJungle)
             registerBiome(Biomes::createExtremeJungle, "extreme_jungle", OverworldClimate.TEMPERATE, 0.15);
+        if (config.enableShatteredJungle)
+            registerBiome(Biomes::createShatteredJungle, "shattered_jungle", OverworldClimate.TEMPERATE, 0.10);
     }
 
     @SuppressWarnings("deprecation") //Experimental v1 API
@@ -255,6 +257,42 @@ public final class Biomes {
             .generationSettings(generationSettings.build())
             .build();
     }
+    private static Biome createShatteredJungle() {
+        SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+        DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
+        DefaultBiomeFeatures.addJungleMobs(spawnSettings);
+        DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
+        ModBiomeFeatures.addJungleMobsExtra(spawnSettings);
+        GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
+        generationSettings.surfaceBuilder(SurfaceBuilder.DEFAULT.withConfig(SurfaceBuilder.GRASS_CONFIG));
+        biomeStageOne(generationSettings);
+        DefaultBiomeFeatures.addJungleVegetation(generationSettings);
+        forestStageTwo(generationSettings);
+        biomeStageThree(generationSettings);
+        DefaultBiomeFeatures.addJungleTrees(generationSettings);
+        DefaultBiomeFeatures.addJungleEdgeTrees(generationSettings);
+        ModBiomeFeatures.addJunglePortal(generationSettings);
+        return (new Biome.Builder())
+                .category(Biome.Category.JUNGLE)
+                .depth(0.362F)
+                .scale(1.225F)
+                .temperature(0.95F)
+                .downfall(0.9F)
+                .precipitation(Biome.Precipitation.RAIN)
+                .effects(new BiomeEffects.Builder()
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .skyColor(0x84AAFF)
+                        .grassColor(0x59c93c)
+                        .build())
+                .spawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build())
+                .build();
+    }
+
+
 
     /**
      * Stage One Features; common to all presently defined Biomes.

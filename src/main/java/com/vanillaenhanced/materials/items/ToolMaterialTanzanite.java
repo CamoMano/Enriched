@@ -4,7 +4,7 @@ import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class ToolMaterialAmethyst implements ToolMaterial {
+public class ToolMaterialTanzanite implements ToolMaterial {
     @Override
     public int getDurability() {
         return 650;
@@ -32,6 +32,6 @@ public class ToolMaterialAmethyst implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModInit.AMETHYST);
+        return Ingredient.ofItems(ModInit.TANZANITE);
     }
 }

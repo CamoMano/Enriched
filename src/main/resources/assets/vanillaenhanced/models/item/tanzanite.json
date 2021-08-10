@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "vanillaenhanced:item/amethyst"
+    "layer0": "vanillaenhanced:item/tanzanite"
   }
 }
