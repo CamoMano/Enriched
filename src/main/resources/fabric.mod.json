@@ -13,6 +13,7 @@
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/vanilla-enhanced",
+    "sources": "https://github.com/CamoMano/Vanilla-Enhanced",
     "issues": "https://github.com/CamoMano/Vanilla-Enhanced/issues"
   },
   "license": "MIT",
