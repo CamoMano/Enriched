@@ -21,7 +21,7 @@ repositories {
 	//url = "https://maven.terraformersmc.com/" }
 	maven {
 	name = 'TerraformersMC Archive'
-	url = "https://raw.githubusercontent.com/TerraformersMC/Archive/main/releases/" }
+	url = "https://maven.terraformersmc.com/" }
 }
 
 minecraft {
