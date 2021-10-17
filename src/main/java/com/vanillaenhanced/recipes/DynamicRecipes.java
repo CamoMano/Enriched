@@ -97,7 +97,16 @@ public class DynamicRecipes {
             enabledFeatures.add(leggings("tanzanite_leggings", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_leggings"));
             enabledFeatures.add(boots("tanzanite_boots", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_boots"));
         }
-        
+        //Uncrafting
+        if(config.enableUncrafting) {
+            enabledFeatures.add(uncrafting_tag("uncrafting_wool", "minecraft:wool", "minecraft:string", 4));
+            enabledFeatures.add(uncrafting("uncrafting_cobweb", "minecraft:cobweb", "minecraft:string", 5));
+            enabledFeatures.add(uncrafting("uncrafting_brick", "minecraft:bricks", "minecraft:brick", 4));
+            enabledFeatures.add(uncrafting("uncrafting_netherbrick", "minecraft:nether_bricks", "minecraft:nether_brick", 4));
+            enabledFeatures.add(uncrafting("uncrafting_magma", "minecraft:magma_block", "minecraft:magma_cream", 4));
+            enabledFeatures.add(uncrafting("uncrafting_nether_wart", "minecraft:nether_wart_block", "minecraft:nether_wart", 9));
+            enabledFeatures.add(uncrafting("uncrafting_honeycomb", "minecraft:honeycomb_block", "minecraft:honeycomb", 4));
+        }
         enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
     }
 
@@ -207,6 +216,25 @@ public class DynamicRecipes {
                 "21 ",
                 "   "
         ).item('1', item_1).item('2', item_2).result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+
+    private static Pair<Identifier, JsonObject> uncrafting_tag(String name, String tag, String result, int count) {
+        return ShapedRecipeBuilder.ofPattern(
+                "#  ",
+                "   ",
+                "   "
+        ).tag('#', tag).result(result,count).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+    private static Pair<Identifier, JsonObject> uncrafting(String name, String item, String result, int count) {
+        return ShapedRecipeBuilder.ofPattern(
+                "#  ",
+                "   ",
+                "   "
+        ).item('#', item).result(result,count).build(
                 VanillaEnhanced.identifier(name)
         );
     }

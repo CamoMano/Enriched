@@ -9,6 +9,7 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 @Config.Gui.CategoryBackground(category = "Generation", background = "vanillaenhanced:textures/block/marble.png")
 @Config.Gui.CategoryBackground(category = "Tools", background = "minecraft:textures/block/copper_block.png")
 @Config.Gui.CategoryBackground(category = "Mobs", background = "minecraft:textures/block/honey_block_side.png")
+@Config.Gui.CategoryBackground(category = "Recipes", background = "minecraft:textures/block/bricks.png")
 public class ModConfig implements ConfigData {
     //Mobs
     @ConfigEntry.Category("Mobs")
@@ -48,6 +49,10 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableDarkGranite = true;
+
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableMud = false;
 
     @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
@@ -93,5 +98,9 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Biomes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableShatteredJungle = true;
+
+    @ConfigEntry.Category("Recipes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableUncrafting = true;
 }
 
