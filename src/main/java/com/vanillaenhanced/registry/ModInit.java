@@ -37,8 +37,6 @@ public class ModInit {
     //Blocks
     public static final Block RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
     public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
-    public static final Block AMETHYST_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
-    public static final Block AMETHYST_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
     public static final Block TANZANITE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block TANZANITE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
     public static final Block SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
@@ -47,18 +45,18 @@ public class ModInit {
     public static final Block OBSIDIAN_ALLOY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(METAL).strength(40.0f, 1000.0f));
     public static final Block DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
-    public static final Block DARK_GRANITE_STAIRS = new StairsBase(DARK_GRANITE.getDefaultState(), DARK_GRANITE);
+    public static final Block DARK_GRANITE_STAIRS = new StairsBase(DARK_GRANITE.getDefaultState(),  FabricBlockSettings.copyOf(DARK_GRANITE));
     public static final Block DARK_GRANITE_WALL = new WallBase(DARK_GRANITE);
     public static final Block POLISHED_DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block POLISHED_DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
-    public static final Block POLISHED_DARK_GRANITE_STAIRS = new StairsBase(POLISHED_DARK_GRANITE.getDefaultState(), DARK_GRANITE);
+    public static final Block POLISHED_DARK_GRANITE_STAIRS = new StairsBase(POLISHED_DARK_GRANITE.getDefaultState(),  FabricBlockSettings.copyOf(POLISHED_DARK_GRANITE));
     public static final Block MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
-    public static final Block MARBLE_STAIRS = new StairsBase(MARBLE.getDefaultState(), MARBLE);
+    public static final Block MARBLE_STAIRS = new StairsBase(MARBLE.getDefaultState(), FabricBlockSettings.copyOf(MARBLE));
     public static final Block MARBLE_WALL = new WallBase(MARBLE);
     public static final Block POLISHED_MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block POLISHED_MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
-    public static final Block POLISHED_MARBLE_STAIRS = new StairsBase(POLISHED_MARBLE.getDefaultState(), MARBLE);
+    public static final Block POLISHED_MARBLE_STAIRS = new StairsBase(POLISHED_MARBLE.getDefaultState(),  FabricBlockSettings.copyOf(POLISHED_MARBLE));
     public static final Block REDWOOD_LEAVES = new LeavesBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_LEAVES).ticksRandomly().sounds(BlockSoundGroup.GRASS).strength(0.2f, 0.2f));
     public static final Block STRIPPED_REDWOOD_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_SPRUCE_LOG).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0f, 2.0f));
     public static final Block STRIPPED_REDWOOD_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_SPRUCE_WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0f, 2.0f));
@@ -66,33 +64,31 @@ public class ModInit {
     public static final Block REDWOOD_WOOD = new StripableBlock(SPRUCE_WOOD, STRIPPED_REDWOOD_WOOD);
     public static final Block REDWOOD_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0f, 3.0f));
     public static final Block REDWOOD_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0f, 3.0f));
-    public static final Block REDWOOD_STAIRS = new StairsBase(REDWOOD_PLANKS.getDefaultState(), REDWOOD_PLANKS);
+    public static final Block REDWOOD_STAIRS = new StairsBase(REDWOOD_PLANKS.getDefaultState(),  FabricBlockSettings.copyOf(REDWOOD_PLANKS));
     public static final Block REDWOOD_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
     public static final Block REDWOOD_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).strength(2.0f, 3.0f));
     public static final Block REDWOOD_SAPLING = new BlockRedwoodSapling();
     public static final Block POTTED_REDWOOD_SAPLING = new FlowerPotBlock(ModInit.REDWOOD_SAPLING, FabricBlockSettings.copyOf(Blocks.POTTED_SPRUCE_SAPLING));
     public static final Block REDWOOD_BUTTON = new WoodButtonBase(REDWOOD_PLANKS);
-    public static final Block REDWOOD_DOOR = new WoodDoorBase(REDWOOD_PLANKS);
+    public static final Block REDWOOD_DOOR = new WoodDoorBase(FabricBlockSettings.copyOf(REDWOOD_PLANKS));
     public static final Block REDWOOD_PRESSURE_PLATE = new WoodPressurePlateBase(REDWOOD_PLANKS);
     public static final Block REDWOOD_TRAPDOOR = new WoodTrapdoorBase(REDWOOD_PLANKS);
     public static final Block BAMBOO_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.BAMBOO).breakByTool(FabricToolTags.AXES).strength(1.5f, 1.5f));
     public static final Block BAMBOO_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.BAMBOO).breakByTool(FabricToolTags.AXES).strength(1.5f, 1.5f));
-    public static final Block BAMBOO_STAIRS = new StairsBase(BAMBOO_PLANKS.getDefaultState(), BAMBOO_PLANKS);
+    public static final Block BAMBOO_STAIRS = new StairsBase(BAMBOO_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(BAMBOO_PLANKS));
     public static final Block BAMBOO_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).breakByTool(FabricToolTags.AXES).strength(1.5f, 1.5f));
     public static final Block BAMBOO_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).breakByTool(FabricToolTags.AXES).strength(1.5f, 1.5f));
-    public static final Block BAMBOO_DOOR = new WoodDoorBase(BAMBOO_PLANKS);
+    public static final Block BAMBOO_DOOR = new WoodDoorBase(FabricBlockSettings.copyOf(BAMBOO_PLANKS));
     public static final Block BAMBOO_TRAPDOOR = new WoodTrapdoorBase(BAMBOO_PLANKS);
     public static final MudBlock MUD = new MudBlock(FabricBlockSettings.copyOf(Blocks.SOUL_SAND).jumpVelocityMultiplier(0.5f).breakByTool(FabricToolTags.SHOVELS).sounds(ModSounds.MUD).strength(0.4f, 0.4f));
     public static final Block DEEPSLATE_RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
     public static final Block DEEPSLATE_SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
-    public static final Block DEEPSLATE_AMETHYST_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
     public static final Block DEEPSLATE_TANZANITE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
 
     //Items
     public static final Item OBSIDIAN_ALLOY_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item RUBY = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item SAPPHIRE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
-    public static final Item AMETHYST = new Item(new Item.Settings());
     public static final Item TANZANITE = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item STEEL_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item STEEL_BLEND = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -100,7 +96,6 @@ public class ModInit {
     public static final Item HONEY_BALL = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
     public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
-    public static final Item DEPRECATED_ITEM = new Item(new Item.Settings());
     public static final EntityType<HoneySlime> HONEY_SLIME = Registry.register(
         Registry.ENTITY_TYPE,
         new Identifier(MOD_ID, "honey_slime"),
@@ -323,29 +318,6 @@ public class ModInit {
         block("mud", MUD);
         blockItem("mud", MUD, ItemGroup.BUILDING_BLOCKS);
 
-
-
-
-        // ! Deprecated
-        //Amethyst Item/Block
-        item("amethyst", AMETHYST);
-        block("amethyst_ore", AMETHYST_ORE);
-        blockItem("amethyst_ore", AMETHYST_ORE, ItemGroup.SEARCH);
-        block("deepslate_amethyst_ore", DEEPSLATE_AMETHYST_ORE);
-        blockItem("deepslate_amethyst_ore", DEEPSLATE_AMETHYST_ORE, ItemGroup.SEARCH);
-        block("amethyst_block", AMETHYST_BLOCK);
-        blockItem("amethyst_block", AMETHYST_BLOCK, ItemGroup.SEARCH);
-        //Amethyst Tools
-        item("amethyst_shovel", new ShovelBase(new ToolMaterialTanzanite()));
-        item("amethyst_pickaxe", new PickaxeBase(new ToolMaterialTanzanite()));
-        item("amethyst_axe", new AxeBase(new ToolMaterialTanzanite()));
-        item("amethyst_sword", new SwordBase(new ToolMaterialTanzanite()));
-        item("amethyst_hoe", new HoeBase(new ToolMaterialTanzanite()));
-        //Amethyst Armor
-        item("amethyst_helmet", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.HEAD));
-        item("amethyst_chestplate", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.CHEST));
-        item("amethyst_leggings", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.LEGS));
-        item("amethyst_boots", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.FEET));
     }
 
     public static <T> void register(
