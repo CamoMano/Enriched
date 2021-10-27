@@ -5,7 +5,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.DoorBlock;
 
 public class WoodDoorBase extends DoorBlock {
-    public WoodDoorBase(AbstractBlock copy) {
-        super(FabricBlockSettings.copy(copy));
+    public WoodDoorBase(Settings settings) {
+        super(settings);
     }
 }
