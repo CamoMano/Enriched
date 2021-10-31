@@ -98,7 +98,7 @@ public class DynamicRecipes {
             enabledFeatures.add(boots("tanzanite_boots", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_boots"));
         }
         //Uncrafting
-        if(config.enableUncrafting) {
+        if (config.enableUncrafting) {
             enabledFeatures.add(uncrafting_tag("uncrafting_wool", "minecraft:wool", "minecraft:string", 4));
             enabledFeatures.add(uncrafting("uncrafting_cobweb", "minecraft:cobweb", "minecraft:string", 5));
             enabledFeatures.add(uncrafting("uncrafting_brick", "minecraft:bricks", "minecraft:brick", 4));
@@ -106,6 +106,17 @@ public class DynamicRecipes {
             enabledFeatures.add(uncrafting("uncrafting_magma", "minecraft:magma_block", "minecraft:magma_cream", 4));
             enabledFeatures.add(uncrafting("uncrafting_nether_wart", "minecraft:nether_wart_block", "minecraft:nether_wart", 9));
             enabledFeatures.add(uncrafting("uncrafting_honeycomb", "minecraft:honeycomb_block", "minecraft:honeycomb", 4));
+        }
+        if (config.enableHorseArmor) {
+            enabledFeatures.add(horse_armor("diamond_horse_armor", "minecraft:wool", "minecraft:diamond", "minecraft:diamond_horse_armor", 1));
+            enabledFeatures.add(horse_armor("golden_horse_armor", "minecraft:wool", "minecraft:gold_ingot", "minecraft:golden_horse_armor", 1));
+            enabledFeatures.add(horse_armor("iron_horse_armor", "minecraft:wool", "minecraft:iron_ingot", "minecraft:iron_horse_armor", 1));
+        }
+        if (config.enableChainmail) {
+            enabledFeatures.add(helmet("chainmail_helmet", "minecraft:chain", "minecraft:chainmail_helmet"));
+            enabledFeatures.add(chestplate("chainmail_chestplate", "minecraft:chain", "minecraft:chainmail_chestplate"));
+            enabledFeatures.add(leggings("chainmail_leggings", "minecraft:chain", "minecraft:chainmail_leggings"));
+            enabledFeatures.add(boots("chainmail_boots", "minecraft:chain", "minecraft:chainmail_boots"));
         }
         enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
     }
@@ -225,16 +236,27 @@ public class DynamicRecipes {
                 "#  ",
                 "   ",
                 "   "
-        ).tag('#', tag).result(result,count).build(
+        ).tag('#', tag).result(result, count).build(
                 VanillaEnhanced.identifier(name)
         );
     }
+
     private static Pair<Identifier, JsonObject> uncrafting(String name, String item, String result, int count) {
         return ShapedRecipeBuilder.ofPattern(
                 "#  ",
                 "   ",
                 "   "
-        ).item('#', item).result(result,count).build(
+        ).item('#', item).result(result, count).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+
+    private static Pair<Identifier, JsonObject> horse_armor(String name, String tag, String item, String result, int count) {
+        return ShapedRecipeBuilder.ofPattern(
+                "  #",
+                "#W#",
+                "###"
+        ).tag('W', tag).item('#', item).result(result, count).build(
                 VanillaEnhanced.identifier(name)
         );
     }

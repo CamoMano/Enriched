@@ -102,5 +102,13 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Recipes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableUncrafting = true;
+
+    @ConfigEntry.Category("Recipes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableHorseArmor = true;
+
+    @ConfigEntry.Category("Recipes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableChainmail = true;
 }
 
