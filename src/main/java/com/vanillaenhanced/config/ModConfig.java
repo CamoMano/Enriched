@@ -9,7 +9,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 @Config.Gui.CategoryBackground(category = "Generation", background = "vanillaenhanced:textures/block/marble.png")
 @Config.Gui.CategoryBackground(category = "Tools", background = "minecraft:textures/block/copper_block.png")
 @Config.Gui.CategoryBackground(category = "Mobs", background = "minecraft:textures/block/honey_block_side.png")
-@Config.Gui.CategoryBackground(category = "Recipes", background = "minecraft:textures/block/bricks.png")
+@Config.Gui.CategoryBackground(category = "Recipes", background = "minecraft:textures/block/magma.png")
 public class ModConfig implements ConfigData {
     //Mobs
     @ConfigEntry.Category("Mobs")

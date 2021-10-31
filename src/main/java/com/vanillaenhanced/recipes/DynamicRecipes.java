@@ -45,6 +45,8 @@ public class DynamicRecipes {
             enabledFeatures.add(boots("obsidian_boots", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_boots"));
             enabledFeatures.add(blasting("obsidian_alloy_ingot_blasting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 100));
             enabledFeatures.add(smelting("obsidian_alloy_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
+            enabledFeatures.add(block("obsidian_alloy_block", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_alloy_block", 1));
+            enabledFeatures.add(uncrafting("obsidian_alloy_ingot", "vanillaenhanced:obsidian_alloy_block", "vanillaenhanced:obsidian_alloy_ingot", 9));
         }
 
         if (config.enableSteelGear) {
@@ -60,6 +62,8 @@ public class DynamicRecipes {
             enabledFeatures.add(blend("steel_blend", "minecraft:iron_ingot", "minecraft:coal", "vanillaenhanced:steel_blend"));
             enabledFeatures.add(blasting("steel_ingot_blasting", "vanillaenhanced:steel_blend", "vanillaenhanced:steel_ingot", 0.7, 100));
             enabledFeatures.add(smelting("steel_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
+            enabledFeatures.add(block("steel_block", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_block", 1));
+            enabledFeatures.add(uncrafting("steel_ingot", "vanillaenhanced:steel_block", "vanillaenhanced:steel_ingot", 9));
         }
 
         if (config.enableRubyGear) {
@@ -72,6 +76,8 @@ public class DynamicRecipes {
             enabledFeatures.add(chestplate("ruby_chestplate", "vanillaenhanced:ruby", "vanillaenhanced:ruby_chestplate"));
             enabledFeatures.add(leggings("ruby_leggings", "vanillaenhanced:ruby", "vanillaenhanced:ruby_leggings"));
             enabledFeatures.add(boots("ruby_boots", "vanillaenhanced:ruby", "vanillaenhanced:ruby_boots"));
+            enabledFeatures.add(block("ruby_block", "vanillaenhanced:ruby", "vanillaenhanced:ruby_block", 1));
+            enabledFeatures.add(uncrafting("ruby", "vanillaenhanced:ruby_block", "vanillaenhanced:ruby", 9));
         }
 
         if (config.enableSapphireGear) {
@@ -84,6 +90,8 @@ public class DynamicRecipes {
             enabledFeatures.add(chestplate("sapphire_chestplate", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_chestplate"));
             enabledFeatures.add(leggings("sapphire_leggings", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_leggings"));
             enabledFeatures.add(boots("sapphire_boots", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_boots"));
+            enabledFeatures.add(block("sapphire_block", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_block", 1));
+            enabledFeatures.add(uncrafting("sapphire", "vanillaenhanced:sapphire_block", "vanillaenhanced:sapphire", 9));
         }
 
         if (config.enableTanzaniteGear) {
@@ -96,6 +104,8 @@ public class DynamicRecipes {
             enabledFeatures.add(chestplate("tanzanite_chestplate", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_chestplate"));
             enabledFeatures.add(leggings("tanzanite_leggings", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_leggings"));
             enabledFeatures.add(boots("tanzanite_boots", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_boots"));
+            enabledFeatures.add(block("tanzanite_block", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_block", 1));
+            enabledFeatures.add(uncrafting("tanzanite", "vanillaenhanced:tanzanite_block", "vanillaenhanced:tanzanite", 9));
         }
         //Uncrafting
         if (config.enableUncrafting) {
@@ -257,6 +267,16 @@ public class DynamicRecipes {
                 "#W#",
                 "###"
         ).tag('W', tag).item('#', item).result(result, count).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+
+    private static Pair<Identifier, JsonObject> block(String name, String item, String result, int count) {
+        return ShapedRecipeBuilder.ofPattern(
+                "###",
+                "###",
+                "###"
+        ).item('#', item).result(result, count).build(
                 VanillaEnhanced.identifier(name)
         );
     }
