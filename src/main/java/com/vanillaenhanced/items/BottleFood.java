@@ -29,8 +29,10 @@ public class BottleFood extends Item {
             if (player instanceof ServerPlayerEntity) {
                 Criteria.CONSUME_ITEM.trigger((ServerPlayerEntity) player, stack);
             }
+            if (!((PlayerEntity)user).getAbilities().creativeMode){
             stack.decrement(1);
             player.giveItemStack(new ItemStack(Items.GLASS_BOTTLE));
+            }
         }
         return stack;
     }

@@ -41,12 +41,6 @@ dependencies {
         exclude(group: "net.fabricmc.fabric-api")
     }
 	include "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
-	
-    //Auto Config
-    modImplementation("me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}") {
-      exclude module: 'fabric-api'
-    }
-    include "me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}"
     
     //Mod Menu
     modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
