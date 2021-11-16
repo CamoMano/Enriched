@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.9-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -24,8 +24,8 @@ repositories {
 	url = "https://maven.terraformersmc.com/" }
 }
 
-minecraft {
-accessWidener =  file("src/main/resources/vanillaenhanced.accesswidener")
+loom {
+accessWidenerPath =  file("src/main/resources/vanillaenhanced.accesswidener")
 }
 
 dependencies {

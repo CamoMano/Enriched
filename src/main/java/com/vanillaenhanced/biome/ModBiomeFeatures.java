@@ -10,6 +10,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 
 public class ModBiomeFeatures {
+    /*
     public static void addWolves(SpawnSettings.Builder builder) {
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 8, 4, 4));
     }
@@ -63,4 +64,6 @@ public class ModBiomeFeatures {
     public static void addSalmon(SpawnSettings.Builder builder) {
         builder.spawn(SpawnGroup.WATER_AMBIENT, new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
     }
+
+     */
 }

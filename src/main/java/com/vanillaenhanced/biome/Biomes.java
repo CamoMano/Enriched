@@ -1,8 +1,6 @@
 package com.vanillaenhanced.biome;
 
 import com.vanillaenhanced.config.ModConfig;
-import net.fabricmc.fabric.api.biome.v1.OverworldBiomes;
-import net.fabricmc.fabric.api.biome.v1.OverworldClimate;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -20,6 +18,7 @@ import java.util.function.Supplier;
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
 
 public final class Biomes {
+    /*
     @SuppressWarnings("deprecation") //Experimental v1 Biome API
     public static void register(ModConfig config) {
         if (config.enableDiverseForest)
@@ -294,9 +293,9 @@ public final class Biomes {
 
 
 
-    /**
-     * Stage One Features; common to all presently defined Biomes.
-     */
+
+
+    // * Stage One Features; common to all presently defined Biomes.
     private static void biomeStageOne(GenerationSettings.Builder settings) {
         DefaultBiomeFeatures.addDefaultUndergroundStructures(settings);
         DefaultBiomeFeatures.addDefaultOres(settings);
@@ -304,18 +303,16 @@ public final class Biomes {
         DefaultBiomeFeatures.addDefaultMushrooms(settings);
     }
 
-    /**
-     * Stage Two Features; common to all presently defined Forests.
-     */
+     // * Stage Two Features; common to all presently defined Forests.
+
     private static void forestStageTwo(GenerationSettings.Builder settings) {
         DefaultBiomeFeatures.addDefaultLakes(settings);
         DefaultBiomeFeatures.addDefaultGrass(settings);
         DefaultBiomeFeatures.addDefaultFlowers(settings);
     }
 
-    /**
-     * Stage Three Features; common to a few presently defined biomes.
-     */
+
+    // * Stage Three Features; common to a few presently defined biomes.
     private static void biomeStageThree(GenerationSettings.Builder settings) {
         DefaultBiomeFeatures.addLandCarvers(settings);
         DefaultBiomeFeatures.addDungeons(settings);
@@ -323,4 +320,7 @@ public final class Biomes {
         DefaultBiomeFeatures.addSprings(settings);
         DefaultBiomeFeatures.addFrozenTopLayer(settings);
     }
+
+     */
+
 }

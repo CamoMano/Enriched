@@ -4,8 +4,6 @@ import com.google.common.collect.Lists;
 import com.vanillaenhanced.VanillaEnhanced;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.registry.ModInit;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -19,6 +17,7 @@ import net.minecraft.world.gen.feature.*;
 
 @SuppressWarnings("deprecation") //Experimental v1 Biome API
 public class Generator {
+    /*
     //Common Ores
     public static ConfiguredFeature<?, ?> ORE_SAPPHIRE_COMMON = Feature.ORE
         .configure(new OreFeatureConfig(
@@ -231,5 +230,8 @@ public class Generator {
             BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.SWAMP), GenerationStep.Feature.RAW_GENERATION, genMud);
         }
     }
+
+     */
 }
+
 
