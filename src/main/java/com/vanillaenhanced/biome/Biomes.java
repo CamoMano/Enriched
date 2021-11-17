@@ -26,7 +26,7 @@ public final class Biomes {
     @SuppressWarnings("deprecation") //Experimental v1 Biome API
     public static void register(ModConfig config) {
         if (config.enableDiverseForest)
-            registerBiome(Biomes::createDiverseForest, "diverse_forest",  OverworldBiomeCreator.createNormalForest(false, false, false));
+            registerBiome(Biomes::createDiverseForest, "diverse_forest");
         /*
         if (config.enableRedwoodForest)
             registerBiome(Biomes::createRedwoodForest, "redwood_forest",  0.4);
@@ -50,7 +50,6 @@ public final class Biomes {
     private static void registerBiome(
         Supplier<Biome> supplier,
         String biomeName,
-        Biome type
     ) {
         final RegistryKey<Biome> biomeKey = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, biomeName));
         final Biome biome = supplier.get();
@@ -89,6 +88,7 @@ public final class Biomes {
             .spawnSettings(spawnSettings.build())
             .generationSettings(generationSettings.build())
             .build();
+            return OverworldBiomeCreator.method_39152(Biome.Precipitation.RAIN, Biome.Category.FOREST, f, bl ? 0.6f : 0.8f, builder2, builder, field_35436);
     }
 
     private static Biome createRedwoodForest() {
