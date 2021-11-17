@@ -6,11 +6,10 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.ConfiguredFeatures;
-import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
+import net.minecraft.world.gen.feature.*;
 
 public class ModBiomeFeatures {
-    /*
+
     public static void addWolves(SpawnSettings.Builder builder) {
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 8, 4, 4));
     }
@@ -31,7 +30,7 @@ public class ModBiomeFeatures {
     }
 
     public static void addRedwoodTrees(GenerationSettings.Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, Features.REDWOOD_TREES);
+        //builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, Features.REDWOOD_TREES);
     }
 
     public static void addJungleMobsExtra(SpawnSettings.Builder builder) {
@@ -40,30 +39,28 @@ public class ModBiomeFeatures {
     }
 
     public static void addDefaultPortal(GenerationSettings.Builder builder) {
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL);
+        //builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, StructureFeature.DEFAULT_PORTAL);
     }
 
     public static void addJunglePortal(GenerationSettings.Builder builder) {
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_JUNGLE);
+        //builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_JUNGLE);
     }
 
     public static void addMountainPortal(GenerationSettings.Builder builder) {
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_MOUNTAIN);
+        //builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_MOUNTAIN);
     }
 
     public static void addDesertFeatures(GenerationSettings.Builder builder) {
-        builder.structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT);
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_DESERT);
-        builder.structureFeature(ConfiguredStructureFeatures.DESERT_PYRAMID);
+        //builder.structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT);
+        //builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_DESERT);
+        //builder.structureFeature(ConfiguredStructureFeatures.DESERT_PYRAMID);
     }
 
     public static void addMegaSpruce(GenerationSettings.Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_GIANT_SPRUCE);
+        //builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_GIANT_SPRUCE);
     }
 
     public static void addSalmon(SpawnSettings.Builder builder) {
         builder.spawn(SpawnGroup.WATER_AMBIENT, new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
     }
-
-     */
 }

@@ -1,6 +1,6 @@
 package com.vanillaenhanced;
 
-//import com.vanillaenhanced.biome.Biomes;
+import com.vanillaenhanced.biome.Biomes;
 import com.vanillaenhanced.commands.Commands;
 import com.vanillaenhanced.config.ModConfig;
 import com.vanillaenhanced.recipes.DynamicRecipes;
@@ -35,7 +35,7 @@ public class VanillaEnhanced implements ModInitializer {
         //Setup
         ModInit.Register();
         Features.register();
-        //Biomes.register(config);
+        Biomes.register(config);
         //Generator.register(config);
         DynamicRecipes.register(config);
         Commands.register();
