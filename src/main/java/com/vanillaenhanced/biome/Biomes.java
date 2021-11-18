@@ -22,12 +22,12 @@ public final class Biomes {
         LOGGER.log(level, "[" + MOD_NAME + "] " + message);
     }
 
+    private static final RegistryKey<Biome> DIVERSE_FOREST = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "diverse_forest"));
 
-    @SuppressWarnings("deprecation") //Experimental v1 Biome API
     public static void register(ModConfig config) {
-        if (config.enableDiverseForest)
-            registerBiome(Biomes::createDiverseForest, "diverse_forest");
         /*
+        if (config.enableDiverseForest)
+            registerBiome(Biomes::createDiverseForest, "diverse_forest", OverworldBiomeCreator.createPlains(false, false, false));
         if (config.enableRedwoodForest)
             registerBiome(Biomes::createRedwoodForest, "redwood_forest",  0.4);
         if (config.enableDesertMountain)
@@ -41,23 +41,77 @@ public final class Biomes {
         if (config.enableShatteredJungle)
             registerBiome(Biomes::createShatteredJungle, "shattered_jungle",  0.10);
 
+
          */
+        Registry.register(BuiltinRegistries.BIOME, DIVERSE_FOREST.getValue(), createDiverseForest());
 
         log(Level.INFO, "Loaded biomes.");
     }
 
-    @SuppressWarnings("deprecation") //Experimental v1 API
-    private static void registerBiome(
-        Supplier<Biome> supplier,
-        String biomeName,
-    ) {
-        final RegistryKey<Biome> biomeKey = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, biomeName));
-        final Biome biome = supplier.get();
-        Registry.register(BuiltinRegistries.BIOME, biomeKey.getValue(), biome);
-        //OverworldBiomes.addContinentalBiome(biomeKey, climate, weight);
-    }
 
     private static Biome createDiverseForest() {
+        GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
+        DefaultBiomeFeatures.addBirchTrees(generationSettings);
+        DefaultBiomeFeatures.addForestTrees(generationSettings);
+        DefaultBiomeFeatures.addTaigaTrees(generationSettings);
+        SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+        DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
+        DefaultBiomeFeatures.addPlainsMobs(spawnSettings);
+        DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100, false);
+        biomeStageOne(generationSettings);
+        DefaultBiomeFeatures.addDefaultVegetation(generationSettings);
+        forestStageTwo(generationSettings);
+        biomeStageThree(generationSettings);
+        ModBiomeFeatures.addDefaultPortal(generationSettings);
+        return (new Biome.Builder())
+                .category(Biome.Category.FOREST)
+                .temperature(0.8F)
+                .downfall(0.85F)
+                .precipitation(Biome.Precipitation.RAIN)
+                .effects((new BiomeEffects.Builder())
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .skyColor(0x84AAFF)
+                        .grassColor(0x549845)
+                        .build())
+                .spawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build())
+                .build();
+    }
+
+    private static Biome composeEndSpawnSettings(GenerationSettings.Builder builder) {
+        SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+        DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
+        DefaultBiomeFeatures.addPlainsMobs(spawnSettings);
+        DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100, false);
+        GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
+        biomeStageOne(generationSettings);
+        DefaultBiomeFeatures.addDefaultVegetation(generationSettings);
+        forestStageTwo(generationSettings);
+        biomeStageThree(generationSettings);
+        ModBiomeFeatures.addDefaultPortal(generationSettings);
+        return (new Biome.Builder())
+                .category(Biome.Category.FOREST)
+                .temperature(0.8F)
+                .downfall(0.85F)
+                .precipitation(Biome.Precipitation.RAIN)
+                .effects((new BiomeEffects.Builder())
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .skyColor(0x84AAFF)
+                        .grassColor(0x549845)
+                        .build())
+                .spawnSettings(spawnSettings.build())
+                .generationSettings(builder.build())
+                .build();
+    }
+
+    /*
+        private static Biome createDiverseForest() {
         SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
         DefaultBiomeFeatures.addPlainsMobs(spawnSettings);
@@ -69,7 +123,6 @@ public final class Biomes {
         biomeStageThree(generationSettings);
         DefaultBiomeFeatures.addBirchTrees(generationSettings);
         DefaultBiomeFeatures.addForestTrees(generationSettings);
-        DefaultBiomeFeatures.addTaigaTrees(generationSettings);
         DefaultBiomeFeatures.addTaigaTrees(generationSettings);
         ModBiomeFeatures.addDefaultPortal(generationSettings);
         return (new Biome.Builder())
@@ -88,8 +141,8 @@ public final class Biomes {
             .spawnSettings(spawnSettings.build())
             .generationSettings(generationSettings.build())
             .build();
-            return OverworldBiomeCreator.method_39152(Biome.Precipitation.RAIN, Biome.Category.FOREST, f, bl ? 0.6f : 0.8f, builder2, builder, field_35436);
     }
+     */
 
     private static Biome createRedwoodForest() {
         SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
