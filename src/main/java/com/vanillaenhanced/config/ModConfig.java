@@ -52,10 +52,6 @@ public class ModConfig implements ConfigData {
 
     @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
-    public boolean enableMud = false;
-
-    @ConfigEntry.Category("Generation")
-    @ConfigEntry.Gui.Tooltip()
     public boolean enableMarble = true;
 
     @ConfigEntry.Category("Generation")

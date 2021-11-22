@@ -30,7 +30,8 @@ public class ModBiomeFeatures {
     }
 
     public static void addRedwoodTrees(GenerationSettings.Builder builder) {
-        //builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, Features.REDWOOD_TREES);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, Features.REDWOOD_TREES);
+
     }
 
     public static void addJungleMobsExtra(SpawnSettings.Builder builder) {

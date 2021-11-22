@@ -36,7 +36,7 @@ public class VanillaEnhanced implements ModInitializer {
         ModInit.Register();
         Features.register();
         Biomes.register(config);
-        //Generator.register(config);
+        Generator.register(config);
         DynamicRecipes.register(config);
         Commands.register();
     }
