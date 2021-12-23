@@ -52,10 +52,6 @@ public class ModConfig implements ConfigData {
 
     @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
-    public boolean enableMud = false;
-
-    @ConfigEntry.Category("Generation")
-    @ConfigEntry.Gui.Tooltip()
     public boolean enableMarble = true;
 
     @ConfigEntry.Category("Generation")
@@ -70,6 +66,10 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     public boolean enableTanzaniteOre = true;
 
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableRedwoodTrees = true;
+/*
     //Biomes
     @ConfigEntry.Category("Biomes")
     @ConfigEntry.Gui.Tooltip()
@@ -98,6 +98,7 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Biomes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableShatteredJungle = true;
+   */
 
     @ConfigEntry.Category("Recipes")
     @ConfigEntry.Gui.Tooltip()
@@ -110,5 +111,6 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Recipes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableChainmail = true;
+
 }
 

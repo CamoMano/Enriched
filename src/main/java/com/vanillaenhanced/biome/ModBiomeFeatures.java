@@ -6,10 +6,10 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.ConfiguredFeatures;
-import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
+import net.minecraft.world.gen.feature.*;
 
 public class ModBiomeFeatures {
+
     public static void addWolves(SpawnSettings.Builder builder) {
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 8, 4, 4));
     }
@@ -30,7 +30,8 @@ public class ModBiomeFeatures {
     }
 
     public static void addRedwoodTrees(GenerationSettings.Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, Features.REDWOOD_TREES);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, Features.REDWOOD_TREE_PATCH_FEATURE);
+
     }
 
     public static void addJungleMobsExtra(SpawnSettings.Builder builder) {
@@ -38,26 +39,8 @@ public class ModBiomeFeatures {
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.PARROT, 40, 1, 2));
     }
 
-    public static void addDefaultPortal(GenerationSettings.Builder builder) {
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL);
-    }
-
-    public static void addJunglePortal(GenerationSettings.Builder builder) {
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_JUNGLE);
-    }
-
-    public static void addMountainPortal(GenerationSettings.Builder builder) {
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_MOUNTAIN);
-    }
-
-    public static void addDesertFeatures(GenerationSettings.Builder builder) {
-        builder.structureFeature(ConfiguredStructureFeatures.VILLAGE_DESERT);
-        builder.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL_DESERT);
-        builder.structureFeature(ConfiguredStructureFeatures.DESERT_PYRAMID);
-    }
-
-    public static void addMegaSpruce(GenerationSettings.Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.TREES_GIANT_SPRUCE);
+    public static void addOldGrowthSpruce(GenerationSettings.Builder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_OLD_GROWTH_SPRUCE_TAIGA);
     }
 
     public static void addSalmon(SpawnSettings.Builder builder) {
