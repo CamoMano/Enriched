@@ -16,12 +16,12 @@ import static com.vanillaenhanced.VanillaEnhanced.*;
 
 public final class Biomes {
     public static final RegistryKey<Biome> DIVERSE_FOREST = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "diverse_forest"));
-    private static final RegistryKey<Biome> REDWOOD_FOREST = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "redwood_forest"));
-    private static final RegistryKey<Biome> DESERT_MOUNTAINS = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "desert_mountains"));
-    private static final RegistryKey<Biome> FROZEN_DESERT = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "frozen_desert"));
-    private static final RegistryKey<Biome> EXTREME_MOUNTAINS = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "extreme_mountains"));
-    private static final RegistryKey<Biome> EXTREME_JUNGLE = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "extreme_jungle"));
-    private static final RegistryKey<Biome> SHATTERED_JUNGLE = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "shattered_jungle"));
+    public static final RegistryKey<Biome> REDWOOD_FOREST = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "redwood_forest"));
+    public static final RegistryKey<Biome> DESERT_MOUNTAINS = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "desert_mountains"));
+    public static final RegistryKey<Biome> FROZEN_DESERT = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "frozen_desert"));
+    public static final RegistryKey<Biome> EXTREME_MOUNTAINS = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "extreme_mountains"));
+    public static final RegistryKey<Biome> EXTREME_JUNGLE = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "extreme_jungle"));
+    public static final RegistryKey<Biome> SHATTERED_JUNGLE = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "shattered_jungle"));
 
     public static void log(Level level, String message) {
         LOGGER.log(level, "[" + MOD_NAME + "] " + message);

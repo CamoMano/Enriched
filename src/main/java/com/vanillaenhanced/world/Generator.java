@@ -9,6 +9,7 @@ import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.decorator.*;
@@ -17,6 +18,7 @@ import net.minecraft.world.gen.feature.*;
 import java.util.List;
 
 import static com.vanillaenhanced.VanillaEnhanced.MOD_ID;
+import static com.vanillaenhanced.world.Features.REDWOOD_TREE_PATCH_FEATURE;
 
 public class Generator {
 
@@ -133,6 +135,9 @@ public class Generator {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, genDarkGranite);
         }
 
+        if (config.enableRedwoodTrees) {
+            BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA), GenerationStep.Feature.VEGETAL_DECORATION, getKey(REDWOOD_TREE_PATCH_FEATURE));
+        }
 
     }
 
@@ -143,6 +148,9 @@ public class Generator {
 
     private static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier modifier) {
         return modifiers(CountPlacementModifier.of(count), modifier);
+    }
+    public static RegistryKey<PlacedFeature> getKey(PlacedFeature f) {
+        return BuiltinRegistries.PLACED_FEATURE.getKey(f).orElseThrow();
     }
 
 }
