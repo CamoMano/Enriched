@@ -26,6 +26,10 @@ public class VanillaEnhanced implements ModInitializer {
         LOGGER.log(level, "[" + MOD_NAME + "] " + message);
     }
 
+    public static Identifier identifier(String name) {
+        return new Identifier(MOD_ID, name);
+    }
+
     @Override
     public void onInitialize() {
         log(Level.INFO, "Hello there!");
@@ -40,6 +44,4 @@ public class VanillaEnhanced implements ModInitializer {
         DynamicRecipes.register(config);
         Commands.register();
     }
-
-    public static Identifier identifier(String name) { return new Identifier(MOD_ID, name); }
 }

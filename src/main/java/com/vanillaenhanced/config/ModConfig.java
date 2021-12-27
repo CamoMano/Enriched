@@ -9,7 +9,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 @Config.Gui.CategoryBackground(category = "Generation", background = "vanillaenhanced:textures/block/marble.png")
 @Config.Gui.CategoryBackground(category = "Tools", background = "minecraft:textures/block/copper_block.png")
 @Config.Gui.CategoryBackground(category = "Mobs", background = "minecraft:textures/block/honey_block_side.png")
-@Config.Gui.CategoryBackground(category = "Recipes", background = "minecraft:textures/block/magma.png")
+@Config.Gui.CategoryBackground(category = "Recipes", background = "minecraft:textures/block/raw_copper_block.png")
 public class ModConfig implements ConfigData {
     //Mobs
     @ConfigEntry.Category("Mobs")
@@ -111,6 +111,10 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Recipes")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableChainmail = true;
+
+    @ConfigEntry.Category("Recipes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableRawSmelting = true;
 
 }
 
