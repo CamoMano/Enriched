@@ -128,13 +128,16 @@ public class DynamicRecipes {
             enabledFeatures.add(leggings("chainmail_leggings", "minecraft:chain", "minecraft:chainmail_leggings"));
             enabledFeatures.add(boots("chainmail_boots", "minecraft:chain", "minecraft:chainmail_boots"));
         }
-        enabledFeatures.add(smelting("iron_block_smelting", "minecraft:raw_iron_block", "minecraft:iron_block", 6.3, 1800));
-        enabledFeatures.add(smelting("copper_block_smelting", "minecraft:raw_copper_block", "minecraft:copper_block", 6.3, 1800));
-        enabledFeatures.add(smelting("gold_block_smelting", "minecraft:raw_gold_block", "minecraft:gold_block", 6.3, 1800));
-        enabledFeatures.add(blasting("iron_block_blasting", "minecraft:raw_iron_block", "minecraft:iron_block", 6.3, 900));
-        enabledFeatures.add(blasting("copper_block_blasting", "minecraft:raw_copper_block", "minecraft:copper_block", 6.3, 900));
-        enabledFeatures.add(blasting("gold_block_blasting", "minecraft:raw_gold_block", "minecraft:gold_block", 6.3, 900));
-        
+
+        if(config.enableRawSmelting) {
+            enabledFeatures.add(smelting("iron_block_smelting", "minecraft:raw_iron_block", "minecraft:iron_block", 6.3, 1800));
+            enabledFeatures.add(smelting("copper_block_smelting", "minecraft:raw_copper_block", "minecraft:copper_block", 6.3, 1800));
+            enabledFeatures.add(smelting("gold_block_smelting", "minecraft:raw_gold_block", "minecraft:gold_block", 6.3, 1800));
+            enabledFeatures.add(blasting("iron_block_blasting", "minecraft:raw_iron_block", "minecraft:iron_block", 6.3, 900));
+            enabledFeatures.add(blasting("copper_block_blasting", "minecraft:raw_copper_block", "minecraft:copper_block", 6.3, 900));
+            enabledFeatures.add(blasting("gold_block_blasting", "minecraft:raw_gold_block", "minecraft:gold_block", 6.3, 900));
+        }
+
         enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
     }
 
