@@ -1,0 +1,31 @@
+    {
+      "replace": false,
+      "values": [
+        "vanillaenhanced:ruby_ore",
+		"vanillaenhanced:sapphire_ore",
+		"vanillaenhanced:tanzanite_ore",
+		"vanillaenhanced:deepslate_ruby_ore",
+		"vanillaenhanced:deepslate_sapphire_ore",
+		"vanillaenhanced:deepslate_tanzanite_ore",
+		"vanillaenhanced:ruby_block",
+		"vanillaenhanced:sapphire_block",
+		"vanillaenhanced:tanzanite_block",
+		"vanillaenhanced:steel_block",
+		"vanillaenhanced:obsidian_alloy_block",
+		"vanillaenhanced:marble",
+		"vanillaenhanced:marble_stairs",
+		"vanillaenhanced:marble_slab",
+		"vanillaenhanced:marble_wall",
+		"vanillaenhanced:polished_marble",
+		"vanillaenhanced:polished_marble_stairs",
+		"vanillaenhanced:polished_marble_slab",
+		"vanillaenhanced:dark_granite",
+		"vanillaenhanced:dark_granite_stairs",
+		"vanillaenhanced:dark_granite_slab",
+		"vanillaenhanced:dark_granite_wall",
+		"vanillaenhanced:polished_dark_granite",
+		"vanillaenhanced:polished_dark_granite_stairs",
+		"vanillaenhanced:polished_dark_granite_slab"
+      ]
+    }
+
