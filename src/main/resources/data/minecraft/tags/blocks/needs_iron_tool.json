@@ -1,0 +1,17 @@
+    {
+      "replace": false,
+      "values": [
+        "vanillaenhanced:ruby_ore",
+		"vanillaenhanced:sapphire_ore",
+		"vanillaenhanced:tanzanite_ore",
+		"vanillaenhanced:deepslate_ruby_ore",
+		"vanillaenhanced:deepslate_sapphire_ore",
+		"vanillaenhanced:deepslate_tanzanite_ore",
+		"vanillaenhanced:ruby_block",
+		"vanillaenhanced:sapphire_block",
+		"vanillaenhanced:tanzanite_block",
+		"vanillaenhanced:steel_block",
+		"vanillaenhanced:obsidian_alloy_block"
+      ]
+    }
+
