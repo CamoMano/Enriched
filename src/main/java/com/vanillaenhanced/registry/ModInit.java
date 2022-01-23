@@ -80,7 +80,6 @@ public class ModInit {
     public static final Block BAMBOO_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
     public static final Block BAMBOO_DOOR = new WoodDoorBase(FabricBlockSettings.copyOf(BAMBOO_PLANKS));
     public static final Block BAMBOO_TRAPDOOR = new WoodTrapdoorBase(BAMBOO_PLANKS);
-    public static final MudBlock MUD = new MudBlock(FabricBlockSettings.copyOf(Blocks.SOUL_SAND).jumpVelocityMultiplier(0.5f).sounds(ModSounds.MUD).strength(0.4f, 0.4f));
     public static final Block DEEPSLATE_RUBY_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
     public static final Block DEEPSLATE_SAPPHIRE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
     public static final Block DEEPSLATE_TANZANITE_ORE = new OreBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
@@ -315,8 +314,6 @@ public class ModInit {
             new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings().group(ItemGroup.MISC))
         );
         item("honey_ball", HONEY_BALL);
-        block("mud", MUD);
-        blockItem("mud", MUD, ItemGroup.BUILDING_BLOCKS);
 
     }
 
