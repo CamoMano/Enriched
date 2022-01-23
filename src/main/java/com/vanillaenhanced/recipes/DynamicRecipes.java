@@ -53,15 +53,15 @@ public class DynamicRecipes {
         }
 
         if (config.enableSteelGear) {
-            enabledFeatures.add(pickaxe("steel_pickaxe", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_pickaxe"));
-            enabledFeatures.add(sword("steel_sword", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_sword"));
-            enabledFeatures.add(axe("steel_axe", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_axe"));
-            enabledFeatures.add(shovel("steel_shovel", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_shovel"));
-            enabledFeatures.add(hoe("steel_hoe", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_hoe"));
-            enabledFeatures.add(helmet("steel_helmet", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_helmet"));
-            enabledFeatures.add(chestplate("steel_chestplate", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_chestplate"));
-            enabledFeatures.add(leggings("steel_leggings", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_leggings"));
-            enabledFeatures.add(boots("steel_boots", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_boots"));
+            enabledFeatures.add(pickaxe_tag("steel_pickaxe", "c:steel_ingots", "vanillaenhanced:steel_pickaxe"));
+            enabledFeatures.add(sword_tag("steel_sword", "c:steel_ingots", "vanillaenhanced:steel_sword"));
+            enabledFeatures.add(axe_tag("steel_axe", "c:steel_ingots", "vanillaenhanced:steel_axe"));
+            enabledFeatures.add(shovel_tag("steel_shovel", "c:steel_ingots", "vanillaenhanced:steel_shovel"));
+            enabledFeatures.add(hoe_tag("steel_hoe", "c:steel_ingots", "vanillaenhanced:steel_hoe"));
+            enabledFeatures.add(helmet_tag("steel_helmet", "c:steel_ingots", "vanillaenhanced:steel_helmet"));
+            enabledFeatures.add(chestplate_tag("steel_chestplate", "c:steel_ingots", "vanillaenhanced:steel_chestplate"));
+            enabledFeatures.add(leggings_tag("steel_leggings", "c:steel_ingots", "vanillaenhanced:steel_leggings"));
+            enabledFeatures.add(boots_tag("steel_boots", "c:steel_ingots", "vanillaenhanced:steel_boots"));
             enabledFeatures.add(blend("steel_blend", "minecraft:iron_ingot", "minecraft:coal", "vanillaenhanced:steel_blend"));
             enabledFeatures.add(blasting("steel_ingot_blasting", "vanillaenhanced:steel_blend", "vanillaenhanced:steel_ingot", 0.7, 100));
             enabledFeatures.add(smelting("steel_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
@@ -70,29 +70,29 @@ public class DynamicRecipes {
         }
 
         if (config.enableRubyGear) {
-            enabledFeatures.add(pickaxe("ruby_pickaxe", "vanillaenhanced:ruby", "vanillaenhanced:ruby_pickaxe"));
-            enabledFeatures.add(sword("ruby_sword", "vanillaenhanced:ruby", "vanillaenhanced:ruby_sword"));
-            enabledFeatures.add(axe("ruby_axe", "vanillaenhanced:ruby", "vanillaenhanced:ruby_axe"));
-            enabledFeatures.add(shovel("ruby_shovel", "vanillaenhanced:ruby", "vanillaenhanced:ruby_shovel"));
-            enabledFeatures.add(hoe("ruby_hoe", "vanillaenhanced:ruby", "vanillaenhanced:ruby_hoe"));
-            enabledFeatures.add(helmet("ruby_helmet", "vanillaenhanced:ruby", "vanillaenhanced:ruby_helmet"));
-            enabledFeatures.add(chestplate("ruby_chestplate", "vanillaenhanced:ruby", "vanillaenhanced:ruby_chestplate"));
-            enabledFeatures.add(leggings("ruby_leggings", "vanillaenhanced:ruby", "vanillaenhanced:ruby_leggings"));
-            enabledFeatures.add(boots("ruby_boots", "vanillaenhanced:ruby", "vanillaenhanced:ruby_boots"));
+            enabledFeatures.add(pickaxe_tag("ruby_pickaxe", "c:rubies", "vanillaenhanced:ruby_pickaxe"));
+            enabledFeatures.add(sword_tag("ruby_sword", "c:rubies", "vanillaenhanced:ruby_sword"));
+            enabledFeatures.add(axe_tag("ruby_axe", "c:rubies", "vanillaenhanced:ruby_axe"));
+            enabledFeatures.add(shovel_tag("ruby_shovel", "c:rubies", "vanillaenhanced:ruby_shovel"));
+            enabledFeatures.add(hoe_tag("ruby_hoe", "c:rubies", "vanillaenhanced:ruby_hoe"));
+            enabledFeatures.add(helmet_tag("ruby_helmet", "c:rubies", "vanillaenhanced:ruby_helmet"));
+            enabledFeatures.add(chestplate_tag("ruby_chestplate", "c:rubies", "vanillaenhanced:ruby_chestplate"));
+            enabledFeatures.add(leggings_tag("ruby_leggings", "c:rubies", "vanillaenhanced:ruby_leggings"));
+            enabledFeatures.add(boots_tag("ruby_boots", "c:rubies", "vanillaenhanced:ruby_boots"));
             enabledFeatures.add(block("ruby_block", "vanillaenhanced:ruby", "vanillaenhanced:ruby_block", 1));
             enabledFeatures.add(uncrafting("ruby", "vanillaenhanced:ruby_block", "vanillaenhanced:ruby", 9));
         }
 
         if (config.enableSapphireGear) {
-            enabledFeatures.add(pickaxe("sapphire_pickaxe", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_pickaxe"));
-            enabledFeatures.add(sword("sapphire_sword", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_sword"));
-            enabledFeatures.add(axe("sapphire_axe", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_axe"));
-            enabledFeatures.add(shovel("sapphire_shovel", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_shovel"));
-            enabledFeatures.add(hoe("sapphire_hoe", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_hoe"));
-            enabledFeatures.add(helmet("sapphire_helmet", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_helmet"));
-            enabledFeatures.add(chestplate("sapphire_chestplate", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_chestplate"));
-            enabledFeatures.add(leggings("sapphire_leggings", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_leggings"));
-            enabledFeatures.add(boots("sapphire_boots", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_boots"));
+            enabledFeatures.add(pickaxe_tag("sapphire_pickaxe", "c:sapphires", "vanillaenhanced:sapphire_pickaxe"));
+            enabledFeatures.add(sword_tag("sapphire_sword", "c:sapphires", "vanillaenhanced:sapphire_sword"));
+            enabledFeatures.add(axe_tag("sapphire_axe", "c:sapphires", "vanillaenhanced:sapphire_axe"));
+            enabledFeatures.add(shovel_tag("sapphire_shovel", "c:sapphires", "vanillaenhanced:sapphire_shovel"));
+            enabledFeatures.add(hoe_tag("sapphire_hoe", "c:sapphires", "vanillaenhanced:sapphire_hoe"));
+            enabledFeatures.add(helmet_tag("sapphire_helmet", "c:sapphires", "vanillaenhanced:sapphire_helmet"));
+            enabledFeatures.add(chestplate_tag("sapphire_chestplate", "c:sapphires", "vanillaenhanced:sapphire_chestplate"));
+            enabledFeatures.add(leggings_tag("sapphire_leggings", "c:sapphires", "vanillaenhanced:sapphire_leggings"));
+            enabledFeatures.add(boots_tag("sapphire_boots", "c:sapphires", "vanillaenhanced:sapphire_boots"));
             enabledFeatures.add(block("sapphire_block", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_block", 1));
             enabledFeatures.add(uncrafting("sapphire", "vanillaenhanced:sapphire_block", "vanillaenhanced:sapphire", 9));
         }
@@ -154,12 +154,31 @@ public class DynamicRecipes {
         );
     }
 
+    private static Pair<Identifier, JsonObject> pickaxe_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "###",
+                " | ",
+                " | "
+        ).tag('#', tag).item('|', "stick").result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+
     private static Pair<Identifier, JsonObject> sword(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
                 " # ",
                 " # ",
                 " | "
         ).item('#', item).item('|', "stick").result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+    private static Pair<Identifier, JsonObject> sword_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                " # ",
+                " # ",
+                " | "
+        ).tag('#', tag).item('|', "stick").result(result).build(
                 VanillaEnhanced.identifier(name)
         );
     }
@@ -174,12 +193,31 @@ public class DynamicRecipes {
         );
     }
 
+    private static Pair<Identifier, JsonObject> axe_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "## ",
+                "#| ",
+                " | "
+        ).tag('#', tag).item('|', "stick").result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+
     private static Pair<Identifier, JsonObject> shovel(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
                 " # ",
                 " | ",
                 " | "
         ).item('#', item).item('|', "stick").result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+    private static Pair<Identifier, JsonObject> shovel_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                " # ",
+                " | ",
+                " | "
+        ).tag('#', tag).item('|', "stick").result(result).build(
                 VanillaEnhanced.identifier(name)
         );
     }
@@ -190,6 +228,15 @@ public class DynamicRecipes {
                 " | ",
                 " | "
         ).item('#', item).item('|', "stick").result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+    private static Pair<Identifier, JsonObject> hoe_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "## ",
+                " | ",
+                " | "
+        ).tag('#', tag).item('|', "stick").result(result).build(
                 VanillaEnhanced.identifier(name)
         );
     }
@@ -213,6 +260,15 @@ public class DynamicRecipes {
                 VanillaEnhanced.identifier(name)
         );
     }
+    private static Pair<Identifier, JsonObject> helmet_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "###",
+                "# #",
+                "   "
+        ).tag('#', tag).result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
 
     private static Pair<Identifier, JsonObject> chestplate(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
@@ -220,6 +276,15 @@ public class DynamicRecipes {
                 "###",
                 "###"
         ).item('#', item).result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+    private static Pair<Identifier, JsonObject> chestplate_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "# #",
+                "###",
+                "###"
+        ).tag('#', tag).result(result).build(
                 VanillaEnhanced.identifier(name)
         );
     }
@@ -234,12 +299,31 @@ public class DynamicRecipes {
         );
     }
 
+    private static Pair<Identifier, JsonObject> leggings_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "###",
+                "# #",
+                "# #"
+        ).tag('#', tag).result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+
     private static Pair<Identifier, JsonObject> boots(String name, String item, String result) {
         return ShapedRecipeBuilder.ofPattern(
                 "# #",
                 "# #",
                 "   "
         ).item('#', item).result(result).build(
+                VanillaEnhanced.identifier(name)
+        );
+    }
+    private static Pair<Identifier, JsonObject> boots_tag(String name, String tag, String result) {
+        return ShapedRecipeBuilder.ofPattern(
+                "# #",
+                "# #",
+                "   "
+        ).tag('#', tag).result(result).build(
                 VanillaEnhanced.identifier(name)
         );
     }
