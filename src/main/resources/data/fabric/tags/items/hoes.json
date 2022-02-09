@@ -1,12 +1,12 @@
 {
   "replace": false,
   "values": [
-    "vanillaenhanced:obsidian_hoe",
-    "vanillaenhanced:emerald_hoe",
-    "vanillaenhanced:sapphire_hoe",
-    "vanillaenhanced:tanzanite_hoe",
-    "vanillaenhanced:ruby_hoe",
-	"vanillaenhanced:copper_hoe",
-    "vanillaenhanced:steel_hoe"
+    "enriched:obsidian_hoe",
+    "enriched:emerald_hoe",
+    "enriched:sapphire_hoe",
+    "enriched:tanzanite_hoe",
+    "enriched:ruby_hoe",
+	"enriched:copper_hoe",
+    "enriched:steel_hoe"
   ]
 }

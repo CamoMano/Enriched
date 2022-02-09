@@ -1,12 +1,12 @@
 {
   "replace": false,
   "values": [
-    "vanillaenhanced:obsidian_sword",
-    "vanillaenhanced:emerald_sword",
-    "vanillaenhanced:sapphire_sword",
-    "vanillaenhanced:tanzanite_sword",
-    "vanillaenhanced:ruby_sword",
-	"vanillaenhanced:copper_sword",
-    "vanillaenhanced:steel_sword"
+    "enriched:obsidian_sword",
+    "enriched:emerald_sword",
+    "enriched:sapphire_sword",
+    "enriched:tanzanite_sword",
+    "enriched:ruby_sword",
+	"enriched:copper_sword",
+    "enriched:steel_sword"
   ]
 }

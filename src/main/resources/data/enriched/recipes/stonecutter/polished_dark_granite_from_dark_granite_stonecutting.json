@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "enriched:dark_granite"
+  },
+  "result": "enriched:polished_dark_granite",
+  "count": 1
+}

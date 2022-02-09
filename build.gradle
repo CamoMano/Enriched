@@ -25,7 +25,7 @@ repositories {
 }
 
 loom {
-accessWidenerPath =  file("src/main/resources/vanillaenhanced.accesswidener")
+accessWidenerPath =  file("src/main/resources/enriched.accesswidener")
 }
 
 dependencies {

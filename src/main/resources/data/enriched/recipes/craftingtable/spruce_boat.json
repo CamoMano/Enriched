@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "enriched:redwood_planks"
+    }
+  },
+  "result": {
+    "item": "minecraft:spruce_boat"
+  }
+}

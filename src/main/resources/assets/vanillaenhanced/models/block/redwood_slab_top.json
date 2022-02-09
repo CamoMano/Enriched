@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "vanillaenhanced:block/redwood_planks",
-    "top": "vanillaenhanced:block/redwood_planks",
-    "side": "vanillaenhanced:block/redwood_planks"
-  }
-}

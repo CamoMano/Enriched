@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "vanillaenhanced:block/polished_marble",
-    "top": "vanillaenhanced:block/polished_marble",
-    "side": "vanillaenhanced:block/polished_marble"
-  }
-}

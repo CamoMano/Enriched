@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "vanillaenhanced:polished_marble"
-  },
-  "result": "vanillaenhanced:polished_marble_stairs",
-  "count": 1
-}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "enriched:block/redwood_planks",
+    "top": "enriched:block/redwood_planks",
+    "side": "enriched:block/redwood_planks"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "enriched:block/bamboo_planks"
+  }
+}

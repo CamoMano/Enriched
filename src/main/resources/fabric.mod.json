@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "vanillaenhanced",
+  "id": "enriched",
   "version": "${version}",
-  "name": "VanillaEnhanced",
-  "accessWidener": "vanillaenhanced.accesswidener",
+  "name": "Enriched",
+  "accessWidener": "enriched.accesswidener",
   "description": "Enhancements and vanilla-esque additions.",
   "authors": [
     "CamoMano"
@@ -18,22 +18,22 @@
     "issues": "https://github.com/CamoMano/Vanilla-Enhanced/issues"
   },
   "license": "MIT",
-  "icon": "assets/vanillaenhanced/icon.png",
+  "icon": "assets/enriched/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.vanillaenhanced.VanillaEnhanced"
+      "com.enrichedmc.Enriched"
     ],
     "client": [
-      "com.vanillaenhanced.VanillaEnhancedClient"
+      "com.enrichedmc.EnrichedClient"
     ],
     "server": [],
     "modmenu": [
-      "com.vanillaenhanced.config.ModMenu"
+      "com.enrichedmc.config.ModMenu"
     ]
   },
   "mixins": [
-    "vanillaenhanced.mixins.json"
+    "enriched.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.12.0",
