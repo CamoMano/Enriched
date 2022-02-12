@@ -4,9 +4,9 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-@Config(name = "vanillaenhanced")
-@Config.Gui.CategoryBackground(category = "Biomes", background = "vanillaenhanced:textures/block/redwood_planks.png")
-@Config.Gui.CategoryBackground(category = "Generation", background = "vanillaenhanced:textures/block/marble.png")
+@Config(name = "enriched")
+@Config.Gui.CategoryBackground(category = "Biomes", background = "enriched:textures/block/redwood_planks.png")
+@Config.Gui.CategoryBackground(category = "Generation", background = "enriched:textures/block/marble.png")
 @Config.Gui.CategoryBackground(category = "Tools", background = "minecraft:textures/block/copper_block.png")
 @Config.Gui.CategoryBackground(category = "Mobs", background = "minecraft:textures/block/honey_block_side.png")
 @Config.Gui.CategoryBackground(category = "Recipes", background = "minecraft:textures/block/raw_copper_block.png")
