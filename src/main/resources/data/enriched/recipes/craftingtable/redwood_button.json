@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "enriched:redwood_planks"
+    }
+  ],
+  "result": {
+    "item": "enriched:redwood_button"
+  }
+}

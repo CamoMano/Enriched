@@ -1,12 +1,12 @@
 {
   "replace": false,
   "values": [
-    "vanillaenhanced:obsidian_axe",
-    "vanillaenhanced:emerald_axe",
-    "vanillaenhanced:sapphire_axe",
-    "vanillaenhanced:tanzanite_axe",
-    "vanillaenhanced:ruby_axe",
-	"vanillaenhanced:copper_axe",
-    "vanillaenhanced:steel_axe"
+    "enriched:obsidian_axe",
+    "enriched:emerald_axe",
+    "enriched:sapphire_axe",
+    "enriched:tanzanite_axe",
+    "enriched:ruby_axe",
+	"enriched:copper_axe",
+    "enriched:steel_axe"
   ]
 }

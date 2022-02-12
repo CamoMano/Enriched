@@ -1,6 +1,0 @@
-{
-  "parent": "block/wall_inventory",
-  "textures": {
-    "wall": "vanillaenhanced:block/dark_granite"
-  }
-}

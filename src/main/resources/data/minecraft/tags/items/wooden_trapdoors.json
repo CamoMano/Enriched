@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "vanillaenhanced:redwood_trapdoor",
-	"vanillaenhanced:bamboo_trapdoor"
+    "enriched:redwood_trapdoor",
+	"enriched:bamboo_trapdoor"
   ]
 }

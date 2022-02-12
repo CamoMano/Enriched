@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "enriched:dark_granite"
+    }
+  },
+  "result": {
+    "item": "enriched:polished_dark_granite",
+    "count": 4
+  }
+}
