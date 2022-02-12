@@ -1,4 +1,4 @@
-<p><img src="https://i.imgur.com/qJt6UQ4.png" alt="" width="433" height="183" /></p>
+<p><img src="https://github.com/CamoMano/Enriched/blob/master/images/Enriched.png"/></p>
 
 [![Crowdin](https://badges.crowdin.net/vanillaenhanced/localized.svg)](https://crowdin.com/project/vanillaenhanced)
 [![CurseForge](http://cf.way2muchnoise.eu/enriched.svg)](https://www.curseforge.com/minecraft/mc-mods/enriched)
