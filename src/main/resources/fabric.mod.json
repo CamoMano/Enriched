@@ -13,9 +13,9 @@
 	"RDKRACZ"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/vanilla-enhanced",
-    "sources": "https://github.com/CamoMano/Vanilla-Enhanced",
-    "issues": "https://github.com/CamoMano/Vanilla-Enhanced/issues"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/enriched",
+    "sources": "https://github.com/CamoMano/Enriched",
+    "issues": "https://github.com/CamoMano/Enriched/issues"
   },
   "license": "MIT",
   "icon": "assets/enriched/icon.png",
@@ -36,7 +36,7 @@
     "enriched.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.12.0",
+    "fabricloader": ">=0.12.12",
     "minecraft": "1.18.x",
     "fabric": "*",
     "java": ">=17"
