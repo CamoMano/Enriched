@@ -18,97 +18,97 @@ public class DynamicRecipes {
     public static void register(ModConfig config) {
         final List<Pair<Identifier, JsonObject>> enabledFeatures = new ArrayList<>();
         if (config.enableCopperGear) {
-            enabledFeatures.add(pickaxe("copper_pickaxe", "minecraft:copper_ingot", "vanillaenhanced:copper_pickaxe"));
-            enabledFeatures.add(sword("copper_sword", "minecraft:copper_ingot", "vanillaenhanced:copper_sword"));
-            enabledFeatures.add(axe("copper_axe", "minecraft:copper_ingot", "vanillaenhanced:copper_axe"));
-            enabledFeatures.add(shovel("copper_shovel", "minecraft:copper_ingot", "vanillaenhanced:copper_shovel"));
-            enabledFeatures.add(hoe("copper_hoe", "minecraft:copper_ingot", "vanillaenhanced:copper_hoe"));
+            enabledFeatures.add(pickaxe("copper_pickaxe", "minecraft:copper_ingot", "enriched:copper_pickaxe"));
+            enabledFeatures.add(sword("copper_sword", "minecraft:copper_ingot", "enriched:copper_sword"));
+            enabledFeatures.add(axe("copper_axe", "minecraft:copper_ingot", "enriched:copper_axe"));
+            enabledFeatures.add(shovel("copper_shovel", "minecraft:copper_ingot", "enriched:copper_shovel"));
+            enabledFeatures.add(hoe("copper_hoe", "minecraft:copper_ingot", "enriched:copper_hoe"));
         }
         if (config.enableEmeraldGear) {
-            enabledFeatures.add(pickaxe("emerald_pickaxe", "minecraft:emerald", "vanillaenhanced:emerald_pickaxe"));
-            enabledFeatures.add(sword("emerald_sword", "minecraft:emerald", "vanillaenhanced:emerald_sword"));
-            enabledFeatures.add(axe("emerald_axe", "minecraft:emerald", "vanillaenhanced:emerald_axe"));
-            enabledFeatures.add(shovel("emerald_shovel", "minecraft:emerald", "vanillaenhanced:emerald_shovel"));
-            enabledFeatures.add(hoe("emerald_hoe", "minecraft:emerald", "vanillaenhanced:emerald_hoe"));
-            enabledFeatures.add(helmet("emerald_helmet", "minecraft:emerald", "vanillaenhanced:emerald_helmet"));
-            enabledFeatures.add(chestplate("emerald_chestplate", "minecraft:emerald", "vanillaenhanced:emerald_chestplate"));
-            enabledFeatures.add(leggings("emerald_leggings", "minecraft:emerald", "vanillaenhanced:emerald_leggings"));
-            enabledFeatures.add(boots("emerald_boots", "minecraft:emerald", "vanillaenhanced:emerald_boots"));
+            enabledFeatures.add(pickaxe("emerald_pickaxe", "minecraft:emerald", "enriched:emerald_pickaxe"));
+            enabledFeatures.add(sword("emerald_sword", "minecraft:emerald", "enriched:emerald_sword"));
+            enabledFeatures.add(axe("emerald_axe", "minecraft:emerald", "enriched:emerald_axe"));
+            enabledFeatures.add(shovel("emerald_shovel", "minecraft:emerald", "enriched:emerald_shovel"));
+            enabledFeatures.add(hoe("emerald_hoe", "minecraft:emerald", "enriched:emerald_hoe"));
+            enabledFeatures.add(helmet("emerald_helmet", "minecraft:emerald", "enriched:emerald_helmet"));
+            enabledFeatures.add(chestplate("emerald_chestplate", "minecraft:emerald", "enriched:emerald_chestplate"));
+            enabledFeatures.add(leggings("emerald_leggings", "minecraft:emerald", "enriched:emerald_leggings"));
+            enabledFeatures.add(boots("emerald_boots", "minecraft:emerald", "enriched:emerald_boots"));
         }
         if (config.enableObsidianGear) {
-            enabledFeatures.add(blend("obsidian_alloy_blend", "minecraft:iron_ingot", "minecraft:obsidian", "vanillaenhanced:obsidian_alloy_blend"));
-            enabledFeatures.add(pickaxe("obsidian_pickaxe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_pickaxe"));
-            enabledFeatures.add(sword("obsidian_sword", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_sword"));
-            enabledFeatures.add(axe("obsidian_axe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_axe"));
-            enabledFeatures.add(shovel("obsidian_shovel", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_shovel"));
-            enabledFeatures.add(hoe("obsidian_hoe", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_hoe"));
-            enabledFeatures.add(helmet("obsidian_helmet", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_helmet"));
-            enabledFeatures.add(chestplate("obsidian_chestplate", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_chestplate"));
-            enabledFeatures.add(leggings("obsidian_leggings", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_leggings"));
-            enabledFeatures.add(boots("obsidian_boots", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_boots"));
-            enabledFeatures.add(blasting("obsidian_alloy_ingot_blasting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 100));
-            enabledFeatures.add(smelting("obsidian_alloy_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
-            enabledFeatures.add(block("obsidian_alloy_block", "vanillaenhanced:obsidian_alloy_ingot", "vanillaenhanced:obsidian_alloy_block", 1));
-            enabledFeatures.add(uncrafting("obsidian_alloy_ingot", "vanillaenhanced:obsidian_alloy_block", "vanillaenhanced:obsidian_alloy_ingot", 9));
+            enabledFeatures.add(blend("obsidian_alloy_blend", "minecraft:iron_ingot", "minecraft:obsidian", "enriched:obsidian_alloy_blend"));
+            enabledFeatures.add(pickaxe("obsidian_pickaxe", "enriched:obsidian_alloy_ingot", "enriched:obsidian_pickaxe"));
+            enabledFeatures.add(sword("obsidian_sword", "enriched:obsidian_alloy_ingot", "enriched:obsidian_sword"));
+            enabledFeatures.add(axe("obsidian_axe", "enriched:obsidian_alloy_ingot", "enriched:obsidian_axe"));
+            enabledFeatures.add(shovel("obsidian_shovel", "enriched:obsidian_alloy_ingot", "enriched:obsidian_shovel"));
+            enabledFeatures.add(hoe("obsidian_hoe", "enriched:obsidian_alloy_ingot", "enriched:obsidian_hoe"));
+            enabledFeatures.add(helmet("obsidian_helmet", "enriched:obsidian_alloy_ingot", "enriched:obsidian_helmet"));
+            enabledFeatures.add(chestplate("obsidian_chestplate", "enriched:obsidian_alloy_ingot", "enriched:obsidian_chestplate"));
+            enabledFeatures.add(leggings("obsidian_leggings", "enriched:obsidian_alloy_ingot", "enriched:obsidian_leggings"));
+            enabledFeatures.add(boots("obsidian_boots", "enriched:obsidian_alloy_ingot", "enriched:obsidian_boots"));
+            enabledFeatures.add(blasting("obsidian_alloy_ingot_blasting", "enriched:obsidian_alloy_blend", "enriched:obsidian_alloy_ingot", 0.7, 100));
+            enabledFeatures.add(smelting("obsidian_alloy_ingot_smelting", "enriched:obsidian_alloy_blend", "enriched:obsidian_alloy_ingot", 0.7, 200));
+            enabledFeatures.add(block("obsidian_alloy_block", "enriched:obsidian_alloy_ingot", "enriched:obsidian_alloy_block", 1));
+            enabledFeatures.add(uncrafting("obsidian_alloy_ingot", "enriched:obsidian_alloy_block", "enriched:obsidian_alloy_ingot", 9));
         }
 
         if (config.enableSteelGear) {
-            enabledFeatures.add(pickaxe_tag("steel_pickaxe", "c:steel_ingots", "vanillaenhanced:steel_pickaxe"));
-            enabledFeatures.add(sword_tag("steel_sword", "c:steel_ingots", "vanillaenhanced:steel_sword"));
-            enabledFeatures.add(axe_tag("steel_axe", "c:steel_ingots", "vanillaenhanced:steel_axe"));
-            enabledFeatures.add(shovel_tag("steel_shovel", "c:steel_ingots", "vanillaenhanced:steel_shovel"));
-            enabledFeatures.add(hoe_tag("steel_hoe", "c:steel_ingots", "vanillaenhanced:steel_hoe"));
-            enabledFeatures.add(helmet_tag("steel_helmet", "c:steel_ingots", "vanillaenhanced:steel_helmet"));
-            enabledFeatures.add(chestplate_tag("steel_chestplate", "c:steel_ingots", "vanillaenhanced:steel_chestplate"));
-            enabledFeatures.add(leggings_tag("steel_leggings", "c:steel_ingots", "vanillaenhanced:steel_leggings"));
-            enabledFeatures.add(boots_tag("steel_boots", "c:steel_ingots", "vanillaenhanced:steel_boots"));
-            enabledFeatures.add(blend("steel_blend", "minecraft:iron_ingot", "minecraft:coal", "vanillaenhanced:steel_blend"));
-            enabledFeatures.add(blasting("steel_ingot_blasting", "vanillaenhanced:steel_blend", "vanillaenhanced:steel_ingot", 0.7, 100));
-            enabledFeatures.add(smelting("steel_ingot_smelting", "vanillaenhanced:obsidian_alloy_blend", "vanillaenhanced:obsidian_alloy_ingot", 0.7, 200));
-            enabledFeatures.add(block("steel_block", "vanillaenhanced:steel_ingot", "vanillaenhanced:steel_block", 1));
-            enabledFeatures.add(uncrafting("steel_ingot", "vanillaenhanced:steel_block", "vanillaenhanced:steel_ingot", 9));
+            enabledFeatures.add(pickaxe_tag("steel_pickaxe", "c:steel_ingots", "enriched:steel_pickaxe"));
+            enabledFeatures.add(sword_tag("steel_sword", "c:steel_ingots", "enriched:steel_sword"));
+            enabledFeatures.add(axe_tag("steel_axe", "c:steel_ingots", "enriched:steel_axe"));
+            enabledFeatures.add(shovel_tag("steel_shovel", "c:steel_ingots", "enriched:steel_shovel"));
+            enabledFeatures.add(hoe_tag("steel_hoe", "c:steel_ingots", "enriched:steel_hoe"));
+            enabledFeatures.add(helmet_tag("steel_helmet", "c:steel_ingots", "enriched:steel_helmet"));
+            enabledFeatures.add(chestplate_tag("steel_chestplate", "c:steel_ingots", "enriched:steel_chestplate"));
+            enabledFeatures.add(leggings_tag("steel_leggings", "c:steel_ingots", "enriched:steel_leggings"));
+            enabledFeatures.add(boots_tag("steel_boots", "c:steel_ingots", "enriched:steel_boots"));
+            enabledFeatures.add(blend("steel_blend", "minecraft:iron_ingot", "minecraft:coal", "enriched:steel_blend"));
+            enabledFeatures.add(blasting("steel_ingot_blasting", "enriched:steel_blend", "enriched:steel_ingot", 0.7, 100));
+            enabledFeatures.add(smelting("steel_ingot_smelting", "enriched:obsidian_alloy_blend", "enriched:obsidian_alloy_ingot", 0.7, 200));
+            enabledFeatures.add(block("steel_block", "enriched:steel_ingot", "enriched:steel_block", 1));
+            enabledFeatures.add(uncrafting("steel_ingot", "enriched:steel_block", "enriched:steel_ingot", 9));
         }
 
         if (config.enableRubyGear) {
-            enabledFeatures.add(pickaxe_tag("ruby_pickaxe", "c:rubies", "vanillaenhanced:ruby_pickaxe"));
-            enabledFeatures.add(sword_tag("ruby_sword", "c:rubies", "vanillaenhanced:ruby_sword"));
-            enabledFeatures.add(axe_tag("ruby_axe", "c:rubies", "vanillaenhanced:ruby_axe"));
-            enabledFeatures.add(shovel_tag("ruby_shovel", "c:rubies", "vanillaenhanced:ruby_shovel"));
-            enabledFeatures.add(hoe_tag("ruby_hoe", "c:rubies", "vanillaenhanced:ruby_hoe"));
-            enabledFeatures.add(helmet_tag("ruby_helmet", "c:rubies", "vanillaenhanced:ruby_helmet"));
-            enabledFeatures.add(chestplate_tag("ruby_chestplate", "c:rubies", "vanillaenhanced:ruby_chestplate"));
-            enabledFeatures.add(leggings_tag("ruby_leggings", "c:rubies", "vanillaenhanced:ruby_leggings"));
-            enabledFeatures.add(boots_tag("ruby_boots", "c:rubies", "vanillaenhanced:ruby_boots"));
-            enabledFeatures.add(block("ruby_block", "vanillaenhanced:ruby", "vanillaenhanced:ruby_block", 1));
-            enabledFeatures.add(uncrafting("ruby", "vanillaenhanced:ruby_block", "vanillaenhanced:ruby", 9));
+            enabledFeatures.add(pickaxe_tag("ruby_pickaxe", "c:rubies", "enriched:ruby_pickaxe"));
+            enabledFeatures.add(sword_tag("ruby_sword", "c:rubies", "enriched:ruby_sword"));
+            enabledFeatures.add(axe_tag("ruby_axe", "c:rubies", "enriched:ruby_axe"));
+            enabledFeatures.add(shovel_tag("ruby_shovel", "c:rubies", "enriched:ruby_shovel"));
+            enabledFeatures.add(hoe_tag("ruby_hoe", "c:rubies", "enriched:ruby_hoe"));
+            enabledFeatures.add(helmet_tag("ruby_helmet", "c:rubies", "enriched:ruby_helmet"));
+            enabledFeatures.add(chestplate_tag("ruby_chestplate", "c:rubies", "enriched:ruby_chestplate"));
+            enabledFeatures.add(leggings_tag("ruby_leggings", "c:rubies", "enriched:ruby_leggings"));
+            enabledFeatures.add(boots_tag("ruby_boots", "c:rubies", "enriched:ruby_boots"));
+            enabledFeatures.add(block("ruby_block", "enriched:ruby", "enriched:ruby_block", 1));
+            enabledFeatures.add(uncrafting("ruby", "enriched:ruby_block", "enriched:ruby", 9));
         }
 
         if (config.enableSapphireGear) {
-            enabledFeatures.add(pickaxe_tag("sapphire_pickaxe", "c:sapphires", "vanillaenhanced:sapphire_pickaxe"));
-            enabledFeatures.add(sword_tag("sapphire_sword", "c:sapphires", "vanillaenhanced:sapphire_sword"));
-            enabledFeatures.add(axe_tag("sapphire_axe", "c:sapphires", "vanillaenhanced:sapphire_axe"));
-            enabledFeatures.add(shovel_tag("sapphire_shovel", "c:sapphires", "vanillaenhanced:sapphire_shovel"));
-            enabledFeatures.add(hoe_tag("sapphire_hoe", "c:sapphires", "vanillaenhanced:sapphire_hoe"));
-            enabledFeatures.add(helmet_tag("sapphire_helmet", "c:sapphires", "vanillaenhanced:sapphire_helmet"));
-            enabledFeatures.add(chestplate_tag("sapphire_chestplate", "c:sapphires", "vanillaenhanced:sapphire_chestplate"));
-            enabledFeatures.add(leggings_tag("sapphire_leggings", "c:sapphires", "vanillaenhanced:sapphire_leggings"));
-            enabledFeatures.add(boots_tag("sapphire_boots", "c:sapphires", "vanillaenhanced:sapphire_boots"));
-            enabledFeatures.add(block("sapphire_block", "vanillaenhanced:sapphire", "vanillaenhanced:sapphire_block", 1));
-            enabledFeatures.add(uncrafting("sapphire", "vanillaenhanced:sapphire_block", "vanillaenhanced:sapphire", 9));
+            enabledFeatures.add(pickaxe_tag("sapphire_pickaxe", "c:sapphires", "enriched:sapphire_pickaxe"));
+            enabledFeatures.add(sword_tag("sapphire_sword", "c:sapphires", "enriched:sapphire_sword"));
+            enabledFeatures.add(axe_tag("sapphire_axe", "c:sapphires", "enriched:sapphire_axe"));
+            enabledFeatures.add(shovel_tag("sapphire_shovel", "c:sapphires", "enriched:sapphire_shovel"));
+            enabledFeatures.add(hoe_tag("sapphire_hoe", "c:sapphires", "enriched:sapphire_hoe"));
+            enabledFeatures.add(helmet_tag("sapphire_helmet", "c:sapphires", "enriched:sapphire_helmet"));
+            enabledFeatures.add(chestplate_tag("sapphire_chestplate", "c:sapphires", "enriched:sapphire_chestplate"));
+            enabledFeatures.add(leggings_tag("sapphire_leggings", "c:sapphires", "enriched:sapphire_leggings"));
+            enabledFeatures.add(boots_tag("sapphire_boots", "c:sapphires", "enriched:sapphire_boots"));
+            enabledFeatures.add(block("sapphire_block", "enriched:sapphire", "enriched:sapphire_block", 1));
+            enabledFeatures.add(uncrafting("sapphire", "enriched:sapphire_block", "enriched:sapphire", 9));
         }
 
         if (config.enableTanzaniteGear) {
-            enabledFeatures.add(pickaxe("tanzanite_pickaxe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_pickaxe"));
-            enabledFeatures.add(sword("tanzanite_sword", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_sword"));
-            enabledFeatures.add(axe("tanzanite_axe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_axe"));
-            enabledFeatures.add(shovel("tanzanite_shovel", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_shovel"));
-            enabledFeatures.add(hoe("tanzanite_hoe", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_hoe"));
-            enabledFeatures.add(helmet("tanzanite_helmet", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_helmet"));
-            enabledFeatures.add(chestplate("tanzanite_chestplate", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_chestplate"));
-            enabledFeatures.add(leggings("tanzanite_leggings", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_leggings"));
-            enabledFeatures.add(boots("tanzanite_boots", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_boots"));
-            enabledFeatures.add(block("tanzanite_block", "vanillaenhanced:tanzanite", "vanillaenhanced:tanzanite_block", 1));
-            enabledFeatures.add(uncrafting("tanzanite", "vanillaenhanced:tanzanite_block", "vanillaenhanced:tanzanite", 9));
+            enabledFeatures.add(pickaxe("tanzanite_pickaxe", "enriched:tanzanite", "enriched:tanzanite_pickaxe"));
+            enabledFeatures.add(sword("tanzanite_sword", "enriched:tanzanite", "enriched:tanzanite_sword"));
+            enabledFeatures.add(axe("tanzanite_axe", "enriched:tanzanite", "enriched:tanzanite_axe"));
+            enabledFeatures.add(shovel("tanzanite_shovel", "enriched:tanzanite", "enriched:tanzanite_shovel"));
+            enabledFeatures.add(hoe("tanzanite_hoe", "enriched:tanzanite", "enriched:tanzanite_hoe"));
+            enabledFeatures.add(helmet("tanzanite_helmet", "enriched:tanzanite", "enriched:tanzanite_helmet"));
+            enabledFeatures.add(chestplate("tanzanite_chestplate", "enriched:tanzanite", "enriched:tanzanite_chestplate"));
+            enabledFeatures.add(leggings("tanzanite_leggings", "enriched:tanzanite", "enriched:tanzanite_leggings"));
+            enabledFeatures.add(boots("tanzanite_boots", "enriched:tanzanite", "enriched:tanzanite_boots"));
+            enabledFeatures.add(block("tanzanite_block", "enriched:tanzanite", "enriched:tanzanite_block", 1));
+            enabledFeatures.add(uncrafting("tanzanite", "enriched:tanzanite_block", "enriched:tanzanite", 9));
         }
         //Uncrafting
         if (config.enableUncrafting) {
@@ -247,7 +247,7 @@ public class DynamicRecipes {
                 "OOO",
                 "III"
         ).item('I', "iron_ingot").item('O', "obsidian").result(
-                "vanillaenhanced:obsidian_alloy_ingot", 9
+                "enriched:obsidian_alloy_ingot", 9
         ).build(Enriched.identifier("obsidian_alloy_ingot"));
     }
 
