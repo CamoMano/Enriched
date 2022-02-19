@@ -12,7 +12,7 @@ public class ToolMaterialSapphire implements ToolMaterial {
 
     @Override
     public float getMiningSpeedMultiplier() {
-        return 7.5f;
+        return 8.0f;
     }
 
     @Override
