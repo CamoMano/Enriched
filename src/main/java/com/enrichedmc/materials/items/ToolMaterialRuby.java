@@ -1,7 +1,6 @@
 package com.enrichedmc.materials.items;
 
 import com.enrichedmc.registry.ModInit;
-import com.vanillaenhanced.registry.ModInit;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
