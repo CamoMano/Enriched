@@ -1,9 +1,9 @@
-<p><img src="https://i.imgur.com/qJt6UQ4.png" alt="" width="433" height="183" /></p>
+<p><img src="https://raw.githubusercontent.com/CamoMano/Enriched/master/images/Enriched.png"/></p>
 
 [![Crowdin](https://badges.crowdin.net/vanillaenhanced/localized.svg)](https://crowdin.com/project/vanillaenhanced)
-[![CurseForge](http://cf.way2muchnoise.eu/vanilla-enhanced.svg)](https://www.curseforge.com/minecraft/mc-mods/vanilla-enhanced)
-[![CurseForge](http://cf.way2muchnoise.eu/versions/vanilla-enhanced.svg)](https://www.curseforge.com/minecraft/mc-mods/vanilla-enhanced)
-<p>Vanilla Enhanced is a mod that adds enhancements and vanilla-esque additions to the game as well as bringing back removed features.<br /><a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_blank" rel="noopener noreferrer"><img src="https://i.imgur.com/Ol1Tcf8.png" alt="" width="146" height="49" /></a><br /><br /><span style="font-size: 36px;"><strong>Features:</strong></span><span style="font-size: 36px;"><strong><span style="font-size: 14px;"><br /><span style="font-size: 18px;">New Biomes:</span><br /></span></strong></span></p>
+[![CurseForge](http://cf.way2muchnoise.eu/enriched.svg)](https://www.curseforge.com/minecraft/mc-mods/enriched)
+[![CurseForge](http://cf.way2muchnoise.eu/versions/enriched.svg)](https://www.curseforge.com/minecraft/mc-mods/enriched)
+<p>Enriched is a mod that adds enhancements and vanilla-esque additions to the game as well as bringing back removed features.<br /><a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_blank" rel="noopener noreferrer"><img src="https://i.imgur.com/Ol1Tcf8.png" alt="" width="146" height="49" /></a><br /><br /><span style="font-size: 36px;"><strong>Features:</strong></span><span style="font-size: 36px;"><strong><span style="font-size: 14px;"><br /><span style="font-size: 18px;">New Biomes:</span><br /></span></strong></span></p>
 <p><span style="font-size: 14px;"><strong><a href="https://github.com/CamoMano/Vanilla-Enhanced/wiki/Biomes#redwood-forest" target="_blank" rel="noopener noreferrer">Redwood Forest:</a><br /><img src="https://i.imgur.com/iLhS0ce.png" alt="" width="1125" height="596" /></strong></span></p>
 <p><span style="font-size: 14px;"><strong><a href="https://github.com/CamoMano/Vanilla-Enhanced/wiki/Biomes#diverse-forest" target="_blank" rel="noopener noreferrer">Diverse Forest:</a><br /><img src="https://i.imgur.com/Rdhgag3.png" alt="" width="1125" height="596" /><br /></strong></span></p>
 <p><span style="font-size: 18px;"><span style="font-size: 18px;"><strong>New Materials:</strong></span></p>
