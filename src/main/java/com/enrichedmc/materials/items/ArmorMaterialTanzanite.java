@@ -13,7 +13,7 @@ public class ArmorMaterialTanzanite implements ArmorMaterial {
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()] * 18;
+        return BASE_DURABILITY[slot.getEntitySlotId()] * 22;
     }
 
     @Override

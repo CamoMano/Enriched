@@ -17,7 +17,7 @@ public class ToolMaterialRuby implements ToolMaterial {
 
     @Override
     public float getAttackDamage() {
-        return 4.0f;
+        return 4.5f;
     }
 
     @Override
