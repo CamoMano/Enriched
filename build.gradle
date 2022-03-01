@@ -22,6 +22,8 @@ repositories {
 	maven {
 	name = 'TerraformersMC Archive'
 	url = "https://maven.terraformersmc.com/" }
+	maven { 
+	url "https://jitpack.io" }
 }
 
 loom {
