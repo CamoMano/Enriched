@@ -12,8 +12,8 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.decorator.*;
 import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.List;
 
