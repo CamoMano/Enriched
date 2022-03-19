@@ -1,158 +1,391 @@
 package com.enrichedmc.world;
 
 import com.enrichedmc.config.ModConfig;
-import com.enrichedmc.world.feature.ore.OreConfiguredFeatures;
+import com.enrichedmc.registry.ModInit;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.placementmodifier.*;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
-import java.util.List;
+import java.util.Arrays;
 
 import static com.enrichedmc.Enriched.MOD_ID;
-import static com.enrichedmc.world.Features.REDWOOD_TREE_PATCH_FEATURE;
+import static com.enrichedmc.world.Features.REDWOOD_TREE_PLACED_FEATURE;
 
 public class Generator {
+    private static ConfiguredFeature<?, ?> ORE_SAPPHIRE_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                    ModInit.SAPPHIRE_ORE.getDefaultState(),
+                    4)); // vein
 
-    public static final PlacedFeature ORE_SAPPHIRE = OreConfiguredFeatures.ORE_SAPPHIRE.withPlacement(modifiersWithCount(6, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(0),
-                    YOffset.fixed(32))));
-    public static final PlacedFeature ORE_SAPPHIRE_DEEPSLATE = OreConfiguredFeatures.ORE_SAPPHIRE_DEEPSLATE.withPlacement(modifiersWithCount(6, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(-64)
-                    , YOffset.fixed(32))));
-    public static final PlacedFeature ORE_SAPPHIRE_COMMON = OreConfiguredFeatures.ORE_SAPPHIRE.withPlacement(modifiersWithCount(9, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(0),
-                    YOffset.fixed(32))));
-    public static final PlacedFeature ORE_SAPPHIRE_DEEPSLATE_COMMON = OreConfiguredFeatures.ORE_SAPPHIRE_DEEPSLATE.withPlacement(modifiersWithCount(9, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(-64)
-                    , YOffset.fixed(32))));
-    public static final PlacedFeature ORE_RUBY = OreConfiguredFeatures.ORE_RUBY.withPlacement(modifiersWithCount(6, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(0),
-                    YOffset.fixed(32))));
-    public static final PlacedFeature ORE_RUBY_DEEPSLATE = OreConfiguredFeatures.ORE_RUBY_DEEPSLATE.withPlacement(modifiersWithCount(6, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(-64)
-                    , YOffset.fixed(32))));
-    public static final PlacedFeature ORE_RUBY_COMMON = OreConfiguredFeatures.ORE_RUBY.withPlacement(modifiersWithCount(9, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(0),
-                    YOffset.fixed(32))));
-    public static final PlacedFeature ORE_RUBY_DEEPSLATE_COMMON = OreConfiguredFeatures.ORE_RUBY_DEEPSLATE.withPlacement(modifiersWithCount(9, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(-64)
-                    , YOffset.fixed(32))));
-    public static final PlacedFeature ORE_TANZANITE = OreConfiguredFeatures.ORE_TANZANITE.withPlacement(modifiersWithCount(6, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(0),
-                    YOffset.fixed(32))));
-    public static final PlacedFeature ORE_TANZANITE_DEEPSLATE = OreConfiguredFeatures.ORE_TANZANITE_DEEPSLATE.withPlacement(modifiersWithCount(6, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(-64)
-                    , YOffset.fixed(32))));
-    public static final PlacedFeature ORE_TANZANITE_COMMON = OreConfiguredFeatures.ORE_TANZANITE.withPlacement(modifiersWithCount(9, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(0),
-                    YOffset.fixed(32))));
-    public static final PlacedFeature ORE_TANZANITE_DEEPSLATE_COMMON = OreConfiguredFeatures.ORE_TANZANITE_DEEPSLATE.withPlacement(modifiersWithCount(9, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(-64)
-                    , YOffset.fixed(32))));
-    public static final PlacedFeature GEN_DARK_GRANITE = OreConfiguredFeatures.GEN_DARK_GRANITE.withPlacement(modifiersWithCount(7, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(0),
-                    YOffset.fixed(75))));
-    public static final PlacedFeature GEN_MARBLE = OreConfiguredFeatures.GEN_MARBLE.withPlacement(modifiersWithCount(7, //per chunk
-            HeightRangePlacementModifier.uniform(YOffset.fixed(0),
-                    YOffset.fixed(80))));
+    public static PlacedFeature ORE_SAPPHIRE_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_SAPPHIRE_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(6), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
+            )); // height
 
+    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_SAPPHIRE_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                    ModInit.DEEPSLATE_SAPPHIRE_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_DEEPSLATE_SAPPHIRE_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_DEEPSLATE_SAPPHIRE_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(6), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
+            )); // height
+
+    private static ConfiguredFeature<?, ?> ORE_SAPPHIRE_COMMON_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                    ModInit.SAPPHIRE_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_SAPPHIRE_COMMON_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_SAPPHIRE_COMMON_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(9), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
+            )); // height
+
+    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_SAPPHIRE_COMMON_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                    ModInit.DEEPSLATE_SAPPHIRE_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_DEEPSLATE_SAPPHIRE_COMMON_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_DEEPSLATE_SAPPHIRE_COMMON_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(9), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
+            )); // height
+
+
+    private static ConfiguredFeature<?, ?> ORE_RUBY_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                    ModInit.RUBY_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_RUBY_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_RUBY_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(6), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
+            )); // height
+
+    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_RUBY_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                    ModInit.DEEPSLATE_RUBY_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_DEEPSLATE_RUBY_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_DEEPSLATE_RUBY_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(6), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
+            )); // height
+
+    private static ConfiguredFeature<?, ?> ORE_RUBY_COMMON_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                    ModInit.RUBY_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_RUBY_COMMON_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_RUBY_COMMON_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(9), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
+            )); // height
+
+    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_RUBY_COMMON_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                    ModInit.DEEPSLATE_RUBY_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_DEEPSLATE_RUBY_COMMON_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_DEEPSLATE_RUBY_COMMON_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(9), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
+            )); // height
+
+
+    private static ConfiguredFeature<?, ?> ORE_TANZANITE_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                    ModInit.TANZANITE_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_TANZANITE_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_TANZANITE_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(6), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
+            )); // height
+
+    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_TANZANITE_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                    ModInit.DEEPSLATE_TANZANITE_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_DEEPSLATE_TANZANITE_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_DEEPSLATE_TANZANITE_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(6), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
+            )); // height
+
+    private static ConfiguredFeature<?, ?> ORE_TANZANITE_COMMON_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                    ModInit.TANZANITE_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_TANZANITE_COMMON_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_TANZANITE_COMMON_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(9), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
+            )); // height
+
+    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_TANZANITE_COMMON_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                    ModInit.DEEPSLATE_TANZANITE_ORE.getDefaultState(),
+                    4)); // vein
+
+    public static PlacedFeature ORE_DEEPSLATE_TANZANITE_COMMON_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_DEEPSLATE_TANZANITE_COMMON_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(9), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
+            )); // height
+
+
+    private static ConfiguredFeature<?, ?> ORE_DARK_GRANITE_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                    ModInit.DARK_GRANITE.getDefaultState(),
+                    30)); // vein
+
+    public static PlacedFeature ORE_DARK_GRANITE_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_DARK_GRANITE_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(8), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(70))
+            )); // height
+
+
+    private static ConfiguredFeature<?, ?> ORE_MARBLE_FEATURE = new ConfiguredFeature
+            (Feature.ORE, new OreFeatureConfig(
+                    OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                    ModInit.MARBLE.getDefaultState(),
+                    30)); // vein
+
+    public static PlacedFeature ORE_MARBLE_PLACED_FEATURE = new PlacedFeature(
+            RegistryEntry.of(ORE_MARBLE_FEATURE),
+            Arrays.asList(
+                    CountPlacementModifier.of(8), // number of veins per chunk
+                    SquarePlacementModifier.of(), // spreading horizontally
+                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(75))
+            )); // height
 
     public static void register(ModConfig config) {
-        OreConfiguredFeatures.register();
 
-        // * Sapphire Common
-        RegistryKey<PlacedFeature> oreSapphire = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_sapphire"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreSapphire.getValue(), ORE_SAPPHIRE);
-        RegistryKey<PlacedFeature> oreSapphireDeepslate = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_sapphire_deepslate"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreSapphireDeepslate.getValue(), ORE_SAPPHIRE_DEEPSLATE);
-        RegistryKey<PlacedFeature> oreSapphireCommon = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_sapphire_common"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreSapphireCommon.getValue(), ORE_SAPPHIRE_COMMON);
-        RegistryKey<PlacedFeature> oreSapphireDeepslateCommon = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_sapphire_deepslate_common"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreSapphireDeepslateCommon.getValue(), ORE_SAPPHIRE_DEEPSLATE_COMMON);
+        // * Sapphire
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_sapphire"), ORE_SAPPHIRE_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_sapphire"),
+                ORE_SAPPHIRE_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_sapphire_common"), ORE_SAPPHIRE_COMMON_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_sapphire_common"),
+                ORE_SAPPHIRE_COMMON_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_deepslate_sapphire"), ORE_DEEPSLATE_SAPPHIRE_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_sapphire"),
+                ORE_DEEPSLATE_SAPPHIRE_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_deepslate_sapphire_common"), ORE_DEEPSLATE_SAPPHIRE_COMMON_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_sapphire_common"),
+                ORE_DEEPSLATE_SAPPHIRE_COMMON_PLACED_FEATURE);
+
 
         if (config.enableSapphireOre) {
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireCommon);
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireDeepslateCommon);
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphire);
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSapphireDeepslate);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_sapphire")));
+
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_sapphire_common")));
+
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_deepslate_sapphire")));
+
+
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_deepslate_sapphire_common")));
         }
 
 
-        // * Ruby Common
-        RegistryKey<PlacedFeature> oreRuby = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_ruby"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreRuby.getValue(), ORE_RUBY);
-        RegistryKey<PlacedFeature> oreRubyDeepslate = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_ruby_deepslate"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreRubyDeepslate.getValue(), ORE_RUBY_DEEPSLATE);
-        RegistryKey<PlacedFeature> oreRubyCommon = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_ruby_common"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreRubyCommon.getValue(), ORE_RUBY_COMMON);
-        RegistryKey<PlacedFeature> oreRubyDeepslateCommon = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_ruby_deepslate_common"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreRubyDeepslateCommon.getValue(), ORE_RUBY_DEEPSLATE_COMMON);
+        // * Ruby
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_ruby"), ORE_RUBY_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby"),
+                ORE_RUBY_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_ruby_common"), ORE_RUBY_COMMON_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby_common"),
+                ORE_RUBY_COMMON_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_deepslate_ruby"), ORE_DEEPSLATE_RUBY_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_ruby"),
+                ORE_DEEPSLATE_RUBY_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_deepslate_ruby_common"), ORE_DEEPSLATE_RUBY_COMMON_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_ruby_common"),
+                ORE_DEEPSLATE_RUBY_COMMON_PLACED_FEATURE);
+
+
         if (config.enableRubyOre) {
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyCommon);
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyDeepslateCommon);
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreRuby);
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreRubyDeepslate);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_ruby")));
+
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_ruby_common")));
+
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_deepslate_ruby")));
+
+
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_deepslate_ruby_common")));
         }
 
 
-        // * Tanzanite Common
-        RegistryKey<PlacedFeature> oreTanzanite = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_tanzanite"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreTanzanite.getValue(), ORE_TANZANITE);
-        RegistryKey<PlacedFeature> oreTanzaniteDeepslate = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_tanzanite_deepslate"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreTanzaniteDeepslate.getValue(), ORE_TANZANITE_DEEPSLATE);
-        RegistryKey<PlacedFeature> oreTanzaniteCommon = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_tanzanite_common"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreTanzaniteCommon.getValue(), ORE_TANZANITE_COMMON);
-        RegistryKey<PlacedFeature> oreTanzaniteDeepslateCommon = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "ore_tanzanite_deepslate_common"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreTanzaniteDeepslateCommon.getValue(), ORE_TANZANITE_DEEPSLATE_COMMON);
+        // * Tanzanite
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_tanzanite"), ORE_TANZANITE_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_tanzanite"),
+                ORE_TANZANITE_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_tanzanite_common"), ORE_TANZANITE_COMMON_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_tanzanite_common"),
+                ORE_TANZANITE_COMMON_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_deepslate_tanzanite"), ORE_DEEPSLATE_TANZANITE_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_tanzanite"),
+                ORE_DEEPSLATE_TANZANITE_PLACED_FEATURE);
+
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_deepslate_tanzanite_common"), ORE_DEEPSLATE_TANZANITE_COMMON_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_tanzanite_common"),
+                ORE_DEEPSLATE_TANZANITE_COMMON_PLACED_FEATURE);
+
+
         if (config.enableTanzaniteOre) {
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreTanzaniteCommon);
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES, oreTanzaniteDeepslateCommon);
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreTanzanite);
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreTanzaniteDeepslate);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_tanzanite")));
+
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_tanzanite_common")));
+
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_deepslate_tanzanite")));
+
+
+            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_deepslate_tanzanite_common")));
         }
 
 
         //Stone Types
         //Marble
-        RegistryKey<PlacedFeature> genMarble = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "marble"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, genMarble.getValue(), GEN_MARBLE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_marble"), ORE_MARBLE_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_marble"),
+                ORE_MARBLE_PLACED_FEATURE);
         if (config.enableMarble) {
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, genMarble);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_marble")));
         }
         //Dark Granite
-        RegistryKey<PlacedFeature> genDarkGranite = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(MOD_ID, "dark_granite"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, genDarkGranite.getValue(), GEN_DARK_GRANITE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
+                new Identifier(MOD_ID, "ore_dark_granite"), ORE_DARK_GRANITE_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_dark_granite"),
+                ORE_DARK_GRANITE_PLACED_FEATURE);
         if (config.enableDarkGranite) {
-            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, genDarkGranite);
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_dark_granite")));
         }
+
 
         if (config.enableRedwoodTrees) {
-            BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA), GenerationStep.Feature.VEGETAL_DECORATION, getKey(REDWOOD_TREE_PATCH_FEATURE));
+            BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA), GenerationStep.Feature.VEGETAL_DECORATION, getKey(REDWOOD_TREE_PLACED_FEATURE));
         }
 
     }
 
-
-    private static List<PlacementModifier> modifiers(PlacementModifier first, PlacementModifier second) {
-        return List.of(first, SquarePlacementModifier.of(), second, BiomePlacementModifier.of());
-    }
-
-    private static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier modifier) {
-        return modifiers(CountPlacementModifier.of(count), modifier);
-    }
 
     public static RegistryKey<PlacedFeature> getKey(PlacedFeature f) {
         return BuiltinRegistries.PLACED_FEATURE.getKey(f).orElseThrow();
     }
+
 
 }
 
