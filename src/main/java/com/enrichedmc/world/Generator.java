@@ -2,7 +2,9 @@ package com.enrichedmc.world;
 
 import com.enrichedmc.config.ModConfig;
 import com.enrichedmc.registry.ModInit;
+import net.fabricmc.fabric.api.biome.v1.BiomeModificationContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -19,9 +21,9 @@ import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 import java.util.Arrays;
-
 import static com.enrichedmc.Enriched.MOD_ID;
-import static com.enrichedmc.world.Features.REDWOOD_TREE_PLACED_FEATURE;
+import static com.enrichedmc.world.Features.*;
+import static net.minecraft.util.registry.BuiltinRegistries.PLACED_FEATURE;
 
 public class Generator {
     private static ConfiguredFeature<?, ?> ORE_SAPPHIRE_FEATURE = new ConfiguredFeature
@@ -229,22 +231,22 @@ public class Generator {
         // * Sapphire
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_sapphire"), ORE_SAPPHIRE_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_sapphire"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_sapphire"),
                 ORE_SAPPHIRE_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_sapphire_common"), ORE_SAPPHIRE_COMMON_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_sapphire_common"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_sapphire_common"),
                 ORE_SAPPHIRE_COMMON_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_deepslate_sapphire"), ORE_DEEPSLATE_SAPPHIRE_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_sapphire"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_sapphire"),
                 ORE_DEEPSLATE_SAPPHIRE_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_deepslate_sapphire_common"), ORE_DEEPSLATE_SAPPHIRE_COMMON_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_sapphire_common"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_sapphire_common"),
                 ORE_DEEPSLATE_SAPPHIRE_COMMON_PLACED_FEATURE);
 
 
@@ -271,22 +273,22 @@ public class Generator {
         // * Ruby
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_ruby"), ORE_RUBY_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby"),
                 ORE_RUBY_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_ruby_common"), ORE_RUBY_COMMON_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby_common"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby_common"),
                 ORE_RUBY_COMMON_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_deepslate_ruby"), ORE_DEEPSLATE_RUBY_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_ruby"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_ruby"),
                 ORE_DEEPSLATE_RUBY_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_deepslate_ruby_common"), ORE_DEEPSLATE_RUBY_COMMON_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_ruby_common"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_ruby_common"),
                 ORE_DEEPSLATE_RUBY_COMMON_PLACED_FEATURE);
 
 
@@ -313,22 +315,22 @@ public class Generator {
         // * Tanzanite
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_tanzanite"), ORE_TANZANITE_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_tanzanite"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_tanzanite"),
                 ORE_TANZANITE_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_tanzanite_common"), ORE_TANZANITE_COMMON_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_tanzanite_common"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_tanzanite_common"),
                 ORE_TANZANITE_COMMON_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_deepslate_tanzanite"), ORE_DEEPSLATE_TANZANITE_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_tanzanite"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_tanzanite"),
                 ORE_DEEPSLATE_TANZANITE_PLACED_FEATURE);
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_deepslate_tanzanite_common"), ORE_DEEPSLATE_TANZANITE_COMMON_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_tanzanite_common"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_deepslate_tanzanite_common"),
                 ORE_DEEPSLATE_TANZANITE_COMMON_PLACED_FEATURE);
 
 
@@ -356,7 +358,7 @@ public class Generator {
         //Marble
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_marble"), ORE_MARBLE_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_marble"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_marble"),
                 ORE_MARBLE_PLACED_FEATURE);
         if (config.enableMarble) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
@@ -366,7 +368,7 @@ public class Generator {
         //Dark Granite
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_dark_granite"), ORE_DARK_GRANITE_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(MOD_ID, "ore_dark_granite"),
+        Registry.register(PLACED_FEATURE, new Identifier(MOD_ID, "ore_dark_granite"),
                 ORE_DARK_GRANITE_PLACED_FEATURE);
         if (config.enableDarkGranite) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
@@ -381,12 +383,11 @@ public class Generator {
 
     }
 
-
     public static RegistryKey<PlacedFeature> getKey(PlacedFeature f) {
         return BuiltinRegistries.PLACED_FEATURE.getKey(f).orElseThrow();
+
+
     }
-
-
 }
 
 

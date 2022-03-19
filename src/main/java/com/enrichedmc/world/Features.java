@@ -1,9 +1,8 @@
 package com.enrichedmc.world;
 
-import com.google.common.collect.ImmutableList;
 import com.enrichedmc.registry.ModInit;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -18,31 +17,35 @@ import org.apache.logging.log4j.Level;
 
 import java.util.List;
 
-import static com.enrichedmc.Enriched.*;
+import static com.enrichedmc.Enriched.LOGGER;
+import static com.enrichedmc.Enriched.MOD_NAME;
 
 
 public class Features {
 
     public static ConfiguredFeature<TreeFeatureConfig, ?> REDWOOD_TREE_FEATURE;
     public static PlacedFeature REDWOOD_TREE_PLACED_FEATURE;
+
     public static void log(Level level, String message) {
         LOGGER.log(level, "[" + MOD_NAME + "] " + message);
     }
 
     public static void register() {
-        REDWOOD_TREE_FEATURE = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, "rubber_tree",
+        REDWOOD_TREE_FEATURE = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, "redwood_tree",
                 new ConfiguredFeature<>(Feature.TREE, redwoodTree().build()));
 
-        REDWOOD_TREE_PLACED_FEATURE = Registry.register(BuiltinRegistries.PLACED_FEATURE,  "rubber_tree",
+        REDWOOD_TREE_PLACED_FEATURE = Registry.register(BuiltinRegistries.PLACED_FEATURE, "redwood_tree",
                 new PlacedFeature(getEntry(BuiltinRegistries.CONFIGURED_FEATURE, REDWOOD_TREE_FEATURE), List.of(
                         PlacedFeatures.wouldSurvive(ModInit.REDWOOD_SAPLING)
                 ))
         );
+
+
         log(Level.INFO, "Loaded features.");
 
     }
 
-    private static TreeFeatureConfig.Builder redwoodTree() {
+    public static TreeFeatureConfig.Builder redwoodTree() {
         return new TreeFeatureConfig.Builder((BlockStateProvider.of(ModInit.REDWOOD_LOG)), new MegaJungleTrunkPlacer(16, 16, 16), BlockStateProvider.of(ModInit.REDWOOD_LEAVES), new JungleFoliagePlacer(ConstantIntProvider.create(2),
                 ConstantIntProvider.create(0),
                 2),
@@ -52,8 +55,7 @@ public class Features {
     }
 
 
-
-    public static  <T> RegistryEntry<T> getEntry(Registry<T> registry, T value) {
+    public static <T> RegistryEntry<T> getEntry(Registry<T> registry, T value) {
         return registry.getEntry(registry.getKey(value).orElseThrow()).orElseThrow();
     }
 
