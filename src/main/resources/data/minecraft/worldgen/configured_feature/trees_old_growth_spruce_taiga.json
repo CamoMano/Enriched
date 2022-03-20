@@ -1,0 +1,20 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "minecraft:mega_spruce_checked",
+        "chance": 0.33333334
+      },
+	  {
+        "feature": "minecraft:redwood_tree_placed_feature",
+        "chance": 0.1
+      },
+      {
+        "feature": "minecraft:pine_checked",
+        "chance": 0.33333334
+      }
+    ],
+    "default": "minecraft:spruce_checked"
+  },
+  "type": "minecraft:random_selector"
+}

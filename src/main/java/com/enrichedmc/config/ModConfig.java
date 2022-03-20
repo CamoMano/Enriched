@@ -65,10 +65,12 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableTanzaniteOre = true;
-
+/*
     @ConfigEntry.Category("Generation")
     @ConfigEntry.Gui.Tooltip()
     public boolean enableRedwoodTrees = true;
+
+ */
 /*
     //Biomes
     @ConfigEntry.Category("Biomes")
