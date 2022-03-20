@@ -16,7 +16,7 @@ public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
 
     @Override
     protected RegistryEntry<ConfiguredFeature<?, ?>> getLargeTreeFeature(Random random) {
-       return Features.getEntry(BuiltinRegistries.CONFIGURED_FEATURE, Features.REDWOOD_TREE_FEATURE);
+       return null;
     }
 
 }

@@ -2,10 +2,7 @@ package com.enrichedmc.world;
 
 import com.enrichedmc.config.ModConfig;
 import com.enrichedmc.registry.ModInit;
-import net.fabricmc.fabric.api.biome.v1.BiomeModificationContext;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.biome.v1.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -227,7 +224,6 @@ public class Generator {
             )); // height
 
     public static void register(ModConfig config) {
-
         // * Sapphire
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
                 new Identifier(MOD_ID, "ore_sapphire"), ORE_SAPPHIRE_FEATURE);
