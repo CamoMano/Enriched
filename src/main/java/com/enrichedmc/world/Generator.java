@@ -2,14 +2,14 @@ package com.enrichedmc.world;
 
 import com.enrichedmc.config.ModConfig;
 import com.enrichedmc.registry.ModInit;
-import net.fabricmc.fabric.api.biome.v1.*;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
@@ -18,8 +18,8 @@ import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 import java.util.Arrays;
+
 import static com.enrichedmc.Enriched.MOD_ID;
-import static com.enrichedmc.world.Features.*;
 import static net.minecraft.util.registry.BuiltinRegistries.PLACED_FEATURE;
 
 public class Generator {
@@ -372,10 +372,12 @@ public class Generator {
                             new Identifier(MOD_ID, "ore_dark_granite")));
         }
 
-
+/*
         if (config.enableRedwoodTrees) {
-            BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA), GenerationStep.Feature.VEGETAL_DECORATION, getKey(REDWOOD_TREE_PLACED_FEATURE));
+            BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION, getKey(REDWOOD_TREE_PLACED_FEATURE));
         }
+
+ */
 
     }
 

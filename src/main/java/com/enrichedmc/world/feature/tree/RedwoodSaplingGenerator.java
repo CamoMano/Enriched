@@ -8,6 +8,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 import java.util.Random;
 
+
 public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
     @Override
     protected RegistryEntry<? extends ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bl) {
@@ -16,7 +17,7 @@ public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
 
     @Override
     protected RegistryEntry<ConfiguredFeature<?, ?>> getLargeTreeFeature(Random random) {
-       return null;
+        return Features.getEntry(BuiltinRegistries.CONFIGURED_FEATURE, Features.REDWOOD_TREE_FEATURE);
     }
 
 }
