@@ -50,7 +50,6 @@ public class Features {
                         BlockStateProvider.of(ModInit.REDWOOD_LEAVES),
                         new JungleFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),
                         new TwoLayersFeatureSize(4, 1, 2)))
-                .decorators(ImmutableList.of(TrunkVineTreeDecorator.INSTANCE, LeavesVineTreeDecorator.INSTANCE))
                 .build());
 
         log(Level.INFO, "Loaded features.");
