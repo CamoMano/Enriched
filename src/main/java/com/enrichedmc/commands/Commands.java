@@ -9,7 +9,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class Commands {
     public static void register() {
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated, CommandRegistrationCallback) -> {
-            dispatcher.register(literal("ve")
+            dispatcher.register(literal("enriched")
                 .then(literal("version")
                     .executes(context -> {
                         System.out.println(Enriched.MOD_NAME + " " + Enriched.MOD_VERSION);
