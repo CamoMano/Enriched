@@ -4,6 +4,8 @@ import com.enrichedmc.config.ModConfig;
 import com.enrichedmc.registry.ModInit;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.tag.BiomeTags;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -16,6 +18,7 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
+import net.fabricmc.fabric.api.tag.convention.v1.*;
 
 import java.util.Arrays;
 
@@ -251,18 +254,20 @@ public class Generator {
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_sapphire")));
 
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES,
-                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-                            new Identifier(MOD_ID, "ore_sapphire_common")));
 
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_deepslate_sapphire")));
 
 
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES,
+            BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.ICY), GenerationStep.Feature.UNDERGROUND_ORES,
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_deepslate_sapphire_common")));
+
+            BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.ICY), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_sapphire_common")));
+
         }
 
 
@@ -293,18 +298,21 @@ public class Generator {
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_ruby")));
 
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
-                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-                            new Identifier(MOD_ID, "ore_ruby_common")));
+
 
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_deepslate_ruby")));
 
 
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
+           BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_deepslate_ruby_common")));
+            BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_ruby_common")));
+
+
         }
 
 
@@ -335,18 +343,23 @@ public class Generator {
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_tanzanite")));
 
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
-                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-                            new Identifier(MOD_ID, "ore_tanzanite_common")));
+
 
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_deepslate_tanzanite")));
 
 
-            BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.UNDERGROUND_ORES,
+          BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES,
                     RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                             new Identifier(MOD_ID, "ore_deepslate_tanzanite_common")));
+            BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.JUNGLE), GenerationStep.Feature.UNDERGROUND_ORES,
+                    RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                            new Identifier(MOD_ID, "ore_tanzanite_common")));
+
+
+
+
         }
 
 

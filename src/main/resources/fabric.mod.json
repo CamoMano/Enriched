@@ -13,7 +13,7 @@
 	"RDKRACZ"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/enriched",
+    "homepage": "https://enrichedmc.com/",
     "sources": "https://github.com/CamoMano/Enriched",
     "issues": "https://github.com/CamoMano/Enriched/issues"
   },
@@ -36,8 +36,8 @@
     "enriched.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.13.3",
-    "minecraft": "1.18.x",
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.19.x",
     "fabric": "*",
     "java": ">=17"
   },
