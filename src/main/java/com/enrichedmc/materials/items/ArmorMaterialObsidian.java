@@ -48,6 +48,6 @@ public class ArmorMaterialObsidian implements ArmorMaterial {
 
     @Override
     public float getKnockbackResistance() {
-        return 1.0f;
+        return 0.1f;
     }
 }

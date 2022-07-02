@@ -23,7 +23,7 @@ public class BeehiveBlockMixin {
             if (ThreadLocalRandom.current().nextInt(3) == 2) {
                 //System.out.println("Yes");
                 HoneySlime honeySlime = HONEY_SLIME.create(world);
-                honeySlime.refreshPositionAndAngles((double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, 0.0F, 0.0F);
+                honeySlime.refreshPositionAndAngles((double) pos.getX() + 0.5D, pos.getY(), (double) pos.getZ() + 0.5D, 0.0F, 0.0F);
                 honeySlime.setHealth(1f);
                 world.spawnEntity(honeySlime);
                 return;

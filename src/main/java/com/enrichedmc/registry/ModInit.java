@@ -43,18 +43,18 @@ public class ModInit {
     public static final Block OBSIDIAN_ALLOY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool().sounds(METAL).strength(40.0f, 1000.0f));
     public static final Block DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
-    public static final Block DARK_GRANITE_STAIRS = new StairsBase(DARK_GRANITE.getDefaultState(),  FabricBlockSettings.copyOf(DARK_GRANITE));
+    public static final Block DARK_GRANITE_STAIRS = new StairsBase(DARK_GRANITE.getDefaultState(), FabricBlockSettings.copyOf(DARK_GRANITE));
     public static final Block DARK_GRANITE_WALL = new WallBase(DARK_GRANITE);
     public static final Block POLISHED_DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block POLISHED_DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
-    public static final Block POLISHED_DARK_GRANITE_STAIRS = new StairsBase(POLISHED_DARK_GRANITE.getDefaultState(),  FabricBlockSettings.copyOf(POLISHED_DARK_GRANITE));
+    public static final Block POLISHED_DARK_GRANITE_STAIRS = new StairsBase(POLISHED_DARK_GRANITE.getDefaultState(), FabricBlockSettings.copyOf(POLISHED_DARK_GRANITE));
     public static final Block MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block MARBLE_STAIRS = new StairsBase(MARBLE.getDefaultState(), FabricBlockSettings.copyOf(MARBLE));
     public static final Block MARBLE_WALL = new WallBase(MARBLE);
     public static final Block POLISHED_MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_GRANITE).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block POLISHED_MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
-    public static final Block POLISHED_MARBLE_STAIRS = new StairsBase(POLISHED_MARBLE.getDefaultState(),  FabricBlockSettings.copyOf(POLISHED_MARBLE));
+    public static final Block POLISHED_MARBLE_STAIRS = new StairsBase(POLISHED_MARBLE.getDefaultState(), FabricBlockSettings.copyOf(POLISHED_MARBLE));
     public static final Block REDWOOD_LEAVES = new LeavesBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_LEAVES).ticksRandomly().sounds(BlockSoundGroup.GRASS).strength(0.2f, 0.2f));
     public static final Block STRIPPED_REDWOOD_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_SPRUCE_LOG).sounds(BlockSoundGroup.WOOD).strength(2.0f, 2.0f));
     public static final Block STRIPPED_REDWOOD_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_SPRUCE_WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0f, 2.0f));
@@ -62,7 +62,7 @@ public class ModInit {
     public static final Block REDWOOD_WOOD = new StripableBlock(SPRUCE_WOOD, STRIPPED_REDWOOD_WOOD);
     public static final Block REDWOOD_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
     public static final Block REDWOOD_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
-    public static final Block REDWOOD_STAIRS = new StairsBase(REDWOOD_PLANKS.getDefaultState(),  FabricBlockSettings.copyOf(REDWOOD_PLANKS));
+    public static final Block REDWOOD_STAIRS = new StairsBase(REDWOOD_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(REDWOOD_PLANKS));
     public static final Block REDWOOD_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
     public static final Block REDWOOD_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
     public static final Block REDWOOD_SAPLING = new BlockRedwoodSapling();
@@ -94,11 +94,11 @@ public class ModInit {
     public static final Item BEEF_STEW = new BowlFood(new Item.Settings().group(ItemGroup.FOOD).maxCount(1).food(new FoodComponent.Builder().hunger(12).saturationModifier(14.0F).build()));
     public static final Item BERRY_JUICE = new BottleFood(new Item.Settings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.8F).build()));
     public static final EntityType<HoneySlime> HONEY_SLIME = Registry.register(
-        Registry.ENTITY_TYPE,
-        new Identifier(MOD_ID, "honey_slime"),
-        FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, HoneySlime::new)
-            .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
-            .build()
+            Registry.ENTITY_TYPE,
+            new Identifier(MOD_ID, "honey_slime"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, HoneySlime::new)
+                    .dimensions(EntityDimensions.changing(2.04f, 2.04f)).trackRangeChunks(12)
+                    .build()
     );
 
     //Register
@@ -308,15 +308,15 @@ public class ModInit {
         //Honey Slime
         FabricDefaultAttributeRegistry.register(HONEY_SLIME, HostileEntity.createHostileAttributes());
         Registry.register(
-            Registry.ITEM, new Identifier(MOD_ID, "honey_slime_spawn_egg"),
-            new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings().group(ItemGroup.MISC))
+                Registry.ITEM, new Identifier(MOD_ID, "honey_slime_spawn_egg"),
+                new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings().group(ItemGroup.MISC))
         );
         item("honey_ball", HONEY_BALL);
 
     }
 
     public static <T> void register(
-        Registry<T> type, String name, T element
+            Registry<T> type, String name, T element
     ) {
         Registry.register(type, new Identifier(MOD_ID, name), element);
     }
@@ -330,7 +330,7 @@ public class ModInit {
     }
 
     public static void blockItem(
-        String name, Block item, ItemGroup group
+            String name, Block item, ItemGroup group
     ) {
         item(name, new BlockItem(item, new Item.Settings().group(group)));
     }
