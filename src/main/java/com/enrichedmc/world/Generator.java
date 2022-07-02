@@ -26,7 +26,7 @@ import static com.enrichedmc.Enriched.MOD_ID;
 import static net.minecraft.util.registry.BuiltinRegistries.PLACED_FEATURE;
 
 public class Generator {
-    private static ConfiguredFeature<?, ?> ORE_SAPPHIRE_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_SAPPHIRE_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModInit.SAPPHIRE_ORE.getDefaultState(),
@@ -40,7 +40,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_SAPPHIRE_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_DEEPSLATE_SAPPHIRE_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                     ModInit.DEEPSLATE_SAPPHIRE_ORE.getDefaultState(),
@@ -54,7 +54,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_SAPPHIRE_COMMON_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_SAPPHIRE_COMMON_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModInit.SAPPHIRE_ORE.getDefaultState(),
@@ -68,7 +68,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_SAPPHIRE_COMMON_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_DEEPSLATE_SAPPHIRE_COMMON_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                     ModInit.DEEPSLATE_SAPPHIRE_ORE.getDefaultState(),
@@ -83,7 +83,7 @@ public class Generator {
             )); // height
 
 
-    private static ConfiguredFeature<?, ?> ORE_RUBY_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_RUBY_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModInit.RUBY_ORE.getDefaultState(),
@@ -97,7 +97,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_RUBY_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_DEEPSLATE_RUBY_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                     ModInit.DEEPSLATE_RUBY_ORE.getDefaultState(),
@@ -111,7 +111,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_RUBY_COMMON_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_RUBY_COMMON_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModInit.RUBY_ORE.getDefaultState(),
@@ -125,7 +125,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_RUBY_COMMON_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_DEEPSLATE_RUBY_COMMON_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                     ModInit.DEEPSLATE_RUBY_ORE.getDefaultState(),
@@ -140,7 +140,7 @@ public class Generator {
             )); // height
 
 
-    private static ConfiguredFeature<?, ?> ORE_TANZANITE_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_TANZANITE_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModInit.TANZANITE_ORE.getDefaultState(),
@@ -154,7 +154,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_TANZANITE_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_DEEPSLATE_TANZANITE_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                     ModInit.DEEPSLATE_TANZANITE_ORE.getDefaultState(),
@@ -168,7 +168,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_TANZANITE_COMMON_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_TANZANITE_COMMON_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModInit.TANZANITE_ORE.getDefaultState(),
@@ -182,7 +182,7 @@ public class Generator {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))
             )); // height
 
-    private static ConfiguredFeature<?, ?> ORE_DEEPSLATE_TANZANITE_COMMON_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_DEEPSLATE_TANZANITE_COMMON_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                     ModInit.DEEPSLATE_TANZANITE_ORE.getDefaultState(),
@@ -197,7 +197,7 @@ public class Generator {
             )); // height
 
 
-    private static ConfiguredFeature<?, ?> ORE_DARK_GRANITE_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_DARK_GRANITE_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModInit.DARK_GRANITE.getDefaultState(),
@@ -212,7 +212,7 @@ public class Generator {
             )); // height
 
 
-    private static ConfiguredFeature<?, ?> ORE_MARBLE_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> ORE_MARBLE_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModInit.MARBLE.getDefaultState(),
