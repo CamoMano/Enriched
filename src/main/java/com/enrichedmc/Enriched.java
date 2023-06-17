@@ -37,9 +37,9 @@ public class Enriched implements ModInitializer {
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         //Setup
         ModInit.Register();
-        Features.register();
+        //Features.register();
         //Biomes.Register(config);
-        Generator.register(config);
+        //Generator.register(config);
         DynamicRecipes.register(config);
         Commands.register();
     }

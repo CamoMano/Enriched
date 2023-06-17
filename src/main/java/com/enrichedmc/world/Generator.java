@@ -1,31 +1,7 @@
 package com.enrichedmc.world;
 
-import com.enrichedmc.config.ModConfig;
-import com.enrichedmc.registry.ModInit;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.tag.BiomeTags;
-import net.minecraft.tag.TagKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
-import net.fabricmc.fabric.api.tag.convention.v1.*;
-
-import java.util.Arrays;
-
-import static com.enrichedmc.Enriched.MOD_ID;
-import static net.minecraft.util.registry.BuiltinRegistries.PLACED_FEATURE;
-
 public class Generator {
+    /*
     private static final ConfiguredFeature<?, ?> ORE_SAPPHIRE_FEATURE = new ConfiguredFeature
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
@@ -360,6 +336,8 @@ public class Generator {
 
 
 
+
+
         }
 
 
@@ -385,12 +363,10 @@ public class Generator {
                             new Identifier(MOD_ID, "ore_dark_granite")));
         }
 
-/*
         if (config.enableRedwoodTrees) {
             BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION, getKey(REDWOOD_TREE_PLACED_FEATURE));
         }
 
- */
 
     }
 
@@ -399,6 +375,8 @@ public class Generator {
 
 
     }
+         */
+
 }
 
 

@@ -1,30 +1,7 @@
 package com.enrichedmc.world;
 
-import com.enrichedmc.registry.ModInit;
-import com.google.common.collect.ImmutableList;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.JungleFoliagePlacer;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
-import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
-import net.minecraft.world.gen.treedecorator.LeavesVineTreeDecorator;
-import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
-import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
-import org.apache.logging.log4j.Level;
-
-import java.util.List;
-
-import static com.enrichedmc.Enriched.LOGGER;
-import static com.enrichedmc.Enriched.MOD_NAME;
-
-
 public class Features {
-
+/*
     public static ConfiguredFeature<TreeFeatureConfig, ?> REDWOOD_TREE_FEATURE;
     public static PlacedFeature REDWOOD_TREE_PLACED_FEATURE;
     public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> REDWOOD_TREE;
@@ -71,4 +48,6 @@ public class Features {
     }
 
 
+
+ */
 }
