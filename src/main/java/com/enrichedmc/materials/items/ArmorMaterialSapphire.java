@@ -2,6 +2,7 @@ package com.enrichedmc.materials.items;
 
 import com.enrichedmc.registry.ModInit;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
@@ -12,13 +13,13 @@ public class ArmorMaterialSapphire implements ArmorMaterial {
     private static final int[] PROTECTION_AMOUNTS = new int[]{3, 6, 6, 3};
 
     @Override
-    public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()] * 18;
+    public int getDurability(ArmorItem.Type type) {
+        return BASE_DURABILITY[type.getEquipmentSlot().getEntitySlotId()] * 18;
     }
 
     @Override
-    public int getProtectionAmount(EquipmentSlot slot) {
-        return PROTECTION_AMOUNTS[slot.getEntitySlotId()];
+    public int getProtection(ArmorItem.Type type) {
+        return PROTECTION_AMOUNTS[type.getEquipmentSlot().getEntitySlotId()];
     }
 
     @Override

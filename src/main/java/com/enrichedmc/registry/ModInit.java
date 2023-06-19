@@ -4,11 +4,15 @@ import com.enrichedmc.blocks.*;
 import com.enrichedmc.entity.HoneySlime;
 import com.enrichedmc.items.*;
 import com.enrichedmc.materials.items.*;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.block.sapling.JungleSaplingGenerator;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -17,8 +21,12 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.PlacedFeature;
 
 import static com.enrichedmc.Enriched.MOD_ID;
 import static net.minecraft.block.Blocks.SPRUCE_LOG;
@@ -35,15 +43,19 @@ public class ModInit {
     public static final ArmorMaterial TANZANITE_ARMOR = new ArmorMaterialTanzanite();
     //Blocks
     public static final Block RUBY_ORE = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
-    //public static final RegistryKey<PlacedFeature> CUSTOM_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier("examplemod","ore_custom"));
+    public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ruby_ore"));
     public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block TANZANITE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block TANZANITE_ORE = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
+    public static final RegistryKey<PlacedFeature> TANZANITE_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"tanzanite_ore"));
     public static final Block SAPPHIRE_ORE = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
+    public static final RegistryKey<PlacedFeature> SAPPHIRE_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"sapphire_ore"));
     public static final Block SAPPHIRE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().sounds(BlockSoundGroup.METAL).strength(6.0f, 7.0f));
     public static final Block OBSIDIAN_ALLOY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool().sounds(METAL).strength(40.0f, 1000.0f));
     public static final Block DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
+
+    public static final RegistryKey<PlacedFeature> DARK_GRANITE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"dark_granite"));
     public static final Block DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block DARK_GRANITE_STAIRS = new StairsBase(DARK_GRANITE.getDefaultState(), FabricBlockSettings.copyOf(DARK_GRANITE));
     public static final Block DARK_GRANITE_WALL = new WallBase(DARK_GRANITE);
@@ -51,6 +63,7 @@ public class ModInit {
     public static final Block POLISHED_DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block POLISHED_DARK_GRANITE_STAIRS = new StairsBase(POLISHED_DARK_GRANITE.getDefaultState(), FabricBlockSettings.copyOf(POLISHED_DARK_GRANITE));
     public static final Block MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
+    public static final RegistryKey<PlacedFeature> MARBLE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"marble"));
     public static final Block MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block MARBLE_STAIRS = new StairsBase(MARBLE.getDefaultState(), FabricBlockSettings.copyOf(MARBLE));
     public static final Block MARBLE_WALL = new WallBase(MARBLE);
@@ -66,20 +79,13 @@ public class ModInit {
     public static final Block REDWOOD_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
     public static final Block REDWOOD_STAIRS = new StairsBase(REDWOOD_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(REDWOOD_PLANKS));
     public static final Block REDWOOD_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
-    public static final Block REDWOOD_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f));
-    public static final Block REDWOOD_SAPLING = new BlockRedwoodSapling();
+    public static final Block REDWOOD_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.WOOD).strength(2.0f, 3.0f), WoodType.SPRUCE);
+    public static final Block REDWOOD_SAPLING = new SaplingBlock(new JungleSaplingGenerator(), AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY));
     public static final Block POTTED_REDWOOD_SAPLING = new FlowerPotBlock(ModInit.REDWOOD_SAPLING, FabricBlockSettings.copyOf(Blocks.POTTED_SPRUCE_SAPLING));
-    public static final Block REDWOOD_BUTTON = new WoodButtonBase(REDWOOD_PLANKS);
-    public static final Block REDWOOD_DOOR = new WoodDoorBase(FabricBlockSettings.copyOf(REDWOOD_PLANKS));
-    public static final Block REDWOOD_PRESSURE_PLATE = new WoodPressurePlateBase(REDWOOD_PLANKS);
-    public static final Block REDWOOD_TRAPDOOR = new WoodTrapdoorBase(REDWOOD_PLANKS);
-    public static final Block BAMBOO_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
-    public static final Block BAMBOO_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SLAB).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
-    public static final Block BAMBOO_STAIRS = new StairsBase(BAMBOO_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(BAMBOO_PLANKS));
-    public static final Block BAMBOO_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
-    public static final Block BAMBOO_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_FENCE_GATE).sounds(BlockSoundGroup.BAMBOO).strength(1.5f, 1.5f));
-    public static final Block BAMBOO_DOOR = new WoodDoorBase(FabricBlockSettings.copyOf(BAMBOO_PLANKS));
-    public static final Block BAMBOO_TRAPDOOR = new WoodTrapdoorBase(BAMBOO_PLANKS);
+    public static final Block REDWOOD_BUTTON = new ButtonBlock((FabricBlockSettings.copyOf(Blocks.SPRUCE_BUTTON)), BlockSetType.SPRUCE,4, true);
+    public static final Block REDWOOD_DOOR = new WoodDoorBase(FabricBlockSettings.copyOf(REDWOOD_PLANKS), BlockSetType.SPRUCE);
+    public static final Block REDWOOD_PRESSURE_PLATE = new WoodPressurePlateBase(REDWOOD_PLANKS, BlockSetType.SPRUCE);
+    public static final Block REDWOOD_TRAPDOOR = new WoodTrapdoorBase(REDWOOD_PLANKS, BlockSetType.SPRUCE);
     public static final Block DEEPSLATE_RUBY_ORE = new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
     public static final Block DEEPSLATE_SAPPHIRE_ORE = new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
     public static final Block DEEPSLATE_TANZANITE_ORE = new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.DEEPSLATE).strength(3.0f, 3.0f));
@@ -163,10 +169,10 @@ public class ModInit {
         item("obsidian_sword", new SwordBase(new ToolMaterialObsidian()));
         item("obsidian_hoe", new HoeBase(new ToolMaterialObsidian()));
         //Obsidian Armor
-        item("obsidian_helmet", new ArmorBase(OBSIDIAN_ARMOR, EquipmentSlot.HEAD));
-        item("obsidian_chestplate", new ArmorBase(OBSIDIAN_ARMOR, EquipmentSlot.CHEST));
-        item("obsidian_leggings", new ArmorBase(OBSIDIAN_ARMOR, EquipmentSlot.LEGS));
-        item("obsidian_boots", new ArmorBase(OBSIDIAN_ARMOR, EquipmentSlot.FEET));
+        item("obsidian_helmet", new ArmorBase(OBSIDIAN_ARMOR, ArmorItem.Type.HELMET));
+        item("obsidian_chestplate", new ArmorBase(OBSIDIAN_ARMOR, ArmorItem.Type.CHESTPLATE));
+        item("obsidian_leggings", new ArmorBase(OBSIDIAN_ARMOR, ArmorItem.Type.LEGGINGS));
+        item("obsidian_boots", new ArmorBase(OBSIDIAN_ARMOR, ArmorItem.Type.BOOTS));
         //Emerald Tools
         item("emerald_shovel", new ShovelBase(new ToolMaterialEmerald()));
         item("emerald_pickaxe", new PickaxeBase(new ToolMaterialEmerald()));
@@ -174,10 +180,10 @@ public class ModInit {
         item("emerald_sword", new SwordBase(new ToolMaterialEmerald()));
         item("emerald_hoe", new HoeBase(new ToolMaterialEmerald()));
         //Emerald Armor
-        item("emerald_helmet", new ArmorBase(EMERALD_ARMOR, EquipmentSlot.HEAD));
-        item("emerald_chestplate", new ArmorBase(EMERALD_ARMOR, EquipmentSlot.CHEST));
-        item("emerald_leggings", new ArmorBase(EMERALD_ARMOR, EquipmentSlot.LEGS));
-        item("emerald_boots", new ArmorBase(EMERALD_ARMOR, EquipmentSlot.FEET));
+        item("emerald_helmet", new ArmorBase(EMERALD_ARMOR, ArmorItem.Type.HELMET));
+        item("emerald_chestplate", new ArmorBase(EMERALD_ARMOR, ArmorItem.Type.CHESTPLATE));
+        item("emerald_leggings", new ArmorBase(EMERALD_ARMOR, ArmorItem.Type.LEGGINGS));
+        item("emerald_boots", new ArmorBase(EMERALD_ARMOR, ArmorItem.Type.BOOTS));
         //Steel Ingot/Block
         item("steel_ingot", STEEL_INGOT);
         item("steel_blend", STEEL_BLEND);
@@ -190,10 +196,10 @@ public class ModInit {
         item("steel_sword", new SwordBase(new ToolMaterialSteel()));
         item("steel_hoe", new HoeBase(new ToolMaterialSteel()));
         //Steel Armor
-        item("steel_helmet", new ArmorBase(STEEL_ARMOR, EquipmentSlot.HEAD));
-        item("steel_chestplate", new ArmorBase(STEEL_ARMOR, EquipmentSlot.CHEST));
-        item("steel_leggings", new ArmorBase(STEEL_ARMOR, EquipmentSlot.LEGS));
-        item("steel_boots", new ArmorBase(STEEL_ARMOR, EquipmentSlot.FEET));
+        item("steel_helmet", new ArmorBase(STEEL_ARMOR, ArmorItem.Type.HELMET));
+        item("steel_chestplate", new ArmorBase(STEEL_ARMOR, ArmorItem.Type.CHESTPLATE));
+        item("steel_leggings", new ArmorBase(STEEL_ARMOR, ArmorItem.Type.LEGGINGS));
+        item("steel_boots", new ArmorBase(STEEL_ARMOR, ArmorItem.Type.BOOTS));
         //Ruby Item/Block
         item("ruby", RUBY);
         block("ruby_ore", RUBY_ORE);
@@ -209,10 +215,10 @@ public class ModInit {
         item("ruby_sword", new SwordBase(new ToolMaterialRuby()));
         item("ruby_hoe", new HoeBase(new ToolMaterialRuby()));
         //Ruby Armor
-        item("ruby_helmet", new ArmorBase(RUBY_ARMOR, EquipmentSlot.HEAD));
-        item("ruby_chestplate", new ArmorBase(RUBY_ARMOR, EquipmentSlot.CHEST));
-        item("ruby_leggings", new ArmorBase(RUBY_ARMOR, EquipmentSlot.LEGS));
-        item("ruby_boots", new ArmorBase(RUBY_ARMOR, EquipmentSlot.FEET));
+        item("ruby_helmet", new ArmorBase(RUBY_ARMOR, ArmorItem.Type.HELMET));
+        item("ruby_chestplate", new ArmorBase(RUBY_ARMOR, ArmorItem.Type.CHESTPLATE));
+        item("ruby_leggings", new ArmorBase(RUBY_ARMOR, ArmorItem.Type.LEGGINGS));
+        item("ruby_boots", new ArmorBase(RUBY_ARMOR, ArmorItem.Type.BOOTS));
         //Sapphire Item/Block
         item("sapphire", SAPPHIRE);
         block("sapphire_ore", SAPPHIRE_ORE);
@@ -228,10 +234,10 @@ public class ModInit {
         item("sapphire_sword", new SwordBase(new ToolMaterialSapphire()));
         item("sapphire_hoe", new HoeBase(new ToolMaterialSapphire()));
         //Sapphire Armor
-        item("sapphire_helmet", new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.HEAD));
-        item("sapphire_chestplate", new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.CHEST));
-        item("sapphire_leggings", new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.LEGS));
-        item("sapphire_boots", new ArmorBase(SAPPHIRE_ARMOR, EquipmentSlot.FEET));
+        item("sapphire_helmet", new ArmorBase(SAPPHIRE_ARMOR, ArmorItem.Type.HELMET));
+        item("sapphire_chestplate", new ArmorBase(SAPPHIRE_ARMOR, ArmorItem.Type.CHESTPLATE));
+        item("sapphire_leggings", new ArmorBase(SAPPHIRE_ARMOR, ArmorItem.Type.LEGGINGS));
+        item("sapphire_boots", new ArmorBase(SAPPHIRE_ARMOR, ArmorItem.Type.BOOTS));
         //Tanzanite Item/Block
         item("tanzanite", TANZANITE);
         block("tanzanite_ore", TANZANITE_ORE);
@@ -247,10 +253,10 @@ public class ModInit {
         item("tanzanite_sword", new SwordBase(new ToolMaterialTanzanite()));
         item("tanzanite_hoe", new HoeBase(new ToolMaterialTanzanite()));
         //Tanzanite Armor
-        item("tanzanite_helmet", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.HEAD));
-        item("tanzanite_chestplate", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.CHEST));
-        item("tanzanite_leggings", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.LEGS));
-        item("tanzanite_boots", new ArmorBase(TANZANITE_ARMOR, EquipmentSlot.FEET));
+        item("tanzanite_helmet", new ArmorBase(TANZANITE_ARMOR, ArmorItem.Type.HELMET));
+        item("tanzanite_chestplate", new ArmorBase(TANZANITE_ARMOR, ArmorItem.Type.CHESTPLATE));
+        item("tanzanite_leggings", new ArmorBase(TANZANITE_ARMOR, ArmorItem.Type.LEGGINGS));
+        item("tanzanite_boots", new ArmorBase(TANZANITE_ARMOR, ArmorItem.Type.BOOTS));
         //Copper Tools
         item("copper_shovel", new ShovelBase(new ToolMaterialCopper()));
         item("copper_pickaxe", new PickaxeBase(new ToolMaterialCopper()));
@@ -294,6 +300,13 @@ public class ModInit {
                 new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings())
         );
         item("honey_ball", HONEY_BALL);
+
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, RUBY_ORE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, TANZANITE_ORE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, SAPPHIRE_ORE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, DARK_GRANITE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_PLACED_KEY);
 
     }
 

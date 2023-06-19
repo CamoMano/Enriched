@@ -1,15 +1,5 @@
 package com.enrichedmc.biome;
 
-import com.enrichedmc.config.ModConfig;
-import net.minecraft.sound.BiomeMoodSound;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.*;
-import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import org.apache.logging.log4j.Level;
-
 public final class Biomes {
     /*
     public static final RegistryKey<Biome> DIVERSE_FOREST = RegistryKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "diverse_forest"));
