@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "enriched:redwood_planks",
-    "enriched:bamboo_planks"
+    "enriched:redwood_planks"
   ]
 }

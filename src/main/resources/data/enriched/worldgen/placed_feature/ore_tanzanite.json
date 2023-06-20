@@ -1,5 +1,5 @@
 {
-  "feature": "enriched:sapphire_ore",
+  "feature": "enriched:ore_tanzanite",
   "placement": [
     {
       "type": "minecraft:count",
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:trapezoid",
         "min_inclusive": {
-          "above_bottom": -80
+          "absolute": -80
         },
         "max_inclusive": {
-          "above_bottom": 32
+          "absolute": 32
         }
       }
     },

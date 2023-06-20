@@ -22,8 +22,7 @@ public class BottleFood extends Item {
 
     //@Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        if (user instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) user;
+        if (user instanceof PlayerEntity player) {
             player.getHungerManager().eat(stack.getItem(), stack);
             player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
             if (player instanceof ServerPlayerEntity) {

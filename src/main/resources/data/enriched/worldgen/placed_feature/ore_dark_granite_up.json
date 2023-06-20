@@ -1,5 +1,5 @@
 {
-  "feature": "enriched:dark_granite",
+  "feature": "enriched:ore_dark_granite",
   "placement": [
     {
       "type": "minecraft:rarity_filter",

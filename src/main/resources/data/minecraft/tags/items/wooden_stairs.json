@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "enriched:bamboo_stairs",
     "enriched:redwood_stairs"
   ]
 }

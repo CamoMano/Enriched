@@ -15,7 +15,6 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.block.sapling.JungleSaplingGenerator;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.item.*;
@@ -43,19 +42,20 @@ public class ModInit {
     public static final ArmorMaterial TANZANITE_ARMOR = new ArmorMaterialTanzanite();
     //Blocks
     public static final Block RUBY_ORE = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
-    public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ruby_ore"));
+    public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ore_ruby"));
     public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block TANZANITE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block TANZANITE_ORE = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
-    public static final RegistryKey<PlacedFeature> TANZANITE_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"tanzanite_ore"));
+    public static final RegistryKey<PlacedFeature> TANZANITE_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ore_tanzanite"));
     public static final Block SAPPHIRE_ORE = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).requiresTool().sounds(BlockSoundGroup.STONE).strength(3.0f, 3.0f));
-    public static final RegistryKey<PlacedFeature> SAPPHIRE_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"sapphire_ore"));
+    public static final RegistryKey<PlacedFeature> SAPPHIRE_ORE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ore_sapphire"));
     public static final Block SAPPHIRE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool().sounds(BlockSoundGroup.STONE).strength(5.0f, 6.0f));
     public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().sounds(BlockSoundGroup.METAL).strength(6.0f, 7.0f));
     public static final Block OBSIDIAN_ALLOY_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).requiresTool().sounds(METAL).strength(40.0f, 1000.0f));
     public static final Block DARK_GRANITE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
 
-    public static final RegistryKey<PlacedFeature> DARK_GRANITE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"dark_granite"));
+    public static final RegistryKey<PlacedFeature> DARK_GRANITE_UP_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ore_dark_granite_up"));
+    public static final RegistryKey<PlacedFeature> DARK_GRANITE_LOW_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ore_dark_granite_low"));
     public static final Block DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block DARK_GRANITE_STAIRS = new StairsBase(DARK_GRANITE.getDefaultState(), FabricBlockSettings.copyOf(DARK_GRANITE));
     public static final Block DARK_GRANITE_WALL = new WallBase(DARK_GRANITE);
@@ -63,7 +63,8 @@ public class ModInit {
     public static final Block POLISHED_DARK_GRANITE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block POLISHED_DARK_GRANITE_STAIRS = new StairsBase(POLISHED_DARK_GRANITE.getDefaultState(), FabricBlockSettings.copyOf(POLISHED_DARK_GRANITE));
     public static final Block MARBLE = new Block(FabricBlockSettings.copyOf(Blocks.GRANITE).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
-    public static final RegistryKey<PlacedFeature> MARBLE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"marble"));
+    public static final RegistryKey<PlacedFeature> MARBLE_UP_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ore_marble_up"));
+    public static final RegistryKey<PlacedFeature> MARBLE_LOW_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID,"ore_marble_low"));
     public static final Block MARBLE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.GRANITE_SLAB).requiresTool().sounds(BlockSoundGroup.STONE).strength(1.5f, 6.0f));
     public static final Block MARBLE_STAIRS = new StairsBase(MARBLE.getDefaultState(), FabricBlockSettings.copyOf(MARBLE));
     public static final Block MARBLE_WALL = new WallBase(MARBLE);
@@ -305,8 +306,11 @@ public class ModInit {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, RUBY_ORE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, TANZANITE_ORE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, SAPPHIRE_ORE_PLACED_KEY);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, DARK_GRANITE_PLACED_KEY);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, DARK_GRANITE_UP_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, DARK_GRANITE_LOW_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_UP_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_LOW_KEY);
+
 
     }
 

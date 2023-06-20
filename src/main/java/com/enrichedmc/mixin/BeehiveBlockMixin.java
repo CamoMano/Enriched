@@ -26,7 +26,6 @@ public class BeehiveBlockMixin {
                 honeySlime.refreshPositionAndAngles((double) pos.getX() + 0.5D, pos.getY(), (double) pos.getZ() + 0.5D, 0.0F, 0.0F);
                 honeySlime.setHealth(1f);
                 world.spawnEntity(honeySlime);
-                return;
             }
         }
         //System.out.println("No");
