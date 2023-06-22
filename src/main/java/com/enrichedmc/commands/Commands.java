@@ -1,10 +1,10 @@
 package com.enrichedmc.commands;
 
-import com.mojang.brigadier.context.CommandContext;
-import com.enrichedmc.Enriched;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-
 import static net.minecraft.server.command.CommandManager.literal;
+
+import com.enrichedmc.Enriched;
+import com.mojang.brigadier.context.CommandContext;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 public class Commands {
     public static void register() {

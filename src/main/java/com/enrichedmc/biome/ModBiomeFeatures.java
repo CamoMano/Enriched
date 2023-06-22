@@ -1,11 +1,5 @@
 package com.enrichedmc.biome;
 
-import com.enrichedmc.world.Features;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.world.biome.GenerationSettings;
-import net.minecraft.world.biome.SpawnSettings;
-import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.*;
 
 public class ModBiomeFeatures {

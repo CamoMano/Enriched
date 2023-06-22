@@ -1,7 +1,6 @@
 package com.enrichedmc.items;
 
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ToolMaterial;
 
 public class AxeBase extends AxeItem {

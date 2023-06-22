@@ -1,6 +1,5 @@
 package com.enrichedmc.items;
 
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 

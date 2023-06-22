@@ -1,7 +1,6 @@
 package com.enrichedmc.materials.items;
 
 import com.enrichedmc.registry.ModInit;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;

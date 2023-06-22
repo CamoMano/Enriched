@@ -6,7 +6,8 @@ import net.minecraft.block.BlockSetType;
 import net.minecraft.block.PressurePlateBlock;
 
 public class WoodPressurePlateBase extends PressurePlateBlock {
-    public WoodPressurePlateBase(AbstractBlock copy, BlockSetType blockSetType) {
-        super(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copy(copy), blockSetType);
-    }
+  public WoodPressurePlateBase(AbstractBlock copy, BlockSetType blockSetType) {
+    super(
+        PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copy(copy), blockSetType);
+  }
 }

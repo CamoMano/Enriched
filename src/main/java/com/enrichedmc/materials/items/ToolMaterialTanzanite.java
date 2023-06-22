@@ -1,6 +1,9 @@
 package com.enrichedmc.materials.items;
 
 import com.enrichedmc.registry.ModInit;
+import net.fabricmc.fabric.api.event.Event;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -34,4 +37,5 @@ public class ToolMaterialTanzanite implements ToolMaterial {
     public Ingredient getRepairIngredient() {
         return Ingredient.ofItems(ModInit.TANZANITE);
     }
+
 }
