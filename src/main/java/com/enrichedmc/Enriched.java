@@ -4,6 +4,7 @@ import com.enrichedmc.commands.Commands;
 import com.enrichedmc.config.ModConfig;
 import com.enrichedmc.recipes.DynamicRecipes;
 import com.enrichedmc.registry.ModInit;
+import com.enrichedmc.world.Features;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -41,7 +42,7 @@ public class Enriched implements ModInitializer {
     ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
     // Setup
     ModInit.Register();
-    // Features.register();
+    Features.register();
     // Biomes.Register(config);
     // Generator.register(config);
     DynamicRecipes.register(config);

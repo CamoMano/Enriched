@@ -198,7 +198,7 @@
     [
       "minecraft:glow_lichen",
       "minecraft:patch_large_fern",
-      "minecraft:trees_old_growth_spruce_taiga",
+      "enriched:trees_redwood_forest",
       "minecraft:flower_default",
       "minecraft:patch_grass_taiga",
       "minecraft:patch_dead_bush",
@@ -208,8 +208,7 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common",
-      "enriched:redwood_tree_placed_feature"
+      "minecraft:patch_berry_common"
     ],
     [
       "minecraft:freeze_top_layer"

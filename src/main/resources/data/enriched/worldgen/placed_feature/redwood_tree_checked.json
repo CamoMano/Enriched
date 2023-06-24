@@ -1,5 +1,5 @@
 {
-  "feature": "minecraft:mega_jungle_tree",
+  "feature": "enriched:redwood_tree",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",

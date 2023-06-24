@@ -4,8 +4,8 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BeehiveBlockMixin",
-    "RecipeManagerMixin",
-	"IdentifierMixin"
+    "IdentifierMixin",
+    "RecipeManagerMixin"
   ],
   "client": [],
   "server": [],

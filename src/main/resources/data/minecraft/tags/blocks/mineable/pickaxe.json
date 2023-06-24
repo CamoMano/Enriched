@@ -1,31 +1,31 @@
-    {
-      "replace": false,
-      "values": [
-        "enriched:ruby_ore",
-		"enriched:sapphire_ore",
-		"enriched:tanzanite_ore",
-		"enriched:deepslate_ruby_ore",
-		"enriched:deepslate_sapphire_ore",
-		"enriched:deepslate_tanzanite_ore",
-		"enriched:ruby_block",
-		"enriched:sapphire_block",
-		"enriched:tanzanite_block",
-		"enriched:steel_block",
-		"enriched:obsidian_alloy_block",
-		"enriched:marble",
-		"enriched:marble_stairs",
-		"enriched:marble_slab",
-		"enriched:marble_wall",
-		"enriched:polished_marble",
-		"enriched:polished_marble_stairs",
-		"enriched:polished_marble_slab",
-		"enriched:dark_granite",
-		"enriched:dark_granite_stairs",
-		"enriched:dark_granite_slab",
-		"enriched:dark_granite_wall",
-		"enriched:polished_dark_granite",
-		"enriched:polished_dark_granite_stairs",
-		"enriched:polished_dark_granite_slab"
-      ]
-    }
+{
+  "replace": false,
+  "values": [
+    "enriched:ruby_ore",
+    "enriched:sapphire_ore",
+    "enriched:tanzanite_ore",
+    "enriched:deepslate_ruby_ore",
+    "enriched:deepslate_sapphire_ore",
+    "enriched:deepslate_tanzanite_ore",
+    "enriched:ruby_block",
+    "enriched:sapphire_block",
+    "enriched:tanzanite_block",
+    "enriched:steel_block",
+    "enriched:obsidian_alloy_block",
+    "enriched:marble",
+    "enriched:marble_stairs",
+    "enriched:marble_slab",
+    "enriched:marble_wall",
+    "enriched:polished_marble",
+    "enriched:polished_marble_stairs",
+    "enriched:polished_marble_slab",
+    "enriched:dark_granite",
+    "enriched:dark_granite_stairs",
+    "enriched:dark_granite_slab",
+    "enriched:dark_granite_wall",
+    "enriched:polished_dark_granite",
+    "enriched:polished_dark_granite_stairs",
+    "enriched:polished_dark_granite_slab"
+  ]
+}
 
