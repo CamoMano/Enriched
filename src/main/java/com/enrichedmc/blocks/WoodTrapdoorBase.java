@@ -6,7 +6,7 @@ import net.minecraft.block.BlockSetType;
 import net.minecraft.block.TrapdoorBlock;
 
 public class WoodTrapdoorBase extends TrapdoorBlock {
-    public WoodTrapdoorBase(AbstractBlock copy, BlockSetType blockSetType) {
-        super(FabricBlockSettings.copy(copy), blockSetType);
-    }
+  public WoodTrapdoorBase(AbstractBlock copy, BlockSetType blockSetType) {
+    super(FabricBlockSettings.copy(copy), blockSetType);
+  }
 }

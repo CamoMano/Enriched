@@ -1,6 +1,6 @@
 plugins {
-	id 'fabric-loom' version '1.2-SNAPSHOT'
-	id 'maven-publish'
+    id 'fabric-loom' version '1.3-SNAPSHOT'
+    id 'maven-publish'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -13,19 +13,21 @@ group = project.maven_group
 
 repositories {
     jcenter()
-	maven { 
-	name = "Cloth Config"
-	url = "https://maven.shedaniel.me/" }
-	//maven { 
-	//name = "TerraformersMC"
-	//url = "https://maven.terraformersmc.com/" }
-	maven {
-	name = 'TerraformersMC Archive'
-	url = "https://maven.terraformersmc.com/" }
+    maven {
+        name = "Cloth Config"
+        url = "https://maven.shedaniel.me/"
+    }
+    //maven {
+    //name = "TerraformersMC"
+    //url = "https://maven.terraformersmc.com/" }
+    maven {
+        name = 'TerraformersMC Archive'
+        url = "https://maven.terraformersmc.com/"
+    }
 }
 
 loom {
-accessWidenerPath =  file("src/main/resources/enriched.accesswidener")
+    accessWidenerPath = file("src/main/resources/enriched.accesswidener")
 }
 
 dependencies {
@@ -35,16 +37,16 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-    
+
     //Cloth Config
-	    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}") {
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
-	include "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
-    
+    include "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
+
     //Mod Menu
     modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
-      exclude module: 'fabric-api'
+        exclude module: 'fabric-api'
     }
 
     compileOnly 'org.jetbrains:annotations:16.0.2'
@@ -52,46 +54,46 @@ dependencies {
 }
 
 processResources {
-	inputs.property "version", project.version
-	
-	
-	filesMatching("fabric.mod.json") {
-		expand "version": project.version
-	}
+    inputs.property "version", project.version
+
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
 }
 
 
 tasks.withType(JavaCompile).configureEach {
-	// ensure that the encoding is set to UTF-8, no matter what the system default is
-	// this fixes some edge cases with special characters not displaying correctly
-	// see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
-	// If Javadoc is generated, this must be specified in that task too.
-	it.options.encoding = "UTF-8"
+    // ensure that the encoding is set to UTF-8, no matter what the system default is
+    // this fixes some edge cases with special characters not displaying correctly
+    // see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
+    // If Javadoc is generated, this must be specified in that task too.
+    it.options.encoding = "UTF-8"
 
-	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
-	it.options.release = 17
+    // Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
+    it.options.release = 17
 }
 jar {
-	from "LICENSE"
+    from "LICENSE"
 }
 
 // configure the maven publication
 publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			// add all the jars that should be included when publishing to maven
-			artifact(jar) {
-				builtBy remapJar
-			}
-			artifact("${project.buildDir.absolutePath}/libs/${archivesBaseName}-${project.version}.jar"){
-				builtBy remapJar
-			}
-		}
-	}
+    publications {
+        mavenJava(MavenPublication) {
+            // add all the jars that should be included when publishing to maven
+            artifact(jar) {
+                builtBy remapJar
+            }
+            artifact("${project.buildDir.absolutePath}/libs/${archivesBaseName}-${project.version}.jar") {
+                builtBy remapJar
+            }
+        }
+    }
 
-	// select the repositories you want to publish to
-	repositories {
-		// uncomment to publish to the local maven
-		// mavenLocal()
-	}
+    // select the repositories you want to publish to
+    repositories {
+        // uncomment to publish to the local maven
+        // mavenLocal()
+    }
 }
