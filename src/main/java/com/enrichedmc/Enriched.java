@@ -43,8 +43,6 @@ public class Enriched implements ModInitializer {
     // Setup
     ModInit.Register();
     Features.register();
-    // Biomes.Register(config);
-    // Generator.register(config);
     DynamicRecipes.register(config);
     Commands.register();
   }

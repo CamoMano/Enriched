@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#minecraft:normal",
+    "enriched:enriched",
+    "minecraft:debug_all_block_states"
+  ]
+}

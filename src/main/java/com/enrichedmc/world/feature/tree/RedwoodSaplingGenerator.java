@@ -9,15 +9,15 @@ import org.jetbrains.annotations.Nullable;
 
 public class RedwoodSaplingGenerator extends LargeTreeSaplingGenerator {
 
-    @Nullable
-    @Override
-    protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return null;
-    }
+  @Nullable
+  @Override
+  protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
+    return null;
+  }
 
-    @Nullable
-    @Override
-    protected RegistryKey<ConfiguredFeature<?, ?>> getLargeTreeFeature(Random random) {
+  @Nullable
+  @Override
+  protected RegistryKey<ConfiguredFeature<?, ?>> getLargeTreeFeature(Random random) {
     return Features.REDWOOD_TREE;
-    }
+  }
 }

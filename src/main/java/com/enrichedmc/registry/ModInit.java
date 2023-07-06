@@ -4,6 +4,7 @@ import static com.enrichedmc.Enriched.MOD_ID;
 import static net.minecraft.block.Blocks.SPRUCE_LOG;
 import static net.minecraft.block.Blocks.SPRUCE_WOOD;
 import static net.minecraft.item.ItemGroups.*;
+import static net.minecraft.registry.tag.BiomeTags.*;
 import static net.minecraft.sound.BlockSoundGroup.METAL;
 
 import com.enrichedmc.blocks.*;
@@ -42,7 +43,7 @@ public class ModInit {
   public static final ArmorMaterial RUBY_ARMOR = new ArmorMaterialRuby();
   public static final ArmorMaterial SAPPHIRE_ARMOR = new ArmorMaterialSapphire();
   public static final ArmorMaterial TANZANITE_ARMOR = new ArmorMaterialTanzanite();
-  
+
   // Blocks
   public static final Block RUBY_ORE =
       new Block(
@@ -52,6 +53,9 @@ public class ModInit {
               .strength(3.0f, 3.0f));
   public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY =
       RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby"));
+
+  public static final RegistryKey<PlacedFeature> RUBY_ORE_COMMON_PLACED_KEY =
+      RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby_common"));
   public static final Block RUBY_BLOCK =
       new Block(
           FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)
@@ -72,6 +76,8 @@ public class ModInit {
               .strength(3.0f, 3.0f));
   public static final RegistryKey<PlacedFeature> TANZANITE_ORE_PLACED_KEY =
       RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "ore_tanzanite"));
+  public static final RegistryKey<PlacedFeature> TANZANITE_ORE_COMMON_PLACED_KEY =
+      RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "ore_tanzanite_common"));
   public static final Block SAPPHIRE_ORE =
       new Block(
           FabricBlockSettings.copyOf(Blocks.EMERALD_ORE)
@@ -80,6 +86,8 @@ public class ModInit {
               .strength(3.0f, 3.0f));
   public static final RegistryKey<PlacedFeature> SAPPHIRE_ORE_PLACED_KEY =
       RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "ore_sapphire"));
+  public static final RegistryKey<PlacedFeature> SAPPHIRE_ORE_COMMON_PLACED_KEY =
+      RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "ore_sapphire_common"));
   public static final Block SAPPHIRE_BLOCK =
       new Block(
           FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)
@@ -278,11 +286,15 @@ public class ModInit {
               .trackRangeChunks(12)
               .build());
 
-//Ruby
-  public static final Item RUBY_HELMET = new ArmorItem(RUBY_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
-  public static final Item RUBY_CHESTPLATE = new ArmorItem(RUBY_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
-  public static final Item RUBY_LEGGINGS = new ArmorItem(RUBY_ARMOR,  ArmorItem.Type.LEGGINGS, new Item.Settings());
-  public static final Item RUBY_BOOTS = new ArmorItem(RUBY_ARMOR,  ArmorItem.Type.BOOTS, new Item.Settings());
+  // Ruby
+  public static final Item RUBY_HELMET =
+      new ArmorItem(RUBY_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
+  public static final Item RUBY_CHESTPLATE =
+      new ArmorItem(RUBY_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
+  public static final Item RUBY_LEGGINGS =
+      new ArmorItem(RUBY_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Settings());
+  public static final Item RUBY_BOOTS =
+      new ArmorItem(RUBY_ARMOR, ArmorItem.Type.BOOTS, new Item.Settings());
 
   public static final Item RUBY_PICKAXE = new PickaxeBase(new ToolMaterialRuby());
   public static final Item RUBY_SWORD = new SwordBase(new ToolMaterialRuby());
@@ -290,11 +302,15 @@ public class ModInit {
   public static final Item RUBY_SHOVEL = new ShovelBase(new ToolMaterialRuby());
   public static final Item RUBY_HOE = new HoeBase(new ToolMaterialRuby());
 
-//Sapphire
-  public static final Item SAPPHIRE_HELMET = new ArmorItem(SAPPHIRE_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
-  public static final Item SAPPHIRE_CHESTPLATE = new ArmorItem(SAPPHIRE_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
-  public static final Item SAPPHIRE_LEGGINGS = new ArmorItem(SAPPHIRE_ARMOR,  ArmorItem.Type.LEGGINGS, new Item.Settings());
-  public static final Item SAPPHIRE_BOOTS = new ArmorItem(SAPPHIRE_ARMOR,  ArmorItem.Type.BOOTS, new Item.Settings());
+  // Sapphire
+  public static final Item SAPPHIRE_HELMET =
+      new ArmorItem(SAPPHIRE_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
+  public static final Item SAPPHIRE_CHESTPLATE =
+      new ArmorItem(SAPPHIRE_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
+  public static final Item SAPPHIRE_LEGGINGS =
+      new ArmorItem(SAPPHIRE_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Settings());
+  public static final Item SAPPHIRE_BOOTS =
+      new ArmorItem(SAPPHIRE_ARMOR, ArmorItem.Type.BOOTS, new Item.Settings());
 
   public static final Item SAPPHIRE_PICKAXE = new PickaxeBase(new ToolMaterialSapphire());
   public static final Item SAPPHIRE_SWORD = new SwordBase(new ToolMaterialSapphire());
@@ -302,11 +318,15 @@ public class ModInit {
   public static final Item SAPPHIRE_SHOVEL = new ShovelBase(new ToolMaterialSapphire());
   public static final Item SAPPHIRE_HOE = new HoeBase(new ToolMaterialSapphire());
 
-//Tanzanite
-  public static final Item TANZANITE_HELMET = new ArmorItem(TANZANITE_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
-  public static final Item TANZANITE_CHESTPLATE = new ArmorItem(TANZANITE_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
-  public static final Item TANZANITE_LEGGINGS = new ArmorItem(TANZANITE_ARMOR,  ArmorItem.Type.LEGGINGS, new Item.Settings());
-  public static final Item TANZANITE_BOOTS = new ArmorItem(TANZANITE_ARMOR,  ArmorItem.Type.BOOTS, new Item.Settings());
+  // Tanzanite
+  public static final Item TANZANITE_HELMET =
+      new ArmorItem(TANZANITE_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
+  public static final Item TANZANITE_CHESTPLATE =
+      new ArmorItem(TANZANITE_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
+  public static final Item TANZANITE_LEGGINGS =
+      new ArmorItem(TANZANITE_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Settings());
+  public static final Item TANZANITE_BOOTS =
+      new ArmorItem(TANZANITE_ARMOR, ArmorItem.Type.BOOTS, new Item.Settings());
 
   public static final Item TANZANITE_PICKAXE = new PickaxeBase(new ToolMaterialTanzanite());
   public static final Item TANZANITE_SWORD = new SwordBase(new ToolMaterialTanzanite());
@@ -314,11 +334,15 @@ public class ModInit {
   public static final Item TANZANITE_SHOVEL = new ShovelBase(new ToolMaterialTanzanite());
   public static final Item TANZANITE_HOE = new HoeBase(new ToolMaterialTanzanite());
 
-//Emerald
-  public static final Item EMERALD_HELMET = new ArmorItem(EMERALD_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
-  public static final Item EMERALD_CHESTPLATE = new ArmorItem(EMERALD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
-  public static final Item EMERALD_LEGGINGS = new ArmorItem(EMERALD_ARMOR,  ArmorItem.Type.LEGGINGS, new Item.Settings());
-  public static final Item EMERALD_BOOTS = new ArmorItem(EMERALD_ARMOR,  ArmorItem.Type.BOOTS, new Item.Settings());
+  // Emerald
+  public static final Item EMERALD_HELMET =
+      new ArmorItem(EMERALD_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
+  public static final Item EMERALD_CHESTPLATE =
+      new ArmorItem(EMERALD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
+  public static final Item EMERALD_LEGGINGS =
+      new ArmorItem(EMERALD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Settings());
+  public static final Item EMERALD_BOOTS =
+      new ArmorItem(EMERALD_ARMOR, ArmorItem.Type.BOOTS, new Item.Settings());
 
   public static final Item EMERALD_PICKAXE = new PickaxeBase(new ToolMaterialEmerald());
   public static final Item EMERALD_SWORD = new SwordBase(new ToolMaterialEmerald());
@@ -326,11 +350,15 @@ public class ModInit {
   public static final Item EMERALD_SHOVEL = new ShovelBase(new ToolMaterialEmerald());
   public static final Item EMERALD_HOE = new HoeBase(new ToolMaterialEmerald());
 
-//Steel
-  public static final Item STEEL_HELMET = new ArmorItem(STEEL_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
-  public static final Item STEEL_CHESTPLATE = new ArmorItem(STEEL_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
-  public static final Item STEEL_LEGGINGS = new ArmorItem(STEEL_ARMOR,  ArmorItem.Type.LEGGINGS, new Item.Settings());
-  public static final Item STEEL_BOOTS = new ArmorItem(STEEL_ARMOR,  ArmorItem.Type.BOOTS, new Item.Settings());
+  // Steel
+  public static final Item STEEL_HELMET =
+      new ArmorItem(STEEL_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
+  public static final Item STEEL_CHESTPLATE =
+      new ArmorItem(STEEL_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
+  public static final Item STEEL_LEGGINGS =
+      new ArmorItem(STEEL_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Settings());
+  public static final Item STEEL_BOOTS =
+      new ArmorItem(STEEL_ARMOR, ArmorItem.Type.BOOTS, new Item.Settings());
 
   public static final Item STEEL_PICKAXE = new PickaxeBase(new ToolMaterialSteel());
   public static final Item STEEL_SWORD = new SwordBase(new ToolMaterialSteel());
@@ -338,33 +366,28 @@ public class ModInit {
   public static final Item STEEL_SHOVEL = new ShovelBase(new ToolMaterialSteel());
   public static final Item STEEL_HOE = new HoeBase(new ToolMaterialSteel());
 
-//Obsidian
-  public static final Item OBSIDIAN_HELMET = new ArmorItem(OBSIDIAN_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
-  public static final Item OBSIDIAN_CHESTPLATE = new ArmorItem(OBSIDIAN_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
-  public static final Item OBSIDIAN_LEGGINGS = new ArmorItem(OBSIDIAN_ARMOR,  ArmorItem.Type.LEGGINGS, new Item.Settings());
-  public static final Item OBSIDIAN_BOOTS = new ArmorItem(OBSIDIAN_ARMOR,  ArmorItem.Type.BOOTS, new Item.Settings());
+  // Obsidian
+  public static final Item OBSIDIAN_HELMET =
+      new ArmorItem(OBSIDIAN_ARMOR, ArmorItem.Type.HELMET, new Item.Settings());
+  public static final Item OBSIDIAN_CHESTPLATE =
+      new ArmorItem(OBSIDIAN_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Settings());
+  public static final Item OBSIDIAN_LEGGINGS =
+      new ArmorItem(OBSIDIAN_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Settings());
+  public static final Item OBSIDIAN_BOOTS =
+      new ArmorItem(OBSIDIAN_ARMOR, ArmorItem.Type.BOOTS, new Item.Settings());
 
   public static final Item OBSIDIAN_PICKAXE = new PickaxeBase(new ToolMaterialObsidian());
   public static final Item OBSIDIAN_SWORD = new SwordBase(new ToolMaterialObsidian());
   public static final Item OBSIDIAN_AXE = new AxeBase(new ToolMaterialObsidian());
   public static final Item OBSIDIAN_SHOVEL = new ShovelBase(new ToolMaterialObsidian());
   public static final Item OBSIDIAN_HOE = new HoeBase(new ToolMaterialObsidian());
-  
-//Copper
+
+  // Copper
   public static final Item COPPER_PICKAXE = new PickaxeBase(new ToolMaterialCopper());
   public static final Item COPPER_SWORD = new SwordBase(new ToolMaterialCopper());
   public static final Item COPPER_AXE = new AxeBase(new ToolMaterialCopper());
   public static final Item COPPER_SHOVEL = new ShovelBase(new ToolMaterialCopper());
   public static final Item COPPER_HOE = new HoeBase(new ToolMaterialCopper());
-
-
-
-
-
-
-
-
-
 
   // Register
   public static void Register() {
@@ -563,13 +586,33 @@ public class ModInit {
         GenerationStep.Feature.UNDERGROUND_ORES,
         RUBY_ORE_PLACED_KEY);
     BiomeModifications.addFeature(
+        BiomeSelectors.tag(IS_SAVANNA),
+        GenerationStep.Feature.UNDERGROUND_ORES,
+        RUBY_ORE_COMMON_PLACED_KEY);
+    BiomeModifications.addFeature(
+        BiomeSelectors.tag(IS_BADLANDS),
+        GenerationStep.Feature.UNDERGROUND_ORES,
+        RUBY_ORE_COMMON_PLACED_KEY);
+    BiomeModifications.addFeature(
         BiomeSelectors.foundInOverworld(),
         GenerationStep.Feature.UNDERGROUND_ORES,
         TANZANITE_ORE_PLACED_KEY);
     BiomeModifications.addFeature(
+        BiomeSelectors.tag(IS_JUNGLE),
+        GenerationStep.Feature.UNDERGROUND_ORES,
+        TANZANITE_ORE_COMMON_PLACED_KEY);
+    BiomeModifications.addFeature(
         BiomeSelectors.foundInOverworld(),
         GenerationStep.Feature.UNDERGROUND_ORES,
         SAPPHIRE_ORE_PLACED_KEY);
+    BiomeModifications.addFeature(
+        BiomeSelectors.tag(IS_TAIGA),
+        GenerationStep.Feature.UNDERGROUND_ORES,
+        SAPPHIRE_ORE_COMMON_PLACED_KEY);
+    BiomeModifications.addFeature(
+        BiomeSelectors.tag(IS_MOUNTAIN),
+        GenerationStep.Feature.UNDERGROUND_ORES,
+        SAPPHIRE_ORE_COMMON_PLACED_KEY);
     BiomeModifications.addFeature(
         BiomeSelectors.foundInOverworld(),
         GenerationStep.Feature.UNDERGROUND_ORES,
@@ -595,7 +638,8 @@ public class ModInit {
     ItemGroupEvents.modifyEntriesEvent(INGREDIENTS).register(entries -> entries.add(HONEY_BALL));
     ItemGroupEvents.modifyEntriesEvent(NATURAL).register(entries -> entries.add(REDWOOD_SAPLING));
     ItemGroupEvents.modifyEntriesEvent(FOOD_AND_DRINK).register(entries -> entries.add(BEEF_STEW));
-    ItemGroupEvents.modifyEntriesEvent(FOOD_AND_DRINK).register(entries -> entries.add(BERRY_JUICE));
+    ItemGroupEvents.modifyEntriesEvent(FOOD_AND_DRINK)
+        .register(entries -> entries.add(BERRY_JUICE));
 
     ItemGroupEvents.modifyEntriesEvent(BUILDING_BLOCKS)
         .register(entries -> entries.add(RUBY_BLOCK));
@@ -662,131 +706,74 @@ public class ModInit {
     ItemGroupEvents.modifyEntriesEvent(BUILDING_BLOCKS)
         .register(entries -> entries.add(REDWOOD_PRESSURE_PLATE));
 
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(RUBY_HELMET));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(RUBY_CHESTPLATE));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(RUBY_LEGGINGS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(RUBY_BOOTS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(RUBY_SWORD));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(RUBY_SHOVEL));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(RUBY_PICKAXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(RUBY_AXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(RUBY_HOE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(RUBY_HELMET));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(RUBY_CHESTPLATE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(RUBY_LEGGINGS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(RUBY_BOOTS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(RUBY_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(RUBY_SHOVEL));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(RUBY_PICKAXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(RUBY_AXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(RUBY_HOE));
 
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(SAPPHIRE_HELMET));
     ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(SAPPHIRE_HELMET));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(SAPPHIRE_CHESTPLATE));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(SAPPHIRE_LEGGINGS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(SAPPHIRE_BOOTS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(SAPPHIRE_SWORD));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(SAPPHIRE_SHOVEL));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(SAPPHIRE_PICKAXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(SAPPHIRE_AXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(SAPPHIRE_HOE));
+        .register(entries -> entries.add(SAPPHIRE_CHESTPLATE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(SAPPHIRE_LEGGINGS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(SAPPHIRE_BOOTS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(SAPPHIRE_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(SAPPHIRE_SHOVEL));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(SAPPHIRE_PICKAXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(SAPPHIRE_AXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(SAPPHIRE_HOE));
 
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(TANZANITE_HELMET));
     ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(TANZANITE_HELMET));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(TANZANITE_CHESTPLATE));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(TANZANITE_LEGGINGS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(TANZANITE_BOOTS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(TANZANITE_SWORD));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(TANZANITE_SHOVEL));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(TANZANITE_PICKAXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(TANZANITE_AXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(TANZANITE_HOE));
+        .register(entries -> entries.add(TANZANITE_CHESTPLATE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(TANZANITE_LEGGINGS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(TANZANITE_BOOTS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(TANZANITE_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(TANZANITE_SHOVEL));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(TANZANITE_PICKAXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(TANZANITE_AXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(TANZANITE_HOE));
 
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(EMERALD_HELMET));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(EMERALD_CHESTPLATE));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(EMERALD_LEGGINGS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(EMERALD_BOOTS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(EMERALD_SWORD));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(EMERALD_SHOVEL));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(EMERALD_PICKAXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(EMERALD_AXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(EMERALD_HOE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(EMERALD_HELMET));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(EMERALD_CHESTPLATE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(EMERALD_LEGGINGS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(EMERALD_BOOTS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(EMERALD_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(EMERALD_SHOVEL));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(EMERALD_PICKAXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(EMERALD_AXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(EMERALD_HOE));
 
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(OBSIDIAN_HELMET));
     ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(OBSIDIAN_HELMET));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(OBSIDIAN_CHESTPLATE));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(OBSIDIAN_LEGGINGS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(OBSIDIAN_BOOTS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(OBSIDIAN_SWORD));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(OBSIDIAN_SHOVEL));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(OBSIDIAN_PICKAXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(OBSIDIAN_AXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(OBSIDIAN_HOE));
+        .register(entries -> entries.add(OBSIDIAN_CHESTPLATE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(OBSIDIAN_LEGGINGS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(OBSIDIAN_BOOTS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(OBSIDIAN_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(OBSIDIAN_SHOVEL));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(OBSIDIAN_PICKAXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(OBSIDIAN_AXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(OBSIDIAN_HOE));
 
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(STEEL_HELMET));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(STEEL_CHESTPLATE));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(STEEL_LEGGINGS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(STEEL_BOOTS));
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(STEEL_SWORD));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(STEEL_SHOVEL));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(STEEL_PICKAXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(STEEL_AXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(STEEL_HOE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(STEEL_HELMET));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(STEEL_CHESTPLATE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(STEEL_LEGGINGS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(STEEL_BOOTS));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(STEEL_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(STEEL_SHOVEL));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(STEEL_PICKAXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(STEEL_AXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(STEEL_HOE));
 
-
-    ItemGroupEvents.modifyEntriesEvent(COMBAT)
-            .register(entries -> entries.add(COPPER_SWORD));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(COPPER_SHOVEL));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(COPPER_PICKAXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(COPPER_AXE));
-    ItemGroupEvents.modifyEntriesEvent(TOOLS)
-            .register(entries -> entries.add(COPPER_HOE));
+    ItemGroupEvents.modifyEntriesEvent(COMBAT).register(entries -> entries.add(COPPER_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(COPPER_SHOVEL));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(COPPER_PICKAXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(COPPER_AXE));
+    ItemGroupEvents.modifyEntriesEvent(TOOLS).register(entries -> entries.add(COPPER_HOE));
   }
 
   public static <T> void register(Registry<T> type, String name, T element) {

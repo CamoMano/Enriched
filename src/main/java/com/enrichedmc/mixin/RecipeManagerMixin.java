@@ -14,11 +14,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(RecipeManager.class)
 public class RecipeManagerMixin {
-    @Inject(method = "apply", at = @At("HEAD"))
-    public void interceptApply(
-        Map<Identifier, JsonElement> map,
-        ResourceManager resourceManager,
-        Profiler profiler,
-        CallbackInfo ci
-    ) { map.putAll(DynamicRecipes.REGISTRY); }
+  @Inject(method = "apply", at = @At("HEAD"))
+  public void interceptApply(
+      Map<Identifier, JsonElement> map,
+      ResourceManager resourceManager,
+      Profiler profiler,
+      CallbackInfo ci) {
+    map.putAll(DynamicRecipes.REGISTRY);
+  }
 }
