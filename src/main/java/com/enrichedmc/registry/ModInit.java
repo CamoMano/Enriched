@@ -8,6 +8,7 @@ import static net.minecraft.registry.tag.BiomeTags.*;
 import static net.minecraft.sound.BlockSoundGroup.METAL;
 
 import com.enrichedmc.blocks.*;
+import com.enrichedmc.config.ModConfig;
 import com.enrichedmc.entity.HoneySlime;
 import com.enrichedmc.items.*;
 import com.enrichedmc.materials.items.*;
@@ -390,7 +391,7 @@ public class ModInit {
   public static final Item COPPER_HOE = new HoeBase(new ToolMaterialCopper());
 
   // Register
-  public static void Register() {
+  public static void Register(ModConfig config) {
     // Biome Blocks
     block("redwood_leaves", REDWOOD_LEAVES);
     blockItem("redwood_leaves", REDWOOD_LEAVES);
@@ -580,7 +581,7 @@ public class ModInit {
         new Identifier(MOD_ID, "honey_slime_spawn_egg"),
         new SpawnEggItem(HONEY_SLIME, 0xffd700, 0xb39700, new Item.Settings()));
     item("honey_ball", HONEY_BALL);
-
+    if (config.enableRubyOre) {
     BiomeModifications.addFeature(
         BiomeSelectors.foundInOverworld(),
         GenerationStep.Feature.UNDERGROUND_ORES,
@@ -593,6 +594,8 @@ public class ModInit {
         BiomeSelectors.tag(IS_BADLANDS),
         GenerationStep.Feature.UNDERGROUND_ORES,
         RUBY_ORE_COMMON_PLACED_KEY);
+    }
+    if (config.enableTanzaniteOre) {
     BiomeModifications.addFeature(
         BiomeSelectors.foundInOverworld(),
         GenerationStep.Feature.UNDERGROUND_ORES,
@@ -601,6 +604,8 @@ public class ModInit {
         BiomeSelectors.tag(IS_JUNGLE),
         GenerationStep.Feature.UNDERGROUND_ORES,
         TANZANITE_ORE_COMMON_PLACED_KEY);
+    }
+    if (config.enableSapphireOre) {
     BiomeModifications.addFeature(
         BiomeSelectors.foundInOverworld(),
         GenerationStep.Feature.UNDERGROUND_ORES,
@@ -613,18 +618,28 @@ public class ModInit {
         BiomeSelectors.tag(IS_MOUNTAIN),
         GenerationStep.Feature.UNDERGROUND_ORES,
         SAPPHIRE_ORE_COMMON_PLACED_KEY);
+}
+    if (config.enableDarkGranite) {
+      BiomeModifications.addFeature(
+          BiomeSelectors.foundInOverworld(),
+          GenerationStep.Feature.UNDERGROUND_ORES,
+          DARK_GRANITE_UP_KEY);
+      BiomeModifications.addFeature(
+          BiomeSelectors.foundInOverworld(),
+          GenerationStep.Feature.UNDERGROUND_ORES,
+          DARK_GRANITE_LOW_KEY);
+    }
+
+    if (config.enableMarble) {
     BiomeModifications.addFeature(
         BiomeSelectors.foundInOverworld(),
-        GenerationStep.Feature.UNDERGROUND_ORES,
-        DARK_GRANITE_UP_KEY);
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            MARBLE_UP_KEY);
     BiomeModifications.addFeature(
         BiomeSelectors.foundInOverworld(),
-        GenerationStep.Feature.UNDERGROUND_ORES,
-        DARK_GRANITE_LOW_KEY);
-    BiomeModifications.addFeature(
-        BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_UP_KEY);
-    BiomeModifications.addFeature(
-        BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, MARBLE_LOW_KEY);
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            MARBLE_LOW_KEY);
+    }
 
     ItemGroupEvents.modifyEntriesEvent(INGREDIENTS).register(entries -> entries.add(RUBY));
     ItemGroupEvents.modifyEntriesEvent(INGREDIENTS).register(entries -> entries.add(SAPPHIRE));

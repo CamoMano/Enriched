@@ -41,7 +41,7 @@ public class Enriched implements ModInitializer {
     AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
     ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
     // Setup
-    ModInit.Register();
+    ModInit.Register(config);
     Features.register();
     DynamicRecipes.register(config);
     Commands.register();
