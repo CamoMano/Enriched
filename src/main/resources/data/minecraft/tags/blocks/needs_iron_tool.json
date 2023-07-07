@@ -1,17 +1,17 @@
-    {
-      "replace": false,
-      "values": [
-        "enriched:ruby_ore",
-		"enriched:sapphire_ore",
-		"enriched:tanzanite_ore",
-		"enriched:deepslate_ruby_ore",
-		"enriched:deepslate_sapphire_ore",
-		"enriched:deepslate_tanzanite_ore",
-		"enriched:ruby_block",
-		"enriched:sapphire_block",
-		"enriched:tanzanite_block",
-		"enriched:steel_block",
-		"enriched:obsidian_alloy_block"
-      ]
-    }
+{
+  "replace": false,
+  "values": [
+    "enriched:ruby_ore",
+    "enriched:sapphire_ore",
+    "enriched:tanzanite_ore",
+    "enriched:deepslate_ruby_ore",
+    "enriched:deepslate_sapphire_ore",
+    "enriched:deepslate_tanzanite_ore",
+    "enriched:ruby_block",
+    "enriched:sapphire_block",
+    "enriched:tanzanite_block",
+    "enriched:steel_block",
+    "enriched:obsidian_alloy_block"
+  ]
+}
 

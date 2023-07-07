@@ -1,16 +1,15 @@
 package com.enrichedmc.recipes;
 
-import com.google.gson.JsonObject;
 import com.enrichedmc.Enriched;
 import com.enrichedmc.builder.ShapedRecipeBuilder;
 import com.enrichedmc.config.ModConfig;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Pair;
-
+import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Pair;
 
 public class DynamicRecipes {
     public static final Map<Identifier, JsonObject> REGISTRY = new HashMap<>();

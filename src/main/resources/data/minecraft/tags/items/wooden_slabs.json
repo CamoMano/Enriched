@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "enriched:redwood_slab",
-    "enriched:bamboo_slab"
+    "enriched:redwood_slab"
   ]
 }
