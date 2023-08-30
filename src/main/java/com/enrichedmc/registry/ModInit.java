@@ -20,6 +20,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.EntityDimensions;
@@ -59,13 +60,13 @@ public class ModInit {
       RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, "ore_ruby_common"));
   public static final Block RUBY_BLOCK =
       new Block(
-          FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)
+          FabricBlockSettings.copyOf(Blocks.EMERALD_ORE)
               .requiresTool()
               .sounds(BlockSoundGroup.STONE)
               .strength(5.0f, 6.0f));
   public static final Block TANZANITE_BLOCK =
       new Block(
-          FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)
+          FabricBlockSettings.copyOf(Blocks.EMERALD_ORE)
               .requiresTool()
               .sounds(BlockSoundGroup.STONE)
               .strength(5.0f, 6.0f));
@@ -587,11 +588,7 @@ public class ModInit {
         GenerationStep.Feature.UNDERGROUND_ORES,
         RUBY_ORE_PLACED_KEY);
     BiomeModifications.addFeature(
-        BiomeSelectors.tag(IS_SAVANNA),
-        GenerationStep.Feature.UNDERGROUND_ORES,
-        RUBY_ORE_COMMON_PLACED_KEY);
-    BiomeModifications.addFeature(
-        BiomeSelectors.tag(IS_BADLANDS),
+            BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_DRY),
         GenerationStep.Feature.UNDERGROUND_ORES,
         RUBY_ORE_COMMON_PLACED_KEY);
     }
@@ -601,7 +598,7 @@ public class ModInit {
         GenerationStep.Feature.UNDERGROUND_ORES,
         TANZANITE_ORE_PLACED_KEY);
     BiomeModifications.addFeature(
-        BiomeSelectors.tag(IS_JUNGLE),
+        BiomeSelectors.tag(ConventionalBiomeTags.JUNGLE),
         GenerationStep.Feature.UNDERGROUND_ORES,
         TANZANITE_ORE_COMMON_PLACED_KEY);
     }
@@ -611,11 +608,7 @@ public class ModInit {
         GenerationStep.Feature.UNDERGROUND_ORES,
         SAPPHIRE_ORE_PLACED_KEY);
     BiomeModifications.addFeature(
-        BiomeSelectors.tag(IS_TAIGA),
-        GenerationStep.Feature.UNDERGROUND_ORES,
-        SAPPHIRE_ORE_COMMON_PLACED_KEY);
-    BiomeModifications.addFeature(
-        BiomeSelectors.tag(IS_MOUNTAIN),
+        BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_COLD),
         GenerationStep.Feature.UNDERGROUND_ORES,
         SAPPHIRE_ORE_COMMON_PLACED_KEY);
 }
