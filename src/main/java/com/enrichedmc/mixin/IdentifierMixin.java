@@ -11,11 +11,16 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Identifier.class)
-public class IdentifierMixin {
-  @Mutable @Shadow @Final protected String namespace;
+public class IdentifierMixin
+{
+    @Mutable
+    @Shadow
+    @Final
+    private String namespace;
 
-  @Inject(method = "<init>([Ljava/lang/String;)V", at = @At("RETURN"))
-  private void init(String[] strings, CallbackInfo ci) {
-    if (namespace.equals("vanillaenhanced")) namespace = Enriched.MOD_ID;
-  }
+    @Inject(method = "<init>", at = @At("RETURN"))
+    private void init(String namespace, String path, CallbackInfo ci)
+    {
+        if (namespace.equals("vanillaenhanced")) namespace = Enriched.MOD_ID;
+    }
 }

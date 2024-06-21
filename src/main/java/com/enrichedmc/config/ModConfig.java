@@ -6,75 +6,76 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
 @Config(name = "enriched")
 @Config.Gui.CategoryBackground(
-    category = "Biomes",
-    background = "enriched:textures/block/redwood_planks.png")
+        category = "Biomes",
+        background = "enriched:textures/block/redwood_planks.png")
 @Config.Gui.CategoryBackground(
-    category = "Generation",
-    background = "enriched:textures/block/marble.png")
+        category = "Generation",
+        background = "enriched:textures/block/marble.png")
 @Config.Gui.CategoryBackground(
-    category = "Tools",
-    background = "minecraft:textures/block/copper_block.png")
+        category = "Tools",
+        background = "minecraft:textures/block/copper_block.png")
 @Config.Gui.CategoryBackground(
-    category = "Mobs",
-    background = "minecraft:textures/block/honey_block_side.png")
+        category = "Mobs",
+        background = "minecraft:textures/block/honey_block_side.png")
 @Config.Gui.CategoryBackground(
-    category = "Recipes",
-    background = "minecraft:textures/block/raw_copper_block.png")
-public class ModConfig implements ConfigData {
-  // Mobs
-  @ConfigEntry.Category("Mobs")
-  @ConfigEntry.Gui.Tooltip()
-  public static boolean enableHoneySlime = false;
+        category = "Recipes",
+        background = "minecraft:textures/block/raw_copper_block.png")
+public class ModConfig implements ConfigData
+{
+    // Mobs
+    @ConfigEntry.Category("Mobs")
+    @ConfigEntry.Gui.Tooltip()
+    public static boolean enableHoneySlime = false;
 
-  // Tools & Armor
-  @ConfigEntry.Category("Tools")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableRubyGear = true;
+    // Tools & Armor
+    @ConfigEntry.Category("Tools")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableRubyGear = true;
 
-  @ConfigEntry.Category("Tools")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableSapphireGear = true;
+    @ConfigEntry.Category("Tools")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableSapphireGear = true;
 
-  @ConfigEntry.Category("Tools")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableTanzaniteGear = true;
+    @ConfigEntry.Category("Tools")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableTanzaniteGear = true;
 
-  @ConfigEntry.Category("Tools")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableCopperGear = true;
+    @ConfigEntry.Category("Tools")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableCopperGear = true;
 
-  @ConfigEntry.Category("Tools")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableObsidianGear = true;
+    @ConfigEntry.Category("Tools")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableObsidianGear = true;
 
-  @ConfigEntry.Category("Tools")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableEmeraldGear = true;
+    @ConfigEntry.Category("Tools")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableEmeraldGear = true;
 
-  @ConfigEntry.Category("Tools")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableSteelGear = true;
+    @ConfigEntry.Category("Tools")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableSteelGear = true;
 
-  // Generation
-  @ConfigEntry.Category("Generation")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableDarkGranite = true;
+    // Generation
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableDarkGranite = true;
 
-  @ConfigEntry.Category("Generation")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableMarble = true;
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableMarble = true;
 
-  @ConfigEntry.Category("Generation")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableRubyOre = true;
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableRubyOre = true;
 
-  @ConfigEntry.Category("Generation")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableSapphireOre = true;
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableSapphireOre = true;
 
-  @ConfigEntry.Category("Generation")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableTanzaniteOre = true;
+    @ConfigEntry.Category("Generation")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableTanzaniteOre = true;
   /*
    @ConfigEntry.Category("Generation")
    @ConfigEntry.Gui.Tooltip()
@@ -110,19 +111,19 @@ public class ModConfig implements ConfigData {
    public boolean enableShatteredJungle = true;
   */
 
-  @ConfigEntry.Category("Recipes")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableUncrafting = true;
+    @ConfigEntry.Category("Recipes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableUncrafting = true;
 
-  @ConfigEntry.Category("Recipes")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableHorseArmor = true;
+    @ConfigEntry.Category("Recipes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableHorseArmor = true;
 
-  @ConfigEntry.Category("Recipes")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableChainmail = true;
+    @ConfigEntry.Category("Recipes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableChainmail = true;
 
-  @ConfigEntry.Category("Recipes")
-  @ConfigEntry.Gui.Tooltip()
-  public boolean enableRawSmelting = true;
+    @ConfigEntry.Category("Recipes")
+    @ConfigEntry.Gui.Tooltip()
+    public boolean enableRawSmelting = true;
 }
