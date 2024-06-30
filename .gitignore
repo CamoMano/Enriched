@@ -26,3 +26,4 @@ crowdin.jar
 translate.bat
 src/main/resources/vanillaenhanced.timestamp
 .gitconfig
+*.lnk
