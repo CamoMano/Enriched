@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "enriched:honey_ball"
+  },
+  "result": {
+    "id": "minecraft:honeycomb"
+  },
+  "experience": 0.1,
+  "cookingtime": 200
+}

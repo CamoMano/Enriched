@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "enriched:dark_granite"
+    }
+  },
+  "result": {
+    "id": "enriched:dark_granite_stairs",
+    "count": 6
+  }
+}

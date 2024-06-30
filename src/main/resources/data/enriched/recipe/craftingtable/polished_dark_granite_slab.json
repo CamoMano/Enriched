@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "enriched:polished_dark_granite"
+    }
+  },
+  "result": {
+    "id": "enriched:polished_dark_granite_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_slab",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "enriched:redwood_planks"
+    }
+  },
+  "result": {
+    "id": "enriched:redwood_slab",
+    "count": 6
+  }
+}

@@ -4,6 +4,8 @@ import com.enrichedmc.Enriched;
 import com.enrichedmc.builder.ShapedRecipeBuilder;
 import com.enrichedmc.config.ModConfig;
 import com.google.gson.JsonObject;
+import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Pair;
 
@@ -163,7 +165,7 @@ public class DynamicRecipes
                 "###",
                 " | ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -174,7 +176,7 @@ public class DynamicRecipes
                 "###",
                 " | ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -185,7 +187,7 @@ public class DynamicRecipes
                 " # ",
                 " # ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -196,7 +198,7 @@ public class DynamicRecipes
                 " # ",
                 " # ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -207,7 +209,7 @@ public class DynamicRecipes
                 "## ",
                 "#| ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -218,7 +220,7 @@ public class DynamicRecipes
                 "## ",
                 "#| ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -229,7 +231,7 @@ public class DynamicRecipes
                 " # ",
                 " | ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -240,7 +242,7 @@ public class DynamicRecipes
                 " # ",
                 " | ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -251,7 +253,7 @@ public class DynamicRecipes
                 "## ",
                 " | ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
@@ -262,7 +264,7 @@ public class DynamicRecipes
                 "## ",
                 " | ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
 
@@ -270,7 +272,7 @@ public class DynamicRecipes
                 "## ",
                 " | ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }

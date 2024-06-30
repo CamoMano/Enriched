@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "enriched:redwood_planks"
+    }
+  },
+  "result": {
+    "id": "enriched:redwood_stairs",
+    "count": 6
+  }
+}

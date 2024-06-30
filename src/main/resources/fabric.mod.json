@@ -29,6 +29,9 @@
     "server": [],
     "modmenu": [
       "com.enrichedmc.config.ModMenu"
+    ],
+    "fabric-datagen": [
+      "com.enrichedmc.EnrichedDataGenerator"
     ]
   },
   "mixins": [

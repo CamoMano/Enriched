@@ -5,6 +5,7 @@ import com.enrichedmc.config.ModConfig;
 import com.enrichedmc.recipes.DynamicRecipes;
 import com.enrichedmc.registry.ModInit;
 import com.enrichedmc.world.Features;
+import com.enrichedmc.world.TreeGeneration;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -46,8 +47,9 @@ public class Enriched implements ModInitializer
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
         // Setup
         ModInit.Register(config);
-        Features.register();
         DynamicRecipes.register(config);
         Commands.register();
+
+        TreeGeneration.generateTrees();
     }
 }

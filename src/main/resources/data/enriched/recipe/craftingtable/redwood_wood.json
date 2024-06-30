@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "enriched:redwood_log"
+    }
+  },
+  "result": {
+    "id": "enriched:redwood_wood",
+    "count": 3
+  }
+}

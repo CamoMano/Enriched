@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "enriched:dark_granite"
-  },
-  "result": "enriched:dark_granite_slab",
-  "count": 2
-}

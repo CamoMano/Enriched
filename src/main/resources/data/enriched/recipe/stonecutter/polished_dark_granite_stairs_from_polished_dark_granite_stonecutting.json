@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "enriched:polished_dark_granite"
+  },
+  "result": {
+    "id": "enriched:polished_dark_granite_stairs",
+    "count": 1
+  }
+}
