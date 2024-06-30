@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "enriched:polished_marble"
+    }
+  },
+  "result": {
+    "id": "enriched:polished_marble_stairs",
+    "count": 6
+  }
+}

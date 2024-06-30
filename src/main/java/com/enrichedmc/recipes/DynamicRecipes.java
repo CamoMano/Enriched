@@ -4,26 +4,33 @@ import com.enrichedmc.Enriched;
 import com.enrichedmc.builder.ShapedRecipeBuilder;
 import com.enrichedmc.config.ModConfig;
 import com.google.gson.JsonObject;
+import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Pair;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Pair;
 
-public class DynamicRecipes {
+public class DynamicRecipes
+{
     public static final Map<Identifier, JsonObject> REGISTRY = new HashMap<>();
 
-    public static void register(ModConfig config) {
+    public static void register(ModConfig config)
+    {
         final List<Pair<Identifier, JsonObject>> enabledFeatures = new ArrayList<>();
-        if (config.enableCopperGear) {
+        if (config.enableCopperGear)
+        {
             enabledFeatures.add(pickaxe("copper_pickaxe", "minecraft:copper_ingot", "enriched:copper_pickaxe"));
             enabledFeatures.add(sword("copper_sword", "minecraft:copper_ingot", "enriched:copper_sword"));
             enabledFeatures.add(axe("copper_axe", "minecraft:copper_ingot", "enriched:copper_axe"));
             enabledFeatures.add(shovel("copper_shovel", "minecraft:copper_ingot", "enriched:copper_shovel"));
             enabledFeatures.add(hoe("copper_hoe", "minecraft:copper_ingot", "enriched:copper_hoe"));
         }
-        if (config.enableEmeraldGear) {
+        if (config.enableEmeraldGear)
+        {
             enabledFeatures.add(pickaxe("emerald_pickaxe", "minecraft:emerald", "enriched:emerald_pickaxe"));
             enabledFeatures.add(sword("emerald_sword", "minecraft:emerald", "enriched:emerald_sword"));
             enabledFeatures.add(axe("emerald_axe", "minecraft:emerald", "enriched:emerald_axe"));
@@ -34,7 +41,8 @@ public class DynamicRecipes {
             enabledFeatures.add(leggings("emerald_leggings", "minecraft:emerald", "enriched:emerald_leggings"));
             enabledFeatures.add(boots("emerald_boots", "minecraft:emerald", "enriched:emerald_boots"));
         }
-        if (config.enableObsidianGear) {
+        if (config.enableObsidianGear)
+        {
             enabledFeatures.add(blend("obsidian_alloy_blend", "minecraft:iron_ingot", "minecraft:obsidian", "enriched:obsidian_alloy_blend"));
             enabledFeatures.add(pickaxe("obsidian_pickaxe", "enriched:obsidian_alloy_ingot", "enriched:obsidian_pickaxe"));
             enabledFeatures.add(sword("obsidian_sword", "enriched:obsidian_alloy_ingot", "enriched:obsidian_sword"));
@@ -51,7 +59,8 @@ public class DynamicRecipes {
             enabledFeatures.add(uncrafting("obsidian_alloy_ingot", "enriched:obsidian_alloy_block", "enriched:obsidian_alloy_ingot", 9));
         }
 
-        if (config.enableSteelGear) {
+        if (config.enableSteelGear)
+        {
             enabledFeatures.add(pickaxe_tag("steel_pickaxe", "c:steel_ingots", "enriched:steel_pickaxe"));
             enabledFeatures.add(sword_tag("steel_sword", "c:steel_ingots", "enriched:steel_sword"));
             enabledFeatures.add(axe_tag("steel_axe", "c:steel_ingots", "enriched:steel_axe"));
@@ -68,7 +77,8 @@ public class DynamicRecipes {
             enabledFeatures.add(uncrafting("steel_ingot", "enriched:steel_block", "enriched:steel_ingot", 9));
         }
 
-        if (config.enableRubyGear) {
+        if (config.enableRubyGear)
+        {
             enabledFeatures.add(pickaxe_tag("ruby_pickaxe", "c:rubies", "enriched:ruby_pickaxe"));
             enabledFeatures.add(sword_tag("ruby_sword", "c:rubies", "enriched:ruby_sword"));
             enabledFeatures.add(axe_tag("ruby_axe", "c:rubies", "enriched:ruby_axe"));
@@ -82,7 +92,8 @@ public class DynamicRecipes {
             enabledFeatures.add(uncrafting("ruby", "enriched:ruby_block", "enriched:ruby", 9));
         }
 
-        if (config.enableSapphireGear) {
+        if (config.enableSapphireGear)
+        {
             enabledFeatures.add(pickaxe_tag("sapphire_pickaxe", "c:sapphires", "enriched:sapphire_pickaxe"));
             enabledFeatures.add(sword_tag("sapphire_sword", "c:sapphires", "enriched:sapphire_sword"));
             enabledFeatures.add(axe_tag("sapphire_axe", "c:sapphires", "enriched:sapphire_axe"));
@@ -96,7 +107,8 @@ public class DynamicRecipes {
             enabledFeatures.add(uncrafting("sapphire", "enriched:sapphire_block", "enriched:sapphire", 9));
         }
 
-        if (config.enableTanzaniteGear) {
+        if (config.enableTanzaniteGear)
+        {
             enabledFeatures.add(pickaxe("tanzanite_pickaxe", "enriched:tanzanite", "enriched:tanzanite_pickaxe"));
             enabledFeatures.add(sword("tanzanite_sword", "enriched:tanzanite", "enriched:tanzanite_sword"));
             enabledFeatures.add(axe("tanzanite_axe", "enriched:tanzanite", "enriched:tanzanite_axe"));
@@ -110,7 +122,8 @@ public class DynamicRecipes {
             enabledFeatures.add(uncrafting("tanzanite", "enriched:tanzanite_block", "enriched:tanzanite", 9));
         }
         //Uncrafting
-        if (config.enableUncrafting) {
+        if (config.enableUncrafting)
+        {
             enabledFeatures.add(uncrafting_tag("uncrafting_wool", "minecraft:wool", "minecraft:string", 4));
             enabledFeatures.add(uncrafting("uncrafting_cobweb", "minecraft:cobweb", "minecraft:string", 5));
             enabledFeatures.add(uncrafting("uncrafting_brick", "minecraft:bricks", "minecraft:brick", 4));
@@ -119,19 +132,22 @@ public class DynamicRecipes {
             enabledFeatures.add(uncrafting("uncrafting_nether_wart", "minecraft:nether_wart_block", "minecraft:nether_wart", 9));
             enabledFeatures.add(uncrafting("uncrafting_honeycomb", "minecraft:honeycomb_block", "minecraft:honeycomb", 4));
         }
-        if (config.enableHorseArmor) {
+        if (config.enableHorseArmor)
+        {
             enabledFeatures.add(horse_armor("diamond_horse_armor", "minecraft:wool", "minecraft:diamond", "minecraft:diamond_horse_armor", 1));
             enabledFeatures.add(horse_armor("golden_horse_armor", "minecraft:wool", "minecraft:gold_ingot", "minecraft:golden_horse_armor", 1));
             enabledFeatures.add(horse_armor("iron_horse_armor", "minecraft:wool", "minecraft:iron_ingot", "minecraft:iron_horse_armor", 1));
         }
-        if (config.enableChainmail) {
+        if (config.enableChainmail)
+        {
             enabledFeatures.add(helmet("chainmail_helmet", "minecraft:chain", "minecraft:chainmail_helmet"));
             enabledFeatures.add(chestplate("chainmail_chestplate", "minecraft:chain", "minecraft:chainmail_chestplate"));
             enabledFeatures.add(leggings("chainmail_leggings", "minecraft:chain", "minecraft:chainmail_leggings"));
             enabledFeatures.add(boots("chainmail_boots", "minecraft:chain", "minecraft:chainmail_boots"));
         }
 
-        if (config.enableRawSmelting) {
+        if (config.enableRawSmelting)
+        {
             enabledFeatures.add(smelting("iron_block_smelting", "minecraft:raw_iron_block", "minecraft:iron_block", 6.3, 1800));
             enabledFeatures.add(smelting("copper_block_smelting", "minecraft:raw_copper_block", "minecraft:copper_block", 6.3, 1800));
             enabledFeatures.add(smelting("gold_block_smelting", "minecraft:raw_gold_block", "minecraft:gold_block", 6.3, 1800));
@@ -143,104 +159,126 @@ public class DynamicRecipes {
         enabledFeatures.forEach(it -> REGISTRY.put(it.getLeft(), it.getRight()));
     }
 
-    private static Pair<Identifier, JsonObject> pickaxe(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> pickaxe(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "###",
                 " | ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
 
-    private static Pair<Identifier, JsonObject> pickaxe_tag(String name, String tag, String result) {
+    private static Pair<Identifier, JsonObject> pickaxe_tag(String name, String tag, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "###",
                 " | ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
 
-    private static Pair<Identifier, JsonObject> sword(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> sword(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 " # ",
                 " # ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
-                Enriched.identifier(name)
-        );
-    }
-    private static Pair<Identifier, JsonObject> sword_tag(String name, String tag, String result) {
-        return ShapedRecipeBuilder.ofPattern(
-                " # ",
-                " # ",
-                " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
 
-    private static Pair<Identifier, JsonObject> axe(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> sword_tag(String name, String tag, String result)
+    {
+        return ShapedRecipeBuilder.ofPattern(
+                " # ",
+                " # ",
+                " | "
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
+                Enriched.identifier(name)
+        );
+    }
+
+    private static Pair<Identifier, JsonObject> axe(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "## ",
                 "#| ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
 
-    private static Pair<Identifier, JsonObject> axe_tag(String name, String tag, String result) {
+    private static Pair<Identifier, JsonObject> axe_tag(String name, String tag, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "## ",
                 "#| ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
 
-    private static Pair<Identifier, JsonObject> shovel(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> shovel(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 " # ",
                 " | ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
-    private static Pair<Identifier, JsonObject> shovel_tag(String name, String tag, String result) {
+
+    private static Pair<Identifier, JsonObject> shovel_tag(String name, String tag, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 " # ",
                 " | ",
                 " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
 
-    private static Pair<Identifier, JsonObject> hoe(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> hoe(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "## ",
                 " | ",
                 " | "
-        ).item('#', item).item('|', "stick").result(result).build(
-                Enriched.identifier(name)
-        );
-    }
-    private static Pair<Identifier, JsonObject> hoe_tag(String name, String tag, String result) {
-        return ShapedRecipeBuilder.ofPattern(
-                "## ",
-                " | ",
-                " | "
-        ).tag('#', tag).item('|', "stick").result(result).build(
+        ).item('#', item).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
                 Enriched.identifier(name)
         );
     }
 
-    private static Pair<Identifier, JsonObject> alloy() {
+    private static Pair<Identifier, JsonObject> hoe_tag(String name, String tag, String result)
+    {
+        var a = ShapedRecipeBuilder.ofPattern(
+                "## ",
+                " | ",
+                " | "
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
+                Enriched.identifier(name)
+        );
+
+        return ShapedRecipeBuilder.ofPattern(
+                "## ",
+                " | ",
+                " | "
+        ).tag('#', tag).item('|', Registries.ITEM.getId(Items.STICK).toString()).result(result).build(
+                Enriched.identifier(name)
+        );
+    }
+
+    private static Pair<Identifier, JsonObject> alloy()
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "III",
                 "OOO",
@@ -250,7 +288,8 @@ public class DynamicRecipes {
         ).build(Enriched.identifier("obsidian_alloy_ingot"));
     }
 
-    private static Pair<Identifier, JsonObject> helmet(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> helmet(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "###",
                 "# #",
@@ -259,7 +298,9 @@ public class DynamicRecipes {
                 Enriched.identifier(name)
         );
     }
-    private static Pair<Identifier, JsonObject> helmet_tag(String name, String tag, String result) {
+
+    private static Pair<Identifier, JsonObject> helmet_tag(String name, String tag, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "###",
                 "# #",
@@ -269,7 +310,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> chestplate(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> chestplate(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "# #",
                 "###",
@@ -278,7 +320,9 @@ public class DynamicRecipes {
                 Enriched.identifier(name)
         );
     }
-    private static Pair<Identifier, JsonObject> chestplate_tag(String name, String tag, String result) {
+
+    private static Pair<Identifier, JsonObject> chestplate_tag(String name, String tag, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "# #",
                 "###",
@@ -288,7 +332,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> leggings(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> leggings(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "###",
                 "# #",
@@ -298,7 +343,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> leggings_tag(String name, String tag, String result) {
+    private static Pair<Identifier, JsonObject> leggings_tag(String name, String tag, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "###",
                 "# #",
@@ -308,7 +354,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> boots(String name, String item, String result) {
+    private static Pair<Identifier, JsonObject> boots(String name, String item, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "# #",
                 "# #",
@@ -317,7 +364,9 @@ public class DynamicRecipes {
                 Enriched.identifier(name)
         );
     }
-    private static Pair<Identifier, JsonObject> boots_tag(String name, String tag, String result) {
+
+    private static Pair<Identifier, JsonObject> boots_tag(String name, String tag, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "# #",
                 "# #",
@@ -327,7 +376,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> blend(String name, String item_1, String item_2, String result) {
+    private static Pair<Identifier, JsonObject> blend(String name, String item_1, String item_2, String result)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "   ",
                 "21 ",
@@ -337,7 +387,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> uncrafting_tag(String name, String tag, String result, int count) {
+    private static Pair<Identifier, JsonObject> uncrafting_tag(String name, String tag, String result, int count)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "#  ",
                 "   ",
@@ -347,7 +398,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> uncrafting(String name, String item, String result, int count) {
+    private static Pair<Identifier, JsonObject> uncrafting(String name, String item, String result, int count)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "#  ",
                 "   ",
@@ -357,7 +409,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> horse_armor(String name, String tag, String item, String result, int count) {
+    private static Pair<Identifier, JsonObject> horse_armor(String name, String tag, String item, String result, int count)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "  #",
                 "#W#",
@@ -367,7 +420,8 @@ public class DynamicRecipes {
         );
     }
 
-    private static Pair<Identifier, JsonObject> block(String name, String item, String result, int count) {
+    private static Pair<Identifier, JsonObject> block(String name, String item, String result, int count)
+    {
         return ShapedRecipeBuilder.ofPattern(
                 "###",
                 "###",
@@ -379,7 +433,8 @@ public class DynamicRecipes {
 
     private static Pair<Identifier, JsonObject> blasting(
             String name, String input, String output, double experience, int cookingTime
-    ) {
+    )
+    {
         final Identifier identifier = Enriched.identifier(name);
         final JsonObject json = new JsonObject();
         json.addProperty("type", "minecraft:blasting");
@@ -388,7 +443,10 @@ public class DynamicRecipes {
         ingredient.addProperty("item", input);
         json.add("ingredient", ingredient);
 
-        json.addProperty("result", output);
+        final JsonObject result = new JsonObject();
+        result.addProperty("id", output);
+        json.add("result", result);
+
         json.addProperty("experience", experience);
         json.addProperty("cookingtime", cookingTime);
 
@@ -397,7 +455,8 @@ public class DynamicRecipes {
 
     private static Pair<Identifier, JsonObject> smelting(
             String name, String input, String output, double experience, int cookingTime
-    ) {
+    )
+    {
         final Identifier identifier = Enriched.identifier(name);
         final JsonObject json = new JsonObject();
         json.addProperty("type", "minecraft:smelting");
@@ -406,7 +465,10 @@ public class DynamicRecipes {
         ingredient.addProperty("item", input);
         json.add("ingredient", ingredient);
 
-        json.addProperty("result", output);
+        final JsonObject result = new JsonObject();
+        result.addProperty("id", output);
+        json.add("result", result);
+
         json.addProperty("experience", experience);
         json.addProperty("cookingtime", cookingTime);
 
