@@ -1,48 +1,38 @@
 {
-  "schemaVersion": 1,
-  "id": "enriched",
-  "version": "${version}",
-  "name": "Enriched",
-  "accessWidener": "enriched.accesswidener",
-  "description": "Enhancements and vanilla-esque additions.",
-  "authors": [
-    "CamoMano"
-  ],
-  "contributors": [
-    "RDKRACZ"
-  ],
-  "contact": {
-    "homepage": "https://enrichedmc.com/",
-    "sources": "https://github.com/CamoMano/Enriched",
-    "issues": "https://github.com/CamoMano/Enriched/issues"
-  },
-  "license": "MIT",
-  "icon": "assets/enriched/icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.enrichedmc.Enriched"
-    ],
-    "client": [
-      "com.enrichedmc.EnrichedClient"
-    ],
-    "server": [],
-    "modmenu": [
-      "com.enrichedmc.config.ModMenu"
-    ],
-    "fabric-datagen": [
-      "com.enrichedmc.EnrichedDataGenerator"
-    ]
-  },
-  "mixins": [
-    "enriched.mixins.json"
-  ],
-  "depends": {
-    "minecraft": "~${minecraft_version}",
-    "fabricloader": ">=${fabric_loader_version}",
-    "fabric": ">=${fabric_api_version}"
-  },
-  "suggests": {
-    "modmenu": "*"
-  }
+	"schemaVersion": 1,
+	"id": "enriched",
+	"version": "${mod_version}",
+	"name": "Enriched",
+	"description": "A mod that adds enhancements and vanilla-esque additions to the game as well as bringing back removed features.",
+	"authors": [
+		"CamoMano"
+	],
+	"contributors": [
+		"RDKRACZ",
+		"Ayydxn"
+	],
+	"contact": {
+		"homepage": "https://enrichedmc.com/",
+		"sources": "https://github.com/CamoMano/Enriched",
+		"issues": "https://github.com/CamoMano/Enriched/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/enriched/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.enrichedmc.enriched.EnrichedMod"
+		],
+		"fabric-datagen": [
+			"com.enrichedmc.enriched.EnrichedDataGenerator"
+		]
+	},
+	"mixins": [
+		"enriched.mixins.json"
+	],
+	"depends": {
+		"minecraft": ">=${minecraft_version}",
+		"fabricloader": ">=${fabric_loader_version}",
+		"fabric-api": ">=${fabric_api_version}"
+	}
 }

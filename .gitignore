@@ -1,28 +1,33 @@
-#Gradle
+# Gradle
 .gradle/
 build/
 out/
 classes/
 
-#IDEA
+# Eclipse
+*.launch
+
+# IntelliJ IDEA
 .idea/
 *.iml
 *.ipr
 *.iws
 
-#vscode
+# VS Code
 .settings/
 .vscode/
 bin/
 .classpath
 .project
 
-#fabric
+# MacOS
+*.DS_Store
+
+# Minecraft/Fabric
 run/
-Version.lnk
-/remappedSrc/
-crowdin-translate-1.2.jar
-crowdin.jar
-translate.bat
-src/main/resources/vanillaenhanced.timestamp
-.gitconfig
+
+# Java
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr

@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "enriched:block/polished_dark_granite",
-    "top": "enriched:block/polished_dark_granite",
-    "side": "enriched:block/polished_dark_granite"
-  }
-}

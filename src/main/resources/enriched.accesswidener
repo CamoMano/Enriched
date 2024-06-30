@@ -1,6 +1,0 @@
-accessWidener v2 named
-
-accessible class net/minecraft/world/gen/feature/ConfiguredFeatures
-accessible class net/minecraft/world/gen/structure/Structures
-
-accessible method net/minecraft/item/ArmorMaterials register (Ljava/lang/String;Ljava/util/EnumMap;ILnet/minecraft/registry/entry/RegistryEntry;FFLjava/util/function/Supplier;)Lnet/minecraft/registry/entry/RegistryEntry;
