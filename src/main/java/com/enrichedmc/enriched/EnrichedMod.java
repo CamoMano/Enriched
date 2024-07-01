@@ -2,6 +2,7 @@ package com.enrichedmc.enriched;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.item.EnrichedItems;
+import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
@@ -21,5 +22,6 @@ public class EnrichedMod implements ModInitializer
         // (Ayydxn) These don't do anything and are being called, so the JVM will load the class and run their static blocks.
         EnrichedItems.registerItems();
         EnrichedBlocks.registerBlocks();
+        EnrichedArmorMaterials.register();
     }
 }

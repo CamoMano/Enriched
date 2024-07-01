@@ -27,6 +27,7 @@
 			"com.enrichedmc.enriched.EnrichedDataGenerator"
 		]
 	},
+	"accessWidener": "enriched.accesswidener",
 	"mixins": [
 		"enriched.mixins.json"
 	],
