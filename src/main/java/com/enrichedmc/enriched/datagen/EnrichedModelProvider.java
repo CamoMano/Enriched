@@ -75,6 +75,9 @@ public class EnrichedModelProvider extends FabricModelProvider
         this.registerToolModels(itemModelGenerator, EnrichedItems.EMERALD_SWORD, EnrichedItems.EMERALD_SHOVEL, EnrichedItems.EMERALD_PICKAXE,
                 EnrichedItems.EMERALD_AXE, EnrichedItems.EMERALD_HOE);
 
+        this.registerToolModels(itemModelGenerator, EnrichedItems.COPPER_SWORD, EnrichedItems.COPPER_SHOVEL, EnrichedItems.COPPER_PICKAXE, EnrichedItems.COPPER_AXE,
+                EnrichedItems.COPPER_HOE);
+
         /*-------------*/
         /* -- Armor -- */
         /*-------------*/

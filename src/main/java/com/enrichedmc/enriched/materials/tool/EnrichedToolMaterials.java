@@ -1,36 +1,38 @@
 package com.enrichedmc.enriched.materials.tool;
 
-import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.item.EnrichedItems;
+import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
 public enum EnrichedToolMaterials implements ToolMaterial
 {
-    RUBY(EnrichedToolMaterials.createInverseTag("incorrect_for_ruby_tool"), 650, 7.5f, 4.5f, 20,
+    RUBY(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_ruby_tool"), 650, 7.5f, 4.5f, 20,
             () -> Ingredient.ofItems(EnrichedItems.RUBY)),
 
-    SAPPHIRE(EnrichedToolMaterials.createInverseTag("incorrect_for_sapphire_tool"), 650, 8.0f, 4.0f, 20,
-            () -> Ingredient.ofItems(EnrichedItems.SAPPHIRE)),
+    SAPPHIRE(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_sapphire_tool"), 650, 8.0f, 4.0f,
+            20, () -> Ingredient.ofItems(EnrichedItems.SAPPHIRE)),
 
-    TANZANITE(EnrichedToolMaterials.createInverseTag("incorrect_for_tanzanite_tool"), 750, 7.5f, 4.0f, 20,
-            () -> Ingredient.ofItems(EnrichedItems.TANZANITE)),
+    TANZANITE(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_tanzanite_tool"), 750, 7.5f, 4.0f,
+            20, () -> Ingredient.ofItems(EnrichedItems.TANZANITE)),
 
-    STEEL(EnrichedToolMaterials.createInverseTag("incorrect_for_steel_tool"), 850, 6.0f, 5.0f, 9,
+    STEEL(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_steel_tool"), 850, 6.0f, 5.0f, 9,
             () -> Ingredient.ofItems(EnrichedItems.STEEL_INGOT)),
 
-    OBSIDIAN(EnrichedToolMaterials.createInverseTag("incorrect_for_obsidian_tool"), 1820, 7.0f, 4.5f, 9,
-            () -> Ingredient.ofItems(EnrichedItems.OBSIDIAN_ALLOY_INGOT)),
+    OBSIDIAN(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_obsidian_tool"), 1820, 7.0f, 4.5f,
+            9, () -> Ingredient.ofItems(EnrichedItems.OBSIDIAN_ALLOY_INGOT)),
 
-    EMERALD(EnrichedToolMaterials.createInverseTag("incorrect_for_emerald_tool"), 650, 7.5f, 4.0f, 25,
-            () -> Ingredient.ofItems(Items.EMERALD));
+    EMERALD(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_emerald_tool"), 650, 7.5f, 4.0f,
+            25, () -> Ingredient.ofItems(Items.EMERALD)),
+
+    COPPER(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_copper_tool"), 150, 4.0f, 3.5f, 13,
+            () -> Ingredient.ofItems(Items.COPPER_INGOT));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;
@@ -39,7 +41,8 @@ public enum EnrichedToolMaterials implements ToolMaterial
     private final int enchantability;
     private final Supplier<Ingredient> repairIngredient;
 
-    EnrichedToolMaterials(TagKey<Block> inverseTag, int itemDurability, float miningSpeed, float attckDamage, int enchantability, Supplier<Ingredient> repairIngredient)
+    EnrichedToolMaterials(TagKey<Block> inverseTag, int itemDurability, float miningSpeed, float attckDamage, int enchantability,
+                          Supplier<Ingredient> repairIngredient)
     {
         this.inverseTag = inverseTag;
         this.itemDurability = itemDurability;
@@ -83,10 +86,5 @@ public enum EnrichedToolMaterials implements ToolMaterial
     public Ingredient getRepairIngredient()
     {
         return this.repairIngredient.get();
-    }
-
-    private static TagKey<Block> createInverseTag(String tagPath)
-    {
-        return TagKey.of(RegistryKeys.BLOCK, Identifier.of(EnrichedMod.MOD_ID, tagPath));
     }
 }

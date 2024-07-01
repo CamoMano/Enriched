@@ -78,6 +78,10 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
                 EnrichedItems.EMERALD_AXE, EnrichedItems.EMERALD_HOE, "Emerald Sword", "Emerald Shovel", "Emerald Pickaxe",
                 "Emerald Axe", "Emerald Hoe");
 
+        this.addToolTranslations(translationBuilder, EnrichedItems.COPPER_SWORD, EnrichedItems.COPPER_SHOVEL, EnrichedItems.COPPER_PICKAXE,
+                EnrichedItems.COPPER_AXE, EnrichedItems.COPPER_HOE, "Copper Sword", "Copper Shovel", "Copper Pickaxe",
+                "Copper Axe", "Copper Hoe");
+
         /*-------------*/
         /* -- Armor -- */
         /*-------------*/

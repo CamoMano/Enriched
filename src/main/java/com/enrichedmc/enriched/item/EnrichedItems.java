@@ -55,6 +55,11 @@ public class EnrichedItems
     public static final Item EMERALD_PICKAXE;
     public static final Item EMERALD_AXE;
     public static final Item EMERALD_HOE;
+    public static final Item COPPER_SWORD;
+    public static final Item COPPER_SHOVEL;
+    public static final Item COPPER_PICKAXE;
+    public static final Item COPPER_AXE;
+    public static final Item COPPER_HOE;
 
     public static final ArmorItem RUBY_HELMET;
     public static final ArmorItem RUBY_CHESTPLATE;
@@ -132,6 +137,12 @@ public class EnrichedItems
         EMERALD_PICKAXE = EnrichedRegisters.registerItem("emerald_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.EMERALD));
         EMERALD_AXE = EnrichedRegisters.registerItem("emerald_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.EMERALD));
         EMERALD_HOE = EnrichedRegisters.registerItem("emerald_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.EMERALD));
+
+        COPPER_SWORD = EnrichedRegisters.registerItem("copper_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.COPPER));
+        COPPER_SHOVEL = EnrichedRegisters.registerItem("copper_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.COPPER));
+        COPPER_PICKAXE = EnrichedRegisters.registerItem("copper_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.COPPER));
+        COPPER_AXE = EnrichedRegisters.registerItem("copper_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.COPPER));
+        COPPER_HOE = EnrichedRegisters.registerItem("copper_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.COPPER));
 
         /*-------------*/
         /* -- Armor -- */
@@ -260,6 +271,9 @@ public class EnrichedItems
         EnrichedItems.registerToolsToItemGroup(EnrichedItems.EMERALD_SWORD, EnrichedItems.EMERALD_SHOVEL, EnrichedItems.EMERALD_PICKAXE, EnrichedItems.EMERALD_AXE,
                 EnrichedItems.EMERALD_HOE);
 
+        EnrichedItems.registerToolsToItemGroup(EnrichedItems.COPPER_SWORD, EnrichedItems.COPPER_SHOVEL, EnrichedItems.COPPER_PICKAXE, EnrichedItems.COPPER_AXE,
+                EnrichedItems.COPPER_HOE);
+
         /*-------------*/
         /* -- Armor -- */
         /*-------------*/
@@ -284,6 +298,7 @@ public class EnrichedItems
         EnrichedRegisters.registerToItemGroup(sword, ItemGroups.COMBAT);
         EnrichedRegisters.registerToItemGroup(shovel, ItemGroups.TOOLS);
         EnrichedRegisters.registerToItemGroup(pickaxe, ItemGroups.TOOLS);
+        EnrichedRegisters.registerToItemGroup(axe, ItemGroups.TOOLS);
         EnrichedRegisters.registerToItemGroup(axe, ItemGroups.COMBAT);
         EnrichedRegisters.registerToItemGroup(hoe, ItemGroups.TOOLS);
     }
