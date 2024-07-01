@@ -1,5 +1,6 @@
 package com.enrichedmc.enriched.datagen;
 
+import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -17,6 +18,20 @@ public class EnrichedModelProvider extends FabricModelProvider
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator)
     {
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.RUBY_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.RUBY_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_RUBY_ORE);
+
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.SAPPHIRE_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.SAPPHIRE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE);
+
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TANZANITE_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TANZANITE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE);
+
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.STEEL_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
     }
 
     @Override
