@@ -5,6 +5,7 @@ import com.enrichedmc.enriched.item.EnrichedItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -52,6 +53,32 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK, "Obsidian Alloy Block");
 
         /*-------------*/
+        /* -- Tools -- */
+        /*-------------*/
+
+        this.addToolTranslations(translationBuilder, EnrichedItems.RUBY_SWORD, EnrichedItems.RUBY_SHOVEL, EnrichedItems.RUBY_PICKAXE, EnrichedItems.RUBY_AXE,
+                EnrichedItems.RUBY_HOE, "Ruby Sword", "Ruby Shovel", "Ruby Pickaxe", "Ruby Axe", "Ruby Hoe");
+
+        this.addToolTranslations(translationBuilder, EnrichedItems.SAPPHIRE_SWORD, EnrichedItems.SAPPHIRE_SHOVEL, EnrichedItems.SAPPHIRE_PICKAXE,
+                EnrichedItems.SAPPHIRE_AXE, EnrichedItems.SAPPHIRE_HOE, "Sapphire Sword", "Sapphire Shovel", "Sapphire Pickaxe",
+                "Sapphire Axe", "Sapphire Hoe");
+
+        this.addToolTranslations(translationBuilder, EnrichedItems.TANZANITE_SWORD, EnrichedItems.TANZANITE_SHOVEL, EnrichedItems.TANZANITE_PICKAXE,
+                EnrichedItems.TANZANITE_AXE, EnrichedItems.TANZANITE_HOE, "Tanzanite Sword", "Tanzanite Shovel",
+                "Tanzanite Pickaxe", "Tanzanite Axe", "Tanzanite Hoe");
+
+        this.addToolTranslations(translationBuilder, EnrichedItems.STEEL_SWORD, EnrichedItems.STEEL_SHOVEL, EnrichedItems.STEEL_PICKAXE, EnrichedItems.STEEL_AXE,
+                EnrichedItems.STEEL_HOE, "Steel Sword", "Steel Shovel", "Steel Pickaxe", "Steel Axe", "Steel Hoe");
+
+        this.addToolTranslations(translationBuilder, EnrichedItems.OBSIDIAN_SWORD, EnrichedItems.OBSIDIAN_SHOVEL, EnrichedItems.OBSIDIAN_PICKAXE,
+                EnrichedItems.OBSIDIAN_AXE, EnrichedItems.OBSIDIAN_HOE, "Obsidian Sword", "Obsidian Shovel", "Obsidian Pickaxe",
+                "Obsidian Axe", "Obsidian Hoe");
+
+        this.addToolTranslations(translationBuilder, EnrichedItems.EMERALD_SWORD, EnrichedItems.EMERALD_SHOVEL, EnrichedItems.EMERALD_PICKAXE,
+                EnrichedItems.EMERALD_AXE, EnrichedItems.EMERALD_HOE, "Emerald Sword", "Emerald Shovel", "Emerald Pickaxe",
+                "Emerald Axe", "Emerald Hoe");
+
+        /*-------------*/
         /* -- Armor -- */
         /*-------------*/
 
@@ -84,6 +111,16 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
 
         translationBuilder.add(EnrichedItems.BEEF_STEW, "Beef Stew");
         translationBuilder.add(EnrichedItems.BERRY_JUICE, "Berry Juice");
+    }
+
+    private void addToolTranslations(TranslationBuilder translationBuilder, Item sword, Item shovel, Item pickaxe, Item axe, Item hoe, String swordText,
+                                     String shovelText, String pickaxeText, String axeText, String hoeText)
+    {
+        translationBuilder.add(sword, swordText);
+        translationBuilder.add(shovel, shovelText);
+        translationBuilder.add(pickaxe, pickaxeText);
+        translationBuilder.add(axe, axeText);
+        translationBuilder.add(hoe, hoeText);
     }
 
     private void addArmorTranslations(TranslationBuilder translationBuilder, ArmorItem helmet, ArmorItem chestplate, ArmorItem leggings, ArmorItem boots,

@@ -8,6 +8,7 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
 import net.minecraft.world.gen.structure.OceanRuinStructure;
 
 public class EnrichedModelProvider extends FabricModelProvider
@@ -53,6 +54,28 @@ public class EnrichedModelProvider extends FabricModelProvider
         itemModelGenerator.register(EnrichedItems.HONEY_BALL, Models.GENERATED);
 
         /*-------------*/
+        /* -- Tools -- */
+        /*-------------*/
+
+        this.registerToolModels(itemModelGenerator, EnrichedItems.RUBY_SWORD, EnrichedItems.RUBY_SHOVEL, EnrichedItems.RUBY_PICKAXE,
+                EnrichedItems.RUBY_AXE, EnrichedItems.RUBY_HOE);
+
+        this.registerToolModels(itemModelGenerator, EnrichedItems.SAPPHIRE_SWORD, EnrichedItems.SAPPHIRE_SHOVEL, EnrichedItems.SAPPHIRE_PICKAXE,
+                EnrichedItems.SAPPHIRE_AXE, EnrichedItems.SAPPHIRE_HOE);
+
+        this.registerToolModels(itemModelGenerator, EnrichedItems.TANZANITE_SWORD, EnrichedItems.TANZANITE_SHOVEL, EnrichedItems.TANZANITE_PICKAXE,
+                EnrichedItems.TANZANITE_AXE, EnrichedItems.TANZANITE_HOE);
+
+        this.registerToolModels(itemModelGenerator, EnrichedItems.STEEL_SWORD, EnrichedItems.STEEL_SHOVEL, EnrichedItems.STEEL_PICKAXE, EnrichedItems.STEEL_AXE,
+                EnrichedItems.STEEL_HOE);
+
+        this.registerToolModels(itemModelGenerator, EnrichedItems.OBSIDIAN_SWORD, EnrichedItems.OBSIDIAN_SHOVEL, EnrichedItems.OBSIDIAN_PICKAXE,
+                EnrichedItems.OBSIDIAN_AXE, EnrichedItems.OBSIDIAN_HOE);
+
+        this.registerToolModels(itemModelGenerator, EnrichedItems.EMERALD_SWORD, EnrichedItems.EMERALD_SHOVEL, EnrichedItems.EMERALD_PICKAXE,
+                EnrichedItems.EMERALD_AXE, EnrichedItems.EMERALD_HOE);
+
+        /*-------------*/
         /* -- Armor -- */
         /*-------------*/
 
@@ -80,6 +103,15 @@ public class EnrichedModelProvider extends FabricModelProvider
 
         itemModelGenerator.register(EnrichedItems.BEEF_STEW, Models.GENERATED);
         itemModelGenerator.register(EnrichedItems.BERRY_JUICE, Models.GENERATED);
+    }
+
+    private void registerToolModels(ItemModelGenerator itemModelGenerator, Item sword, Item shovel, Item pickaxe, Item axe, Item hoe)
+    {
+        itemModelGenerator.register(sword, Models.GENERATED);
+        itemModelGenerator.register(shovel, Models.GENERATED);
+        itemModelGenerator.register(pickaxe, Models.GENERATED);
+        itemModelGenerator.register(axe, Models.GENERATED);
+        itemModelGenerator.register(hoe, Models.GENERATED);
     }
 
     private void registerArmorModels(ItemModelGenerator itemModelGenerator, ArmorItem helmet, ArmorItem chestplate, ArmorItem leggings, ArmorItem boots)

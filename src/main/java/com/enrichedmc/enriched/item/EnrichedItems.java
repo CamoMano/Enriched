@@ -1,8 +1,10 @@
 package com.enrichedmc.enriched.item;
 
 import com.enrichedmc.enriched.EnrichedMod;
+import com.enrichedmc.enriched.item.base.*;
 import com.enrichedmc.enriched.item.food.EnrichedFoodComponents;
 import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
+import com.enrichedmc.enriched.materials.tool.EnrichedToolMaterials;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -22,6 +24,37 @@ public class EnrichedItems
 
     public static final Item BEEF_STEW;
     public static final Item BERRY_JUICE;
+
+    public static final Item RUBY_SWORD;
+    public static final Item RUBY_SHOVEL;
+    public static final Item RUBY_PICKAXE;
+    public static final Item RUBY_AXE;
+    public static final Item RUBY_HOE;
+    public static final Item SAPPHIRE_SWORD;
+    public static final Item SAPPHIRE_SHOVEL;
+    public static final Item SAPPHIRE_PICKAXE;
+    public static final Item SAPPHIRE_AXE;
+    public static final Item SAPPHIRE_HOE;
+    public static final Item TANZANITE_SWORD;
+    public static final Item TANZANITE_SHOVEL;
+    public static final Item TANZANITE_PICKAXE;
+    public static final Item TANZANITE_AXE;
+    public static final Item TANZANITE_HOE;
+    public static final Item STEEL_SWORD;
+    public static final Item STEEL_SHOVEL;
+    public static final Item STEEL_PICKAXE;
+    public static final Item STEEL_AXE;
+    public static final Item STEEL_HOE;
+    public static final Item OBSIDIAN_SWORD;
+    public static final Item OBSIDIAN_SHOVEL;
+    public static final Item OBSIDIAN_PICKAXE;
+    public static final Item OBSIDIAN_AXE;
+    public static final Item OBSIDIAN_HOE;
+    public static final Item EMERALD_SWORD;
+    public static final Item EMERALD_SHOVEL;
+    public static final Item EMERALD_PICKAXE;
+    public static final Item EMERALD_AXE;
+    public static final Item EMERALD_HOE;
 
     public static final ArmorItem RUBY_HELMET;
     public static final ArmorItem RUBY_CHESTPLATE;
@@ -59,6 +92,46 @@ public class EnrichedItems
         OBSIDIAN_ALLOY_INGOT = EnrichedRegisters.registerItem("obsidian_alloy_ingot", new Item(new Item.Settings()));
 
         HONEY_BALL = EnrichedRegisters.registerItem("honey_ball", new Item(new Item.Settings()));
+
+        /*-------------*/
+        /* -- Tools -- */
+        /*-------------*/
+
+        RUBY_SWORD = EnrichedRegisters.registerItem("ruby_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.RUBY));
+        RUBY_SHOVEL = EnrichedRegisters.registerItem("ruby_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.RUBY));
+        RUBY_PICKAXE = EnrichedRegisters.registerItem("ruby_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.RUBY));
+        RUBY_AXE = EnrichedRegisters.registerItem("ruby_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.RUBY));
+        RUBY_HOE = EnrichedRegisters.registerItem("ruby_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.RUBY));
+
+        SAPPHIRE_SWORD = EnrichedRegisters.registerItem("sapphire_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.SAPPHIRE));
+        SAPPHIRE_SHOVEL = EnrichedRegisters.registerItem("sapphire_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.SAPPHIRE));
+        SAPPHIRE_PICKAXE = EnrichedRegisters.registerItem("sapphire_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.SAPPHIRE));
+        SAPPHIRE_AXE = EnrichedRegisters.registerItem("sapphire_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.SAPPHIRE));
+        SAPPHIRE_HOE = EnrichedRegisters.registerItem("sapphire_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.SAPPHIRE));
+
+        TANZANITE_SWORD = EnrichedRegisters.registerItem("tanzanite_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.TANZANITE));
+        TANZANITE_SHOVEL = EnrichedRegisters.registerItem("tanzanite_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.TANZANITE));
+        TANZANITE_PICKAXE = EnrichedRegisters.registerItem("tanzanite_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.TANZANITE));
+        TANZANITE_AXE = EnrichedRegisters.registerItem("tanzanite_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.TANZANITE));
+        TANZANITE_HOE = EnrichedRegisters.registerItem("tanzanite_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.TANZANITE));
+
+        STEEL_SWORD = EnrichedRegisters.registerItem("steel_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.STEEL));
+        STEEL_SHOVEL = EnrichedRegisters.registerItem("steel_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.STEEL));
+        STEEL_PICKAXE = EnrichedRegisters.registerItem("steel_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.STEEL));
+        STEEL_AXE = EnrichedRegisters.registerItem("steel_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.STEEL));
+        STEEL_HOE = EnrichedRegisters.registerItem("steel_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.STEEL));
+
+        OBSIDIAN_SWORD = EnrichedRegisters.registerItem("obsidian_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.OBSIDIAN));
+        OBSIDIAN_SHOVEL = EnrichedRegisters.registerItem("obsidian_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.OBSIDIAN));
+        OBSIDIAN_PICKAXE = EnrichedRegisters.registerItem("obsidian_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.OBSIDIAN));
+        OBSIDIAN_AXE = EnrichedRegisters.registerItem("obsidian_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.OBSIDIAN));
+        OBSIDIAN_HOE = EnrichedRegisters.registerItem("obsidian_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.OBSIDIAN));
+
+        EMERALD_SWORD = EnrichedRegisters.registerItem("emerald_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.EMERALD));
+        EMERALD_SHOVEL = EnrichedRegisters.registerItem("emerald_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.EMERALD));
+        EMERALD_PICKAXE = EnrichedRegisters.registerItem("emerald_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.EMERALD));
+        EMERALD_AXE = EnrichedRegisters.registerItem("emerald_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.EMERALD));
+        EMERALD_HOE = EnrichedRegisters.registerItem("emerald_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.EMERALD));
 
         /*-------------*/
         /* -- Armor -- */
@@ -166,6 +239,28 @@ public class EnrichedItems
         EnrichedRegisters.registerToItemGroup(HONEY_BALL, ItemGroups.INGREDIENTS);
 
         /*-------------*/
+        /* -- Tools -- */
+        /*-------------*/
+
+        EnrichedItems.registerToolsToItemGroup(EnrichedItems.RUBY_SWORD, EnrichedItems.RUBY_SHOVEL, EnrichedItems.RUBY_PICKAXE, EnrichedItems.RUBY_AXE,
+                EnrichedItems.RUBY_HOE);
+
+        EnrichedItems.registerToolsToItemGroup(EnrichedItems.SAPPHIRE_SWORD, EnrichedItems.SAPPHIRE_SHOVEL, EnrichedItems.SAPPHIRE_PICKAXE,
+                EnrichedItems.SAPPHIRE_AXE, EnrichedItems.SAPPHIRE_HOE);
+
+        EnrichedItems.registerToolsToItemGroup(EnrichedItems.TANZANITE_SWORD, EnrichedItems.TANZANITE_SHOVEL, EnrichedItems.TANZANITE_PICKAXE,
+                EnrichedItems.TANZANITE_AXE, EnrichedItems.TANZANITE_HOE);
+
+        EnrichedItems.registerToolsToItemGroup(EnrichedItems.STEEL_SWORD, EnrichedItems.STEEL_SHOVEL, EnrichedItems.STEEL_PICKAXE, EnrichedItems.STEEL_AXE,
+                EnrichedItems.STEEL_HOE);
+
+        EnrichedItems.registerToolsToItemGroup(EnrichedItems.OBSIDIAN_SWORD, EnrichedItems.OBSIDIAN_SHOVEL, EnrichedItems.OBSIDIAN_PICKAXE,
+                EnrichedItems.OBSIDIAN_AXE, EnrichedItems.OBSIDIAN_HOE);
+
+        EnrichedItems.registerToolsToItemGroup(EnrichedItems.EMERALD_SWORD, EnrichedItems.EMERALD_SHOVEL, EnrichedItems.EMERALD_PICKAXE, EnrichedItems.EMERALD_AXE,
+                EnrichedItems.EMERALD_HOE);
+
+        /*-------------*/
         /* -- Armor -- */
         /*-------------*/
 
@@ -182,6 +277,15 @@ public class EnrichedItems
 
         EnrichedRegisters.registerToItemGroup(BEEF_STEW, ItemGroups.FOOD_AND_DRINK);
         EnrichedRegisters.registerToItemGroup(BERRY_JUICE, ItemGroups.FOOD_AND_DRINK);
+    }
+
+    private static void registerToolsToItemGroup(Item sword, Item shovel, Item pickaxe, Item axe, Item hoe)
+    {
+        EnrichedRegisters.registerToItemGroup(sword, ItemGroups.COMBAT);
+        EnrichedRegisters.registerToItemGroup(shovel, ItemGroups.TOOLS);
+        EnrichedRegisters.registerToItemGroup(pickaxe, ItemGroups.TOOLS);
+        EnrichedRegisters.registerToItemGroup(axe, ItemGroups.COMBAT);
+        EnrichedRegisters.registerToItemGroup(hoe, ItemGroups.TOOLS);
     }
 
     // (Ayydxn) Maybe add an item group parameter instead of hard-coding the combat item group?
