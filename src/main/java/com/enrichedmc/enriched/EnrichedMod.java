@@ -1,6 +1,7 @@
 package com.enrichedmc.enriched;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
+import com.enrichedmc.enriched.conditions.EnrichedResourceConditions;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
 import net.fabricmc.api.ModInitializer;
@@ -23,5 +24,6 @@ public class EnrichedMod implements ModInitializer
         EnrichedItems.registerItems();
         EnrichedBlocks.registerBlocks();
         EnrichedArmorMaterials.register();
+        EnrichedResourceConditions.registerResourceConditions();
     }
 }

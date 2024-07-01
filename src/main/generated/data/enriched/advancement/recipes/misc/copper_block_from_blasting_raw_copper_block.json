@@ -1,0 +1,37 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "enriched:raw_smelting_enabled"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_copper_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:raw_copper_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enriched:copper_block_from_blasting_raw_copper_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_copper_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enriched:copper_block_from_blasting_raw_copper_block"
+    ]
+  }
+}

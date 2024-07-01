@@ -1,4 +1,4 @@
-// 1.21	2024-07-01T14:09:52.0266717	Enriched/Model Definitions
+// 1.21	2024-07-01T16:51:26.8030822	Enriched/Model Definitions
 52a97c175d84d2a7feb30a23c0368cdf067fc064 assets\enriched\models\item\tanzanite_chestplate_redstone_trim.json
 92fcdf330027598ea7065e1cd91b75a681d4479d assets\enriched\models\item\tanzanite_chestplate_netherite_trim.json
 32a7fa5287ec51dff86e497c3eab16dbac6296c7 assets\enriched\models\item\ruby_chestplate_redstone_trim.json
@@ -179,8 +179,8 @@ df244732b43c315845ce8f390b6c0eaaaf1f1909 assets\enriched\models\item\tanzanite_b
 612f3b927301bf05fa4a3264b9c3f7651d46a429 assets\enriched\models\item\steel_boots_amethyst_trim.json
 74c59f47005271e82054dfdfa28312fdba57c8c5 assets\enriched\models\item\emerald_helmet_amethyst_trim.json
 f7d2273313e03e8e010a3362d7594c962a4bd4ad assets\enriched\models\item\ruby_chestplate_emerald_trim.json
-20237a3a9e8a8836d2ebe6d76bcad9bc00b56d62 assets\enriched\models\item\steel_boots_emerald_trim.json
 c7673c40a875808726d085fc0af692236126232e assets\enriched\models\item\steel_helmet_quartz_trim.json
+20237a3a9e8a8836d2ebe6d76bcad9bc00b56d62 assets\enriched\models\item\steel_boots_emerald_trim.json
 6db3d995ff803db88709060ffa976da5200e60fd assets\enriched\models\item\steel_helmet_redstone_trim.json
 409a6c92f5906359f0ffba8f1b389641d25e2b68 assets\enriched\models\item\emerald_leggings_emerald_trim.json
 24d085d1a48a6e03acb8bf3d6076a57348e7327c assets\enriched\models\item\sapphire_chestplate.json

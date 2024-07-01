@@ -1,0 +1,37 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "enriched:tanzanite_enabled"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_tanzanite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "enriched:tanzanite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enriched:tanzanite_helmet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tanzanite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enriched:tanzanite_helmet"
+    ]
+  }
+}
