@@ -1,0 +1,10 @@
+{
+  "values": [
+    "enriched:ruby_ore",
+    "enriched:deepslate_ruby_ore",
+    "enriched:sapphire_ore",
+    "enriched:deepslate_sapphire_ore",
+    "enriched:tanzanite_ore",
+    "enriched:deepslate_tanzanite_ore"
+  ]
+}

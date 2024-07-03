@@ -8,6 +8,7 @@ import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
 import com.enrichedmc.enriched.networking.EnrichedNetworking;
 import com.enrichedmc.enriched.networking.EnrichedServerNetworking;
+import com.enrichedmc.enriched.world.gen.EnrichedWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
@@ -38,6 +39,8 @@ public class EnrichedMod implements ModInitializer
         EnrichedBlocks.registerBlocks();
         EnrichedArmorMaterials.register();
         EnrichedResourceConditions.registerResourceConditions();
+
+        EnrichedWorldGeneration.generateWorldGeneration();
 
         EnrichedNetworking.registerPayloads();
         EnrichedServerNetworking.registerServerboundPackets();

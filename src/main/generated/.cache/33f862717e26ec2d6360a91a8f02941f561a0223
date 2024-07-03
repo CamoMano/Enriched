@@ -1,8 +1,10 @@
-// 1.21	2024-07-02T22:34:42.5832327	Enriched/Tags for minecraft:block
+// 1.21	2024-07-02T23:47:39.1162865	Enriched/Tags for minecraft:block
+505fa84668bc20d712c8653f9d2158a8c7e38072 data\minecraft\tags\block\mineable\pickaxe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_copper_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_obsidian_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_tanzanite_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_ruby_tool.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_steel_tool.json
+bff61c01ce77db92c1b08ffaaf5e7458cf3a8876 data\minecraft\tags\block\needs_iron_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_emerald_tool.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_steel_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_sapphire_tool.json

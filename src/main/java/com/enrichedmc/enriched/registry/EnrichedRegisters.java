@@ -10,8 +10,10 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 public class EnrichedRegisters
 {
@@ -32,6 +34,11 @@ public class EnrichedRegisters
     public static void registerToItemGroup(ItemConvertible item, RegistryKey<ItemGroup> itemGroupRegistryKey)
     {
         ItemGroupEvents.modifyEntriesEvent(itemGroupRegistryKey).register(entries -> entries.add(item));
+    }
+
+    public static <T> RegistryKey<T> createRegistryKey(RegistryKey<Registry<T>> registryKey, String name)
+    {
+        return RegistryKey.of(registryKey, Identifier.of(EnrichedMod.MOD_ID, name));
     }
 
     public static <T> TagKey<T> createTagKey(RegistryKey<Registry<T>> registryKey, String path)
