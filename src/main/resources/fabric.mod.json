@@ -23,8 +23,14 @@
 		"main": [
 			"com.enrichedmc.enriched.EnrichedMod"
 		],
+		"client": [
+			"com.enrichedmc.enriched.EnrichedClientMod"
+		],
 		"fabric-datagen": [
 			"com.enrichedmc.enriched.EnrichedDataGenerator"
+		],
+		"modmenu": [
+			"com.enrichedmc.enriched.integrations.EnrichedModMenuIntegration"
 		]
 	},
 	"accessWidener": "enriched.accesswidener",
@@ -35,5 +41,15 @@
 		"minecraft": ">=${minecraft_version}",
 		"fabricloader": ">=${fabric_loader_version}",
 		"fabric-api": ">=${fabric_api_version}"
+	},
+	"suggests": {
+		"modmenu": ">=${modmenu_version}"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/2G9XT3Uchp"
+			}
+		}
 	}
 }

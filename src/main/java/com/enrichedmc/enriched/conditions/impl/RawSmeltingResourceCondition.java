@@ -20,7 +20,6 @@ public class RawSmeltingResourceCondition implements ResourceCondition
     @Override
     public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup)
     {
-        // TODO: (Ayydxn) This should be based on a value in a configuration file.
-        return true;
+        return EnrichedMod.getInstance().getGameOptions().recipeOptions.enableRawSmeltingRecipes;
     }
 }

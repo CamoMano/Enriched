@@ -115,6 +115,25 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
 
         translationBuilder.add(EnrichedItems.BEEF_STEW, "Beef Stew");
         translationBuilder.add(EnrichedItems.BERRY_JUICE, "Berry Juice");
+
+        /*---------------*/
+        /* -- Options -- */
+        /*---------------*/
+
+        translationBuilder.add("enriched.options.category.toolsAndArmor", "Tools and Armor");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableRubyGear", "Enable Ruby Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableSapphireGear", "Enable Sapphire Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableTanzaniteGear", "Enable Tanzanite Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableSteelGear", "Enable Steel Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableObsidianGear", "Enable Obsidian Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableEmeraldGear", "Enable Emerald Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableCopperTools", "Enable Copper Tools");
+
+        translationBuilder.add("enriched.options.category.recipes", "Recipes");
+        translationBuilder.add("enriched.options.recipes.enableHorseArmorRecipes", "Enable Horse Armor Recipes");
+        translationBuilder.add("enriched.options.recipes.enableChainmailRecipes", "Enable Chainmail Recipes");
+        translationBuilder.add("enriched.options.recipes.enableRawSmeltingRecipes", "Enable Raw Smelting Recipes");
+        translationBuilder.add("enriched.options.recipes.enableUncraftingRecipes", "Enable Uncrafting Recipes");
     }
 
     private void addToolTranslations(TranslationBuilder translationBuilder, Item sword, Item shovel, Item pickaxe, Item axe, Item hoe, String swordText,

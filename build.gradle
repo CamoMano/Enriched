@@ -16,6 +16,18 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
+
+	maven {
+		name = "Xander's Maven"
+		url  = "https://maven.isxander.dev/releases"
+	}
+
+	mavenCentral()
 }
 
 loom {
@@ -34,6 +46,15 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// YetAnotherConfigLib. This is used for Enriched's configuration screen and is therefore a required dependency.
+	include(modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}")
+
+	// ModMenu. It isn't required by Enriched, but is here so we can have ModMenu integration.
+	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+	// DevLogin. Allows us to use a Microsoft account within the development environment.
+	modImplementation "com.ptsmods:devlogin:${project.devlogin_version}"
 }
 
 processResources {
@@ -41,12 +62,14 @@ processResources {
 	inputs.property "minecraft_version", project.minecraft_version
 	inputs.property "fabric_loader_version", project.fabric_loader_version
 	inputs.property "fabric_api_version", project.fabric_api_version
+	inputs.property "modmenu_version", project.modmenu_version
 
 	filesMatching("fabric.mod.json") {
-		expand "minecraft_version": project.version,
+		expand "mod_version": project.version,
+			   "minecraft_version": project.version,
 		       "fabric_loader_version": project.fabric_loader_version,
 		       "fabric_api_version": project.fabric_api_version,
-		       "mod_version": project.version
+			   "modmenu_version": project.modmenu_version
 	}
 }
 

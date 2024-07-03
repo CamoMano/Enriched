@@ -1,4 +1,4 @@
-// 1.21	2024-07-01T16:51:26.799605	Enriched/Recipes
+// 1.21	2024-07-02T22:34:42.573709	Enriched/Recipes
 d6e5c30a0a7ad9bfb4ddfd04141916c94ed96afa data\enriched\recipe\ruby_leggings.json
 b709d2ce3d61cc45027baa7f5c15a68eab8b56d8 data\enriched\recipe\emerald_helmet.json
 21f0cfcb55f6a900d76cadaa0c7c523219ee4794 data\enriched\recipe\obsidian_shovel.json
@@ -107,8 +107,8 @@ e1cc02c8468c3f8668ee7fe3fedf9104e9183cf5 data\enriched\advancement\recipes\tools
 4cb7cf0b5740968a578bed40b4d6d92d5debfed0 data\enriched\recipe\steel_leggings.json
 1c022763183d05845e14fbc91b29fe9378758ffa data\enriched\advancement\recipes\tools\copper_hoe.json
 61a047a61e995f982c8cb472a744c18f76177a3d data\enriched\recipe\uncrafting_honeycomb_block.json
-275db8a514e77b0df24a9eec9611cad57bfc3ce9 data\enriched\advancement\recipes\tools\tanzanite_axe.json
 e9ac5b776560897564659852ca18d35f7abd7ace data\enriched\recipe\tanzanite_axe.json
+275db8a514e77b0df24a9eec9611cad57bfc3ce9 data\enriched\advancement\recipes\tools\tanzanite_axe.json
 5623e9097896a73bbd3c6c68e4ceeb1f95942a5e data\enriched\recipe\iron_horse_armor.json
 9f9df510233b32725e2a76af03e69467f28fbaeb data\enriched\recipe\chainmail_boots.json
 2b163ccb8f01bff97fb64a36abfdc4c3d3e22dbf data\enriched\advancement\recipes\misc\iron_block_from_smelting_raw_iron_block.json
@@ -156,8 +156,8 @@ b3c1d9e91948c863ffd33b705caad48a875fb77f data\enriched\advancement\recipes\misc\
 afeadd6313a30da964e1d63be6c0f4b1077c8321 data\enriched\advancement\recipes\combat\tanzanite_boots.json
 1507560ebf64f030b1fec9470dd911149f15fec0 data\enriched\advancement\recipes\combat\obsidian_helmet.json
 dab36441b2f85336111290c9136e88f06822834a data\enriched\recipe\emerald_sword.json
-690b888e9f66210ecc1d9697cbed7812df604c2d data\enriched\advancement\recipes\tools\copper_pickaxe.json
 b38f19027dc211d74fec700f1a5094f21b88f1b1 data\enriched\advancement\recipes\combat\copper_sword.json
+690b888e9f66210ecc1d9697cbed7812df604c2d data\enriched\advancement\recipes\tools\copper_pickaxe.json
 98d34615165199aa3446341c55f85a126add36b0 data\enriched\recipe\copper_block_from_blasting_raw_copper_block.json
 046e440726c2597a99f440debd7fe65b35ba05ea data\enriched\recipe\emerald_leggings.json
 4f636cbd69dff6baff7b3eecdf2472d81a7aef9c data\enriched\advancement\recipes\tools\copper_shovel.json
