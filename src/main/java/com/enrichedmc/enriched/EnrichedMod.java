@@ -11,6 +11,8 @@ import com.enrichedmc.enriched.networking.EnrichedServerNetworking;
 import com.enrichedmc.enriched.world.gen.EnrichedWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
@@ -44,6 +46,16 @@ public class EnrichedMod implements ModInitializer
 
         EnrichedNetworking.registerPayloads();
         EnrichedServerNetworking.registerServerboundPackets();
+
+        StrippableBlockRegistry.register(EnrichedBlocks.REDWOOD_LOG, EnrichedBlocks.STRIPPED_REDWOOD_LOG);
+        StrippableBlockRegistry.register(EnrichedBlocks.REDWOOD_WOOD, EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
+
+        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_LEAVES, 30, 60);
 
         CommandRegistrationCallback.EVENT.register(new OpenOptionsScreenCommand());
     }

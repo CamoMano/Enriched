@@ -1,7 +1,9 @@
-// 1.21	2024-07-02T23:47:39.1127689	Enriched/World Gen
+// 1.21	2024-07-03T18:51:06.7827422	Enriched/World Gen
 cee76fefe408e6aaf073c441961a1aeb413a414c data\enriched\worldgen\placed_feature\ruby_ore_placed.json
 22f5f321f50d5bea44911c3370ff1e3568cc91e9 data\enriched\worldgen\configured_feature\tanzanite_ore.json
 d3046ff248dd9708d55c5a74c2acf221db0ca08f data\enriched\worldgen\configured_feature\ruby_ore.json
 0fc64a12a5dd5363e3ff5c0a8baf58f5c871b27e data\enriched\worldgen\placed_feature\sapphire_ore_placed.json
 2312a588e5175ba06fba0b5dee53e7fee14c338f data\enriched\worldgen\configured_feature\sapphire_ore.json
+74b8741399af43f74b822c4871969e5bca17f806 data\enriched\worldgen\placed_feature\redwood_placed.json
 c4fbfeb644eeaf92e75643dc96a9ded95ede6e20 data\enriched\worldgen\placed_feature\tanzanite_ore_placed.json
+f871d327d8f1cc783a40b002ffa4824912b6dcd7 data\enriched\worldgen\configured_feature\redwood.json

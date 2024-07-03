@@ -6,6 +6,7 @@ import com.enrichedmc.enriched.datagen.EnrichedRecipeProvider;
 import com.enrichedmc.enriched.datagen.EnrichedWorldGenerator;
 import com.enrichedmc.enriched.datagen.lang.EnrichedEnglishLanguageProvider;
 import com.enrichedmc.enriched.datagen.tag.EnrichedBlockTagProvider;
+import com.enrichedmc.enriched.datagen.tag.EnrichedItemTagProvider;
 import com.enrichedmc.enriched.world.EnrichedConfiguredFeatures;
 import com.enrichedmc.enriched.world.EnrichedPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -21,6 +22,7 @@ public class EnrichedDataGenerator implements DataGeneratorEntrypoint
         FabricDataGenerator.Pack dataGeneratorPack = fabricDataGenerator.createPack();
         dataGeneratorPack.addProvider(EnrichedEnglishLanguageProvider::new);
         dataGeneratorPack.addProvider(EnrichedBlockTagProvider::new);
+        dataGeneratorPack.addProvider(EnrichedItemTagProvider::new);
         dataGeneratorPack.addProvider(EnrichedBlockLootTableProvider::new);
         dataGeneratorPack.addProvider(EnrichedModelProvider::new);
         dataGeneratorPack.addProvider(EnrichedRecipeProvider::new);

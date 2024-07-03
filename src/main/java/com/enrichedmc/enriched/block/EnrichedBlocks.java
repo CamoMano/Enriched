@@ -2,11 +2,11 @@ package com.enrichedmc.enriched.block;
 
 import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ExperienceDroppingBlock;
+import com.enrichedmc.enriched.world.tree.EnrichedSaplingGenerators;
+import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class EnrichedBlocks
@@ -22,6 +22,14 @@ public class EnrichedBlocks
     public static final Block DEEPSLATE_TANZANITE_ORE;
     public static final Block STEEL_BLOCK;
     public static final Block OBSIDIAN_ALLOY_BLOCK;
+
+    public static final Block REDWOOD_LOG;
+    public static final Block REDWOOD_WOOD;
+    public static final Block STRIPPED_REDWOOD_LOG;
+    public static final Block STRIPPED_REDWOOD_WOOD;
+    public static final Block REDWOOD_PLANKS;
+    public static final Block REDWOOD_LEAVES;
+    public static final Block REDWOOD_SAPLING;
 
     static
     {
@@ -39,6 +47,33 @@ public class EnrichedBlocks
 
         STEEL_BLOCK = EnrichedRegisters.registerBlock("steel_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
         OBSIDIAN_ALLOY_BLOCK = EnrichedRegisters.registerBlock("obsidian_alloy_block", new Block(AbstractBlock.Settings.copy(Blocks.STONE)));
+
+        REDWOOD_LOG = EnrichedRegisters.registerBlock("redwood_log", new PillarBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_LOG)
+                .strength(2.0f)
+                .sounds(BlockSoundGroup.WOOD)));
+
+        REDWOOD_WOOD = EnrichedRegisters.registerBlock("redwood_wood", new PillarBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_WOOD)
+                .strength(2.0f)
+                .sounds(BlockSoundGroup.WOOD)));
+
+        STRIPPED_REDWOOD_LOG = EnrichedRegisters.registerBlock("stripped_redwood_log", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_SPRUCE_LOG)
+                .strength(2.0f)
+                .sounds(BlockSoundGroup.WOOD)));
+
+        STRIPPED_REDWOOD_WOOD = EnrichedRegisters.registerBlock("stripped_redwood_wood", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_SPRUCE_WOOD)
+                .strength(2.0f)
+                .sounds(BlockSoundGroup.WOOD)));
+
+        REDWOOD_PLANKS = EnrichedRegisters.registerBlock("redwood_planks", new Block(AbstractBlock.Settings.copy(Blocks.SPRUCE_PLANKS)
+                .strength(2.0f, 3.0f)
+                .sounds(BlockSoundGroup.WOOD)));
+
+        REDWOOD_LEAVES = EnrichedRegisters.registerBlock("redwood_leaves", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_LEAVES)
+                .strength(0.2f)
+                .nonOpaque()));
+
+        REDWOOD_SAPLING = EnrichedRegisters.registerBlock("redwood_sapling", new SaplingBlock(EnrichedSaplingGenerators.REDWOOD,
+                AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
         /*-------------------------------*/
         /* -- Item Group Registration -- */
@@ -58,6 +93,14 @@ public class EnrichedBlocks
 
         EnrichedRegisters.registerToItemGroup(STEEL_BLOCK, ItemGroups.BUILDING_BLOCKS);
         EnrichedRegisters.registerToItemGroup(OBSIDIAN_ALLOY_BLOCK, ItemGroups.BUILDING_BLOCKS);
+
+        EnrichedRegisters.registerToItemGroup(REDWOOD_LOG, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_WOOD, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(STRIPPED_REDWOOD_LOG, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(STRIPPED_REDWOOD_WOOD, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_PLANKS, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_LEAVES, ItemGroups.NATURAL);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_SAPLING, ItemGroups.NATURAL);
     }
 
     public static void registerBlocks()

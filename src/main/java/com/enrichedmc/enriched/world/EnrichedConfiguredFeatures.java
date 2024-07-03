@@ -9,10 +9,12 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.JungleFoliagePlacer;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
 
 import java.util.List;
 
@@ -26,6 +28,9 @@ public class EnrichedConfiguredFeatures
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> TANZANITE_ORE_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE,
             "tanzanite_ore");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> REDWOOD_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE,
+            "redwood");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context)
     {
@@ -47,6 +52,12 @@ public class EnrichedConfiguredFeatures
         EnrichedConfiguredFeatures.register(context, RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyOres, 12));
         EnrichedConfiguredFeatures.register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSapphireOres, 12));
         EnrichedConfiguredFeatures.register(context, TANZANITE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTanzaniteOres, 12));
+
+        EnrichedConfiguredFeatures.register(context, REDWOOD_KEY, Feature.TREE, new TreeFeatureConfig.Builder(BlockStateProvider.of(EnrichedBlocks.REDWOOD_LOG),
+                new MegaJungleTrunkPlacer(10, 2, 19), BlockStateProvider.of(EnrichedBlocks.REDWOOD_LEAVES),
+                new JungleFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),
+                new TwoLayersFeatureSize(1, 1, 2))
+                .build());
     }
 
     private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<ConfiguredFeature<?, ?>> context,

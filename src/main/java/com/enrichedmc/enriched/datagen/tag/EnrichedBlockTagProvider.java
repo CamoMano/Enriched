@@ -1,6 +1,7 @@
 package com.enrichedmc.enriched.datagen.tag;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
+import com.enrichedmc.enriched.item.base.EnrichedBaseHoeItem;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -38,6 +39,15 @@ public class EnrichedBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE)
                 .add(EnrichedBlocks.TANZANITE_ORE)
                 .add(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE);
+
+        this.getOrCreateTagBuilder(BlockTags.PLANKS)
+                .add(EnrichedBlocks.REDWOOD_PLANKS);
+
+        this.getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(EnrichedBlocks.REDWOOD_LOG)
+                .add(EnrichedBlocks.REDWOOD_WOOD)
+                .add(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
+                .add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
 
         this.getOrCreateTagBuilder(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_ruby_tool"));
         this.getOrCreateTagBuilder(EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_sapphire_tool"));

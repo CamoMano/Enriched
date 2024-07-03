@@ -35,6 +35,19 @@ public class EnrichedModelProvider extends FabricModelProvider
 
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.STEEL_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
+
+        blockStateModelGenerator.registerLog(EnrichedBlocks.REDWOOD_LOG)
+                .log(EnrichedBlocks.REDWOOD_LOG)
+                .wood(EnrichedBlocks.REDWOOD_WOOD);
+
+        blockStateModelGenerator.registerLog(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
+                .log(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
+                .wood(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
+
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.REDWOOD_PLANKS);
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.REDWOOD_LEAVES);
+
+        blockStateModelGenerator.registerTintableCross(EnrichedBlocks.REDWOOD_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override

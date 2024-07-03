@@ -5,6 +5,7 @@ import com.enrichedmc.enriched.item.EnrichedItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
@@ -48,6 +49,14 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
 
         this.addDrop(EnrichedBlocks.STEEL_BLOCK);
         this.addDrop(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
+
+        this.addDrop(EnrichedBlocks.REDWOOD_LOG);
+        this.addDrop(EnrichedBlocks.REDWOOD_WOOD);
+        this.addDrop(EnrichedBlocks.STRIPPED_REDWOOD_LOG);
+        this.addDrop(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
+        this.addDrop(EnrichedBlocks.REDWOOD_PLANKS);
+        this.addDrop(EnrichedBlocks.REDWOOD_LEAVES, leavesDrops(EnrichedBlocks.REDWOOD_LEAVES, EnrichedBlocks.REDWOOD_SAPLING, 0.25f));
+        this.addDrop(EnrichedBlocks.REDWOOD_SAPLING);
     }
 
     private LootTable.Builder copperOreDrops(Block drop, Item item)

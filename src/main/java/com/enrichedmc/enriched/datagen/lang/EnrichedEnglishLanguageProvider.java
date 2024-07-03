@@ -52,6 +52,14 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add(EnrichedBlocks.STEEL_BLOCK, "Steel Block");
         translationBuilder.add(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK, "Obsidian Alloy Block");
 
+        translationBuilder.add(EnrichedBlocks.REDWOOD_LOG, "Redwood Log");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_WOOD, "Redwood Wood");
+        translationBuilder.add(EnrichedBlocks.STRIPPED_REDWOOD_LOG, "Stripped Redwood Log");
+        translationBuilder.add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD, "Stripped Redwood Wood");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_PLANKS, "Redwood Planks");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_LEAVES, "Redwood Leaves");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_SAPLING, "Redwood Sapling");
+
         /*-------------*/
         /* -- Tools -- */
         /*-------------*/
