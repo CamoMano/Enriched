@@ -25,6 +25,11 @@ public class EnrichedModelProvider extends FabricModelProvider
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator)
     {
+        BlockStateModelGenerator.BlockTexturePool darkGraniteTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.DARK_GRANITE);
+        BlockStateModelGenerator.BlockTexturePool polishedDarkGraniteTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.POLISHED_DARK_GRANITE);
+        BlockStateModelGenerator.BlockTexturePool marbleTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.MARBLE);
+        BlockStateModelGenerator.BlockTexturePool polishedMarbleTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.POLISHED_MARBLE);
+
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.RUBY_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.RUBY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_RUBY_ORE);
@@ -52,7 +57,17 @@ public class EnrichedModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.REDWOOD_LEAVES);
         blockStateModelGenerator.registerTintableCross(EnrichedBlocks.REDWOOD_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DARK_GRANITE);
+        darkGraniteTexturePool.slab(EnrichedBlocks.DARK_GRANITE_SLAB);
+        darkGraniteTexturePool.stairs(EnrichedBlocks.DARK_GRANITE_STAIRS);
+        darkGraniteTexturePool.wall(EnrichedBlocks.DARK_GRANITE_WALL);
+        polishedDarkGraniteTexturePool.slab(EnrichedBlocks.POLISHED_DARK_GRANITE_SLAB);
+        polishedDarkGraniteTexturePool.stairs(EnrichedBlocks.POLISHED_DARK_GRANITE_STAIRS);
+
+        marbleTexturePool.slab(EnrichedBlocks.MARBLE_SLAB);
+        marbleTexturePool.stairs(EnrichedBlocks.MARBLE_STAIRS);
+        marbleTexturePool.wall(EnrichedBlocks.MARBLE_WALL);
+        polishedMarbleTexturePool.slab(EnrichedBlocks.POLISHED_MARBLE_SLAB);
+        polishedMarbleTexturePool.stairs(EnrichedBlocks.POLISHED_MARBLE_STAIRS);
     }
 
     @Override

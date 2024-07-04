@@ -14,5 +14,8 @@ public class EnrichedOreGeneration
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, EnrichedPlacedFeatures.TANZANITE_ORE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, EnrichedPlacedFeatures.DARK_GRANITE_UPPER_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, EnrichedPlacedFeatures.DARK_GRANITE_LOWER_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, EnrichedPlacedFeatures.MARBLE_UPPER_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, EnrichedPlacedFeatures.MARBLE_LOWER_PLACED_KEY);
     }
+
 }

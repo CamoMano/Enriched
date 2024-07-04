@@ -103,6 +103,6 @@ public class EnrichedGameOptions
 
     public static final class MobOptions
     {
-        public boolean enableHoneySlimeSpawning = true;
+        public boolean enableHoneySlimeSpawning = false;
     }
 }

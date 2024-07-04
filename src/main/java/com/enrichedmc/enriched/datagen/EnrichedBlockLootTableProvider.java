@@ -59,6 +59,20 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
         this.addDrop(EnrichedBlocks.REDWOOD_SAPLING);
 
         this.addDrop(EnrichedBlocks.DARK_GRANITE);
+        this.addDrop(EnrichedBlocks.DARK_GRANITE_SLAB);
+        this.addDrop(EnrichedBlocks.DARK_GRANITE_STAIRS);
+        this.addDrop(EnrichedBlocks.DARK_GRANITE_WALL);
+        this.addDrop(EnrichedBlocks.POLISHED_DARK_GRANITE);
+        this.addDrop(EnrichedBlocks.POLISHED_DARK_GRANITE_SLAB);
+        this.addDrop(EnrichedBlocks.POLISHED_DARK_GRANITE_STAIRS);
+
+        this.addDrop(EnrichedBlocks.MARBLE);
+        this.addDrop(EnrichedBlocks.MARBLE_SLAB);
+        this.addDrop(EnrichedBlocks.MARBLE_STAIRS);
+        this.addDrop(EnrichedBlocks.MARBLE_WALL);
+        this.addDrop(EnrichedBlocks.POLISHED_MARBLE);
+        this.addDrop(EnrichedBlocks.POLISHED_MARBLE_SLAB);
+        this.addDrop(EnrichedBlocks.POLISHED_MARBLE_STAIRS);
     }
 
     private LootTable.Builder copperOreDrops(Block drop, Item item)

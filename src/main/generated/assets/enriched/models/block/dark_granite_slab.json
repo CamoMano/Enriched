@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "enriched:block/dark_granite",
+    "side": "enriched:block/dark_granite",
+    "top": "enriched:block/dark_granite"
+  }
+}

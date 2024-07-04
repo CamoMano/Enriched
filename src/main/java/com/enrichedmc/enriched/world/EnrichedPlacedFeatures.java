@@ -22,8 +22,17 @@ public class EnrichedPlacedFeatures
 
     public static final RegistryKey<PlacedFeature> REDWOOD_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "redwood_placed");
 
-    public static final RegistryKey<PlacedFeature> DARK_GRANITE_UPPER_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "dark_granite_upper_placed");
-    public static final RegistryKey<PlacedFeature> DARK_GRANITE_LOWER_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "dark_granite_lower_placed");
+    public static final RegistryKey<PlacedFeature> DARK_GRANITE_UPPER_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE,
+            "dark_granite_upper_placed");
+
+    public static final RegistryKey<PlacedFeature> DARK_GRANITE_LOWER_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE,
+            "dark_granite_lower_placed");
+
+    public static final RegistryKey<PlacedFeature> MARBLE_UPPER_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE,
+            "marble_upper_placed");
+
+    public static final RegistryKey<PlacedFeature> MARBLE_LOWER_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE,
+            "marble_lower_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context)
     {
@@ -46,6 +55,12 @@ public class EnrichedPlacedFeatures
                 OrePlacedFeatures.modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128))));
 
         register(context, DARK_GRANITE_LOWER_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.DARK_GRANITE_KEY),
+                OrePlacedFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(60))));
+
+        register(context, MARBLE_UPPER_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.MARBLE_KEY),
+                OrePlacedFeatures.modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128))));
+
+        register(context, MARBLE_LOWER_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.MARBLE_KEY),
                 OrePlacedFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(60))));
     }
 

@@ -53,6 +53,9 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider
         this.createRawSmeltingRecipes(exporter);
 
         this.createUncraftingRecipes(exporter);
+
+        this.createDarkGraniteRecipes(exporter);
+        this.createMarbleRecipes(exporter);
     }
 
     private void createRubyRecipes(RecipeExporter recipeExporter)
@@ -260,6 +263,96 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider
         this.createUncraftingRecipe(recipeExporter, Items.MAGMA_BLOCK, Items.MAGMA_CREAM, 4);
         this.createUncraftingRecipe(recipeExporter, Items.NETHER_WART, Items.NETHER_WART_BLOCK, 9);
         this.createUncraftingRecipe(recipeExporter, Items.HONEYCOMB_BLOCK, Items.HONEYCOMB, 4);
+    }
+
+    private void createDarkGraniteRecipes(RecipeExporter recipeExporter)
+    {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.DARK_GRANITE_SLAB, 6)
+                .input('D',  EnrichedBlocks.DARK_GRANITE)
+                .pattern("DDD")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.DARK_GRANITE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.DARK_GRANITE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.DARK_GRANITE_STAIRS, 6)
+                .input('D',  EnrichedBlocks.DARK_GRANITE)
+                .pattern("D  ")
+                .pattern("DD ")
+                .pattern("DDD")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.DARK_GRANITE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.DARK_GRANITE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.DARK_GRANITE_WALL, 6)
+                .input('D',  EnrichedBlocks.DARK_GRANITE)
+                .pattern("DDD")
+                .pattern("DDD")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.DARK_GRANITE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.DARK_GRANITE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_DARK_GRANITE, 4)
+                .input('D',  EnrichedBlocks.DARK_GRANITE)
+                .pattern("DD ")
+                .pattern("DD ")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.DARK_GRANITE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.DARK_GRANITE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_DARK_GRANITE_SLAB, 6)
+                .input('P',  EnrichedBlocks.POLISHED_DARK_GRANITE)
+                .pattern("PPP")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.DARK_GRANITE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.DARK_GRANITE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_DARK_GRANITE_STAIRS, 6)
+                .input('P',  EnrichedBlocks.POLISHED_DARK_GRANITE)
+                .pattern("P  ")
+                .pattern("PP ")
+                .pattern("PPP")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.DARK_GRANITE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.DARK_GRANITE))
+                .offerTo(recipeExporter);
+    }
+
+    private void createMarbleRecipes(RecipeExporter recipeExporter)
+    {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_SLAB, 6)
+                .input('M', EnrichedBlocks.MARBLE)
+                .pattern("MMM")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.MARBLE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.DARK_GRANITE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_STAIRS, 6)
+                .input('M',  EnrichedBlocks.MARBLE)
+                .pattern("M  ")
+                .pattern("MM ")
+                .pattern("MMM")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.MARBLE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.MARBLE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_WALL, 6)
+                .input('M',  EnrichedBlocks.MARBLE)
+                .pattern("MMM")
+                .pattern("MMM")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.MARBLE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.MARBLE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_MARBLE, 4)
+                .input('M',  EnrichedBlocks.MARBLE)
+                .pattern("MM ")
+                .pattern("MM ")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.MARBLE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.MARBLE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_MARBLE_SLAB, 6)
+                .input('M',  EnrichedBlocks.POLISHED_MARBLE)
+                .pattern("MMM")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.POLISHED_MARBLE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.POLISHED_MARBLE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_MARBLE_STAIRS, 6)
+                .input('M',  EnrichedBlocks.POLISHED_MARBLE)
+                .pattern("M  ")
+                .pattern("MM ")
+                .pattern("MMM")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.POLISHED_MARBLE), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.POLISHED_MARBLE))
+                .offerTo(recipeExporter);
     }
 
     /*-------------------------*/

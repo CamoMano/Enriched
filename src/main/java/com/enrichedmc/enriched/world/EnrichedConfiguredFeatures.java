@@ -35,11 +35,14 @@ public class EnrichedConfiguredFeatures
     public static final RegistryKey<ConfiguredFeature<?, ?>> DARK_GRANITE_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE,
             "dark_granite");
 
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MARBLE_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE,
+            "marble");
+
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context)
     {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        RuleTest graniteRuleTest = new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD);
+        RuleTest stoneOverwoldReplaceables = new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD);
 
         List<OreFeatureConfig.Target> overworldRubyOres =
                 Lists.newArrayList(OreFeatureConfig.createTarget(stoneReplaceables, EnrichedBlocks.RUBY_ORE.getDefaultState()),
@@ -53,13 +56,17 @@ public class EnrichedConfiguredFeatures
                 Lists.newArrayList(OreFeatureConfig.createTarget(stoneReplaceables, EnrichedBlocks.TANZANITE_ORE.getDefaultState()),
                         OreFeatureConfig.createTarget(deepslateReplaceables, EnrichedBlocks.DEEPSLATE_TANZANITE_ORE.getDefaultState()));
 
-        List<OreFeatureConfig.Target> overworldDarkGranite = Lists.newArrayList(OreFeatureConfig.createTarget(graniteRuleTest,
+        List<OreFeatureConfig.Target> overworldDarkGranite = Lists.newArrayList(OreFeatureConfig.createTarget(stoneOverwoldReplaceables,
                 EnrichedBlocks.DARK_GRANITE.getDefaultState()));
+
+        List<OreFeatureConfig.Target> overworldMarble = Lists.newArrayList(OreFeatureConfig.createTarget(stoneOverwoldReplaceables,
+                EnrichedBlocks.MARBLE.getDefaultState()));
 
         EnrichedConfiguredFeatures.register(context, RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyOres, 12));
         EnrichedConfiguredFeatures.register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSapphireOres, 12));
         EnrichedConfiguredFeatures.register(context, TANZANITE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTanzaniteOres, 12));
         EnrichedConfiguredFeatures.register(context, DARK_GRANITE_KEY, Feature.ORE, new OreFeatureConfig(overworldDarkGranite, 64));
+        EnrichedConfiguredFeatures.register(context, MARBLE_KEY, Feature.ORE, new OreFeatureConfig(overworldMarble, 64));
 
         EnrichedConfiguredFeatures.register(context, REDWOOD_KEY, Feature.TREE, new TreeFeatureConfig.Builder(BlockStateProvider.of(EnrichedBlocks.REDWOOD_LOG),
                 new MegaJungleTrunkPlacer(10, 2, 19), BlockStateProvider.of(EnrichedBlocks.REDWOOD_LEAVES),

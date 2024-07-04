@@ -32,6 +32,20 @@ public class EnrichedBlocks
     public static final Block REDWOOD_SAPLING;
 
     public static final Block DARK_GRANITE;
+    public static final Block DARK_GRANITE_SLAB;
+    public static final Block DARK_GRANITE_STAIRS;
+    public static final Block DARK_GRANITE_WALL;
+    public static final Block POLISHED_DARK_GRANITE;
+    public static final Block POLISHED_DARK_GRANITE_SLAB;
+    public static final Block POLISHED_DARK_GRANITE_STAIRS;
+
+    public static final Block MARBLE;
+    public static final Block MARBLE_SLAB;
+    public static final Block MARBLE_STAIRS;
+    public static final Block MARBLE_WALL;
+    public static final Block POLISHED_MARBLE;
+    public static final Block POLISHED_MARBLE_SLAB;
+    public static final Block POLISHED_MARBLE_STAIRS;
 
     static
     {
@@ -82,6 +96,57 @@ public class EnrichedBlocks
                 .sounds(BlockSoundGroup.STONE)
                 .requiresTool()));
 
+        DARK_GRANITE_SLAB = EnrichedRegisters.registerBlock("dark_granite_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)
+                .strength(1.5f, 6.0f)
+                .sounds(BlockSoundGroup.STONE)
+                .requiresTool()));
+
+        DARK_GRANITE_STAIRS = EnrichedRegisters.registerBlock("dark_granite_stairs", new StairsBlock(DARK_GRANITE.getDefaultState(),
+                AbstractBlock.Settings.copy(DARK_GRANITE)));
+
+        DARK_GRANITE_WALL = EnrichedRegisters.registerBlock("dark_granite_wall", new WallBlock(AbstractBlock.Settings.copy(DARK_GRANITE)));
+
+        POLISHED_DARK_GRANITE = EnrichedRegisters.registerBlock("polished_dark_granite", new Block(AbstractBlock.Settings.copy(Blocks.POLISHED_GRANITE)
+                .strength(1.5f, 6.0f)
+                .sounds(BlockSoundGroup.STONE)
+                .requiresTool()));
+
+        POLISHED_DARK_GRANITE_SLAB = EnrichedRegisters.registerBlock("polished_dark_granite_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)
+                .strength(1.5f, 6.0f)
+                .sounds(BlockSoundGroup.STONE)
+                .requiresTool()));
+
+        POLISHED_DARK_GRANITE_STAIRS = EnrichedRegisters.registerBlock("polished_dark_granite_stairs", new StairsBlock(POLISHED_DARK_GRANITE.getDefaultState(),
+                AbstractBlock.Settings.copy(POLISHED_DARK_GRANITE)));
+
+        MARBLE = EnrichedRegisters.registerBlock("marble", new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)
+                .strength(1.5f, 6.0f)
+                .sounds(BlockSoundGroup.STONE)
+                .requiresTool()));
+
+        MARBLE_SLAB = EnrichedRegisters.registerBlock("marble_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)
+                .strength(1.5f, 6.0f)
+                .sounds(BlockSoundGroup.STONE)
+                .requiresTool()));
+
+        MARBLE_STAIRS = EnrichedRegisters.registerBlock("marble_stairs", new StairsBlock(MARBLE.getDefaultState(),
+                AbstractBlock.Settings.copy(MARBLE)));
+
+        MARBLE_WALL = EnrichedRegisters.registerBlock("marble_wall", new WallBlock(AbstractBlock.Settings.copy(MARBLE)));
+
+        POLISHED_MARBLE = EnrichedRegisters.registerBlock("polished_marble", new Block(AbstractBlock.Settings.copy(Blocks.POLISHED_GRANITE)
+                .strength(1.5f, 6.0f)
+                .sounds(BlockSoundGroup.STONE)
+                .requiresTool()));
+
+        POLISHED_MARBLE_SLAB = EnrichedRegisters.registerBlock("polished_marble_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)
+                .strength(1.5f, 6.0f)
+                .sounds(BlockSoundGroup.STONE)
+                .requiresTool()));
+
+        POLISHED_MARBLE_STAIRS = EnrichedRegisters.registerBlock("polished_marble_stairs", new StairsBlock(POLISHED_MARBLE.getDefaultState(),
+                AbstractBlock.Settings.copy(POLISHED_MARBLE)));
+
         /*-------------------------------*/
         /* -- Item Group Registration -- */
         /*-------------------------------*/
@@ -110,6 +175,20 @@ public class EnrichedBlocks
         EnrichedRegisters.registerToItemGroup(REDWOOD_SAPLING, ItemGroups.NATURAL);
 
         EnrichedRegisters.registerToItemGroup(DARK_GRANITE, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(DARK_GRANITE_SLAB, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(DARK_GRANITE_STAIRS, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(DARK_GRANITE_WALL, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(POLISHED_DARK_GRANITE, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(POLISHED_DARK_GRANITE_SLAB, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(POLISHED_DARK_GRANITE_STAIRS, ItemGroups.BUILDING_BLOCKS);
+
+        EnrichedRegisters.registerToItemGroup(MARBLE, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(MARBLE_SLAB, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(MARBLE_STAIRS, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(MARBLE_WALL, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(POLISHED_MARBLE, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(POLISHED_MARBLE_SLAB, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(POLISHED_MARBLE_STAIRS, ItemGroups.BUILDING_BLOCKS);
     }
 
     public static void registerBlocks()

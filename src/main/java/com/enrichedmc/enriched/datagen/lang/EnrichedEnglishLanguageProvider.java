@@ -3,10 +3,12 @@ package com.enrichedmc.enriched.datagen.lang;
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
+import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -63,6 +65,20 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add(EnrichedBlocks.REDWOOD_SAPLING, "Redwood Sapling");
 
         translationBuilder.add(EnrichedBlocks.DARK_GRANITE, "Dark Granite");
+        translationBuilder.add(EnrichedBlocks.DARK_GRANITE_SLAB, "Dark Granite Slab");
+        translationBuilder.add(EnrichedBlocks.DARK_GRANITE_STAIRS, "Dark Granite Stairs");
+        translationBuilder.add(EnrichedBlocks.DARK_GRANITE_WALL, "Dark Granite Wall");
+        translationBuilder.add(EnrichedBlocks.POLISHED_DARK_GRANITE, "Polished Dark Granite");
+        translationBuilder.add(EnrichedBlocks.POLISHED_DARK_GRANITE_SLAB, "Polished Dark Granite Slab");
+        translationBuilder.add(EnrichedBlocks.POLISHED_DARK_GRANITE_STAIRS, "Polished Dark Granite Stairs");
+
+        translationBuilder.add(EnrichedBlocks.MARBLE, "Marble");
+        translationBuilder.add(EnrichedBlocks.MARBLE_SLAB, "Marble Slab");
+        translationBuilder.add(EnrichedBlocks.MARBLE_STAIRS, "Marble Stairs");
+        translationBuilder.add(EnrichedBlocks.MARBLE_WALL, "Marble Wall");
+        translationBuilder.add(EnrichedBlocks.POLISHED_MARBLE, "Polished Marble");
+        translationBuilder.add(EnrichedBlocks.POLISHED_MARBLE_SLAB, "Polished Marble Slab");
+        translationBuilder.add(EnrichedBlocks.POLISHED_MARBLE_STAIRS, "Polished Marble Stairs");
 
         /*-------------*/
         /* -- Tools -- */
