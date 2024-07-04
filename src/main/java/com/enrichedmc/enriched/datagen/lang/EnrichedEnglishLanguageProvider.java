@@ -138,21 +138,33 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
 
         translationBuilder.add("enriched.options.category.toolsAndArmor", "Tools and Armor");
         translationBuilder.add("enriched.options.toolsAndArmor.enableRubyGear", "Enable Ruby Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableRubyGear.description", "Enables/disables the recipes for Ruby gear and tools.");
         translationBuilder.add("enriched.options.toolsAndArmor.enableSapphireGear", "Enable Sapphire Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableSapphireGear.description", "Enables/disables the recipes for Sapphire gear and tools.");
         translationBuilder.add("enriched.options.toolsAndArmor.enableTanzaniteGear", "Enable Tanzanite Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableTanzaniteGear.description", "Enables/disables the recipes for Tanzanite gear and tools.");
         translationBuilder.add("enriched.options.toolsAndArmor.enableSteelGear", "Enable Steel Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableSteelGear.description", "Enables/disables the recipes for Steel gear and tools.");
         translationBuilder.add("enriched.options.toolsAndArmor.enableObsidianGear", "Enable Obsidian Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableObsidianGear.description", "Enables/disables the recipes for Obsidian gear and tools.");
         translationBuilder.add("enriched.options.toolsAndArmor.enableEmeraldGear", "Enable Emerald Gear");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableEmeraldGear.description", "Enables/disables the recipes for Emerald gear and tools.");
         translationBuilder.add("enriched.options.toolsAndArmor.enableCopperTools", "Enable Copper Tools");
+        translationBuilder.add("enriched.options.toolsAndArmor.enableCopperTools.description", "Enables/disables the recipes for Copper tools.");
 
         translationBuilder.add("enriched.options.category.recipes", "Recipes");
         translationBuilder.add("enriched.options.recipes.enableHorseArmorRecipes", "Enable Horse Armor Recipes");
+        translationBuilder.add("enriched.options.recipes.enableHorseArmorRecipes.description", "Enables/disables for the recipes for horse armor.");
         translationBuilder.add("enriched.options.recipes.enableChainmailRecipes", "Enable Chainmail Recipes");
+        translationBuilder.add("enriched.options.recipes.enableChainmailRecipes.description", "Enables/disables the recipes for Chainmail armor.");
         translationBuilder.add("enriched.options.recipes.enableRawSmeltingRecipes", "Enable Raw Smelting Recipes");
+        translationBuilder.add("enriched.options.recipes.enableRawSmeltingRecipes.description", "Enable/disables the recipes for getting a block from smelting or blasting its raw version. (Example: Raw Gold Block -> Gold Block)");
         translationBuilder.add("enriched.options.recipes.enableUncraftingRecipes", "Enable Uncrafting Recipes");
+        translationBuilder.add("enriched.options.recipes.enableUncraftingRecipes.description", "Enables/disables the recipes for getting items from certain blocks. (Example: Wool -> String)");
 
         translationBuilder.add("enriched.options.category.mobs", "Mobs");
-        translationBuilder.add("enriched.options.recipes.enableHoneySlimeSpawning", "Enable Honey Slime Spawning");
+        translationBuilder.add("enriched.options.mobs.enableHoneySlimeSpawning", "Enable Honey Slime pawning");
+        translationBuilder.add("enriched.options.mobs.enableHoneySlimeSpawning.description", "Enables/disables the Honey Slime from potentially spawning when harvesting a beehive.");
     }
 
     private void addToolTranslations(TranslationBuilder translationBuilder, Item sword, Item shovel, Item pickaxe, Item axe, Item hoe, String swordText,
