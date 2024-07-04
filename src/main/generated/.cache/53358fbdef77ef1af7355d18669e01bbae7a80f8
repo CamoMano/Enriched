@@ -1,4 +1,4 @@
-// 1.21	2024-07-04T15:17:02.4641987	Enriched/Recipes
+// 1.21	2024-07-04T16:31:30.8596198	Enriched/Recipes
 b709d2ce3d61cc45027baa7f5c15a68eab8b56d8 data\enriched\recipe\emerald_helmet.json
 b691de6b6ceede9368ebb7ae61c04197c923f72d data\enriched\advancement\recipes\building_blocks\polished_marble_stairs.json
 0f9706ed641c241fa67caf688c178e1b56a46fca data\enriched\recipe\polished_dark_granite.json
@@ -45,8 +45,8 @@ af55dc4e6e1c0399c7cc230c41f80f2b4e24bb75 data\enriched\recipe\polished_marble.js
 af0b2800e2fe77134369f3c6499053401e19b88a data\enriched\recipe\chainmail_helmet.json
 12c320a4f7178267870d6878f9e7a74f15520866 data\enriched\recipe\tanzanite_shovel.json
 2a2eab878c7708b07409e05ddf46e563cff793ca data\enriched\advancement\recipes\tools\emerald_axe.json
-81f6135daf56ca89911ff25a73d257da82b84eac data\enriched\recipe\uncrafting_bricks.json
 185f73505fde83d639d7656ae3b3307886a8e6bc data\enriched\recipe\uncrafting_magma_block.json
+81f6135daf56ca89911ff25a73d257da82b84eac data\enriched\recipe\uncrafting_bricks.json
 cdccaefda79dc9786788ae5c1e2dff131f70af23 data\enriched\advancement\recipes\combat\emerald_sword.json
 4b280f269c86ce9da8800e4a966230cf7f42be5d data\enriched\recipe\copper_hoe.json
 c87f3805a9000cb5af1ea59ffa20b93b035f08b0 data\enriched\recipe\polished_dark_granite_slab.json

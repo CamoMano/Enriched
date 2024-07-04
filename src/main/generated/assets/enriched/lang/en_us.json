@@ -44,7 +44,7 @@
   "enriched.options.category.toolsAndArmor": "Tools and Armor",
   "enriched.options.category.worldGeneration": "World Generation",
   "enriched.options.category.worldGeneration.description": "All of these options relate to Enriched's ability to generate its own blocks in a world. All of these settings §lMUST§r be set to your desired values prior to creating a world and require a restart to take effect.",
-  "enriched.options.mobs.enableHoneySlimeSpawning": "Enable Honey Slime pawning",
+  "enriched.options.mobs.enableHoneySlimeSpawning": "Enable Honey Slime Spawning",
   "enriched.options.mobs.enableHoneySlimeSpawning.description": "Enables/disables the Honey Slime from potentially spawning when harvesting a beehive.",
   "enriched.options.recipes.enableChainmailRecipes": "Enable Chainmail Recipes",
   "enriched.options.recipes.enableChainmailRecipes.description": "Enables/disables the recipes for Chainmail armor.",
