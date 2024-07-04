@@ -62,6 +62,8 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add(EnrichedBlocks.REDWOOD_LEAVES, "Redwood Leaves");
         translationBuilder.add(EnrichedBlocks.REDWOOD_SAPLING, "Redwood Sapling");
 
+        translationBuilder.add(EnrichedBlocks.DARK_GRANITE, "Dark Granite");
+
         /*-------------*/
         /* -- Tools -- */
         /*-------------*/

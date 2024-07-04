@@ -22,22 +22,27 @@ public class EnrichedPlacedFeatures
 
     public static final RegistryKey<PlacedFeature> REDWOOD_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "redwood_placed");
 
+    public static final RegistryKey<PlacedFeature> DARK_GRANITE_PLACED_KEY = EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "dark_granite_placed");
+
     public static void bootstrap(Registerable<PlacedFeature> context)
     {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> registryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, RUBY_ORE_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.RUBY_ORE_KEY),
-                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(+80))));
+                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
         register(context, SAPPHIRE_ORE_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.SAPPHIRE_ORE_KEY),
-                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(+80))));
+                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
         register(context, TANZANITE_ORE_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TANZANITE_ORE_KEY),
-                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(+80))));
+                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
         register(context, REDWOOD_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.REDWOOD_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(2, 0.1f, 2),
                         EnrichedBlocks.REDWOOD_SAPLING));
+
+        register(context, DARK_GRANITE_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.DARK_GRANITE_KEY),
+                OrePlacedFeatures.modifiersWithCount(8, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
     }
 
     private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> registryKey,

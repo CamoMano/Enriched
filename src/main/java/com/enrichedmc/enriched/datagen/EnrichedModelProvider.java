@@ -50,8 +50,9 @@ public class EnrichedModelProvider extends FabricModelProvider
 
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.REDWOOD_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.REDWOOD_LEAVES);
-
         blockStateModelGenerator.registerTintableCross(EnrichedBlocks.REDWOOD_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DARK_GRANITE);
     }
 
     @Override

@@ -57,6 +57,8 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
         this.addDrop(EnrichedBlocks.REDWOOD_PLANKS);
         this.addDrop(EnrichedBlocks.REDWOOD_LEAVES, leavesDrops(EnrichedBlocks.REDWOOD_LEAVES, EnrichedBlocks.REDWOOD_SAPLING, 0.25f));
         this.addDrop(EnrichedBlocks.REDWOOD_SAPLING);
+
+        this.addDrop(EnrichedBlocks.DARK_GRANITE);
     }
 
     private LootTable.Builder copperOreDrops(Block drop, Item item)

@@ -31,6 +31,8 @@ public class EnrichedBlocks
     public static final Block REDWOOD_LEAVES;
     public static final Block REDWOOD_SAPLING;
 
+    public static final Block DARK_GRANITE;
+
     static
     {
         RUBY_BLOCK = EnrichedRegisters.registerBlock("ruby_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
@@ -75,6 +77,11 @@ public class EnrichedBlocks
         REDWOOD_SAPLING = EnrichedRegisters.registerBlock("redwood_sapling", new SaplingBlock(EnrichedSaplingGenerators.REDWOOD,
                 AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
+        DARK_GRANITE = EnrichedRegisters.registerBlock("dark_granite", new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)
+                .strength(1.5f, 6.0f)
+                .sounds(BlockSoundGroup.STONE)
+                .requiresTool()));
+
         /*-------------------------------*/
         /* -- Item Group Registration -- */
         /*-------------------------------*/
@@ -101,6 +108,8 @@ public class EnrichedBlocks
         EnrichedRegisters.registerToItemGroup(REDWOOD_PLANKS, ItemGroups.BUILDING_BLOCKS);
         EnrichedRegisters.registerToItemGroup(REDWOOD_LEAVES, ItemGroups.NATURAL);
         EnrichedRegisters.registerToItemGroup(REDWOOD_SAPLING, ItemGroups.NATURAL);
+
+        EnrichedRegisters.registerToItemGroup(DARK_GRANITE, ItemGroups.BUILDING_BLOCKS);
     }
 
     public static void registerBlocks()
