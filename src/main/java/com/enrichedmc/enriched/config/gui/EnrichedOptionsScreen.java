@@ -23,7 +23,7 @@ public class EnrichedOptionsScreen
     public Screen getHandle()
     {
         List<ConfigCategory> configCategories = Lists.newArrayList(EnrichedOptionCategories.toolsAndArmor(), EnrichedOptionCategories.recipes(),
-                EnrichedOptionCategories.mobs());
+                EnrichedOptionCategories.mobs(), EnrichedOptionCategories.worldGeneration());
 
         return YetAnotherConfigLib.createBuilder()
                 .title(Text.literal("Enriched Game Options"))

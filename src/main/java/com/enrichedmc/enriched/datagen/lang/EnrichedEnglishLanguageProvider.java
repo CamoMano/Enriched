@@ -183,6 +183,19 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add("enriched.options.category.mobs", "Mobs");
         translationBuilder.add("enriched.options.mobs.enableHoneySlimeSpawning", "Enable Honey Slime pawning");
         translationBuilder.add("enriched.options.mobs.enableHoneySlimeSpawning.description", "Enables/disables the Honey Slime from potentially spawning when harvesting a beehive.");
+
+        translationBuilder.add("enriched.options.category.worldGeneration", "World Generation");
+        translationBuilder.add("enriched.options.category.worldGeneration.description", "All of these options relate to Enriched's ability to generate its own blocks in a world. All of these settings §lMUST§r be set to your desired values prior to creating a world and require a restart to take effect.");
+        translationBuilder.add("enriched.options.worldGeneration.generateRubyOres", "Generate Ruby Ores");
+        translationBuilder.add("enriched.options.worldGeneration.generateRubyOres.description", "Enables/disables the generation of Ruby ores in a world.");
+        translationBuilder.add("enriched.options.worldGeneration.generateSapphireOres", "Generate Sapphire Ores");
+        translationBuilder.add("enriched.options.worldGeneration.generateSapphireOres.description", "Enables/disables the generation of Sapphire ores in a world.");
+        translationBuilder.add("enriched.options.worldGeneration.generateTanzaniteOres", "Generate Tanzanite Ores");
+        translationBuilder.add("enriched.options.worldGeneration.generateTanzaniteOres.description", "Enables/disables the generation of Tanzanite ores in a world.");
+        translationBuilder.add("enriched.options.worldGeneration.generateDarkGranite", "Generate Dark Granite");
+        translationBuilder.add("enriched.options.worldGeneration.generateDarkGranite.description", "Enables/disables the generation of Dark Granite in a world.");
+        translationBuilder.add("enriched.options.worldGeneration.generateMarble", "Generate Marble");
+        translationBuilder.add("enriched.options.worldGeneration.generateMarble.description", "Enables/disables the generation of Marble in a world.");
     }
 
     private void addToolTranslations(TranslationBuilder translationBuilder, Item sword, Item shovel, Item pickaxe, Item axe, Item hoe, String swordText,

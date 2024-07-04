@@ -39,13 +39,13 @@ public class EnrichedPlacedFeatures
         RegistryEntryLookup<ConfiguredFeature<?, ?>> registryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, RUBY_ORE_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.RUBY_ORE_KEY),
-                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(64))));
 
         register(context, SAPPHIRE_ORE_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.SAPPHIRE_ORE_KEY),
-                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(64))));
 
         register(context, TANZANITE_ORE_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TANZANITE_ORE_KEY),
-                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+                OrePlacedFeatures.modifiersWithCount(6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(64))));
 
         register(context, REDWOOD_PLACED_KEY, registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.REDWOOD_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(2, 0.1f, 2),

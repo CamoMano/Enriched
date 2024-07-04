@@ -16,6 +16,7 @@ public class EnrichedOptionCategories
     private static final EnrichedGameOptions.ToolsAndArmorOptions TOOLS_AND_ARMOR_OPTIONS;
     private static final EnrichedGameOptions.RecipeOptions RECIPE_OPTIONS;
     private static final EnrichedGameOptions.MobOptions MOB_OPTIONS;
+    private static final EnrichedGameOptions.WorldGenerationOptions WORLD_GENERATION;
 
     private static final OptionFlag RELOAD_DATA_PACKS;
 
@@ -25,6 +26,7 @@ public class EnrichedOptionCategories
         TOOLS_AND_ARMOR_OPTIONS = ENRICHED_GAME_OPTIONS.toolsAndArmorOptions;
         RECIPE_OPTIONS = ENRICHED_GAME_OPTIONS.recipeOptions;
         MOB_OPTIONS = ENRICHED_GAME_OPTIONS.mobOptions;
+        WORLD_GENERATION = ENRICHED_GAME_OPTIONS.worldGenerationOptions;
 
         // FIXME: (Ayydxn) Doesn't work on dedicated servers. Will have to investigate that.
         RELOAD_DATA_PACKS = (client) -> ClientPlayNetworking.send(new ReloadDataPacksPacket());
@@ -130,6 +132,49 @@ public class EnrichedOptionCategories
                         .description(OptionDescription.of(Text.translatable("enriched.options.mobs.enableHoneySlimeSpawning.description")))
                         .binding(EnrichedGameOptions.defaults().mobOptions.enableHoneySlimeSpawning, () -> MOB_OPTIONS.enableHoneySlimeSpawning, newValue -> MOB_OPTIONS.enableHoneySlimeSpawning = newValue)
                         .customController(BooleanController::new)
+                        .build())
+                .build();
+    }
+
+    public static ConfigCategory worldGeneration()
+    {
+        return ConfigCategory.createBuilder()
+                .name(Text.translatable("enriched.options.category.worldGeneration"))
+                .tooltip(Text.translatable("enriched.options.category.worldGeneration.description"))
+                .option(Option.<Boolean>createBuilder()
+                        .name(Text.translatable("enriched.options.worldGeneration.generateRubyOres"))
+                        .description(OptionDescription.of(Text.translatable("enriched.options.worldGeneration.generateRubyOres.description")))
+                        .binding(EnrichedGameOptions.defaults().worldGenerationOptions.generateRubyOres, () -> WORLD_GENERATION.generateRubyOres, newValue -> WORLD_GENERATION.generateRubyOres = newValue)
+                        .customController(BooleanController::new)
+                        .flag(OptionFlag.GAME_RESTART)
+                        .build())
+                .option(Option.<Boolean>createBuilder()
+                        .name(Text.translatable("enriched.options.worldGeneration.generateSapphireOres"))
+                        .description(OptionDescription.of(Text.translatable("enriched.options.worldGeneration.generateSapphireOres.description")))
+                        .binding(EnrichedGameOptions.defaults().worldGenerationOptions.generateSapphireOres, () -> WORLD_GENERATION.generateSapphireOres, newValue -> WORLD_GENERATION.generateSapphireOres = newValue)
+                        .customController(BooleanController::new)
+                        .flag(OptionFlag.GAME_RESTART)
+                        .build())
+                .option(Option.<Boolean>createBuilder()
+                        .name(Text.translatable("enriched.options.worldGeneration.generateTanzaniteOres"))
+                        .description(OptionDescription.of(Text.translatable("enriched.options.worldGeneration.generateTanzaniteOres.description")))
+                        .binding(EnrichedGameOptions.defaults().worldGenerationOptions.generateTanzaniteOres, () -> WORLD_GENERATION.generateTanzaniteOres, newValue -> WORLD_GENERATION.generateTanzaniteOres = newValue)
+                        .customController(BooleanController::new)
+                        .flag(OptionFlag.GAME_RESTART)
+                        .build())
+                .option(Option.<Boolean>createBuilder()
+                        .name(Text.translatable("enriched.options.worldGeneration.generateDarkGranite"))
+                        .description(OptionDescription.of(Text.translatable("enriched.options.worldGeneration.generateDarkGranite.description")))
+                        .binding(EnrichedGameOptions.defaults().worldGenerationOptions.generateDarkGranite, () -> WORLD_GENERATION.generateDarkGranite, newValue -> WORLD_GENERATION.generateDarkGranite = newValue)
+                        .customController(BooleanController::new)
+                        .flag(OptionFlag.GAME_RESTART)
+                        .build())
+                .option(Option.<Boolean>createBuilder()
+                        .name(Text.translatable("enriched.options.worldGeneration.generateMarble"))
+                        .description(OptionDescription.of(Text.translatable("enriched.options.worldGeneration.generateMarble.description")))
+                        .binding(EnrichedGameOptions.defaults().worldGenerationOptions.generateMarble, () -> WORLD_GENERATION.generateMarble, newValue -> WORLD_GENERATION.generateMarble = newValue)
+                        .customController(BooleanController::new)
+                        .flag(OptionFlag.GAME_RESTART)
                         .build())
                 .build();
     }
