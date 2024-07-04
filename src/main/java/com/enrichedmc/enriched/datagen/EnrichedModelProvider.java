@@ -6,10 +6,14 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.structure.OceanRuinStructure;
+
+import java.util.Optional;
 
 public class EnrichedModelProvider extends FabricModelProvider
 {
@@ -65,6 +69,8 @@ public class EnrichedModelProvider extends FabricModelProvider
         itemModelGenerator.register(EnrichedItems.OBSIDIAN_ALLOY_BLEND, Models.GENERATED);
         itemModelGenerator.register(EnrichedItems.OBSIDIAN_ALLOY_INGOT, Models.GENERATED);
         itemModelGenerator.register(EnrichedItems.HONEY_BALL, Models.GENERATED);
+        itemModelGenerator.register(EnrichedItems.HONEY_SLIME_SPAWN_EGG,
+                new Model(Optional.of(Identifier.ofVanilla("item/template_spawn_egg")), Optional.empty()));
 
         /*-------------*/
         /* -- Tools -- */

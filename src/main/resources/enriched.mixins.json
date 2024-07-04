@@ -3,7 +3,7 @@
 	"package": "com.enrichedmc.enriched.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-
+		"BeehiveBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

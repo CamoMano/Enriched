@@ -1,6 +1,7 @@
 package com.enrichedmc.enriched.item;
 
 import com.enrichedmc.enriched.EnrichedMod;
+import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.base.*;
 import com.enrichedmc.enriched.item.food.EnrichedFoodComponents;
 import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
@@ -9,6 +10,7 @@ import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.SpawnEggItem;
 
 public class EnrichedItems
 {
@@ -21,6 +23,7 @@ public class EnrichedItems
     public static final Item OBSIDIAN_ALLOY_INGOT;
 
     public static final Item HONEY_BALL;
+    public static final SpawnEggItem HONEY_SLIME_SPAWN_EGG;
 
     public static final Item BEEF_STEW;
     public static final Item BERRY_JUICE;
@@ -97,6 +100,8 @@ public class EnrichedItems
         OBSIDIAN_ALLOY_INGOT = EnrichedRegisters.registerItem("obsidian_alloy_ingot", new Item(new Item.Settings()));
 
         HONEY_BALL = EnrichedRegisters.registerItem("honey_ball", new Item(new Item.Settings()));
+        HONEY_SLIME_SPAWN_EGG = (SpawnEggItem) EnrichedRegisters.registerItem("honey_slime_spawn_egg", new SpawnEggItem(EnrichedEntityTypes.HONEY_SLIME,
+                0xffd700, 0xb39700, new Item.Settings()));
 
         /*-------------*/
         /* -- Tools -- */
@@ -248,6 +253,7 @@ public class EnrichedItems
         EnrichedRegisters.registerToItemGroup(OBSIDIAN_ALLOY_BLEND, ItemGroups.INGREDIENTS);
         EnrichedRegisters.registerToItemGroup(OBSIDIAN_ALLOY_INGOT, ItemGroups.INGREDIENTS);
         EnrichedRegisters.registerToItemGroup(HONEY_BALL, ItemGroups.INGREDIENTS);
+        EnrichedRegisters.registerToItemGroup(HONEY_SLIME_SPAWN_EGG, ItemGroups.SPAWN_EGGS);
 
         /*-------------*/
         /* -- Tools -- */

@@ -1,4 +1,4 @@
-// 1.21	2024-07-03T18:51:06.7837421	Enriched/Block Loot Tables
+// 1.21	2024-07-03T19:35:54.3031739	Enriched/Block Loot Tables
 c2ea10b722d238b6880fb7a966b95763936ee841 data\enriched\loot_table\blocks\stripped_redwood_log.json
 07071d860b4d954cf2062f585b7a7533b2b649e7 data\enriched\loot_table\blocks\ruby_block.json
 f107468d2a4c78cb5a9c4f583be510486bde2e42 data\enriched\loot_table\blocks\redwood_wood.json
@@ -6,8 +6,8 @@ e832cea0fef07ade8612a2a956e05daee59e3e1f data\enriched\loot_table\blocks\deepsla
 b2a9b5a1f2303d0c47355b3b8c099551f37019ce data\enriched\loot_table\blocks\sapphire_block.json
 5c8207c3b5ba4429ddf811bc788c094fcd5375b4 data\enriched\loot_table\blocks\tanzanite_ore.json
 a7217ab29f76982ddcb32dd05ed22c10667c8b26 data\enriched\loot_table\blocks\deepslate_sapphire_ore.json
-7f904c9df13992bf6c8f920e733647ad9e8c3c32 data\enriched\loot_table\blocks\deepslate_ruby_ore.json
 58b8c0cbcc1f69bf41c5952003634e84f9b358f6 data\enriched\loot_table\blocks\steel_block.json
+7f904c9df13992bf6c8f920e733647ad9e8c3c32 data\enriched\loot_table\blocks\deepslate_ruby_ore.json
 b2cadbc201ca01913bcc63d5023432f233c265dd data\enriched\loot_table\blocks\stripped_redwood_wood.json
 00cfab4ee859ac03552d66f46451b19ee1c2cda7 data\enriched\loot_table\blocks\tanzanite_block.json
 76674fe0dd0cb2a569292bf606fee7d5f38b8521 data\enriched\loot_table\blocks\ruby_ore.json

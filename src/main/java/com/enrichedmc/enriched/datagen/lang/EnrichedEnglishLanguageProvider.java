@@ -1,6 +1,7 @@
 package com.enrichedmc.enriched.datagen.lang;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
+import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -32,6 +33,7 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add(EnrichedItems.OBSIDIAN_ALLOY_BLEND, "Obsidian Alloy Blend");
         translationBuilder.add(EnrichedItems.OBSIDIAN_ALLOY_INGOT, "Obsidian Alloy Ingot");
         translationBuilder.add(EnrichedItems.HONEY_BALL, "Honey Ball");
+        translationBuilder.add(EnrichedItems.HONEY_SLIME_SPAWN_EGG, "Honey Slime Spawn Egg");
 
         /*--------------*/
         /* -- Blocks -- */
@@ -123,6 +125,12 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
 
         translationBuilder.add(EnrichedItems.BEEF_STEW, "Beef Stew");
         translationBuilder.add(EnrichedItems.BERRY_JUICE, "Berry Juice");
+
+        /*----------------*/
+        /* -- Entities -- */
+        /*----------------*/
+
+        translationBuilder.add(EnrichedEntityTypes.HONEY_SLIME, "Honey Slime");
 
         /*---------------*/
         /* -- Options -- */
