@@ -2,6 +2,7 @@ package com.enrichedmc.enriched.datagen;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.item.EnrichedItems;
+import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -10,6 +11,7 @@ import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.entry.ItemEntry;
@@ -57,6 +59,15 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
         this.addDrop(EnrichedBlocks.REDWOOD_PLANKS);
         this.addDrop(EnrichedBlocks.REDWOOD_LEAVES, leavesDrops(EnrichedBlocks.REDWOOD_LEAVES, EnrichedBlocks.REDWOOD_SAPLING, 0.25f));
         this.addDrop(EnrichedBlocks.REDWOOD_SAPLING);
+        this.addPottedPlantDrops(EnrichedBlocks.POTTED_REDWOOD_SAPLING);
+        this.addDrop(EnrichedBlocks.REDWOOD_BUTTON);
+        this.addDrop(EnrichedBlocks.REDWOOD_DOOR);
+        this.addDrop(EnrichedBlocks.REDWOOD_PRESSURE_PLATE);
+        this.addDrop(EnrichedBlocks.REDWOOD_TRAPDOOR);
+        this.addDrop(EnrichedBlocks.REDWOOD_SLAB);
+        this.addDrop(EnrichedBlocks.REDWOOD_STAIRS);
+        this.addDrop(EnrichedBlocks.REDWOOD_FENCE);
+        this.addDrop(EnrichedBlocks.REDWOOD_FENCE_GATE);
 
         this.addDrop(EnrichedBlocks.DARK_GRANITE);
         this.addDrop(EnrichedBlocks.DARK_GRANITE_SLAB);

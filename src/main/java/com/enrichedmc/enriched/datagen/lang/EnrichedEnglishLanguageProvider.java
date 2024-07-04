@@ -63,6 +63,14 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add(EnrichedBlocks.REDWOOD_PLANKS, "Redwood Planks");
         translationBuilder.add(EnrichedBlocks.REDWOOD_LEAVES, "Redwood Leaves");
         translationBuilder.add(EnrichedBlocks.REDWOOD_SAPLING, "Redwood Sapling");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_BUTTON, "Redwood Button");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_DOOR, "Redwood Door");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_PRESSURE_PLATE, "Redwood Pressure Plate");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_TRAPDOOR, "Redwood Trapdoor");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_SLAB, "Redwood Slab");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_STAIRS, "Redwood Stairs");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_FENCE, "Redwood Fence");
+        translationBuilder.add(EnrichedBlocks.REDWOOD_FENCE_GATE, "Redwood Fence Gate");
 
         translationBuilder.add(EnrichedBlocks.DARK_GRANITE, "Dark Granite");
         translationBuilder.add(EnrichedBlocks.DARK_GRANITE_SLAB, "Dark Granite Slab");

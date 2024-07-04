@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "R": {
+      "item": "enriched:redwood_planks"
+    }
+  },
+  "pattern": [
+    "RR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "enriched:redwood_pressure_plate"
+  }
+}

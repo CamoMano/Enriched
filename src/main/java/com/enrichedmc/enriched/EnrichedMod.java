@@ -9,6 +9,7 @@ import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
 import com.enrichedmc.enriched.networking.EnrichedNetworking;
 import com.enrichedmc.enriched.networking.EnrichedServerNetworking;
+import com.enrichedmc.enriched.tag.EnrichedTags;
 import com.enrichedmc.enriched.world.gen.EnrichedWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -40,6 +41,7 @@ public class EnrichedMod implements ModInitializer
         // (Ayydxn) These don't do anything and are being called, so the JVM will load the class and run their static blocks.
         EnrichedItems.registerItems();
         EnrichedBlocks.registerBlocks();
+        EnrichedTags.registerTags();
         EnrichedEntityTypes.registerEntityTypes();
         EnrichedArmorMaterials.register();
         EnrichedResourceConditions.registerResourceConditions();

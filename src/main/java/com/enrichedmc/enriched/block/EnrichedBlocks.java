@@ -30,6 +30,15 @@ public class EnrichedBlocks
     public static final Block REDWOOD_PLANKS;
     public static final Block REDWOOD_LEAVES;
     public static final Block REDWOOD_SAPLING;
+    public static final Block POTTED_REDWOOD_SAPLING;
+    public static final Block REDWOOD_BUTTON;
+    public static final Block REDWOOD_DOOR;
+    public static final Block REDWOOD_PRESSURE_PLATE;
+    public static final Block REDWOOD_TRAPDOOR;
+    public static final Block REDWOOD_SLAB;
+    public static final Block REDWOOD_STAIRS;
+    public static final Block REDWOOD_FENCE;
+    public static final Block REDWOOD_FENCE_GATE;
 
     public static final Block DARK_GRANITE;
     public static final Block DARK_GRANITE_SLAB;
@@ -90,6 +99,35 @@ public class EnrichedBlocks
 
         REDWOOD_SAPLING = EnrichedRegisters.registerBlock("redwood_sapling", new SaplingBlock(EnrichedSaplingGenerators.REDWOOD,
                 AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
+        POTTED_REDWOOD_SAPLING = EnrichedRegisters.registerBlock("potted_redwood_sapling", new FlowerPotBlock(REDWOOD_SAPLING,
+                AbstractBlock.Settings.copy(Blocks.POTTED_SPRUCE_SAPLING).nonOpaque()));
+
+        REDWOOD_BUTTON = EnrichedRegisters.registerBlock("redwood_button", new ButtonBlock(BlockSetType.SPRUCE, 4,
+                AbstractBlock.Settings.copy(Blocks.SPRUCE_BUTTON)));
+
+        REDWOOD_DOOR = EnrichedRegisters.registerBlock("redwood_door", new DoorBlock(BlockSetType.SPRUCE,
+                AbstractBlock.Settings.copy(REDWOOD_PLANKS)));
+
+        REDWOOD_PRESSURE_PLATE = EnrichedRegisters.registerBlock("redwood_pressure_plate", new PressurePlateBlock(BlockSetType.SPRUCE,
+                AbstractBlock.Settings.copy(REDWOOD_PLANKS)));
+
+        REDWOOD_TRAPDOOR = EnrichedRegisters.registerBlock("redwood_trapdoor", new TrapdoorBlock(BlockSetType.SPRUCE,
+                AbstractBlock.Settings.copy(REDWOOD_PLANKS)));
+
+        REDWOOD_SLAB = EnrichedRegisters.registerBlock("redwood_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_SLAB)
+                .sounds(BlockSoundGroup.WOOD)
+                .strength(2.0f, 2.0f)));
+
+        REDWOOD_STAIRS = EnrichedRegisters.registerBlock("redwood_stairs", new StairsBlock(REDWOOD_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(REDWOOD_PLANKS)));
+
+        REDWOOD_FENCE = EnrichedRegisters.registerBlock("redwood_fence", new FenceBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_FENCE_GATE)
+                .sounds(BlockSoundGroup.WOOD)
+                .strength(2.0f, 3.0f)));
+
+        REDWOOD_FENCE_GATE = EnrichedRegisters.registerBlock("redwood_fence_gate", new FenceGateBlock(WoodType.SPRUCE, AbstractBlock.Settings.copy(Blocks.SPRUCE_FENCE_GATE)
+                .sounds(BlockSoundGroup.WOOD)
+                .strength(2.0f, 3.0f)));
 
         DARK_GRANITE = EnrichedRegisters.registerBlock("dark_granite", new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)
                 .strength(1.5f, 6.0f)
@@ -173,6 +211,14 @@ public class EnrichedBlocks
         EnrichedRegisters.registerToItemGroup(REDWOOD_PLANKS, ItemGroups.BUILDING_BLOCKS);
         EnrichedRegisters.registerToItemGroup(REDWOOD_LEAVES, ItemGroups.NATURAL);
         EnrichedRegisters.registerToItemGroup(REDWOOD_SAPLING, ItemGroups.NATURAL);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_BUTTON, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_DOOR, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_PRESSURE_PLATE, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_TRAPDOOR, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_SLAB, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_STAIRS, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_FENCE, ItemGroups.BUILDING_BLOCKS);
+        EnrichedRegisters.registerToItemGroup(REDWOOD_FENCE_GATE, ItemGroups.BUILDING_BLOCKS);
 
         EnrichedRegisters.registerToItemGroup(DARK_GRANITE, ItemGroups.BUILDING_BLOCKS);
         EnrichedRegisters.registerToItemGroup(DARK_GRANITE_SLAB, ItemGroups.BUILDING_BLOCKS);

@@ -1,6 +1,7 @@
 package com.enrichedmc.enriched.datagen.tag;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
+import com.enrichedmc.enriched.tag.EnrichedTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -25,6 +26,12 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(EnrichedBlocks.REDWOOD_LOG.asItem())
                 .add(EnrichedBlocks.REDWOOD_WOOD.asItem())
                 .add(EnrichedBlocks.STRIPPED_REDWOOD_LOG.asItem())
+                .add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD.asItem());
+
+        this.getOrCreateTagBuilder(EnrichedTags.ItemTags.REDWOOD_LOGS)
+                .add(EnrichedBlocks.REDWOOD_LOG.asItem())
+                .add(EnrichedBlocks.STRIPPED_REDWOOD_LOG.asItem())
+                .add(EnrichedBlocks.REDWOOD_WOOD.asItem())
                 .add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD.asItem());
     }
 }

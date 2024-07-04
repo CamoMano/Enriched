@@ -25,6 +25,7 @@ public class EnrichedModelProvider extends FabricModelProvider
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator)
     {
+        BlockStateModelGenerator.BlockTexturePool redwoodTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.REDWOOD_PLANKS);
         BlockStateModelGenerator.BlockTexturePool darkGraniteTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.DARK_GRANITE);
         BlockStateModelGenerator.BlockTexturePool polishedDarkGraniteTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.POLISHED_DARK_GRANITE);
         BlockStateModelGenerator.BlockTexturePool marbleTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.MARBLE);
@@ -53,9 +54,18 @@ public class EnrichedModelProvider extends FabricModelProvider
                 .log(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
                 .wood(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
 
-        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.REDWOOD_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.REDWOOD_LEAVES);
-        blockStateModelGenerator.registerTintableCross(EnrichedBlocks.REDWOOD_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(EnrichedBlocks.REDWOOD_SAPLING, EnrichedBlocks.POTTED_REDWOOD_SAPLING,
+                BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        redwoodTexturePool.button(EnrichedBlocks.REDWOOD_BUTTON);
+        blockStateModelGenerator.registerDoor(EnrichedBlocks.REDWOOD_DOOR);
+        redwoodTexturePool.pressurePlate(EnrichedBlocks.REDWOOD_PRESSURE_PLATE);
+        blockStateModelGenerator.registerTrapdoor(EnrichedBlocks.REDWOOD_TRAPDOOR);
+        redwoodTexturePool.slab(EnrichedBlocks.REDWOOD_SLAB);
+        redwoodTexturePool.stairs(EnrichedBlocks.REDWOOD_STAIRS);
+        redwoodTexturePool.fence(EnrichedBlocks.REDWOOD_FENCE);
+        redwoodTexturePool.fenceGate(EnrichedBlocks.REDWOOD_FENCE_GATE);
 
         darkGraniteTexturePool.slab(EnrichedBlocks.DARK_GRANITE_SLAB);
         darkGraniteTexturePool.stairs(EnrichedBlocks.DARK_GRANITE_STAIRS);

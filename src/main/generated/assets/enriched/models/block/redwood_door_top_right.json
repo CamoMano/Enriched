@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "enriched:block/redwood_door_bottom",
+    "top": "enriched:block/redwood_door_top"
+  }
+}

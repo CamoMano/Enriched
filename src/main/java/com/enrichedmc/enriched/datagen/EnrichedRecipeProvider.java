@@ -4,6 +4,7 @@ import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.conditions.EnrichedResourceConditions;
 import com.enrichedmc.enriched.item.EnrichedItems;
+import com.enrichedmc.enriched.tag.EnrichedTags;
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -54,6 +55,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider
 
         this.createUncraftingRecipes(exporter);
 
+        this.createRedwoodRecipes(exporter);
         this.createDarkGraniteRecipes(exporter);
         this.createMarbleRecipes(exporter);
     }
@@ -263,6 +265,79 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider
         this.createUncraftingRecipe(recipeExporter, Items.MAGMA_BLOCK, Items.MAGMA_CREAM, 4);
         this.createUncraftingRecipe(recipeExporter, Items.NETHER_WART, Items.NETHER_WART_BLOCK, 9);
         this.createUncraftingRecipe(recipeExporter, Items.HONEYCOMB_BLOCK, Items.HONEYCOMB, 4);
+    }
+
+    private void createRedwoodRecipes(RecipeExporter recipeExporter)
+    {
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_BUTTON)
+                .input(EnrichedBlocks.REDWOOD_PLANKS)
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_PLANKS), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_DOOR, 3)
+                .input('R', EnrichedBlocks.REDWOOD_PLANKS)
+                .pattern("RR ")
+                .pattern("RR ")
+                .pattern("RR ")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_PLANKS), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_FENCE, 3)
+                .input('R', EnrichedBlocks.REDWOOD_PLANKS)
+                .input('S', Items.STICK)
+                .pattern("RSR")
+                .pattern("RSR")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_PLANKS), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_PLANKS))
+                .criterion(FabricRecipeProvider.hasItem(Items.STICK), FabricRecipeProvider.conditionsFromItem(Items.STICK))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_FENCE_GATE)
+                .input('R', EnrichedBlocks.REDWOOD_PLANKS)
+                .input('S', Items.STICK)
+                .pattern("SRS")
+                .pattern("SRS")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_PLANKS), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_PLANKS))
+                .criterion(FabricRecipeProvider.hasItem(Items.STICK), FabricRecipeProvider.conditionsFromItem(Items.STICK))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_PLANKS, 4)
+                .input(EnrichedTags.ItemTags.REDWOOD_LOGS)
+                .criterion("has_" + EnrichedTags.ItemTags.REDWOOD_LOGS.id().getPath(), FabricRecipeProvider.conditionsFromTag(EnrichedTags.ItemTags.REDWOOD_LOGS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_PRESSURE_PLATE)
+                .input('R', EnrichedBlocks.REDWOOD_PLANKS)
+                .pattern("RR")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_PLANKS), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_SLAB, 6)
+                .input('R', EnrichedBlocks.REDWOOD_PLANKS)
+                .pattern("RRR")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_PLANKS), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_STAIRS, 6)
+                .input('R', EnrichedBlocks.REDWOOD_PLANKS)
+                .pattern("R  ")
+                .pattern("RR ")
+                .pattern("RRR")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_PLANKS), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_TRAPDOOR, 2)
+                .input('R', EnrichedBlocks.REDWOOD_PLANKS)
+                .pattern("RRR")
+                .pattern("RRR")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_PLANKS), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_WOOD, 2)
+                .input('R', EnrichedBlocks.REDWOOD_LOG)
+                .pattern("RR")
+                .pattern("RR")
+                .criterion(FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_LOG), FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_LOG))
+                .offerTo(recipeExporter);
     }
 
     private void createDarkGraniteRecipes(RecipeExporter recipeExporter)
