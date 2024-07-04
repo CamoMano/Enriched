@@ -189,7 +189,7 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add("enriched.options.recipes.enableUncraftingRecipes.description", "Enables/disables the recipes for getting items from certain blocks. (Example: Wool -> String)");
 
         translationBuilder.add("enriched.options.category.mobs", "Mobs");
-        translationBuilder.add("enriched.options.mobs.enableHoneySlimeSpawning", "Enable Honey Slime pawning");
+        translationBuilder.add("enriched.options.mobs.enableHoneySlimeSpawning", "Enable Honey Slime Spawning");
         translationBuilder.add("enriched.options.mobs.enableHoneySlimeSpawning.description", "Enables/disables the Honey Slime from potentially spawning when harvesting a beehive.");
 
         translationBuilder.add("enriched.options.category.worldGeneration", "World Generation");
