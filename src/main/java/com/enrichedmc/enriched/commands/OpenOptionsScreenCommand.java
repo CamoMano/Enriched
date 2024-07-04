@@ -18,8 +18,9 @@ public class OpenOptionsScreenCommand implements CommandRegistrationCallback
     public void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess registryAccess,
                          CommandManager.RegistrationEnvironment environment)
     {
-        dispatcher.register(CommandManager.literal("enriched")
-                .then(CommandManager.literal("options").executes(OpenOptionsScreenCommand::execute)));
+        dispatcher.register(CommandManager.literal("enriched").then(CommandManager.literal("options")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(OpenOptionsScreenCommand::execute)));
     }
 
     private static int execute(CommandContext<ServerCommandSource> context)
