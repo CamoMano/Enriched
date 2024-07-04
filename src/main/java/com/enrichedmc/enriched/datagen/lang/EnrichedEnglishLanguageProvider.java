@@ -150,6 +150,9 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add("enriched.options.recipes.enableChainmailRecipes", "Enable Chainmail Recipes");
         translationBuilder.add("enriched.options.recipes.enableRawSmeltingRecipes", "Enable Raw Smelting Recipes");
         translationBuilder.add("enriched.options.recipes.enableUncraftingRecipes", "Enable Uncrafting Recipes");
+
+        translationBuilder.add("enriched.options.category.mobs", "Mobs");
+        translationBuilder.add("enriched.options.recipes.enableHoneySlimeSpawning", "Enable Honey Slime Spawning");
     }
 
     private void addToolTranslations(TranslationBuilder translationBuilder, Item sword, Item shovel, Item pickaxe, Item axe, Item hoe, String swordText,

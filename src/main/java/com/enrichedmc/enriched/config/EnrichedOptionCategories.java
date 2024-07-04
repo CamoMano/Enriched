@@ -14,6 +14,7 @@ public class EnrichedOptionCategories
     private static final EnrichedGameOptions ENRICHED_GAME_OPTIONS;
     private static final EnrichedGameOptions.ToolsAndArmorOptions TOOLS_AND_ARMOR_OPTIONS;
     private static final EnrichedGameOptions.RecipeOptions RECIPE_OPTIONS;
+    private static final EnrichedGameOptions.MobOptions MOB_OPTIONS;
 
     private static final OptionFlag RELOAD_DATA_PACKS;
 
@@ -22,6 +23,7 @@ public class EnrichedOptionCategories
         ENRICHED_GAME_OPTIONS = EnrichedMod.getInstance().getGameOptions();
         TOOLS_AND_ARMOR_OPTIONS = ENRICHED_GAME_OPTIONS.toolsAndArmorOptions;
         RECIPE_OPTIONS = ENRICHED_GAME_OPTIONS.recipeOptions;
+        MOB_OPTIONS = ENRICHED_GAME_OPTIONS.mobOptions;
 
         // FIXME: (Ayydxn) Doesn't work on dedicated servers. Will have to investigate that.
         RELOAD_DATA_PACKS = (client) -> ClientPlayNetworking.send(new ReloadDataPacksPacket());
@@ -103,6 +105,18 @@ public class EnrichedOptionCategories
                         .binding(EnrichedGameOptions.defaults().recipeOptions.enableUncraftingRecipes, () -> RECIPE_OPTIONS.enableUncraftingRecipes, newValue -> RECIPE_OPTIONS.enableUncraftingRecipes = newValue)
                         .customController(BooleanController::new)
                         .flag(EnrichedOptionCategories.RELOAD_DATA_PACKS)
+                        .build())
+                .build();
+    }
+
+    public static ConfigCategory mobs()
+    {
+        return ConfigCategory.createBuilder()
+                .name(Text.translatable("enriched.options.category.mobs"))
+                .option(Option.<Boolean>createBuilder()
+                        .name(Text.translatable("enriched.options.recipes.enableHoneySlimeSpawning"))
+                        .binding(EnrichedGameOptions.defaults().mobOptions.enableHoneySlimeSpawning, () -> MOB_OPTIONS.enableHoneySlimeSpawning, newValue -> MOB_OPTIONS.enableHoneySlimeSpawning = newValue)
+                        .customController(BooleanController::new)
                         .build())
                 .build();
     }

@@ -24,6 +24,7 @@ public class EnrichedGameOptions
 
     public final ToolsAndArmorOptions toolsAndArmorOptions = new ToolsAndArmorOptions();
     public final RecipeOptions recipeOptions = new RecipeOptions();
+    public final MobOptions mobOptions = new MobOptions();
 
     public static EnrichedGameOptions defaults()
     {
@@ -98,5 +99,10 @@ public class EnrichedGameOptions
         public boolean enableChainmailRecipes = true;
         public boolean enableRawSmeltingRecipes = true;
         public boolean enableUncraftingRecipes = true;
+    }
+
+    public static final class MobOptions
+    {
+        public boolean enableHoneySlimeSpawning = true;
     }
 }
