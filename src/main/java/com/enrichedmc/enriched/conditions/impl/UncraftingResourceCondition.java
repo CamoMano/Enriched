@@ -8,17 +8,16 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
-public class UncraftingResourceCondition implements ResourceCondition
-{
-    @Override
-    public ResourceConditionType<?> getType()
-    {
-        return ResourceConditionType.create(Identifier.of(EnrichedMod.MOD_ID, "uncrafting_enabled"), MapCodec.unit(UncraftingResourceCondition::new));
-    }
+public class UncraftingResourceCondition implements ResourceCondition {
+  @Override
+  public ResourceConditionType<?> getType() {
+    return ResourceConditionType.create(
+        Identifier.of(EnrichedMod.MOD_ID, "uncrafting_enabled"),
+        MapCodec.unit(UncraftingResourceCondition::new));
+  }
 
-    @Override
-    public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup)
-    {
-        return EnrichedMod.getInstance().getGameOptions().recipeOptions.enableUncraftingRecipes;
-    }
+  @Override
+  public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup) {
+    return EnrichedMod.getInstance().getGameOptions().recipeOptions.enableUncraftingRecipes;
+  }
 }

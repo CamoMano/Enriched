@@ -7,18 +7,18 @@ body:
     attributes:
       value: >-
         # READ THIS BEFORE OPENING AN ISSUE
-  
+        
         **This issue tracker is not for support requests!**
         If you need help with crashes or any other issues, please ask for help in [Camo's Discord server]() instead of opening and issue here.
         In addition, please make sure you have at least done the following:
-  
+        
         - **Have you ensured that all of your mods (including Enriched) are up-to-date?**
         The latest version of Enriched can be found on either [GitHub Releases](https://github.com/CamoMano/Enriched/releases) or
         its [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/enriched).
         
         - **Have you used the [search tool](https://github.com/CamoMano/Enriched/issues) to see if your issue has already been reported?**
         If so, you should leave a comment under the existing issue to add any additional information, if you have any,
-            
+        
         - **Have you created a base set of instructions to reproduce the issue?**
         If your issue only occurs with other mods installed, then you should try to narrow down exactly which mods are causing the issue.
         Please don't provide a list of all of the mods you use and expect us to figure out which ones are problematic.

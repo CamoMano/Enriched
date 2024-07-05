@@ -14,25 +14,23 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
-public class EnrichedDataGenerator implements DataGeneratorEntrypoint
-{
-    @Override
-    public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator)
-    {
-        FabricDataGenerator.Pack dataGeneratorPack = fabricDataGenerator.createPack();
-        dataGeneratorPack.addProvider(EnrichedEnglishLanguageProvider::new);
-        dataGeneratorPack.addProvider(EnrichedBlockTagProvider::new);
-        dataGeneratorPack.addProvider(EnrichedItemTagProvider::new);
-        dataGeneratorPack.addProvider(EnrichedBlockLootTableProvider::new);
-        dataGeneratorPack.addProvider(EnrichedModelProvider::new);
-        dataGeneratorPack.addProvider(EnrichedRecipeProvider::new);
-        dataGeneratorPack.addProvider(EnrichedWorldGenerator::new);
-    }
+public class EnrichedDataGenerator implements DataGeneratorEntrypoint {
+  @Override
+  public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+    FabricDataGenerator.Pack dataGeneratorPack = fabricDataGenerator.createPack();
+    dataGeneratorPack.addProvider(EnrichedEnglishLanguageProvider::new);
+    dataGeneratorPack.addProvider(EnrichedBlockTagProvider::new);
+    dataGeneratorPack.addProvider(EnrichedItemTagProvider::new);
+    dataGeneratorPack.addProvider(EnrichedBlockLootTableProvider::new);
+    dataGeneratorPack.addProvider(EnrichedModelProvider::new);
+    dataGeneratorPack.addProvider(EnrichedRecipeProvider::new);
+    dataGeneratorPack.addProvider(EnrichedWorldGenerator::new);
+  }
 
-    @Override
-    public void buildRegistry(RegistryBuilder registryBuilder)
-    {
-        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, EnrichedConfiguredFeatures::bootstrap);
-        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, EnrichedPlacedFeatures::bootstrap);
-    }
+  @Override
+  public void buildRegistry(RegistryBuilder registryBuilder) {
+    registryBuilder.addRegistry(
+        RegistryKeys.CONFIGURED_FEATURE, EnrichedConfiguredFeatures::bootstrap);
+    registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, EnrichedPlacedFeatures::bootstrap);
+  }
 }

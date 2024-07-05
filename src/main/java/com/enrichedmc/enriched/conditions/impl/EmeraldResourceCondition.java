@@ -8,17 +8,16 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
-public class EmeraldResourceCondition implements ResourceCondition
-{
-    @Override
-    public ResourceConditionType<?> getType()
-    {
-        return ResourceConditionType.create(Identifier.of(EnrichedMod.MOD_ID, "emerald_enabled"), MapCodec.unit(EmeraldResourceCondition::new));
-    }
+public class EmeraldResourceCondition implements ResourceCondition {
+  @Override
+  public ResourceConditionType<?> getType() {
+    return ResourceConditionType.create(
+        Identifier.of(EnrichedMod.MOD_ID, "emerald_enabled"),
+        MapCodec.unit(EmeraldResourceCondition::new));
+  }
 
-    @Override
-    public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup)
-    {
-        return EnrichedMod.getInstance().getGameOptions().toolsAndArmorOptions.enableEmeraldGear;
-    }
+  @Override
+  public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup) {
+    return EnrichedMod.getInstance().getGameOptions().toolsAndArmorOptions.enableEmeraldGear;
+  }
 }

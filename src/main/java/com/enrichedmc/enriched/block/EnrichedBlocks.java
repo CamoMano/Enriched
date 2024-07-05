@@ -4,7 +4,6 @@ import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import com.enrichedmc.enriched.world.tree.EnrichedSaplingGenerators;
 import net.minecraft.block.*;
-import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.intprovider.UniformIntProvider;

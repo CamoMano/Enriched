@@ -3,15 +3,12 @@ package com.enrichedmc.enriched.datagen.lang;
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
-import com.enrichedmc.enriched.registry.EnrichedRegisters;
+import java.util.concurrent.CompletableFuture;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.RegistryWrapper;
-
-import java.util.concurrent.CompletableFuture;
 
 public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider
 {

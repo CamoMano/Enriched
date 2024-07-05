@@ -17,44 +17,47 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
-public class EnrichedRegisters
-{
-    public static Item registerItem(String itemName, Item itemInstance)
-    {
-        return Registry.register(Registries.ITEM, Identifier.of(EnrichedMod.MOD_ID, itemName), itemInstance);
-    }
+public class EnrichedRegisters {
+  public static Item registerItem(String itemName, Item itemInstance) {
+    return Registry.register(
+        Registries.ITEM, Identifier.of(EnrichedMod.MOD_ID, itemName), itemInstance);
+  }
 
-    public static Block registerBlock(String blockName, Block blockInstance)
-    {
-        // Register the block item.
-        Registry.register(Registries.ITEM, Identifier.of(EnrichedMod.MOD_ID, blockName), new BlockItem(blockInstance, new Item.Settings()));
+  public static Block registerBlock(String blockName, Block blockInstance) {
+    // Register the block item.
+    Registry.register(
+        Registries.ITEM,
+        Identifier.of(EnrichedMod.MOD_ID, blockName),
+        new BlockItem(blockInstance, new Item.Settings()));
 
-        // Register the actual block.
-        return Registry.register(Registries.BLOCK, Identifier.of(EnrichedMod.MOD_ID, blockName), blockInstance);
-    }
+    // Register the actual block.
+    return Registry.register(
+        Registries.BLOCK, Identifier.of(EnrichedMod.MOD_ID, blockName), blockInstance);
+  }
 
-    public static void registerToItemGroup(ItemConvertible item, RegistryKey<ItemGroup> itemGroupRegistryKey)
-    {
-        ItemGroupEvents.modifyEntriesEvent(itemGroupRegistryKey).register(entries -> entries.add(item));
-    }
+  public static void registerToItemGroup(
+      ItemConvertible item, RegistryKey<ItemGroup> itemGroupRegistryKey) {
+    ItemGroupEvents.modifyEntriesEvent(itemGroupRegistryKey).register(entries -> entries.add(item));
+  }
 
-    public static <T extends Entity> EntityType<T> registerEntityType(String name, EntityType<T> entityType)
-    {
-        return Registry.register(Registries.ENTITY_TYPE, Identifier.of(EnrichedMod.MOD_ID, name), entityType);
-    }
+  public static <T extends Entity> EntityType<T> registerEntityType(
+      String name, EntityType<T> entityType) {
+    return Registry.register(
+        Registries.ENTITY_TYPE, Identifier.of(EnrichedMod.MOD_ID, name), entityType);
+  }
 
-    public static <T extends ParticleEffect> ParticleType<T> registerParticleType(String name, ParticleType<T> particleType)
-    {
-        return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(EnrichedMod.MOD_ID, name), particleType);
-    }
+  public static <T extends ParticleEffect> ParticleType<T> registerParticleType(
+      String name, ParticleType<T> particleType) {
+    return Registry.register(
+        Registries.PARTICLE_TYPE, Identifier.of(EnrichedMod.MOD_ID, name), particleType);
+  }
 
-    public static <T> RegistryKey<T> createRegistryKey(RegistryKey<Registry<T>> registryKey, String name)
-    {
-        return RegistryKey.of(registryKey, Identifier.of(EnrichedMod.MOD_ID, name));
-    }
+  public static <T> RegistryKey<T> createRegistryKey(
+      RegistryKey<Registry<T>> registryKey, String name) {
+    return RegistryKey.of(registryKey, Identifier.of(EnrichedMod.MOD_ID, name));
+  }
 
-    public static <T> TagKey<T> createTagKey(RegistryKey<Registry<T>> registryKey, String path)
-    {
-        return TagKey.of(registryKey, Identifier.of(EnrichedMod.MOD_ID, path));
-    }
+  public static <T> TagKey<T> createTagKey(RegistryKey<Registry<T>> registryKey, String path) {
+    return TagKey.of(registryKey, Identifier.of(EnrichedMod.MOD_ID, path));
+  }
 }

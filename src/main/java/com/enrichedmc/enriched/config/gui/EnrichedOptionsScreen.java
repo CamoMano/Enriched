@@ -11,25 +11,26 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class EnrichedOptionsScreen
-{
-    private final Screen previousScreen;
+public class EnrichedOptionsScreen {
+  private final Screen previousScreen;
 
-    public EnrichedOptionsScreen(@Nullable Screen previousScreen)
-    {
-        this.previousScreen = previousScreen;
-    }
+  public EnrichedOptionsScreen(@Nullable Screen previousScreen) {
+    this.previousScreen = previousScreen;
+  }
 
-    public Screen getHandle()
-    {
-        List<ConfigCategory> configCategories = Lists.newArrayList(EnrichedOptionCategories.toolsAndArmor(), EnrichedOptionCategories.recipes(),
-                EnrichedOptionCategories.mobs(), EnrichedOptionCategories.worldGeneration());
+  public Screen getHandle() {
+    List<ConfigCategory> configCategories =
+        Lists.newArrayList(
+            EnrichedOptionCategories.toolsAndArmor(),
+            EnrichedOptionCategories.recipes(),
+            EnrichedOptionCategories.mobs(),
+            EnrichedOptionCategories.worldGeneration());
 
-        return YetAnotherConfigLib.createBuilder()
-                .title(Text.literal("Enriched Game Options"))
-                .categories(configCategories)
-                .save(() -> EnrichedMod.getInstance().getGameOptions().write())
-                .build()
-                .generateScreen(this.previousScreen);
-    }
+    return YetAnotherConfigLib.createBuilder()
+        .title(Text.literal("Enriched Game Options"))
+        .categories(configCategories)
+        .save(() -> EnrichedMod.getInstance().getGameOptions().write())
+        .build()
+        .generateScreen(this.previousScreen);
+  }
 }

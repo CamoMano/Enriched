@@ -19,61 +19,65 @@ import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 
-public class EnrichedMod implements ModInitializer
-{
-    private static EnrichedMod INSTANCE;
+public class EnrichedMod implements ModInitializer {
+  public static final Logger LOGGER = (Logger) LogManager.getLogger("Enriched");
+  public static final String MOD_ID = "enriched";
+  private static EnrichedMod INSTANCE;
+  private EnrichedGameOptions enrichedGameOptions;
 
-    public static final Logger LOGGER = (Logger) LogManager.getLogger("Enriched");
-    public static final String MOD_ID = "enriched";
+  public static EnrichedMod getInstance() {
+    if (INSTANCE == null)
+      throw new IllegalStateException(
+          "Tried to access an instance of Enriched before one was available!");
 
-    private EnrichedGameOptions enrichedGameOptions;
+    return INSTANCE;
+  }
 
-    @Override
-    public void onInitialize()
-    {
-        INSTANCE = this;
+  @Override
+  public void onInitialize() {
+    INSTANCE = this;
 
-        LOGGER.info("Initializing Enriched... (Version: {})", FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(NullPointerException::new)
-                .getMetadata().getVersion().getFriendlyString());
+    LOGGER.info(
+        "Initializing Enriched... (Version: {})",
+        FabricLoader.getInstance()
+            .getModContainer(MOD_ID)
+            .orElseThrow(NullPointerException::new)
+            .getMetadata()
+            .getVersion()
+            .getFriendlyString());
 
-        this.enrichedGameOptions = EnrichedGameOptions.load();
+    this.enrichedGameOptions = EnrichedGameOptions.load();
 
-        // (Ayydxn) These don't do anything and are being called, so the JVM will load the class and run their static blocks.
-        EnrichedItems.registerItems();
-        EnrichedBlocks.registerBlocks();
-        EnrichedTags.registerTags();
-        EnrichedEntityTypes.registerEntityTypes();
-        EnrichedArmorMaterials.register();
-        EnrichedResourceConditions.registerResourceConditions();
+    // (Ayydxn) These don't do anything and are being called, so the JVM will load the class and run
+    // their static blocks.
+    EnrichedItems.registerItems();
+    EnrichedBlocks.registerBlocks();
+    EnrichedTags.registerTags();
+    EnrichedEntityTypes.registerEntityTypes();
+    EnrichedArmorMaterials.register();
+    EnrichedResourceConditions.registerResourceConditions();
 
-        EnrichedWorldGeneration.generateWorldGeneration();
+    EnrichedWorldGeneration.generateWorldGeneration();
 
-        EnrichedNetworking.registerPayloads();
-        EnrichedServerNetworking.registerServerboundPackets();
+    EnrichedNetworking.registerPayloads();
+    EnrichedServerNetworking.registerServerboundPackets();
 
-        StrippableBlockRegistry.register(EnrichedBlocks.REDWOOD_LOG, EnrichedBlocks.STRIPPED_REDWOOD_LOG);
-        StrippableBlockRegistry.register(EnrichedBlocks.REDWOOD_WOOD, EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
+    StrippableBlockRegistry.register(
+        EnrichedBlocks.REDWOOD_LOG, EnrichedBlocks.STRIPPED_REDWOOD_LOG);
+    StrippableBlockRegistry.register(
+        EnrichedBlocks.REDWOOD_WOOD, EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
 
-        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_LOG, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_WOOD, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_LEAVES, 30, 60);
+    FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_LOG, 5, 5);
+    FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_WOOD, 5, 5);
+    FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD, 5, 5);
+    FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD, 5, 5);
+    FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_PLANKS, 5, 20);
+    FlammableBlockRegistry.getDefaultInstance().add(EnrichedBlocks.REDWOOD_LEAVES, 30, 60);
 
-        CommandRegistrationCallback.EVENT.register(new OpenOptionsScreenCommand());
-    }
+    CommandRegistrationCallback.EVENT.register(new OpenOptionsScreenCommand());
+  }
 
-    public static EnrichedMod getInstance()
-    {
-        if (INSTANCE == null)
-            throw new IllegalStateException("Tried to access an instance of Enriched before one was available!");
-
-        return INSTANCE;
-    }
-
-    public EnrichedGameOptions getGameOptions()
-    {
-        return this.enrichedGameOptions;
-    }
+  public EnrichedGameOptions getGameOptions() {
+    return this.enrichedGameOptions;
+  }
 }

@@ -8,17 +8,16 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
-public class SteelResourceCondition implements ResourceCondition
-{
-    @Override
-    public ResourceConditionType<?> getType()
-    {
-        return ResourceConditionType.create(Identifier.of(EnrichedMod.MOD_ID, "steel_enabled"), MapCodec.unit(SteelResourceCondition::new));
-    }
+public class SteelResourceCondition implements ResourceCondition {
+  @Override
+  public ResourceConditionType<?> getType() {
+    return ResourceConditionType.create(
+        Identifier.of(EnrichedMod.MOD_ID, "steel_enabled"),
+        MapCodec.unit(SteelResourceCondition::new));
+  }
 
-    @Override
-    public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup)
-    {
-        return EnrichedMod.getInstance().getGameOptions().toolsAndArmorOptions.enableSteelGear;
-    }
+  @Override
+  public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup) {
+    return EnrichedMod.getInstance().getGameOptions().toolsAndArmorOptions.enableSteelGear;
+  }
 }

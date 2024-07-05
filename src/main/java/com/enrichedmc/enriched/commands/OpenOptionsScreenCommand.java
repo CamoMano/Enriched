@@ -14,15 +14,6 @@ import net.minecraft.util.Formatting;
 
 public class OpenOptionsScreenCommand implements CommandRegistrationCallback
 {
-    @Override
-    public void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess registryAccess,
-                         CommandManager.RegistrationEnvironment environment)
-    {
-        dispatcher.register(CommandManager.literal("enriched").then(CommandManager.literal("options")
-                        .requires(source -> source.hasPermissionLevel(2))
-                        .executes(OpenOptionsScreenCommand::execute)));
-    }
-
     private static int execute(CommandContext<ServerCommandSource> context)
     {
         ServerPlayerEntity serverPlayerEntity = context.getSource().getPlayer();
@@ -36,5 +27,14 @@ public class OpenOptionsScreenCommand implements CommandRegistrationCallback
         ServerPlayNetworking.send(serverPlayerEntity, new OpenOptionsScreenPayload());
 
         return 0;
+    }
+
+    @Override
+    public void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess registryAccess,
+                         CommandManager.RegistrationEnvironment environment)
+    {
+        dispatcher.register(CommandManager.literal("enriched").then(CommandManager.literal("options")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(OpenOptionsScreenCommand::execute)));
     }
 }

@@ -8,17 +8,16 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
-public class SapphireResourceCondition implements ResourceCondition
-{
-    @Override
-    public ResourceConditionType<?> getType()
-    {
-        return ResourceConditionType.create(Identifier.of(EnrichedMod.MOD_ID, "sapphire_enabled"), MapCodec.unit(SapphireResourceCondition::new));
-    }
+public class SapphireResourceCondition implements ResourceCondition {
+  @Override
+  public ResourceConditionType<?> getType() {
+    return ResourceConditionType.create(
+        Identifier.of(EnrichedMod.MOD_ID, "sapphire_enabled"),
+        MapCodec.unit(SapphireResourceCondition::new));
+  }
 
-    @Override
-    public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup)
-    {
-        return EnrichedMod.getInstance().getGameOptions().toolsAndArmorOptions.enableSapphireGear;
-    }
+  @Override
+  public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup) {
+    return EnrichedMod.getInstance().getGameOptions().toolsAndArmorOptions.enableSapphireGear;
+  }
 }

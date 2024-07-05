@@ -3,6 +3,7 @@ package com.enrichedmc.enriched.world;
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import com.google.common.collect.Lists;
+import java.util.List;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -15,8 +16,6 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.JungleFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
-
-import java.util.List;
 
 public class EnrichedConfiguredFeatures
 {

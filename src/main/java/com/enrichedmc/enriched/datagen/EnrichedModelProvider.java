@@ -2,18 +2,13 @@ package com.enrichedmc.enriched.datagen;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.item.EnrichedItems;
+import java.util.Optional;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Model;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.structure.OceanRuinStructure;
-
-import java.util.Optional;
 
 public class EnrichedModelProvider extends FabricModelProvider
 {
@@ -54,7 +49,7 @@ public class EnrichedModelProvider extends FabricModelProvider
                 .log(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
                 .wood(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
 
-        blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.REDWOOD_LEAVES);
+        blockStateModelGenerator.registerSingleton(EnrichedBlocks.REDWOOD_LEAVES, TexturedModel.LEAVES);
         blockStateModelGenerator.registerFlowerPotPlant(EnrichedBlocks.REDWOOD_SAPLING, EnrichedBlocks.POTTED_REDWOOD_SAPLING,
                 BlockStateModelGenerator.TintType.NOT_TINTED);
 

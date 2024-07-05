@@ -9,17 +9,16 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
-public class RubyResourceCondition implements ResourceCondition
-{
-    @Override
-    public ResourceConditionType<?> getType()
-    {
-        return ResourceConditionType.create(Identifier.of(EnrichedMod.MOD_ID, "ruby_enabled"), MapCodec.unit(RubyResourceCondition::new));
-    }
+public class RubyResourceCondition implements ResourceCondition {
+  @Override
+  public ResourceConditionType<?> getType() {
+    return ResourceConditionType.create(
+        Identifier.of(EnrichedMod.MOD_ID, "ruby_enabled"),
+        MapCodec.unit(RubyResourceCondition::new));
+  }
 
-    @Override
-    public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup)
-    {
-        return EnrichedMod.getInstance().getGameOptions().toolsAndArmorOptions.enableRubyGear;
-    }
+  @Override
+  public boolean test(@Nullable RegistryWrapper.WrapperLookup registryLookup) {
+    return EnrichedMod.getInstance().getGameOptions().toolsAndArmorOptions.enableRubyGear;
+  }
 }

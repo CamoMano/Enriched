@@ -6,6 +6,8 @@ import com.enrichedmc.enriched.conditions.EnrichedResourceConditions;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.tag.EnrichedTags;
 import com.google.common.collect.Lists;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
@@ -27,9 +29,6 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 public class EnrichedRecipeProvider extends FabricRecipeProvider
 {

@@ -3,6 +3,8 @@ package com.enrichedmc.enriched.materials.armor;
 import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.google.common.collect.Lists;
+import java.util.EnumMap;
+import java.util.List;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ArmorMaterials;
@@ -13,19 +15,15 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
-import java.util.EnumMap;
-import java.util.List;
-
 public class EnrichedArmorMaterials
 {
-    private static final List<Integer> BASE_ARMOR_DURABILITY = Lists.newArrayList(3, 6, 8, 3);
-
     public static final RegistryEntry<ArmorMaterial> RUBY;
     public static final RegistryEntry<ArmorMaterial> SAPPHIRE;
     public static final RegistryEntry<ArmorMaterial> TANZANITE;
     public static final RegistryEntry<ArmorMaterial> STEEL;
     public static final RegistryEntry<ArmorMaterial> OBSIDIAN;
     public static final RegistryEntry<ArmorMaterial> EMERALD;
+    private static final List<Integer> BASE_ARMOR_DURABILITY = Lists.newArrayList(3, 6, 8, 3);
 
     static
     {

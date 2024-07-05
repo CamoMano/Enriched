@@ -6,11 +6,11 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 
-public class EnrichedTreeGeneration
-{
-    public static void generateTrees()
-    {
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA), GenerationStep.Feature.VEGETAL_DECORATION,
-                EnrichedPlacedFeatures.REDWOOD_PLACED_KEY);
-    }
+public class EnrichedTreeGeneration {
+  public static void generateTrees() {
+    BiomeModifications.addFeature(
+        BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA),
+        GenerationStep.Feature.VEGETAL_DECORATION,
+        EnrichedPlacedFeatures.REDWOOD_PLACED_KEY);
+  }
 }

@@ -8,16 +8,14 @@ import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.SlimeEntityModel;
 import net.minecraft.util.Identifier;
 
-public class HoneySlimeEntityRenderer extends MobEntityRenderer<HoneySlimeEntity, SlimeEntityModel<HoneySlimeEntity>>
-{
-    public HoneySlimeEntityRenderer(EntityRendererFactory.Context context)
-    {
-        super(context, new SlimeEntityModel<>(context.getPart(EntityModelLayers.SLIME)), 0.25f);
-    }
+public class HoneySlimeEntityRenderer
+    extends MobEntityRenderer<HoneySlimeEntity, SlimeEntityModel<HoneySlimeEntity>> {
+  public HoneySlimeEntityRenderer(EntityRendererFactory.Context context) {
+    super(context, new SlimeEntityModel<>(context.getPart(EntityModelLayers.SLIME)), 0.25f);
+  }
 
-    @Override
-    public Identifier getTexture(HoneySlimeEntity entity)
-    {
-        return Identifier.of(EnrichedMod.MOD_ID, "textures/entity/slime/honey_slime.png");
-    }
+  @Override
+  public Identifier getTexture(HoneySlimeEntity entity) {
+    return Identifier.of(EnrichedMod.MOD_ID, "textures/entity/slime/honey_slime.png");
+  }
 }
