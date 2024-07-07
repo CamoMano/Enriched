@@ -82,11 +82,11 @@ public class EnrichedConfiguredFeatures {
                 stoneOverwoldReplaceables, EnrichedBlocks.MARBLE.getDefaultState()));
 
     EnrichedConfiguredFeatures.register(
-        context, RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyOres, 6));
+        context, RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyOres, 4));
     EnrichedConfiguredFeatures.register(
-        context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSapphireOres, 6));
+        context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSapphireOres, 4));
     EnrichedConfiguredFeatures.register(
-        context, TANZANITE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTanzaniteOres, 6));
+        context, TANZANITE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTanzaniteOres, 4));
 
     EnrichedConfiguredFeatures.register(
         context, RUBY_ORE_COMMON_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyOres, 8));

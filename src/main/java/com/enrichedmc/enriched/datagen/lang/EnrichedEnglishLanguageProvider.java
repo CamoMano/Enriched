@@ -3,6 +3,7 @@ package com.enrichedmc.enriched.datagen.lang;
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
+import com.enrichedmc.enriched.tag.EnrichedTags;
 import java.util.concurrent.CompletableFuture;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -54,6 +55,8 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK, "Obsidian Alloy Block");
 
     translationBuilder.add(EnrichedBlocks.REDWOOD_LOG, "Redwood Log");
+    translationBuilder.add(EnrichedTags.BlockTags.REDWOOD_LOGS, "Redwood Logs");
+    translationBuilder.add(EnrichedTags.ItemTags.REDWOOD_LOGS, "Redwood Logs");
     translationBuilder.add(EnrichedBlocks.REDWOOD_WOOD, "Redwood Wood");
     translationBuilder.add(EnrichedBlocks.STRIPPED_REDWOOD_LOG, "Stripped Redwood Log");
     translationBuilder.add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD, "Stripped Redwood Wood");

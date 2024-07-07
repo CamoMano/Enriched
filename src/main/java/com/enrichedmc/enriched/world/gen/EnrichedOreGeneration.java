@@ -5,7 +5,7 @@ import com.enrichedmc.enriched.config.EnrichedGameOptions;
 import com.enrichedmc.enriched.world.EnrichedPlacedFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.registry.tag.BiomeTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.world.gen.GenerationStep;
 
 public class EnrichedOreGeneration {
@@ -19,11 +19,7 @@ public class EnrichedOreGeneration {
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.RUBY_ORE_PLACED_KEY);
       BiomeModifications.addFeature(
-          BiomeSelectors.tag(BiomeTags.IS_BADLANDS),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.RUBY_ORE_COMMON_PLACED_KEY);
-      BiomeModifications.addFeature(
-          BiomeSelectors.tag(BiomeTags.IS_SAVANNA),
+          BiomeSelectors.tag(ConventionalBiomeTags.IS_DESERT),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.RUBY_ORE_COMMON_PLACED_KEY);
     }
@@ -34,11 +30,7 @@ public class EnrichedOreGeneration {
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.SAPPHIRE_ORE_PLACED_KEY);
       BiomeModifications.addFeature(
-          BiomeSelectors.tag(BiomeTags.IS_MOUNTAIN),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.SAPPHIRE_ORE_COMMON_PLACED_KEY);
-      BiomeModifications.addFeature(
-          BiomeSelectors.tag(BiomeTags.IS_TAIGA),
+          BiomeSelectors.tag(ConventionalBiomeTags.IS_ICY),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.SAPPHIRE_ORE_COMMON_PLACED_KEY);
     }
@@ -49,7 +41,7 @@ public class EnrichedOreGeneration {
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.TANZANITE_ORE_PLACED_KEY);
       BiomeModifications.addFeature(
-          BiomeSelectors.tag(BiomeTags.IS_JUNGLE),
+          BiomeSelectors.tag(ConventionalBiomeTags.IS_JUNGLE),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.TANZANITE_ORE_COMMON_PLACED_KEY);
     }

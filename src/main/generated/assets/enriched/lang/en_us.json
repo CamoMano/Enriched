@@ -148,5 +148,7 @@
   "item.enriched.tanzanite_leggings": "Tanzanite Leggings",
   "item.enriched.tanzanite_pickaxe": "Tanzanite Pickaxe",
   "item.enriched.tanzanite_shovel": "Tanzanite Shovel",
-  "item.enriched.tanzanite_sword": "Tanzanite Sword"
+  "item.enriched.tanzanite_sword": "Tanzanite Sword",
+  "tag.block.enriched.redwood_logs": "Redwood Logs",
+  "tag.item.enriched.redwood_logs": "Redwood Logs"
 }
