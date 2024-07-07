@@ -1,24 +1,37 @@
-#Gradle
+# Gradle
 .gradle/
 build/
 out/
 classes/
 
-#IDEA
+# Eclipse
+*.launch
+
+# IntelliJ IDEA
 .idea/
 *.iml
 *.ipr
 *.iws
 
-#vscode
+# VS Code
 .settings/
 .vscode/
 bin/
 .classpath
 .project
 
-#fabric
+# MacOS
+*.DS_Store
+
+# Minecraft/Fabric
 run/
+
+
+# Java
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
 Version.lnk
 /remappedSrc/
 crowdin-translate-1.2.jar

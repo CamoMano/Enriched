@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "enriched:dark_granite"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "DDD"
+  ],
+  "result": {
+    "count": 6,
+    "id": "enriched:dark_granite_wall"
+  }
+}

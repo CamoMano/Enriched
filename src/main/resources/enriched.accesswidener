@@ -1,6 +1,9 @@
 accessWidener v2 named
 
-accessible class net/minecraft/world/gen/feature/ConfiguredFeatures
-accessible class net/minecraft/world/gen/structure/Structures
+accessible method net/minecraft/item/ArmorMaterials register (Ljava/lang/String;Ljava/util/EnumMap;ILnet/minecraft/registry/entry/RegistryEntry;FFLjava/util/function/Supplier;Ljava/util/List;)Lnet/minecraft/registry/entry/RegistryEntry;
 
-accessible method net/minecraft/item/ArmorMaterials register (Ljava/lang/String;Ljava/util/EnumMap;ILnet/minecraft/registry/entry/RegistryEntry;FFLjava/util/function/Supplier;)Lnet/minecraft/registry/entry/RegistryEntry;
+accessible method net/minecraft/particle/SimpleParticleType <init> (Z)V
+
+accessible method net/minecraft/world/gen/feature/OrePlacedFeatures modifiers (Lnet/minecraft/world/gen/placementmodifier/PlacementModifier;Lnet/minecraft/world/gen/placementmodifier/PlacementModifier;)Ljava/util/List;
+accessible method net/minecraft/world/gen/feature/OrePlacedFeatures modifiersWithCount (ILnet/minecraft/world/gen/placementmodifier/PlacementModifier;)Ljava/util/List;
+accessible method net/minecraft/world/gen/feature/OrePlacedFeatures modifiersWithRarity (ILnet/minecraft/world/gen/placementmodifier/PlacementModifier;)Ljava/util/List;

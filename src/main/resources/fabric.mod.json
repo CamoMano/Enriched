@@ -1,16 +1,15 @@
 {
   "schemaVersion": 1,
   "id": "enriched",
-  "version": "${version}",
+  "version": "${mod_version}",
   "name": "Enriched",
-  "accessWidener": "enriched.accesswidener",
-  "description": "Enhancements and vanilla-esque additions.",
+  "description": "A mod that adds enhancements and vanilla-esque additions to the game as well as bringing back removed features.",
   "authors": [
     "CamoMano"
   ],
   "contributors": [
-	"Ayydxn",
-    "RDKRACZ"
+    "RDKRACZ",
+    "Ayydxn"
   ],
   "contact": {
     "homepage": "https://enrichedmc.com/",
@@ -22,28 +21,35 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.enrichedmc.Enriched"
+      "com.enrichedmc.enriched.EnrichedMod"
     ],
     "client": [
-      "com.enrichedmc.EnrichedClient"
-    ],
-    "server": [],
-    "modmenu": [
-      "com.enrichedmc.config.ModMenu"
+      "com.enrichedmc.enriched.EnrichedClientMod"
     ],
     "fabric-datagen": [
-      "com.enrichedmc.EnrichedDataGenerator"
+      "com.enrichedmc.enriched.EnrichedDataGenerator"
+    ],
+    "modmenu": [
+      "com.enrichedmc.enriched.integrations.EnrichedModMenuIntegration"
     ]
   },
+  "accessWidener": "enriched.accesswidener",
   "mixins": [
     "enriched.mixins.json"
   ],
   "depends": {
     "minecraft": "~${minecraft_version}",
     "fabricloader": ">=${fabric_loader_version}",
-    "fabric": ">=${fabric_api_version}"
+    "fabric-api": ">=${fabric_api_version}"
   },
   "suggests": {
-    "modmenu": "*"
+    "modmenu": ">=${modmenu_version}"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/2G9XT3Uchp"
+      }
+    }
   }
 }
