@@ -2,14 +2,13 @@ package com.enrichedmc.enriched.materials.tool;
 
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
+import java.util.function.Supplier;
 import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
-
-import java.util.function.Supplier;
 
 public enum EnrichedToolMaterials implements ToolMaterial {
   RUBY(

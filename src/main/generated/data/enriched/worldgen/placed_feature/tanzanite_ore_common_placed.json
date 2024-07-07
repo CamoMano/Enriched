@@ -1,5 +1,5 @@
 {
-  "feature": "enriched:tanzanite_ore",
+  "feature": "enriched:tanzanite_ore_common",
   "placement": [
     {
       "type": "minecraft:count",

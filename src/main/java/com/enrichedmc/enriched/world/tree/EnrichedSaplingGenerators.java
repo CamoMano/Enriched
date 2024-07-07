@@ -1,9 +1,8 @@
 package com.enrichedmc.enriched.world.tree;
 
 import com.enrichedmc.enriched.world.EnrichedConfiguredFeatures;
-import net.minecraft.block.SaplingGenerator;
-
 import java.util.Optional;
+import net.minecraft.block.SaplingGenerator;
 
 public class EnrichedSaplingGenerators {
   public static final SaplingGenerator REDWOOD;

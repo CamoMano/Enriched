@@ -1,7 +1,6 @@
 package com.enrichedmc.enriched.conditions.impl;
 
 import com.enrichedmc.enriched.EnrichedMod;
-import com.enrichedmc.enriched.config.EnrichedGameOptions;
 import com.mojang.serialization.MapCodec;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditionType;

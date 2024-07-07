@@ -1,4 +1,4 @@
-// 1.21	2024-07-05T14:12:10.9772195	Enriched/Model Definitions
+// 1.21	2024-07-07T12:32:51.1666997	Enriched/Model Definitions
 edf46cfca1cc6e5d65214045edbf116e3e42645b assets\enriched\models\item\obsidian_sword.json
 b1f2d95256cfcb699a1dac06b306ed086db40f7c assets\enriched\models\block\redwood_log_horizontal.json
 95d2f1008dc3460e4132fbfcc5f3e3aacf37236c assets\enriched\models\item\emerald_chestplate_netherite_trim.json
@@ -389,8 +389,8 @@ fffe559c4f1ddf08506ffe96d975f714d04bccd6 assets\enriched\models\block\redwood_fe
 c9b42568694f9d521b4a575c54203b3da8080450 assets\enriched\models\item\ruby_helmet_copper_trim.json
 94d3b592ea548630bda8345126e2fd35f2a6ef70 assets\enriched\models\item\ruby_boots_gold_trim.json
 fc9095739c942b03fbf95fe818379643397f1152 assets\enriched\models\block\redwood_button_pressed.json
-1f1f40fa0c633242516bfee33d08c4921ed2f9d4 assets\enriched\models\item\emerald_boots_lapis_trim.json
 c1019f4cf13f71eecf37d82f1f1a91dc9c074bfb assets\enriched\models\item\deepslate_sapphire_ore.json
+1f1f40fa0c633242516bfee33d08c4921ed2f9d4 assets\enriched\models\item\emerald_boots_lapis_trim.json
 86193dc1760bb83f409fe09d71df5cf189a61171 assets\enriched\models\item\tanzanite_chestplate_copper_trim.json
 9c3f7d8e7b81aadeca989af316944a697ad916c3 assets\enriched\blockstates\dark_granite_wall.json
 5ca07a07f28aca89c6809e05877ffc7a1e135814 assets\enriched\models\block\marble_wall_side_tall.json

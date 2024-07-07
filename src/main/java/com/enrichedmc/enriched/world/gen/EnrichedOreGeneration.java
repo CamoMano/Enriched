@@ -5,6 +5,7 @@ import com.enrichedmc.enriched.config.EnrichedGameOptions;
 import com.enrichedmc.enriched.world.EnrichedPlacedFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.world.gen.GenerationStep;
 
 public class EnrichedOreGeneration {
@@ -12,23 +13,46 @@ public class EnrichedOreGeneration {
     EnrichedGameOptions.WorldGenerationOptions worldGenerationOptions =
         EnrichedMod.getInstance().getGameOptions().worldGenerationOptions;
 
-    if (worldGenerationOptions.generateRubyOres)
+    if (worldGenerationOptions.generateRubyOres) {
       BiomeModifications.addFeature(
           BiomeSelectors.foundInOverworld(),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.RUBY_ORE_PLACED_KEY);
+      BiomeModifications.addFeature(
+          BiomeSelectors.tag(BiomeTags.IS_BADLANDS),
+          GenerationStep.Feature.UNDERGROUND_ORES,
+          EnrichedPlacedFeatures.RUBY_ORE_COMMON_PLACED_KEY);
+      BiomeModifications.addFeature(
+          BiomeSelectors.tag(BiomeTags.IS_SAVANNA),
+          GenerationStep.Feature.UNDERGROUND_ORES,
+          EnrichedPlacedFeatures.RUBY_ORE_COMMON_PLACED_KEY);
+    }
 
-    if (worldGenerationOptions.generateSapphireOres)
+    if (worldGenerationOptions.generateSapphireOres) {
       BiomeModifications.addFeature(
           BiomeSelectors.foundInOverworld(),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.SAPPHIRE_ORE_PLACED_KEY);
+      BiomeModifications.addFeature(
+          BiomeSelectors.tag(BiomeTags.IS_MOUNTAIN),
+          GenerationStep.Feature.UNDERGROUND_ORES,
+          EnrichedPlacedFeatures.SAPPHIRE_ORE_COMMON_PLACED_KEY);
+      BiomeModifications.addFeature(
+          BiomeSelectors.tag(BiomeTags.IS_TAIGA),
+          GenerationStep.Feature.UNDERGROUND_ORES,
+          EnrichedPlacedFeatures.SAPPHIRE_ORE_COMMON_PLACED_KEY);
+    }
 
-    if (worldGenerationOptions.generateTanzaniteOres)
+    if (worldGenerationOptions.generateTanzaniteOres) {
       BiomeModifications.addFeature(
           BiomeSelectors.foundInOverworld(),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.TANZANITE_ORE_PLACED_KEY);
+      BiomeModifications.addFeature(
+          BiomeSelectors.tag(BiomeTags.IS_JUNGLE),
+          GenerationStep.Feature.UNDERGROUND_ORES,
+          EnrichedPlacedFeatures.TANZANITE_ORE_COMMON_PLACED_KEY);
+    }
 
     if (worldGenerationOptions.generateDarkGranite) {
       BiomeModifications.addFeature(

@@ -3,11 +3,11 @@ plugins {
     id 'maven-publish'
 }
 
-version = "${project.mod_version}-mc${project.minecraft_version}"
-group = project.maven_group
+version = "${mod_version}-mc${minecraft_version}"
+group = maven_group
 
 base {
-    archivesName = project.archives_base_name
+    archivesName = archives_base_name
 }
 
 repositories {
@@ -27,6 +27,8 @@ repositories {
         url = "https://maven.isxander.dev/releases"
     }
 
+    maven { url = 'https://maven.minecraftforge.net/' }
+
     mavenCentral()
 }
 
@@ -40,36 +42,39 @@ fabricApi {
 
 dependencies {
     // To change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings_version}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings "net.fabricmc:yarn:${yarn_mappings_version}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
 
     // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
     // YetAnotherConfigLib. This is used for Enriched's configuration screen and is therefore a required dependency.
-    include(modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}")
+    include(modImplementation "dev.isxander:yet-another-config-lib:${yacl_version}")
 
     // ModMenu. It isn't required by Enriched, but is here so we can have ModMenu integration.
-    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+    modImplementation "com.terraformersmc:modmenu:${modmenu_version}"
 
     // DevLogin. Allows us to use a Microsoft account within the development environment.
-    modImplementation "com.ptsmods:devlogin:${project.devlogin_version}"
+    modImplementation "com.ptsmods:devlogin:${devlogin_version}"
+
+    //TerraBlender
+    modImplementation "com.github.glitchfiend:TerraBlender-fabric:${minecraft_version}-${terrablender_version}"
 }
 
 processResources {
-    inputs.property "mod_version", project.mod_version
-    inputs.property "minecraft_version", project.minecraft_version
-    inputs.property "fabric_loader_version", project.fabric_loader_version
-    inputs.property "fabric_api_version", project.fabric_api_version
-    inputs.property "modmenu_version", project.modmenu_version
+    inputs.property "mod_version", mod_version
+    inputs.property "minecraft_version", minecraft_version
+    inputs.property "fabric_loader_version", fabric_loader_version
+    inputs.property "fabric_api_version", fabric_api_version
+    inputs.property "modmenu_version", modmenu_version
 
     filesMatching("fabric.mod.json") {
-        expand "mod_version": project.version,
-                "minecraft_version": project.minecraft_version,
-                "fabric_loader_version": project.fabric_loader_version,
-                "fabric_api_version": project.fabric_api_version,
-                "modmenu_version": project.modmenu_version
+        expand "mod_version": version,
+                "minecraft_version": minecraft_version,
+                "fabric_loader_version": fabric_loader_version,
+                "fabric_api_version": fabric_api_version,
+                "modmenu_version": modmenu_version
     }
 }
 
@@ -89,7 +94,7 @@ java {
 
 jar {
     from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}" }
+        rename { "${it}_${base.archivesName.get()}" }
     }
 }
 
@@ -97,7 +102,7 @@ jar {
 publishing {
     publications {
         create("mavenJava", MavenPublication) {
-            artifactId = project.archives_base_name
+            artifactId = archives_base_name
             from components.java
         }
     }
