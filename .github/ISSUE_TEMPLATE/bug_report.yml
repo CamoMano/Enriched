@@ -27,7 +27,7 @@ body:
   - type: input
     id: fabricapi-version
     attributes:
-      label: Enriched Version
+      label: Fabric API Version
       description: What version of Fabric API are you using?
       placeholder: ex. 0.100.6+1.21
     validations:
