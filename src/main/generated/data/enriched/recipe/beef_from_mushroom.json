@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:cooked_beef"
+    },
+    {
+      "item": "minecraft:mushroom_stew"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "enriched:beef_stew"
+  }
+}

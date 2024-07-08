@@ -327,6 +327,10 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(
         "enriched.options.recipes.enableUncraftingRecipes.description",
         "Enables/disables the recipes for getting items from certain blocks. (Example: Wool -> String)");
+    translationBuilder.add("enriched.options.recipes.enableFoodRecipes", "Enable Food Recipes");
+    translationBuilder.add(
+        "enriched.options.recipes.enableFoodRecipes.description",
+        "Enables/disables the recipes for added food items such as Berry Juice or Beef Stew");
 
     translationBuilder.add("enriched.options.category.mobs", "Mobs");
     translationBuilder.add(

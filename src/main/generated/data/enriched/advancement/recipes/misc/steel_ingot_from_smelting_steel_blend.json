@@ -1,0 +1,37 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "enriched:raw_smelting_enabled"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_steel_blend": {
+      "conditions": {
+        "items": [
+          {
+            "items": "enriched:steel_blend"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enriched:steel_ingot_from_smelting_steel_blend"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steel_blend"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enriched:steel_ingot_from_smelting_steel_blend"
+    ]
+  }
+}

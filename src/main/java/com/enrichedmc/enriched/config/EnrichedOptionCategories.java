@@ -181,6 +181,20 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
+                .name(Text.translatable("enriched.options.recipes.enableFoodRecipes"))
+                .description(
+                    OptionDescription.of(
+                        Text.translatable(
+                            "enriched.options.recipes.enableFoodRecipes.description")))
+                .binding(
+                    EnrichedGameOptions.defaults().recipeOptions.enableFoodRecipes,
+                    () -> RECIPE_OPTIONS.enableFoodRecipes,
+                    newValue -> RECIPE_OPTIONS.enableFoodRecipes = newValue)
+                .customController(BooleanController::new)
+                .flag(EnrichedOptionCategories.RELOAD_DATA_PACKS)
+                .build())
+        .option(
+            Option.<Boolean>createBuilder()
                 .name(Text.translatable("enriched.options.recipes.enableUncraftingRecipes"))
                 .description(
                     OptionDescription.of(
