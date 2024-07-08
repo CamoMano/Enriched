@@ -8,6 +8,20 @@
     "enriched:deepslate_sapphire_ore",
     "enriched:tanzanite_block",
     "enriched:tanzanite_ore",
-    "enriched:deepslate_tanzanite_ore"
+    "enriched:deepslate_tanzanite_ore",
+    "enriched:dark_granite",
+    "enriched:dark_granite_slab",
+    "enriched:dark_granite_stairs",
+    "enriched:dark_granite_wall",
+    "enriched:polished_dark_granite",
+    "enriched:polished_dark_granite_slab",
+    "enriched:polished_dark_granite_stairs",
+    "enriched:marble",
+    "enriched:marble_slab",
+    "enriched:marble_stairs",
+    "enriched:marble_wall",
+    "enriched:polished_marble",
+    "enriched:polished_marble_slab",
+    "enriched:polished_marble_stairs"
   ]
 }

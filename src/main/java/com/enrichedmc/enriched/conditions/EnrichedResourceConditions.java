@@ -18,6 +18,8 @@ public class EnrichedResourceConditions {
   public static final ResourceCondition RAW_SMELTING_ENABLED;
   public static final ResourceCondition UNCRAFTING_ENABLED;
 
+  public static final ResourceCondition FOOD_ENABLED;
+
   static {
     RUBY_ENABLED = new RubyResourceCondition();
     SAPPHIRE_ENABLED = new SapphireResourceCondition();
@@ -30,6 +32,7 @@ public class EnrichedResourceConditions {
     CHAINMAIL_ENABLED = new ChainmailResourceCondition();
     RAW_SMELTING_ENABLED = new RawSmeltingResourceCondition();
     UNCRAFTING_ENABLED = new UncraftingResourceCondition();
+    FOOD_ENABLED = new FoodResourceCondition();
 
     ResourceConditions.register(RUBY_ENABLED.getType());
     ResourceConditions.register(SAPPHIRE_ENABLED.getType());
@@ -42,6 +45,7 @@ public class EnrichedResourceConditions {
     ResourceConditions.register(CHAINMAIL_ENABLED.getType());
     ResourceConditions.register(RAW_SMELTING_ENABLED.getType());
     ResourceConditions.register(UNCRAFTING_ENABLED.getType());
+    ResourceConditions.register(FOOD_ENABLED.getType());
   }
 
   public static void registerResourceConditions() {

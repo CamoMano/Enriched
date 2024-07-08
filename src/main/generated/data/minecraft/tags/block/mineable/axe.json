@@ -1,0 +1,9 @@
+{
+  "values": [
+    "enriched:redwood_log",
+    "enriched:redwood_wood",
+    "enriched:stripped_redwood_log",
+    "enriched:stripped_redwood_wood",
+    "enriched:redwood_planks"
+  ]
+}

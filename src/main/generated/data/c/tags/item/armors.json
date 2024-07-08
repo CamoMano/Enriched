@@ -1,0 +1,28 @@
+{
+  "values": [
+    "enriched:steel_helmet",
+    "enriched:steel_chestplate",
+    "enriched:steel_leggings",
+    "enriched:steel_boots",
+    "enriched:obsidian_helmet",
+    "enriched:obsidian_chestplate",
+    "enriched:obsidian_leggings",
+    "enriched:obsidian_boots",
+    "enriched:ruby_helmet",
+    "enriched:ruby_chestplate",
+    "enriched:ruby_leggings",
+    "enriched:ruby_boots",
+    "enriched:sapphire_helmet",
+    "enriched:sapphire_chestplate",
+    "enriched:sapphire_leggings",
+    "enriched:sapphire_boots",
+    "enriched:tanzanite_helmet",
+    "enriched:tanzanite_chestplate",
+    "enriched:tanzanite_leggings",
+    "enriched:tanzanite_boots",
+    "enriched:emerald_helmet",
+    "enriched:emerald_chestplate",
+    "enriched:emerald_leggings",
+    "enriched:emerald_boots"
+  ]
+}

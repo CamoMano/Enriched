@@ -1,0 +1,32 @@
+{
+  "values": [
+    "enriched:steel_axe",
+    "enriched:steel_hoe",
+    "enriched:steel_shovel",
+    "enriched:steel_pickaxe",
+    "enriched:obsidian_axe",
+    "enriched:obsidian_hoe",
+    "enriched:obsidian_shovel",
+    "enriched:obsidian_pickaxe",
+    "enriched:copper_axe",
+    "enriched:copper_hoe",
+    "enriched:copper_shovel",
+    "enriched:copper_pickaxe",
+    "enriched:ruby_axe",
+    "enriched:ruby_hoe",
+    "enriched:ruby_shovel",
+    "enriched:ruby_pickaxe",
+    "enriched:sapphire_axe",
+    "enriched:sapphire_hoe",
+    "enriched:sapphire_shovel",
+    "enriched:sapphire_pickaxe",
+    "enriched:tanzanite_axe",
+    "enriched:tanzanite_hoe",
+    "enriched:tanzanite_shovel",
+    "enriched:tanzanite_pickaxe",
+    "enriched:emerald_axe",
+    "enriched:emerald_hoe",
+    "enriched:emerald_shovel",
+    "enriched:emerald_pickaxe"
+  ]
+}
