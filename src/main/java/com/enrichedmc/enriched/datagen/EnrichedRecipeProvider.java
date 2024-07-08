@@ -51,6 +51,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
     this.createRawSmeltingRecipes(exporter);
 
     this.createUncraftingRecipes(exporter);
+    this.createFoodRecipes(exporter);
 
     this.createRedwoodRecipes(exporter);
     this.createDarkGraniteRecipes(exporter);
@@ -167,6 +168,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.SAPPHIRE,
         EnrichedItems.SAPPHIRE_BOOTS,
         Lists.newArrayList(EnrichedResourceConditions.SAPPHIRE_ENABLED));
+
+    offerReversibleCompactingRecipes(
+        recipeExporter,
+        RecipeCategory.MISC,
+        EnrichedItems.SAPPHIRE,
+        RecipeCategory.MISC,
+        EnrichedBlocks.SAPPHIRE_BLOCK);
   }
 
   private void createTanzaniteRecipes(RecipeExporter recipeExporter) {
@@ -223,6 +231,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.TANZANITE,
         EnrichedItems.TANZANITE_BOOTS,
         Lists.newArrayList(EnrichedResourceConditions.TANZANITE_ENABLED));
+
+    offerReversibleCompactingRecipes(
+        recipeExporter,
+        RecipeCategory.MISC,
+        EnrichedItems.TANZANITE,
+        RecipeCategory.MISC,
+        EnrichedBlocks.TANZANITE_BLOCK);
   }
 
   private void createSteelRecipes(RecipeExporter recipeExporter) {
@@ -272,6 +287,37 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.STEEL_INGOT,
         EnrichedItems.STEEL_BOOTS,
         Lists.newArrayList(EnrichedResourceConditions.STEEL_ENABLED));
+
+    ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, EnrichedItems.STEEL_BLEND)
+        .input(Items.IRON_INGOT)
+        .input(Items.COAL)
+        .criterion(
+            FabricRecipeProvider.hasItem(Items.IRON_INGOT),
+            FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+        .offerTo(recipeExporter);
+
+    this.createSmeltingRecipe(
+        recipeExporter,
+        EnrichedItems.STEEL_BLEND,
+        RecipeCategory.MISC,
+        EnrichedItems.STEEL_INGOT,
+        0.7f,
+        200);
+
+    this.createBlastingRecipe(
+        recipeExporter,
+        EnrichedItems.STEEL_BLEND,
+        RecipeCategory.MISC,
+        EnrichedItems.STEEL_INGOT,
+        0.7f,
+        100);
+
+    offerReversibleCompactingRecipes(
+        recipeExporter,
+        RecipeCategory.MISC,
+        EnrichedItems.STEEL_INGOT,
+        RecipeCategory.MISC,
+        EnrichedBlocks.STEEL_BLOCK);
   }
 
   private void createObsidianRecipes(RecipeExporter recipeExporter) {
@@ -328,6 +374,37 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.OBSIDIAN_ALLOY_INGOT,
         EnrichedItems.OBSIDIAN_BOOTS,
         Lists.newArrayList(EnrichedResourceConditions.OBSIDIAN_ENABLED));
+
+    ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, EnrichedItems.OBSIDIAN_ALLOY_BLEND)
+        .input(Items.OBSIDIAN)
+        .input(EnrichedItems.STEEL_INGOT)
+        .criterion(
+            FabricRecipeProvider.hasItem(Items.OBSIDIAN),
+            FabricRecipeProvider.conditionsFromItem(Items.OBSIDIAN))
+        .offerTo(recipeExporter);
+
+    this.createSmeltingRecipe(
+        recipeExporter,
+        EnrichedItems.OBSIDIAN_ALLOY_BLEND,
+        RecipeCategory.MISC,
+        EnrichedItems.OBSIDIAN_ALLOY_INGOT,
+        0.7f,
+        200);
+
+    this.createBlastingRecipe(
+        recipeExporter,
+        EnrichedItems.OBSIDIAN_ALLOY_BLEND,
+        RecipeCategory.MISC,
+        EnrichedItems.OBSIDIAN_ALLOY_INGOT,
+        0.7f,
+        100);
+
+    offerReversibleCompactingRecipes(
+        recipeExporter,
+        RecipeCategory.MISC,
+        EnrichedItems.OBSIDIAN_ALLOY_INGOT,
+        RecipeCategory.MISC,
+        EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
   }
 
   private void createEmeraldRecipes(RecipeExporter recipeExporter) {
@@ -625,6 +702,47 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
             FabricRecipeProvider.hasItem(EnrichedBlocks.REDWOOD_LOG),
             FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.REDWOOD_LOG))
         .offerTo(recipeExporter);
+  }
+
+  private void createFoodRecipes(RecipeExporter recipeExporter) {
+    ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, EnrichedItems.BERRY_JUICE)
+        .input(Items.SWEET_BERRIES)
+        .input(Items.SWEET_BERRIES)
+        .input(Items.GLASS_BOTTLE)
+        .criterion(
+            FabricRecipeProvider.hasItem(Items.SWEET_BERRIES),
+            FabricRecipeProvider.conditionsFromItem(Items.SWEET_BERRIES))
+        .offerTo(recipeExporter);
+
+    ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
+        .input(Items.COOKED_BEEF)
+        .input(Items.CARROT)
+        .input(Items.BOWL)
+        .input(Items.BAKED_POTATO)
+        .input(Items.BROWN_MUSHROOM)
+        .criterion(
+            FabricRecipeProvider.hasItem(Items.BROWN_MUSHROOM),
+            FabricRecipeProvider.conditionsFromItem(Items.BROWN_MUSHROOM))
+        .offerTo(recipeExporter, "beef_brown_mushroom");
+
+    ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
+        .input(Items.COOKED_BEEF)
+        .input(Items.CARROT)
+        .input(Items.BOWL)
+        .input(Items.BAKED_POTATO)
+        .input(Items.RED_MUSHROOM)
+        .criterion(
+            FabricRecipeProvider.hasItem(Items.RED_MUSHROOM),
+            FabricRecipeProvider.conditionsFromItem(Items.RED_MUSHROOM))
+        .offerTo(recipeExporter, "beef_red_mushroom");
+
+    ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
+        .input(Items.COOKED_BEEF)
+        .input(Items.MUSHROOM_STEW)
+        .criterion(
+            FabricRecipeProvider.hasItem(Items.COOKED_BEEF),
+            FabricRecipeProvider.conditionsFromItem(Items.COOKED_BEEF))
+        .offerTo(recipeExporter, "beef_from_mushroom");
   }
 
   private void createDarkGraniteRecipes(RecipeExporter recipeExporter) {

@@ -47,11 +47,11 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
 
     this.addDrop(
         EnrichedBlocks.TANZANITE_ORE,
-        tanzaniteOre -> this.copperOreDrops(tanzaniteOre, EnrichedItems.SAPPHIRE));
+        tanzaniteOre -> this.copperOreDrops(tanzaniteOre, EnrichedItems.TANZANITE));
     this.addDrop(
         EnrichedBlocks.DEEPSLATE_TANZANITE_ORE,
         deepslateTanzaniteOre ->
-            this.copperOreDrops(deepslateTanzaniteOre, EnrichedItems.SAPPHIRE));
+            this.copperOreDrops(deepslateTanzaniteOre, EnrichedItems.TANZANITE));
 
     this.addDrop(EnrichedBlocks.STEEL_BLOCK);
     this.addDrop(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);

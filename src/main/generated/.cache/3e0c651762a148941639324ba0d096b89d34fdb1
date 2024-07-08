@@ -1,4 +1,4 @@
-// 1.21	2024-07-07T16:11:52.8566186	Enriched/Block Loot Tables
+// 1.21	2024-07-08T11:51:51.7814976	Enriched/Block Loot Tables
 de886d29608aa25104c1b2e8d6f056a55c95549a data\enriched\loot_table\blocks\polished_dark_granite_stairs.json
 58b8c0cbcc1f69bf41c5952003634e84f9b358f6 data\enriched\loot_table\blocks\steel_block.json
 c2ea10b722d238b6880fb7a966b95763936ee841 data\enriched\loot_table\blocks\stripped_redwood_log.json
@@ -12,14 +12,14 @@ b2cadbc201ca01913bcc63d5023432f233c265dd data\enriched\loot_table\blocks\strippe
 32b33f29ff5f105d23d4f02dfaa7fc1702b78f91 data\enriched\loot_table\blocks\redwood_sapling.json
 6bca2b41f1204eb70645aa39914a8a7f14cf8fec data\enriched\loot_table\blocks\redwood_button.json
 8c332ac7d159a890a00c10c8090324518ee5806f data\enriched\loot_table\blocks\marble_slab.json
-e832cea0fef07ade8612a2a956e05daee59e3e1f data\enriched\loot_table\blocks\deepslate_tanzanite_ore.json
+10ff8c85244ee40b6818270b64f5c5681563bc3a data\enriched\loot_table\blocks\deepslate_tanzanite_ore.json
 4d72567b9a3498143d0fae80ae0b4f93a60c423f data\enriched\loot_table\blocks\marble.json
 b8b8f5625b9520dbb58c189e2c434ebfa309b3be data\enriched\loot_table\blocks\dark_granite_wall.json
 d7843b3a8d9160043dc57726c9baaa82489d1728 data\enriched\loot_table\blocks\redwood_fence.json
 2c894972a977ec871a0fcaff9e529e96dc186c77 data\enriched\loot_table\blocks\redwood_stairs.json
 c786f17fb10144bd7f97581a03f2966004616780 data\enriched\loot_table\blocks\dark_granite.json
 742c24721d6015ee27577c46c68dfd3d0a1e4947 data\enriched\loot_table\blocks\redwood_planks.json
-5c8207c3b5ba4429ddf811bc788c094fcd5375b4 data\enriched\loot_table\blocks\tanzanite_ore.json
+6e6a03b6da715c8d5e6120afc0f11552c223dc43 data\enriched\loot_table\blocks\tanzanite_ore.json
 f51bd689224fdeb5a1a0daeb9674b101387f3ef6 data\enriched\loot_table\blocks\polished_dark_granite.json
 8e844ea180f56a98a79d6de691ac241200019c04 data\enriched\loot_table\blocks\potted_redwood_sapling.json
 9805d00c3880577ec7c94b99dc02d29c56132707 data\enriched\loot_table\blocks\dark_granite_stairs.json

@@ -85,6 +85,8 @@ public class EnrichedGameOptions {
     public boolean enableChainmailRecipes = true;
     public boolean enableRawSmeltingRecipes = true;
     public boolean enableUncraftingRecipes = true;
+
+    public boolean enableFoodRecipes = true;
   }
 
   public static class MobOptions {

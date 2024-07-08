@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:obsidian"
+    },
+    {
+      "item": "enriched:steel_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "enriched:obsidian_alloy_blend"
+  }
+}

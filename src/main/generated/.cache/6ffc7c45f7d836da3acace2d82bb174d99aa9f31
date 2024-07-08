@@ -1,4 +1,4 @@
-// 1.21	2024-07-07T16:11:52.8525444	Enriched/Model Definitions
+// 1.21	2024-07-08T11:51:51.7779467	Enriched/Model Definitions
 edf46cfca1cc6e5d65214045edbf116e3e42645b assets\enriched\models\item\obsidian_sword.json
 b1f2d95256cfcb699a1dac06b306ed086db40f7c assets\enriched\models\block\redwood_log_horizontal.json
 95d2f1008dc3460e4132fbfcc5f3e3aacf37236c assets\enriched\models\item\emerald_chestplate_netherite_trim.json
@@ -279,8 +279,8 @@ c0f0623d37245fdb487673188e420442a6eac477 assets\enriched\models\item\steel_helme
 33307246e547cda5c2ad4662f8f4f3cc1abdf6f5 assets\enriched\models\item\sapphire_boots_quartz_trim.json
 0ee0542002639fb2d2a22ea0e8ce256aa4032c9f assets\enriched\models\item\tanzanite_ore.json
 b9b12a923a096e6fb64cf731cba353aa7a17bb38 assets\enriched\models\item\obsidian_helmet_copper_trim.json
-a5e43a5758a5c66e6d149dcb4938c67fc3a8e254 assets\enriched\models\item\tanzanite_chestplate_diamond_trim.json
 1db2c087305c7dde43756c2ee552f54ffb7a6b4d assets\enriched\models\item\tanzanite_helmet_lapis_trim.json
+a5e43a5758a5c66e6d149dcb4938c67fc3a8e254 assets\enriched\models\item\tanzanite_chestplate_diamond_trim.json
 8eb98ed80607878b64becf4b8bb83294b822783a assets\enriched\models\item\steel_ingot.json
 95019dfbaf23358ce5064ff005599b9952ccd010 assets\enriched\models\item\obsidian_chestplate_diamond_trim.json
 3030dbd839f303e8737ebe5b82a0450fb4115eb3 assets\enriched\models\item\polished_marble_slab.json

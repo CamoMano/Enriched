@@ -1,3 +1,4 @@
+---
 name: Bug Report
 description: For reporting bugs and/or any issues you encounter will playing with Enriched.
 labels:
@@ -7,30 +8,34 @@ body:
     attributes:
       value: >-
         # READ THIS BEFORE OPENING AN ISSUE
-        
-        **This issue tracker is not for support requests!**
-        If you need help with crashes or any other issues, please ask for help in [Camo's Discord server]() instead of opening and issue here.
-        In addition, please make sure you have at least done the following:
-        
-        - **Have you ensured that all of your mods (including Enriched) are up-to-date?**
-        The latest version of Enriched can be found on either [GitHub Releases](https://github.com/CamoMano/Enriched/releases) or
-        its [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/enriched).
-        
-        - **Have you used the [search tool](https://github.com/CamoMano/Enriched/issues) to see if your issue has already been reported?**
-        If so, you should leave a comment under the existing issue to add any additional information, if you have any,
-        
-        - **Have you created a base set of instructions to reproduce the issue?**
-        If your issue only occurs with other mods installed, then you should try to narrow down exactly which mods are causing the issue.
-        Please don't provide a list of all of the mods you use and expect us to figure out which ones are problematic.
+
+        **This issue tracker is not for support requests!** If you need help with crashes or any other issues, please ask for help in [Camo's Discord server]() instead of opening and issue here. In addition, please make sure you have at least done the following:
+
+        - **Have you ensured that all of your mods (including Enriched) are up-to-date?** The latest version of Enriched can be found on either [GitHub Releases](https://github.com/CamoMano/Enriched/releases) or its [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/enriched).
+
+        - **Have you used the [search tool](https://github.com/CamoMano/Enriched/issues) to see if your issue has already been reported?** If so, you should leave a comment under the existing issue to add any additional information, if you have any,
+
+        - **Have you created a base set of instructions to reproduce the issue?** If your issue only occurs with other mods installed, then you should try to narrow down exactly which mods are causing the issue. Please don't provide a list of all of the mods you use and expect us to figure out which ones are problematic.
+  - type: input
+    id: enriched-version
+    attributes:
+      label: Enriched Version
+      description: What version of Enriched are you using?
+      placeholder: ex. 4.0
+    validations:
+      required: false
   - type: textarea
     id: bug-description
     attributes:
       label: Bug Description
       description: >-
-        Here you should describe the issue you are encountering in as much detail and depth as you can. The description should include the behavior you were expecting,
-        what behavior happened instead and why you believe this to be a bug. If the issue only occurs with specific mods installed, you must be provide the names of those mods
-        and the versions of them you were using.
-        
+        Here you should describe the issue you are encountering in as much
+        detail and depth as you can. The description should include the behavior
+        you were expecting, what behavior happened instead and why you believe
+        this to be a bug. If the issue only occurs with specific mods installed,
+        you must be provide the names of those mods and the versions of them you
+        were using.
+
         **Tip**: If you have any videos, screenshots or other information that you think are necessary and help better explain the issue, you should attach them here.
     validations:
       required: true
@@ -39,9 +44,11 @@ body:
     attributes:
       label: Bug Reproduction Steps
       description: >-
-        Here you should provide instructions on how to reproduce this issue. Make sure your instructions are clear and concise as other people will have to follow them in order
-        to reproduce the bug in their own environment.
-        
+        Here you should provide instructions on how to reproduce this
+        issue. Make sure your instructions are clear and concise as other people
+        will have to follow them in order to reproduce the bug in their own
+        environment.
+
         **Tip:**: A common way to fill out this section is in the form of a step-by-step guide.
     validations:
       required: true
@@ -49,11 +56,12 @@ body:
     id: minecraft-log-file
     attributes:
       label: Minecraft Log File
-      description: >-
-        **Tip**: You can find the game's log files within the `.minecraft/logs` directory. Most often, you only need to provide the `latest.log` file as that holds the logs
-        to the most recently played session of the game, but you can provide the other ones if you find it necessary.
-      placeholder: ->
-        Drag and drop the log file(s) here.
+      description: "**Tip**: You can find the game's log files within the
+        `.minecraft/logs` directory. Most often, you only need to provide the
+        `latest.log` file as that holds the logs to the most recently played
+        session of the game, but you can provide the other ones if you find it
+        necessary."
+      placeholder: -> Drag and drop the log file(s) here.
     validations:
       required: true
   - type: textarea
@@ -61,11 +69,13 @@ body:
     attributes:
       label: Minecraft Crash Report
       description: >-
-        If even the issue doesn't cause the game to crash, a crash report will still be useful. This is because it contains important hardware and software configuration. You
-        can manually crash by the holding down the F3 + C keys together for about 10 seconds. This works anywhere in the game such as on the title screen or while in a world.
-        
+        If even the issue doesn't cause the game to crash, a crash report
+        will still be useful. This is because it contains important hardware and
+        software configuration. You can manually crash by the holding down the
+        F3 + C keys together for about 10 seconds. This works anywhere in the
+        game such as on the title screen or while in a world.
+
         **Tip**: You can usually find crash reports within the `.minecraft/crash-reports` directory.
-      placeholder: ->
-        Drag and drop the crash report file here.
+      placeholder: -> Drag and drop the crash report file here.
     validations:
       required: true

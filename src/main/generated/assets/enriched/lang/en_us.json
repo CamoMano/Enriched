@@ -48,6 +48,8 @@
   "enriched.options.mobs.enableHoneySlimeSpawning.description": "Enables/disables the Honey Slime from potentially spawning when harvesting a beehive.",
   "enriched.options.recipes.enableChainmailRecipes": "Enable Chainmail Recipes",
   "enriched.options.recipes.enableChainmailRecipes.description": "Enables/disables the recipes for Chainmail armor.",
+  "enriched.options.recipes.enableFoodRecipes": "Enable Food Recipes",
+  "enriched.options.recipes.enableFoodRecipes.description": "Enables/disables the recipes for added food items such as Berry Juice or Beef Stew",
   "enriched.options.recipes.enableHorseArmorRecipes": "Enable Horse Armor Recipes",
   "enriched.options.recipes.enableHorseArmorRecipes.description": "Enables/disables for the recipes for horse armor.",
   "enriched.options.recipes.enableRawSmeltingRecipes": "Enable Raw Smelting Recipes",
