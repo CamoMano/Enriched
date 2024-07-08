@@ -23,7 +23,23 @@ body:
       description: What version of Enriched are you using?
       placeholder: ex. 4.0
     validations:
-      required: false
+      required: true
+  - type: input
+    id: fabricapi-version
+    attributes:
+      label: Enriched Version
+      description: What version of Fabric API are you using?
+      placeholder: ex. 0.100.6+1.21
+    validations:
+      required: true
+  - type: input
+    id: fabricloader-version
+    attributes:
+      label: Fabric Loader Version
+      description: What version of Fabric are you using?
+      placeholder: ex. 0.15.11
+    validations:
+      required: true
   - type: textarea
     id: bug-description
     attributes:
