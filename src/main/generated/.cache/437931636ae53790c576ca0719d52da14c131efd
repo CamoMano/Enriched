@@ -1,4 +1,11 @@
-// 1.21	2024-07-08T11:51:51.7825052	Enriched/Tags for minecraft:item
+// 1.21	2024-07-08T19:07:18.9985392	Enriched/Tags for minecraft:item
+7de72c45ab014b3a47886aa8c9c699f9f1f1635d data\c\tags\item\ores.json
+a94b97d224da0464fc2bd7209ff67b8238e3302d data\c\tags\item\tools\melee_weapon.json
 681323bde66d0fca08ab3237aac95c10dac774ba data\minecraft\tags\item\planks.json
+4d1a35e2634756e0e1191a849f4932e5ca07752d data\c\tags\item\tools\mining_tool.json
+319a81d192361fb43916d37d5ec64108ff99836d data\c\tags\item\ingots.json
 75832a99d368173979e7472d527816181cd32b23 data\minecraft\tags\item\logs_that_burn.json
+863ffe88aba59791de3bc9fd39e1c36c3fdac1ef data\c\tags\item\dusts.json
 5130353929cba072dacb3ab075642e95f0f7746f data\enriched\tags\item\redwood_logs.json
+89c60d3304c60899777e0814e2f178bc98f1b380 data\c\tags\item\tools.json
+cef670a6b27fb5fd943fa55d23ea352f847db879 data\c\tags\item\armors.json
