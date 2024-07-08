@@ -32,7 +32,6 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedBlocks.REDWOOD_WOOD.asItem())
         .add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD.asItem());
 
-
     this.getOrCreateTagBuilder(ConventionalItemTags.DUSTS)
         .add(EnrichedItems.OBSIDIAN_ALLOY_BLEND)
         .add(EnrichedItems.STEEL_BLEND);

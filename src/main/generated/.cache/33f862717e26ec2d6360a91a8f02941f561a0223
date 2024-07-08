@@ -1,14 +1,20 @@
-// 1.21	2024-07-08T18:56:40.6462903	Enriched/Tags for minecraft:block
+// 1.21	2024-07-08T19:07:18.9995461	Enriched/Tags for minecraft:block
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_ruby_tool.json
 5130353929cba072dacb3ab075642e95f0f7746f data\enriched\tags\block\redwood_logs.json
 cbffea030c16b76cef765b05e3c84e50fb62855a data\minecraft\tags\block\mineable\axe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_emerald_tool.json
 bff61c01ce77db92c1b08ffaaf5e7458cf3a8876 data\minecraft\tags\block\needs_iron_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_steel_tool.json
+25fdf63da1fa45e77e081e6a5665e33ac1a6e2ec data\minecraft\tags\block\walls.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_obsidian_tool.json
-681323bde66d0fca08ab3237aac95c10dac774ba data\minecraft\tags\block\planks.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_tanzanite_tool.json
+681323bde66d0fca08ab3237aac95c10dac774ba data\minecraft\tags\block\planks.json
 75832a99d368173979e7472d527816181cd32b23 data\minecraft\tags\block\logs_that_burn.json
+fee3dc8eb98867f287b18093a7005018fe943012 data\minecraft\tags\block\leaves.json
 69aa3d1eeed3ac4e72a293913a933c96f034b5fd data\minecraft\tags\block\mineable\pickaxe.json
+9db68236f7a767c0e08b8088912b86e14fc091f3 data\minecraft\tags\block\stairs.json
+e2c8e2af57b9edfb4ca0d3615f21877694656376 data\minecraft\tags\block\slabs.json
+5b2791a469905a7d1d06a1fdb2780da2ed36e84d data\minecraft\tags\block\wooden_slabs.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_copper_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_sapphire_tool.json
+de2094bea0e4758af28756315ad17e9336ffadec data\minecraft\tags\block\wooden_stairs.json
