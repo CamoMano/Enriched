@@ -19,7 +19,7 @@ body:
   - type: input
     id: enriched-version
     attributes:
-      label: Enriched Version
+      label: Enriched Version:
       description: What version of Enriched are you using?
       placeholder: ex. 4.0
     validations:
@@ -27,7 +27,7 @@ body:
   - type: input
     id: fabricapi-version
     attributes:
-      label: Fabric API Version
+      label: Fabric API Version:
       description: What version of Fabric API are you using?
       placeholder: ex. 0.100.6+1.21
     validations:
@@ -35,7 +35,7 @@ body:
   - type: input
     id: fabricloader-version
     attributes:
-      label: Fabric Loader Version
+      label: Fabric Loader Version:
       description: What version of Fabric are you using?
       placeholder: ex. 0.15.11
     validations:
@@ -43,7 +43,7 @@ body:
   - type: textarea
     id: bug-description
     attributes:
-      label: Bug Description
+      label: Bug Description:
       description: >-
         Here you should describe the issue you are encountering in as much
         detail and depth as you can. The description should include the behavior
@@ -58,7 +58,7 @@ body:
   - type: textarea
     id: bug-reproduction-steps
     attributes:
-      label: Bug Reproduction Steps
+      label: Bug Reproduction Steps:
       description: >-
         Here you should provide instructions on how to reproduce this
         issue. Make sure your instructions are clear and concise as other people
@@ -71,7 +71,7 @@ body:
   - type: textarea
     id: minecraft-log-file
     attributes:
-      label: Minecraft Log File
+      label: Minecraft Log File:
       description: "**Tip**: You can find the game's log files within the
         `.minecraft/logs` directory. Most often, you only need to provide the
         `latest.log` file as that holds the logs to the most recently played
@@ -83,7 +83,7 @@ body:
   - type: textarea
     id: minecraft-crash-report
     attributes:
-      label: Minecraft Crash Report
+      label: Minecraft Crash Report:
       description: >-
         If even the issue doesn't cause the game to crash, a crash report
         will still be useful. This is because it contains important hardware and
