@@ -64,6 +64,8 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.RUBY,
         EnrichedItems.RUBY_SWORD,
         Lists.newArrayList(EnrichedResourceConditions.RUBY_ENABLED));
+
+    //this.createSwordTag(recipeExporter, RUBIES, EnrichedItems.RUBY_SWORD);
     this.createShovelRecipe(
         recipeExporter,
         EnrichedItems.RUBY,
@@ -864,6 +866,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
             FabricRecipeProvider.hasItem(EnrichedBlocks.POLISHED_MARBLE),
             FabricRecipeProvider.conditionsFromItem(EnrichedBlocks.POLISHED_MARBLE))
         .offerTo(recipeExporter);
+
   }
 
   /*-------------------------*/
@@ -1107,4 +1110,26 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
                 "uncrafting_"
                     + StringUtils.substringAfterLast(compactItem.getTranslationKey(), ".")));
   }
+/*
+  private void createSwordTag(
+          RecipeExporter exporter, TagKey<Item> compactItemTag, Item outputItem) {
+    ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, outputItem)
+            .input('M', compactItemTag)
+            .input('S', Items.STICK)
+            .pattern(" M ")
+            .pattern(" M ")
+            .pattern(" S ")
+            .criterion(
+                    "has_" + compactItemTag.id().getPath(),
+                    FabricRecipeProvider.conditionsFromTag(compactItemTag))
+            .offerTo(
+                    withConditions(exporter, EnrichedResourceConditions.UNCRAFTING_ENABLED),
+                    Identifier.of(
+                            EnrichedMod.MOD_ID,
+                            StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+                                    + "_sword_tag"));
+         }
+ */
+ 
+
 }

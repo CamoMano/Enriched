@@ -60,4 +60,9 @@ public class EnrichedRegisters {
   public static <T> TagKey<T> createTagKey(RegistryKey<Registry<T>> registryKey, String path) {
     return TagKey.of(registryKey, Identifier.of(EnrichedMod.MOD_ID, path));
   }
+
+  public static <T> TagKey<T> createCommonTagKey(
+      RegistryKey<Registry<T>> registryKey, String path) {
+    return TagKey.of(registryKey, Identifier.of("c", path));
+  }
 }
