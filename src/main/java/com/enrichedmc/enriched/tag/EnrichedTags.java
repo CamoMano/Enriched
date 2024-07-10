@@ -18,12 +18,22 @@ public class EnrichedTags {
 
     public static final TagKey<Item> STEEL_INGOTS =
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/steel");
+
+    public static final TagKey<Item> OBSIDIAN_INGOTS =
+            EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/obsidian_alloy");
     public static final TagKey<Item> RUBIES =
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "gems/ruby");
 
     public static final TagKey<Item> SAPPHIRES =
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "gems/sapphire");
-  }
+
+    public static final TagKey<Item> TANZANITES =
+            EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "gems/tanzanite");
+  public static final TagKey<Item> FOODS =
+          EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "foods");
+}
+
+
 
   public static class BlockTags {
     public static final TagKey<Block> REDWOOD_LOGS =

@@ -11,6 +11,8 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 
+import static com.enrichedmc.enriched.tag.EnrichedTags.ItemTags.*;
+
 public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
   public EnrichedEnglishLanguageProvider(
       FabricDataOutput dataOutput,
@@ -260,6 +262,15 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
 
     translationBuilder.add(EnrichedItems.BEEF_STEW, "Beef Stew");
     translationBuilder.add(EnrichedItems.BERRY_JUICE, "Berry Juice");
+
+    /*----------------*/
+    /* -- Tags -- */
+    /*----------------*/
+    translationBuilder.add(SAPPHIRES, "Sapphire");
+    translationBuilder.add(RUBIES, "Ruby");
+    translationBuilder.add(TANZANITES, "Tanzanite");
+    translationBuilder.add(OBSIDIAN_INGOTS, "Obsidian Alloy Ingot");
+    translationBuilder.add(STEEL_INGOTS, "Steel Ingot");
 
     /*----------------*/
     /* -- Entities -- */

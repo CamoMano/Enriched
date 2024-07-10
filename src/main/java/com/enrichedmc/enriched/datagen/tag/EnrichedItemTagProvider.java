@@ -133,33 +133,8 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_SWORD)
         .add(EnrichedItems.EMERALD_SWORD);
 
-    this.getOrCreateTagBuilder(ConventionalItemTags.ARMORS)
-        .add(EnrichedItems.STEEL_HELMET)
-        .add(EnrichedItems.STEEL_CHESTPLATE)
-        .add(EnrichedItems.STEEL_LEGGINGS)
-        .add(EnrichedItems.STEEL_BOOTS)
-        .add(EnrichedItems.OBSIDIAN_HELMET)
-        .add(EnrichedItems.OBSIDIAN_CHESTPLATE)
-        .add(EnrichedItems.OBSIDIAN_LEGGINGS)
-        .add(EnrichedItems.OBSIDIAN_BOOTS)
-        .add(EnrichedItems.RUBY_HELMET)
-        .add(EnrichedItems.RUBY_CHESTPLATE)
-        .add(EnrichedItems.RUBY_LEGGINGS)
-        .add(EnrichedItems.RUBY_BOOTS)
-        .add(EnrichedItems.SAPPHIRE_HELMET)
-        .add(EnrichedItems.SAPPHIRE_CHESTPLATE)
-        .add(EnrichedItems.SAPPHIRE_LEGGINGS)
-        .add(EnrichedItems.SAPPHIRE_BOOTS)
-        .add(EnrichedItems.TANZANITE_HELMET)
-        .add(EnrichedItems.TANZANITE_CHESTPLATE)
-        .add(EnrichedItems.TANZANITE_LEGGINGS)
-        .add(EnrichedItems.TANZANITE_BOOTS)
-        .add(EnrichedItems.EMERALD_HELMET)
-        .add(EnrichedItems.EMERALD_CHESTPLATE)
-        .add(EnrichedItems.EMERALD_LEGGINGS)
-        .add(EnrichedItems.EMERALD_BOOTS);
 
-    this.getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+    this.getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
         .add(EnrichedItems.STEEL_HELMET)
         .add(EnrichedItems.OBSIDIAN_HELMET)
         .add(EnrichedItems.RUBY_HELMET)
@@ -167,7 +142,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_HELMET)
         .add(EnrichedItems.EMERALD_HELMET);
 
-    this.getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+    this.getOrCreateTagBuilder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
         .add(EnrichedItems.STEEL_CHESTPLATE)
         .add(EnrichedItems.OBSIDIAN_CHESTPLATE)
         .add(EnrichedItems.RUBY_CHESTPLATE)
@@ -175,7 +150,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_CHESTPLATE)
         .add(EnrichedItems.EMERALD_CHESTPLATE);
 
-    this.getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+    this.getOrCreateTagBuilder(ItemTags.LEG_ARMOR_ENCHANTABLE)
         .add(EnrichedItems.STEEL_LEGGINGS)
         .add(EnrichedItems.OBSIDIAN_LEGGINGS)
         .add(EnrichedItems.RUBY_LEGGINGS)
@@ -183,7 +158,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_LEGGINGS)
         .add(EnrichedItems.EMERALD_LEGGINGS);
 
-    this.getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+    this.getOrCreateTagBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
         .add(EnrichedItems.STEEL_BOOTS)
         .add(EnrichedItems.OBSIDIAN_BOOTS)
         .add(EnrichedItems.RUBY_BOOTS)
@@ -200,9 +175,13 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.EMERALD_SWORD)
         .add(EnrichedItems.COPPER_SWORD);
 
+
     // Conventional Tags
     this.getOrCreateTagBuilder(STEEL_INGOTS).add(EnrichedItems.STEEL_INGOT);
+    this.getOrCreateTagBuilder(OBSIDIAN_INGOTS).add(EnrichedItems.OBSIDIAN_ALLOY_INGOT);
     this.getOrCreateTagBuilder(RUBIES).add(EnrichedItems.RUBY);
-    this.getOrCreateTagBuilder(SAPPHIRES).add(EnrichedItems.RUBY);
+    this.getOrCreateTagBuilder(SAPPHIRES).add(EnrichedItems.SAPPHIRE);
+    this.getOrCreateTagBuilder(TANZANITES).add(EnrichedItems.TANZANITE);
+    this.getOrCreateTagBuilder(FOODS).add(EnrichedItems.BERRY_JUICE).add(EnrichedItems.BEEF_STEW);
   }
 }
