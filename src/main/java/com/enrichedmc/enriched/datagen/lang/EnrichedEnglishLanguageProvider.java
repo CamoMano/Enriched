@@ -1,5 +1,7 @@
 package com.enrichedmc.enriched.datagen.lang;
 
+import static com.enrichedmc.enriched.tag.EnrichedTags.ItemTags.*;
+
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
@@ -260,6 +262,15 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
 
     translationBuilder.add(EnrichedItems.BEEF_STEW, "Beef Stew");
     translationBuilder.add(EnrichedItems.BERRY_JUICE, "Berry Juice");
+
+    /*----------------*/
+    /* -- Tags -- */
+    /*----------------*/
+    translationBuilder.add(SAPPHIRES, "Sapphire");
+    translationBuilder.add(RUBIES, "Ruby");
+    translationBuilder.add(TANZANITES, "Tanzanite");
+    translationBuilder.add(OBSIDIAN_ALLOY_INGOTS, "Obsidian Alloy Ingot");
+    translationBuilder.add(STEEL_INGOTS, "Steel Ingot");
 
     /*----------------*/
     /* -- Entities -- */

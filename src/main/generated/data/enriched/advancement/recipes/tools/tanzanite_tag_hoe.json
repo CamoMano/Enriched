@@ -1,0 +1,37 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "enriched:tanzanite_enabled"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gems/tanzanite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:gems/tanzanite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enriched:tanzanite_tag_hoe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gems/tanzanite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enriched:tanzanite_tag_hoe"
+    ]
+  }
+}

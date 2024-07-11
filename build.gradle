@@ -58,8 +58,8 @@ dependencies {
     // DevLogin. Allows us to use a Microsoft account within the development environment.
     modImplementation "com.ptsmods:devlogin:${devlogin_version}"
 
-    //TerraBlender
-    modImplementation "com.github.glitchfiend:TerraBlender-fabric:${minecraft_version}-${terrablender_version}"
+    //TerraBlender(Not used yet)
+    //modImplementation "com.github.glitchfiend:TerraBlender-fabric:${minecraft_version}-${terrablender_version}"
 }
 
 processResources {

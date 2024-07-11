@@ -152,5 +152,10 @@
   "item.enriched.tanzanite_shovel": "Tanzanite Shovel",
   "item.enriched.tanzanite_sword": "Tanzanite Sword",
   "tag.block.enriched.redwood_logs": "Redwood Logs",
+  "tag.item.c.gems.ruby": "Ruby",
+  "tag.item.c.gems.sapphire": "Sapphire",
+  "tag.item.c.gems.tanzanite": "Tanzanite",
+  "tag.item.c.ingots.obsidian_alloy": "Obsidian Alloy Ingot",
+  "tag.item.c.ingots.steel": "Steel Ingot",
   "tag.item.enriched.redwood_logs": "Redwood Logs"
 }
