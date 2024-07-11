@@ -166,6 +166,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_BOOTS)
         .add(EnrichedItems.EMERALD_BOOTS);
 
+
     this.getOrCreateTagBuilder(ConventionalItemTags.MELEE_WEAPON_TOOLS)
         .add(EnrichedItems.STEEL_SWORD)
         .add(EnrichedItems.OBSIDIAN_SWORD)

@@ -232,35 +232,35 @@ public class EnrichedItems {
             EnrichedRegisters.registerItem(
                 "ruby_helmet",
                 new ArmorItem(
-                    EnrichedArmorMaterials.RUBY, ArmorItem.Type.HELMET, new Item.Settings()));
+                    EnrichedArmorMaterials.RUBY, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25)).maxCount(1)));
 
     RUBY_CHESTPLATE =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "ruby_chestplate",
                 new ArmorItem(
-                    EnrichedArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
+                    EnrichedArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25)).maxCount(1)));
 
     RUBY_LEGGINGS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "ruby_leggings",
                 new ArmorItem(
-                    EnrichedArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, new Item.Settings()));
+                    EnrichedArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25)).maxCount(1)));
 
     RUBY_BOOTS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "ruby_boots",
                 new ArmorItem(
-                    EnrichedArmorMaterials.RUBY, ArmorItem.Type.BOOTS, new Item.Settings()));
+                    EnrichedArmorMaterials.RUBY, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25)).maxCount(1)));
 
     SAPPHIRE_HELMET =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "sapphire_helmet",
                 new ArmorItem(
-                    EnrichedArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET, new Item.Settings()));
+                    EnrichedArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25)).maxCount(1)));
 
     SAPPHIRE_CHESTPLATE =
         (ArmorItem)
@@ -269,28 +269,28 @@ public class EnrichedItems {
                 new ArmorItem(
                     EnrichedArmorMaterials.SAPPHIRE,
                     ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings()));
+                    new Item.Settings().maxCount(1).maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))));
 
     SAPPHIRE_LEGGINGS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "sapphire_leggings",
                 new ArmorItem(
-                    EnrichedArmorMaterials.SAPPHIRE, ArmorItem.Type.LEGGINGS, new Item.Settings()));
+                    EnrichedArmorMaterials.SAPPHIRE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25)).maxCount(1)));
 
     SAPPHIRE_BOOTS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "sapphire_boots",
                 new ArmorItem(
-                    EnrichedArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new Item.Settings()));
+                    EnrichedArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25)).maxCount(1)));
 
     TANZANITE_HELMET =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "tanzanite_helmet",
                 new ArmorItem(
-                    EnrichedArmorMaterials.TANZANITE, ArmorItem.Type.HELMET, new Item.Settings()));
+                    EnrichedArmorMaterials.TANZANITE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25)).maxCount(1)));
 
     TANZANITE_CHESTPLATE =
         (ArmorItem)
@@ -299,7 +299,7 @@ public class EnrichedItems {
                 new ArmorItem(
                     EnrichedArmorMaterials.TANZANITE,
                     ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings()));
+                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25)).maxCount(1)));
 
     TANZANITE_LEGGINGS =
         (ArmorItem)
@@ -308,49 +308,49 @@ public class EnrichedItems {
                 new ArmorItem(
                     EnrichedArmorMaterials.TANZANITE,
                     ArmorItem.Type.LEGGINGS,
-                    new Item.Settings()));
+                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25)).maxCount(1)));
 
     TANZANITE_BOOTS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "tanzanite_boots",
                 new ArmorItem(
-                    EnrichedArmorMaterials.TANZANITE, ArmorItem.Type.BOOTS, new Item.Settings()));
+                    EnrichedArmorMaterials.TANZANITE, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25)).maxCount(1)));
 
     STEEL_HELMET =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "steel_helmet",
                 new ArmorItem(
-                    EnrichedArmorMaterials.STEEL, ArmorItem.Type.HELMET, new Item.Settings()));
+                    EnrichedArmorMaterials.STEEL, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(21)).maxCount(1)));
 
     STEEL_CHESTPLATE =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "steel_chestplate",
                 new ArmorItem(
-                    EnrichedArmorMaterials.STEEL, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
+                    EnrichedArmorMaterials.STEEL, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(21)).maxCount(1)));
 
     STEEL_LEGGINGS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "steel_leggings",
                 new ArmorItem(
-                    EnrichedArmorMaterials.STEEL, ArmorItem.Type.LEGGINGS, new Item.Settings()));
+                    EnrichedArmorMaterials.STEEL, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(21)).maxCount(1)));
 
     STEEL_BOOTS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "steel_boots",
                 new ArmorItem(
-                    EnrichedArmorMaterials.STEEL, ArmorItem.Type.BOOTS, new Item.Settings()));
+                    EnrichedArmorMaterials.STEEL, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(21)).maxCount(1)));
 
     OBSIDIAN_HELMET =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "obsidian_helmet",
                 new ArmorItem(
-                    EnrichedArmorMaterials.OBSIDIAN, ArmorItem.Type.HELMET, new Item.Settings()));
+                    EnrichedArmorMaterials.OBSIDIAN, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(39)).maxCount(1)));
 
     OBSIDIAN_CHESTPLATE =
         (ArmorItem)
@@ -359,28 +359,28 @@ public class EnrichedItems {
                 new ArmorItem(
                     EnrichedArmorMaterials.OBSIDIAN,
                     ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings()));
+                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(39)).maxCount(1)));
 
     OBSIDIAN_LEGGINGS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "obsidian_leggings",
                 new ArmorItem(
-                    EnrichedArmorMaterials.OBSIDIAN, ArmorItem.Type.LEGGINGS, new Item.Settings()));
+                    EnrichedArmorMaterials.OBSIDIAN, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(39)).maxCount(1)));
 
     OBSIDIAN_BOOTS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "obsidian_boots",
                 new ArmorItem(
-                    EnrichedArmorMaterials.OBSIDIAN, ArmorItem.Type.BOOTS, new Item.Settings()));
+                    EnrichedArmorMaterials.OBSIDIAN, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(39)).maxCount(1)));
 
     EMERALD_HELMET =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "emerald_helmet",
                 new ArmorItem(
-                    EnrichedArmorMaterials.EMERALD, ArmorItem.Type.HELMET, new Item.Settings()));
+                    EnrichedArmorMaterials.EMERALD, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25)).maxCount(1)));
 
     EMERALD_CHESTPLATE =
         (ArmorItem)
@@ -389,21 +389,21 @@ public class EnrichedItems {
                 new ArmorItem(
                     EnrichedArmorMaterials.EMERALD,
                     ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings()));
+                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25)).maxCount(1)));
 
     EMERALD_LEGGINGS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "emerald_leggings",
                 new ArmorItem(
-                    EnrichedArmorMaterials.EMERALD, ArmorItem.Type.LEGGINGS, new Item.Settings()));
+                    EnrichedArmorMaterials.EMERALD, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25)).maxCount(1)));
 
     EMERALD_BOOTS =
         (ArmorItem)
             EnrichedRegisters.registerItem(
                 "emerald_boots",
                 new ArmorItem(
-                    EnrichedArmorMaterials.EMERALD, ArmorItem.Type.BOOTS, new Item.Settings()));
+                    EnrichedArmorMaterials.EMERALD, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25)).maxCount(1)));
 
     /*------------*/
     /* -- Food -- */

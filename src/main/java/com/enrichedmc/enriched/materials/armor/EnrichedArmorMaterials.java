@@ -5,6 +5,8 @@ import com.enrichedmc.enriched.item.EnrichedItems;
 import com.google.common.collect.Lists;
 import java.util.EnumMap;
 import java.util.List;
+
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ArmorMaterials;
