@@ -15,7 +15,7 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_ruby_tool"),
       650,
       7.5f,
-      4.5f,
+      5.5f,
       20,
       () -> Ingredient.ofItems(EnrichedItems.RUBY)),
 
@@ -23,7 +23,7 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_sapphire_tool"),
       650,
       8.0f,
-      4.0f,
+      5.0f,
       20,
       () -> Ingredient.ofItems(EnrichedItems.SAPPHIRE)),
 
@@ -31,7 +31,7 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_tanzanite_tool"),
       750,
       7.5f,
-      4.0f,
+      5.0f,
       20,
       () -> Ingredient.ofItems(EnrichedItems.TANZANITE)),
 
@@ -47,7 +47,7 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_obsidian_tool"),
       1820,
       7.0f,
-      4.5f,
+      7.0f,
       9,
       () -> Ingredient.ofItems(EnrichedItems.OBSIDIAN_ALLOY_INGOT)),
 
@@ -55,7 +55,7 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_emerald_tool"),
       650,
       7.5f,
-      4.0f,
+      5.0f,
       25,
       () -> Ingredient.ofItems(Items.EMERALD)),
 

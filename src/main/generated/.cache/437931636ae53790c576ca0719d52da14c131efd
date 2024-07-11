@@ -1,12 +1,12 @@
-// 1.21	2024-07-10T20:01:05.2310825	Enriched/Tags for minecraft:item
+// 1.21	2024-07-11T12:11:44.4481851	Enriched/Tags for minecraft:item
+eb373d02e484b65c3e3cb5422b23771fbca65004 data\minecraft\tags\item\foot_armor.json
 a94b97d224da0464fc2bd7209ff67b8238e3302d data\c\tags\item\tools\melee_weapon.json
-0b2f1d30056526fbfe5629d2129f3ca7cdb48107 data\minecraft\tags\item\enchantable\chest_armor.json
+1c18a5b8f73fd8d4df1792cfa57fbae974afa729 data\minecraft\tags\item\head_armor.json
 5130353929cba072dacb3ab075642e95f0f7746f data\enriched\tags\item\redwood_logs.json
 89c60d3304c60899777e0814e2f178bc98f1b380 data\c\tags\item\tools.json
 b89af94e429e603debbebc6dcec828fc2d9ef067 data\minecraft\tags\item\swords.json
+0b2f1d30056526fbfe5629d2129f3ca7cdb48107 data\minecraft\tags\item\chest_armor.json
 a0832f2b1b7bfd1de4a1b4feb89a7730edcae454 data\c\tags\item\gems\tanzanite.json
-1c18a5b8f73fd8d4df1792cfa57fbae974afa729 data\minecraft\tags\item\enchantable\head_armor.json
-38905499eb1a4ab8f18dcfee4abc53455ea0d261 data\minecraft\tags\item\enchantable\leg_armor.json
 4d1a35e2634756e0e1191a849f4932e5ca07752d data\c\tags\item\tools\mining_tool.json
 4d1a35e2634756e0e1191a849f4932e5ca07752d data\minecraft\tags\item\pickaxes.json
 863ffe88aba59791de3bc9fd39e1c36c3fdac1ef data\c\tags\item\dusts.json
@@ -16,9 +16,9 @@ a0832f2b1b7bfd1de4a1b4feb89a7730edcae454 data\c\tags\item\gems\tanzanite.json
 afd9f339d9248b99c08d36d0874492cf0130adc4 data\c\tags\item\gems\sapphire.json
 681323bde66d0fca08ab3237aac95c10dac774ba data\minecraft\tags\item\planks.json
 540cf1c4151d4a6c01ff37e8065ec60792fa96d0 data\minecraft\tags\item\hoes.json
-eb373d02e484b65c3e3cb5422b23771fbca65004 data\minecraft\tags\item\enchantable\foot_armor.json
 75832a99d368173979e7472d527816181cd32b23 data\minecraft\tags\item\logs_that_burn.json
 f420eabd249474adaa2edb447f783413d7304ecd data\c\tags\item\ingots\steel.json
+38905499eb1a4ab8f18dcfee4abc53455ea0d261 data\minecraft\tags\item\leg_armor.json
 889c361c029c8f8047f632df4b12fa545b8cafdc data\minecraft\tags\item\shovels.json
 c37ab60b454a016b81870fc27d9faf275989096c data\c\tags\item\ingots\obsidian_alloy.json
 319a81d192361fb43916d37d5ec64108ff99836d data\c\tags\item\ingots.json

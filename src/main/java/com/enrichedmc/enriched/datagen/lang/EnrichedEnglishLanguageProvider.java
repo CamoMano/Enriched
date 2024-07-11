@@ -1,5 +1,7 @@
 package com.enrichedmc.enriched.datagen.lang;
 
+import static com.enrichedmc.enriched.tag.EnrichedTags.ItemTags.*;
+
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
@@ -10,8 +12,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
-
-import static com.enrichedmc.enriched.tag.EnrichedTags.ItemTags.*;
 
 public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
   public EnrichedEnglishLanguageProvider(
@@ -269,7 +269,7 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(SAPPHIRES, "Sapphire");
     translationBuilder.add(RUBIES, "Ruby");
     translationBuilder.add(TANZANITES, "Tanzanite");
-    translationBuilder.add(OBSIDIAN_INGOTS, "Obsidian Alloy Ingot");
+    translationBuilder.add(OBSIDIAN_ALLOY_INGOTS, "Obsidian Alloy Ingot");
     translationBuilder.add(STEEL_INGOTS, "Steel Ingot");
 
     /*----------------*/

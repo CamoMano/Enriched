@@ -133,8 +133,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_SWORD)
         .add(EnrichedItems.EMERALD_SWORD);
 
-
-    this.getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
+    this.getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
         .add(EnrichedItems.STEEL_HELMET)
         .add(EnrichedItems.OBSIDIAN_HELMET)
         .add(EnrichedItems.RUBY_HELMET)
@@ -142,7 +141,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_HELMET)
         .add(EnrichedItems.EMERALD_HELMET);
 
-    this.getOrCreateTagBuilder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
+    this.getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
         .add(EnrichedItems.STEEL_CHESTPLATE)
         .add(EnrichedItems.OBSIDIAN_CHESTPLATE)
         .add(EnrichedItems.RUBY_CHESTPLATE)
@@ -150,7 +149,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_CHESTPLATE)
         .add(EnrichedItems.EMERALD_CHESTPLATE);
 
-    this.getOrCreateTagBuilder(ItemTags.LEG_ARMOR_ENCHANTABLE)
+    this.getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
         .add(EnrichedItems.STEEL_LEGGINGS)
         .add(EnrichedItems.OBSIDIAN_LEGGINGS)
         .add(EnrichedItems.RUBY_LEGGINGS)
@@ -158,14 +157,13 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_LEGGINGS)
         .add(EnrichedItems.EMERALD_LEGGINGS);
 
-    this.getOrCreateTagBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
+    this.getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
         .add(EnrichedItems.STEEL_BOOTS)
         .add(EnrichedItems.OBSIDIAN_BOOTS)
         .add(EnrichedItems.RUBY_BOOTS)
         .add(EnrichedItems.SAPPHIRE_BOOTS)
         .add(EnrichedItems.TANZANITE_BOOTS)
         .add(EnrichedItems.EMERALD_BOOTS);
-
 
     this.getOrCreateTagBuilder(ConventionalItemTags.MELEE_WEAPON_TOOLS)
         .add(EnrichedItems.STEEL_SWORD)
@@ -176,10 +174,9 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.EMERALD_SWORD)
         .add(EnrichedItems.COPPER_SWORD);
 
-
     // Conventional Tags
     this.getOrCreateTagBuilder(STEEL_INGOTS).add(EnrichedItems.STEEL_INGOT);
-    this.getOrCreateTagBuilder(OBSIDIAN_INGOTS).add(EnrichedItems.OBSIDIAN_ALLOY_INGOT);
+    this.getOrCreateTagBuilder(OBSIDIAN_ALLOY_INGOTS).add(EnrichedItems.OBSIDIAN_ALLOY_INGOT);
     this.getOrCreateTagBuilder(RUBIES).add(EnrichedItems.RUBY);
     this.getOrCreateTagBuilder(SAPPHIRES).add(EnrichedItems.SAPPHIRE);
     this.getOrCreateTagBuilder(TANZANITES).add(EnrichedItems.TANZANITE);
