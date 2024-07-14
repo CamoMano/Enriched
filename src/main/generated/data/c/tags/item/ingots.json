@@ -1,6 +1,8 @@
 {
   "values": [
     "enriched:obsidian_alloy_ingot",
-    "enriched:steel_ingot"
+    "enriched:steel_ingot",
+    "enriched:bronze_ingot",
+    "enriched:tin_ingot"
   ]
 }

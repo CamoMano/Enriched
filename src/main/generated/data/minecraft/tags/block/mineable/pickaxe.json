@@ -9,6 +9,12 @@
     "enriched:tanzanite_block",
     "enriched:tanzanite_ore",
     "enriched:deepslate_tanzanite_ore",
+    "enriched:amber_block",
+    "enriched:amber_ore",
+    "enriched:deepslate_amber_ore",
+    "enriched:topaz_block",
+    "enriched:topaz_ore",
+    "enriched:deepslate_topaz_ore",
     "enriched:dark_granite",
     "enriched:dark_granite_slab",
     "enriched:dark_granite_stairs",
@@ -22,6 +28,11 @@
     "enriched:marble_wall",
     "enriched:polished_marble",
     "enriched:polished_marble_slab",
-    "enriched:polished_marble_stairs"
+    "enriched:polished_marble_stairs",
+    "enriched:tin_ore",
+    "enriched:deepslate_tin_ore",
+    "enriched:tin_block",
+    "enriched:raw_tin_block",
+    "enriched:bronze_block"
   ]
 }

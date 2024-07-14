@@ -30,6 +30,8 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(EnrichedItems.RUBY, "Ruby");
     translationBuilder.add(EnrichedItems.SAPPHIRE, "Sapphire");
     translationBuilder.add(EnrichedItems.TANZANITE, "Tanzanite");
+    translationBuilder.add(EnrichedItems.AMBER, "Amber");
+    translationBuilder.add(EnrichedItems.TOPAZ, "Topaz");
     translationBuilder.add(EnrichedItems.STEEL_BLEND, "Steel Blend");
     translationBuilder.add(EnrichedItems.STEEL_INGOT, "Steel Ingot");
     translationBuilder.add(EnrichedItems.OBSIDIAN_ALLOY_BLEND, "Obsidian Alloy Blend");
@@ -53,6 +55,14 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(EnrichedBlocks.TANZANITE_ORE, "Tanzanite Ore");
     translationBuilder.add(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE, "Deepslate Tanzanite Ore");
 
+    translationBuilder.add(EnrichedBlocks.AMBER_BLOCK, "Amber Block");
+    translationBuilder.add(EnrichedBlocks.AMBER_ORE, "Amber Ore");
+    translationBuilder.add(EnrichedBlocks.DEEPSLATE_AMBER_ORE, "Deepslate Amber Ore");
+
+    translationBuilder.add(EnrichedBlocks.TOPAZ_BLOCK, "Topaz Block");
+    translationBuilder.add(EnrichedBlocks.TOPAZ_ORE, "Topaz Ore");
+    translationBuilder.add(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE, "Deepslate Topaz Ore");
+    
     translationBuilder.add(EnrichedBlocks.STEEL_BLOCK, "Steel Block");
     translationBuilder.add(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK, "Obsidian Alloy Block");
 
@@ -269,6 +279,8 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(SAPPHIRES, "Sapphire");
     translationBuilder.add(RUBIES, "Ruby");
     translationBuilder.add(TANZANITES, "Tanzanite");
+    translationBuilder.add(AMBERS, "Amber");
+    translationBuilder.add(TOPAZS, "Topaz");
     translationBuilder.add(OBSIDIAN_ALLOY_INGOTS, "Obsidian Alloy Ingot");
     translationBuilder.add(STEEL_INGOTS, "Steel Ingot");
 

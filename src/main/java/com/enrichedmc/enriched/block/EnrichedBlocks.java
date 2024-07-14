@@ -18,6 +18,22 @@ public class EnrichedBlocks {
   public static final Block TANZANITE_BLOCK;
   public static final Block TANZANITE_ORE;
   public static final Block DEEPSLATE_TANZANITE_ORE;
+
+  public static final Block AMBER_BLOCK;
+  public static final Block AMBER_ORE;
+  public static final Block DEEPSLATE_AMBER_ORE;
+
+  public static final Block TOPAZ_BLOCK;
+  public static final Block TOPAZ_ORE;
+  public static final Block DEEPSLATE_TOPAZ_ORE;
+
+  public static final Block TIN_BLOCK;
+
+  public static final Block RAW_TIN_BLOCK;
+  public static final Block TIN_ORE;
+  public static final Block DEEPSLATE_TIN_ORE;
+
+  public static final Block BRONZE_BLOCK;
   public static final Block STEEL_BLOCK;
   public static final Block OBSIDIAN_ALLOY_BLOCK;
 
@@ -97,12 +113,60 @@ public class EnrichedBlocks {
             new ExperienceDroppingBlock(
                 UniformIntProvider.create(3, 7), AbstractBlock.Settings.copy(Blocks.STONE)));
 
+    TIN_BLOCK =
+        EnrichedRegisters.registerBlock(
+            "tin_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+    BRONZE_BLOCK =
+        EnrichedRegisters.registerBlock(
+            "bronze_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+    RAW_TIN_BLOCK =
+        EnrichedRegisters.registerBlock(
+            "raw_tin_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+    TIN_ORE =
+        EnrichedRegisters.registerBlock(
+            "tin_ore",
+            new ExperienceDroppingBlock(
+                UniformIntProvider.create(3, 7), AbstractBlock.Settings.copy(Blocks.STONE)));
+    DEEPSLATE_TIN_ORE =
+        EnrichedRegisters.registerBlock(
+            "deepslate_tin_ore",
+            new ExperienceDroppingBlock(
+                UniformIntProvider.create(3, 7), AbstractBlock.Settings.copy(Blocks.STONE)));
+
     STEEL_BLOCK =
         EnrichedRegisters.registerBlock(
             "steel_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
     OBSIDIAN_ALLOY_BLOCK =
         EnrichedRegisters.registerBlock(
             "obsidian_alloy_block", new Block(AbstractBlock.Settings.copy(Blocks.STONE)));
+
+    AMBER_BLOCK =
+        EnrichedRegisters.registerBlock(
+            "amber_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+    AMBER_ORE =
+        EnrichedRegisters.registerBlock(
+            "amber_ore",
+            new ExperienceDroppingBlock(
+                UniformIntProvider.create(3, 7), AbstractBlock.Settings.copy(Blocks.STONE)));
+    DEEPSLATE_AMBER_ORE =
+        EnrichedRegisters.registerBlock(
+            "deepslate_amber_ore",
+            new ExperienceDroppingBlock(
+                UniformIntProvider.create(3, 7), AbstractBlock.Settings.copy(Blocks.STONE)));
+
+    TOPAZ_BLOCK =
+        EnrichedRegisters.registerBlock(
+            "topaz_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+    TOPAZ_ORE =
+        EnrichedRegisters.registerBlock(
+            "topaz_ore",
+            new ExperienceDroppingBlock(
+                UniformIntProvider.create(3, 7), AbstractBlock.Settings.copy(Blocks.STONE)));
+    DEEPSLATE_TOPAZ_ORE =
+        EnrichedRegisters.registerBlock(
+            "deepslate_topaz_ore",
+            new ExperienceDroppingBlock(
+                UniformIntProvider.create(3, 7), AbstractBlock.Settings.copy(Blocks.STONE)));
 
     REDWOOD_LOG =
         EnrichedRegisters.registerBlock(
@@ -336,6 +400,22 @@ public class EnrichedBlocks {
     EnrichedRegisters.registerToItemGroup(TANZANITE_BLOCK, ItemGroups.BUILDING_BLOCKS);
     EnrichedRegisters.registerToItemGroup(TANZANITE_ORE, ItemGroups.NATURAL);
     EnrichedRegisters.registerToItemGroup(DEEPSLATE_TANZANITE_ORE, ItemGroups.NATURAL);
+
+    EnrichedRegisters.registerToItemGroup(AMBER_BLOCK, ItemGroups.BUILDING_BLOCKS);
+    EnrichedRegisters.registerToItemGroup(AMBER_ORE, ItemGroups.NATURAL);
+    EnrichedRegisters.registerToItemGroup(DEEPSLATE_AMBER_ORE, ItemGroups.NATURAL);
+
+    EnrichedRegisters.registerToItemGroup(TOPAZ_BLOCK, ItemGroups.BUILDING_BLOCKS);
+    EnrichedRegisters.registerToItemGroup(TOPAZ_ORE, ItemGroups.NATURAL);
+    EnrichedRegisters.registerToItemGroup(DEEPSLATE_TOPAZ_ORE, ItemGroups.NATURAL);
+
+    EnrichedRegisters.registerToItemGroup(TIN_BLOCK, ItemGroups.BUILDING_BLOCKS);
+    EnrichedRegisters.registerToItemGroup(TIN_ORE, ItemGroups.NATURAL);
+    EnrichedRegisters.registerToItemGroup(DEEPSLATE_TIN_ORE, ItemGroups.NATURAL);
+    EnrichedRegisters.registerToItemGroup(RAW_TIN_BLOCK, ItemGroups.NATURAL);
+    EnrichedRegisters.registerToItemGroup(BRONZE_BLOCK, ItemGroups.BUILDING_BLOCKS);
+
+
 
     EnrichedRegisters.registerToItemGroup(STEEL_BLOCK, ItemGroups.BUILDING_BLOCKS);
     EnrichedRegisters.registerToItemGroup(OBSIDIAN_ALLOY_BLOCK, ItemGroups.BUILDING_BLOCKS);

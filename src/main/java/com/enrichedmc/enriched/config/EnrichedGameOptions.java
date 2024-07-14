@@ -77,6 +77,8 @@ public class EnrichedGameOptions {
     public boolean enableSteelGear = true;
     public boolean enableObsidianGear = true;
     public boolean enableEmeraldGear = true;
+
+    public boolean enableBronzeGear = true;
     public boolean enableCopperTools = true;
   }
 
@@ -97,6 +99,12 @@ public class EnrichedGameOptions {
     public boolean generateRubyOres = true;
     public boolean generateSapphireOres = true;
     public boolean generateTanzaniteOres = true;
+
+    public boolean generateAmberOres = true;
+
+    public boolean generateTopazOres = true;
+
+    public boolean generateTinOres = true;
     public boolean generateDarkGranite = true;
     public boolean generateMarble = true;
   }

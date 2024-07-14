@@ -16,8 +16,18 @@ public class EnrichedItems {
   public static final Item RUBY;
   public static final Item SAPPHIRE;
   public static final Item TANZANITE;
+
+  public static final Item AMBER;
+
+  public static final Item TOPAZ;
   public static final Item STEEL_BLEND;
   public static final Item STEEL_INGOT;
+
+  public static final Item BRONZE_BLEND;
+  public static final Item BRONZE_INGOT;
+
+  public static final Item TIN_INGOT;
+  public static final Item RAW_TIN;
   public static final Item OBSIDIAN_ALLOY_BLEND;
   public static final Item OBSIDIAN_ALLOY_INGOT;
 
@@ -92,8 +102,14 @@ public class EnrichedItems {
     RUBY = EnrichedRegisters.registerItem("ruby", new Item(new Item.Settings()));
     SAPPHIRE = EnrichedRegisters.registerItem("sapphire", new Item(new Item.Settings()));
     TANZANITE = EnrichedRegisters.registerItem("tanzanite", new Item(new Item.Settings()));
+    AMBER = EnrichedRegisters.registerItem("amber", new Item(new Item.Settings()));
+    TOPAZ = EnrichedRegisters.registerItem("topaz", new Item(new Item.Settings()));
     STEEL_BLEND = EnrichedRegisters.registerItem("steel_blend", new Item(new Item.Settings()));
     STEEL_INGOT = EnrichedRegisters.registerItem("steel_ingot", new Item(new Item.Settings()));
+    TIN_INGOT = EnrichedRegisters.registerItem("tin_ingot", new Item(new Item.Settings()));
+    BRONZE_BLEND = EnrichedRegisters.registerItem("bronze_blend", new Item(new Item.Settings()));
+    BRONZE_INGOT = EnrichedRegisters.registerItem("bronze_ingot", new Item(new Item.Settings()));
+    RAW_TIN = EnrichedRegisters.registerItem("raw_tin", new Item(new Item.Settings()));
     OBSIDIAN_ALLOY_BLEND =
         EnrichedRegisters.registerItem("obsidian_alloy_blend", new Item(new Item.Settings()));
     OBSIDIAN_ALLOY_INGOT =
@@ -514,8 +530,13 @@ public class EnrichedItems {
     EnrichedRegisters.registerToItemGroup(RUBY, ItemGroups.INGREDIENTS);
     EnrichedRegisters.registerToItemGroup(SAPPHIRE, ItemGroups.INGREDIENTS);
     EnrichedRegisters.registerToItemGroup(TANZANITE, ItemGroups.INGREDIENTS);
+    EnrichedRegisters.registerToItemGroup(AMBER, ItemGroups.INGREDIENTS);
+    EnrichedRegisters.registerToItemGroup(TOPAZ, ItemGroups.INGREDIENTS);
     EnrichedRegisters.registerToItemGroup(STEEL_BLEND, ItemGroups.INGREDIENTS);
     EnrichedRegisters.registerToItemGroup(STEEL_INGOT, ItemGroups.INGREDIENTS);
+    EnrichedRegisters.registerToItemGroup(BRONZE_BLEND, ItemGroups.INGREDIENTS);
+    EnrichedRegisters.registerToItemGroup(BRONZE_INGOT, ItemGroups.INGREDIENTS);
+    EnrichedRegisters.registerToItemGroup(TIN_INGOT, ItemGroups.INGREDIENTS);
     EnrichedRegisters.registerToItemGroup(OBSIDIAN_ALLOY_BLEND, ItemGroups.INGREDIENTS);
     EnrichedRegisters.registerToItemGroup(OBSIDIAN_ALLOY_INGOT, ItemGroups.INGREDIENTS);
     EnrichedRegisters.registerToItemGroup(HONEY_BALL, ItemGroups.INGREDIENTS);

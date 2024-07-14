@@ -15,59 +15,68 @@ public class EnrichedOreGeneration {
 
     if (worldGenerationOptions.generateRubyOres) {
       BiomeModifications.addFeature(
-          BiomeSelectors.foundInOverworld(),
+          BiomeSelectors.tag(ConventionalBiomeTags.IS_JUNGLE),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.RUBY_ORE_PLACED_KEY);
-      BiomeModifications.addFeature(
-          BiomeSelectors.tag(ConventionalBiomeTags.IS_DESERT),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.RUBY_ORE_COMMON_PLACED_KEY);
     }
 
     if (worldGenerationOptions.generateSapphireOres) {
       BiomeModifications.addFeature(
-          BiomeSelectors.foundInOverworld(),
+          BiomeSelectors.tag(ConventionalBiomeTags.IS_DRY_OVERWORLD),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.SAPPHIRE_ORE_PLACED_KEY);
-      BiomeModifications.addFeature(
-          BiomeSelectors.tag(ConventionalBiomeTags.IS_ICY),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.SAPPHIRE_ORE_COMMON_PLACED_KEY);
     }
 
     if (worldGenerationOptions.generateTanzaniteOres) {
       BiomeModifications.addFeature(
-          BiomeSelectors.foundInOverworld(),
+          BiomeSelectors.tag(ConventionalBiomeTags.IS_SAVANNA),
           GenerationStep.Feature.UNDERGROUND_ORES,
           EnrichedPlacedFeatures.TANZANITE_ORE_PLACED_KEY);
-      BiomeModifications.addFeature(
-          BiomeSelectors.tag(ConventionalBiomeTags.IS_JUNGLE),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.TANZANITE_ORE_COMMON_PLACED_KEY);
-    }
 
-    if (worldGenerationOptions.generateDarkGranite) {
-      BiomeModifications.addFeature(
-          BiomeSelectors.foundInOverworld(),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.DARK_GRANITE_UPPER_PLACED_KEY);
+      if (worldGenerationOptions.generateAmberOres) {
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            EnrichedPlacedFeatures.AMBER_ORE_PLACED_KEY);
+      }
 
-      BiomeModifications.addFeature(
-          BiomeSelectors.foundInOverworld(),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.DARK_GRANITE_LOWER_PLACED_KEY);
-    }
+      if (worldGenerationOptions.generateTopazOres) {
+        BiomeModifications.addFeature(
+            BiomeSelectors.tag(ConventionalBiomeTags.IS_DESERT),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            EnrichedPlacedFeatures.TOPAZ_ORE_PLACED_KEY);
+      }
 
-    if (worldGenerationOptions.generateMarble) {
-      BiomeModifications.addFeature(
-          BiomeSelectors.foundInOverworld(),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.MARBLE_UPPER_PLACED_KEY);
+      if (worldGenerationOptions.generateTinOres) {
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            EnrichedPlacedFeatures.TIN_ORE_PLACED_KEY);
+      }
 
-      BiomeModifications.addFeature(
-          BiomeSelectors.foundInOverworld(),
-          GenerationStep.Feature.UNDERGROUND_ORES,
-          EnrichedPlacedFeatures.MARBLE_LOWER_PLACED_KEY);
+      if (worldGenerationOptions.generateDarkGranite) {
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            EnrichedPlacedFeatures.DARK_GRANITE_UPPER_PLACED_KEY);
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            EnrichedPlacedFeatures.DARK_GRANITE_LOWER_PLACED_KEY);
+      }
+
+      if (worldGenerationOptions.generateMarble) {
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            EnrichedPlacedFeatures.MARBLE_UPPER_PLACED_KEY);
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            EnrichedPlacedFeatures.MARBLE_LOWER_PLACED_KEY);
+      }
     }
   }
 }

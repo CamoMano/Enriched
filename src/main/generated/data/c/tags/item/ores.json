@@ -1,8 +1,16 @@
 {
   "values": [
     "enriched:ruby_ore",
+    "enriched:deepslate_ruby_ore",
     "enriched:sapphire_ore",
+    "enriched:deepslate_sapphire_ore",
     "enriched:tanzanite_ore",
-    "enriched:steel_ingot"
+    "enriched:deepslate_tanzanite_ore",
+    "enriched:amber_ore",
+    "enriched:deepslate_amber_ore",
+    "enriched:topaz_ore",
+    "enriched:deepslate_topaz_ore",
+    "enriched:tin_ore",
+    "enriched:deepslate_tin_ore"
   ]
 }

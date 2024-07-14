@@ -28,6 +28,12 @@ public class EnrichedBlockTagProvider extends FabricTagProvider.BlockTagProvider
         .add(EnrichedBlocks.TANZANITE_BLOCK)
         .add(EnrichedBlocks.TANZANITE_ORE)
         .add(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE)
+        .add(EnrichedBlocks.AMBER_BLOCK)
+        .add(EnrichedBlocks.AMBER_ORE)
+        .add(EnrichedBlocks.DEEPSLATE_AMBER_ORE)
+        .add(EnrichedBlocks.TOPAZ_BLOCK)
+        .add(EnrichedBlocks.TOPAZ_ORE)
+        .add(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE)
         .add(EnrichedBlocks.DARK_GRANITE)
         .add(EnrichedBlocks.DARK_GRANITE_SLAB)
         .add(EnrichedBlocks.DARK_GRANITE_STAIRS)
@@ -41,7 +47,12 @@ public class EnrichedBlockTagProvider extends FabricTagProvider.BlockTagProvider
         .add(EnrichedBlocks.MARBLE_WALL)
         .add(EnrichedBlocks.POLISHED_MARBLE)
         .add(EnrichedBlocks.POLISHED_MARBLE_SLAB)
-        .add(EnrichedBlocks.POLISHED_MARBLE_STAIRS);
+        .add(EnrichedBlocks.POLISHED_MARBLE_STAIRS)
+        .add(EnrichedBlocks.TIN_ORE)
+        .add(EnrichedBlocks.DEEPSLATE_TIN_ORE)
+        .add(EnrichedBlocks.TIN_BLOCK)
+        .add(EnrichedBlocks.RAW_TIN_BLOCK)
+        .add(EnrichedBlocks.BRONZE_BLOCK);
 
     this.getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
         .add(EnrichedBlocks.RUBY_ORE)
@@ -49,7 +60,11 @@ public class EnrichedBlockTagProvider extends FabricTagProvider.BlockTagProvider
         .add(EnrichedBlocks.SAPPHIRE_ORE)
         .add(EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE)
         .add(EnrichedBlocks.TANZANITE_ORE)
-        .add(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE);
+        .add(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE)
+        .add(EnrichedBlocks.AMBER_ORE)
+        .add(EnrichedBlocks.DEEPSLATE_AMBER_ORE)
+        .add(EnrichedBlocks.TOPAZ_ORE)
+        .add(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE);
 
     this.getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
         .add(EnrichedBlocks.REDWOOD_LOG)
@@ -95,6 +110,8 @@ public class EnrichedBlockTagProvider extends FabricTagProvider.BlockTagProvider
         EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_tanzanite_tool"));
     this.getOrCreateTagBuilder(
         EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_steel_tool"));
+    this.getOrCreateTagBuilder(
+            EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_bronze_tool"));
     this.getOrCreateTagBuilder(
         EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_obsidian_tool"));
     this.getOrCreateTagBuilder(

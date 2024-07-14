@@ -46,6 +46,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
     this.createSapphireRecipes(exporter);
     this.createTanzaniteRecipes(exporter);
     this.createSteelRecipes(exporter);
+    this.createBronzeAndTinRecipes(exporter);
     this.createObsidianRecipes(exporter);
     this.createEmeraldRecipes(exporter);
     this.createCopperRecipes(exporter);
@@ -325,6 +326,64 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedBlocks.STEEL_BLOCK);
   }
 
+  private void createBronzeAndTinRecipes(RecipeExporter recipeExporter) {
+
+    ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, EnrichedItems.BRONZE_BLEND, 3)
+            .input(EnrichedItems.TIN_INGOT)
+            .input(Items.COPPER_INGOT)
+            .input(Items.COPPER_INGOT)
+            .criterion(
+                    FabricRecipeProvider.hasItem(EnrichedItems.TIN_INGOT),
+                    FabricRecipeProvider.conditionsFromItem(EnrichedItems.TIN_INGOT))
+            .offerTo(recipeExporter);
+
+    this.createSmeltingRecipe(
+            recipeExporter,
+            EnrichedItems.BRONZE_BLEND,
+            RecipeCategory.MISC,
+            EnrichedItems.BRONZE_INGOT,
+            0.7f,
+            200);
+
+    this.createBlastingRecipe(
+            recipeExporter,
+            EnrichedItems.BRONZE_BLEND,
+            RecipeCategory.MISC,
+            EnrichedItems.BRONZE_INGOT,
+            0.7f,
+            100);
+
+    this.createSmeltingRecipe(
+            recipeExporter,
+            EnrichedItems.RAW_TIN,
+            RecipeCategory.MISC,
+            EnrichedItems.TIN_INGOT,
+            0.7f,
+            200);
+
+    this.createBlastingRecipe(
+            recipeExporter,
+            EnrichedItems.RAW_TIN,
+            RecipeCategory.MISC,
+            EnrichedItems.TIN_INGOT,
+            0.7f,
+            100);
+
+    offerReversibleCompactingRecipes(
+            recipeExporter,
+            RecipeCategory.MISC,
+            EnrichedItems.BRONZE_INGOT,
+            RecipeCategory.MISC,
+            EnrichedBlocks.BRONZE_BLOCK);
+
+    offerReversibleCompactingRecipes(
+            recipeExporter,
+            RecipeCategory.MISC,
+            EnrichedItems.TIN_INGOT,
+            RecipeCategory.MISC,
+            EnrichedBlocks.TIN_BLOCK);
+  }
+
   private void createObsidianRecipes(RecipeExporter recipeExporter) {
     this.createSwordTagRecipe(
         recipeExporter,
@@ -380,9 +439,10 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.OBSIDIAN_BOOTS,
         Lists.newArrayList(EnrichedResourceConditions.OBSIDIAN_ENABLED));
 
-    ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, EnrichedItems.OBSIDIAN_ALLOY_BLEND)
+    ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, EnrichedItems.OBSIDIAN_ALLOY_BLEND, 3)
         .input(Items.OBSIDIAN)
         .input(EnrichedItems.STEEL_INGOT)
+            .input(EnrichedItems.STEEL_INGOT)
         .criterion(
             FabricRecipeProvider.hasItem(Items.OBSIDIAN),
             FabricRecipeProvider.conditionsFromItem(Items.OBSIDIAN))

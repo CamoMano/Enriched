@@ -1,0 +1,17 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "enriched:raw_smelting_enabled"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "enriched:raw_tin"
+  },
+  "result": {
+    "id": "enriched:tin_ingot"
+  }
+}

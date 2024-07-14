@@ -5,6 +5,10 @@
     "enriched:sapphire_ore",
     "enriched:deepslate_sapphire_ore",
     "enriched:tanzanite_ore",
-    "enriched:deepslate_tanzanite_ore"
+    "enriched:deepslate_tanzanite_ore",
+    "enriched:amber_ore",
+    "enriched:deepslate_amber_ore",
+    "enriched:topaz_ore",
+    "enriched:deepslate_topaz_ore"
   ]
 }

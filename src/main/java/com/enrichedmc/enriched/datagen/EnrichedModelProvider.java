@@ -41,6 +41,20 @@ public class EnrichedModelProvider extends FabricModelProvider {
     blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TANZANITE_ORE);
     blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE);
 
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.AMBER_BLOCK);
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.AMBER_ORE);
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_AMBER_ORE);
+
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TOPAZ_BLOCK);
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TOPAZ_ORE);
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE);
+
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TIN_BLOCK);
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TIN_ORE);
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_TIN_ORE);
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.RAW_TIN_BLOCK);
+    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.BRONZE_BLOCK);
+
     blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.STEEL_BLOCK);
     blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
 
@@ -91,8 +105,14 @@ public class EnrichedModelProvider extends FabricModelProvider {
     itemModelGenerator.register(EnrichedItems.RUBY, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.SAPPHIRE, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.TANZANITE, Models.GENERATED);
+    itemModelGenerator.register(EnrichedItems.AMBER, Models.GENERATED);
+    itemModelGenerator.register(EnrichedItems.TOPAZ, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.STEEL_BLEND, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.STEEL_INGOT, Models.GENERATED);
+    itemModelGenerator.register(EnrichedItems.BRONZE_BLEND, Models.GENERATED);
+    itemModelGenerator.register(EnrichedItems.BRONZE_INGOT, Models.GENERATED);
+    itemModelGenerator.register(EnrichedItems.TIN_INGOT, Models.GENERATED);
+    itemModelGenerator.register(EnrichedItems.RAW_TIN, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.OBSIDIAN_ALLOY_BLEND, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.OBSIDIAN_ALLOY_INGOT, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.HONEY_BALL, Models.GENERATED);
