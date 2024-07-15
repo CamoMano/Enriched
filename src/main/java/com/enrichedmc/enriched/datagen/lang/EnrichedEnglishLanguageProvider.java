@@ -36,6 +36,10 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(EnrichedItems.STEEL_INGOT, "Steel Ingot");
     translationBuilder.add(EnrichedItems.OBSIDIAN_ALLOY_BLEND, "Obsidian Alloy Blend");
     translationBuilder.add(EnrichedItems.OBSIDIAN_ALLOY_INGOT, "Obsidian Alloy Ingot");
+    translationBuilder.add(EnrichedItems.BRONZE_BLEND, "Bronze Blend");
+    translationBuilder.add(EnrichedItems.BRONZE_INGOT, "Bronze Ingot");
+    translationBuilder.add(EnrichedItems.TIN_INGOT, "Tin Ingot");
+    translationBuilder.add(EnrichedItems.RAW_TIN, "Raw Tin");
     translationBuilder.add(EnrichedItems.HONEY_BALL, "Honey Ball");
     translationBuilder.add(EnrichedItems.HONEY_SLIME_SPAWN_EGG, "Honey Slime Spawn Egg");
 
@@ -62,9 +66,16 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(EnrichedBlocks.TOPAZ_BLOCK, "Topaz Block");
     translationBuilder.add(EnrichedBlocks.TOPAZ_ORE, "Topaz Ore");
     translationBuilder.add(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE, "Deepslate Topaz Ore");
-    
+
     translationBuilder.add(EnrichedBlocks.STEEL_BLOCK, "Steel Block");
     translationBuilder.add(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK, "Obsidian Alloy Block");
+
+    translationBuilder.add(EnrichedBlocks.TIN_BLOCK, "Tin Block");
+    translationBuilder.add(EnrichedBlocks.RAW_TIN_BLOCK, "Raw Tin Block");
+    translationBuilder.add(EnrichedBlocks.TIN_ORE, "Tin Ore");
+    translationBuilder.add(EnrichedBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
+
+    translationBuilder.add(EnrichedBlocks.BRONZE_BLOCK, "Bronze Block");
 
     translationBuilder.add(EnrichedBlocks.REDWOOD_LOG, "Redwood Log");
     translationBuilder.add(EnrichedTags.BlockTags.REDWOOD_LOGS, "Redwood Logs");
@@ -283,6 +294,7 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(TOPAZS, "Topaz");
     translationBuilder.add(OBSIDIAN_ALLOY_INGOTS, "Obsidian Alloy Ingot");
     translationBuilder.add(STEEL_INGOTS, "Steel Ingot");
+    translationBuilder.add(BRONZE_INGOTS, "Bronze Ingot");
 
     /*----------------*/
     /* -- Entities -- */
@@ -323,6 +335,10 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(
         "enriched.options.toolsAndArmor.enableEmeraldGear.description",
         "Enables/disables the recipes for Emerald gear and tools.");
+    translationBuilder.add("enriched.options.toolsAndArmor.enableBronzeGear", "Enable Bronze Gear");
+    translationBuilder.add(
+        "enriched.options.toolsAndArmor.enableBronzeGear.description",
+        "Enables/disables the recipes for Bronze gear and tools.");
     translationBuilder.add(
         "enriched.options.toolsAndArmor.enableCopperTools", "Enable Copper Tools");
     translationBuilder.add(
@@ -381,6 +397,20 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(
         "enriched.options.worldGeneration.generateTanzaniteOres.description",
         "Enables/disables the generation of Tanzanite ores in a world.");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateAmberOres", "Generate Amber Ores");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateAmberOres.description",
+        "Enables/disables the generation of Amber ores in a world.");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateTopazOres", "Generate Topaz Ores");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateTopazOres.description",
+        "Enables/disables the generation of Topaz ores in a world.");
+    translationBuilder.add("enriched.options.worldGeneration.generateTinOres", "Generate Tin Ores");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateTinOres.description",
+        "Enables/disables the generation of Tin ores in a world.");
     translationBuilder.add(
         "enriched.options.worldGeneration.generateDarkGranite", "Generate Dark Granite");
     translationBuilder.add(

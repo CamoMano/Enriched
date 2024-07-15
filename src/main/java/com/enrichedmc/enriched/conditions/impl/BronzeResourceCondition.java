@@ -12,7 +12,7 @@ public class BronzeResourceCondition implements ResourceCondition {
   @Override
   public ResourceConditionType<?> getType() {
     return ResourceConditionType.create(
-        Identifier.of(EnrichedMod.MOD_ID, "steel_enabled"),
+        Identifier.of(EnrichedMod.MOD_ID, "bronze_enabled"),
         MapCodec.unit(BronzeResourceCondition::new));
   }
 

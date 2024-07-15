@@ -119,6 +119,20 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
+                .name(Text.translatable("enriched.options.toolsAndArmor.enableBronzeGear"))
+                .description(
+                    OptionDescription.of(
+                        Text.translatable(
+                            "enriched.options.toolsAndArmor.enableBronzeGear.description")))
+                .binding(
+                    EnrichedGameOptions.defaults().toolsAndArmorOptions.enableBronzeGear,
+                    () -> TOOLS_AND_ARMOR_OPTIONS.enableBronzeGear,
+                    newValue -> TOOLS_AND_ARMOR_OPTIONS.enableBronzeGear = newValue)
+                .customController(BooleanController::new)
+                .flag(EnrichedOptionCategories.RELOAD_DATA_PACKS)
+                .build())
+        .option(
+            Option.<Boolean>createBuilder()
                 .name(Text.translatable("enriched.options.toolsAndArmor.enableCopperTools"))
                 .description(
                     OptionDescription.of(
@@ -268,6 +282,48 @@ public class EnrichedOptionCategories {
                     OptionDescription.of(
                         Text.translatable(
                             "enriched.options.worldGeneration.generateTanzaniteOres.description")))
+                .binding(
+                    EnrichedGameOptions.defaults().worldGenerationOptions.generateTanzaniteOres,
+                    () -> WORLD_GENERATION.generateTanzaniteOres,
+                    newValue -> WORLD_GENERATION.generateTanzaniteOres = newValue)
+                .customController(BooleanController::new)
+                .flag(OptionFlag.GAME_RESTART)
+                .build())
+        .option(
+            Option.<Boolean>createBuilder()
+                .name(Text.translatable("enriched.options.worldGeneration.generateAmberOres"))
+                .description(
+                    OptionDescription.of(
+                        Text.translatable(
+                            "enriched.options.worldGeneration.generateAmberOres.description")))
+                .binding(
+                    EnrichedGameOptions.defaults().worldGenerationOptions.generateAmberOres,
+                    () -> WORLD_GENERATION.generateAmberOres,
+                    newValue -> WORLD_GENERATION.generateAmberOres = newValue)
+                .customController(BooleanController::new)
+                .flag(OptionFlag.GAME_RESTART)
+                .build())
+        .option(
+            Option.<Boolean>createBuilder()
+                .name(Text.translatable("enriched.options.worldGeneration.generateTopazOres"))
+                .description(
+                    OptionDescription.of(
+                        Text.translatable(
+                            "enriched.options.worldGeneration.generateTopazOres.description")))
+                .binding(
+                    EnrichedGameOptions.defaults().worldGenerationOptions.generateTopazOres,
+                    () -> WORLD_GENERATION.generateTopazOres,
+                    newValue -> WORLD_GENERATION.generateTopazOres = newValue)
+                .customController(BooleanController::new)
+                .flag(OptionFlag.GAME_RESTART)
+                .build())
+        .option(
+            Option.<Boolean>createBuilder()
+                .name(Text.translatable("enriched.options.worldGeneration.generateTinOres"))
+                .description(
+                    OptionDescription.of(
+                        Text.translatable(
+                            "enriched.options.worldGeneration.generateTinOres.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateTanzaniteOres,
                     () -> WORLD_GENERATION.generateTanzaniteOres,

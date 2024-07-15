@@ -28,12 +28,12 @@ public class EnrichedConfiguredFeatures {
       EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE, "tanzanite_ore");
 
   public static final RegistryKey<ConfiguredFeature<?, ?>> AMBER_ORE_KEY =
-          EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE, "amber_ore");
+      EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE, "amber_ore");
 
   public static final RegistryKey<ConfiguredFeature<?, ?>> TOPAZ_ORE_KEY =
-          EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE, "topaz_ore");
+      EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE, "topaz_ore");
   public static final RegistryKey<ConfiguredFeature<?, ?>> TIN_ORE_KEY =
-          EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE, "tin_ore");
+      EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE, "tin_ore");
 
   public static final RegistryKey<ConfiguredFeature<?, ?>> REDWOOD_KEY =
       EnrichedRegisters.createRegistryKey(RegistryKeys.CONFIGURED_FEATURE, "redwood");
@@ -71,25 +71,25 @@ public class EnrichedConfiguredFeatures {
                 deepslateReplaceables, EnrichedBlocks.DEEPSLATE_TANZANITE_ORE.getDefaultState()));
 
     List<OreFeatureConfig.Target> overworldAmberOres =
-            Lists.newArrayList(
-                    OreFeatureConfig.createTarget(
-                            stoneReplaceables, EnrichedBlocks.AMBER_ORE.getDefaultState()),
-                    OreFeatureConfig.createTarget(
-                            deepslateReplaceables, EnrichedBlocks.DEEPSLATE_AMBER_ORE.getDefaultState()));
+        Lists.newArrayList(
+            OreFeatureConfig.createTarget(
+                stoneReplaceables, EnrichedBlocks.AMBER_ORE.getDefaultState()),
+            OreFeatureConfig.createTarget(
+                deepslateReplaceables, EnrichedBlocks.DEEPSLATE_AMBER_ORE.getDefaultState()));
 
     List<OreFeatureConfig.Target> overworldTopazOres =
-            Lists.newArrayList(
-                    OreFeatureConfig.createTarget(
-                            stoneReplaceables, EnrichedBlocks.TOPAZ_ORE.getDefaultState()),
-                    OreFeatureConfig.createTarget(
-                            deepslateReplaceables, EnrichedBlocks.DEEPSLATE_TOPAZ_ORE.getDefaultState()));
+        Lists.newArrayList(
+            OreFeatureConfig.createTarget(
+                stoneReplaceables, EnrichedBlocks.TOPAZ_ORE.getDefaultState()),
+            OreFeatureConfig.createTarget(
+                deepslateReplaceables, EnrichedBlocks.DEEPSLATE_TOPAZ_ORE.getDefaultState()));
 
     List<OreFeatureConfig.Target> overworldTinOres =
-            Lists.newArrayList(
-                    OreFeatureConfig.createTarget(
-                            stoneReplaceables, EnrichedBlocks.TIN_ORE.getDefaultState()),
-                    OreFeatureConfig.createTarget(
-                            deepslateReplaceables, EnrichedBlocks.DEEPSLATE_TIN_ORE.getDefaultState()));
+        Lists.newArrayList(
+            OreFeatureConfig.createTarget(
+                stoneReplaceables, EnrichedBlocks.TIN_ORE.getDefaultState()),
+            OreFeatureConfig.createTarget(
+                deepslateReplaceables, EnrichedBlocks.DEEPSLATE_TIN_ORE.getDefaultState()));
 
     List<OreFeatureConfig.Target> overworldDarkGranite =
         Lists.newArrayList(
@@ -109,14 +109,13 @@ public class EnrichedConfiguredFeatures {
         context, TANZANITE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTanzaniteOres, 6));
 
     EnrichedConfiguredFeatures.register(
-            context, AMBER_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldAmberOres, 4));
+        context, AMBER_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldAmberOres, 4));
 
     EnrichedConfiguredFeatures.register(
-            context, TOPAZ_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTopazOres, 6));
+        context, TOPAZ_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTopazOres, 6));
 
     EnrichedConfiguredFeatures.register(
-            context, TIN_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTinOres, 6));
-
+        context, TIN_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTinOres, 8));
 
     EnrichedConfiguredFeatures.register(
         context, DARK_GRANITE_KEY, Feature.ORE, new OreFeatureConfig(overworldDarkGranite, 64));

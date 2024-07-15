@@ -38,13 +38,13 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
     this.getOrCreateTagBuilder(ConventionalItemTags.DUSTS)
         .add(EnrichedItems.OBSIDIAN_ALLOY_BLEND)
         .add(EnrichedItems.STEEL_BLEND)
-            .add(EnrichedItems.BRONZE_BLEND);
+        .add(EnrichedItems.BRONZE_BLEND);
 
     this.getOrCreateTagBuilder(ConventionalItemTags.INGOTS)
         .add(EnrichedItems.OBSIDIAN_ALLOY_INGOT)
         .add(EnrichedItems.STEEL_INGOT)
-            .add(EnrichedItems.BRONZE_INGOT)
-            .add(EnrichedItems.TIN_INGOT);
+        .add(EnrichedItems.BRONZE_INGOT)
+        .add(EnrichedItems.TIN_INGOT);
 
     this.getOrCreateTagBuilder(ConventionalItemTags.ORES)
         .add(EnrichedBlocks.RUBY_ORE.asItem())
@@ -57,9 +57,8 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedBlocks.DEEPSLATE_AMBER_ORE.asItem())
         .add(EnrichedBlocks.TOPAZ_ORE.asItem())
         .add(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE.asItem())
-            .add(EnrichedBlocks.TIN_ORE.asItem())
-            .add(EnrichedBlocks.DEEPSLATE_TIN_ORE.asItem());
-    
+        .add(EnrichedBlocks.TIN_ORE.asItem())
+        .add(EnrichedBlocks.DEEPSLATE_TIN_ORE.asItem());
 
     this.getOrCreateTagBuilder(ConventionalItemTags.TOOLS)
         .add(EnrichedItems.STEEL_AXE)

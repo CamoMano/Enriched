@@ -111,7 +111,7 @@ public class EnrichedBlockTagProvider extends FabricTagProvider.BlockTagProvider
     this.getOrCreateTagBuilder(
         EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_steel_tool"));
     this.getOrCreateTagBuilder(
-            EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_bronze_tool"));
+        EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_bronze_tool"));
     this.getOrCreateTagBuilder(
         EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_obsidian_tool"));
     this.getOrCreateTagBuilder(

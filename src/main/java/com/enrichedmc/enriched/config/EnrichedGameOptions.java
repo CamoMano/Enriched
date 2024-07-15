@@ -42,16 +42,16 @@ public class EnrichedGameOptions {
         exception.printStackTrace();
       }
 
-      EnrichedGameOptions iridiumGameOptions = null;
+      EnrichedGameOptions enrichedGameOptions = null;
 
       try {
-        iridiumGameOptions =
+        enrichedGameOptions =
             GSON.fromJson(configFileContents.toString(), EnrichedGameOptions.class);
       } catch (JsonSyntaxException exception) {
         exception.printStackTrace();
       }
 
-      return iridiumGameOptions;
+      return enrichedGameOptions;
     } else {
       EnrichedMod.LOGGER.warn("Failed to load Enriched's game options! Loading defaults...");
 

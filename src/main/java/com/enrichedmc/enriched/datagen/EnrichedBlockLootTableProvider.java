@@ -46,7 +46,8 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
         sapphireOre -> this.enrichedOreDrops(sapphireOre, EnrichedItems.SAPPHIRE));
     this.addDrop(
         EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE,
-        deepslateSapphireOre -> this.enrichedOreDrops(deepslateSapphireOre, EnrichedItems.SAPPHIRE));
+        deepslateSapphireOre ->
+            this.enrichedOreDrops(deepslateSapphireOre, EnrichedItems.SAPPHIRE));
 
     this.addDrop(
         EnrichedBlocks.TANZANITE_ORE,
@@ -57,28 +58,22 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
             this.enrichedOreDrops(deepslateTanzaniteOre, EnrichedItems.TANZANITE));
 
     this.addDrop(
-            EnrichedBlocks.AMBER_ORE,
-            amberOre -> this.enrichedOreDrops(amberOre, EnrichedItems.AMBER));
+        EnrichedBlocks.AMBER_ORE, amberOre -> this.enrichedOreDrops(amberOre, EnrichedItems.AMBER));
     this.addDrop(
-            EnrichedBlocks.DEEPSLATE_AMBER_ORE,
-            deepslateAmberOre ->
-                    this.enrichedOreDrops(deepslateAmberOre, EnrichedItems.AMBER));
+        EnrichedBlocks.DEEPSLATE_AMBER_ORE,
+        deepslateAmberOre -> this.enrichedOreDrops(deepslateAmberOre, EnrichedItems.AMBER));
 
     this.addDrop(
-            EnrichedBlocks.TOPAZ_ORE,
-            topazOre -> this.enrichedOreDrops(topazOre, EnrichedItems.TOPAZ));
+        EnrichedBlocks.TOPAZ_ORE, topazOre -> this.enrichedOreDrops(topazOre, EnrichedItems.TOPAZ));
     this.addDrop(
-            EnrichedBlocks.DEEPSLATE_TOPAZ_ORE,
-            deepslateTopazOre ->
-                    this.enrichedOreDrops(deepslateTopazOre, EnrichedItems.TOPAZ));
+        EnrichedBlocks.DEEPSLATE_TOPAZ_ORE,
+        deepslateTopazOre -> this.enrichedOreDrops(deepslateTopazOre, EnrichedItems.TOPAZ));
 
     this.addDrop(
-            EnrichedBlocks.TIN_ORE,
-           tinOre -> this.enrichedOreDrops(tinOre, EnrichedItems.RAW_TIN));
+        EnrichedBlocks.TIN_ORE, tinOre -> this.enrichedOreDrops(tinOre, EnrichedItems.RAW_TIN));
     this.addDrop(
-            EnrichedBlocks.DEEPSLATE_TIN_ORE,
-            deepslateTinOre ->
-                    this.enrichedOreDrops(deepslateTinOre, EnrichedItems.RAW_TIN));
+        EnrichedBlocks.DEEPSLATE_TIN_ORE,
+        deepslateTinOre -> this.enrichedOreDrops(deepslateTinOre, EnrichedItems.RAW_TIN));
 
     this.addDrop(EnrichedBlocks.STEEL_BLOCK);
     this.addDrop(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);

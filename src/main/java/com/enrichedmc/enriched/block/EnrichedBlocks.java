@@ -415,8 +415,6 @@ public class EnrichedBlocks {
     EnrichedRegisters.registerToItemGroup(RAW_TIN_BLOCK, ItemGroups.NATURAL);
     EnrichedRegisters.registerToItemGroup(BRONZE_BLOCK, ItemGroups.BUILDING_BLOCKS);
 
-
-
     EnrichedRegisters.registerToItemGroup(STEEL_BLOCK, ItemGroups.BUILDING_BLOCKS);
     EnrichedRegisters.registerToItemGroup(OBSIDIAN_ALLOY_BLOCK, ItemGroups.BUILDING_BLOCKS);
 

@@ -20,10 +20,10 @@ public class EnrichedTags {
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/steel");
 
     public static final TagKey<Item> BRONZE_INGOTS =
-            EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/bronze");
+        EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/bronze");
 
     public static final TagKey<Item> TIN_INGOTS =
-            EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/bronze");
+        EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/bronze");
 
     public static final TagKey<Item> OBSIDIAN_ALLOY_INGOTS =
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/obsidian_alloy");
@@ -37,10 +37,10 @@ public class EnrichedTags {
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "gems/tanzanite");
 
     public static final TagKey<Item> AMBERS =
-            EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "gems/amber");
+        EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "gems/amber");
 
     public static final TagKey<Item> TOPAZS =
-            EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "gems/topaz");
+        EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "gems/topaz");
     public static final TagKey<Item> FOODS =
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "foods");
   }

@@ -21,23 +21,14 @@ public class EnrichedPlacedFeatures {
   public static final RegistryKey<PlacedFeature> TANZANITE_ORE_PLACED_KEY =
       EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "tanzanite_ore_placed");
 
-  public static final RegistryKey<PlacedFeature> RUBY_ORE_COMMON_PLACED_KEY =
-      EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "ruby_ore_common_placed");
-  public static final RegistryKey<PlacedFeature> SAPPHIRE_ORE_COMMON_PLACED_KEY =
-      EnrichedRegisters.createRegistryKey(
-          RegistryKeys.PLACED_FEATURE, "sapphire_ore_common_placed");
-  public static final RegistryKey<PlacedFeature> TANZANITE_ORE_COMMON_PLACED_KEY =
-      EnrichedRegisters.createRegistryKey(
-          RegistryKeys.PLACED_FEATURE, "tanzanite_ore_common_placed");
-
   public static final RegistryKey<PlacedFeature> AMBER_ORE_PLACED_KEY =
-          EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "amber_ore_placed");
+      EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "amber_ore_placed");
 
   public static final RegistryKey<PlacedFeature> TOPAZ_ORE_PLACED_KEY =
-          EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "topaz_ore_placed");
+      EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "topaz_ore_placed");
 
   public static final RegistryKey<PlacedFeature> TIN_ORE_PLACED_KEY =
-          EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "tin_ore_placed");
+      EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "tin_ore_placed");
 
   public static final RegistryKey<PlacedFeature> REDWOOD_PLACED_KEY =
       EnrichedRegisters.createRegistryKey(RegistryKeys.PLACED_FEATURE, "redwood_placed");
@@ -63,7 +54,7 @@ public class EnrichedPlacedFeatures {
         RUBY_ORE_PLACED_KEY,
         registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.RUBY_ORE_KEY),
         OrePlacedFeatures.modifiersWithCount(
-            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
+            7, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
 
     register(
         context,
@@ -80,25 +71,25 @@ public class EnrichedPlacedFeatures {
             6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
 
     register(
-            context,
-           AMBER_ORE_PLACED_KEY,
-            registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.AMBER_ORE_KEY),
-            OrePlacedFeatures.modifiersWithCount(
-                    6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
+        context,
+        AMBER_ORE_PLACED_KEY,
+        registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.AMBER_ORE_KEY),
+        OrePlacedFeatures.modifiersWithCount(
+            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
 
     register(
-            context,
-            TOPAZ_ORE_PLACED_KEY,
-            registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TOPAZ_ORE_KEY),
-            OrePlacedFeatures.modifiersWithCount(
-                    6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
+        context,
+        TOPAZ_ORE_PLACED_KEY,
+        registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TOPAZ_ORE_KEY),
+        OrePlacedFeatures.modifiersWithCount(
+            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
 
     register(
-            context,
-            TIN_ORE_PLACED_KEY,
-            registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TIN_ORE_KEY),
-            OrePlacedFeatures.modifiersWithCount(
-                    6, HeightRangePlacementModifier.uniform(YOffset.fixed(-10), YOffset.fixed(55))));
+        context,
+        TIN_ORE_PLACED_KEY,
+        registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TIN_ORE_KEY),
+        OrePlacedFeatures.modifiersWithCount(
+            10, HeightRangePlacementModifier.uniform(YOffset.fixed(-10), YOffset.fixed(55))));
 
     register(
         context,
