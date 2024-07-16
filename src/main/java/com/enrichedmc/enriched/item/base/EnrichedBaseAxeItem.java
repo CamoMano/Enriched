@@ -9,6 +9,6 @@ public class EnrichedBaseAxeItem extends AxeItem {
         toolMaterial,
         new Settings()
             .maxCount(1)
-            .attributeModifiers(AxeItem.createAttributeModifiers(toolMaterial, 3.0f, -3.0f)));
+            .attributeModifiers(AxeItem.createAttributeModifiers(toolMaterial, 2.0f, -3.0f)));
   }
 }

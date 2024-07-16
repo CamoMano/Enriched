@@ -72,6 +72,11 @@ public class EnrichedItems {
   public static final Item COPPER_PICKAXE;
   public static final Item COPPER_AXE;
   public static final Item COPPER_HOE;
+  public static final Item BRONZE_SWORD;
+  public static final Item BRONZE_SHOVEL;
+  public static final Item BRONZE_PICKAXE;
+  public static final Item BRONZE_AXE;
+  public static final Item BRONZE_HOE;
 
   public static final ArmorItem RUBY_HELMET;
   public static final ArmorItem RUBY_CHESTPLATE;
@@ -97,6 +102,11 @@ public class EnrichedItems {
   public static final ArmorItem EMERALD_CHESTPLATE;
   public static final ArmorItem EMERALD_LEGGINGS;
   public static final ArmorItem EMERALD_BOOTS;
+
+  public static final ArmorItem BRONZE_HELMET;
+  public static final ArmorItem BRONZE_CHESTPLATE;
+  public static final ArmorItem BRONZE_LEGGINGS;
+  public static final ArmorItem BRONZE_BOOTS;
 
   static {
     RUBY = EnrichedRegisters.registerItem("ruby", new Item(new Item.Settings()));
@@ -238,6 +248,22 @@ public class EnrichedItems {
     COPPER_HOE =
         EnrichedRegisters.registerItem(
             "copper_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.COPPER));
+
+    BRONZE_SWORD =
+        EnrichedRegisters.registerItem(
+            "bronze_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.BRONZE));
+    BRONZE_SHOVEL =
+        EnrichedRegisters.registerItem(
+            "bronze_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.BRONZE));
+    BRONZE_PICKAXE =
+        EnrichedRegisters.registerItem(
+            "bronze_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.BRONZE));
+    BRONZE_AXE =
+        EnrichedRegisters.registerItem(
+            "bronze_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.BRONZE));
+    BRONZE_HOE =
+        EnrichedRegisters.registerItem(
+            "bronze_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.BRONZE));
 
     /*-------------*/
     /* -- Armor -- */
@@ -507,6 +533,52 @@ public class EnrichedItems {
                         .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))
                         .maxCount(1)));
 
+    BRONZE_HELMET =
+        (ArmorItem)
+            EnrichedRegisters.registerItem(
+                "bronze_helmet",
+                new ArmorItem(
+                    EnrichedArmorMaterials.BRONZE,
+                    ArmorItem.Type.HELMET,
+                    new Item.Settings()
+                        .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(23))
+                        .maxCount(1)));
+
+    BRONZE_CHESTPLATE =
+        (ArmorItem)
+            EnrichedRegisters.registerItem(
+                "bronze_chestplate",
+                new ArmorItem(
+                    EnrichedArmorMaterials.BRONZE,
+                    ArmorItem.Type.CHESTPLATE,
+                    new Item.Settings()
+                        .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(23))
+                        .maxCount(1)));
+
+    BRONZE_LEGGINGS =
+        (ArmorItem)
+            EnrichedRegisters.registerItem(
+                "bronze_leggings",
+                new ArmorItem(
+                    EnrichedArmorMaterials.BRONZE,
+                    ArmorItem.Type.LEGGINGS,
+                    new Item.Settings()
+                        .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(23))
+                        .maxCount(1)));
+
+    BRONZE_BOOTS =
+        (ArmorItem)
+            EnrichedRegisters.registerItem(
+                "bronze_boots",
+                new ArmorItem(
+                    EnrichedArmorMaterials.BRONZE,
+                    ArmorItem.Type.BOOTS,
+                    new Item.Settings()
+                        .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(23))
+                        .maxCount(1)));
+
+    ;
+
     /*------------*/
     /* -- Food -- */
     /*------------*/
@@ -595,6 +667,13 @@ public class EnrichedItems {
         EnrichedItems.COPPER_AXE,
         EnrichedItems.COPPER_HOE);
 
+    EnrichedItems.registerToolsToItemGroup(
+        EnrichedItems.BRONZE_SWORD,
+        EnrichedItems.BRONZE_SHOVEL,
+        EnrichedItems.BRONZE_PICKAXE,
+        EnrichedItems.BRONZE_AXE,
+        EnrichedItems.BRONZE_HOE);
+
     /*-------------*/
     /* -- Armor -- */
     /*-------------*/
@@ -610,6 +689,8 @@ public class EnrichedItems {
         OBSIDIAN_HELMET, OBSIDIAN_CHESTPLATE, OBSIDIAN_LEGGINGS, OBSIDIAN_BOOTS);
     EnrichedItems.registerArmorToItemGroup(
         EMERALD_HELMET, EMERALD_CHESTPLATE, EMERALD_LEGGINGS, EMERALD_BOOTS);
+    EnrichedItems.registerArmorToItemGroup(
+        BRONZE_HELMET, BRONZE_CHESTPLATE, BRONZE_LEGGINGS, BRONZE_BOOTS);
 
     /*------------*/
     /* -- Food -- */

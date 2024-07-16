@@ -382,6 +382,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.TIN_INGOT,
         RecipeCategory.MISC,
         EnrichedBlocks.TIN_BLOCK);
+
+    offerReversibleCompactingRecipes(
+            recipeExporter,
+            RecipeCategory.MISC,
+            EnrichedItems.RAW_TIN,
+            RecipeCategory.MISC,
+            EnrichedBlocks.RAW_TIN_BLOCK);
   }
 
   private void createObsidianRecipes(RecipeExporter recipeExporter) {
@@ -593,6 +600,8 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         1800);
     this.createSmeltingRecipe(
         recipeExporter, Items.RAW_GOLD_BLOCK, RecipeCategory.MISC, Items.GOLD_BLOCK, 6.3f, 1800);
+    this.createSmeltingRecipe(
+            recipeExporter, EnrichedBlocks.RAW_TIN_BLOCK.asItem(), RecipeCategory.MISC, EnrichedBlocks.TIN_BLOCK.asItem(), 6.3f, 1800);
 
     this.createBlastingRecipe(
         recipeExporter, Items.RAW_IRON_BLOCK, RecipeCategory.MISC, Items.IRON_BLOCK, 6.3f, 900);
@@ -600,6 +609,8 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         recipeExporter, Items.RAW_COPPER_BLOCK, RecipeCategory.MISC, Items.COPPER_BLOCK, 6.3f, 900);
     this.createBlastingRecipe(
         recipeExporter, Items.RAW_GOLD_BLOCK, RecipeCategory.MISC, Items.GOLD_BLOCK, 6.3f, 900);
+    this.createBlastingRecipe(
+            recipeExporter, EnrichedBlocks.RAW_TIN_BLOCK.asItem(), RecipeCategory.MISC, EnrichedBlocks.TIN_BLOCK.asItem(), 6.3f, 900);
   }
 
   private void createSmeltingRecipe(

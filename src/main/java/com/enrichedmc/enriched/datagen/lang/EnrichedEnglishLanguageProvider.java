@@ -207,6 +207,19 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
         "Copper Axe",
         "Copper Hoe");
 
+    this.addToolTranslations(
+            translationBuilder,
+            EnrichedItems.BRONZE_SWORD,
+            EnrichedItems.BRONZE_SHOVEL,
+            EnrichedItems.BRONZE_PICKAXE,
+            EnrichedItems.BRONZE_AXE,
+            EnrichedItems.BRONZE_HOE,
+            "Bronze Sword",
+            "Bronze Shovel",
+            "Bronze Pickaxe",
+            "Bronze Axe",
+            "Bronze Hoe");
+
     /*-------------*/
     /* -- Armor -- */
     /*-------------*/
@@ -276,6 +289,17 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
         "Emerald Chestplate",
         "Emerald Leggings",
         "Emerald Boots");
+
+    this.addArmorTranslations(
+            translationBuilder,
+            EnrichedItems.BRONZE_HELMET,
+            EnrichedItems.BRONZE_CHESTPLATE,
+            EnrichedItems.BRONZE_LEGGINGS,
+            EnrichedItems.BRONZE_BOOTS,
+            "Bronze Helmet",
+            "Bronze Chestplate",
+            "Bronze Leggings",
+            "Bronze Boots");
 
     /*------------*/
     /* -- Food -- */

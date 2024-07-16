@@ -54,42 +54,42 @@ public class EnrichedPlacedFeatures {
         RUBY_ORE_PLACED_KEY,
         registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.RUBY_ORE_KEY),
         OrePlacedFeatures.modifiersWithCount(
-            7, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
+            7, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(55))));
 
     register(
         context,
         SAPPHIRE_ORE_PLACED_KEY,
         registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.SAPPHIRE_ORE_KEY),
         OrePlacedFeatures.modifiersWithCount(
-            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
+            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(55))));
 
     register(
         context,
         TANZANITE_ORE_PLACED_KEY,
         registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TANZANITE_ORE_KEY),
         OrePlacedFeatures.modifiersWithCount(
-            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
+            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(55))));
 
     register(
         context,
         AMBER_ORE_PLACED_KEY,
         registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.AMBER_ORE_KEY),
         OrePlacedFeatures.modifiersWithCount(
-            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
+            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(55))));
 
     register(
         context,
         TOPAZ_ORE_PLACED_KEY,
         registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TOPAZ_ORE_KEY),
         OrePlacedFeatures.modifiersWithCount(
-            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(60))));
+            6, HeightRangePlacementModifier.uniform(YOffset.fixed(-24), YOffset.fixed(55))));
 
     register(
         context,
         TIN_ORE_PLACED_KEY,
         registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TIN_ORE_KEY),
         OrePlacedFeatures.modifiersWithCount(
-            10, HeightRangePlacementModifier.uniform(YOffset.fixed(-10), YOffset.fixed(55))));
+            12, HeightRangePlacementModifier.uniform(YOffset.fixed(-10), YOffset.fixed(75))));
 
     register(
         context,

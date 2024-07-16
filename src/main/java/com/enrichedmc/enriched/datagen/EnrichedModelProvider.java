@@ -180,6 +180,14 @@ public class EnrichedModelProvider extends FabricModelProvider {
         EnrichedItems.COPPER_AXE,
         EnrichedItems.COPPER_HOE);
 
+    this.registerToolModels(
+            itemModelGenerator,
+            EnrichedItems.BRONZE_SWORD,
+            EnrichedItems.BRONZE_SHOVEL,
+            EnrichedItems.BRONZE_PICKAXE,
+            EnrichedItems.BRONZE_AXE,
+            EnrichedItems.BRONZE_HOE);
+
     /*-------------*/
     /* -- Armor -- */
     /*-------------*/
@@ -225,6 +233,13 @@ public class EnrichedModelProvider extends FabricModelProvider {
         EnrichedItems.EMERALD_CHESTPLATE,
         EnrichedItems.EMERALD_LEGGINGS,
         EnrichedItems.EMERALD_BOOTS);
+
+    this.registerArmorModels(
+            itemModelGenerator,
+            EnrichedItems.BRONZE_HELMET,
+            EnrichedItems.BRONZE_CHESTPLATE,
+            EnrichedItems.BRONZE_LEGGINGS,
+            EnrichedItems.BRONZE_BOOTS);
 
     /*------------*/
     /* -- Food -- */

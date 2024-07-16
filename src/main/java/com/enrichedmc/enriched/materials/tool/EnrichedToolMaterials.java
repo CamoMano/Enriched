@@ -15,7 +15,7 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_ruby_tool"),
       650,
       7.5f,
-      5.5f,
+      6.0f,
       20,
       () -> Ingredient.ofItems(EnrichedItems.RUBY)),
 
@@ -39,8 +39,8 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_steel_tool"),
       850,
       6.0f,
-      5.0f,
-      9,
+      6.0f,
+      13,
       () -> Ingredient.ofItems(EnrichedItems.STEEL_INGOT)),
 
   OBSIDIAN(
@@ -56,7 +56,7 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       650,
       7.5f,
       5.0f,
-      25,
+      26,
       () -> Ingredient.ofItems(Items.EMERALD)),
 
   COPPER(
@@ -65,6 +65,14 @@ public enum EnrichedToolMaterials implements ToolMaterial {
       4.0f,
       3.5f,
       13,
+      () -> Ingredient.ofItems(Items.COPPER_INGOT)),
+
+  BRONZE(
+      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_bronze_tool"),
+      700,
+      6.0f,
+      5.0f,
+      15,
       () -> Ingredient.ofItems(Items.COPPER_INGOT));
 
   private final TagKey<Block> inverseTag;
