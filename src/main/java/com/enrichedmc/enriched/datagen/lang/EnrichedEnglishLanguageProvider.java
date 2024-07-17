@@ -319,6 +319,7 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(OBSIDIAN_ALLOY_INGOTS, "Obsidian Alloy Ingot");
     translationBuilder.add(STEEL_INGOTS, "Steel Ingot");
     translationBuilder.add(BRONZE_INGOTS, "Bronze Ingot");
+    translationBuilder.add(TIN_INGOTS, "Tin Ingot");
 
     /*----------------*/
     /* -- Entities -- */

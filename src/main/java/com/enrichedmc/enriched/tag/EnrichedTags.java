@@ -23,7 +23,7 @@ public class EnrichedTags {
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/bronze");
 
     public static final TagKey<Item> TIN_INGOTS =
-        EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/bronze");
+        EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/tin");
 
     public static final TagKey<Item> OBSIDIAN_ALLOY_INGOTS =
         EnrichedRegisters.createCommonTagKey(RegistryKeys.ITEM, "ingots/obsidian_alloy");
