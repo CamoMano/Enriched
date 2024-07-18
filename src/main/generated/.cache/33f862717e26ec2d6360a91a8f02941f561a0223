@@ -1,11 +1,11 @@
-// 1.21	2024-07-16T22:59:16.9946319	Enriched/Tags for minecraft:block
+// 1.21	2024-07-18T12:10:28.3373575	Enriched/Tags for minecraft:block
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_ruby_tool.json
 5130353929cba072dacb3ab075642e95f0f7746f data\enriched\tags\block\redwood_logs.json
 cbffea030c16b76cef765b05e3c84e50fb62855a data\minecraft\tags\block\mineable\axe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_emerald_tool.json
 9e6c4f43645ef53351b4e4df361ae9be7fe0831c data\minecraft\tags\block\needs_iron_tool.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_bronze_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_steel_tool.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_bronze_tool.json
 25fdf63da1fa45e77e081e6a5665e33ac1a6e2ec data\minecraft\tags\block\walls.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\enriched\tags\block\incorrect_for_obsidian_tool.json
 681323bde66d0fca08ab3237aac95c10dac774ba data\minecraft\tags\block\planks.json

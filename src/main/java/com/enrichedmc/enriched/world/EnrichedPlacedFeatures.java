@@ -89,7 +89,7 @@ public class EnrichedPlacedFeatures {
         TIN_ORE_PLACED_KEY,
         registryEntryLookup.getOrThrow(EnrichedConfiguredFeatures.TIN_ORE_KEY),
         OrePlacedFeatures.modifiersWithCount(
-            12, HeightRangePlacementModifier.uniform(YOffset.fixed(-10), YOffset.fixed(75))));
+            16, HeightRangePlacementModifier.uniform(YOffset.fixed(-10), YOffset.fixed(75))));
 
     register(
         context,

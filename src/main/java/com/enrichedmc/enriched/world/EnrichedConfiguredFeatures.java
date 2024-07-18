@@ -115,7 +115,7 @@ public class EnrichedConfiguredFeatures {
         context, TOPAZ_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTopazOres, 6));
 
     EnrichedConfiguredFeatures.register(
-        context, TIN_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTinOres, 8));
+        context, TIN_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTinOres, 10));
 
     EnrichedConfiguredFeatures.register(
         context, DARK_GRANITE_KEY, Feature.ORE, new OreFeatureConfig(overworldDarkGranite, 64));
