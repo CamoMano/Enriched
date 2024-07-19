@@ -115,10 +115,6 @@ public class EnrichedModelProvider extends FabricModelProvider {
     itemModelGenerator.register(EnrichedItems.RAW_TIN, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.OBSIDIAN_ALLOY_BLEND, Models.GENERATED);
     itemModelGenerator.register(EnrichedItems.OBSIDIAN_ALLOY_INGOT, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.HONEY_BALL, Models.GENERATED);
-    itemModelGenerator.register(
-        EnrichedItems.HONEY_SLIME_SPAWN_EGG,
-        new Model(Optional.of(Identifier.ofVanilla("item/template_spawn_egg")), Optional.empty()));
 
     /*-------------*/
     /* -- Tools -- */

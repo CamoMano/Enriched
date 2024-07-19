@@ -4,7 +4,6 @@ import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.commands.OpenOptionsScreenCommand;
 import com.enrichedmc.enriched.conditions.EnrichedResourceConditions;
 import com.enrichedmc.enriched.config.EnrichedGameOptions;
-import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
 import com.enrichedmc.enriched.networking.EnrichedNetworking;
@@ -53,7 +52,6 @@ public class EnrichedMod implements ModInitializer {
     EnrichedItems.registerItems();
     EnrichedBlocks.registerBlocks();
     EnrichedTags.registerTags();
-    EnrichedEntityTypes.registerEntityTypes();
     EnrichedArmorMaterials.register();
     EnrichedResourceConditions.registerResourceConditions();
 

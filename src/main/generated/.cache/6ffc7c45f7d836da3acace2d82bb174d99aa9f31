@@ -1,4 +1,4 @@
-// 1.21	2024-07-18T12:10:28.3312856	Enriched/Model Definitions
+// 1.21	2024-07-18T21:03:02.2880107	Enriched/Model Definitions
 edf46cfca1cc6e5d65214045edbf116e3e42645b assets\enriched\models\item\obsidian_sword.json
 b1f2d95256cfcb699a1dac06b306ed086db40f7c assets\enriched\models\block\redwood_log_horizontal.json
 95d2f1008dc3460e4132fbfcc5f3e3aacf37236c assets\enriched\models\item\emerald_chestplate_netherite_trim.json
@@ -166,7 +166,6 @@ f3dd843ec32aba27a6d5fea048165eac7d332e59 assets\enriched\models\item\sapphire_le
 b655e09029a5d024f810e611ebc71d0a151b6ca7 assets\enriched\models\item\bronze_boots_emerald_trim.json
 c22932286f126c35ed229570188afdcd382e0490 assets\enriched\models\block\redwood_pressure_plate.json
 ded437a93871acb4597a6b1a77c69a6ff3a401ea assets\enriched\models\item\obsidian_leggings_emerald_trim.json
-08bd1af86c3938dba12510cdf3aad5ecdfad5675 assets\enriched\models\item\honey_ball.json
 0a8db6a0a29ea97d086a78b7d1ba40cd13a3049b assets\enriched\models\item\steel_chestplate_copper_trim.json
 9e3721f21bfbb538b714d27483200971a6ceba45 assets\enriched\models\item\polished_dark_granite_stairs.json
 1be1e14653233cedbce8d99bbff77d7170afe250 assets\enriched\models\item\redwood_button.json
@@ -361,7 +360,6 @@ a019bb2488d5328407127204827ab07bbb78662f assets\enriched\models\item\tanzanite_h
 5c9be6a1464ab07f8c72177094464daabc1577e7 assets\enriched\models\item\tanzanite_leggings_redstone_trim.json
 29b07634a6a06a804dc63f0471f845569e71612a assets\enriched\models\item\ruby_boots_copper_trim.json
 8bc7e17145e3d087a7d39a5b8880c7dba678283d assets\enriched\models\item\emerald_helmet_diamond_trim.json
-63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\enriched\models\item\honey_slime_spawn_egg.json
 242f6111a86d9f4bb17b1abc43b86a15dd5e83e5 assets\enriched\blockstates\redwood_planks.json
 711285abc1df5767c9022e98d2e56ca4561f50a6 assets\enriched\models\item\ruby_shovel.json
 a9956001bdf5ec0e0442ae3ab7c3169530369f00 assets\enriched\models\block\polished_marble_stairs_inner.json

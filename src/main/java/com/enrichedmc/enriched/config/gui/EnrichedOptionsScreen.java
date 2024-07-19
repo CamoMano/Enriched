@@ -22,7 +22,7 @@ public class EnrichedOptionsScreen {
         Lists.newArrayList(
             EnrichedOptionCategories.toolsAndArmor(),
             EnrichedOptionCategories.recipes(),
-            EnrichedOptionCategories.mobs(),
+            //EnrichedOptionCategories.mobs(),
             EnrichedOptionCategories.worldGeneration());
 
     return YetAnotherConfigLib.createBuilder()

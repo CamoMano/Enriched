@@ -24,7 +24,7 @@ public class EnrichedGameOptions {
 
   public final ToolsAndArmorOptions toolsAndArmorOptions = new ToolsAndArmorOptions();
   public final RecipeOptions recipeOptions = new RecipeOptions();
-  public final MobOptions mobOptions = new MobOptions();
+  //public final MobOptions mobOptions = new MobOptions();
   public final WorldGenerationOptions worldGenerationOptions = new WorldGenerationOptions();
 
   public static EnrichedGameOptions defaults() {
@@ -91,10 +91,13 @@ public class EnrichedGameOptions {
     public boolean enableFoodRecipes = true;
   }
 
+/*
   public static class MobOptions {
-    public boolean enableHoneySlimeSpawning = false;
+
   }
 
+
+ */
   public static class WorldGenerationOptions {
     public boolean generateRubyOres = true;
     public boolean generateSapphireOres = true;

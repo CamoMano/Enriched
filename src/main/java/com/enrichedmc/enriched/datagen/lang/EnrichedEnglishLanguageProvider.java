@@ -3,7 +3,6 @@ package com.enrichedmc.enriched.datagen.lang;
 import static com.enrichedmc.enriched.tag.EnrichedTags.ItemTags.*;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
-import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.tag.EnrichedTags;
 import java.util.concurrent.CompletableFuture;
@@ -40,8 +39,6 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(EnrichedItems.BRONZE_INGOT, "Bronze Ingot");
     translationBuilder.add(EnrichedItems.TIN_INGOT, "Tin Ingot");
     translationBuilder.add(EnrichedItems.RAW_TIN, "Raw Tin");
-    translationBuilder.add(EnrichedItems.HONEY_BALL, "Honey Ball");
-    translationBuilder.add(EnrichedItems.HONEY_SLIME_SPAWN_EGG, "Honey Slime Spawn Egg");
 
     /*--------------*/
     /* -- Blocks -- */
@@ -325,7 +322,6 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     /* -- Entities -- */
     /*----------------*/
 
-    translationBuilder.add(EnrichedEntityTypes.HONEY_SLIME, "Honey Slime");
 
     /*---------------*/
     /* -- Options -- */

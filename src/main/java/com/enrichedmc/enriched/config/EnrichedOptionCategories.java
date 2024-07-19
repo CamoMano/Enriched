@@ -14,7 +14,7 @@ public class EnrichedOptionCategories {
   private static final EnrichedGameOptions ENRICHED_GAME_OPTIONS;
   private static final EnrichedGameOptions.ToolsAndArmorOptions TOOLS_AND_ARMOR_OPTIONS;
   private static final EnrichedGameOptions.RecipeOptions RECIPE_OPTIONS;
-  private static final EnrichedGameOptions.MobOptions MOB_OPTIONS;
+  //private static final EnrichedGameOptions.MobOptions MOB_OPTIONS;
   private static final EnrichedGameOptions.WorldGenerationOptions WORLD_GENERATION;
 
   private static final OptionFlag RELOAD_DATA_PACKS;
@@ -23,7 +23,7 @@ public class EnrichedOptionCategories {
     ENRICHED_GAME_OPTIONS = EnrichedMod.getInstance().getGameOptions();
     TOOLS_AND_ARMOR_OPTIONS = ENRICHED_GAME_OPTIONS.toolsAndArmorOptions;
     RECIPE_OPTIONS = ENRICHED_GAME_OPTIONS.recipeOptions;
-    MOB_OPTIONS = ENRICHED_GAME_OPTIONS.mobOptions;
+    //MOB_OPTIONS = ENRICHED_GAME_OPTIONS.mobOptions;
     WORLD_GENERATION = ENRICHED_GAME_OPTIONS.worldGenerationOptions;
 
     // FIXME: (Ayydxn) Doesn't work on dedicated servers. Will have to investigate that.
@@ -223,7 +223,7 @@ public class EnrichedOptionCategories {
                 .build())
         .build();
   }
-
+/*
   public static ConfigCategory mobs() {
     return ConfigCategory.createBuilder()
         .name(Text.translatable("enriched.options.category.mobs"))
@@ -242,7 +242,7 @@ public class EnrichedOptionCategories {
                 .build())
         .build();
   }
-
+ */
   public static ConfigCategory worldGeneration() {
     return ConfigCategory.createBuilder()
         .name(Text.translatable("enriched.options.category.worldGeneration"))
