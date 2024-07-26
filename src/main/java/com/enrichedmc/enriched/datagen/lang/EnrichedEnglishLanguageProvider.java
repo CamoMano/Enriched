@@ -3,7 +3,6 @@ package com.enrichedmc.enriched.datagen.lang;
 import static com.enrichedmc.enriched.tag.EnrichedTags.ItemTags.*;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
-import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.tag.EnrichedTags;
 import java.util.concurrent.CompletableFuture;
@@ -30,12 +29,16 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(EnrichedItems.RUBY, "Ruby");
     translationBuilder.add(EnrichedItems.SAPPHIRE, "Sapphire");
     translationBuilder.add(EnrichedItems.TANZANITE, "Tanzanite");
+    translationBuilder.add(EnrichedItems.AMBER, "Amber");
+    translationBuilder.add(EnrichedItems.TOPAZ, "Topaz");
     translationBuilder.add(EnrichedItems.STEEL_BLEND, "Steel Blend");
     translationBuilder.add(EnrichedItems.STEEL_INGOT, "Steel Ingot");
     translationBuilder.add(EnrichedItems.OBSIDIAN_ALLOY_BLEND, "Obsidian Alloy Blend");
     translationBuilder.add(EnrichedItems.OBSIDIAN_ALLOY_INGOT, "Obsidian Alloy Ingot");
-    translationBuilder.add(EnrichedItems.HONEY_BALL, "Honey Ball");
-    translationBuilder.add(EnrichedItems.HONEY_SLIME_SPAWN_EGG, "Honey Slime Spawn Egg");
+    translationBuilder.add(EnrichedItems.BRONZE_BLEND, "Bronze Blend");
+    translationBuilder.add(EnrichedItems.BRONZE_INGOT, "Bronze Ingot");
+    translationBuilder.add(EnrichedItems.TIN_INGOT, "Tin Ingot");
+    translationBuilder.add(EnrichedItems.RAW_TIN, "Raw Tin");
 
     /*--------------*/
     /* -- Blocks -- */
@@ -53,8 +56,23 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(EnrichedBlocks.TANZANITE_ORE, "Tanzanite Ore");
     translationBuilder.add(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE, "Deepslate Tanzanite Ore");
 
+    translationBuilder.add(EnrichedBlocks.AMBER_BLOCK, "Amber Block");
+    translationBuilder.add(EnrichedBlocks.AMBER_ORE, "Amber Ore");
+    translationBuilder.add(EnrichedBlocks.DEEPSLATE_AMBER_ORE, "Deepslate Amber Ore");
+
+    translationBuilder.add(EnrichedBlocks.TOPAZ_BLOCK, "Topaz Block");
+    translationBuilder.add(EnrichedBlocks.TOPAZ_ORE, "Topaz Ore");
+    translationBuilder.add(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE, "Deepslate Topaz Ore");
+
     translationBuilder.add(EnrichedBlocks.STEEL_BLOCK, "Steel Block");
     translationBuilder.add(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK, "Obsidian Alloy Block");
+
+    translationBuilder.add(EnrichedBlocks.TIN_BLOCK, "Tin Block");
+    translationBuilder.add(EnrichedBlocks.RAW_TIN_BLOCK, "Raw Tin Block");
+    translationBuilder.add(EnrichedBlocks.TIN_ORE, "Tin Ore");
+    translationBuilder.add(EnrichedBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
+
+    translationBuilder.add(EnrichedBlocks.BRONZE_BLOCK, "Bronze Block");
 
     translationBuilder.add(EnrichedBlocks.REDWOOD_LOG, "Redwood Log");
     translationBuilder.add(EnrichedTags.BlockTags.REDWOOD_LOGS, "Redwood Logs");
@@ -186,6 +204,19 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
         "Copper Axe",
         "Copper Hoe");
 
+    this.addToolTranslations(
+            translationBuilder,
+            EnrichedItems.BRONZE_SWORD,
+            EnrichedItems.BRONZE_SHOVEL,
+            EnrichedItems.BRONZE_PICKAXE,
+            EnrichedItems.BRONZE_AXE,
+            EnrichedItems.BRONZE_HOE,
+            "Bronze Sword",
+            "Bronze Shovel",
+            "Bronze Pickaxe",
+            "Bronze Axe",
+            "Bronze Hoe");
+
     /*-------------*/
     /* -- Armor -- */
     /*-------------*/
@@ -256,6 +287,17 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
         "Emerald Leggings",
         "Emerald Boots");
 
+    this.addArmorTranslations(
+            translationBuilder,
+            EnrichedItems.BRONZE_HELMET,
+            EnrichedItems.BRONZE_CHESTPLATE,
+            EnrichedItems.BRONZE_LEGGINGS,
+            EnrichedItems.BRONZE_BOOTS,
+            "Bronze Helmet",
+            "Bronze Chestplate",
+            "Bronze Leggings",
+            "Bronze Boots");
+
     /*------------*/
     /* -- Food -- */
     /*------------*/
@@ -269,14 +311,17 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(SAPPHIRES, "Sapphire");
     translationBuilder.add(RUBIES, "Ruby");
     translationBuilder.add(TANZANITES, "Tanzanite");
+    translationBuilder.add(AMBERS, "Amber");
+    translationBuilder.add(TOPAZS, "Topaz");
     translationBuilder.add(OBSIDIAN_ALLOY_INGOTS, "Obsidian Alloy Ingot");
     translationBuilder.add(STEEL_INGOTS, "Steel Ingot");
+    translationBuilder.add(BRONZE_INGOTS, "Bronze Ingot");
+    translationBuilder.add(TIN_INGOTS, "Tin Ingot");
 
     /*----------------*/
     /* -- Entities -- */
     /*----------------*/
 
-    translationBuilder.add(EnrichedEntityTypes.HONEY_SLIME, "Honey Slime");
 
     /*---------------*/
     /* -- Options -- */
@@ -311,6 +356,10 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(
         "enriched.options.toolsAndArmor.enableEmeraldGear.description",
         "Enables/disables the recipes for Emerald gear and tools.");
+    translationBuilder.add("enriched.options.toolsAndArmor.enableBronzeGear", "Enable Bronze Gear");
+    translationBuilder.add(
+        "enriched.options.toolsAndArmor.enableBronzeGear.description",
+        "Enables/disables the recipes for Bronze gear and tools.");
     translationBuilder.add(
         "enriched.options.toolsAndArmor.enableCopperTools", "Enable Copper Tools");
     translationBuilder.add(
@@ -369,6 +418,20 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
     translationBuilder.add(
         "enriched.options.worldGeneration.generateTanzaniteOres.description",
         "Enables/disables the generation of Tanzanite ores in a world.");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateAmberOres", "Generate Amber Ores");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateAmberOres.description",
+        "Enables/disables the generation of Amber ores in a world.");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateTopazOres", "Generate Topaz Ores");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateTopazOres.description",
+        "Enables/disables the generation of Topaz ores in a world.");
+    translationBuilder.add("enriched.options.worldGeneration.generateTinOres", "Generate Tin Ores");
+    translationBuilder.add(
+        "enriched.options.worldGeneration.generateTinOres.description",
+        "Enables/disables the generation of Tin ores in a world.");
     translationBuilder.add(
         "enriched.options.worldGeneration.generateDarkGranite", "Generate Dark Granite");
     translationBuilder.add(

@@ -37,17 +37,28 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     this.getOrCreateTagBuilder(ConventionalItemTags.DUSTS)
         .add(EnrichedItems.OBSIDIAN_ALLOY_BLEND)
-        .add(EnrichedItems.STEEL_BLEND);
+        .add(EnrichedItems.STEEL_BLEND)
+        .add(EnrichedItems.BRONZE_BLEND);
 
     this.getOrCreateTagBuilder(ConventionalItemTags.INGOTS)
         .add(EnrichedItems.OBSIDIAN_ALLOY_INGOT)
-        .add(EnrichedItems.STEEL_INGOT);
+        .add(EnrichedItems.STEEL_INGOT)
+        .add(EnrichedItems.BRONZE_INGOT)
+        .add(EnrichedItems.TIN_INGOT);
 
     this.getOrCreateTagBuilder(ConventionalItemTags.ORES)
         .add(EnrichedBlocks.RUBY_ORE.asItem())
+        .add(EnrichedBlocks.DEEPSLATE_RUBY_ORE.asItem())
         .add(EnrichedBlocks.SAPPHIRE_ORE.asItem())
+        .add(EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE.asItem())
         .add(EnrichedBlocks.TANZANITE_ORE.asItem())
-        .add(EnrichedItems.STEEL_INGOT);
+        .add(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE.asItem())
+        .add(EnrichedBlocks.AMBER_ORE.asItem())
+        .add(EnrichedBlocks.DEEPSLATE_AMBER_ORE.asItem())
+        .add(EnrichedBlocks.TOPAZ_ORE.asItem())
+        .add(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE.asItem())
+        .add(EnrichedBlocks.TIN_ORE.asItem())
+        .add(EnrichedBlocks.DEEPSLATE_TIN_ORE.asItem());
 
     this.getOrCreateTagBuilder(ConventionalItemTags.TOOLS)
         .add(EnrichedItems.STEEL_AXE)
@@ -180,6 +191,10 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
     this.getOrCreateTagBuilder(RUBIES).add(EnrichedItems.RUBY);
     this.getOrCreateTagBuilder(SAPPHIRES).add(EnrichedItems.SAPPHIRE);
     this.getOrCreateTagBuilder(TANZANITES).add(EnrichedItems.TANZANITE);
+    this.getOrCreateTagBuilder(AMBERS).add(EnrichedItems.AMBER);
+    this.getOrCreateTagBuilder(TOPAZS).add(EnrichedItems.TOPAZ);
+    this.getOrCreateTagBuilder(BRONZE_INGOTS).add(EnrichedItems.BRONZE_INGOT);
+    this.getOrCreateTagBuilder(TIN_INGOTS).add(EnrichedItems.TIN_INGOT);
     this.getOrCreateTagBuilder(FOODS).add(EnrichedItems.BERRY_JUICE).add(EnrichedItems.BEEF_STEW);
   }
 }

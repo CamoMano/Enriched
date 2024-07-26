@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "enriched:block/tin_ore"
+    }
+  }
+}

@@ -24,7 +24,7 @@ public class EnrichedGameOptions {
 
   public final ToolsAndArmorOptions toolsAndArmorOptions = new ToolsAndArmorOptions();
   public final RecipeOptions recipeOptions = new RecipeOptions();
-  public final MobOptions mobOptions = new MobOptions();
+  //public final MobOptions mobOptions = new MobOptions();
   public final WorldGenerationOptions worldGenerationOptions = new WorldGenerationOptions();
 
   public static EnrichedGameOptions defaults() {
@@ -42,16 +42,16 @@ public class EnrichedGameOptions {
         exception.printStackTrace();
       }
 
-      EnrichedGameOptions iridiumGameOptions = null;
+      EnrichedGameOptions enrichedGameOptions = null;
 
       try {
-        iridiumGameOptions =
+        enrichedGameOptions =
             GSON.fromJson(configFileContents.toString(), EnrichedGameOptions.class);
       } catch (JsonSyntaxException exception) {
         exception.printStackTrace();
       }
 
-      return iridiumGameOptions;
+      return enrichedGameOptions;
     } else {
       EnrichedMod.LOGGER.warn("Failed to load Enriched's game options! Loading defaults...");
 
@@ -77,6 +77,8 @@ public class EnrichedGameOptions {
     public boolean enableSteelGear = true;
     public boolean enableObsidianGear = true;
     public boolean enableEmeraldGear = true;
+
+    public boolean enableBronzeGear = true;
     public boolean enableCopperTools = true;
   }
 
@@ -89,14 +91,23 @@ public class EnrichedGameOptions {
     public boolean enableFoodRecipes = true;
   }
 
+/*
   public static class MobOptions {
-    public boolean enableHoneySlimeSpawning = false;
+
   }
 
+
+ */
   public static class WorldGenerationOptions {
     public boolean generateRubyOres = true;
     public boolean generateSapphireOres = true;
     public boolean generateTanzaniteOres = true;
+
+    public boolean generateAmberOres = true;
+
+    public boolean generateTopazOres = true;
+
+    public boolean generateTinOres = true;
     public boolean generateDarkGranite = true;
     public boolean generateMarble = true;
   }

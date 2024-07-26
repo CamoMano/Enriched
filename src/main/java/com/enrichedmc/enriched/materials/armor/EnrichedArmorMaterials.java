@@ -22,7 +22,8 @@ public class EnrichedArmorMaterials {
   public static final RegistryEntry<ArmorMaterial> STEEL;
   public static final RegistryEntry<ArmorMaterial> OBSIDIAN;
   public static final RegistryEntry<ArmorMaterial> EMERALD;
-  private static final List<Integer> BASE_ARMOR_DURABILITY = Lists.newArrayList(3, 6, 8, 3);
+  public static final RegistryEntry<ArmorMaterial> BRONZE;
+  private static final List<Integer> BASE_ARMOR_RATING = Lists.newArrayList(2, 5, 5, 2);
 
   static {
     RUBY =
@@ -33,23 +34,23 @@ public class EnrichedArmorMaterials {
                 map -> {
                   map.put(
                       ArmorItem.Type.BOOTS,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.LEGGINGS,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.HELMET,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.BODY,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
                 }),
             9,
@@ -67,24 +68,29 @@ public class EnrichedArmorMaterials {
                 map -> {
                   map.put(
                       ArmorItem.Type.BOOTS,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.LEGGINGS,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.HELMET,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.BODY,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                 }),
             9,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
@@ -102,23 +108,23 @@ public class EnrichedArmorMaterials {
                 map -> {
                   map.put(
                       ArmorItem.Type.BOOTS,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.LEGGINGS,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.HELMET,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.BODY,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
                 }),
             9,
@@ -137,24 +143,29 @@ public class EnrichedArmorMaterials {
                 map -> {
                   map.put(
                       ArmorItem.Type.BOOTS,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.LEGGINGS,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                          + 2);
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.HELMET,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.BODY,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                 }),
             9,
             SoundEvents.ITEM_ARMOR_EQUIP_IRON,
@@ -172,24 +183,29 @@ public class EnrichedArmorMaterials {
                 map -> {
                   map.put(
                       ArmorItem.Type.BOOTS,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.LEGGINGS,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                          + 3);
                   map.put(
                       ArmorItem.Type.HELMET,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                   map.put(
                       ArmorItem.Type.BODY,
-                      BASE_ARMOR_DURABILITY.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                      BASE_ARMOR_RATING.get(
+                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                          + 1);
                 }),
             9,
             SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
@@ -207,32 +223,67 @@ public class EnrichedArmorMaterials {
                 map -> {
                   map.put(
                       ArmorItem.Type.BOOTS,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.LEGGINGS,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.HELMET,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
                   map.put(
                       ArmorItem.Type.BODY,
-                      BASE_ARMOR_DURABILITY.get(
+                      BASE_ARMOR_RATING.get(
                           ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
                 }),
-            25,
+            26,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
             0.0f,
             0.0f,
             () -> Ingredient.ofItems(Items.EMERALD),
             Lists.newArrayList(
                 new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "emerald"))));
+
+    BRONZE =
+        ArmorMaterials.register(
+            "bronze",
+            Util.make(
+                new EnumMap<>(ArmorItem.Type.class),
+                map -> {
+                  map.put(
+                      ArmorItem.Type.BOOTS,
+                      BASE_ARMOR_RATING.get(
+                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                  map.put(
+                      ArmorItem.Type.LEGGINGS,
+                      BASE_ARMOR_RATING.get(
+                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                  map.put(
+                      ArmorItem.Type.CHESTPLATE,
+                      BASE_ARMOR_RATING.get(
+                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                  map.put(
+                      ArmorItem.Type.HELMET,
+                      BASE_ARMOR_RATING.get(
+                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                  map.put(
+                      ArmorItem.Type.BODY,
+                      BASE_ARMOR_RATING.get(
+                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                }),
+            9,
+            SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+            0.5f,
+            0.0f,
+            () -> Ingredient.ofItems(EnrichedItems.BRONZE_INGOT),
+            Lists.newArrayList(
+                new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "bronze"))));
   }
 
   public static void register() {

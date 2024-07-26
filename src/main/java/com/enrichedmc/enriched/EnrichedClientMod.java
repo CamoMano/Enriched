@@ -1,8 +1,6 @@
 package com.enrichedmc.enriched;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
-import com.enrichedmc.enriched.entity.EnrichedEntityTypes;
-import com.enrichedmc.enriched.entity.render.HoneySlimeEntityRenderer;
 import com.enrichedmc.enriched.networking.EnrichedClientNetworking;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -27,7 +25,6 @@ public class EnrichedClientMod implements ClientModInitializer {
     BlockRenderLayerMap.INSTANCE.putBlock(
         EnrichedBlocks.POTTED_REDWOOD_SAPLING, RenderLayer.getCutout());
 
-    EntityRendererRegistry.register(EnrichedEntityTypes.HONEY_SLIME, HoneySlimeEntityRenderer::new);
 
     EnrichedClientNetworking.registerClientboundPackets();
   }

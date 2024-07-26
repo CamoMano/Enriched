@@ -31,27 +31,49 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
     this.addDrop(EnrichedBlocks.TANZANITE_BLOCK);
     this.addDrop(EnrichedBlocks.STEEL_BLOCK);
     this.addDrop(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
+    this.addDrop(EnrichedBlocks.TIN_BLOCK);
+    this.addDrop(EnrichedBlocks.BRONZE_BLOCK);
+    this.addDrop(EnrichedBlocks.RAW_TIN_BLOCK);
 
     this.addDrop(
-        EnrichedBlocks.RUBY_ORE, rubyOre -> this.copperOreDrops(rubyOre, EnrichedItems.RUBY));
+        EnrichedBlocks.RUBY_ORE, rubyOre -> this.enrichedOreDrops(rubyOre, EnrichedItems.RUBY));
     this.addDrop(
         EnrichedBlocks.DEEPSLATE_RUBY_ORE,
-        deepslateRubyOre -> this.copperOreDrops(deepslateRubyOre, EnrichedItems.RUBY));
+        deepslateRubyOre -> this.enrichedOreDrops(deepslateRubyOre, EnrichedItems.RUBY));
 
     this.addDrop(
         EnrichedBlocks.SAPPHIRE_ORE,
-        sapphireOre -> this.copperOreDrops(sapphireOre, EnrichedItems.SAPPHIRE));
+        sapphireOre -> this.enrichedOreDrops(sapphireOre, EnrichedItems.SAPPHIRE));
     this.addDrop(
         EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE,
-        deepslateSapphireOre -> this.copperOreDrops(deepslateSapphireOre, EnrichedItems.SAPPHIRE));
+        deepslateSapphireOre ->
+            this.enrichedOreDrops(deepslateSapphireOre, EnrichedItems.SAPPHIRE));
 
     this.addDrop(
         EnrichedBlocks.TANZANITE_ORE,
-        tanzaniteOre -> this.copperOreDrops(tanzaniteOre, EnrichedItems.TANZANITE));
+        tanzaniteOre -> this.enrichedOreDrops(tanzaniteOre, EnrichedItems.TANZANITE));
     this.addDrop(
         EnrichedBlocks.DEEPSLATE_TANZANITE_ORE,
         deepslateTanzaniteOre ->
-            this.copperOreDrops(deepslateTanzaniteOre, EnrichedItems.TANZANITE));
+            this.enrichedOreDrops(deepslateTanzaniteOre, EnrichedItems.TANZANITE));
+
+    this.addDrop(
+        EnrichedBlocks.AMBER_ORE, amberOre -> this.enrichedOreDrops(amberOre, EnrichedItems.AMBER));
+    this.addDrop(
+        EnrichedBlocks.DEEPSLATE_AMBER_ORE,
+        deepslateAmberOre -> this.enrichedOreDrops(deepslateAmberOre, EnrichedItems.AMBER));
+
+    this.addDrop(
+        EnrichedBlocks.TOPAZ_ORE, topazOre -> this.enrichedOreDrops(topazOre, EnrichedItems.TOPAZ));
+    this.addDrop(
+        EnrichedBlocks.DEEPSLATE_TOPAZ_ORE,
+        deepslateTopazOre -> this.enrichedOreDrops(deepslateTopazOre, EnrichedItems.TOPAZ));
+
+    this.addDrop(
+        EnrichedBlocks.TIN_ORE, tinOre -> this.enrichedOreDrops(tinOre, EnrichedItems.RAW_TIN));
+    this.addDrop(
+        EnrichedBlocks.DEEPSLATE_TIN_ORE,
+        deepslateTinOre -> this.enrichedOreDrops(deepslateTinOre, EnrichedItems.RAW_TIN));
 
     this.addDrop(EnrichedBlocks.STEEL_BLOCK);
     this.addDrop(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
@@ -92,7 +114,7 @@ public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider
     this.addDrop(EnrichedBlocks.POLISHED_MARBLE_STAIRS);
   }
 
-  private LootTable.Builder copperOreDrops(Block drop, Item item) {
+  private LootTable.Builder enrichedOreDrops(Block drop, Item item) {
     RegistryWrapper.Impl<Enchantment> registerWrapper =
         this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
 
