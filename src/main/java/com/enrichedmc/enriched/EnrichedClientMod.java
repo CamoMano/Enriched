@@ -17,7 +17,7 @@ public class EnrichedClientMod implements ClientModInitializer {
     ColorProviderRegistry.BLOCK.register(
         (state, world, pos, tintIndex) -> 0x14741F, EnrichedBlocks.REDWOOD_LEAVES);
     ColorProviderRegistry.ITEM.register(
-        (stack, tintIndex) -> 0x14741F, EnrichedBlocks.REDWOOD_LEAVES);
+        (stack, tintIndex) -> 0x14741F, EnrichedBlocks.REDWOOD_LEAVES.asItem());
 
     BlockRenderLayerMap.INSTANCE.putBlock(
         EnrichedBlocks.REDWOOD_LEAVES, RenderLayer.getCutoutMipped());

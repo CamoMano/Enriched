@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'fabric-loom' version '1.14-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -50,7 +50,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
     // YetAnotherConfigLib. This is used for Enriched's configuration screen and is therefore a required dependency.
-    include(modImplementation "dev.isxander:yet-another-config-lib:${yacl_version}")
+    modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
 
     // ModMenu. It isn't required by Enriched, but is here so we can have ModMenu integration.
     modImplementation "com.terraformersmc:modmenu:${modmenu_version}"

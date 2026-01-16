@@ -2,6 +2,7 @@ package com.enrichedmc.enriched.config;
 
 import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.networking.payloads.ReloadDataPacksPacket;
+
 import dev.isxander.yacl3.api.ConfigCategory;
 import dev.isxander.yacl3.api.Option;
 import dev.isxander.yacl3.api.OptionDescription;
@@ -26,8 +27,10 @@ public class EnrichedOptionCategories {
     //MOB_OPTIONS = ENRICHED_GAME_OPTIONS.mobOptions;
     WORLD_GENERATION = ENRICHED_GAME_OPTIONS.worldGenerationOptions;
 
-    // FIXME: (Ayydxn) Doesn't work on dedicated servers. Will have to investigate that.
-    RELOAD_DATA_PACKS = (client) -> ClientPlayNetworking.send(new ReloadDataPacksPacket());
+        // FIXME: (Ayydxn) Doesn't work on dedicated servers. Will have to investigate that.
+        RELOAD_DATA_PACKS = (client) -> {
+            ClientPlayNetworking.send(new ReloadDataPacksPacket());
+        };
   }
 
   public static ConfigCategory toolsAndArmor() {
