@@ -5,6 +5,7 @@ import com.enrichedmc.enriched.item.EnrichedItems;
 import com.google.common.collect.Lists;
 import java.util.EnumMap;
 import java.util.List;
+import net.minecraft.entity.EquipmentType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ArmorMaterials;
@@ -30,28 +31,28 @@ public class EnrichedArmorMaterials {
         ArmorMaterials.register(
             "ruby",
             Util.make(
-                new EnumMap<>(ArmorItem.Type.class),
+                new EnumMap<>(EquipmentType.class),
                 map -> {
                   map.put(
-                      ArmorItem.Type.BOOTS,
+                      EquipmentType.BOOTS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.BOOTS.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.LEGGINGS,
+                      EquipmentType.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.LEGGINGS.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.CHESTPLATE,
+                      EquipmentType.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.CHESTPLATE.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.HELMET,
+                      EquipmentType.HELMET,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.HELMET.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.BODY,
+                      EquipmentType.BODY,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.BODY.getEntitySlotId()));
                 }),
             9,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
@@ -64,32 +65,32 @@ public class EnrichedArmorMaterials {
         ArmorMaterials.register(
             "sapphire",
             Util.make(
-                new EnumMap<>(ArmorItem.Type.class),
+                new EnumMap<>(EquipmentType.class),
                 map -> {
                   map.put(
-                      ArmorItem.Type.BOOTS,
+                      EquipmentType.BOOTS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.BOOTS.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.LEGGINGS,
+                      EquipmentType.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.LEGGINGS.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.CHESTPLATE,
+                      EquipmentType.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.CHESTPLATE.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.HELMET,
+                      EquipmentType.HELMET,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.HELMET.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.BODY,
+                      EquipmentType.BODY,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.BODY.getEntitySlotId())
                           + 1);
                 }),
             9,
@@ -104,28 +105,28 @@ public class EnrichedArmorMaterials {
         ArmorMaterials.register(
             "tanzanite",
             Util.make(
-                new EnumMap<>(ArmorItem.Type.class),
+                new EnumMap<>(EquipmentType.class),
                 map -> {
                   map.put(
-                      ArmorItem.Type.BOOTS,
+                      EquipmentType.BOOTS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.BOOTS.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.LEGGINGS,
+                      EquipmentType.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.LEGGINGS.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.CHESTPLATE,
+                      EquipmentType.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.CHESTPLATE.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.HELMET,
+                      EquipmentType.HELMET,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.HELMET.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.BODY,
+                      EquipmentType.BODY,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.BODY.getEntitySlotId()));
                 }),
             9,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
@@ -139,32 +140,32 @@ public class EnrichedArmorMaterials {
         ArmorMaterials.register(
             "steel",
             Util.make(
-                new EnumMap<>(ArmorItem.Type.class),
+                new EnumMap<>(EquipmentType.class),
                 map -> {
                   map.put(
-                      ArmorItem.Type.BOOTS,
+                      EquipmentType.BOOTS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.BOOTS.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.LEGGINGS,
+                      EquipmentType.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.LEGGINGS.getEntitySlotId())
                           + 2);
                   map.put(
-                      ArmorItem.Type.CHESTPLATE,
+                      EquipmentType.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.CHESTPLATE.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.HELMET,
+                      EquipmentType.HELMET,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.HELMET.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.BODY,
+                      EquipmentType.BODY,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.BODY.getEntitySlotId())
                           + 1);
                 }),
             9,
@@ -179,32 +180,32 @@ public class EnrichedArmorMaterials {
         ArmorMaterials.register(
             "obsidian",
             Util.make(
-                new EnumMap<>(ArmorItem.Type.class),
+                new EnumMap<>(EquipmentType.class),
                 map -> {
                   map.put(
-                      ArmorItem.Type.BOOTS,
+                      EquipmentType.BOOTS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.BOOTS.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.LEGGINGS,
+                      EquipmentType.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.LEGGINGS.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.CHESTPLATE,
+                      EquipmentType.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.CHESTPLATE.getEntitySlotId())
                           + 3);
                   map.put(
-                      ArmorItem.Type.HELMET,
+                      EquipmentType.HELMET,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.HELMET.getEntitySlotId())
                           + 1);
                   map.put(
-                      ArmorItem.Type.BODY,
+                      EquipmentType.BODY,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                              EquipmentType.BODY.getEntitySlotId())
                           + 1);
                 }),
             9,
@@ -219,28 +220,28 @@ public class EnrichedArmorMaterials {
         ArmorMaterials.register(
             "emerald",
             Util.make(
-                new EnumMap<>(ArmorItem.Type.class),
+                new EnumMap<>(EquipmentType.class),
                 map -> {
                   map.put(
-                      ArmorItem.Type.BOOTS,
+                      EquipmentType.BOOTS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.BOOTS.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.LEGGINGS,
+                      EquipmentType.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.LEGGINGS.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.CHESTPLATE,
+                      EquipmentType.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.CHESTPLATE.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.HELMET,
+                      EquipmentType.HELMET,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.HELMET.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.BODY,
+                      EquipmentType.BODY,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.BODY.getEntitySlotId()));
                 }),
             26,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
@@ -254,28 +255,28 @@ public class EnrichedArmorMaterials {
         ArmorMaterials.register(
             "bronze",
             Util.make(
-                new EnumMap<>(ArmorItem.Type.class),
+                new EnumMap<>(EquipmentType.class),
                 map -> {
                   map.put(
-                      ArmorItem.Type.BOOTS,
+                      EquipmentType.BOOTS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.BOOTS.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.LEGGINGS,
+                      EquipmentType.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.LEGGINGS.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.CHESTPLATE,
+                      EquipmentType.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.CHESTPLATE.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.HELMET,
+                      EquipmentType.HELMET,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.HELMET.getEntitySlotId()));
                   map.put(
-                      ArmorItem.Type.BODY,
+                      EquipmentType.BODY,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                          EquipmentType.BODY.getEntitySlotId()));
                 }),
             9,
             SoundEvents.ITEM_ARMOR_EQUIP_IRON,

@@ -6,6 +6,7 @@ import com.enrichedmc.enriched.item.food.EnrichedFoodComponents;
 import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
 import com.enrichedmc.enriched.materials.tool.EnrichedToolMaterials;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
+import net.minecraft.entity.EquipmentType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -263,9 +264,9 @@ public class EnrichedItems {
                 "ruby_helmet",
                 new ArmorItem(
                     EnrichedArmorMaterials.RUBY,
-                    ArmorItem.Type.HELMET,
+                    EquipmentType.HELMET,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25))
+                        .maxDamage(EquipmentType.HELMET.getMaxDamage(25))
                         .maxCount(1)));
 
     RUBY_CHESTPLATE =
@@ -274,9 +275,9 @@ public class EnrichedItems {
                 "ruby_chestplate",
                 new ArmorItem(
                     EnrichedArmorMaterials.RUBY,
-                    ArmorItem.Type.CHESTPLATE,
+                    EquipmentType.CHESTPLATE,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))
+                        .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(25))
                         .maxCount(1)));
 
     RUBY_LEGGINGS =
@@ -285,9 +286,9 @@ public class EnrichedItems {
                 "ruby_leggings",
                 new ArmorItem(
                     EnrichedArmorMaterials.RUBY,
-                    ArmorItem.Type.LEGGINGS,
+                    EquipmentType.LEGGINGS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25))
+                        .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(25))
                         .maxCount(1)));
 
     RUBY_BOOTS =
@@ -296,9 +297,9 @@ public class EnrichedItems {
                 "ruby_boots",
                 new ArmorItem(
                     EnrichedArmorMaterials.RUBY,
-                    ArmorItem.Type.BOOTS,
+                    EquipmentType.BOOTS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))
+                        .maxDamage(EquipmentType.BOOTS.getMaxDamage(25))
                         .maxCount(1)));
 
     SAPPHIRE_HELMET =
@@ -307,9 +308,9 @@ public class EnrichedItems {
                 "sapphire_helmet",
                 new ArmorItem(
                     EnrichedArmorMaterials.SAPPHIRE,
-                    ArmorItem.Type.HELMET,
+                    EquipmentType.HELMET,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25))
+                        .maxDamage(EquipmentType.HELMET.getMaxDamage(25))
                         .maxCount(1)));
 
     SAPPHIRE_CHESTPLATE =
@@ -318,10 +319,10 @@ public class EnrichedItems {
                 "sapphire_chestplate",
                 new ArmorItem(
                     EnrichedArmorMaterials.SAPPHIRE,
-                    ArmorItem.Type.CHESTPLATE,
+                    EquipmentType.CHESTPLATE,
                     new Item.Settings()
                         .maxCount(1)
-                        .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))));
+                        .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(25))));
 
     SAPPHIRE_LEGGINGS =
         (ArmorItem)
@@ -329,9 +330,9 @@ public class EnrichedItems {
                 "sapphire_leggings",
                 new ArmorItem(
                     EnrichedArmorMaterials.SAPPHIRE,
-                    ArmorItem.Type.LEGGINGS,
+                    EquipmentType.LEGGINGS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25))
+                        .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(25))
                         .maxCount(1)));
 
     SAPPHIRE_BOOTS =
@@ -340,9 +341,9 @@ public class EnrichedItems {
                 "sapphire_boots",
                 new ArmorItem(
                     EnrichedArmorMaterials.SAPPHIRE,
-                    ArmorItem.Type.BOOTS,
+                    EquipmentType.BOOTS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))
+                        .maxDamage(EquipmentType.BOOTS.getMaxDamage(25))
                         .maxCount(1)));
 
     TANZANITE_HELMET =
@@ -351,9 +352,9 @@ public class EnrichedItems {
                 "tanzanite_helmet",
                 new ArmorItem(
                     EnrichedArmorMaterials.TANZANITE,
-                    ArmorItem.Type.HELMET,
+                    EquipmentType.HELMET,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25))
+                        .maxDamage(EquipmentType.HELMET.getMaxDamage(25))
                         .maxCount(1)));
 
     TANZANITE_CHESTPLATE =
@@ -362,9 +363,9 @@ public class EnrichedItems {
                 "tanzanite_chestplate",
                 new ArmorItem(
                     EnrichedArmorMaterials.TANZANITE,
-                    ArmorItem.Type.CHESTPLATE,
+                    EquipmentType.CHESTPLATE,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))
+                        .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(25))
                         .maxCount(1)));
 
     TANZANITE_LEGGINGS =
@@ -373,9 +374,9 @@ public class EnrichedItems {
                 "tanzanite_leggings",
                 new ArmorItem(
                     EnrichedArmorMaterials.TANZANITE,
-                    ArmorItem.Type.LEGGINGS,
+                    EquipmentType.LEGGINGS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25))
+                        .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(25))
                         .maxCount(1)));
 
     TANZANITE_BOOTS =
@@ -384,9 +385,9 @@ public class EnrichedItems {
                 "tanzanite_boots",
                 new ArmorItem(
                     EnrichedArmorMaterials.TANZANITE,
-                    ArmorItem.Type.BOOTS,
+                    EquipmentType.BOOTS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))
+                        .maxDamage(EquipmentType.BOOTS.getMaxDamage(25))
                         .maxCount(1)));
 
     STEEL_HELMET =
@@ -395,9 +396,9 @@ public class EnrichedItems {
                 "steel_helmet",
                 new ArmorItem(
                     EnrichedArmorMaterials.STEEL,
-                    ArmorItem.Type.HELMET,
+                    EquipmentType.HELMET,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(21))
+                        .maxDamage(EquipmentType.HELMET.getMaxDamage(21))
                         .maxCount(1)));
 
     STEEL_CHESTPLATE =
@@ -406,9 +407,9 @@ public class EnrichedItems {
                 "steel_chestplate",
                 new ArmorItem(
                     EnrichedArmorMaterials.STEEL,
-                    ArmorItem.Type.CHESTPLATE,
+                    EquipmentType.CHESTPLATE,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(21))
+                        .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(21))
                         .maxCount(1)));
 
     STEEL_LEGGINGS =
@@ -417,9 +418,9 @@ public class EnrichedItems {
                 "steel_leggings",
                 new ArmorItem(
                     EnrichedArmorMaterials.STEEL,
-                    ArmorItem.Type.LEGGINGS,
+                    EquipmentType.LEGGINGS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(21))
+                        .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(21))
                         .maxCount(1)));
 
     STEEL_BOOTS =
@@ -428,9 +429,9 @@ public class EnrichedItems {
                 "steel_boots",
                 new ArmorItem(
                     EnrichedArmorMaterials.STEEL,
-                    ArmorItem.Type.BOOTS,
+                    EquipmentType.BOOTS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(21))
+                        .maxDamage(EquipmentType.BOOTS.getMaxDamage(21))
                         .maxCount(1)));
 
     OBSIDIAN_HELMET =
@@ -439,9 +440,9 @@ public class EnrichedItems {
                 "obsidian_helmet",
                 new ArmorItem(
                     EnrichedArmorMaterials.OBSIDIAN,
-                    ArmorItem.Type.HELMET,
+                    EquipmentType.HELMET,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(39))
+                        .maxDamage(EquipmentType.HELMET.getMaxDamage(39))
                         .maxCount(1)));
 
     OBSIDIAN_CHESTPLATE =
@@ -450,9 +451,9 @@ public class EnrichedItems {
                 "obsidian_chestplate",
                 new ArmorItem(
                     EnrichedArmorMaterials.OBSIDIAN,
-                    ArmorItem.Type.CHESTPLATE,
+                    EquipmentType.CHESTPLATE,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(39))
+                        .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(39))
                         .maxCount(1)));
 
     OBSIDIAN_LEGGINGS =
@@ -461,9 +462,9 @@ public class EnrichedItems {
                 "obsidian_leggings",
                 new ArmorItem(
                     EnrichedArmorMaterials.OBSIDIAN,
-                    ArmorItem.Type.LEGGINGS,
+                    EquipmentType.LEGGINGS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(39))
+                        .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(39))
                         .maxCount(1)));
 
     OBSIDIAN_BOOTS =
@@ -472,9 +473,9 @@ public class EnrichedItems {
                 "obsidian_boots",
                 new ArmorItem(
                     EnrichedArmorMaterials.OBSIDIAN,
-                    ArmorItem.Type.BOOTS,
+                    EquipmentType.BOOTS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(39))
+                        .maxDamage(EquipmentType.BOOTS.getMaxDamage(39))
                         .maxCount(1)));
 
     EMERALD_HELMET =
@@ -483,9 +484,9 @@ public class EnrichedItems {
                 "emerald_helmet",
                 new ArmorItem(
                     EnrichedArmorMaterials.EMERALD,
-                    ArmorItem.Type.HELMET,
+                    EquipmentType.HELMET,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25))
+                        .maxDamage(EquipmentType.HELMET.getMaxDamage(25))
                         .maxCount(1)));
 
     EMERALD_CHESTPLATE =
@@ -494,9 +495,9 @@ public class EnrichedItems {
                 "emerald_chestplate",
                 new ArmorItem(
                     EnrichedArmorMaterials.EMERALD,
-                    ArmorItem.Type.CHESTPLATE,
+                    EquipmentType.CHESTPLATE,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))
+                        .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(25))
                         .maxCount(1)));
 
     EMERALD_LEGGINGS =
@@ -505,9 +506,9 @@ public class EnrichedItems {
                 "emerald_leggings",
                 new ArmorItem(
                     EnrichedArmorMaterials.EMERALD,
-                    ArmorItem.Type.LEGGINGS,
+                    EquipmentType.LEGGINGS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25))
+                        .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(25))
                         .maxCount(1)));
 
     EMERALD_BOOTS =
@@ -516,9 +517,9 @@ public class EnrichedItems {
                 "emerald_boots",
                 new ArmorItem(
                     EnrichedArmorMaterials.EMERALD,
-                    ArmorItem.Type.BOOTS,
+                    EquipmentType.BOOTS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))
+                        .maxDamage(EquipmentType.BOOTS.getMaxDamage(25))
                         .maxCount(1)));
 
     BRONZE_HELMET =
@@ -527,9 +528,9 @@ public class EnrichedItems {
                 "bronze_helmet",
                 new ArmorItem(
                     EnrichedArmorMaterials.BRONZE,
-                    ArmorItem.Type.HELMET,
+                    EquipmentType.HELMET,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(23))
+                        .maxDamage(EquipmentType.HELMET.getMaxDamage(23))
                         .maxCount(1)));
 
     BRONZE_CHESTPLATE =
@@ -538,9 +539,9 @@ public class EnrichedItems {
                 "bronze_chestplate",
                 new ArmorItem(
                     EnrichedArmorMaterials.BRONZE,
-                    ArmorItem.Type.CHESTPLATE,
+                    EquipmentType.CHESTPLATE,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(23))
+                        .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(23))
                         .maxCount(1)));
 
     BRONZE_LEGGINGS =
@@ -549,9 +550,9 @@ public class EnrichedItems {
                 "bronze_leggings",
                 new ArmorItem(
                     EnrichedArmorMaterials.BRONZE,
-                    ArmorItem.Type.LEGGINGS,
+                    EquipmentType.LEGGINGS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(23))
+                        .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(23))
                         .maxCount(1)));
 
     BRONZE_BOOTS =
@@ -560,9 +561,9 @@ public class EnrichedItems {
                 "bronze_boots",
                 new ArmorItem(
                     EnrichedArmorMaterials.BRONZE,
-                    ArmorItem.Type.BOOTS,
+                    EquipmentType.BOOTS,
                     new Item.Settings()
-                        .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(23))
+                        .maxDamage(EquipmentType.BOOTS.getMaxDamage(23))
                         .maxCount(1)));
 
     ;
