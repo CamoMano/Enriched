@@ -9,44 +9,44 @@ import java.util.concurrent.CompletableFuture;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.ItemTags;
 
 public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
   public EnrichedItemTagProvider(
-      FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
+      FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
     super(output, completableFuture);
   }
 
   @Override
-  protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+  protected void addTags(HolderLookup.Provider wrapperLookup) {
 
-    this.getOrCreateTagBuilder(ItemTags.PLANKS).add(EnrichedBlocks.REDWOOD_PLANKS.asItem());
+    this.tag(ItemTags.PLANKS).add(EnrichedBlocks.REDWOOD_PLANKS.asItem());
 
-    this.getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
+    this.tag(ItemTags.LOGS_THAT_BURN)
         .add(EnrichedBlocks.REDWOOD_LOG.asItem())
         .add(EnrichedBlocks.REDWOOD_WOOD.asItem())
         .add(EnrichedBlocks.STRIPPED_REDWOOD_LOG.asItem())
         .add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD.asItem());
 
-    this.getOrCreateTagBuilder(EnrichedTags.ItemTags.REDWOOD_LOGS)
+    this.tag(EnrichedTags.ItemTags.REDWOOD_LOGS)
         .add(EnrichedBlocks.REDWOOD_LOG.asItem())
         .add(EnrichedBlocks.STRIPPED_REDWOOD_LOG.asItem())
         .add(EnrichedBlocks.REDWOOD_WOOD.asItem())
         .add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD.asItem());
 
-    this.getOrCreateTagBuilder(ConventionalItemTags.DUSTS)
+    this.tag(ConventionalItemTags.DUSTS)
         .add(EnrichedItems.OBSIDIAN_ALLOY_BLEND)
         .add(EnrichedItems.STEEL_BLEND)
         .add(EnrichedItems.BRONZE_BLEND);
 
-    this.getOrCreateTagBuilder(ConventionalItemTags.INGOTS)
+    this.tag(ConventionalItemTags.INGOTS)
         .add(EnrichedItems.OBSIDIAN_ALLOY_INGOT)
         .add(EnrichedItems.STEEL_INGOT)
         .add(EnrichedItems.BRONZE_INGOT)
         .add(EnrichedItems.TIN_INGOT);
 
-    this.getOrCreateTagBuilder(ConventionalItemTags.ORES)
+    this.tag(ConventionalItemTags.ORES)
         .add(EnrichedBlocks.RUBY_ORE.asItem())
         .add(EnrichedBlocks.DEEPSLATE_RUBY_ORE.asItem())
         .add(EnrichedBlocks.SAPPHIRE_ORE.asItem())
@@ -60,7 +60,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedBlocks.TIN_ORE.asItem())
         .add(EnrichedBlocks.DEEPSLATE_TIN_ORE.asItem());
 
-    this.getOrCreateTagBuilder(ConventionalItemTags.TOOLS)
+    this.tag(ConventionalItemTags.TOOLS)
         .add(EnrichedItems.STEEL_AXE)
         .add(EnrichedItems.STEEL_HOE)
         .add(EnrichedItems.STEEL_SHOVEL)
@@ -90,7 +90,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.EMERALD_SHOVEL)
         .add(EnrichedItems.EMERALD_PICKAXE);
 
-    this.getOrCreateTagBuilder(ConventionalItemTags.MINING_TOOL_TOOLS)
+    this.tag(ConventionalItemTags.MINING_TOOL_TOOLS)
         .add(EnrichedItems.STEEL_PICKAXE)
         .add(EnrichedItems.OBSIDIAN_PICKAXE)
         .add(EnrichedItems.COPPER_PICKAXE)
@@ -99,7 +99,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_PICKAXE)
         .add(EnrichedItems.EMERALD_PICKAXE);
 
-    this.getOrCreateTagBuilder(ItemTags.PICKAXES)
+    this.tag(ItemTags.PICKAXES)
         .add(EnrichedItems.STEEL_PICKAXE)
         .add(EnrichedItems.OBSIDIAN_PICKAXE)
         .add(EnrichedItems.COPPER_PICKAXE)
@@ -108,7 +108,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_PICKAXE)
         .add(EnrichedItems.EMERALD_PICKAXE);
 
-    this.getOrCreateTagBuilder(ItemTags.AXES)
+    this.tag(ItemTags.AXES)
         .add(EnrichedItems.STEEL_AXE)
         .add(EnrichedItems.OBSIDIAN_AXE)
         .add(EnrichedItems.COPPER_AXE)
@@ -117,7 +117,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_AXE)
         .add(EnrichedItems.EMERALD_AXE);
 
-    this.getOrCreateTagBuilder(ItemTags.SHOVELS)
+    this.tag(ItemTags.SHOVELS)
         .add(EnrichedItems.STEEL_SHOVEL)
         .add(EnrichedItems.OBSIDIAN_SHOVEL)
         .add(EnrichedItems.COPPER_SHOVEL)
@@ -126,7 +126,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_SHOVEL)
         .add(EnrichedItems.EMERALD_SHOVEL);
 
-    this.getOrCreateTagBuilder(ItemTags.HOES)
+    this.tag(ItemTags.HOES)
         .add(EnrichedItems.STEEL_HOE)
         .add(EnrichedItems.OBSIDIAN_HOE)
         .add(EnrichedItems.COPPER_HOE)
@@ -135,7 +135,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_HOE)
         .add(EnrichedItems.EMERALD_HOE);
 
-    this.getOrCreateTagBuilder(ItemTags.SWORDS)
+    this.tag(ItemTags.SWORDS)
         .add(EnrichedItems.STEEL_SWORD)
         .add(EnrichedItems.OBSIDIAN_SWORD)
         .add(EnrichedItems.COPPER_SWORD)
@@ -144,7 +144,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_SWORD)
         .add(EnrichedItems.EMERALD_SWORD);
 
-    this.getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+    this.tag(ItemTags.HEAD_ARMOR)
         .add(EnrichedItems.STEEL_HELMET)
         .add(EnrichedItems.OBSIDIAN_HELMET)
         .add(EnrichedItems.RUBY_HELMET)
@@ -152,7 +152,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_HELMET)
         .add(EnrichedItems.EMERALD_HELMET);
 
-    this.getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+    this.tag(ItemTags.CHEST_ARMOR)
         .add(EnrichedItems.STEEL_CHESTPLATE)
         .add(EnrichedItems.OBSIDIAN_CHESTPLATE)
         .add(EnrichedItems.RUBY_CHESTPLATE)
@@ -160,7 +160,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_CHESTPLATE)
         .add(EnrichedItems.EMERALD_CHESTPLATE);
 
-    this.getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+    this.tag(ItemTags.LEG_ARMOR)
         .add(EnrichedItems.STEEL_LEGGINGS)
         .add(EnrichedItems.OBSIDIAN_LEGGINGS)
         .add(EnrichedItems.RUBY_LEGGINGS)
@@ -168,7 +168,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_LEGGINGS)
         .add(EnrichedItems.EMERALD_LEGGINGS);
 
-    this.getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+    this.tag(ItemTags.FOOT_ARMOR)
         .add(EnrichedItems.STEEL_BOOTS)
         .add(EnrichedItems.OBSIDIAN_BOOTS)
         .add(EnrichedItems.RUBY_BOOTS)
@@ -176,7 +176,7 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.TANZANITE_BOOTS)
         .add(EnrichedItems.EMERALD_BOOTS);
 
-    this.getOrCreateTagBuilder(ConventionalItemTags.MELEE_WEAPON_TOOLS)
+    this.tag(ConventionalItemTags.MELEE_WEAPON_TOOLS)
         .add(EnrichedItems.STEEL_SWORD)
         .add(EnrichedItems.OBSIDIAN_SWORD)
         .add(EnrichedItems.RUBY_SWORD)
@@ -186,15 +186,15 @@ public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(EnrichedItems.COPPER_SWORD);
 
     // Conventional Tags
-    this.getOrCreateTagBuilder(STEEL_INGOTS).add(EnrichedItems.STEEL_INGOT);
-    this.getOrCreateTagBuilder(OBSIDIAN_ALLOY_INGOTS).add(EnrichedItems.OBSIDIAN_ALLOY_INGOT);
-    this.getOrCreateTagBuilder(RUBIES).add(EnrichedItems.RUBY);
-    this.getOrCreateTagBuilder(SAPPHIRES).add(EnrichedItems.SAPPHIRE);
-    this.getOrCreateTagBuilder(TANZANITES).add(EnrichedItems.TANZANITE);
-    this.getOrCreateTagBuilder(AMBERS).add(EnrichedItems.AMBER);
-    this.getOrCreateTagBuilder(TOPAZS).add(EnrichedItems.TOPAZ);
-    this.getOrCreateTagBuilder(BRONZE_INGOTS).add(EnrichedItems.BRONZE_INGOT);
-    this.getOrCreateTagBuilder(TIN_INGOTS).add(EnrichedItems.TIN_INGOT);
-    this.getOrCreateTagBuilder(FOODS).add(EnrichedItems.BERRY_JUICE).add(EnrichedItems.BEEF_STEW);
+    this.tag(STEEL_INGOTS).add(EnrichedItems.STEEL_INGOT);
+    this.tag(OBSIDIAN_ALLOY_INGOTS).add(EnrichedItems.OBSIDIAN_ALLOY_INGOT);
+    this.tag(RUBIES).add(EnrichedItems.RUBY);
+    this.tag(SAPPHIRES).add(EnrichedItems.SAPPHIRE);
+    this.tag(TANZANITES).add(EnrichedItems.TANZANITE);
+    this.tag(AMBERS).add(EnrichedItems.AMBER);
+    this.tag(TOPAZS).add(EnrichedItems.TOPAZ);
+    this.tag(BRONZE_INGOTS).add(EnrichedItems.BRONZE_INGOT);
+    this.tag(TIN_INGOTS).add(EnrichedItems.TIN_INGOT);
+    this.tag(FOODS).add(EnrichedItems.BERRY_JUICE).add(EnrichedItems.BEEF_STEW);
   }
 }

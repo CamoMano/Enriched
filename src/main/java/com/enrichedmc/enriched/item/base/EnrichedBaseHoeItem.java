@@ -1,14 +1,14 @@
 package com.enrichedmc.enriched.item.base;
 
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.Tier;
 
 public class EnrichedBaseHoeItem extends HoeItem {
-  public EnrichedBaseHoeItem(ToolMaterial toolMaterial) {
+  public EnrichedBaseHoeItem(Tier toolMaterial) {
     super(
         toolMaterial,
-        new Settings()
-            .maxCount(1)
-            .attributeModifiers(HoeItem.createAttributeModifiers(toolMaterial, -4, 0.0f)));
+        new Properties()
+            .stacksTo(1)
+            .attributes(HoeItem.createAttributes(toolMaterial, -4, 0.0f)));
   }
 }

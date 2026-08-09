@@ -3,77 +3,77 @@ package com.enrichedmc.enriched.materials.tool;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import java.util.function.Supplier;
-import net.minecraft.block.Block;
-import net.minecraft.item.Items;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 
-public enum EnrichedToolMaterials implements ToolMaterial {
+public enum EnrichedToolMaterials implements Tier {
   RUBY(
-      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_ruby_tool"),
+      EnrichedRegisters.createTagKey(Registries.BLOCK, "incorrect_for_ruby_tool"),
       650,
       7.5f,
       6.0f,
       20,
-      () -> Ingredient.ofItems(EnrichedItems.RUBY)),
+      () -> Ingredient.of(EnrichedItems.RUBY)),
 
   SAPPHIRE(
-      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_sapphire_tool"),
+      EnrichedRegisters.createTagKey(Registries.BLOCK, "incorrect_for_sapphire_tool"),
       650,
       8.0f,
       5.0f,
       20,
-      () -> Ingredient.ofItems(EnrichedItems.SAPPHIRE)),
+      () -> Ingredient.of(EnrichedItems.SAPPHIRE)),
 
   TANZANITE(
-      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_tanzanite_tool"),
+      EnrichedRegisters.createTagKey(Registries.BLOCK, "incorrect_for_tanzanite_tool"),
       750,
       7.5f,
       5.0f,
       20,
-      () -> Ingredient.ofItems(EnrichedItems.TANZANITE)),
+      () -> Ingredient.of(EnrichedItems.TANZANITE)),
 
   STEEL(
-      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_steel_tool"),
+      EnrichedRegisters.createTagKey(Registries.BLOCK, "incorrect_for_steel_tool"),
       850,
       6.0f,
       6.0f,
       13,
-      () -> Ingredient.ofItems(EnrichedItems.STEEL_INGOT)),
+      () -> Ingredient.of(EnrichedItems.STEEL_INGOT)),
 
   OBSIDIAN(
-      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_obsidian_tool"),
+      EnrichedRegisters.createTagKey(Registries.BLOCK, "incorrect_for_obsidian_tool"),
       1820,
       7.0f,
       7.0f,
       9,
-      () -> Ingredient.ofItems(EnrichedItems.OBSIDIAN_ALLOY_INGOT)),
+      () -> Ingredient.of(EnrichedItems.OBSIDIAN_ALLOY_INGOT)),
 
   EMERALD(
-      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_emerald_tool"),
+      EnrichedRegisters.createTagKey(Registries.BLOCK, "incorrect_for_emerald_tool"),
       650,
       7.5f,
       5.0f,
       26,
-      () -> Ingredient.ofItems(Items.EMERALD)),
+      () -> Ingredient.of(Items.EMERALD)),
 
   COPPER(
-      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_copper_tool"),
+      EnrichedRegisters.createTagKey(Registries.BLOCK, "incorrect_for_copper_tool"),
       150,
       4.0f,
       3.5f,
       13,
-      () -> Ingredient.ofItems(Items.COPPER_INGOT)),
+      () -> Ingredient.of(Items.COPPER_INGOT)),
 
   BRONZE(
-      EnrichedRegisters.createTagKey(RegistryKeys.BLOCK, "incorrect_for_bronze_tool"),
+      EnrichedRegisters.createTagKey(Registries.BLOCK, "incorrect_for_bronze_tool"),
       700,
       6.0f,
       5.0f,
       15,
-      () -> Ingredient.ofItems(Items.COPPER_INGOT));
+      () -> Ingredient.of(Items.COPPER_INGOT));
 
   private final TagKey<Block> inverseTag;
   private final int itemDurability;
@@ -98,27 +98,27 @@ public enum EnrichedToolMaterials implements ToolMaterial {
   }
 
   @Override
-  public int getDurability() {
+  public int getUses() {
     return this.itemDurability;
   }
 
   @Override
-  public float getMiningSpeedMultiplier() {
+  public float getSpeed() {
     return this.miningSpeed;
   }
 
   @Override
-  public float getAttackDamage() {
+  public float getAttackDamageBonus() {
     return this.attackDamage;
   }
 
   @Override
-  public TagKey<Block> getInverseTag() {
+  public TagKey<Block> getIncorrectBlocksForDrops() {
     return this.inverseTag;
   }
 
   @Override
-  public int getEnchantability() {
+  public int getEnchantmentValue() {
     return this.enchantability;
   }
 

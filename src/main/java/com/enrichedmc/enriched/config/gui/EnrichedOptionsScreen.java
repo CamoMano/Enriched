@@ -6,8 +6,8 @@ import com.google.common.collect.Lists;
 import dev.isxander.yacl3.api.ConfigCategory;
 import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import java.util.List;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.Nullable;
 
 public class EnrichedOptionsScreen {
@@ -26,7 +26,7 @@ public class EnrichedOptionsScreen {
             EnrichedOptionCategories.worldGeneration());
 
     return YetAnotherConfigLib.createBuilder()
-        .title(Text.literal("Enriched Game Options"))
+        .title(Component.literal("Enriched Game Options"))
         .categories(configCategories)
         .save(() -> EnrichedMod.getInstance().getGameOptions().write())
         .build()

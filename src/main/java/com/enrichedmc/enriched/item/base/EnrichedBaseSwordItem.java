@@ -1,14 +1,14 @@
 package com.enrichedmc.enriched.item.base;
 
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
 
 public class EnrichedBaseSwordItem extends SwordItem {
-  public EnrichedBaseSwordItem(ToolMaterial toolMaterial) {
+  public EnrichedBaseSwordItem(Tier toolMaterial) {
     super(
         toolMaterial,
-        new Settings()
-            .maxCount(1)
-            .attributeModifiers(SwordItem.createAttributeModifiers(toolMaterial, -1, -2.4f)));
+        new Properties()
+            .stacksTo(1)
+            .attributes(SwordItem.createAttributes(toolMaterial, -1, -2.4f)));
   }
 }

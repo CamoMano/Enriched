@@ -5,127 +5,127 @@ import com.enrichedmc.enriched.item.EnrichedItems;
 import java.util.concurrent.CompletableFuture;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Block;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Item;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.ApplyBonusLootFunction;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider {
   public EnrichedBlockLootTableProvider(
       FabricDataOutput dataOutput,
-      CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+      CompletableFuture<HolderLookup.Provider> registryLookup) {
     super(dataOutput, registryLookup);
   }
 
   @Override
   public void generate() {
-    this.addDrop(EnrichedBlocks.RUBY_BLOCK);
-    this.addDrop(EnrichedBlocks.SAPPHIRE_BLOCK);
-    this.addDrop(EnrichedBlocks.TANZANITE_BLOCK);
-    this.addDrop(EnrichedBlocks.STEEL_BLOCK);
-    this.addDrop(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
-    this.addDrop(EnrichedBlocks.TIN_BLOCK);
-    this.addDrop(EnrichedBlocks.BRONZE_BLOCK);
-    this.addDrop(EnrichedBlocks.RAW_TIN_BLOCK);
+    this.dropSelf(EnrichedBlocks.RUBY_BLOCK);
+    this.dropSelf(EnrichedBlocks.SAPPHIRE_BLOCK);
+    this.dropSelf(EnrichedBlocks.TANZANITE_BLOCK);
+    this.dropSelf(EnrichedBlocks.STEEL_BLOCK);
+    this.dropSelf(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
+    this.dropSelf(EnrichedBlocks.TIN_BLOCK);
+    this.dropSelf(EnrichedBlocks.BRONZE_BLOCK);
+    this.dropSelf(EnrichedBlocks.RAW_TIN_BLOCK);
 
-    this.addDrop(
+    this.add(
         EnrichedBlocks.RUBY_ORE, rubyOre -> this.enrichedOreDrops(rubyOre, EnrichedItems.RUBY));
-    this.addDrop(
+    this.add(
         EnrichedBlocks.DEEPSLATE_RUBY_ORE,
         deepslateRubyOre -> this.enrichedOreDrops(deepslateRubyOre, EnrichedItems.RUBY));
 
-    this.addDrop(
+    this.add(
         EnrichedBlocks.SAPPHIRE_ORE,
         sapphireOre -> this.enrichedOreDrops(sapphireOre, EnrichedItems.SAPPHIRE));
-    this.addDrop(
+    this.add(
         EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE,
         deepslateSapphireOre ->
             this.enrichedOreDrops(deepslateSapphireOre, EnrichedItems.SAPPHIRE));
 
-    this.addDrop(
+    this.add(
         EnrichedBlocks.TANZANITE_ORE,
         tanzaniteOre -> this.enrichedOreDrops(tanzaniteOre, EnrichedItems.TANZANITE));
-    this.addDrop(
+    this.add(
         EnrichedBlocks.DEEPSLATE_TANZANITE_ORE,
         deepslateTanzaniteOre ->
             this.enrichedOreDrops(deepslateTanzaniteOre, EnrichedItems.TANZANITE));
 
-    this.addDrop(
+    this.add(
         EnrichedBlocks.AMBER_ORE, amberOre -> this.enrichedOreDrops(amberOre, EnrichedItems.AMBER));
-    this.addDrop(
+    this.add(
         EnrichedBlocks.DEEPSLATE_AMBER_ORE,
         deepslateAmberOre -> this.enrichedOreDrops(deepslateAmberOre, EnrichedItems.AMBER));
 
-    this.addDrop(
+    this.add(
         EnrichedBlocks.TOPAZ_ORE, topazOre -> this.enrichedOreDrops(topazOre, EnrichedItems.TOPAZ));
-    this.addDrop(
+    this.add(
         EnrichedBlocks.DEEPSLATE_TOPAZ_ORE,
         deepslateTopazOre -> this.enrichedOreDrops(deepslateTopazOre, EnrichedItems.TOPAZ));
 
-    this.addDrop(
+    this.add(
         EnrichedBlocks.TIN_ORE, tinOre -> this.enrichedOreDrops(tinOre, EnrichedItems.RAW_TIN));
-    this.addDrop(
+    this.add(
         EnrichedBlocks.DEEPSLATE_TIN_ORE,
         deepslateTinOre -> this.enrichedOreDrops(deepslateTinOre, EnrichedItems.RAW_TIN));
 
-    this.addDrop(EnrichedBlocks.STEEL_BLOCK);
-    this.addDrop(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
+    this.dropSelf(EnrichedBlocks.STEEL_BLOCK);
+    this.dropSelf(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
 
-    this.addDrop(EnrichedBlocks.REDWOOD_LOG);
-    this.addDrop(EnrichedBlocks.REDWOOD_WOOD);
-    this.addDrop(EnrichedBlocks.STRIPPED_REDWOOD_LOG);
-    this.addDrop(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
-    this.addDrop(EnrichedBlocks.REDWOOD_PLANKS);
-    this.addDrop(
+    this.dropSelf(EnrichedBlocks.REDWOOD_LOG);
+    this.dropSelf(EnrichedBlocks.REDWOOD_WOOD);
+    this.dropSelf(EnrichedBlocks.STRIPPED_REDWOOD_LOG);
+    this.dropSelf(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
+    this.dropSelf(EnrichedBlocks.REDWOOD_PLANKS);
+    this.add(
         EnrichedBlocks.REDWOOD_LEAVES,
-        leavesDrops(EnrichedBlocks.REDWOOD_LEAVES, EnrichedBlocks.REDWOOD_SAPLING, 0.25f));
-    this.addDrop(EnrichedBlocks.REDWOOD_SAPLING);
-    this.addPottedPlantDrops(EnrichedBlocks.POTTED_REDWOOD_SAPLING);
-    this.addDrop(EnrichedBlocks.REDWOOD_BUTTON);
-    this.addDrop(EnrichedBlocks.REDWOOD_DOOR);
-    this.addDrop(EnrichedBlocks.REDWOOD_PRESSURE_PLATE);
-    this.addDrop(EnrichedBlocks.REDWOOD_TRAPDOOR);
-    this.addDrop(EnrichedBlocks.REDWOOD_SLAB);
-    this.addDrop(EnrichedBlocks.REDWOOD_STAIRS);
-    this.addDrop(EnrichedBlocks.REDWOOD_FENCE);
-    this.addDrop(EnrichedBlocks.REDWOOD_FENCE_GATE);
+        createLeavesDrops(EnrichedBlocks.REDWOOD_LEAVES, EnrichedBlocks.REDWOOD_SAPLING, 0.25f));
+    this.dropSelf(EnrichedBlocks.REDWOOD_SAPLING);
+    this.dropPottedContents(EnrichedBlocks.POTTED_REDWOOD_SAPLING);
+    this.dropSelf(EnrichedBlocks.REDWOOD_BUTTON);
+    this.dropSelf(EnrichedBlocks.REDWOOD_DOOR);
+    this.dropSelf(EnrichedBlocks.REDWOOD_PRESSURE_PLATE);
+    this.dropSelf(EnrichedBlocks.REDWOOD_TRAPDOOR);
+    this.dropSelf(EnrichedBlocks.REDWOOD_SLAB);
+    this.dropSelf(EnrichedBlocks.REDWOOD_STAIRS);
+    this.dropSelf(EnrichedBlocks.REDWOOD_FENCE);
+    this.dropSelf(EnrichedBlocks.REDWOOD_FENCE_GATE);
 
-    this.addDrop(EnrichedBlocks.DARK_GRANITE);
-    this.addDrop(EnrichedBlocks.DARK_GRANITE_SLAB);
-    this.addDrop(EnrichedBlocks.DARK_GRANITE_STAIRS);
-    this.addDrop(EnrichedBlocks.DARK_GRANITE_WALL);
-    this.addDrop(EnrichedBlocks.POLISHED_DARK_GRANITE);
-    this.addDrop(EnrichedBlocks.POLISHED_DARK_GRANITE_SLAB);
-    this.addDrop(EnrichedBlocks.POLISHED_DARK_GRANITE_STAIRS);
+    this.dropSelf(EnrichedBlocks.DARK_GRANITE);
+    this.dropSelf(EnrichedBlocks.DARK_GRANITE_SLAB);
+    this.dropSelf(EnrichedBlocks.DARK_GRANITE_STAIRS);
+    this.dropSelf(EnrichedBlocks.DARK_GRANITE_WALL);
+    this.dropSelf(EnrichedBlocks.POLISHED_DARK_GRANITE);
+    this.dropSelf(EnrichedBlocks.POLISHED_DARK_GRANITE_SLAB);
+    this.dropSelf(EnrichedBlocks.POLISHED_DARK_GRANITE_STAIRS);
 
-    this.addDrop(EnrichedBlocks.MARBLE);
-    this.addDrop(EnrichedBlocks.MARBLE_SLAB);
-    this.addDrop(EnrichedBlocks.MARBLE_STAIRS);
-    this.addDrop(EnrichedBlocks.MARBLE_WALL);
-    this.addDrop(EnrichedBlocks.POLISHED_MARBLE);
-    this.addDrop(EnrichedBlocks.POLISHED_MARBLE_SLAB);
-    this.addDrop(EnrichedBlocks.POLISHED_MARBLE_STAIRS);
+    this.dropSelf(EnrichedBlocks.MARBLE);
+    this.dropSelf(EnrichedBlocks.MARBLE_SLAB);
+    this.dropSelf(EnrichedBlocks.MARBLE_STAIRS);
+    this.dropSelf(EnrichedBlocks.MARBLE_WALL);
+    this.dropSelf(EnrichedBlocks.POLISHED_MARBLE);
+    this.dropSelf(EnrichedBlocks.POLISHED_MARBLE_SLAB);
+    this.dropSelf(EnrichedBlocks.POLISHED_MARBLE_STAIRS);
   }
 
   private LootTable.Builder enrichedOreDrops(Block drop, Item item) {
-    RegistryWrapper.Impl<Enchantment> registerWrapper =
-        this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+    HolderLookup.RegistryLookup<Enchantment> registerWrapper =
+        this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 
-    return this.dropsWithSilkTouch(
+    return this.createSilkTouchDispatchTable(
         drop,
         this.applyExplosionDecay(
             drop,
-            ItemEntry.builder(item)
-                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 5.0F)))
+            LootItem.lootTableItem(item)
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
                 .apply(
-                    ApplyBonusLootFunction.oreDrops(
+                    ApplyBonusCount.addOreBonusCount(
                         registerWrapper.getOrThrow(Enchantments.FORTUNE)))));
   }
 }

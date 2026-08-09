@@ -3,27 +3,27 @@ package com.enrichedmc.enriched.networking.payloads;
 import com.enrichedmc.enriched.networking.EnrichedNetworking;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.network.RegistryByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.packet.CustomPayload;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.server.MinecraftServer;
 
-public class ReloadDataPacksPacket implements CustomPayload {
-  public static final CustomPayload.Id<ReloadDataPacksPacket> ID =
-      new CustomPayload.Id<>(EnrichedNetworking.RELOAD_DATA_PACKS_PACKET);
-  public static final PacketCodec<RegistryByteBuf, ReloadDataPacksPacket> CODEC =
-      new PacketCodec<>() {
+public class ReloadDataPacksPacket implements CustomPacketPayload {
+  public static final CustomPacketPayload.Type<ReloadDataPacksPacket> ID =
+      new CustomPacketPayload.Type<>(EnrichedNetworking.RELOAD_DATA_PACKS_PACKET);
+  public static final StreamCodec<RegistryFriendlyByteBuf, ReloadDataPacksPacket> CODEC =
+      new StreamCodec<>() {
         @Override
-        public ReloadDataPacksPacket decode(RegistryByteBuf buf) {
+        public ReloadDataPacksPacket decode(RegistryFriendlyByteBuf buf) {
           return new ReloadDataPacksPacket();
         }
 
         @Override
-        public void encode(RegistryByteBuf buf, ReloadDataPacksPacket value) {}
+        public void encode(RegistryFriendlyByteBuf buf, ReloadDataPacksPacket value) {}
       };
 
   @Override
-  public Id<? extends CustomPayload> getId() {
+  public Type<? extends CustomPacketPayload> type() {
     return ReloadDataPacksPacket.ID;
   }
 
@@ -34,7 +34,7 @@ public class ReloadDataPacksPacket implements CustomPayload {
       MinecraftServer server = context.server();
 
       try {
-        server.getCommandManager().getDispatcher().execute("reload", server.getCommandSource());
+        server.getCommands().getDispatcher().execute("reload", server.createCommandSourceStack());
       } catch (CommandSyntaxException exception) {
         exception.printStackTrace();
       }

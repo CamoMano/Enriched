@@ -6,9 +6,12 @@ import java.util.Optional;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TexturedModel;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
 
 public class EnrichedModelProvider extends FabricModelProvider {
   public EnrichedModelProvider(FabricDataOutput output) {
@@ -16,68 +19,68 @@ public class EnrichedModelProvider extends FabricModelProvider {
   }
 
   @Override
-  public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-    BlockStateModelGenerator.BlockTexturePool redwoodTexturePool =
-        blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.REDWOOD_PLANKS);
-    BlockStateModelGenerator.BlockTexturePool darkGraniteTexturePool =
-        blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.DARK_GRANITE);
-    BlockStateModelGenerator.BlockTexturePool polishedDarkGraniteTexturePool =
-        blockStateModelGenerator.registerCubeAllModelTexturePool(
+  public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
+    BlockModelGenerators.BlockFamilyProvider redwoodTexturePool =
+        blockStateModelGenerator.family(EnrichedBlocks.REDWOOD_PLANKS);
+    BlockModelGenerators.BlockFamilyProvider darkGraniteTexturePool =
+        blockStateModelGenerator.family(EnrichedBlocks.DARK_GRANITE);
+    BlockModelGenerators.BlockFamilyProvider polishedDarkGraniteTexturePool =
+        blockStateModelGenerator.family(
             EnrichedBlocks.POLISHED_DARK_GRANITE);
-    BlockStateModelGenerator.BlockTexturePool marbleTexturePool =
-        blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.MARBLE);
-    BlockStateModelGenerator.BlockTexturePool polishedMarbleTexturePool =
-        blockStateModelGenerator.registerCubeAllModelTexturePool(EnrichedBlocks.POLISHED_MARBLE);
+    BlockModelGenerators.BlockFamilyProvider marbleTexturePool =
+        blockStateModelGenerator.family(EnrichedBlocks.MARBLE);
+    BlockModelGenerators.BlockFamilyProvider polishedMarbleTexturePool =
+        blockStateModelGenerator.family(EnrichedBlocks.POLISHED_MARBLE);
 
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.RUBY_BLOCK);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.RUBY_ORE);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_RUBY_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.RUBY_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.RUBY_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.DEEPSLATE_RUBY_ORE);
 
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.SAPPHIRE_BLOCK);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.SAPPHIRE_ORE);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.SAPPHIRE_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.SAPPHIRE_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE);
 
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TANZANITE_BLOCK);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TANZANITE_ORE);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.TANZANITE_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.TANZANITE_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE);
 
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.AMBER_BLOCK);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.AMBER_ORE);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_AMBER_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.AMBER_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.AMBER_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.DEEPSLATE_AMBER_ORE);
 
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TOPAZ_BLOCK);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TOPAZ_ORE);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.TOPAZ_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.TOPAZ_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE);
 
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TIN_BLOCK);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.TIN_ORE);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.DEEPSLATE_TIN_ORE);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.RAW_TIN_BLOCK);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.BRONZE_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.TIN_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.TIN_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.DEEPSLATE_TIN_ORE);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.RAW_TIN_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.BRONZE_BLOCK);
 
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.STEEL_BLOCK);
-    blockStateModelGenerator.registerSimpleCubeAll(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.STEEL_BLOCK);
+    blockStateModelGenerator.createTrivialCube(EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
 
     blockStateModelGenerator
-        .registerLog(EnrichedBlocks.REDWOOD_LOG)
-        .log(EnrichedBlocks.REDWOOD_LOG)
+        .woodProvider(EnrichedBlocks.REDWOOD_LOG)
+        .logWithHorizontal(EnrichedBlocks.REDWOOD_LOG)
         .wood(EnrichedBlocks.REDWOOD_WOOD);
 
     blockStateModelGenerator
-        .registerLog(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
-        .log(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
+        .woodProvider(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
+        .logWithHorizontal(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
         .wood(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
 
-    blockStateModelGenerator.registerSingleton(EnrichedBlocks.REDWOOD_LEAVES, TexturedModel.LEAVES);
-    blockStateModelGenerator.registerFlowerPotPlant(
+    blockStateModelGenerator.createTrivialBlock(EnrichedBlocks.REDWOOD_LEAVES, TexturedModel.LEAVES);
+    blockStateModelGenerator.createPlant(
         EnrichedBlocks.REDWOOD_SAPLING,
         EnrichedBlocks.POTTED_REDWOOD_SAPLING,
-        BlockStateModelGenerator.TintType.NOT_TINTED);
+        BlockModelGenerators.TintState.NOT_TINTED);
 
     redwoodTexturePool.button(EnrichedBlocks.REDWOOD_BUTTON);
-    blockStateModelGenerator.registerDoor(EnrichedBlocks.REDWOOD_DOOR);
+    blockStateModelGenerator.createDoor(EnrichedBlocks.REDWOOD_DOOR);
     redwoodTexturePool.pressurePlate(EnrichedBlocks.REDWOOD_PRESSURE_PLATE);
-    blockStateModelGenerator.registerTrapdoor(EnrichedBlocks.REDWOOD_TRAPDOOR);
+    blockStateModelGenerator.createTrapdoor(EnrichedBlocks.REDWOOD_TRAPDOOR);
     redwoodTexturePool.slab(EnrichedBlocks.REDWOOD_SLAB);
     redwoodTexturePool.stairs(EnrichedBlocks.REDWOOD_STAIRS);
     redwoodTexturePool.fence(EnrichedBlocks.REDWOOD_FENCE);
@@ -97,24 +100,24 @@ public class EnrichedModelProvider extends FabricModelProvider {
   }
 
   @Override
-  public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+  public void generateItemModels(ItemModelGenerators itemModelGenerator) {
     /*-------------*/
     /* -- Items -- */
     /*-------------*/
 
-    itemModelGenerator.register(EnrichedItems.RUBY, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.SAPPHIRE, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.TANZANITE, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.AMBER, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.TOPAZ, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.STEEL_BLEND, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.STEEL_INGOT, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.BRONZE_BLEND, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.BRONZE_INGOT, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.TIN_INGOT, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.RAW_TIN, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.OBSIDIAN_ALLOY_BLEND, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.OBSIDIAN_ALLOY_INGOT, Models.GENERATED);
+    itemModelGenerator.generateFlatItem(EnrichedItems.RUBY, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.SAPPHIRE, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.TANZANITE, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.AMBER, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.TOPAZ, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.STEEL_BLEND, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.STEEL_INGOT, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.BRONZE_BLEND, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.BRONZE_INGOT, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.TIN_INGOT, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.RAW_TIN, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.OBSIDIAN_ALLOY_BLEND, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.OBSIDIAN_ALLOY_INGOT, ModelTemplates.FLAT_ITEM);
 
     /*-------------*/
     /* -- Tools -- */
@@ -241,33 +244,33 @@ public class EnrichedModelProvider extends FabricModelProvider {
     /* -- Food -- */
     /*------------*/
 
-    itemModelGenerator.register(EnrichedItems.BEEF_STEW, Models.GENERATED);
-    itemModelGenerator.register(EnrichedItems.BERRY_JUICE, Models.GENERATED);
+    itemModelGenerator.generateFlatItem(EnrichedItems.BEEF_STEW, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(EnrichedItems.BERRY_JUICE, ModelTemplates.FLAT_ITEM);
   }
 
   private void registerToolModels(
-      ItemModelGenerator itemModelGenerator,
+      ItemModelGenerators itemModelGenerator,
       Item sword,
       Item shovel,
       Item pickaxe,
       Item axe,
       Item hoe) {
-    itemModelGenerator.register(sword, Models.GENERATED);
-    itemModelGenerator.register(shovel, Models.GENERATED);
-    itemModelGenerator.register(pickaxe, Models.GENERATED);
-    itemModelGenerator.register(axe, Models.GENERATED);
-    itemModelGenerator.register(hoe, Models.GENERATED);
+    itemModelGenerator.generateFlatItem(sword, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(shovel, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(pickaxe, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(axe, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(hoe, ModelTemplates.FLAT_ITEM);
   }
 
   private void registerArmorModels(
-      ItemModelGenerator itemModelGenerator,
+      ItemModelGenerators itemModelGenerator,
       ArmorItem helmet,
       ArmorItem chestplate,
       ArmorItem leggings,
       ArmorItem boots) {
-    itemModelGenerator.registerArmor(helmet);
-    itemModelGenerator.registerArmor(chestplate);
-    itemModelGenerator.registerArmor(leggings);
-    itemModelGenerator.registerArmor(boots);
+    itemModelGenerator.generateArmorTrims(helmet);
+    itemModelGenerator.generateArmorTrims(chestplate);
+    itemModelGenerator.generateArmorTrims(leggings);
+    itemModelGenerator.generateArmorTrims(boots);
   }
 }

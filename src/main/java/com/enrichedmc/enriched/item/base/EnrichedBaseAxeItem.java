@@ -1,14 +1,14 @@
 package com.enrichedmc.enriched.item.base;
 
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Tier;
 
 public class EnrichedBaseAxeItem extends AxeItem {
-  public EnrichedBaseAxeItem(ToolMaterial toolMaterial) {
+  public EnrichedBaseAxeItem(Tier toolMaterial) {
     super(
         toolMaterial,
-        new Settings()
-            .maxCount(1)
-            .attributeModifiers(AxeItem.createAttributeModifiers(toolMaterial, 2.0f, -3.0f)));
+        new Properties()
+            .stacksTo(1)
+            .attributes(AxeItem.createAttributes(toolMaterial, 2.0f, -3.0f)));
   }
 }

@@ -5,24 +5,24 @@ import com.enrichedmc.enriched.item.EnrichedItems;
 import com.google.common.collect.Lists;
 import java.util.EnumMap;
 import java.util.List;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.ArmorMaterials;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
+import net.minecraft.Util;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorMaterials;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 
 public class EnrichedArmorMaterials {
-  public static final RegistryEntry<ArmorMaterial> RUBY;
-  public static final RegistryEntry<ArmorMaterial> SAPPHIRE;
-  public static final RegistryEntry<ArmorMaterial> TANZANITE;
-  public static final RegistryEntry<ArmorMaterial> STEEL;
-  public static final RegistryEntry<ArmorMaterial> OBSIDIAN;
-  public static final RegistryEntry<ArmorMaterial> EMERALD;
-  public static final RegistryEntry<ArmorMaterial> BRONZE;
+  public static final Holder<ArmorMaterial> RUBY;
+  public static final Holder<ArmorMaterial> SAPPHIRE;
+  public static final Holder<ArmorMaterial> TANZANITE;
+  public static final Holder<ArmorMaterial> STEEL;
+  public static final Holder<ArmorMaterial> OBSIDIAN;
+  public static final Holder<ArmorMaterial> EMERALD;
+  public static final Holder<ArmorMaterial> BRONZE;
   private static final List<Integer> BASE_ARMOR_RATING = Lists.newArrayList(2, 5, 5, 2);
 
   static {
@@ -35,30 +35,30 @@ public class EnrichedArmorMaterials {
                   map.put(
                       ArmorItem.Type.BOOTS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.BOOTS.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.LEGGINGS.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.CHESTPLATE.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.HELMET,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.HELMET.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.BODY,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.BODY.getSlot().getIndex()));
                 }),
             9,
-            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
+            SoundEvents.ARMOR_EQUIP_DIAMOND,
             1.0f,
             0.0f,
-            () -> Ingredient.ofItems(EnrichedItems.RUBY),
-            Lists.newArrayList(new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "ruby"))));
+            () -> Ingredient.of(EnrichedItems.RUBY),
+            Lists.newArrayList(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "ruby"))));
 
     SAPPHIRE =
         ArmorMaterials.register(
@@ -69,36 +69,36 @@ public class EnrichedArmorMaterials {
                   map.put(
                       ArmorItem.Type.BOOTS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.BOOTS.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.LEGGINGS.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.CHESTPLATE.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.HELMET,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.HELMET.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.BODY,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.BODY.getSlot().getIndex())
                           + 1);
                 }),
             9,
-            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
+            SoundEvents.ARMOR_EQUIP_DIAMOND,
             0.0f,
             0.0f,
-            () -> Ingredient.ofItems(EnrichedItems.SAPPHIRE),
+            () -> Ingredient.of(EnrichedItems.SAPPHIRE),
             Lists.newArrayList(
-                new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "sapphire"))));
+                new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "sapphire"))));
 
     TANZANITE =
         ArmorMaterials.register(
@@ -109,31 +109,31 @@ public class EnrichedArmorMaterials {
                   map.put(
                       ArmorItem.Type.BOOTS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.BOOTS.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.LEGGINGS.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.CHESTPLATE.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.HELMET,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.HELMET.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.BODY,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.BODY.getSlot().getIndex()));
                 }),
             9,
-            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
+            SoundEvents.ARMOR_EQUIP_DIAMOND,
             0.0f,
             0.0f,
-            () -> Ingredient.ofItems(EnrichedItems.TANZANITE),
+            () -> Ingredient.of(EnrichedItems.TANZANITE),
             Lists.newArrayList(
-                new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "tanzanite"))));
+                new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "tanzanite"))));
 
     STEEL =
         ArmorMaterials.register(
@@ -144,36 +144,36 @@ public class EnrichedArmorMaterials {
                   map.put(
                       ArmorItem.Type.BOOTS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.BOOTS.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.LEGGINGS.getSlot().getIndex())
                           + 2);
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.CHESTPLATE.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.HELMET,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.HELMET.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.BODY,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.BODY.getSlot().getIndex())
                           + 1);
                 }),
             9,
-            SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+            SoundEvents.ARMOR_EQUIP_IRON,
             1.0f,
             0.0f,
-            () -> Ingredient.ofItems(EnrichedItems.STEEL_INGOT),
+            () -> Ingredient.of(EnrichedItems.STEEL_INGOT),
             Lists.newArrayList(
-                new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "steel"))));
+                new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "steel"))));
 
     OBSIDIAN =
         ArmorMaterials.register(
@@ -184,36 +184,36 @@ public class EnrichedArmorMaterials {
                   map.put(
                       ArmorItem.Type.BOOTS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.BOOTS.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.LEGGINGS.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.CHESTPLATE.getSlot().getIndex())
                           + 3);
                   map.put(
                       ArmorItem.Type.HELMET,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.HELMET.getSlot().getIndex())
                           + 1);
                   map.put(
                       ArmorItem.Type.BODY,
                       BASE_ARMOR_RATING.get(
-                              ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId())
+                              ArmorItem.Type.BODY.getSlot().getIndex())
                           + 1);
                 }),
             9,
-            SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+            SoundEvents.ARMOR_EQUIP_GOLD,
             2.0f,
             0.1f,
-            () -> Ingredient.ofItems(EnrichedItems.OBSIDIAN_ALLOY_INGOT),
+            () -> Ingredient.of(EnrichedItems.OBSIDIAN_ALLOY_INGOT),
             Lists.newArrayList(
-                new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "obsidian"))));
+                new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "obsidian"))));
 
     EMERALD =
         ArmorMaterials.register(
@@ -224,31 +224,31 @@ public class EnrichedArmorMaterials {
                   map.put(
                       ArmorItem.Type.BOOTS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.BOOTS.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.LEGGINGS.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.CHESTPLATE.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.HELMET,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.HELMET.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.BODY,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.BODY.getSlot().getIndex()));
                 }),
             26,
-            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
+            SoundEvents.ARMOR_EQUIP_DIAMOND,
             0.0f,
             0.0f,
-            () -> Ingredient.ofItems(Items.EMERALD),
+            () -> Ingredient.of(Items.EMERALD),
             Lists.newArrayList(
-                new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "emerald"))));
+                new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "emerald"))));
 
     BRONZE =
         ArmorMaterials.register(
@@ -259,31 +259,31 @@ public class EnrichedArmorMaterials {
                   map.put(
                       ArmorItem.Type.BOOTS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BOOTS.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.BOOTS.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.LEGGINGS,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.LEGGINGS.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.LEGGINGS.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.CHESTPLATE,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.CHESTPLATE.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.CHESTPLATE.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.HELMET,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.HELMET.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.HELMET.getSlot().getIndex()));
                   map.put(
                       ArmorItem.Type.BODY,
                       BASE_ARMOR_RATING.get(
-                          ArmorItem.Type.BODY.getEquipmentSlot().getEntitySlotId()));
+                          ArmorItem.Type.BODY.getSlot().getIndex()));
                 }),
             9,
-            SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+            SoundEvents.ARMOR_EQUIP_IRON,
             0.5f,
             0.0f,
-            () -> Ingredient.ofItems(EnrichedItems.BRONZE_INGOT),
+            () -> Ingredient.of(EnrichedItems.BRONZE_INGOT),
             Lists.newArrayList(
-                new ArmorMaterial.Layer(Identifier.of(EnrichedMod.MOD_ID, "bronze"))));
+                new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "bronze"))));
   }
 
   public static void register() {

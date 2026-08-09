@@ -8,7 +8,7 @@ import dev.isxander.yacl3.api.OptionDescription;
 import dev.isxander.yacl3.api.OptionFlag;
 import dev.isxander.yacl3.gui.controllers.BooleanController;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.minecraft.text.Text;
+import net.minecraft.network.chat.Component;
 
 public class EnrichedOptionCategories {
   private static final EnrichedGameOptions ENRICHED_GAME_OPTIONS;
@@ -32,13 +32,13 @@ public class EnrichedOptionCategories {
 
   public static ConfigCategory toolsAndArmor() {
     return ConfigCategory.createBuilder()
-        .name(Text.translatable("enriched.options.category.toolsAndArmor"))
+        .name(Component.translatable("enriched.options.category.toolsAndArmor"))
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.toolsAndArmor.enableRubyGear"))
+                .name(Component.translatable("enriched.options.toolsAndArmor.enableRubyGear"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.toolsAndArmor.enableRubyGear.description")))
                 .binding(
                     EnrichedGameOptions.defaults().toolsAndArmorOptions.enableRubyGear,
@@ -49,10 +49,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.toolsAndArmor.enableSapphireGear"))
+                .name(Component.translatable("enriched.options.toolsAndArmor.enableSapphireGear"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.toolsAndArmor.enableSapphireGear.description")))
                 .binding(
                     EnrichedGameOptions.defaults().toolsAndArmorOptions.enableSapphireGear,
@@ -63,10 +63,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.toolsAndArmor.enableTanzaniteGear"))
+                .name(Component.translatable("enriched.options.toolsAndArmor.enableTanzaniteGear"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.toolsAndArmor.enableTanzaniteGear.description")))
                 .binding(
                     EnrichedGameOptions.defaults().toolsAndArmorOptions.enableTanzaniteGear,
@@ -77,10 +77,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.toolsAndArmor.enableSteelGear"))
+                .name(Component.translatable("enriched.options.toolsAndArmor.enableSteelGear"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.toolsAndArmor.enableSteelGear.description")))
                 .binding(
                     EnrichedGameOptions.defaults().toolsAndArmorOptions.enableSteelGear,
@@ -91,10 +91,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.toolsAndArmor.enableObsidianGear"))
+                .name(Component.translatable("enriched.options.toolsAndArmor.enableObsidianGear"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.toolsAndArmor.enableObsidianGear.description")))
                 .binding(
                     EnrichedGameOptions.defaults().toolsAndArmorOptions.enableObsidianGear,
@@ -105,10 +105,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.toolsAndArmor.enableEmeraldGear"))
+                .name(Component.translatable("enriched.options.toolsAndArmor.enableEmeraldGear"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.toolsAndArmor.enableEmeraldGear.description")))
                 .binding(
                     EnrichedGameOptions.defaults().toolsAndArmorOptions.enableEmeraldGear,
@@ -119,10 +119,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.toolsAndArmor.enableBronzeGear"))
+                .name(Component.translatable("enriched.options.toolsAndArmor.enableBronzeGear"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.toolsAndArmor.enableBronzeGear.description")))
                 .binding(
                     EnrichedGameOptions.defaults().toolsAndArmorOptions.enableBronzeGear,
@@ -133,10 +133,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.toolsAndArmor.enableCopperTools"))
+                .name(Component.translatable("enriched.options.toolsAndArmor.enableCopperTools"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.toolsAndArmor.enableCopperTools.description")))
                 .binding(
                     EnrichedGameOptions.defaults().toolsAndArmorOptions.enableCopperTools,
@@ -150,13 +150,13 @@ public class EnrichedOptionCategories {
 
   public static ConfigCategory recipes() {
     return ConfigCategory.createBuilder()
-        .name(Text.translatable("enriched.options.category.recipes"))
+        .name(Component.translatable("enriched.options.category.recipes"))
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.recipes.enableHorseArmorRecipes"))
+                .name(Component.translatable("enriched.options.recipes.enableHorseArmorRecipes"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.recipes.enableHorseArmorRecipes.description")))
                 .binding(
                     EnrichedGameOptions.defaults().recipeOptions.enableHorseArmorRecipes,
@@ -167,10 +167,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.recipes.enableChainmailRecipes"))
+                .name(Component.translatable("enriched.options.recipes.enableChainmailRecipes"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.recipes.enableChainmailRecipes.description")))
                 .binding(
                     EnrichedGameOptions.defaults().recipeOptions.enableChainmailRecipes,
@@ -181,10 +181,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.recipes.enableRawSmeltingRecipes"))
+                .name(Component.translatable("enriched.options.recipes.enableRawSmeltingRecipes"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.recipes.enableRawSmeltingRecipes.description")))
                 .binding(
                     EnrichedGameOptions.defaults().recipeOptions.enableRawSmeltingRecipes,
@@ -195,10 +195,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.recipes.enableFoodRecipes"))
+                .name(Component.translatable("enriched.options.recipes.enableFoodRecipes"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.recipes.enableFoodRecipes.description")))
                 .binding(
                     EnrichedGameOptions.defaults().recipeOptions.enableFoodRecipes,
@@ -209,10 +209,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.recipes.enableUncraftingRecipes"))
+                .name(Component.translatable("enriched.options.recipes.enableUncraftingRecipes"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.recipes.enableUncraftingRecipes.description")))
                 .binding(
                     EnrichedGameOptions.defaults().recipeOptions.enableUncraftingRecipes,
@@ -245,14 +245,14 @@ public class EnrichedOptionCategories {
  */
   public static ConfigCategory worldGeneration() {
     return ConfigCategory.createBuilder()
-        .name(Text.translatable("enriched.options.category.worldGeneration"))
-        .tooltip(Text.translatable("enriched.options.category.worldGeneration.description"))
+        .name(Component.translatable("enriched.options.category.worldGeneration"))
+        .tooltip(Component.translatable("enriched.options.category.worldGeneration.description"))
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.worldGeneration.generateRubyOres"))
+                .name(Component.translatable("enriched.options.worldGeneration.generateRubyOres"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.worldGeneration.generateRubyOres.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateRubyOres,
@@ -263,10 +263,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.worldGeneration.generateSapphireOres"))
+                .name(Component.translatable("enriched.options.worldGeneration.generateSapphireOres"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.worldGeneration.generateSapphireOres.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateSapphireOres,
@@ -277,10 +277,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.worldGeneration.generateTanzaniteOres"))
+                .name(Component.translatable("enriched.options.worldGeneration.generateTanzaniteOres"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.worldGeneration.generateTanzaniteOres.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateTanzaniteOres,
@@ -291,10 +291,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.worldGeneration.generateAmberOres"))
+                .name(Component.translatable("enriched.options.worldGeneration.generateAmberOres"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.worldGeneration.generateAmberOres.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateAmberOres,
@@ -305,10 +305,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.worldGeneration.generateTopazOres"))
+                .name(Component.translatable("enriched.options.worldGeneration.generateTopazOres"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.worldGeneration.generateTopazOres.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateTopazOres,
@@ -319,10 +319,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.worldGeneration.generateTinOres"))
+                .name(Component.translatable("enriched.options.worldGeneration.generateTinOres"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.worldGeneration.generateTinOres.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateTanzaniteOres,
@@ -333,10 +333,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.worldGeneration.generateDarkGranite"))
+                .name(Component.translatable("enriched.options.worldGeneration.generateDarkGranite"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.worldGeneration.generateDarkGranite.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateDarkGranite,
@@ -347,10 +347,10 @@ public class EnrichedOptionCategories {
                 .build())
         .option(
             Option.<Boolean>createBuilder()
-                .name(Text.translatable("enriched.options.worldGeneration.generateMarble"))
+                .name(Component.translatable("enriched.options.worldGeneration.generateMarble"))
                 .description(
                     OptionDescription.of(
-                        Text.translatable(
+                        Component.translatable(
                             "enriched.options.worldGeneration.generateMarble.description")))
                 .binding(
                     EnrichedGameOptions.defaults().worldGenerationOptions.generateMarble,

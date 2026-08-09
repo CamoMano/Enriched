@@ -1,14 +1,14 @@
 package com.enrichedmc.enriched.item.base;
 
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.Tier;
 
 public class EnrichedBaseShovelItem extends ShovelItem {
-  public EnrichedBaseShovelItem(ToolMaterial toolMaterial) {
+  public EnrichedBaseShovelItem(Tier toolMaterial) {
     super(
         toolMaterial,
-        new Settings()
-            .maxCount(1)
-            .attributeModifiers(ShovelItem.createAttributeModifiers(toolMaterial, -1.0f, -3.0f)));
+        new Properties()
+            .stacksTo(1)
+            .attributes(ShovelItem.createAttributes(toolMaterial, -1.0f, -3.0f)));
   }
 }

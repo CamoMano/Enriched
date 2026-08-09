@@ -2,14 +2,14 @@ package com.enrichedmc.enriched.world.tree;
 
 import com.enrichedmc.enriched.world.EnrichedConfiguredFeatures;
 import java.util.Optional;
-import net.minecraft.block.SaplingGenerator;
+import net.minecraft.world.level.block.grower.TreeGrower;
 
 public class EnrichedSaplingGenerators {
-  public static final SaplingGenerator REDWOOD;
+  public static final TreeGrower REDWOOD;
 
   static {
     REDWOOD =
-        new SaplingGenerator(
+        new TreeGrower(
             "redwood",
             0.0f,
             Optional.empty(),

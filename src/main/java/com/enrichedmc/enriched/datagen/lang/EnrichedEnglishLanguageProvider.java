@@ -8,20 +8,20 @@ import com.enrichedmc.enriched.tag.EnrichedTags;
 import java.util.concurrent.CompletableFuture;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
 
 public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
   public EnrichedEnglishLanguageProvider(
       FabricDataOutput dataOutput,
-      CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+      CompletableFuture<HolderLookup.Provider> registryLookup) {
     super(dataOutput, "en_us", registryLookup);
   }
 
   @Override
   public void generateTranslations(
-      RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
+      HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
     /*-------------*/
     /* -- Items -- */
     /*-------------*/
