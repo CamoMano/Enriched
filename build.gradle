@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
     id 'maven-publish'
 }
 
@@ -27,8 +27,6 @@ repositories {
         url = "https://maven.isxander.dev/releases"
     }
 
-    maven { url = 'https://maven.minecraftforge.net/' }
-
     mavenCentral()
 }
 
@@ -43,23 +41,22 @@ fabricApi {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${minecraft_version}"
-    mappings "net.fabricmc:yarn:${yarn_mappings_version}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    implementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
 
     // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
     // YetAnotherConfigLib. This is used for Enriched's configuration screen and is therefore a required dependency.
-    include(modImplementation "dev.isxander:yet-another-config-lib:${yacl_version}")
+    include(implementation("dev.isxander:yet-another-config-lib:${yacl_version}"))
 
     // ModMenu. It isn't required by Enriched, but is here so we can have ModMenu integration.
-    modImplementation "com.terraformersmc:modmenu:${modmenu_version}"
+    implementation "com.terraformersmc:modmenu:${modmenu_version}"
 
     // DevLogin. Allows us to use a Microsoft account within the development environment.
-    modImplementation "com.ptsmods:devlogin:${devlogin_version}"
+    implementation "com.ptsmods:devlogin:${devlogin_version}:fabric"
 
     //TerraBlender(Not used yet)
-    //modImplementation "com.github.glitchfiend:TerraBlender-fabric:${minecraft_version}-${terrablender_version}"
+    //implementation "com.github.glitchfiend:TerraBlender-fabric:${minecraft_version}-${terrablender_version}"
 }
 
 processResources {
@@ -79,7 +76,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.release = 21
+    it.options.release = 25
 }
 
 java {
@@ -88,8 +85,8 @@ java {
     // If you remove this line, sources will not be generated.
     withSourcesJar()
 
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 }
 
 jar {
