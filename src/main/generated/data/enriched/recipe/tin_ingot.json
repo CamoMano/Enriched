@@ -1,10 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
-    {
-      "item": "enriched:tin_block"
-    }
+    "enriched:tin_block"
   ],
   "result": {
     "count": 9,

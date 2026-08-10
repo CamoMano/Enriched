@@ -7,9 +7,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "tag": "c:gems/sapphire"
-    }
+    "M": "#c:gems/sapphire"
   },
   "pattern": [
     "M M",
@@ -17,7 +15,6 @@
     "MMM"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:sapphire_chestplate"
   }
 }

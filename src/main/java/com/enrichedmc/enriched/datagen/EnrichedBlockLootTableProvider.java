@@ -3,8 +3,8 @@ package com.enrichedmc.enriched.datagen;
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import java.util.concurrent.CompletableFuture;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
@@ -17,9 +17,9 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
-public class EnrichedBlockLootTableProvider extends FabricBlockLootTableProvider {
+public class EnrichedBlockLootTableProvider extends FabricBlockLootSubProvider {
   public EnrichedBlockLootTableProvider(
-      FabricDataOutput dataOutput,
+      FabricPackOutput dataOutput,
       CompletableFuture<HolderLookup.Provider> registryLookup) {
     super(dataOutput, registryLookup);
   }

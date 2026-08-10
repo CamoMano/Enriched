@@ -38,7 +38,7 @@ public class OpenOptionsScreenCommand implements CommandRegistrationCallback {
         Commands.literal("enriched")
             .then(
                 Commands.literal("options")
-                    .requires(source -> source.hasPermission(2))
+                    .requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
                     .executes(OpenOptionsScreenCommand::execute)));
   }
 }

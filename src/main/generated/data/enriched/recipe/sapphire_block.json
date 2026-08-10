@@ -1,10 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "#": {
-      "item": "enriched:sapphire"
-    }
+    "#": "enriched:sapphire"
   },
   "pattern": [
     "###",
@@ -12,7 +9,6 @@
     "###"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:sapphire_block"
   }
 }

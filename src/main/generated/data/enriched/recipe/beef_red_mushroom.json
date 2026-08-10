@@ -1,25 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:cooked_beef"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:baked_potato"
-    },
-    {
-      "item": "minecraft:red_mushroom"
-    }
+    "minecraft:cooked_beef",
+    "minecraft:carrot",
+    "minecraft:bowl",
+    "minecraft:baked_potato",
+    "minecraft:red_mushroom"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:beef_stew"
   }
 }

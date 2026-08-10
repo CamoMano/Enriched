@@ -1,200 +1,203 @@
 package com.enrichedmc.enriched.datagen.tag;
 
+import static com.enrichedmc.enriched.registry.EnrichedRegisters.itemKey;
 import static com.enrichedmc.enriched.tag.EnrichedTags.ItemTags.*;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.tag.EnrichedTags;
 import java.util.concurrent.CompletableFuture;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 
-public class EnrichedItemTagProvider extends FabricTagProvider.ItemTagProvider {
+public class EnrichedItemTagProvider extends FabricTagsProvider<Item> {
   public EnrichedItemTagProvider(
-      FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
-    super(output, completableFuture);
+      FabricPackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
+    super(output, Registries.ITEM, completableFuture);
   }
 
   @Override
   protected void addTags(HolderLookup.Provider wrapperLookup) {
 
-    this.tag(ItemTags.PLANKS).add(EnrichedBlocks.REDWOOD_PLANKS.asItem());
+    this.tag(ItemTags.PLANKS).add(itemKey(EnrichedBlocks.REDWOOD_PLANKS));
 
-    this.tag(ItemTags.LOGS_THAT_BURN)
-        .add(EnrichedBlocks.REDWOOD_LOG.asItem())
-        .add(EnrichedBlocks.REDWOOD_WOOD.asItem())
-        .add(EnrichedBlocks.STRIPPED_REDWOOD_LOG.asItem())
-        .add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD.asItem());
+    this.tag(ItemTags.LOGS)
+        .add(itemKey(EnrichedBlocks.REDWOOD_LOG))
+        .add(itemKey(EnrichedBlocks.REDWOOD_WOOD))
+        .add(itemKey(EnrichedBlocks.STRIPPED_REDWOOD_LOG))
+        .add(itemKey(EnrichedBlocks.STRIPPED_REDWOOD_WOOD));
 
     this.tag(EnrichedTags.ItemTags.REDWOOD_LOGS)
-        .add(EnrichedBlocks.REDWOOD_LOG.asItem())
-        .add(EnrichedBlocks.STRIPPED_REDWOOD_LOG.asItem())
-        .add(EnrichedBlocks.REDWOOD_WOOD.asItem())
-        .add(EnrichedBlocks.STRIPPED_REDWOOD_WOOD.asItem());
+        .add(itemKey(EnrichedBlocks.REDWOOD_LOG))
+        .add(itemKey(EnrichedBlocks.STRIPPED_REDWOOD_LOG))
+        .add(itemKey(EnrichedBlocks.REDWOOD_WOOD))
+        .add(itemKey(EnrichedBlocks.STRIPPED_REDWOOD_WOOD));
 
     this.tag(ConventionalItemTags.DUSTS)
-        .add(EnrichedItems.OBSIDIAN_ALLOY_BLEND)
-        .add(EnrichedItems.STEEL_BLEND)
-        .add(EnrichedItems.BRONZE_BLEND);
+        .add(itemKey(EnrichedItems.OBSIDIAN_ALLOY_BLEND))
+        .add(itemKey(EnrichedItems.STEEL_BLEND))
+        .add(itemKey(EnrichedItems.BRONZE_BLEND));
 
     this.tag(ConventionalItemTags.INGOTS)
-        .add(EnrichedItems.OBSIDIAN_ALLOY_INGOT)
-        .add(EnrichedItems.STEEL_INGOT)
-        .add(EnrichedItems.BRONZE_INGOT)
-        .add(EnrichedItems.TIN_INGOT);
+        .add(itemKey(EnrichedItems.OBSIDIAN_ALLOY_INGOT))
+        .add(itemKey(EnrichedItems.STEEL_INGOT))
+        .add(itemKey(EnrichedItems.BRONZE_INGOT))
+        .add(itemKey(EnrichedItems.TIN_INGOT));
 
     this.tag(ConventionalItemTags.ORES)
-        .add(EnrichedBlocks.RUBY_ORE.asItem())
-        .add(EnrichedBlocks.DEEPSLATE_RUBY_ORE.asItem())
-        .add(EnrichedBlocks.SAPPHIRE_ORE.asItem())
-        .add(EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE.asItem())
-        .add(EnrichedBlocks.TANZANITE_ORE.asItem())
-        .add(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE.asItem())
-        .add(EnrichedBlocks.AMBER_ORE.asItem())
-        .add(EnrichedBlocks.DEEPSLATE_AMBER_ORE.asItem())
-        .add(EnrichedBlocks.TOPAZ_ORE.asItem())
-        .add(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE.asItem())
-        .add(EnrichedBlocks.TIN_ORE.asItem())
-        .add(EnrichedBlocks.DEEPSLATE_TIN_ORE.asItem());
+        .add(itemKey(EnrichedBlocks.RUBY_ORE))
+        .add(itemKey(EnrichedBlocks.DEEPSLATE_RUBY_ORE))
+        .add(itemKey(EnrichedBlocks.SAPPHIRE_ORE))
+        .add(itemKey(EnrichedBlocks.DEEPSLATE_SAPPHIRE_ORE))
+        .add(itemKey(EnrichedBlocks.TANZANITE_ORE))
+        .add(itemKey(EnrichedBlocks.DEEPSLATE_TANZANITE_ORE))
+        .add(itemKey(EnrichedBlocks.AMBER_ORE))
+        .add(itemKey(EnrichedBlocks.DEEPSLATE_AMBER_ORE))
+        .add(itemKey(EnrichedBlocks.TOPAZ_ORE))
+        .add(itemKey(EnrichedBlocks.DEEPSLATE_TOPAZ_ORE))
+        .add(itemKey(EnrichedBlocks.TIN_ORE))
+        .add(itemKey(EnrichedBlocks.DEEPSLATE_TIN_ORE));
 
     this.tag(ConventionalItemTags.TOOLS)
-        .add(EnrichedItems.STEEL_AXE)
-        .add(EnrichedItems.STEEL_HOE)
-        .add(EnrichedItems.STEEL_SHOVEL)
-        .add(EnrichedItems.STEEL_PICKAXE)
-        .add(EnrichedItems.OBSIDIAN_AXE)
-        .add(EnrichedItems.OBSIDIAN_HOE)
-        .add(EnrichedItems.OBSIDIAN_SHOVEL)
-        .add(EnrichedItems.OBSIDIAN_PICKAXE)
-        .add(EnrichedItems.COPPER_AXE)
-        .add(EnrichedItems.COPPER_HOE)
-        .add(EnrichedItems.COPPER_SHOVEL)
-        .add(EnrichedItems.COPPER_PICKAXE)
-        .add(EnrichedItems.RUBY_AXE)
-        .add(EnrichedItems.RUBY_HOE)
-        .add(EnrichedItems.RUBY_SHOVEL)
-        .add(EnrichedItems.RUBY_PICKAXE)
-        .add(EnrichedItems.SAPPHIRE_AXE)
-        .add(EnrichedItems.SAPPHIRE_HOE)
-        .add(EnrichedItems.SAPPHIRE_SHOVEL)
-        .add(EnrichedItems.SAPPHIRE_PICKAXE)
-        .add(EnrichedItems.TANZANITE_AXE)
-        .add(EnrichedItems.TANZANITE_HOE)
-        .add(EnrichedItems.TANZANITE_SHOVEL)
-        .add(EnrichedItems.TANZANITE_PICKAXE)
-        .add(EnrichedItems.EMERALD_AXE)
-        .add(EnrichedItems.EMERALD_HOE)
-        .add(EnrichedItems.EMERALD_SHOVEL)
-        .add(EnrichedItems.EMERALD_PICKAXE);
+        .add(itemKey(EnrichedItems.STEEL_AXE))
+        .add(itemKey(EnrichedItems.STEEL_HOE))
+        .add(itemKey(EnrichedItems.STEEL_SHOVEL))
+        .add(itemKey(EnrichedItems.STEEL_PICKAXE))
+        .add(itemKey(EnrichedItems.OBSIDIAN_AXE))
+        .add(itemKey(EnrichedItems.OBSIDIAN_HOE))
+        .add(itemKey(EnrichedItems.OBSIDIAN_SHOVEL))
+        .add(itemKey(EnrichedItems.OBSIDIAN_PICKAXE))
+        .add(itemKey(EnrichedItems.COPPER_AXE))
+        .add(itemKey(EnrichedItems.COPPER_HOE))
+        .add(itemKey(EnrichedItems.COPPER_SHOVEL))
+        .add(itemKey(EnrichedItems.COPPER_PICKAXE))
+        .add(itemKey(EnrichedItems.RUBY_AXE))
+        .add(itemKey(EnrichedItems.RUBY_HOE))
+        .add(itemKey(EnrichedItems.RUBY_SHOVEL))
+        .add(itemKey(EnrichedItems.RUBY_PICKAXE))
+        .add(itemKey(EnrichedItems.SAPPHIRE_AXE))
+        .add(itemKey(EnrichedItems.SAPPHIRE_HOE))
+        .add(itemKey(EnrichedItems.SAPPHIRE_SHOVEL))
+        .add(itemKey(EnrichedItems.SAPPHIRE_PICKAXE))
+        .add(itemKey(EnrichedItems.TANZANITE_AXE))
+        .add(itemKey(EnrichedItems.TANZANITE_HOE))
+        .add(itemKey(EnrichedItems.TANZANITE_SHOVEL))
+        .add(itemKey(EnrichedItems.TANZANITE_PICKAXE))
+        .add(itemKey(EnrichedItems.EMERALD_AXE))
+        .add(itemKey(EnrichedItems.EMERALD_HOE))
+        .add(itemKey(EnrichedItems.EMERALD_SHOVEL))
+        .add(itemKey(EnrichedItems.EMERALD_PICKAXE));
 
     this.tag(ConventionalItemTags.MINING_TOOL_TOOLS)
-        .add(EnrichedItems.STEEL_PICKAXE)
-        .add(EnrichedItems.OBSIDIAN_PICKAXE)
-        .add(EnrichedItems.COPPER_PICKAXE)
-        .add(EnrichedItems.RUBY_PICKAXE)
-        .add(EnrichedItems.SAPPHIRE_PICKAXE)
-        .add(EnrichedItems.TANZANITE_PICKAXE)
-        .add(EnrichedItems.EMERALD_PICKAXE);
+        .add(itemKey(EnrichedItems.STEEL_PICKAXE))
+        .add(itemKey(EnrichedItems.OBSIDIAN_PICKAXE))
+        .add(itemKey(EnrichedItems.COPPER_PICKAXE))
+        .add(itemKey(EnrichedItems.RUBY_PICKAXE))
+        .add(itemKey(EnrichedItems.SAPPHIRE_PICKAXE))
+        .add(itemKey(EnrichedItems.TANZANITE_PICKAXE))
+        .add(itemKey(EnrichedItems.EMERALD_PICKAXE));
 
     this.tag(ItemTags.PICKAXES)
-        .add(EnrichedItems.STEEL_PICKAXE)
-        .add(EnrichedItems.OBSIDIAN_PICKAXE)
-        .add(EnrichedItems.COPPER_PICKAXE)
-        .add(EnrichedItems.RUBY_PICKAXE)
-        .add(EnrichedItems.SAPPHIRE_PICKAXE)
-        .add(EnrichedItems.TANZANITE_PICKAXE)
-        .add(EnrichedItems.EMERALD_PICKAXE);
+        .add(itemKey(EnrichedItems.STEEL_PICKAXE))
+        .add(itemKey(EnrichedItems.OBSIDIAN_PICKAXE))
+        .add(itemKey(EnrichedItems.COPPER_PICKAXE))
+        .add(itemKey(EnrichedItems.RUBY_PICKAXE))
+        .add(itemKey(EnrichedItems.SAPPHIRE_PICKAXE))
+        .add(itemKey(EnrichedItems.TANZANITE_PICKAXE))
+        .add(itemKey(EnrichedItems.EMERALD_PICKAXE));
 
     this.tag(ItemTags.AXES)
-        .add(EnrichedItems.STEEL_AXE)
-        .add(EnrichedItems.OBSIDIAN_AXE)
-        .add(EnrichedItems.COPPER_AXE)
-        .add(EnrichedItems.RUBY_AXE)
-        .add(EnrichedItems.SAPPHIRE_AXE)
-        .add(EnrichedItems.TANZANITE_AXE)
-        .add(EnrichedItems.EMERALD_AXE);
+        .add(itemKey(EnrichedItems.STEEL_AXE))
+        .add(itemKey(EnrichedItems.OBSIDIAN_AXE))
+        .add(itemKey(EnrichedItems.COPPER_AXE))
+        .add(itemKey(EnrichedItems.RUBY_AXE))
+        .add(itemKey(EnrichedItems.SAPPHIRE_AXE))
+        .add(itemKey(EnrichedItems.TANZANITE_AXE))
+        .add(itemKey(EnrichedItems.EMERALD_AXE));
 
     this.tag(ItemTags.SHOVELS)
-        .add(EnrichedItems.STEEL_SHOVEL)
-        .add(EnrichedItems.OBSIDIAN_SHOVEL)
-        .add(EnrichedItems.COPPER_SHOVEL)
-        .add(EnrichedItems.RUBY_SHOVEL)
-        .add(EnrichedItems.SAPPHIRE_SHOVEL)
-        .add(EnrichedItems.TANZANITE_SHOVEL)
-        .add(EnrichedItems.EMERALD_SHOVEL);
+        .add(itemKey(EnrichedItems.STEEL_SHOVEL))
+        .add(itemKey(EnrichedItems.OBSIDIAN_SHOVEL))
+        .add(itemKey(EnrichedItems.COPPER_SHOVEL))
+        .add(itemKey(EnrichedItems.RUBY_SHOVEL))
+        .add(itemKey(EnrichedItems.SAPPHIRE_SHOVEL))
+        .add(itemKey(EnrichedItems.TANZANITE_SHOVEL))
+        .add(itemKey(EnrichedItems.EMERALD_SHOVEL));
 
     this.tag(ItemTags.HOES)
-        .add(EnrichedItems.STEEL_HOE)
-        .add(EnrichedItems.OBSIDIAN_HOE)
-        .add(EnrichedItems.COPPER_HOE)
-        .add(EnrichedItems.RUBY_HOE)
-        .add(EnrichedItems.SAPPHIRE_HOE)
-        .add(EnrichedItems.TANZANITE_HOE)
-        .add(EnrichedItems.EMERALD_HOE);
+        .add(itemKey(EnrichedItems.STEEL_HOE))
+        .add(itemKey(EnrichedItems.OBSIDIAN_HOE))
+        .add(itemKey(EnrichedItems.COPPER_HOE))
+        .add(itemKey(EnrichedItems.RUBY_HOE))
+        .add(itemKey(EnrichedItems.SAPPHIRE_HOE))
+        .add(itemKey(EnrichedItems.TANZANITE_HOE))
+        .add(itemKey(EnrichedItems.EMERALD_HOE));
 
     this.tag(ItemTags.SWORDS)
-        .add(EnrichedItems.STEEL_SWORD)
-        .add(EnrichedItems.OBSIDIAN_SWORD)
-        .add(EnrichedItems.COPPER_SWORD)
-        .add(EnrichedItems.RUBY_SWORD)
-        .add(EnrichedItems.SAPPHIRE_SWORD)
-        .add(EnrichedItems.TANZANITE_SWORD)
-        .add(EnrichedItems.EMERALD_SWORD);
+        .add(itemKey(EnrichedItems.STEEL_SWORD))
+        .add(itemKey(EnrichedItems.OBSIDIAN_SWORD))
+        .add(itemKey(EnrichedItems.COPPER_SWORD))
+        .add(itemKey(EnrichedItems.RUBY_SWORD))
+        .add(itemKey(EnrichedItems.SAPPHIRE_SWORD))
+        .add(itemKey(EnrichedItems.TANZANITE_SWORD))
+        .add(itemKey(EnrichedItems.EMERALD_SWORD));
 
     this.tag(ItemTags.HEAD_ARMOR)
-        .add(EnrichedItems.STEEL_HELMET)
-        .add(EnrichedItems.OBSIDIAN_HELMET)
-        .add(EnrichedItems.RUBY_HELMET)
-        .add(EnrichedItems.SAPPHIRE_HELMET)
-        .add(EnrichedItems.TANZANITE_HELMET)
-        .add(EnrichedItems.EMERALD_HELMET);
+        .add(itemKey(EnrichedItems.STEEL_HELMET))
+        .add(itemKey(EnrichedItems.OBSIDIAN_HELMET))
+        .add(itemKey(EnrichedItems.RUBY_HELMET))
+        .add(itemKey(EnrichedItems.SAPPHIRE_HELMET))
+        .add(itemKey(EnrichedItems.TANZANITE_HELMET))
+        .add(itemKey(EnrichedItems.EMERALD_HELMET));
 
     this.tag(ItemTags.CHEST_ARMOR)
-        .add(EnrichedItems.STEEL_CHESTPLATE)
-        .add(EnrichedItems.OBSIDIAN_CHESTPLATE)
-        .add(EnrichedItems.RUBY_CHESTPLATE)
-        .add(EnrichedItems.SAPPHIRE_CHESTPLATE)
-        .add(EnrichedItems.TANZANITE_CHESTPLATE)
-        .add(EnrichedItems.EMERALD_CHESTPLATE);
+        .add(itemKey(EnrichedItems.STEEL_CHESTPLATE))
+        .add(itemKey(EnrichedItems.OBSIDIAN_CHESTPLATE))
+        .add(itemKey(EnrichedItems.RUBY_CHESTPLATE))
+        .add(itemKey(EnrichedItems.SAPPHIRE_CHESTPLATE))
+        .add(itemKey(EnrichedItems.TANZANITE_CHESTPLATE))
+        .add(itemKey(EnrichedItems.EMERALD_CHESTPLATE));
 
     this.tag(ItemTags.LEG_ARMOR)
-        .add(EnrichedItems.STEEL_LEGGINGS)
-        .add(EnrichedItems.OBSIDIAN_LEGGINGS)
-        .add(EnrichedItems.RUBY_LEGGINGS)
-        .add(EnrichedItems.SAPPHIRE_LEGGINGS)
-        .add(EnrichedItems.TANZANITE_LEGGINGS)
-        .add(EnrichedItems.EMERALD_LEGGINGS);
+        .add(itemKey(EnrichedItems.STEEL_LEGGINGS))
+        .add(itemKey(EnrichedItems.OBSIDIAN_LEGGINGS))
+        .add(itemKey(EnrichedItems.RUBY_LEGGINGS))
+        .add(itemKey(EnrichedItems.SAPPHIRE_LEGGINGS))
+        .add(itemKey(EnrichedItems.TANZANITE_LEGGINGS))
+        .add(itemKey(EnrichedItems.EMERALD_LEGGINGS));
 
     this.tag(ItemTags.FOOT_ARMOR)
-        .add(EnrichedItems.STEEL_BOOTS)
-        .add(EnrichedItems.OBSIDIAN_BOOTS)
-        .add(EnrichedItems.RUBY_BOOTS)
-        .add(EnrichedItems.SAPPHIRE_BOOTS)
-        .add(EnrichedItems.TANZANITE_BOOTS)
-        .add(EnrichedItems.EMERALD_BOOTS);
+        .add(itemKey(EnrichedItems.STEEL_BOOTS))
+        .add(itemKey(EnrichedItems.OBSIDIAN_BOOTS))
+        .add(itemKey(EnrichedItems.RUBY_BOOTS))
+        .add(itemKey(EnrichedItems.SAPPHIRE_BOOTS))
+        .add(itemKey(EnrichedItems.TANZANITE_BOOTS))
+        .add(itemKey(EnrichedItems.EMERALD_BOOTS));
 
     this.tag(ConventionalItemTags.MELEE_WEAPON_TOOLS)
-        .add(EnrichedItems.STEEL_SWORD)
-        .add(EnrichedItems.OBSIDIAN_SWORD)
-        .add(EnrichedItems.RUBY_SWORD)
-        .add(EnrichedItems.SAPPHIRE_SWORD)
-        .add(EnrichedItems.TANZANITE_SWORD)
-        .add(EnrichedItems.EMERALD_SWORD)
-        .add(EnrichedItems.COPPER_SWORD);
+        .add(itemKey(EnrichedItems.STEEL_SWORD))
+        .add(itemKey(EnrichedItems.OBSIDIAN_SWORD))
+        .add(itemKey(EnrichedItems.RUBY_SWORD))
+        .add(itemKey(EnrichedItems.SAPPHIRE_SWORD))
+        .add(itemKey(EnrichedItems.TANZANITE_SWORD))
+        .add(itemKey(EnrichedItems.EMERALD_SWORD))
+        .add(itemKey(EnrichedItems.COPPER_SWORD));
 
     // Conventional Tags
-    this.tag(STEEL_INGOTS).add(EnrichedItems.STEEL_INGOT);
-    this.tag(OBSIDIAN_ALLOY_INGOTS).add(EnrichedItems.OBSIDIAN_ALLOY_INGOT);
-    this.tag(RUBIES).add(EnrichedItems.RUBY);
-    this.tag(SAPPHIRES).add(EnrichedItems.SAPPHIRE);
-    this.tag(TANZANITES).add(EnrichedItems.TANZANITE);
-    this.tag(AMBERS).add(EnrichedItems.AMBER);
-    this.tag(TOPAZS).add(EnrichedItems.TOPAZ);
-    this.tag(BRONZE_INGOTS).add(EnrichedItems.BRONZE_INGOT);
-    this.tag(TIN_INGOTS).add(EnrichedItems.TIN_INGOT);
-    this.tag(FOODS).add(EnrichedItems.BERRY_JUICE).add(EnrichedItems.BEEF_STEW);
+    this.tag(STEEL_INGOTS).add(itemKey(EnrichedItems.STEEL_INGOT));
+    this.tag(OBSIDIAN_ALLOY_INGOTS).add(itemKey(EnrichedItems.OBSIDIAN_ALLOY_INGOT));
+    this.tag(RUBIES).add(itemKey(EnrichedItems.RUBY));
+    this.tag(SAPPHIRES).add(itemKey(EnrichedItems.SAPPHIRE));
+    this.tag(TANZANITES).add(itemKey(EnrichedItems.TANZANITE));
+    this.tag(AMBERS).add(itemKey(EnrichedItems.AMBER));
+    this.tag(TOPAZS).add(itemKey(EnrichedItems.TOPAZ));
+    this.tag(BRONZE_INGOTS).add(itemKey(EnrichedItems.BRONZE_INGOT));
+    this.tag(TIN_INGOTS).add(itemKey(EnrichedItems.TIN_INGOT));
+    this.tag(FOODS).add(itemKey(EnrichedItems.BERRY_JUICE)).add(itemKey(EnrichedItems.BEEF_STEW));
   }
 }

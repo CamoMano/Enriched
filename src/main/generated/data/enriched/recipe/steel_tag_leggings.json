@@ -7,9 +7,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "tag": "c:ingots/steel"
-    }
+    "M": "#c:ingots/steel"
   },
   "pattern": [
     "MMM",
@@ -17,7 +15,6 @@
     "M M"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:steel_leggings"
   }
 }

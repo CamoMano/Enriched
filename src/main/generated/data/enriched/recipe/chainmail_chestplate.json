@@ -7,9 +7,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "item": "minecraft:chain"
-    }
+    "M": "minecraft:iron_chain"
   },
   "pattern": [
     "M M",
@@ -17,7 +15,6 @@
     "MMM"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:chainmail_chestplate"
   }
 }

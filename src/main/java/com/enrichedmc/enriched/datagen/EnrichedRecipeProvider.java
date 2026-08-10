@@ -3,7 +3,6 @@ package com.enrichedmc.enriched.datagen;
 import static com.enrichedmc.enriched.tag.EnrichedTags.*;
 import static com.enrichedmc.enriched.tag.EnrichedTags.ItemTags.*;
 
-import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.conditions.EnrichedResourceConditions;
 import com.enrichedmc.enriched.item.EnrichedItems;
@@ -11,37 +10,40 @@ import com.enrichedmc.enriched.tag.EnrichedTags;
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.BlastingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
+import net.minecraft.world.item.crafting.CookingBookCategory;
+import net.minecraft.world.item.crafting.Recipe;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Nullable;
 
 public class EnrichedRecipeProvider extends FabricRecipeProvider {
   public EnrichedRecipeProvider(
-      FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+      FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
     super(output, registriesFuture);
   }
 
   @Override
-  public void buildRecipes(RecipeOutput exporter) {
+  protected RecipeProvider createRecipeProvider(
+      HolderLookup.Provider registryLookup, RecipeOutput exporter) {
+    return new RecipeProvider(registryLookup, exporter) {
+      @Override
+      public void buildRecipes() {
     this.createRubyRecipes(exporter);
     this.createSapphireRecipes(exporter);
     this.createTanzaniteRecipes(exporter);
@@ -113,8 +115,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         Lists.newArrayList(EnrichedResourceConditions.RUBY_ENABLED));
 
     nineBlockStorageRecipes(
-        recipeExporter,
-        RecipeCategory.MISC,
+                RecipeCategory.MISC,
         EnrichedItems.RUBY,
         RecipeCategory.MISC,
         EnrichedBlocks.RUBY_BLOCK);
@@ -176,8 +177,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         Lists.newArrayList(EnrichedResourceConditions.SAPPHIRE_ENABLED));
 
     nineBlockStorageRecipes(
-        recipeExporter,
-        RecipeCategory.MISC,
+                RecipeCategory.MISC,
         EnrichedItems.SAPPHIRE,
         RecipeCategory.MISC,
         EnrichedBlocks.SAPPHIRE_BLOCK);
@@ -239,8 +239,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         Lists.newArrayList(EnrichedResourceConditions.TANZANITE_ENABLED));
 
     nineBlockStorageRecipes(
-        recipeExporter,
-        RecipeCategory.MISC,
+                RecipeCategory.MISC,
         EnrichedItems.TANZANITE,
         RecipeCategory.MISC,
         EnrichedBlocks.TANZANITE_BLOCK);
@@ -294,12 +293,12 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.STEEL_BOOTS,
         Lists.newArrayList(EnrichedResourceConditions.STEEL_ENABLED));
 
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, EnrichedItems.STEEL_BLEND)
+    shapeless(RecipeCategory.MISC, EnrichedItems.STEEL_BLEND)
         .requires(Items.IRON_INGOT)
         .requires(Items.COAL)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.IRON_INGOT),
-            FabricRecipeProvider.has(Items.IRON_INGOT))
+            getHasName(Items.IRON_INGOT),
+            has(Items.IRON_INGOT))
         .save(recipeExporter);
 
     this.createSmeltingRecipe(
@@ -319,8 +318,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         100);
 
     nineBlockStorageRecipes(
-        recipeExporter,
-        RecipeCategory.MISC,
+                RecipeCategory.MISC,
         EnrichedItems.STEEL_INGOT,
         RecipeCategory.MISC,
         EnrichedBlocks.STEEL_BLOCK);
@@ -328,13 +326,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
 
   private void createBronzeAndTinRecipes(RecipeOutput recipeExporter) {
 
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, EnrichedItems.BRONZE_BLEND, 3)
+    shapeless(RecipeCategory.MISC, EnrichedItems.BRONZE_BLEND, 3)
         .requires(EnrichedItems.TIN_INGOT)
         .requires(Items.COPPER_INGOT)
         .requires(Items.COPPER_INGOT)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedItems.TIN_INGOT),
-            FabricRecipeProvider.has(EnrichedItems.TIN_INGOT))
+            getHasName(EnrichedItems.TIN_INGOT),
+            has(EnrichedItems.TIN_INGOT))
         .save(recipeExporter);
 
     this.createSmeltingRecipe(
@@ -370,22 +368,19 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         100);
 
     nineBlockStorageRecipes(
-        recipeExporter,
-        RecipeCategory.MISC,
+                RecipeCategory.MISC,
         EnrichedItems.BRONZE_INGOT,
         RecipeCategory.MISC,
         EnrichedBlocks.BRONZE_BLOCK);
 
     nineBlockStorageRecipes(
-        recipeExporter,
-        RecipeCategory.MISC,
+                RecipeCategory.MISC,
         EnrichedItems.TIN_INGOT,
         RecipeCategory.MISC,
         EnrichedBlocks.TIN_BLOCK);
 
     nineBlockStorageRecipes(
-            recipeExporter,
-            RecipeCategory.MISC,
+                    RecipeCategory.MISC,
             EnrichedItems.RAW_TIN,
             RecipeCategory.MISC,
             EnrichedBlocks.RAW_TIN_BLOCK);
@@ -446,13 +441,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         EnrichedItems.OBSIDIAN_BOOTS,
         Lists.newArrayList(EnrichedResourceConditions.OBSIDIAN_ENABLED));
 
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, EnrichedItems.OBSIDIAN_ALLOY_BLEND, 3)
+    shapeless(RecipeCategory.MISC, EnrichedItems.OBSIDIAN_ALLOY_BLEND, 3)
         .requires(Items.OBSIDIAN)
         .requires(EnrichedItems.STEEL_INGOT)
         .requires(EnrichedItems.STEEL_INGOT)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.OBSIDIAN),
-            FabricRecipeProvider.has(Items.OBSIDIAN))
+            getHasName(Items.OBSIDIAN),
+            has(Items.OBSIDIAN))
         .save(recipeExporter);
 
     this.createSmeltingRecipe(
@@ -472,8 +467,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         100);
 
     nineBlockStorageRecipes(
-        recipeExporter,
-        RecipeCategory.MISC,
+                RecipeCategory.MISC,
         EnrichedItems.OBSIDIAN_ALLOY_INGOT,
         RecipeCategory.MISC,
         EnrichedBlocks.OBSIDIAN_ALLOY_BLOCK);
@@ -565,26 +559,26 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
   private void createChainmailRecipes(RecipeOutput recipeExporter) {
     this.createHelmetRecipe(
         recipeExporter,
-        Items.CHAIN,
-        (ArmorItem) Items.CHAINMAIL_HELMET,
+        Items.IRON_CHAIN,
+        Items.CHAINMAIL_HELMET,
         Lists.newArrayList(EnrichedResourceConditions.CHAINMAIL_ENABLED));
 
     this.createChestplateRecipe(
         recipeExporter,
-        Items.CHAIN,
-        (ArmorItem) Items.CHAINMAIL_CHESTPLATE,
+        Items.IRON_CHAIN,
+        Items.CHAINMAIL_CHESTPLATE,
         Lists.newArrayList(EnrichedResourceConditions.CHAINMAIL_ENABLED));
 
     this.createLeggingsRecipe(
         recipeExporter,
-        Items.CHAIN,
-        (ArmorItem) Items.CHAINMAIL_LEGGINGS,
+        Items.IRON_CHAIN,
+        Items.CHAINMAIL_LEGGINGS,
         Lists.newArrayList(EnrichedResourceConditions.CHAINMAIL_ENABLED));
 
     this.createBootsRecipe(
         recipeExporter,
-        Items.CHAIN,
-        (ArmorItem) Items.CHAINMAIL_BOOTS,
+        Items.IRON_CHAIN,
+        Items.CHAINMAIL_BOOTS,
         Lists.newArrayList(EnrichedResourceConditions.CHAINMAIL_ENABLED));
   }
 
@@ -595,7 +589,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         recipeExporter,
         Items.RAW_COPPER_BLOCK,
         RecipeCategory.MISC,
-        Items.COPPER_BLOCK,
+        Items.COPPER_BLOCK.weathering().unaffected(),
         6.3f,
         1800);
     this.createSmeltingRecipe(
@@ -606,7 +600,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
     this.createBlastingRecipe(
         recipeExporter, Items.RAW_IRON_BLOCK, RecipeCategory.MISC, Items.IRON_BLOCK, 6.3f, 900);
     this.createBlastingRecipe(
-        recipeExporter, Items.RAW_COPPER_BLOCK, RecipeCategory.MISC, Items.COPPER_BLOCK, 6.3f, 900);
+        recipeExporter, Items.RAW_COPPER_BLOCK, RecipeCategory.MISC, Items.COPPER_BLOCK.weathering().unaffected(), 6.3f, 900);
     this.createBlastingRecipe(
         recipeExporter, Items.RAW_GOLD_BLOCK, RecipeCategory.MISC, Items.GOLD_BLOCK, 6.3f, 900);
     this.createBlastingRecipe(
@@ -626,19 +620,18 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
             StringUtils.substringAfterLast(output.getDescriptionId(), "."),
             StringUtils.substringAfterLast(input.getDescriptionId(), "."));
 
-    SimpleCookingRecipeBuilder.generic(
+    SimpleCookingRecipeBuilder.smelting(
             Ingredient.of(input),
             recipeCategory,
+            CookingBookCategory.MISC,
             output,
             experience,
-            cookingTime,
-            RecipeSerializer.SMELTING_RECIPE,
-            SmeltingRecipe::new)
+            cookingTime)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(input), FabricRecipeProvider.has(input))
+            getHasName(input), has(input))
         .save(
             withConditions(recipeExporter, EnrichedResourceConditions.RAW_SMELTING_ENABLED),
-            ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, recipeJSONFileName));
+            recipeKey(recipeJSONFileName));
   }
 
   private void createBlastingRecipe(
@@ -654,19 +647,18 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
             StringUtils.substringAfterLast(output.getDescriptionId(), "."),
             StringUtils.substringAfterLast(input.getDescriptionId(), "."));
 
-    SimpleCookingRecipeBuilder.generic(
+    SimpleCookingRecipeBuilder.blasting(
             Ingredient.of(input),
             recipeCategory,
+            CookingBookCategory.MISC,
             output,
             experience,
-            cookingTime,
-            RecipeSerializer.BLASTING_RECIPE,
-            BlastingRecipe::new)
+            cookingTime)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(input), FabricRecipeProvider.has(input))
+            getHasName(input), has(input))
         .save(
             withConditions(recipeExporter, EnrichedResourceConditions.RAW_SMELTING_ENABLED),
-            ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, recipeJSONFileName));
+            recipeKey(recipeJSONFileName));
   }
 
   private void createUncraftingRecipes(RecipeOutput recipeExporter) {
@@ -681,264 +673,264 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
   }
 
   private void createRedwoodRecipes(RecipeOutput recipeExporter) {
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_BUTTON)
+    shapeless(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_BUTTON)
         .requires(EnrichedBlocks.REDWOOD_PLANKS)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_PLANKS),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_PLANKS))
+            getHasName(EnrichedBlocks.REDWOOD_PLANKS),
+            has(EnrichedBlocks.REDWOOD_PLANKS))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_DOOR, 3)
+    shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_DOOR, 3)
         .define('R', EnrichedBlocks.REDWOOD_PLANKS)
         .pattern("RR ")
         .pattern("RR ")
         .pattern("RR ")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_PLANKS),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_PLANKS))
+            getHasName(EnrichedBlocks.REDWOOD_PLANKS),
+            has(EnrichedBlocks.REDWOOD_PLANKS))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_FENCE, 3)
+    shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_FENCE, 3)
         .define('R', EnrichedBlocks.REDWOOD_PLANKS)
         .define('S', Items.STICK)
         .pattern("RSR")
         .pattern("RSR")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_PLANKS),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_PLANKS))
+            getHasName(EnrichedBlocks.REDWOOD_PLANKS),
+            has(EnrichedBlocks.REDWOOD_PLANKS))
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.STICK),
-            FabricRecipeProvider.has(Items.STICK))
+            getHasName(Items.STICK),
+            has(Items.STICK))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_FENCE_GATE)
         .define('R', EnrichedBlocks.REDWOOD_PLANKS)
         .define('S', Items.STICK)
         .pattern("SRS")
         .pattern("SRS")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_PLANKS),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_PLANKS))
+            getHasName(EnrichedBlocks.REDWOOD_PLANKS),
+            has(EnrichedBlocks.REDWOOD_PLANKS))
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.STICK),
-            FabricRecipeProvider.has(Items.STICK))
+            getHasName(Items.STICK),
+            has(Items.STICK))
         .save(recipeExporter);
 
-    ShapelessRecipeBuilder.shapeless(
+    shapeless(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_PLANKS, 4)
         .requires(EnrichedTags.ItemTags.REDWOOD_LOGS)
         .unlockedBy(
             "has_" + EnrichedTags.ItemTags.REDWOOD_LOGS.location().getPath(),
-            FabricRecipeProvider.has(EnrichedTags.ItemTags.REDWOOD_LOGS))
+            has(EnrichedTags.ItemTags.REDWOOD_LOGS))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_PRESSURE_PLATE)
         .define('R', EnrichedBlocks.REDWOOD_PLANKS)
         .pattern("RR")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_PLANKS),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_PLANKS))
+            getHasName(EnrichedBlocks.REDWOOD_PLANKS),
+            has(EnrichedBlocks.REDWOOD_PLANKS))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_SLAB, 6)
+    shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_SLAB, 6)
         .define('R', EnrichedBlocks.REDWOOD_PLANKS)
         .pattern("RRR")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_PLANKS),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_PLANKS))
+            getHasName(EnrichedBlocks.REDWOOD_PLANKS),
+            has(EnrichedBlocks.REDWOOD_PLANKS))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_STAIRS, 6)
+    shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_STAIRS, 6)
         .define('R', EnrichedBlocks.REDWOOD_PLANKS)
         .pattern("R  ")
         .pattern("RR ")
         .pattern("RRR")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_PLANKS),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_PLANKS))
+            getHasName(EnrichedBlocks.REDWOOD_PLANKS),
+            has(EnrichedBlocks.REDWOOD_PLANKS))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_TRAPDOOR, 2)
         .define('R', EnrichedBlocks.REDWOOD_PLANKS)
         .pattern("RRR")
         .pattern("RRR")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_PLANKS),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_PLANKS))
+            getHasName(EnrichedBlocks.REDWOOD_PLANKS),
+            has(EnrichedBlocks.REDWOOD_PLANKS))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_WOOD, 2)
+    shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.REDWOOD_WOOD, 2)
         .define('R', EnrichedBlocks.REDWOOD_LOG)
         .pattern("RR")
         .pattern("RR")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.REDWOOD_LOG),
-            FabricRecipeProvider.has(EnrichedBlocks.REDWOOD_LOG))
+            getHasName(EnrichedBlocks.REDWOOD_LOG),
+            has(EnrichedBlocks.REDWOOD_LOG))
         .save(recipeExporter);
   }
 
   private void createFoodRecipes(RecipeOutput recipeExporter) {
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EnrichedItems.BERRY_JUICE)
+    shapeless(RecipeCategory.FOOD, EnrichedItems.BERRY_JUICE)
         .requires(Items.SWEET_BERRIES)
         .requires(Items.SWEET_BERRIES)
         .requires(Items.GLASS_BOTTLE)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.SWEET_BERRIES),
-            FabricRecipeProvider.has(Items.SWEET_BERRIES))
+            getHasName(Items.SWEET_BERRIES),
+            has(Items.SWEET_BERRIES))
         .save(recipeExporter);
 
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
+    shapeless(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
         .requires(Items.COOKED_BEEF)
         .requires(Items.CARROT)
         .requires(Items.BOWL)
         .requires(Items.BAKED_POTATO)
         .requires(Items.BROWN_MUSHROOM)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.BROWN_MUSHROOM),
-            FabricRecipeProvider.has(Items.BROWN_MUSHROOM))
+            getHasName(Items.BROWN_MUSHROOM),
+            has(Items.BROWN_MUSHROOM))
         .save(recipeExporter, "beef_brown_mushroom");
 
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
+    shapeless(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
         .requires(Items.COOKED_BEEF)
         .requires(Items.CARROT)
         .requires(Items.BOWL)
         .requires(Items.BAKED_POTATO)
         .requires(Items.RED_MUSHROOM)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.RED_MUSHROOM),
-            FabricRecipeProvider.has(Items.RED_MUSHROOM))
+            getHasName(Items.RED_MUSHROOM),
+            has(Items.RED_MUSHROOM))
         .save(recipeExporter, "beef_red_mushroom");
 
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
+    shapeless(RecipeCategory.FOOD, EnrichedItems.BEEF_STEW)
         .requires(Items.COOKED_BEEF)
         .requires(Items.MUSHROOM_STEW)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.COOKED_BEEF),
-            FabricRecipeProvider.has(Items.COOKED_BEEF))
+            getHasName(Items.COOKED_BEEF),
+            has(Items.COOKED_BEEF))
         .save(recipeExporter, "beef_from_mushroom");
   }
 
   private void createDarkGraniteRecipes(RecipeOutput recipeExporter) {
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.DARK_GRANITE_SLAB, 6)
         .define('D', EnrichedBlocks.DARK_GRANITE)
         .pattern("DDD")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.DARK_GRANITE),
-            FabricRecipeProvider.has(EnrichedBlocks.DARK_GRANITE))
+            getHasName(EnrichedBlocks.DARK_GRANITE),
+            has(EnrichedBlocks.DARK_GRANITE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.DARK_GRANITE_STAIRS, 6)
         .define('D', EnrichedBlocks.DARK_GRANITE)
         .pattern("D  ")
         .pattern("DD ")
         .pattern("DDD")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.DARK_GRANITE),
-            FabricRecipeProvider.has(EnrichedBlocks.DARK_GRANITE))
+            getHasName(EnrichedBlocks.DARK_GRANITE),
+            has(EnrichedBlocks.DARK_GRANITE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.DARK_GRANITE_WALL, 6)
         .define('D', EnrichedBlocks.DARK_GRANITE)
         .pattern("DDD")
         .pattern("DDD")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.DARK_GRANITE),
-            FabricRecipeProvider.has(EnrichedBlocks.DARK_GRANITE))
+            getHasName(EnrichedBlocks.DARK_GRANITE),
+            has(EnrichedBlocks.DARK_GRANITE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_DARK_GRANITE, 4)
         .define('D', EnrichedBlocks.DARK_GRANITE)
         .pattern("DD ")
         .pattern("DD ")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.DARK_GRANITE),
-            FabricRecipeProvider.has(EnrichedBlocks.DARK_GRANITE))
+            getHasName(EnrichedBlocks.DARK_GRANITE),
+            has(EnrichedBlocks.DARK_GRANITE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_DARK_GRANITE_SLAB, 6)
         .define('P', EnrichedBlocks.POLISHED_DARK_GRANITE)
         .pattern("PPP")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.DARK_GRANITE),
-            FabricRecipeProvider.has(EnrichedBlocks.DARK_GRANITE))
+            getHasName(EnrichedBlocks.DARK_GRANITE),
+            has(EnrichedBlocks.DARK_GRANITE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_DARK_GRANITE_STAIRS, 6)
         .define('P', EnrichedBlocks.POLISHED_DARK_GRANITE)
         .pattern("P  ")
         .pattern("PP ")
         .pattern("PPP")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.DARK_GRANITE),
-            FabricRecipeProvider.has(EnrichedBlocks.DARK_GRANITE))
+            getHasName(EnrichedBlocks.DARK_GRANITE),
+            has(EnrichedBlocks.DARK_GRANITE))
         .save(recipeExporter);
   }
 
   private void createMarbleRecipes(RecipeOutput recipeExporter) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_SLAB, 6)
+    shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_SLAB, 6)
         .define('M', EnrichedBlocks.MARBLE)
         .pattern("MMM")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.MARBLE),
-            FabricRecipeProvider.has(EnrichedBlocks.DARK_GRANITE))
+            getHasName(EnrichedBlocks.MARBLE),
+            has(EnrichedBlocks.DARK_GRANITE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_STAIRS, 6)
+    shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_STAIRS, 6)
         .define('M', EnrichedBlocks.MARBLE)
         .pattern("M  ")
         .pattern("MM ")
         .pattern("MMM")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.MARBLE),
-            FabricRecipeProvider.has(EnrichedBlocks.MARBLE))
+            getHasName(EnrichedBlocks.MARBLE),
+            has(EnrichedBlocks.MARBLE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_WALL, 6)
+    shaped(RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.MARBLE_WALL, 6)
         .define('M', EnrichedBlocks.MARBLE)
         .pattern("MMM")
         .pattern("MMM")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.MARBLE),
-            FabricRecipeProvider.has(EnrichedBlocks.MARBLE))
+            getHasName(EnrichedBlocks.MARBLE),
+            has(EnrichedBlocks.MARBLE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_MARBLE, 4)
         .define('M', EnrichedBlocks.MARBLE)
         .pattern("MM ")
         .pattern("MM ")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.MARBLE),
-            FabricRecipeProvider.has(EnrichedBlocks.MARBLE))
+            getHasName(EnrichedBlocks.MARBLE),
+            has(EnrichedBlocks.MARBLE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_MARBLE_SLAB, 6)
         .define('M', EnrichedBlocks.POLISHED_MARBLE)
         .pattern("MMM")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.POLISHED_MARBLE),
-            FabricRecipeProvider.has(EnrichedBlocks.POLISHED_MARBLE))
+            getHasName(EnrichedBlocks.POLISHED_MARBLE),
+            has(EnrichedBlocks.POLISHED_MARBLE))
         .save(recipeExporter);
 
-    ShapedRecipeBuilder.shaped(
+    shaped(
             RecipeCategory.BUILDING_BLOCKS, EnrichedBlocks.POLISHED_MARBLE_STAIRS, 6)
         .define('M', EnrichedBlocks.POLISHED_MARBLE)
         .pattern("M  ")
         .pattern("MM ")
         .pattern("MMM")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(EnrichedBlocks.POLISHED_MARBLE),
-            FabricRecipeProvider.has(EnrichedBlocks.POLISHED_MARBLE))
+            getHasName(EnrichedBlocks.POLISHED_MARBLE),
+            has(EnrichedBlocks.POLISHED_MARBLE))
         .save(recipeExporter);
   }
 
@@ -951,18 +943,18 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item swordMaterial,
       Item outputSword,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputSword)
+    shaped(RecipeCategory.COMBAT, outputSword)
         .define('M', swordMaterial)
         .define('S', Items.STICK)
         .pattern(" M ")
         .pattern(" M ")
         .pattern(" S ")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(swordMaterial),
-            FabricRecipeProvider.has(swordMaterial))
+            getHasName(swordMaterial),
+            has(swordMaterial))
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.STICK),
-            FabricRecipeProvider.has(Items.STICK))
+            getHasName(Items.STICK),
+            has(Items.STICK))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -975,18 +967,18 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item shovelMaterial,
       Item outputShovel,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, outputShovel)
+    shaped(RecipeCategory.TOOLS, outputShovel)
         .define('M', shovelMaterial)
         .define('S', Items.STICK)
         .pattern(" M ")
         .pattern(" S ")
         .pattern(" S ")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(shovelMaterial),
-            FabricRecipeProvider.has(shovelMaterial))
+            getHasName(shovelMaterial),
+            has(shovelMaterial))
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.STICK),
-            FabricRecipeProvider.has(Items.STICK))
+            getHasName(Items.STICK),
+            has(Items.STICK))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -999,18 +991,18 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item pickaxeMaterial,
       Item outputPickaxe,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, outputPickaxe)
+    shaped(RecipeCategory.TOOLS, outputPickaxe)
         .define('M', pickaxeMaterial)
         .define('S', Items.STICK)
         .pattern("MMM")
         .pattern(" S ")
         .pattern(" S ")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(pickaxeMaterial),
-            FabricRecipeProvider.has(pickaxeMaterial))
+            getHasName(pickaxeMaterial),
+            has(pickaxeMaterial))
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.STICK),
-            FabricRecipeProvider.has(Items.STICK))
+            getHasName(Items.STICK),
+            has(Items.STICK))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -1023,18 +1015,18 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item axeMaterial,
       Item outputAxe,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, outputAxe)
+    shaped(RecipeCategory.TOOLS, outputAxe)
         .define('M', axeMaterial)
         .define('S', Items.STICK)
         .pattern("MM ")
         .pattern("MS ")
         .pattern(" S ")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(axeMaterial),
-            FabricRecipeProvider.has(axeMaterial))
+            getHasName(axeMaterial),
+            has(axeMaterial))
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.STICK),
-            FabricRecipeProvider.has(Items.STICK))
+            getHasName(Items.STICK),
+            has(Items.STICK))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -1047,18 +1039,18 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item hoeMaterial,
       Item outputHoe,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, outputHoe)
+    shaped(RecipeCategory.TOOLS, outputHoe)
         .define('M', hoeMaterial)
         .define('S', Items.STICK)
         .pattern("MM ")
         .pattern(" S ")
         .pattern(" S ")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(hoeMaterial),
-            FabricRecipeProvider.has(hoeMaterial))
+            getHasName(hoeMaterial),
+            has(hoeMaterial))
         .unlockedBy(
-            FabricRecipeProvider.getHasName(Items.STICK),
-            FabricRecipeProvider.has(Items.STICK))
+            getHasName(Items.STICK),
+            has(Items.STICK))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -1069,15 +1061,15 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
   private void createHelmetRecipe(
       RecipeOutput recipeExporter,
       Item helmetMaterial,
-      ArmorItem outputHelmet,
+      Item outputHelmet,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputHelmet)
+    shaped(RecipeCategory.COMBAT, outputHelmet)
         .define('M', helmetMaterial)
         .pattern("MMM")
         .pattern("M M")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(helmetMaterial),
-            FabricRecipeProvider.has(helmetMaterial))
+            getHasName(helmetMaterial),
+            has(helmetMaterial))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -1088,16 +1080,16 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
   private void createChestplateRecipe(
       RecipeOutput recipeExporter,
       Item chestplateMaterial,
-      ArmorItem outputChestplate,
+      Item outputChestplate,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputChestplate)
+    shaped(RecipeCategory.COMBAT, outputChestplate)
         .define('M', chestplateMaterial)
         .pattern("M M")
         .pattern("MMM")
         .pattern("MMM")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(chestplateMaterial),
-            FabricRecipeProvider.has(chestplateMaterial))
+            getHasName(chestplateMaterial),
+            has(chestplateMaterial))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -1108,16 +1100,16 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
   private void createLeggingsRecipe(
       RecipeOutput recipeExporter,
       Item leggingsMaterial,
-      ArmorItem outputLeggings,
+      Item outputLeggings,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputLeggings)
+    shaped(RecipeCategory.COMBAT, outputLeggings)
         .define('M', leggingsMaterial)
         .pattern("MMM")
         .pattern("M M")
         .pattern("M M")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(leggingsMaterial),
-            FabricRecipeProvider.has(leggingsMaterial))
+            getHasName(leggingsMaterial),
+            has(leggingsMaterial))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -1128,15 +1120,15 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
   private void createBootsRecipe(
       RecipeOutput recipeExporter,
       Item bootsRecipe,
-      ArmorItem outputBoots,
+      Item outputBoots,
       @Nullable List<ResourceCondition> resourceConditions) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputBoots)
+    shaped(RecipeCategory.COMBAT, outputBoots)
         .define('M', bootsRecipe)
         .pattern("M M")
         .pattern("M M")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(bootsRecipe),
-            FabricRecipeProvider.has(bootsRecipe))
+            getHasName(bootsRecipe),
+            has(bootsRecipe))
         .save(
             resourceConditions != null
                 ? withConditions(
@@ -1146,139 +1138,129 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
 
   private void createHorseArmorRecipe(
       RecipeOutput recipeExporter, Item horseArmorMaterial, Item outputHorseArmor) {
-    ShapedRecipeBuilder.shaped(RecipeCategory.MISC, outputHorseArmor)
+    shaped(RecipeCategory.MISC, outputHorseArmor)
         .define('M', horseArmorMaterial)
         .pattern("M M")
         .pattern("MMM")
         .pattern("M M")
         .unlockedBy(
-            FabricRecipeProvider.getHasName(horseArmorMaterial),
-            FabricRecipeProvider.has(horseArmorMaterial))
+            getHasName(horseArmorMaterial),
+            has(horseArmorMaterial))
         .save(withConditions(recipeExporter, EnrichedResourceConditions.HORSE_ARMOR_ENABLED));
   }
 
   private void createUncraftingRecipeWithTag(
       RecipeOutput exporter, TagKey<Item> compactItemTag, Item outputItem, int count) {
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, outputItem, count)
+    shapeless(RecipeCategory.MISC, outputItem, count)
         .requires(compactItemTag)
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             withConditions(exporter, EnrichedResourceConditions.UNCRAFTING_ENABLED),
-            ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "uncrafting_" + compactItemTag.location().getPath()));
+            recipeKey("uncrafting_" + compactItemTag.location().getPath()));
   }
 
   private void createUncraftingRecipe(
       RecipeOutput exporter, Item compactItem, Item outputItem, int count) {
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, outputItem, count)
+    shapeless(RecipeCategory.MISC, outputItem, count)
         .requires(compactItem)
         .unlockedBy(
-            FabricRecipeProvider.getHasName(compactItem),
-            FabricRecipeProvider.has(compactItem))
+            getHasName(compactItem),
+            has(compactItem))
         .save(
             withConditions(exporter, EnrichedResourceConditions.UNCRAFTING_ENABLED),
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                "uncrafting_"
+            recipeKey("uncrafting_"
                     + StringUtils.substringAfterLast(compactItem.getDescriptionId(), ".")));
   }
 
   private void createHelmetTagRecipe(
       RecipeOutput recipeExporter,
       TagKey<Item> compactItemTag,
-      ArmorItem outputHelmet,
+      Item outputHelmet,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputHelmet)
+    shaped(RecipeCategory.COMBAT, outputHelmet)
         .define('M', compactItemTag)
         .pattern("MMM")
         .pattern("M M")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_helmet"));
   }
 
   private void createChestplateTagRecipe(
       RecipeOutput recipeExporter,
       TagKey<Item> compactItemTag,
-      ArmorItem outputChestplate,
+      Item outputChestplate,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputChestplate)
+    shaped(RecipeCategory.COMBAT, outputChestplate)
         .define('M', compactItemTag)
         .pattern("M M")
         .pattern("MMM")
         .pattern("MMM")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_chestplate"));
   }
 
   private void createLeggingsTagRecipe(
       RecipeOutput recipeExporter,
       TagKey<Item> compactItemTag,
-      ArmorItem outputLeggings,
+      Item outputLeggings,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputLeggings)
+    shaped(RecipeCategory.COMBAT, outputLeggings)
         .define('M', compactItemTag)
         .pattern("MMM")
         .pattern("M M")
         .pattern("M M")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_leggings"));
   }
 
   private void createBootsTagRecipe(
       RecipeOutput recipeExporter,
       TagKey<Item> compactItemTag,
-      ArmorItem outputBoots,
+      Item outputBoots,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputBoots)
+    shaped(RecipeCategory.COMBAT, outputBoots)
         .define('M', compactItemTag)
         .pattern("M M")
         .pattern("M M")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_boots"));
   }
 
@@ -1288,7 +1270,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item outputSword,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputSword)
+    shaped(RecipeCategory.COMBAT, outputSword)
         .define('M', compactItemTag)
         .define('S', Items.STICK)
         .pattern(" M ")
@@ -1296,15 +1278,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         .pattern(" S ")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_sword"));
   }
 
@@ -1314,7 +1294,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item outputPickaxe,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, outputPickaxe)
+    shaped(RecipeCategory.TOOLS, outputPickaxe)
         .define('M', compactItemTag)
         .define('S', Items.STICK)
         .pattern("MMM")
@@ -1322,15 +1302,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         .pattern(" S ")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_pickaxe"));
   }
 
@@ -1340,7 +1318,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item outputAxe,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, outputAxe)
+    shaped(RecipeCategory.COMBAT, outputAxe)
         .define('M', compactItemTag)
         .define('S', Items.STICK)
         .pattern("MM ")
@@ -1348,15 +1326,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         .pattern(" S ")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_axe"));
   }
 
@@ -1366,7 +1342,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item outputShovel,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, outputShovel)
+    shaped(RecipeCategory.TOOLS, outputShovel)
         .define('M', compactItemTag)
         .define('S', Items.STICK)
         .pattern(" M ")
@@ -1374,15 +1350,13 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         .pattern(" S ")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_shovel"));
   }
 
@@ -1392,7 +1366,7 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
       Item outputHoe,
       @Nullable List<ResourceCondition> resourceConditions) {
 
-    ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, outputHoe)
+    shaped(RecipeCategory.TOOLS, outputHoe)
         .define('M', compactItemTag)
         .define('S', Items.STICK)
         .pattern("MM ")
@@ -1400,15 +1374,24 @@ public class EnrichedRecipeProvider extends FabricRecipeProvider {
         .pattern(" S ")
         .unlockedBy(
             "has_" + compactItemTag.location().getPath(),
-            FabricRecipeProvider.has(compactItemTag))
+            has(compactItemTag))
         .save(
             resourceConditions != null
                 ? withConditions(
                     recipeExporter, resourceConditions.toArray(ResourceCondition[]::new))
                 : recipeExporter,
-            ResourceLocation.fromNamespaceAndPath(
-                EnrichedMod.MOD_ID,
-                StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
+            recipeKey(StringUtils.substringAfterLast(compactItemTag.getTranslationKey(), ".")
                     + "_tag_hoe"));
+  }
+    };
+  }
+
+  @Override
+  public String getName() {
+    return "Enriched Recipes";
+  }
+
+  private static ResourceKey<Recipe<?>> recipeKey(String path) {
+    return ResourceKey.create(Registries.RECIPE, EnrichedRegisters.id(path));
   }
 }

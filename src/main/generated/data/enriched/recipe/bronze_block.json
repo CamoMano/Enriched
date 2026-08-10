@@ -1,10 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "#": {
-      "item": "enriched:bronze_ingot"
-    }
+    "#": "enriched:bronze_ingot"
   },
   "pattern": [
     "###",
@@ -12,7 +9,6 @@
     "###"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:bronze_block"
   }
 }

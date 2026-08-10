@@ -5,11 +5,8 @@
     }
   ],
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:nether_wart"
-    }
+    "minecraft:nether_wart"
   ],
   "result": {
     "count": 9,

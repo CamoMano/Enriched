@@ -1,6 +1,7 @@
 package com.enrichedmc.enriched;
 
 import com.enrichedmc.enriched.datagen.EnrichedBlockLootTableProvider;
+import com.enrichedmc.enriched.datagen.EnrichedEquipmentAssetProvider;
 import com.enrichedmc.enriched.datagen.EnrichedModelProvider;
 import com.enrichedmc.enriched.datagen.EnrichedRecipeProvider;
 import com.enrichedmc.enriched.datagen.EnrichedWorldGenerator;
@@ -23,6 +24,7 @@ public class EnrichedDataGenerator implements DataGeneratorEntrypoint {
     dataGeneratorPack.addProvider(EnrichedItemTagProvider::new);
     dataGeneratorPack.addProvider(EnrichedBlockLootTableProvider::new);
     dataGeneratorPack.addProvider(EnrichedModelProvider::new);
+    dataGeneratorPack.addProvider(EnrichedEquipmentAssetProvider::new);
     dataGeneratorPack.addProvider(EnrichedRecipeProvider::new);
     dataGeneratorPack.addProvider(EnrichedWorldGenerator::new);
   }

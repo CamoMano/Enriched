@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "R": {
-      "item": "enriched:redwood_log"
-    }
+    "R": "enriched:redwood_log"
   },
   "pattern": [
     "RR",

@@ -7,12 +7,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "item": "minecraft:emerald"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "M": "minecraft:emerald",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "MMM",
@@ -20,7 +16,6 @@
     " S "
   ],
   "result": {
-    "count": 1,
     "id": "enriched:emerald_pickaxe"
   }
 }

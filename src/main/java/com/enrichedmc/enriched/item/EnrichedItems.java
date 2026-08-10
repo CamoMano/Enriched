@@ -1,14 +1,15 @@
 package com.enrichedmc.enriched.item;
 
 import com.enrichedmc.enriched.EnrichedMod;
-import com.enrichedmc.enriched.item.base.*;
 import com.enrichedmc.enriched.item.food.EnrichedFoodComponents;
 import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
 import com.enrichedmc.enriched.materials.tool.EnrichedToolMaterials;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
 
 public class EnrichedItems {
   public static final Item RUBY;
@@ -73,498 +74,162 @@ public class EnrichedItems {
   public static final Item BRONZE_AXE;
   public static final Item BRONZE_HOE;
 
-  public static final ArmorItem RUBY_HELMET;
-  public static final ArmorItem RUBY_CHESTPLATE;
-  public static final ArmorItem RUBY_LEGGINGS;
-  public static final ArmorItem RUBY_BOOTS;
-  public static final ArmorItem SAPPHIRE_HELMET;
-  public static final ArmorItem SAPPHIRE_CHESTPLATE;
-  public static final ArmorItem SAPPHIRE_LEGGINGS;
-  public static final ArmorItem SAPPHIRE_BOOTS;
-  public static final ArmorItem TANZANITE_HELMET;
-  public static final ArmorItem TANZANITE_CHESTPLATE;
-  public static final ArmorItem TANZANITE_LEGGINGS;
-  public static final ArmorItem TANZANITE_BOOTS;
-  public static final ArmorItem STEEL_HELMET;
-  public static final ArmorItem STEEL_CHESTPLATE;
-  public static final ArmorItem STEEL_LEGGINGS;
-  public static final ArmorItem STEEL_BOOTS;
-  public static final ArmorItem OBSIDIAN_HELMET;
-  public static final ArmorItem OBSIDIAN_CHESTPLATE;
-  public static final ArmorItem OBSIDIAN_LEGGINGS;
-  public static final ArmorItem OBSIDIAN_BOOTS;
-  public static final ArmorItem EMERALD_HELMET;
-  public static final ArmorItem EMERALD_CHESTPLATE;
-  public static final ArmorItem EMERALD_LEGGINGS;
-  public static final ArmorItem EMERALD_BOOTS;
+  public static final Item RUBY_HELMET;
+  public static final Item RUBY_CHESTPLATE;
+  public static final Item RUBY_LEGGINGS;
+  public static final Item RUBY_BOOTS;
+  public static final Item SAPPHIRE_HELMET;
+  public static final Item SAPPHIRE_CHESTPLATE;
+  public static final Item SAPPHIRE_LEGGINGS;
+  public static final Item SAPPHIRE_BOOTS;
+  public static final Item TANZANITE_HELMET;
+  public static final Item TANZANITE_CHESTPLATE;
+  public static final Item TANZANITE_LEGGINGS;
+  public static final Item TANZANITE_BOOTS;
+  public static final Item STEEL_HELMET;
+  public static final Item STEEL_CHESTPLATE;
+  public static final Item STEEL_LEGGINGS;
+  public static final Item STEEL_BOOTS;
+  public static final Item OBSIDIAN_HELMET;
+  public static final Item OBSIDIAN_CHESTPLATE;
+  public static final Item OBSIDIAN_LEGGINGS;
+  public static final Item OBSIDIAN_BOOTS;
+  public static final Item EMERALD_HELMET;
+  public static final Item EMERALD_CHESTPLATE;
+  public static final Item EMERALD_LEGGINGS;
+  public static final Item EMERALD_BOOTS;
 
-  public static final ArmorItem BRONZE_HELMET;
-  public static final ArmorItem BRONZE_CHESTPLATE;
-  public static final ArmorItem BRONZE_LEGGINGS;
-  public static final ArmorItem BRONZE_BOOTS;
+  public static final Item BRONZE_HELMET;
+  public static final Item BRONZE_CHESTPLATE;
+  public static final Item BRONZE_LEGGINGS;
+  public static final Item BRONZE_BOOTS;
 
   static {
-    RUBY = EnrichedRegisters.registerItem("ruby", new Item(new Item.Properties()));
-    SAPPHIRE = EnrichedRegisters.registerItem("sapphire", new Item(new Item.Properties()));
-    TANZANITE = EnrichedRegisters.registerItem("tanzanite", new Item(new Item.Properties()));
-    AMBER = EnrichedRegisters.registerItem("amber", new Item(new Item.Properties()));
-    TOPAZ = EnrichedRegisters.registerItem("topaz", new Item(new Item.Properties()));
-    STEEL_BLEND = EnrichedRegisters.registerItem("steel_blend", new Item(new Item.Properties()));
-    STEEL_INGOT = EnrichedRegisters.registerItem("steel_ingot", new Item(new Item.Properties()));
-    TIN_INGOT = EnrichedRegisters.registerItem("tin_ingot", new Item(new Item.Properties()));
-    BRONZE_BLEND = EnrichedRegisters.registerItem("bronze_blend", new Item(new Item.Properties()));
-    BRONZE_INGOT = EnrichedRegisters.registerItem("bronze_ingot", new Item(new Item.Properties()));
-    RAW_TIN = EnrichedRegisters.registerItem("raw_tin", new Item(new Item.Properties()));
-    OBSIDIAN_ALLOY_BLEND =
-        EnrichedRegisters.registerItem("obsidian_alloy_blend", new Item(new Item.Properties()));
-    OBSIDIAN_ALLOY_INGOT =
-        EnrichedRegisters.registerItem("obsidian_alloy_ingot", new Item(new Item.Properties()));
+    RUBY = EnrichedRegisters.registerItem("ruby", Item::new);
+    SAPPHIRE = EnrichedRegisters.registerItem("sapphire", Item::new);
+    TANZANITE = EnrichedRegisters.registerItem("tanzanite", Item::new);
+    AMBER = EnrichedRegisters.registerItem("amber", Item::new);
+    TOPAZ = EnrichedRegisters.registerItem("topaz", Item::new);
+    STEEL_BLEND = EnrichedRegisters.registerItem("steel_blend", Item::new);
+    STEEL_INGOT = EnrichedRegisters.registerItem("steel_ingot", Item::new);
+    TIN_INGOT = EnrichedRegisters.registerItem("tin_ingot", Item::new);
+    BRONZE_BLEND = EnrichedRegisters.registerItem("bronze_blend", Item::new);
+    BRONZE_INGOT = EnrichedRegisters.registerItem("bronze_ingot", Item::new);
+    RAW_TIN = EnrichedRegisters.registerItem("raw_tin", Item::new);
+    OBSIDIAN_ALLOY_BLEND = EnrichedRegisters.registerItem("obsidian_alloy_blend", Item::new);
+    OBSIDIAN_ALLOY_INGOT = EnrichedRegisters.registerItem("obsidian_alloy_ingot", Item::new);
 
     /*-------------*/
     /* -- Tools -- */
     /*-------------*/
 
-    RUBY_SWORD =
-        EnrichedRegisters.registerItem(
-            "ruby_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.RUBY));
-    RUBY_SHOVEL =
-        EnrichedRegisters.registerItem(
-            "ruby_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.RUBY));
-    RUBY_PICKAXE =
-        EnrichedRegisters.registerItem(
-            "ruby_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.RUBY));
-    RUBY_AXE =
-        EnrichedRegisters.registerItem(
-            "ruby_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.RUBY));
-    RUBY_HOE =
-        EnrichedRegisters.registerItem(
-            "ruby_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.RUBY));
+    RUBY_SWORD = registerSword("ruby_sword", EnrichedToolMaterials.RUBY);
+    RUBY_SHOVEL = registerShovel("ruby_shovel", EnrichedToolMaterials.RUBY);
+    RUBY_PICKAXE = registerPickaxe("ruby_pickaxe", EnrichedToolMaterials.RUBY);
+    RUBY_AXE = registerAxe("ruby_axe", EnrichedToolMaterials.RUBY);
+    RUBY_HOE = registerHoe("ruby_hoe", EnrichedToolMaterials.RUBY);
 
-    SAPPHIRE_SWORD =
-        EnrichedRegisters.registerItem(
-            "sapphire_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.SAPPHIRE));
-    SAPPHIRE_SHOVEL =
-        EnrichedRegisters.registerItem(
-            "sapphire_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.SAPPHIRE));
-    SAPPHIRE_PICKAXE =
-        EnrichedRegisters.registerItem(
-            "sapphire_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.SAPPHIRE));
-    SAPPHIRE_AXE =
-        EnrichedRegisters.registerItem(
-            "sapphire_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.SAPPHIRE));
-    SAPPHIRE_HOE =
-        EnrichedRegisters.registerItem(
-            "sapphire_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.SAPPHIRE));
+    SAPPHIRE_SWORD = registerSword("sapphire_sword", EnrichedToolMaterials.SAPPHIRE);
+    SAPPHIRE_SHOVEL = registerShovel("sapphire_shovel", EnrichedToolMaterials.SAPPHIRE);
+    SAPPHIRE_PICKAXE = registerPickaxe("sapphire_pickaxe", EnrichedToolMaterials.SAPPHIRE);
+    SAPPHIRE_AXE = registerAxe("sapphire_axe", EnrichedToolMaterials.SAPPHIRE);
+    SAPPHIRE_HOE = registerHoe("sapphire_hoe", EnrichedToolMaterials.SAPPHIRE);
 
-    TANZANITE_SWORD =
-        EnrichedRegisters.registerItem(
-            "tanzanite_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.TANZANITE));
-    TANZANITE_SHOVEL =
-        EnrichedRegisters.registerItem(
-            "tanzanite_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.TANZANITE));
-    TANZANITE_PICKAXE =
-        EnrichedRegisters.registerItem(
-            "tanzanite_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.TANZANITE));
-    TANZANITE_AXE =
-        EnrichedRegisters.registerItem(
-            "tanzanite_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.TANZANITE));
-    TANZANITE_HOE =
-        EnrichedRegisters.registerItem(
-            "tanzanite_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.TANZANITE));
+    TANZANITE_SWORD = registerSword("tanzanite_sword", EnrichedToolMaterials.TANZANITE);
+    TANZANITE_SHOVEL = registerShovel("tanzanite_shovel", EnrichedToolMaterials.TANZANITE);
+    TANZANITE_PICKAXE = registerPickaxe("tanzanite_pickaxe", EnrichedToolMaterials.TANZANITE);
+    TANZANITE_AXE = registerAxe("tanzanite_axe", EnrichedToolMaterials.TANZANITE);
+    TANZANITE_HOE = registerHoe("tanzanite_hoe", EnrichedToolMaterials.TANZANITE);
 
-    STEEL_SWORD =
-        EnrichedRegisters.registerItem(
-            "steel_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.STEEL));
-    STEEL_SHOVEL =
-        EnrichedRegisters.registerItem(
-            "steel_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.STEEL));
-    STEEL_PICKAXE =
-        EnrichedRegisters.registerItem(
-            "steel_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.STEEL));
-    STEEL_AXE =
-        EnrichedRegisters.registerItem(
-            "steel_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.STEEL));
-    STEEL_HOE =
-        EnrichedRegisters.registerItem(
-            "steel_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.STEEL));
+    STEEL_SWORD = registerSword("steel_sword", EnrichedToolMaterials.STEEL);
+    STEEL_SHOVEL = registerShovel("steel_shovel", EnrichedToolMaterials.STEEL);
+    STEEL_PICKAXE = registerPickaxe("steel_pickaxe", EnrichedToolMaterials.STEEL);
+    STEEL_AXE = registerAxe("steel_axe", EnrichedToolMaterials.STEEL);
+    STEEL_HOE = registerHoe("steel_hoe", EnrichedToolMaterials.STEEL);
 
-    OBSIDIAN_SWORD =
-        EnrichedRegisters.registerItem(
-            "obsidian_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.OBSIDIAN));
-    OBSIDIAN_SHOVEL =
-        EnrichedRegisters.registerItem(
-            "obsidian_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.OBSIDIAN));
-    OBSIDIAN_PICKAXE =
-        EnrichedRegisters.registerItem(
-            "obsidian_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.OBSIDIAN));
-    OBSIDIAN_AXE =
-        EnrichedRegisters.registerItem(
-            "obsidian_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.OBSIDIAN));
-    OBSIDIAN_HOE =
-        EnrichedRegisters.registerItem(
-            "obsidian_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.OBSIDIAN));
+    OBSIDIAN_SWORD = registerSword("obsidian_sword", EnrichedToolMaterials.OBSIDIAN);
+    OBSIDIAN_SHOVEL = registerShovel("obsidian_shovel", EnrichedToolMaterials.OBSIDIAN);
+    OBSIDIAN_PICKAXE = registerPickaxe("obsidian_pickaxe", EnrichedToolMaterials.OBSIDIAN);
+    OBSIDIAN_AXE = registerAxe("obsidian_axe", EnrichedToolMaterials.OBSIDIAN);
+    OBSIDIAN_HOE = registerHoe("obsidian_hoe", EnrichedToolMaterials.OBSIDIAN);
 
-    EMERALD_SWORD =
-        EnrichedRegisters.registerItem(
-            "emerald_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.EMERALD));
-    EMERALD_SHOVEL =
-        EnrichedRegisters.registerItem(
-            "emerald_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.EMERALD));
-    EMERALD_PICKAXE =
-        EnrichedRegisters.registerItem(
-            "emerald_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.EMERALD));
-    EMERALD_AXE =
-        EnrichedRegisters.registerItem(
-            "emerald_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.EMERALD));
-    EMERALD_HOE =
-        EnrichedRegisters.registerItem(
-            "emerald_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.EMERALD));
+    EMERALD_SWORD = registerSword("emerald_sword", EnrichedToolMaterials.EMERALD);
+    EMERALD_SHOVEL = registerShovel("emerald_shovel", EnrichedToolMaterials.EMERALD);
+    EMERALD_PICKAXE = registerPickaxe("emerald_pickaxe", EnrichedToolMaterials.EMERALD);
+    EMERALD_AXE = registerAxe("emerald_axe", EnrichedToolMaterials.EMERALD);
+    EMERALD_HOE = registerHoe("emerald_hoe", EnrichedToolMaterials.EMERALD);
 
-    COPPER_SWORD =
-        EnrichedRegisters.registerItem(
-            "copper_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.COPPER));
-    COPPER_SHOVEL =
-        EnrichedRegisters.registerItem(
-            "copper_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.COPPER));
-    COPPER_PICKAXE =
-        EnrichedRegisters.registerItem(
-            "copper_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.COPPER));
-    COPPER_AXE =
-        EnrichedRegisters.registerItem(
-            "copper_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.COPPER));
-    COPPER_HOE =
-        EnrichedRegisters.registerItem(
-            "copper_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.COPPER));
+    COPPER_SWORD = registerSword("copper_sword", EnrichedToolMaterials.COPPER);
+    COPPER_SHOVEL = registerShovel("copper_shovel", EnrichedToolMaterials.COPPER);
+    COPPER_PICKAXE = registerPickaxe("copper_pickaxe", EnrichedToolMaterials.COPPER);
+    COPPER_AXE = registerAxe("copper_axe", EnrichedToolMaterials.COPPER);
+    COPPER_HOE = registerHoe("copper_hoe", EnrichedToolMaterials.COPPER);
 
-    BRONZE_SWORD =
-        EnrichedRegisters.registerItem(
-            "bronze_sword", new EnrichedBaseSwordItem(EnrichedToolMaterials.BRONZE));
-    BRONZE_SHOVEL =
-        EnrichedRegisters.registerItem(
-            "bronze_shovel", new EnrichedBaseShovelItem(EnrichedToolMaterials.BRONZE));
-    BRONZE_PICKAXE =
-        EnrichedRegisters.registerItem(
-            "bronze_pickaxe", new EnrichedBasePickaxeItem(EnrichedToolMaterials.BRONZE));
-    BRONZE_AXE =
-        EnrichedRegisters.registerItem(
-            "bronze_axe", new EnrichedBaseAxeItem(EnrichedToolMaterials.BRONZE));
-    BRONZE_HOE =
-        EnrichedRegisters.registerItem(
-            "bronze_hoe", new EnrichedBaseHoeItem(EnrichedToolMaterials.BRONZE));
+    BRONZE_SWORD = registerSword("bronze_sword", EnrichedToolMaterials.BRONZE);
+    BRONZE_SHOVEL = registerShovel("bronze_shovel", EnrichedToolMaterials.BRONZE);
+    BRONZE_PICKAXE = registerPickaxe("bronze_pickaxe", EnrichedToolMaterials.BRONZE);
+    BRONZE_AXE = registerAxe("bronze_axe", EnrichedToolMaterials.BRONZE);
+    BRONZE_HOE = registerHoe("bronze_hoe", EnrichedToolMaterials.BRONZE);
 
     /*-------------*/
     /* -- Armor -- */
     /*-------------*/
 
-    RUBY_HELMET =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "ruby_helmet",
-                new ArmorItem(
-                    EnrichedArmorMaterials.RUBY,
-                    ArmorItem.Type.HELMET,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.HELMET.getDurability(25))
-                        .stacksTo(1)));
-
+    RUBY_HELMET = registerArmor("ruby_helmet", EnrichedArmorMaterials.RUBY, ArmorType.HELMET);
     RUBY_CHESTPLATE =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "ruby_chestplate",
-                new ArmorItem(
-                    EnrichedArmorMaterials.RUBY,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(25))
-                        .stacksTo(1)));
-
-    RUBY_LEGGINGS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "ruby_leggings",
-                new ArmorItem(
-                    EnrichedArmorMaterials.RUBY,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.LEGGINGS.getDurability(25))
-                        .stacksTo(1)));
-
-    RUBY_BOOTS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "ruby_boots",
-                new ArmorItem(
-                    EnrichedArmorMaterials.RUBY,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.BOOTS.getDurability(25))
-                        .stacksTo(1)));
+        registerArmor("ruby_chestplate", EnrichedArmorMaterials.RUBY, ArmorType.CHESTPLATE);
+    RUBY_LEGGINGS = registerArmor("ruby_leggings", EnrichedArmorMaterials.RUBY, ArmorType.LEGGINGS);
+    RUBY_BOOTS = registerArmor("ruby_boots", EnrichedArmorMaterials.RUBY, ArmorType.BOOTS);
 
     SAPPHIRE_HELMET =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "sapphire_helmet",
-                new ArmorItem(
-                    EnrichedArmorMaterials.SAPPHIRE,
-                    ArmorItem.Type.HELMET,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.HELMET.getDurability(25))
-                        .stacksTo(1)));
-
+        registerArmor("sapphire_helmet", EnrichedArmorMaterials.SAPPHIRE, ArmorType.HELMET);
     SAPPHIRE_CHESTPLATE =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "sapphire_chestplate",
-                new ArmorItem(
-                    EnrichedArmorMaterials.SAPPHIRE,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()
-                        .stacksTo(1)
-                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(25))));
-
+        registerArmor("sapphire_chestplate", EnrichedArmorMaterials.SAPPHIRE, ArmorType.CHESTPLATE);
     SAPPHIRE_LEGGINGS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "sapphire_leggings",
-                new ArmorItem(
-                    EnrichedArmorMaterials.SAPPHIRE,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.LEGGINGS.getDurability(25))
-                        .stacksTo(1)));
-
+        registerArmor("sapphire_leggings", EnrichedArmorMaterials.SAPPHIRE, ArmorType.LEGGINGS);
     SAPPHIRE_BOOTS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "sapphire_boots",
-                new ArmorItem(
-                    EnrichedArmorMaterials.SAPPHIRE,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.BOOTS.getDurability(25))
-                        .stacksTo(1)));
+        registerArmor("sapphire_boots", EnrichedArmorMaterials.SAPPHIRE, ArmorType.BOOTS);
 
     TANZANITE_HELMET =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "tanzanite_helmet",
-                new ArmorItem(
-                    EnrichedArmorMaterials.TANZANITE,
-                    ArmorItem.Type.HELMET,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.HELMET.getDurability(25))
-                        .stacksTo(1)));
-
+        registerArmor("tanzanite_helmet", EnrichedArmorMaterials.TANZANITE, ArmorType.HELMET);
     TANZANITE_CHESTPLATE =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "tanzanite_chestplate",
-                new ArmorItem(
-                    EnrichedArmorMaterials.TANZANITE,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(25))
-                        .stacksTo(1)));
-
+        registerArmor(
+            "tanzanite_chestplate", EnrichedArmorMaterials.TANZANITE, ArmorType.CHESTPLATE);
     TANZANITE_LEGGINGS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "tanzanite_leggings",
-                new ArmorItem(
-                    EnrichedArmorMaterials.TANZANITE,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.LEGGINGS.getDurability(25))
-                        .stacksTo(1)));
-
+        registerArmor("tanzanite_leggings", EnrichedArmorMaterials.TANZANITE, ArmorType.LEGGINGS);
     TANZANITE_BOOTS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "tanzanite_boots",
-                new ArmorItem(
-                    EnrichedArmorMaterials.TANZANITE,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.BOOTS.getDurability(25))
-                        .stacksTo(1)));
+        registerArmor("tanzanite_boots", EnrichedArmorMaterials.TANZANITE, ArmorType.BOOTS);
 
-    STEEL_HELMET =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "steel_helmet",
-                new ArmorItem(
-                    EnrichedArmorMaterials.STEEL,
-                    ArmorItem.Type.HELMET,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.HELMET.getDurability(21))
-                        .stacksTo(1)));
-
+    STEEL_HELMET = registerArmor("steel_helmet", EnrichedArmorMaterials.STEEL, ArmorType.HELMET);
     STEEL_CHESTPLATE =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "steel_chestplate",
-                new ArmorItem(
-                    EnrichedArmorMaterials.STEEL,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(21))
-                        .stacksTo(1)));
-
+        registerArmor("steel_chestplate", EnrichedArmorMaterials.STEEL, ArmorType.CHESTPLATE);
     STEEL_LEGGINGS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "steel_leggings",
-                new ArmorItem(
-                    EnrichedArmorMaterials.STEEL,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.LEGGINGS.getDurability(21))
-                        .stacksTo(1)));
-
-    STEEL_BOOTS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "steel_boots",
-                new ArmorItem(
-                    EnrichedArmorMaterials.STEEL,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.BOOTS.getDurability(21))
-                        .stacksTo(1)));
+        registerArmor("steel_leggings", EnrichedArmorMaterials.STEEL, ArmorType.LEGGINGS);
+    STEEL_BOOTS = registerArmor("steel_boots", EnrichedArmorMaterials.STEEL, ArmorType.BOOTS);
 
     OBSIDIAN_HELMET =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "obsidian_helmet",
-                new ArmorItem(
-                    EnrichedArmorMaterials.OBSIDIAN,
-                    ArmorItem.Type.HELMET,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.HELMET.getDurability(39))
-                        .stacksTo(1)));
-
+        registerArmor("obsidian_helmet", EnrichedArmorMaterials.OBSIDIAN, ArmorType.HELMET);
     OBSIDIAN_CHESTPLATE =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "obsidian_chestplate",
-                new ArmorItem(
-                    EnrichedArmorMaterials.OBSIDIAN,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(39))
-                        .stacksTo(1)));
-
+        registerArmor("obsidian_chestplate", EnrichedArmorMaterials.OBSIDIAN, ArmorType.CHESTPLATE);
     OBSIDIAN_LEGGINGS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "obsidian_leggings",
-                new ArmorItem(
-                    EnrichedArmorMaterials.OBSIDIAN,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.LEGGINGS.getDurability(39))
-                        .stacksTo(1)));
-
+        registerArmor("obsidian_leggings", EnrichedArmorMaterials.OBSIDIAN, ArmorType.LEGGINGS);
     OBSIDIAN_BOOTS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "obsidian_boots",
-                new ArmorItem(
-                    EnrichedArmorMaterials.OBSIDIAN,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.BOOTS.getDurability(39))
-                        .stacksTo(1)));
+        registerArmor("obsidian_boots", EnrichedArmorMaterials.OBSIDIAN, ArmorType.BOOTS);
 
     EMERALD_HELMET =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "emerald_helmet",
-                new ArmorItem(
-                    EnrichedArmorMaterials.EMERALD,
-                    ArmorItem.Type.HELMET,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.HELMET.getDurability(25))
-                        .stacksTo(1)));
-
+        registerArmor("emerald_helmet", EnrichedArmorMaterials.EMERALD, ArmorType.HELMET);
     EMERALD_CHESTPLATE =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "emerald_chestplate",
-                new ArmorItem(
-                    EnrichedArmorMaterials.EMERALD,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(25))
-                        .stacksTo(1)));
-
+        registerArmor("emerald_chestplate", EnrichedArmorMaterials.EMERALD, ArmorType.CHESTPLATE);
     EMERALD_LEGGINGS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "emerald_leggings",
-                new ArmorItem(
-                    EnrichedArmorMaterials.EMERALD,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.LEGGINGS.getDurability(25))
-                        .stacksTo(1)));
+        registerArmor("emerald_leggings", EnrichedArmorMaterials.EMERALD, ArmorType.LEGGINGS);
+    EMERALD_BOOTS = registerArmor("emerald_boots", EnrichedArmorMaterials.EMERALD, ArmorType.BOOTS);
 
-    EMERALD_BOOTS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "emerald_boots",
-                new ArmorItem(
-                    EnrichedArmorMaterials.EMERALD,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.BOOTS.getDurability(25))
-                        .stacksTo(1)));
-
-    BRONZE_HELMET =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "bronze_helmet",
-                new ArmorItem(
-                    EnrichedArmorMaterials.BRONZE,
-                    ArmorItem.Type.HELMET,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.HELMET.getDurability(23))
-                        .stacksTo(1)));
-
+    BRONZE_HELMET = registerArmor("bronze_helmet", EnrichedArmorMaterials.BRONZE, ArmorType.HELMET);
     BRONZE_CHESTPLATE =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "bronze_chestplate",
-                new ArmorItem(
-                    EnrichedArmorMaterials.BRONZE,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(23))
-                        .stacksTo(1)));
-
+        registerArmor("bronze_chestplate", EnrichedArmorMaterials.BRONZE, ArmorType.CHESTPLATE);
     BRONZE_LEGGINGS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "bronze_leggings",
-                new ArmorItem(
-                    EnrichedArmorMaterials.BRONZE,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.LEGGINGS.getDurability(23))
-                        .stacksTo(1)));
-
-    BRONZE_BOOTS =
-        (ArmorItem)
-            EnrichedRegisters.registerItem(
-                "bronze_boots",
-                new ArmorItem(
-                    EnrichedArmorMaterials.BRONZE,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Properties()
-                        .durability(ArmorItem.Type.BOOTS.getDurability(23))
-                        .stacksTo(1)));
-
-    ;
+        registerArmor("bronze_leggings", EnrichedArmorMaterials.BRONZE, ArmorType.LEGGINGS);
+    BRONZE_BOOTS = registerArmor("bronze_boots", EnrichedArmorMaterials.BRONZE, ArmorType.BOOTS);
 
     /*------------*/
     /* -- Food -- */
@@ -572,17 +237,48 @@ public class EnrichedItems {
 
     BEEF_STEW =
         EnrichedRegisters.registerItem(
-            "beef_stew", new Item(new Item.Properties().food(EnrichedFoodComponents.BEEF_STEW)));
+            "beef_stew", properties -> new Item(properties.food(EnrichedFoodComponents.BEEF_STEW)));
 
     BERRY_JUICE =
         EnrichedRegisters.registerItem(
-            "berry_juice", new Item(new Item.Properties().food(EnrichedFoodComponents.BERRY_JUICE)));
+            "berry_juice",
+            properties -> new Item(properties.food(EnrichedFoodComponents.BERRY_JUICE)));
 
     EnrichedItems.registerItemsToItemGroups();
   }
 
   public static void registerItems() {
     EnrichedMod.LOGGER.info("Registering Enriched's items...");
+  }
+
+  private static Item registerSword(String name, ToolMaterial material) {
+    return EnrichedRegisters.registerItem(
+        name, properties -> new Item(properties.sword(material, -1.0f, -2.4f)));
+  }
+
+  private static Item registerShovel(String name, ToolMaterial material) {
+    return EnrichedRegisters.registerItem(
+        name, properties -> new Item(properties.shovel(material, -1.0f, -3.0f)));
+  }
+
+  private static Item registerPickaxe(String name, ToolMaterial material) {
+    return EnrichedRegisters.registerItem(
+        name, properties -> new Item(properties.pickaxe(material, -1.0f, -2.8f)));
+  }
+
+  private static Item registerAxe(String name, ToolMaterial material) {
+    return EnrichedRegisters.registerItem(
+        name, properties -> new Item(properties.axe(material, 2.0f, -3.0f)));
+  }
+
+  private static Item registerHoe(String name, ToolMaterial material) {
+    return EnrichedRegisters.registerItem(
+        name, properties -> new Item(properties.hoe(material, -4.0f, 0.0f)));
+  }
+
+  private static Item registerArmor(String name, ArmorMaterial material, ArmorType armorType) {
+    return EnrichedRegisters.registerItem(
+        name, properties -> new Item(properties.humanoidArmor(material, armorType)));
   }
 
   private static void registerItemsToItemGroups() {
@@ -697,7 +393,7 @@ public class EnrichedItems {
 
   // (Ayydxn) Maybe add an item group parameter instead of hard-coding the combat item group?
   private static void registerArmorToItemGroup(
-      ArmorItem helmet, ArmorItem chestplate, ArmorItem leggings, ArmorItem boots) {
+      Item helmet, Item chestplate, Item leggings, Item boots) {
     EnrichedRegisters.registerToItemGroup(helmet, CreativeModeTabs.COMBAT);
     EnrichedRegisters.registerToItemGroup(chestplate, CreativeModeTabs.COMBAT);
     EnrichedRegisters.registerToItemGroup(leggings, CreativeModeTabs.COMBAT);

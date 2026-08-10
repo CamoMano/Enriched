@@ -7,16 +7,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "item": "minecraft:chain"
-    }
+    "M": "minecraft:iron_chain"
   },
   "pattern": [
     "M M",
     "M M"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:chainmail_boots"
   }
 }

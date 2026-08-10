@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "enriched:block/redwood_leaves",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -15436769
+      }
+    ]
+  }
+}

@@ -6,11 +6,11 @@
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chain": {
+    "has_iron_chain": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:chain"
+            "items": "minecraft:iron_chain"
           }
         ]
       },
@@ -18,7 +18,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chainmail_helmet"
+        "recipe": "enriched:chainmail_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,12 +26,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_chain"
+      "has_iron_chain"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chainmail_helmet"
+      "enriched:chainmail_helmet"
     ]
   }
 }

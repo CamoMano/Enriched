@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:tanzanite_block"
+        "recipe": "enriched:tanzanite_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:tanzanite_block"
+      "enriched:tanzanite_block"
     ]
   }
 }

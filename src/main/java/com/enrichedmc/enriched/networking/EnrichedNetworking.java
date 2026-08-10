@@ -4,18 +4,18 @@ import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.networking.payloads.OpenOptionsScreenPayload;
 import com.enrichedmc.enriched.networking.payloads.ReloadDataPacksPacket;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class EnrichedNetworking {
-  public static final ResourceLocation OPEN_OPTIONS_SCREEN_PACKET =
-      ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "open_options_screen");
-  public static final ResourceLocation RELOAD_DATA_PACKS_PACKET =
-      ResourceLocation.fromNamespaceAndPath(EnrichedMod.MOD_ID, "reload_data_packs");
+  public static final Identifier OPEN_OPTIONS_SCREEN_PACKET =
+      Identifier.fromNamespaceAndPath(EnrichedMod.MOD_ID, "open_options_screen");
+  public static final Identifier RELOAD_DATA_PACKS_PACKET =
+      Identifier.fromNamespaceAndPath(EnrichedMod.MOD_ID, "reload_data_packs");
 
   public static void registerPayloads() {
-    PayloadTypeRegistry.playS2C()
+    PayloadTypeRegistry.clientboundPlay()
         .register(OpenOptionsScreenPayload.ID, OpenOptionsScreenPayload.CODEC);
 
-    PayloadTypeRegistry.playC2S().register(ReloadDataPacksPacket.ID, ReloadDataPacksPacket.CODEC);
+    PayloadTypeRegistry.serverboundPlay().register(ReloadDataPacksPacket.ID, ReloadDataPacksPacket.CODEC);
   }
 }

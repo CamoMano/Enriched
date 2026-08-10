@@ -7,16 +7,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "tag": "c:ingots/obsidian_alloy"
-    }
+    "M": "#c:ingots/obsidian_alloy"
   },
   "pattern": [
     "MMM",
     "M M"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:obsidian_helmet"
   }
 }

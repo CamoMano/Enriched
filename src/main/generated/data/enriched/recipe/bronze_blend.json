@@ -1,16 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
-    {
-      "item": "enriched:tin_ingot"
-    },
-    {
-      "item": "minecraft:copper_ingot"
-    },
-    {
-      "item": "minecraft:copper_ingot"
-    }
+    "enriched:tin_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot"
   ],
   "result": {
     "count": 3,

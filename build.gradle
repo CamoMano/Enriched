@@ -35,7 +35,10 @@ loom {
 }
 
 fabricApi {
-    configureDataGeneration()
+    // Model generation lives in client-only classes, so datagen has to run client-side.
+    configureDataGeneration {
+        client = true
+    }
 }
 
 dependencies {
@@ -85,8 +88,10 @@ java {
     // If you remove this line, sources will not be generated.
     withSourcesJar()
 
-    sourceCompatibility = JavaVersion.VERSION_25
-    targetCompatibility = JavaVersion.VERSION_25
+    // Ensures the build uses a Java 25 JDK regardless of the JVM Gradle itself was launched with.
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
 }
 
 jar {

@@ -7,16 +7,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "tag": "c:gems/tanzanite"
-    }
+    "M": "#c:gems/tanzanite"
   },
   "pattern": [
     "M M",
     "M M"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:tanzanite_boots"
   }
 }

@@ -2,19 +2,19 @@ package com.enrichedmc.enriched.datagen;
 
 import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.item.EnrichedItems;
-import java.util.Optional;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.*;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TexturedModel;
-import net.minecraft.world.item.ArmorItem;
+import com.enrichedmc.enriched.materials.armor.EnrichedArmorMaterials;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.EquipmentAsset;
 
 public class EnrichedModelProvider extends FabricModelProvider {
-  public EnrichedModelProvider(FabricDataOutput output) {
+  public EnrichedModelProvider(FabricPackOutput output) {
     super(output);
   }
 
@@ -25,8 +25,7 @@ public class EnrichedModelProvider extends FabricModelProvider {
     BlockModelGenerators.BlockFamilyProvider darkGraniteTexturePool =
         blockStateModelGenerator.family(EnrichedBlocks.DARK_GRANITE);
     BlockModelGenerators.BlockFamilyProvider polishedDarkGraniteTexturePool =
-        blockStateModelGenerator.family(
-            EnrichedBlocks.POLISHED_DARK_GRANITE);
+        blockStateModelGenerator.family(EnrichedBlocks.POLISHED_DARK_GRANITE);
     BlockModelGenerators.BlockFamilyProvider marbleTexturePool =
         blockStateModelGenerator.family(EnrichedBlocks.MARBLE);
     BlockModelGenerators.BlockFamilyProvider polishedMarbleTexturePool =
@@ -71,11 +70,12 @@ public class EnrichedModelProvider extends FabricModelProvider {
         .logWithHorizontal(EnrichedBlocks.STRIPPED_REDWOOD_LOG)
         .wood(EnrichedBlocks.STRIPPED_REDWOOD_WOOD);
 
-    blockStateModelGenerator.createTrivialBlock(EnrichedBlocks.REDWOOD_LEAVES, TexturedModel.LEAVES);
+    blockStateModelGenerator.createTintedLeaves(
+        EnrichedBlocks.REDWOOD_LEAVES, TexturedModel.LEAVES, 0x14741F);
     blockStateModelGenerator.createPlant(
         EnrichedBlocks.REDWOOD_SAPLING,
         EnrichedBlocks.POTTED_REDWOOD_SAPLING,
-        BlockModelGenerators.TintState.NOT_TINTED);
+        BlockModelGenerators.PlantType.NOT_TINTED);
 
     redwoodTexturePool.button(EnrichedBlocks.REDWOOD_BUTTON);
     blockStateModelGenerator.createDoor(EnrichedBlocks.REDWOOD_DOOR);
@@ -116,8 +116,10 @@ public class EnrichedModelProvider extends FabricModelProvider {
     itemModelGenerator.generateFlatItem(EnrichedItems.BRONZE_INGOT, ModelTemplates.FLAT_ITEM);
     itemModelGenerator.generateFlatItem(EnrichedItems.TIN_INGOT, ModelTemplates.FLAT_ITEM);
     itemModelGenerator.generateFlatItem(EnrichedItems.RAW_TIN, ModelTemplates.FLAT_ITEM);
-    itemModelGenerator.generateFlatItem(EnrichedItems.OBSIDIAN_ALLOY_BLEND, ModelTemplates.FLAT_ITEM);
-    itemModelGenerator.generateFlatItem(EnrichedItems.OBSIDIAN_ALLOY_INGOT, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(
+        EnrichedItems.OBSIDIAN_ALLOY_BLEND, ModelTemplates.FLAT_ITEM);
+    itemModelGenerator.generateFlatItem(
+        EnrichedItems.OBSIDIAN_ALLOY_INGOT, ModelTemplates.FLAT_ITEM);
 
     /*-------------*/
     /* -- Tools -- */
@@ -180,12 +182,12 @@ public class EnrichedModelProvider extends FabricModelProvider {
         EnrichedItems.COPPER_HOE);
 
     this.registerToolModels(
-            itemModelGenerator,
-            EnrichedItems.BRONZE_SWORD,
-            EnrichedItems.BRONZE_SHOVEL,
-            EnrichedItems.BRONZE_PICKAXE,
-            EnrichedItems.BRONZE_AXE,
-            EnrichedItems.BRONZE_HOE);
+        itemModelGenerator,
+        EnrichedItems.BRONZE_SWORD,
+        EnrichedItems.BRONZE_SHOVEL,
+        EnrichedItems.BRONZE_PICKAXE,
+        EnrichedItems.BRONZE_AXE,
+        EnrichedItems.BRONZE_HOE);
 
     /*-------------*/
     /* -- Armor -- */
@@ -193,6 +195,7 @@ public class EnrichedModelProvider extends FabricModelProvider {
 
     this.registerArmorModels(
         itemModelGenerator,
+        EnrichedArmorMaterials.RUBY_ASSET,
         EnrichedItems.RUBY_HELMET,
         EnrichedItems.RUBY_CHESTPLATE,
         EnrichedItems.RUBY_LEGGINGS,
@@ -200,6 +203,7 @@ public class EnrichedModelProvider extends FabricModelProvider {
 
     this.registerArmorModels(
         itemModelGenerator,
+        EnrichedArmorMaterials.SAPPHIRE_ASSET,
         EnrichedItems.SAPPHIRE_HELMET,
         EnrichedItems.SAPPHIRE_CHESTPLATE,
         EnrichedItems.SAPPHIRE_LEGGINGS,
@@ -207,6 +211,7 @@ public class EnrichedModelProvider extends FabricModelProvider {
 
     this.registerArmorModels(
         itemModelGenerator,
+        EnrichedArmorMaterials.TANZANITE_ASSET,
         EnrichedItems.TANZANITE_HELMET,
         EnrichedItems.TANZANITE_CHESTPLATE,
         EnrichedItems.TANZANITE_LEGGINGS,
@@ -214,6 +219,7 @@ public class EnrichedModelProvider extends FabricModelProvider {
 
     this.registerArmorModels(
         itemModelGenerator,
+        EnrichedArmorMaterials.STEEL_ASSET,
         EnrichedItems.STEEL_HELMET,
         EnrichedItems.STEEL_CHESTPLATE,
         EnrichedItems.STEEL_LEGGINGS,
@@ -221,6 +227,7 @@ public class EnrichedModelProvider extends FabricModelProvider {
 
     this.registerArmorModels(
         itemModelGenerator,
+        EnrichedArmorMaterials.OBSIDIAN_ASSET,
         EnrichedItems.OBSIDIAN_HELMET,
         EnrichedItems.OBSIDIAN_CHESTPLATE,
         EnrichedItems.OBSIDIAN_LEGGINGS,
@@ -228,17 +235,19 @@ public class EnrichedModelProvider extends FabricModelProvider {
 
     this.registerArmorModels(
         itemModelGenerator,
+        EnrichedArmorMaterials.EMERALD_ASSET,
         EnrichedItems.EMERALD_HELMET,
         EnrichedItems.EMERALD_CHESTPLATE,
         EnrichedItems.EMERALD_LEGGINGS,
         EnrichedItems.EMERALD_BOOTS);
 
     this.registerArmorModels(
-            itemModelGenerator,
-            EnrichedItems.BRONZE_HELMET,
-            EnrichedItems.BRONZE_CHESTPLATE,
-            EnrichedItems.BRONZE_LEGGINGS,
-            EnrichedItems.BRONZE_BOOTS);
+        itemModelGenerator,
+        EnrichedArmorMaterials.BRONZE_ASSET,
+        EnrichedItems.BRONZE_HELMET,
+        EnrichedItems.BRONZE_CHESTPLATE,
+        EnrichedItems.BRONZE_LEGGINGS,
+        EnrichedItems.BRONZE_BOOTS);
 
     /*------------*/
     /* -- Food -- */
@@ -264,13 +273,18 @@ public class EnrichedModelProvider extends FabricModelProvider {
 
   private void registerArmorModels(
       ItemModelGenerators itemModelGenerator,
-      ArmorItem helmet,
-      ArmorItem chestplate,
-      ArmorItem leggings,
-      ArmorItem boots) {
-    itemModelGenerator.generateArmorTrims(helmet);
-    itemModelGenerator.generateArmorTrims(chestplate);
-    itemModelGenerator.generateArmorTrims(leggings);
-    itemModelGenerator.generateArmorTrims(boots);
+      ResourceKey<EquipmentAsset> equipmentAsset,
+      Item helmet,
+      Item chestplate,
+      Item leggings,
+      Item boots) {
+    itemModelGenerator.generateTrimmableItem(
+        helmet, equipmentAsset, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+    itemModelGenerator.generateTrimmableItem(
+        chestplate, equipmentAsset, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+    itemModelGenerator.generateTrimmableItem(
+        leggings, equipmentAsset, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+    itemModelGenerator.generateTrimmableItem(
+        boots, equipmentAsset, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
   }
 }

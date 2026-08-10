@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "tag": "enriched:redwood_logs"
-    }
+    "#enriched:redwood_logs"
   ],
   "result": {
     "count": 4,

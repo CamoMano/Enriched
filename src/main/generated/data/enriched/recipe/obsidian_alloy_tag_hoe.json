@@ -7,12 +7,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "tag": "c:ingots/obsidian_alloy"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "M": "#c:ingots/obsidian_alloy",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "MM ",
@@ -20,7 +16,6 @@
     " S "
   ],
   "result": {
-    "count": 1,
     "id": "enriched:obsidian_hoe"
   }
 }

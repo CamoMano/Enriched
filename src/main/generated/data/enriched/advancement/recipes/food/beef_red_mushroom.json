@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:beef_red_mushroom"
+        "recipe": "enriched:beef_red_mushroom"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:beef_red_mushroom"
+      "enriched:beef_red_mushroom"
     ]
   }
 }

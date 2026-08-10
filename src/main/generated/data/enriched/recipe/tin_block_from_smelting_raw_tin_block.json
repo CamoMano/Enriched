@@ -5,12 +5,9 @@
     }
   ],
   "type": "minecraft:smelting",
-  "category": "blocks",
   "cookingtime": 1800,
   "experience": 6.3,
-  "ingredient": {
-    "item": "enriched:raw_tin_block"
-  },
+  "ingredient": "enriched:raw_tin_block",
   "result": {
     "id": "enriched:tin_block"
   }

@@ -34,7 +34,7 @@ public class OpenOptionsScreenPayload implements CustomPacketPayload {
       Minecraft client = context.client();
       if (client == null) return;
 
-      client.setScreen(new EnrichedOptionsScreen(null).getHandle());
+      client.setScreenAndShow(new EnrichedOptionsScreen(null).getHandle());
     }
   }
 }

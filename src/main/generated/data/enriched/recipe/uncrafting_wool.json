@@ -5,11 +5,8 @@
     }
   ],
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
-    {
-      "tag": "minecraft:wool"
-    }
+    "#minecraft:wool"
   ],
   "result": {
     "count": 4,

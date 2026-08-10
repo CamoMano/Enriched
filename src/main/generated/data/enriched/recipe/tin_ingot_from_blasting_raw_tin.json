@@ -5,12 +5,8 @@
     }
   ],
   "type": "minecraft:blasting",
-  "category": "misc",
-  "cookingtime": 100,
   "experience": 0.7,
-  "ingredient": {
-    "item": "enriched:raw_tin"
-  },
+  "ingredient": "enriched:raw_tin",
   "result": {
     "id": "enriched:tin_ingot"
   }

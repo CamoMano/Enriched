@@ -6,15 +6,14 @@ import com.enrichedmc.enriched.block.EnrichedBlocks;
 import com.enrichedmc.enriched.item.EnrichedItems;
 import com.enrichedmc.enriched.tag.EnrichedTags;
 import java.util.concurrent.CompletableFuture;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 
 public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
   public EnrichedEnglishLanguageProvider(
-      FabricDataOutput dataOutput,
+      FabricPackOutput dataOutput,
       CompletableFuture<HolderLookup.Provider> registryLookup) {
     super(dataOutput, "en_us", registryLookup);
   }
@@ -464,10 +463,10 @@ public class EnrichedEnglishLanguageProvider extends FabricLanguageProvider {
 
   private void addArmorTranslations(
       TranslationBuilder translationBuilder,
-      ArmorItem helmet,
-      ArmorItem chestplate,
-      ArmorItem leggings,
-      ArmorItem boots,
+      Item helmet,
+      Item chestplate,
+      Item leggings,
+      Item boots,
       String helmetText,
       String chestplateText,
       String leggingsText,

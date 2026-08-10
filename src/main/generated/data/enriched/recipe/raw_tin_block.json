@@ -1,10 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
-    "#": {
-      "item": "enriched:raw_tin"
-    }
+    "#": "enriched:raw_tin"
   },
   "pattern": [
     "###",
@@ -12,7 +9,6 @@
     "###"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:raw_tin_block"
   }
 }

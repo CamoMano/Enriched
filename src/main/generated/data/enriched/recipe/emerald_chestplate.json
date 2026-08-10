@@ -7,9 +7,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "M": {
-      "item": "minecraft:emerald"
-    }
+    "M": "minecraft:emerald"
   },
   "pattern": [
     "M M",
@@ -17,7 +15,6 @@
     "MMM"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:emerald_chestplate"
   }
 }

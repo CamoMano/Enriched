@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "P": {
-      "item": "enriched:polished_dark_granite"
-    }
+    "P": "enriched:polished_dark_granite"
   },
   "pattern": [
     "PPP"

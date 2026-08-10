@@ -2,19 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "R": {
-      "item": "enriched:redwood_planks"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "R": "enriched:redwood_planks",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "SRS",
     "SRS"
   ],
   "result": {
-    "count": 1,
     "id": "enriched:redwood_fence_gate"
   }
 }

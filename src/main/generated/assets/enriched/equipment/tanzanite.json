@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "enriched:tanzanite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "enriched:tanzanite"
+      }
+    ]
+  }
+}

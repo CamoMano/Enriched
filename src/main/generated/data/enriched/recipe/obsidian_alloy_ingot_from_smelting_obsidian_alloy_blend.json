@@ -5,12 +5,8 @@
     }
   ],
   "type": "minecraft:smelting",
-  "category": "misc",
-  "cookingtime": 200,
   "experience": 0.7,
-  "ingredient": {
-    "item": "enriched:obsidian_alloy_blend"
-  },
+  "ingredient": "enriched:obsidian_alloy_blend",
   "result": {
     "id": "enriched:obsidian_alloy_ingot"
   }

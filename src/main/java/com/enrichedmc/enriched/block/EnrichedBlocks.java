@@ -3,7 +3,7 @@ package com.enrichedmc.enriched.block;
 import com.enrichedmc.enriched.EnrichedMod;
 import com.enrichedmc.enriched.registry.EnrichedRegisters;
 import com.enrichedmc.enriched.world.tree.EnrichedSaplingGenerators;
-import net.minecraft.block.*;
+
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.TintedParticleLeavesBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -91,318 +91,185 @@ public class EnrichedBlocks {
 
   static {
     RUBY_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "ruby_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("ruby_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     RUBY_ORE =
-        EnrichedRegisters.registerBlock(
-            "ruby_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("ruby_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
     DEEPSLATE_RUBY_ORE =
-        EnrichedRegisters.registerBlock(
-            "deepslate_ruby_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("deepslate_ruby_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
     SAPPHIRE_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "sapphire_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("sapphire_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     SAPPHIRE_ORE =
-        EnrichedRegisters.registerBlock(
-            "sapphire_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("sapphire_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
     DEEPSLATE_SAPPHIRE_ORE =
-        EnrichedRegisters.registerBlock(
-            "deepslate_sapphire_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("deepslate_sapphire_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
     TANZANITE_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "tanzanite_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("tanzanite_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     TANZANITE_ORE =
-        EnrichedRegisters.registerBlock(
-            "tanzanite_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("tanzanite_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
     DEEPSLATE_TANZANITE_ORE =
-        EnrichedRegisters.registerBlock(
-            "deepslate_tanzanite_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("deepslate_tanzanite_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
     TIN_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "tin_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("tin_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     BRONZE_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "bronze_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("bronze_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     RAW_TIN_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "raw_tin_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("raw_tin_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     TIN_ORE =
-        EnrichedRegisters.registerBlock(
-            "tin_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("tin_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
     DEEPSLATE_TIN_ORE =
-        EnrichedRegisters.registerBlock(
-            "deepslate_tin_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("deepslate_tin_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
     STEEL_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "steel_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("steel_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     OBSIDIAN_ALLOY_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "obsidian_alloy_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("obsidian_alloy_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
     AMBER_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "amber_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("amber_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     AMBER_ORE =
-        EnrichedRegisters.registerBlock(
-            "amber_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("amber_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
     DEEPSLATE_AMBER_ORE =
-        EnrichedRegisters.registerBlock(
-            "deepslate_amber_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("deepslate_amber_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
     TOPAZ_BLOCK =
-        EnrichedRegisters.registerBlock(
-            "topaz_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+        EnrichedRegisters.registerBlock("topaz_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
     TOPAZ_ORE =
-        EnrichedRegisters.registerBlock(
-            "topaz_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("topaz_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
     DEEPSLATE_TOPAZ_ORE =
-        EnrichedRegisters.registerBlock(
-            "deepslate_topaz_ore",
-            new DropExperienceBlock(
-                UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+        EnrichedRegisters.registerBlock("deepslate_topaz_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
     REDWOOD_LOG =
-        EnrichedRegisters.registerBlock(
-            "redwood_log",
-            new RotatedPillarBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LOG)
+        EnrichedRegisters.registerBlock("redwood_log", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LOG)
                     .strength(2.0f)
-                    .sound(SoundType.WOOD)));
+                    .sound(SoundType.WOOD));
 
     REDWOOD_WOOD =
-        EnrichedRegisters.registerBlock(
-            "redwood_wood",
-            new RotatedPillarBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WOOD)
+        EnrichedRegisters.registerBlock("redwood_wood", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WOOD)
                     .strength(2.0f)
-                    .sound(SoundType.WOOD)));
+                    .sound(SoundType.WOOD));
 
     STRIPPED_REDWOOD_LOG =
-        EnrichedRegisters.registerBlock(
-            "stripped_redwood_log",
-            new RotatedPillarBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_SPRUCE_LOG)
+        EnrichedRegisters.registerBlock("stripped_redwood_log", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_SPRUCE_LOG)
                     .strength(2.0f)
-                    .sound(SoundType.WOOD)));
+                    .sound(SoundType.WOOD));
 
     STRIPPED_REDWOOD_WOOD =
-        EnrichedRegisters.registerBlock(
-            "stripped_redwood_wood",
-            new RotatedPillarBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_SPRUCE_WOOD)
+        EnrichedRegisters.registerBlock("stripped_redwood_wood", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_SPRUCE_WOOD)
                     .strength(2.0f)
-                    .sound(SoundType.WOOD)));
+                    .sound(SoundType.WOOD));
 
     REDWOOD_PLANKS =
-        EnrichedRegisters.registerBlock(
-            "redwood_planks",
-            new Block(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS)
+        EnrichedRegisters.registerBlock("redwood_planks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS)
                     .strength(2.0f, 3.0f)
-                    .sound(SoundType.WOOD)));
+                    .sound(SoundType.WOOD));
 
     REDWOOD_LEAVES =
-        EnrichedRegisters.registerBlock(
-            "redwood_leaves",
-            new LeavesBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LEAVES).strength(0.2f).noOcclusion()));
+        EnrichedRegisters.registerBlock("redwood_leaves", properties -> new TintedParticleLeavesBlock(0.01f, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LEAVES).strength(0.2f).noOcclusion());
 
     REDWOOD_SAPLING =
-        EnrichedRegisters.registerBlock(
-            "redwood_sapling",
-            new SaplingBlock(
-                EnrichedSaplingGenerators.REDWOOD,
-                BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+        EnrichedRegisters.registerBlock("redwood_sapling", properties -> new SaplingBlock(EnrichedSaplingGenerators.REDWOOD, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
 
     POTTED_REDWOOD_SAPLING =
-        EnrichedRegisters.registerBlock(
-            "potted_redwood_sapling",
-            new FlowerPotBlock(
-                REDWOOD_SAPLING,
-                BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_SPRUCE_SAPLING).noOcclusion()));
+        EnrichedRegisters.registerBlock("potted_redwood_sapling", properties -> new FlowerPotBlock(REDWOOD_SAPLING, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_SPRUCE_SAPLING).noOcclusion());
 
     REDWOOD_BUTTON =
-        EnrichedRegisters.registerBlock(
-            "redwood_button",
-            new ButtonBlock(
-                BlockSetType.SPRUCE, 4, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_BUTTON)));
+        EnrichedRegisters.registerBlock("redwood_button", properties -> new ButtonBlock(BlockSetType.SPRUCE, 4, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_BUTTON));
 
     REDWOOD_DOOR =
-        EnrichedRegisters.registerBlock(
-            "redwood_door",
-            new DoorBlock(BlockSetType.SPRUCE, BlockBehaviour.Properties.ofFullCopy(REDWOOD_PLANKS)));
+        EnrichedRegisters.registerBlock("redwood_door", properties -> new DoorBlock(BlockSetType.SPRUCE, properties), BlockBehaviour.Properties.ofFullCopy(REDWOOD_PLANKS));
 
     REDWOOD_PRESSURE_PLATE =
-        EnrichedRegisters.registerBlock(
-            "redwood_pressure_plate",
-            new PressurePlateBlock(
-                BlockSetType.SPRUCE, BlockBehaviour.Properties.ofFullCopy(REDWOOD_PLANKS)));
+        EnrichedRegisters.registerBlock("redwood_pressure_plate", properties -> new PressurePlateBlock(BlockSetType.SPRUCE, properties), BlockBehaviour.Properties.ofFullCopy(REDWOOD_PLANKS));
 
     REDWOOD_TRAPDOOR =
-        EnrichedRegisters.registerBlock(
-            "redwood_trapdoor",
-            new TrapDoorBlock(BlockSetType.SPRUCE, BlockBehaviour.Properties.ofFullCopy(REDWOOD_PLANKS)));
+        EnrichedRegisters.registerBlock("redwood_trapdoor", properties -> new TrapDoorBlock(BlockSetType.SPRUCE, properties), BlockBehaviour.Properties.ofFullCopy(REDWOOD_PLANKS));
 
     REDWOOD_SLAB =
-        EnrichedRegisters.registerBlock(
-            "redwood_slab",
-            new SlabBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SLAB)
+        EnrichedRegisters.registerBlock("redwood_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SLAB)
                     .sound(SoundType.WOOD)
-                    .strength(2.0f, 2.0f)));
+                    .strength(2.0f, 2.0f));
 
     REDWOOD_STAIRS =
-        EnrichedRegisters.registerBlock(
-            "redwood_stairs",
-            new StairBlock(
-                REDWOOD_PLANKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(REDWOOD_PLANKS)));
+        EnrichedRegisters.registerBlock("redwood_stairs", properties -> new StairBlock(REDWOOD_PLANKS.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(REDWOOD_PLANKS));
 
     REDWOOD_FENCE =
-        EnrichedRegisters.registerBlock(
-            "redwood_fence",
-            new FenceBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE_GATE)
+        EnrichedRegisters.registerBlock("redwood_fence", FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE_GATE)
                     .sound(SoundType.WOOD)
-                    .strength(2.0f, 3.0f)));
+                    .strength(2.0f, 3.0f));
 
     REDWOOD_FENCE_GATE =
-        EnrichedRegisters.registerBlock(
-            "redwood_fence_gate",
-            new FenceGateBlock(
-                WoodType.SPRUCE,
-                BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE_GATE)
+        EnrichedRegisters.registerBlock("redwood_fence_gate", properties -> new FenceGateBlock(WoodType.SPRUCE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE_GATE)
                     .sound(SoundType.WOOD)
-                    .strength(2.0f, 3.0f)));
+                    .strength(2.0f, 3.0f));
 
     DARK_GRANITE =
-        EnrichedRegisters.registerBlock(
-            "dark_granite",
-            new Block(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE)
+        EnrichedRegisters.registerBlock("dark_granite", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE)
                     .strength(1.5f, 6.0f)
                     .sound(SoundType.STONE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops());
 
     DARK_GRANITE_SLAB =
-        EnrichedRegisters.registerBlock(
-            "dark_granite_slab",
-            new SlabBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB)
+        EnrichedRegisters.registerBlock("dark_granite_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB)
                     .strength(1.5f, 6.0f)
                     .sound(SoundType.STONE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops());
 
     DARK_GRANITE_STAIRS =
-        EnrichedRegisters.registerBlock(
-            "dark_granite_stairs",
-            new StairBlock(
-                DARK_GRANITE.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(DARK_GRANITE)));
+        EnrichedRegisters.registerBlock("dark_granite_stairs", properties -> new StairBlock(DARK_GRANITE.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(DARK_GRANITE));
 
     DARK_GRANITE_WALL =
-        EnrichedRegisters.registerBlock(
-            "dark_granite_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(DARK_GRANITE)));
+        EnrichedRegisters.registerBlock("dark_granite_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(DARK_GRANITE));
 
     POLISHED_DARK_GRANITE =
-        EnrichedRegisters.registerBlock(
-            "polished_dark_granite",
-            new Block(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_GRANITE)
+        EnrichedRegisters.registerBlock("polished_dark_granite", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_GRANITE)
                     .strength(1.5f, 6.0f)
                     .sound(SoundType.STONE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops());
 
     POLISHED_DARK_GRANITE_SLAB =
-        EnrichedRegisters.registerBlock(
-            "polished_dark_granite_slab",
-            new SlabBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB)
+        EnrichedRegisters.registerBlock("polished_dark_granite_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB)
                     .strength(1.5f, 6.0f)
                     .sound(SoundType.STONE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops());
 
     POLISHED_DARK_GRANITE_STAIRS =
-        EnrichedRegisters.registerBlock(
-            "polished_dark_granite_stairs",
-            new StairBlock(
-                POLISHED_DARK_GRANITE.defaultBlockState(),
-                BlockBehaviour.Properties.ofFullCopy(POLISHED_DARK_GRANITE)));
+        EnrichedRegisters.registerBlock("polished_dark_granite_stairs", properties -> new StairBlock(POLISHED_DARK_GRANITE.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(POLISHED_DARK_GRANITE));
 
     MARBLE =
-        EnrichedRegisters.registerBlock(
-            "marble",
-            new Block(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE)
+        EnrichedRegisters.registerBlock("marble", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE)
                     .strength(1.5f, 6.0f)
                     .sound(SoundType.STONE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops());
 
     MARBLE_SLAB =
-        EnrichedRegisters.registerBlock(
-            "marble_slab",
-            new SlabBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB)
+        EnrichedRegisters.registerBlock("marble_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB)
                     .strength(1.5f, 6.0f)
                     .sound(SoundType.STONE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops());
 
     MARBLE_STAIRS =
-        EnrichedRegisters.registerBlock(
-            "marble_stairs",
-            new StairBlock(MARBLE.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(MARBLE)));
+        EnrichedRegisters.registerBlock("marble_stairs", properties -> new StairBlock(MARBLE.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(MARBLE));
 
     MARBLE_WALL =
-        EnrichedRegisters.registerBlock(
-            "marble_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(MARBLE)));
+        EnrichedRegisters.registerBlock("marble_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(MARBLE));
 
     POLISHED_MARBLE =
-        EnrichedRegisters.registerBlock(
-            "polished_marble",
-            new Block(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_GRANITE)
+        EnrichedRegisters.registerBlock("polished_marble", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_GRANITE)
                     .strength(1.5f, 6.0f)
                     .sound(SoundType.STONE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops());
 
     POLISHED_MARBLE_SLAB =
-        EnrichedRegisters.registerBlock(
-            "polished_marble_slab",
-            new SlabBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB)
+        EnrichedRegisters.registerBlock("polished_marble_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE_SLAB)
                     .strength(1.5f, 6.0f)
                     .sound(SoundType.STONE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops());
 
     POLISHED_MARBLE_STAIRS =
-        EnrichedRegisters.registerBlock(
-            "polished_marble_stairs",
-            new StairBlock(
-                POLISHED_MARBLE.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(POLISHED_MARBLE)));
+        EnrichedRegisters.registerBlock("polished_marble_stairs", properties -> new StairBlock(POLISHED_MARBLE.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(POLISHED_MARBLE));
 
     /*-------------------------------*/
     /* -- Item Group Registration -- */
